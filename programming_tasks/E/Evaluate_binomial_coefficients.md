@@ -36,4 +36,4 @@ sub infix:<choose> { ([*] ($^n ... 0) Z/ 1 .. min($n - $^p, $p)).Int }
 ```
 
 
-And _this_ is exactly what the <tt>count-only</tt> method does.
+And *this* is exactly what the <tt>count-only</tt> method does.

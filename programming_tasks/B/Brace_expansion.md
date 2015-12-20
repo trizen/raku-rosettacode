@@ -6,7 +6,7 @@ The task description allows the taking of shortcuts, but please note that we are
 
 
 
-First, the parsing is handled with a grammar that can backtrack in the few places this problem needs it. The <tt>+</tt> quantifier matches one or more alternatives (we handle the case of a single alternative in the walk now), and the <tt>%</tt> modifier requires a comma between each quantified item to its left. Note that the <tt>\*</tt> quantifiers do _not_ backtrack here, because the <tt>token</tt> keyword suppresses that; all the backtracking here fails over to a different alternative in an outer alternation (that is, things separated by the <tt>|</tt> character in the grammar. Most of these failovers just nibble an uninteresting character and continue.)
+First, the parsing is handled with a grammar that can backtrack in the few places this problem needs it. The <tt>+</tt> quantifier matches one or more alternatives (we handle the case of a single alternative in the walk now), and the <tt>%</tt> modifier requires a comma between each quantified item to its left. Note that the <tt>\*</tt> quantifiers do *not* backtrack here, because the <tt>token</tt> keyword suppresses that; all the backtracking here fails over to a different alternative in an outer alternation (that is, things separated by the <tt>|</tt> character in the grammar. Most of these failovers just nibble an uninteresting character and continue.)
 
 
 

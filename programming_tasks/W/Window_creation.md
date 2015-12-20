@@ -2,7 +2,7 @@
 
 # [Window creation][1]
 
-*Library* [GTK](https://github.com/perl6/gtk-simple)
+**Library** [GTK](https://github.com/perl6/gtk-simple)
 
 
 

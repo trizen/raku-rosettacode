@@ -31,7 +31,7 @@ Run with passed parameters: 1 20
 
 
 
-('slice' is the default. you _could_ pass it in, but it isn't necessary.)
+('slice' is the default. you *could* pass it in, but it isn't necessary.)
 
 
 #### Output:

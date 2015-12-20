@@ -8,5 +8,5 @@ To demonstrate we're not limited to Latin-1, we'll print the fullwidth variant.
 say '￡';
 say "\x[FFE1]";
 say "\c[FULLWIDTH POUND SIGN]";
-0xffe1.[chr](http://perldoc.perl.org/functions/chr.html).say;
+0xffe1.chr.say;
 ```

@@ -11,7 +11,7 @@ say "Door $_ is ", <closed open>[ @doors[$_] ] for 1..100;
 ```
 
 
-*optimized*
+**optimized**
 
 ```perl
 say "Door $_ is open" for map {$^n ** 2}, 1..10;

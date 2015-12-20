@@ -78,7 +78,7 @@ test_NG(|$_) for (
 ```
 
 
-*Output*
+**Output**
 
 
 #### Output:

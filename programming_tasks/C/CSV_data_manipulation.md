@@ -2,7 +2,7 @@
 
 # [CSV data manipulation][1]
 
-On the face of it this task is pretty simple. Especially given the sample CSV file and the total lack of specification of _what_ changes to make to the file. Something like this would suffice.
+On the face of it this task is pretty simple. Especially given the sample CSV file and the total lack of specification of *what* changes to make to the file. Something like this would suffice.
 
 ```perl
 my $csvfile = './whatever.csv';

@@ -19,7 +19,7 @@ say FT[^100];
 ```
 
 
-*Extra credit:*
+**Extra credit:**
 
 
 

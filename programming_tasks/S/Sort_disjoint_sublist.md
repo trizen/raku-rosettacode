@@ -18,17 +18,17 @@ my @indices = 6, 1, 7;
 [7, 0, 5, 4, 3, 2, 1, 6]
 ```
 ```perl
-sub disjointSort( @[values](http://perldoc.perl.org/functions/values.html) is rw , @indices is rw --> List ) {
-   my @sortedValues = @[values](http://perldoc.perl.org/functions/values.html)[ @indices ].[sort](http://perldoc.perl.org/functions/sort.html) ;
-   for @indices.[sort](http://perldoc.perl.org/functions/sort.html) -> $insert {
-      @[values](http://perldoc.perl.org/functions/values.html)[ $insert ] = @sortedValues.[shift](http://perldoc.perl.org/functions/shift.html) ;
+sub disjointSort( @values is rw , @indices is rw --> List ) {
+   my @sortedValues = @values[ @indices ].sort ;
+   for @indices.sort -> $insert {
+      @values[ $insert ] = @sortedValues.shift ;
    }
-   [return](http://perldoc.perl.org/functions/return.html) @[values](http://perldoc.perl.org/functions/values.html) ;
+   return @values ;
 }
  
-my @[values](http://perldoc.perl.org/functions/values.html) = ( 7 , 6 , 5 , 4 , 3 , 2 , 1 , 0 ) ;
+my @values = ( 7 , 6 , 5 , 4 , 3 , 2 , 1 , 0 ) ;
 my @indices = ( 6 , 1 , 7 ) ;
-my @sortedValues = disjointSort( @[values](http://perldoc.perl.org/functions/values.html) , @indices ) ;
+my @sortedValues = disjointSort( @values , @indices ) ;
 @sortedValues.perl.say ;
 ```
 

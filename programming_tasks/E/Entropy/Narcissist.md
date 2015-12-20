@@ -3,7 +3,7 @@
 # [Entropy/Narcissist][1]
 
 ```perl
-say [log](http://perldoc.perl.org/functions/log.html)(2) R/ [+] [map](http://perldoc.perl.org/functions/map.html) -> \p { p * -[log](http://perldoc.perl.org/functions/log.html) p }, .bag.[values](http://perldoc.perl.org/functions/values.html) >>/>> +$_
+say log(2) R/ [+] map -> \p { p * -log p }, .bag.values >>/>> +$_
     given slurp($*PROGRAM_NAME).comb
 ```
 

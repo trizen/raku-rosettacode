@@ -6,22 +6,22 @@
 use v6 ;
  
 sub extension ( Str $filename --> Str ) {
-   my $extension = $filename.[split](http://perldoc.perl.org/functions/split.html)(/\./).[pop](http://perldoc.perl.org/functions/pop.html) ;
+   my $extension = $filename.split(/\./).pop ;
    if ( $extension ) {
       if ( $extension ~~ / <[\/_]> / ) {
-	 [return](http://perldoc.perl.org/functions/return.html) "" ;
+	 return "" ;
       }
       else {
-	 [return](http://perldoc.perl.org/functions/return.html) "." ~ $extension ;
+	 return "." ~ $extension ;
       }
    }
    else {
-      [return](http://perldoc.perl.org/functions/return.html) "" ;
+      return "" ;
    }
 }
  
 .say for ("mywebsite.com/picture/image.png" , "http://mywebsite.com/picture/image.png" ,
-          "myuniquefile.longextension" , "/path/to.my/file" , "file.odd_one" ).[map](http://perldoc.perl.org/functions/map.html)( { extension $_ } ) ;
+          "myuniquefile.longextension" , "/path/to.my/file" , "file.odd_one" ).map( { extension $_ } ) ;
  
  
 ```

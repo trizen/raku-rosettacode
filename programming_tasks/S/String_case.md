@@ -6,10 +6,10 @@ In Perl 6, case modification is implemented as builtin subroutine or method:
 
 ```perl
 my $word = "alpha BETA" ;
-say [uc](http://perldoc.perl.org/functions/uc.html) $word;         # all uppercase (subroutine call)
-say $word.[uc](http://perldoc.perl.org/functions/uc.html);         # all uppercase (method call)
+say uc $word;         # all uppercase (subroutine call)
+say $word.uc;         # all uppercase (method call)
 # from now on we use only method calls as examples
-say $word.[lc](http://perldoc.perl.org/functions/lc.html);         # all lowercase
+say $word.lc;         # all lowercase
 say $word.tc;         # first letter titlecase
 say $word.tclc;       # first letter titlecase, rest lowercase
 say $word.tcuc;       # first letter titlecase, rest uppercase

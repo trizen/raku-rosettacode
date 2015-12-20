@@ -5,7 +5,7 @@
 Here we assume the dictionary is provided on standard input.
 
 ```perl
-say .value given max :by(*.key), classify *.chars, [grep](http://perldoc.perl.org/functions/grep.html) { [le] .comb }, lines;
+say .value given max :by(*.key), classify *.chars, grep { [le] .comb }, lines;
 ```
 
 

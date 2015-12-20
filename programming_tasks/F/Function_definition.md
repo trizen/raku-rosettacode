@@ -50,7 +50,7 @@ my &multiply := { $^a * $^b };
 
 
 
-You may also curry both built-in and user-defined operators by supplying a <tt>\*</tt> (known as "whatever") in place of the argument that is _not_ to be curried:
+You may also curry both built-in and user-defined operators by supplying a <tt>\*</tt> (known as "whatever") in place of the argument that is *not* to be curried:
 
 ```perl
 my &multiply := * * *;

@@ -91,7 +91,7 @@ say join "\t", @wins;
 ```
 
 
-*Sample output for 10000 games*
+**Sample output for 10000 games**
 
 
 #### Output:

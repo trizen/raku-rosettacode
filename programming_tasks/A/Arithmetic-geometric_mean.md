@@ -34,8 +34,8 @@ It's also possible to write it recursively:
  
 sub agm( $a, $g ) {
     @$_ ~~ ($a, $g) ?? $a !! agm(|@$_)
-        given ($a + $g)/2, [sqrt](http://perldoc.perl.org/functions/sqrt.html) $a * $g;
+        given ($a + $g)/2, sqrt $a * $g;
 }
  
-say agm 1, 1/[sqrt](http://perldoc.perl.org/functions/sqrt.html) 2;
+say agm 1, 1/sqrt 2;
 ```

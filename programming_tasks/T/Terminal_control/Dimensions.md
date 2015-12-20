@@ -2,7 +2,7 @@
 
 # [Terminal control/Dimensions][1]
 
-Using _stty_ just for the heck of it.
+Using *stty* just for the heck of it.
 
 ```perl
 my $stty = qx[stty -a];

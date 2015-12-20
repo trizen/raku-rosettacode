@@ -2,11 +2,11 @@
 
 # [Null object][1]
 
-In Perl 6 you can name the concept of <tt>Nil</tt>, but it not considered an object, but rather the _absence_ of an object, more of a "bottom" type. The closest analog in real objects is an empty list, but an empty list is considered defined, while <tt>Nil.defined</tt> always returns false. <tt>Nil</tt> is what you get if you try to read off the end of a list, and <tt>()</tt> is just very easy to read off the end of... <tt>:-)</tt>
+In Perl 6 you can name the concept of <tt>Nil</tt>, but it not considered an object, but rather the *absence* of an object, more of a "bottom" type. The closest analog in real objects is an empty list, but an empty list is considered defined, while <tt>Nil.defined</tt> always returns false. <tt>Nil</tt> is what you get if you try to read off the end of a list, and <tt>()</tt> is just very easy to read off the end of... <tt>:-)</tt>
 
 
 
-If you try to put <tt>Nil</tt> into a container, you don't end up with a container that has <tt>Nil</tt> in it. Instead the container reverts to an uninitialized state that is consistent with the declared type. Hence, Perl 6 has the notion of typed undefined values, that are real objects in the sense of "being there", but are generic in the sense of representing type information without being instantiated as a real object. We call these _type objects_ since they can stand in for real objects when one reasons about the types of objects. So type objects fit into the type hierarchy just as normal objects do. In physics terms, think of them as "type charge carriers" that are there for bookkeeping between the "real" particles.
+If you try to put <tt>Nil</tt> into a container, you don't end up with a container that has <tt>Nil</tt> in it. Instead the container reverts to an uninitialized state that is consistent with the declared type. Hence, Perl 6 has the notion of typed undefined values, that are real objects in the sense of "being there", but are generic in the sense of representing type information without being instantiated as a real object. We call these *type objects* since they can stand in for real objects when one reasons about the types of objects. So type objects fit into the type hierarchy just as normal objects do. In physics terms, think of them as "type charge carriers" that are there for bookkeeping between the "real" particles.
 
 
 
@@ -63,7 +63,7 @@ except there are many of them, so you can't just check for equivalence. Use the 
 
 
 Perl 6 also has <tt>Failure</tt> objects that, in addition to being
-undefined carriers of type, are also carriers of the _reason_
+undefined carriers of type, are also carriers of the *reason*
 for the value's undefinedness. We tend view them as lazily thrown
 exceptions, at least until you try to use them as defined values,
 in which case they're thrown for real.

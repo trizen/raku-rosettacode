@@ -6,7 +6,7 @@ As in previous versions of Perl, in Perl6 the topic variable is $\_. In addition
 
 ```perl
 given 3 {
-    .say for $_**2, .[sqrt](http://perldoc.perl.org/functions/sqrt.html);
+    .say for $_**2, .sqrt;
 }
 ```
 

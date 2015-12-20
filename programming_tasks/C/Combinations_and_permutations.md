@@ -2,7 +2,7 @@
 
 # [Combinations and permutations][1]
 
-Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate <span class="texhtml" dir="ltr">ln(_n_!)</span>:
+Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate <span class="texhtml" dir="ltr">ln(*n*!)</span>:
 
 
 

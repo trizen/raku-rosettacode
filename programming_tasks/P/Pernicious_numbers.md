@@ -2,7 +2,7 @@
 
 # [Pernicious numbers][1]
 
-Straightforward implementation using Perl 6's _is-prime_ built-in subroutine.
+Straightforward implementation using Perl 6's *is-prime* built-in subroutine.
 
 ```perl
 sub is-pernicious(Int $n --> Bool) {

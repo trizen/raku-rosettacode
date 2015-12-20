@@ -20,7 +20,7 @@ multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 ```
 
 
-*Output:* First 1000 Fibonaccis
+**Output:** First 1000 Fibonaccis
 
 
 #### Output:
@@ -38,7 +38,7 @@ multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 ```
 
 
-*Extra credit:* Square Kilometers of land under cultivation, by country / territory. First column from Wikipedia: [Land use statistics by country](http://en.wikipedia.org/wiki/Land\_use\_statistics\_by\_country" class="extiw" title="wp:Land use statistics by country).
+**Extra credit:** Square Kilometers of land under cultivation, by country / territory. First column from Wikipedia: [Land use statistics by country](http://en.wikipedia.org/wiki/Land\_use\_statistics\_by\_country" class="extiw" title="wp:Land use statistics by country).
 
 
 #### Output:

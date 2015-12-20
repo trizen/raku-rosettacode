@@ -25,7 +25,7 @@ c c
 ```
 
 
-Here is an other approach, counting all <span class="texhtml" dir="ltr">_k_<sup>_n_</sup></span> possibilities in base <span class="texhtml" dir="ltr">_k_</span>:
+Here is an other approach, counting all <span class="texhtml" dir="ltr">*k*<sup>*n*</sup></span> possibilities in base <span class="texhtml" dir="ltr">*k*</span>:
 
 ```perl
 my @k = <a b c>;

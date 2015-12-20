@@ -6,12 +6,12 @@
 # we use the [] reduction meta operator along with the Cartesian Product
 # operator X to create the Cartesian Product of four times [1..9] and then get
 # all the elements where the number of unique digits is four.
-my @candidates = ([X] [1..9] xx 4).tree.[grep](http://perldoc.perl.org/functions/grep.html): *.uniq == 4;
+my @candidates = ([X] [1..9] xx 4).tree.grep: *.uniq == 4;
  
 repeat {
 	my $guess = @candidates.pick;
 	my ($bulls, $cows) = read-score;
-	@candidates .= [grep](http://perldoc.perl.org/functions/grep.html): &score-correct;
+	@candidates .= grep: &score-correct;
  
 	# note how we declare our two subroutines within the repeat block. This
 	# limits the scope in which the routines are known to the scope in which
@@ -23,9 +23,9 @@ repeat {
 		my $exact = [+] $a Z== $guess;
  
 		# number of elements of $a that match any element of $b
-		my $loose = +$a.[grep](http://perldoc.perl.org/functions/grep.html): any @$guess;
+		my $loose = +$a.grep: any @$guess;
  
-		[return](http://perldoc.perl.org/functions/return.html) $bulls == $exact && $cows == $loose - $exact;
+		return $bulls == $exact && $cows == $loose - $exact;
 	}
  
 	sub read-score() {
@@ -35,9 +35,9 @@ repeat {
 			# use the :s modifier to tell Perl 6 to handle spaces
 			# automatically and save the first digit in $<bulls> and
 			# the second digit in $<cows>
-			if $score ~~ [m](http://perldoc.perl.org/functions/m.html):[s](http://perldoc.perl.org/functions/s.html)/^ $<bulls>=(\d) $<cows>=(\d) $/
+			if $score ~~ m:s/^ $<bulls>=(\d) $<cows>=(\d) $/
 				and $<bulls> + $<cows> <= 4 {
-				[return](http://perldoc.perl.org/functions/return.html) +$<bulls>, +$<cows>;
+				return +$<bulls>, +$<cows>;
 			}
  
 			say "Please specify the number of bulls and cows";

@@ -6,7 +6,7 @@ Any syntactically valid sequence of statements may be run, and the snippet to be
 
 ```perl
 my ($a, $b) = (-5, 7);
-my $ans = [eval](http://perldoc.perl.org/functions/eval.html) 'abs($a * $b)';  # => 35
+my $ans = eval 'abs($a * $b)';  # => 35
 ```
 
 

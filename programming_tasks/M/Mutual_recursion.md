@@ -2,7 +2,7 @@
 
 # [Mutual recursion][1]
 
-A direct translation of the definitions of <span class="texhtml" dir="ltr">_F_</span> and <span class="texhtml" dir="ltr">_M_</span>:
+A direct translation of the definitions of <span class="texhtml" dir="ltr">*F*</span> and <span class="texhtml" dir="ltr">*M*</span>:
 
 ```perl
 multi F(0) { 1 }; multi M(0) { 0 }

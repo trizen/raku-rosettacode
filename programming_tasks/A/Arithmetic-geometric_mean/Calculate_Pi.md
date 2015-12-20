@@ -26,7 +26,7 @@ It's not too hard to see that such a sequence converges towards <img class="tex"
 
 
 
-Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need <span class="texhtml" dir="ltr">_a_<sub>_n_</sub></span>, but rather <img class="tex" alt="a\_n^2" src="/mw/images/math/6/a/2/6a2ded63ebfb3deb8d76656e00d56e44.png"/>. Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
+Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need <span class="texhtml" dir="ltr">*a*<sub>*n*</sub></span>, but rather <img class="tex" alt="a\_n^2" src="/mw/images/math/6/a/2/6a2ded63ebfb3deb8d76656e00d56e44.png"/>. Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
 
 ```perl
 constant number-of-decimals = 100;

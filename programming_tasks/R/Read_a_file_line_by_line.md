@@ -5,7 +5,7 @@
 The lines method is lazy so the following code does indeed read the file line by line, and not all at once.
 
 ```perl
-for [open](http://perldoc.perl.org/functions/open.html)('test.txt').lines
+for open('test.txt').lines
 {
   .say
 }
@@ -15,7 +15,7 @@ for [open](http://perldoc.perl.org/functions/open.html)('test.txt').lines
 In order to be more explicit about the file being read on line at a time, one can write:
 
 ```perl
-my $f = [open](http://perldoc.perl.org/functions/open.html) 'test.txt';
+my $f = open 'test.txt';
 while my $line = $f.get {
     say $line;
 }

@@ -31,7 +31,7 @@ Or, more consistently:
 
 
 
-Viewed as such, <span class="texhtml" dir="ltr">CF<sub>_n_</sub>(_x_)</span> could be written recursively:
+Viewed as such, <span class="texhtml" dir="ltr">CF<sub>*n*</sub>(*x*)</span> could be written recursively:
 
 
 
@@ -47,12 +47,12 @@ Perl6 has a builtin composition operator. We can use it with the triangular redu
 
 ```perl
 sub continued-fraction(@a, @b) {
-    [map](http://perldoc.perl.org/functions/map.html) { .(Inf) }, [\o] [map](http://perldoc.perl.org/functions/map.html) { @a[$_] + @b[$_] / * }, ^Inf
+    map { .(Inf) }, [\o] map { @a[$_] + @b[$_] / * }, ^Inf
 }
  
-[printf](http://perldoc.perl.org/functions/printf.html) "√2 ≈ %.9f\n", continued-fraction((1, |(2 xx *)), (1 xx *))[10];
-[printf](http://perldoc.perl.org/functions/printf.html) "e  ≈ %.9f\n", continued-fraction((2, |(1 .. *)), (1, |(1 .. *)))[10];
-[printf](http://perldoc.perl.org/functions/printf.html) "π  ≈ %.9f\n", continued-fraction((3, |(6 xx *)), ((1, 3, 5 ... *) X** 2))[100];
+printf "√2 ≈ %.9f\n", continued-fraction((1, |(2 xx *)), (1 xx *))[10];
+printf "e  ≈ %.9f\n", continued-fraction((2, |(1 .. *)), (1, |(1 .. *)))[10];
+printf "π  ≈ %.9f\n", continued-fraction((3, |(6 xx *)), ((1, 3, 5 ... *) X** 2))[100];
 ```
 
 #### Output:

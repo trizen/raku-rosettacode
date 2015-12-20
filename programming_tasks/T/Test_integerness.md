@@ -2,7 +2,7 @@
 
 # [Test integerness][1]
 
-In Perl 6, classes that implement the Numeric role have a method called <tt>narrow</tt> which returns an object with the same value but with the most appropriate type. So we can just test the type of _that_ object.
+In Perl 6, classes that implement the Numeric role have a method called <tt>narrow</tt> which returns an object with the same value but with the most appropriate type. So we can just test the type of *that* object.
 
 ```perl
 for pi, 1e5, 1+0i {

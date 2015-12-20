@@ -5,10 +5,10 @@
 We'll consider the upper-right quarter of the unitary disk centered at the origin. Its area is <img class="tex" alt="\pi \over 4" src="/mw/images/math/e/9/9/e996309bbdde3b8457909580d174720e.png"/>.
 
 ```perl
-my @random_distances = ([+] [rand](http://perldoc.perl.org/functions/rand.html)**2 xx 2) xx *;
+my @random_distances = ([+] rand**2 xx 2) xx *;
  
 sub approximate_pi(Int $n) {
-    4 * @random_distances[^$n].[grep](http://perldoc.perl.org/functions/grep.html)(* < 1) / $n
+    4 * @random_distances[^$n].grep(* < 1) / $n
 }
  
 say "Monte-Carlo π approximation:";

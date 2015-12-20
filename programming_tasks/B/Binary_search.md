@@ -11,7 +11,7 @@ sub search (@a, $x --> Int) {
 ```
 
 
-*Iterative*
+**Iterative**
 
 ```perl
 sub binary_search (&p, Int $lo is copy, Int $hi is copy --> Int) {
@@ -28,7 +28,7 @@ sub binary_search (&p, Int $lo is copy, Int $hi is copy --> Int) {
 ```
 
 
-*Recursive*
+**Recursive**
 
 ```perl
 sub binary_search (&p, Int $lo, Int $hi --> Int) {

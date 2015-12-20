@@ -59,7 +59,7 @@ use Test;
 plan *;
  
 for lines() {
-    is tan(.[eval](http://perldoc.perl.org/functions/eval.html)), /INCORRECT/ ?? none(1) !! 1 given
+    is tan(.eval), /INCORRECT/ ?? none(1) !! 1 given
     .subst(/'pi/4 = '/, '')\
     .subst(/arctan/, 'atan', :g)\
     .subst(/'[INCORRECT]'/, '# INCORRECT')

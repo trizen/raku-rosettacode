@@ -4,7 +4,7 @@
 
 We'll make a general algorithm capable of computing any cellular automata
 as defined by [Stephen Wolfram](http://en.wikipedia.org/wiki/Stephen\_Wolfram" class="extiw" title="wp:Stephen Wolfram)'s
-famous book _[A new kind of Science](http://en.wikipedia.org/wiki/A\_new\_kind\_of\_Science" class="extiw" title="wp:A new kind of Science)_.
+famous book *[A new kind of Science](http://en.wikipedia.org/wiki/A\_new\_kind\_of\_Science" class="extiw" title="wp:A new kind of Science)*.
 We will take the liberty of wrapping the array of cells
 as it does not affect the result much
 and it makes the implementation a lot easier.

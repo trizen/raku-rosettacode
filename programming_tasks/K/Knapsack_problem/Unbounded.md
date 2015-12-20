@@ -49,7 +49,7 @@ say "panacea\tichor\tgold";
 ```
 
 
-*Output:*
+**Output:**
 
 
 #### Output:

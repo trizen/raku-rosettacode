@@ -6,7 +6,7 @@ We'll try to simulate the Sun+Earth+Moon system, with plausible astronomical val
 
 
 
-We use a 18-dimension vector <span class="texhtml" dir="ltr">_A__B__C_</span>.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
+We use a 18-dimension vector <span class="texhtml" dir="ltr">*A**B**C*</span>.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
 
 
 
