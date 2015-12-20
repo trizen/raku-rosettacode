@@ -2,7 +2,7 @@
 
 # [Terminal control/Coloured text][1]
 
-```perl6
+```perl
 use Term::ANSIColor;
  
 say colored('RED ON WHITE', 'bold red on_white');

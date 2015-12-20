@@ -2,7 +2,7 @@
 
 # [Aliquot sequence classifications][1]
 
-```perl6
+```perl
 sub propdivsum (\x) {
     [+] x > 1, gather for 2 .. x.sqrt.floor -> \d {
         my \y = x div d;

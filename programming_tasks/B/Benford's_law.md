@@ -2,7 +2,7 @@
 
 # [Benford's law][1]
 
-```perl6
+```perl
 sub benford(@a) { bag +« flat @a».comb: /<( <[ 1..9 ]> )> <[ , . \d ]>*/ }
  
 sub show(%distribution) {

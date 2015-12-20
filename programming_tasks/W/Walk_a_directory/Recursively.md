@@ -4,7 +4,7 @@
 
 Uses File::Find from [File-Tools](http://github.com/tadzik/perl6-File-Tools)
 
-```perl6
+```perl
 use File::Find;
  
 .say for find(dir => '.').grep(/foo/);

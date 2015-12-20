@@ -4,7 +4,7 @@
 
 Implementation:
 
-```perl6
+```perl
 enum Trit <Foo Moo Too>;
  
 sub prefix:<¬> (Trit $a) { Trit(1-($a-1)) }
@@ -23,7 +23,7 @@ The precedence of each operator is specified as equivalent to an existing operat
 
 To test, we use this code:
 
-```perl6
+```perl
 say '¬';
 say "Too {¬Too}";
 say "Moo {¬Moo}";

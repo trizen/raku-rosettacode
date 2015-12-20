@@ -8,7 +8,7 @@ For the narcissist to work you must be very careful with whitespace. The followi
 
 Note how the code takes advantage of Perl 6's ability to nest quoting delimiters.
 
-```perl6
+```perl
 EVAL my $self = q{say slurp() eq q[EVAL my $self = q{]~$self~q[}]~10.chr ?? q{Beautiful!} !! q{Not my type.}}
 ```
 

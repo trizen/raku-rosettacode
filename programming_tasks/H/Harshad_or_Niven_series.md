@@ -2,7 +2,7 @@
 
 # [Harshad or Niven series][1]
 
-```perl6
+```perl
 constant @harshad = grep { $_ %% [+] .comb }, 1 .. *;
  
 say @harshad[^20];

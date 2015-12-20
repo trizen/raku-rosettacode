@@ -2,7 +2,7 @@
 
 # [Continued fraction/Arithmetic/G(matrix NG, Contined Fraction N1, Contined Fraction N2)][1]
 
-```perl6
+```perl
 class NG2 {
     has ( $!a12, $!a1, $!a2, $!a, $!b12, $!b1, $!b2, $!b );
  
@@ -119,7 +119,7 @@ test_NG2(|$_) for
 
 The NG2 object can work with infinitely long continued fractions, it does lazy evaluation. By default it is limited to returning the first 30 terms. Pass in a limit value if you want something other than default. For example, lets do the square of √2. √2 as a cf is [1;2,2,2,2,2,...] repeating indefinitely. First we'll construct a lazy infinite continued fraction, then multiply it by itself and limit the result to 6 terms for brevitys' sake. We'll then convert that continued fraction back to an arbitrary precision FatRat Rational number. (Perl 6 stores FatRats internally as a ratio of two arbitrarily long integers. We need to exercise a little caution because they can eat up all of your memory if allowed to grow unchecked. Hence the limit of 6 terms in continued fraction.) We'll then convert that number to a normal precision Rat, which is accurate to the nearest 1 / 2^64,
 
-```perl6
+```perl
 say "√2 expressed as a continued fraction: ";
 my @root2 = 1, 2 xx *;
 my @result = NG2.new.operator(|%ops{'*'}).apply( @root2, @root2, limit => 6 );

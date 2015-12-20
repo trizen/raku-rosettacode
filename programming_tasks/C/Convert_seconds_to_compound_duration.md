@@ -4,7 +4,7 @@
 
 The built-in `polymod` method (which is a generalization of the `divmod` function known from other languages), is a perfect match for a task like this:
 
-```perl6
+```perl
 sub compound-duration ($seconds) {
     ($seconds.polymod(60, 60, 24, 7) Z <sec min hr d wk>)\
     .grep(*[0]).reverse.join(", ")
@@ -14,7 +14,7 @@ sub compound-duration ($seconds) {
 
 Demonstration:
 
-```perl6
+```perl
 for 7259, 86400, 6000000 {
     say "{.fmt: '%7d'} sec  =  {compound-duration $_}";
 }

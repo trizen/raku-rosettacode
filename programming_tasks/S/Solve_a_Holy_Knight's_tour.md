@@ -4,7 +4,7 @@
 
 Using the Warnsdorff algorithm from [Solve\_a\_Hidato\_puzzle](/wiki/Solve\_a\_Hidato\_puzzle" title="Solve a Hidato puzzle).
 
-```perl6
+```perl
 my @adjacent =
                [ -2, -1],  [ -2, 1],
       [-1,-2],                       [-1,+2],

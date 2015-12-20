@@ -4,7 +4,7 @@
 
 Implementation of the wikipedia algorithm. Since column 0 and row 0 are used for base distances, the original algorithm would require us to compare "@s[$i-1] eq @t[$j-1]", and reference the $m and $n separately. Prepending an unused value (undef) onto @s and @t makes their indices align with the $i,$j numbering of @d, and lets us use .end instead of $m,$n.
 
-```perl6
+```perl
 sub levenshtein_distance ( Str $s, Str $t --> Int ) {
     my @s = *, |$s.comb;
     my @t = *, |$t.comb;

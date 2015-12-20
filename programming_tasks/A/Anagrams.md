@@ -2,7 +2,7 @@
 
 # [Anagrams][1]
 
-```perl6
+```perl
 my %anagram = slurp('unixdict.txt').words.classify( { .comb.sort.join } );
  
 my $max = [max] map { +@($_) }, %anagram.values;
@@ -23,7 +23,7 @@ abel able bale bela elba
 
 Just for the fun of it, here's one-liner that uses no temporaries.  Since it would be rather long, we've oriented it vertically:
 
-```perl6
+```perl
  
 .say for                              # print each element of the array made this way:
 slurp('unixdict.txt')\                # load file in memory

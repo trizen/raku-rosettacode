@@ -2,7 +2,7 @@
 
 # [String matching][1]
 
-```perl6
+```perl
 my @subs = (
     # Regex-based:
     sub R_contains    ( Str $_, Str $s2 ) { ? m/   $s2   / },

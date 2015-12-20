@@ -4,7 +4,7 @@
 
 This version saves a lot of looking around by using four states instead of three; the <tt>Heating</tt> state does a lookahead to track trees that are being heated up by burning trees, so we only ever have to traverse the neighbors of burning trees, not all trees.  Also, by only checking the list of burning trees, we can avoid copying the entire forest each iteration, since real forests are mutable.
 
-```perl6
+```perl
 my $RED = "\e[1;31m";
 my $YELLOW = "\e[1;33m";
 my $GREEN = "\e[1;32m";

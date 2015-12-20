@@ -2,7 +2,7 @@
 
 # [Call an object method][1]
 
-```perl6
+```perl
 class C { 
   method some-method(){ say 'I haz a method' }
 };

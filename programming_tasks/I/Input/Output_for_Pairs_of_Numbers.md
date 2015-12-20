@@ -2,7 +2,7 @@
 
 # [Input/Output for Pairs of Numbers][1]
 
-```perl6
+```perl
 for ^get() { say [+] get.words }
 ```
 

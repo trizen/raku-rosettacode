@@ -2,6 +2,6 @@
 
 # [Write entire file][1]
 
-```perl6
+```perl
 spurt( $filename, $data );
 ```

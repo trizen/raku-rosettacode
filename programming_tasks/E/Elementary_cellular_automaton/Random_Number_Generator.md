@@ -2,7 +2,7 @@
 
 # [Elementary cellular automaton/Random Number Generator][1]
 
-```perl6
+```perl
 my Automaton $a .= new: :rule(30), :cells( 1, 0 xx 100 );
  
 say :2[$a++.cells[0] xx 8] xx 10;

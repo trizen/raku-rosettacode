@@ -17,7 +17,7 @@ conf-update --/needspeeling --seedsremoved --numberofbananas=1024 --numberofstra
 
 The script:
 
-```perl6
+```perl
 #!/usr/bin/env perl6
  
 my $tmpfile = tmpfile;

@@ -2,7 +2,7 @@
 
 # [Exponentiation order][1]
 
-```perl6
+```perl
 sub demo($x) { say "  $x\t───► ", EVAL $x }
  
 demo '5**3**2';      # show ** is right associative
@@ -29,7 +29,7 @@ Note that the reduction forms automatically go right-to-left because the base op
 
 While it is possible to define your own postfix operators to do exponentiation, Unicode does not have multilevel subscripts, and postfixes are always evaluated from inside out, so you can't stack them and expect right associativity:
 
-```perl6
+```perl
 sub postfix:<²>($n) { $n * $n  }
 sub postfix:<³>($n) { $n * $n * $n }
  

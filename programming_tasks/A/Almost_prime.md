@@ -2,7 +2,7 @@
 
 # [Almost prime][1]
 
-```perl6
+```perl
 sub is-k-almost-prime($n is copy, $k) returns Bool {
     loop (my ($p, $f) = 2, 0; $f < $k && $p*$p <= $n; $p++) {
         $n /= $p, $f++ while $n %% $p;
@@ -28,7 +28,7 @@ for 1 .. 5 -> $k {
 
 Here is a solution with identical output based on the <tt>factors</tt> routine from [Count\_in\_factors#Perl\_6](/wiki/Count\_in\_factors#Perl\_6" title="Count in factors) (to be included manually until we decide where in the distribution to put it).
 
-```perl6
+```perl
 constant factory = 0..* Z=> (0, 0, map { +factors($_) }, 2..*);
  
 sub almost($n) { map *.key, grep *.value == $n, factory }

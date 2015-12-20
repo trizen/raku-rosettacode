@@ -2,7 +2,7 @@
 
 # [Quine][1]
 
-```perl6
+```perl
 my &f = {say $^s, $^s.perl;}; f "my \&f = \{say \$^s, \$^s.perl;}; f "
  
 ```
@@ -19,7 +19,7 @@ Note the terminating newline.
 
 A more compact, but still purely functional, approach:
 
-```perl6
+```perl
 {.fmt($_).say}(<{.fmt($_).say}(<%s>)>)
  
 ```

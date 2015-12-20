@@ -4,7 +4,7 @@
 
 Fairly straightfoward. Define a hash of conversion factors then apply them. Does some basic error trapping. Makes no attempt to do correct pluralization because I have no idea what the correct plurals are and little interest in researching them. Conversion factors from Wikipedia: [Obsolete Russian units of measurement](http://en.wikipedia.org/wiki/Obsolete\_Russian\_units\_of\_measurement#Length" class="extiw" title="wp:Obsolete Russian units of measurement).
 
-```perl6
+```perl
 convert(1, 'meter');
  
 say '*' x 40, "\n";

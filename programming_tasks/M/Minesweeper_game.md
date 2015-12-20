@@ -2,7 +2,7 @@
 
 # [Minesweeper game][1]
 
-```perl6
+```perl
 enum Tile-Type <Empty Mine>;
  
 class Tile {

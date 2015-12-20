@@ -2,7 +2,7 @@
 
 # [Elementary cellular automaton][1]
 
-```perl6
+```perl
 class Automaton {
     has ($.rule, @.cells);
     method gist { <| |>.join: @!cells.map({+$_ ?? '#' !! ' '}).join }
@@ -42,7 +42,7 @@ say $a++ for ^$size;
 
 Unfortunately that version is somewhat slow due to the (as yet) unoptimized vector operations, as well as rebuilding the code every iteration. The following version runs about ten times faster and produces the same output:
 
-```perl6
+```perl
 class Automaton {
     has $.rule;
     has @.cells;

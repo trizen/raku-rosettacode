@@ -4,7 +4,7 @@
 
 You can create constants in Perl 6 with constant:
 
-```perl6
+```perl
 constant $pi = 3.14159;
 constant $msg = "Hello World";
  
@@ -14,21 +14,21 @@ constant @arr = (1, 2, 3, 4, 5);
 
 Immutability is abstract enough that you can define an infinite constant lazily:
 
-```perl6
+```perl
 constant fibonacci = 0, 1, *+* ... *;
 ```
 
 
 Variables are considered mutable by default, but may be marked as readonly after initialization:
 
-```perl6
+```perl
 my $pi ::= 3 + rand;
 ```
 
 
 Unlike variables, formal parameters are considered readonly by default even if bound to a mutable container.
 
-```perl6
+```perl
 sub sum (Num $x, Num $y) {
 	$x += $y;  # ERROR
 }

@@ -4,7 +4,7 @@
 
 Perl 6 integers are arbitrary sized, and the lsb and msb methods are built-in.
 
-```perl6
+```perl
 sub table ($base,$power) {
     my $digits = ($base ** $power).chars;
     printf "%{$digits}s  lsb msb\n", 'number';

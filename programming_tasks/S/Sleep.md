@@ -4,7 +4,7 @@
 
 The <tt>sleep</tt> function argument is in units of seconds, but these may be fractional (to the limits of your system's clock).
 
-```perl6
+```perl
 my $sec = prompt("Sleep for how many microfortnights? ") * 1.2096;
 say "Sleeping...";
 sleep $sec;

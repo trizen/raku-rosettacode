@@ -2,7 +2,7 @@
 
 # [K-d tree][1]
 
-```perl6
+```perl
 class Kd_node {
     has $.d;
     has $.split;

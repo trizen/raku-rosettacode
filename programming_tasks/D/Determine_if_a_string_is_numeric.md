@@ -2,7 +2,7 @@
 
 # [Determine if a string is numeric][1]
 
-```perl6
+```perl
 sub is-number( $term --> Bool ) {
     ?($term ~~ /\d/) and +$term ~~ Numeric;
 }

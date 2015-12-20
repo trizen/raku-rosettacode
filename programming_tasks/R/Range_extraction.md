@@ -2,7 +2,7 @@
 
 # [Range extraction][1]
 
-```perl6
+```perl
 sub range-extraction (*@ints) {
     my $prev = NaN;
     my @ranges;

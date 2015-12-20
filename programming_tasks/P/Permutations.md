@@ -4,7 +4,7 @@
 
 First, you can just use the built-in method on any list type.
 
-```perl6
+```perl
 .say for <a b c>.permutations
 ```
 
@@ -21,7 +21,7 @@ c b a
 
 Here is some generic code that works with any ordered type. To force lexicographic ordering, change <tt>after</tt> to <tt>gt</tt>. To force numeric order, replace it with <tt>&gt;</tt>.
 
-```perl6
+```perl
 sub next_perm ( @a is copy ) {
     my $j = @a.end - 1;
     return Nil if --$j < 0 while @a[$j] after @a[$j+1];
@@ -53,7 +53,7 @@ c b a
 
 Here is another non-recursive implementation, which returns a lazy list. It also works with any type.
 
-```perl6
+```perl
 sub permute(+@items) {
    my @seq := 1..+@items;
    gather for (^[*] @seq) -> $n is copy {
@@ -82,7 +82,7 @@ sub permute(+@items) {
 
 Finally, if you just want zero-based numbers, you can call the built-in function:
 
-```perl6
+```perl
 .say for permutations(3);
 ```
 

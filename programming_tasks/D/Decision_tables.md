@@ -2,7 +2,7 @@
 
 # [Decision tables][1]
 
-```perl6
+```perl
 sub decide (@q, @s) {
     my $bit = 2 ** [+] (1,2,4...*) Z* reverse @q.map: {
 	so prompt(.value ~ "? ") ~~ /:i ^y/;

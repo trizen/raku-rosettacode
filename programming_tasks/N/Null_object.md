@@ -19,7 +19,7 @@ so it is like <tt>Object</tt> in other languages as well, except <tt>Mu</tt> als
 Mostly the user doesn't have to think about it. All object containers behave like "Maybe" types in Haskell terms; they may either hold a valid value or a "nothing" of an appropriate type.
 Most containers default to an object of type <tt>Any</tt> so you don't accidentally send quantum superpositions (junctions) around in your program.
 
-```perl6
+```perl
 my $var;
 say $var.WHAT;      # Any()
 $var = 42;
@@ -33,7 +33,7 @@ say $var.defined    # False
 
 You can declare a variable of type <tt>Mu</tt> if you wish to propagate superpositional types:
 
-```perl6
+```perl
 my Mu $junction;
 say $junction.WHAT;      # Mu()
 $junction = 1 | 2 | 3;
@@ -43,7 +43,7 @@ say $junction.WHAT;      # Junction()
 
 Or you can declare a more restricted type than <tt>Any</tt>
 
-```perl6
+```perl
 my Str $str;
 say $str.WHAT;      # Str()
 $str = "I am a string.";

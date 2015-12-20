@@ -19,7 +19,7 @@ with or without replacement.
 
 Selection with replacement: (roll of a die)
 
-```perl6
+```perl
 (1..6).roll;    # return 1 random value in the range 1 through 6
 (1..6).roll(3); # return a list of 3 random values in the range 1 through 6
 (1..6).roll(*); # return a lazy infinite list of random values in the range 1 through 6
@@ -28,7 +28,7 @@ Selection with replacement: (roll of a die)
 
 Selection without replacement: (pick a card from a deck)
 
-```perl6
+```perl
 # define the deck
 my @deck = <2 3 4 5 6 7 8 9 J Q K A> X~ <♠ ♣ ♥ ♦>;
 @deck.pick;    # Pick a card
@@ -40,7 +40,7 @@ my @deck = <2 3 4 5 6 7 8 9 J Q K A> X~ <♠ ♣ ♥ ♦>;
 Or you can always use the normal <tt>rand</tt> built-in
 to generate a subscript (which automatically truncates any fractional part):
 
-```perl6
+```perl
 @array[@array * rand]
 ```
 
@@ -49,6 +49,6 @@ However, the <tt>pick</tt> and <tt>roll</tt> methods (not to be confused
 with the pick-and-roll method in basketball) are more general
 insofar as they may be used on any enumerable type:
 
-```perl6
+```perl
 say Bool.pick;  # returns either True or False
 ```

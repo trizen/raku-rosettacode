@@ -2,7 +2,7 @@
 
 # [AKS test for primes][1]
 
-```perl6
+```perl
 constant expansions = [1], [1,-1], -> @prior { [@prior,0 Z- 0,@prior] } ... *;
  
 sub polyprime($p where 2..*) { so expansions[$p].[1 ..^ */2].all %% $p }
@@ -19,7 +19,7 @@ The <tt>polyprime</tt> function pretty much reads like the original description.
 
 Showing the expansions:
 
-```perl6
+```perl
 say ' p: (x-1)ᵖ';
 say '-----------';
  
@@ -65,7 +65,7 @@ for ^13 -> $d {
 
 And testing the function:
 
-```perl6
+```perl
 print "\nPrimes up to 100:\n  { grep &polyprime, 2..100 }\n";
 ```
 

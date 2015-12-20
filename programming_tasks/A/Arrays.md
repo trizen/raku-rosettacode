@@ -2,7 +2,7 @@
 
 # [Arrays][1]
 
-```perl6
+```perl
 my @arr;
  
 push @arr, 1;

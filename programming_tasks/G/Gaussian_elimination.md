@@ -4,7 +4,7 @@
 
 Multi-dimensional arrays are not fully implemented in rakudo yet, and that makes Linear Algebra and matrix manipulation quite painful currently. However, it's always possible to proceed as in C with one-dimensional arrays and some index reordering tricks.
 
-```perl6
+```perl
 sub mat_elem(@a, $y, $x, $n) is rw { @a[ $y * $n + $x ] }
 sub swap_row(@a, @b, $r1, $r2, $n) {
     return if $r1 == $r2;

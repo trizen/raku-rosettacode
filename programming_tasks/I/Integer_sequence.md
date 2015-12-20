@@ -2,6 +2,6 @@
 
 # [Integer sequence][1]
 
-```perl6
+```perl
 .say for 1..*
 ```

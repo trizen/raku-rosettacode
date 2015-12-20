@@ -4,7 +4,7 @@
 
 Here is a straight-forward, naive brute force implementation:
 
-```perl6
+```perl
 constant limit = 100;
  
 for [X] [^limit] xx 3 -> (\a, \b, \c) {
@@ -15,7 +15,7 @@ for [X] [^limit] xx 3 -> (\a, \b, \c) {
 
 Here is a slightly less naive brute force implementation that is not really practical for large perimeter limits. It's pretty zippy up to about 10000 though.
 
-```perl6
+```perl
 my %triples;
 my $limit = 10000;
  
@@ -62,7 +62,7 @@ of which 703 are primitive.
 
 Here's a much faster version. Hint, "oyako" is Japanese for "parent/child". <tt>:-)</tt>
 
-```perl6
+```perl
 sub triples($limit) {
     my $primitive = 0;
     my $civilized = 0;
@@ -110,7 +110,7 @@ The geometric sequence of limits will continue on forever, so eventually when yo
 
 Here is an alternate version that avoids naming any scalars that can be handled by vector processing instead:
 
-```perl6
+```perl
 constant @coeff = [[+1, -2, +2], [+2, -1, +2], [+2, -2, +3]],
                   [[+1, +2, +2], [+2, +1, +2], [+2, +2, +3]],
                   [[-1, +2, +2], [-2, +1, +2], [-2, +2, +3]];

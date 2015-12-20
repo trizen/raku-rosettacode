@@ -4,7 +4,7 @@
 
 Perl 6 has single-dimensional list comprehensions that fall out naturally from nested modifiers; multidimensional comprehensions are also supported via the cross operator; however, Perl&#160;6 does not (yet) support multi-dimensional list comprehensions with dependencies between the lists, so the most straightforward way is currently:
 
-```perl6
+```perl
 my $n = 20;
 gather for 1..$n -> $x {
          for $x..$n -> $y {

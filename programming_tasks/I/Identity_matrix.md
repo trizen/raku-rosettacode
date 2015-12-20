@@ -2,7 +2,7 @@
 
 # [Identity matrix][1]
 
-```perl6
+```perl
 sub identity-matrix($n) {
     my @id;
     for flat ^$n X ^$n -> $i, $j {
@@ -26,7 +26,7 @@ sub identity-matrix($n) {
 
 On the other hand, this may be clearer and/or faster:
 
-```perl6
+```perl
 sub identity-matrix($n) {
     my @id = [0 xx $n] xx $n;
     @id[$_][$_] = 1 for ^$n;
@@ -37,7 +37,7 @@ sub identity-matrix($n) {
 
 Here is yet an other way to do it:
 
-```perl6
+```perl
 sub identity-matrix($n) {
     ([1, |(0 xx $n-1)].item, *.rotate(-1).item ... *)[^$n]
 }

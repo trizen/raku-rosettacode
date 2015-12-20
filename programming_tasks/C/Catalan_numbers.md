@@ -4,21 +4,21 @@
 
 The recursive formulas are easily written into a constant array, either:
 
-```perl6
+```perl
 constant Catalan = 1, { [+] @_ Z* @_.reverse } ... *;
 ```
 
 
 or
 
-```perl6
+```perl
 constant Catalan = 1, |[\*] (2, 6 ... *) Z/ 2 .. *;
 ```
 
 
 In both cases, the sixteen first values can be seen with:
 
-```perl6
+```perl
 .say for Catalan[^15];
 ```
 

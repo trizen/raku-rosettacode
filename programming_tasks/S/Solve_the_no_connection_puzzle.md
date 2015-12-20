@@ -4,7 +4,7 @@
 
 Using the Warnsdorff algorithm from [Solve\_a\_Hidato\_puzzle](/wiki/Solve\_a\_Hidato\_puzzle" title="Solve a Hidato puzzle). The idiosyncratic adjacency diagram is dealt with by the simple expedient of bending the two vertical lines <tt>||</tt> into two bows <tt>)(</tt>, such that adjacency can be calculated simply as a distance of 2 or less.
 
-```perl6
+```perl
 my @adjacent = gather -> $y, $x {
     take [$y,$x] if abs($x|$y) > 2;
 } for -5 .. 5 X -5 .. 5;

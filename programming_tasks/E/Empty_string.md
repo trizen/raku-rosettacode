@@ -2,7 +2,7 @@
 
 # [Empty string][1]
 
-```perl6
+```perl
 my $s = '';
 say 'String is empty' unless $s;
 say 'String is not empty' if $s;

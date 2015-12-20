@@ -4,7 +4,7 @@
 
 Perl 6 doesn't have algebraic data types (yet), but it does have pretty good pattern matching in multi signatures.
 
-```perl6
+```perl
 enum RedBlack <R B>;
  
 multi balance(B,[R,[R,$a,$x,$b],$y,$c],$z,$d) { [R,[B,$a,$x,$b],$y,[B,$c,$z,$d]] }

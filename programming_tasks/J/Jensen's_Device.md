@@ -4,7 +4,7 @@
 
 Rather than playing tricks like Perl&#160;5 does, the declarations of the formal parameters are quite straightforward in Perl&#160;6:
 
-```perl6
+```perl
 sub sum($i is rw, $lo, $hi, &term) {
     my $temp = 0;
     loop ($i = $lo; $i <= $hi; $i++) {

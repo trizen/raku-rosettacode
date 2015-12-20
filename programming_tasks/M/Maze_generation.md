@@ -4,7 +4,7 @@
 
 Supply a width and height and optionally the x,y grid coords for the starting cell. If no starting cell is supplied, a random one will be selected automatically. 0,0 is the top left corner.
 
-```perl6
+```perl
 constant mapping = :OPEN(' '),
 		      :N< ╵ >,
 		      :E< ╶ >,

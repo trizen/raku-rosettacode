@@ -4,7 +4,7 @@
 
 To get the number of elements of an array in Perl 6 you put the array in a coercing Numeric context, or call `elems` on it.
 
-```perl6
+```perl
 my @array = |<apple orange banana>, set(<a b c>), 42;
  
 +@array;
@@ -37,7 +37,7 @@ takes-a-real @array;
 
 Watch out for infinite/lazy arrays though.
 
-```perl6
+```perl
 my @twos = 1, 2, 4, 8 ... *; # «1 2 4 8 16 32 64 128» ... Int.max, Inf, Inf, Inf ... *
  
 say +@twos; # would be an infinite loop ( actually an error )

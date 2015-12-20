@@ -2,7 +2,7 @@
 
 # [Statistics/Normal distribution][1]
 
-```perl6
+```perl
 constant τ = 2 * pi;
  
 sub normdist ($m, $σ) {

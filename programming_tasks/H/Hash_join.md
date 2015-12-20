@@ -2,7 +2,7 @@
 
 # [Hash join][1]
 
-```perl6
+```perl
 my @A = [1, "Jonah"],
         [2, "Alan"],
         [3, "Glory"],

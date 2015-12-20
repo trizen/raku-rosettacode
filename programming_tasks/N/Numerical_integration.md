@@ -2,7 +2,7 @@
 
 # [Numerical integration][1]
 
-```perl6
+```perl
 sub leftrect(&f, $a, $b, $n) {
     my $h = ($b - $a) / $n;
     $h * [+] do f($_) for $a, $a+$h ... $b-$h;

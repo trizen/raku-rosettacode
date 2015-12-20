@@ -8,7 +8,7 @@
 
 Exit either by clicking the button or the close window control in the upper corner.
 
-```perl6
+```perl
 use GTK::Simple;
  
 my GTK::Simple::App $app .= new(title => 'Simple GTK Window');

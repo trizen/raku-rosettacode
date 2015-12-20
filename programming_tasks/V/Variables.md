@@ -12,7 +12,7 @@ There are no typeglobs in Perl 6.
 
 Assigning an array to a scalar variable now makes that scalar variable a reference to the array:
 
-```perl6
+```perl
  
 my @y = <A B C D>; # Array of strings 'A', 'B', 'C', and 'D'
 say @y[2]; # the @-sigil requires the container to implement the role Positional
@@ -39,7 +39,7 @@ say "this is quite {bad}" # becomes more wordy
 
 Laziness is a big topic in Perl 6. Sometimes Perl programmers are so lazy, they can't even be bothered with giving [variables names](http://design.perl6.org/S02.html#Names\_and\_Variables).
 
-```perl6
+```perl
 say ++$; # this is an anonymous state variable
 say ++$; # this is a different anonymous state variable, prefix:<++> forces it into numerical context and defaults it to 0
 say $+=2 for 1..10 # here we do something useful with another anonymous variable

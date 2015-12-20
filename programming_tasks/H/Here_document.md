@@ -5,7 +5,7 @@
 Heredocs in Perl 6 use the `:to` modifier to a quoting operator,
 such as `q` or `qq`.
 
-```perl6
+```perl
 my $color = 'green';
 my $text = qq :to 'EOT';
 some line
@@ -28,7 +28,7 @@ last line
 
 Multiple here docs may be stacked on top of each other.
 
-```perl6
+```perl
 my $contrived_example = 'Dylan';
 sub freewheelin() {
         print q :to 'QUOTE', '-- ', qq :to 'AUTHOR';
@@ -52,7 +52,7 @@ freewheelin;
 
 Both q and qq are specialised forms of [Q](http://design.perl6.org/S02.html#Q\_forms) which comes with many adverbs. Here a heredoc that only interpolates @-sigils. The lowest level of indentation is removed from every line.
 
-```perl6
+```perl
  
 my $s = Q :array :to 'EOH';
     123 \n '"`

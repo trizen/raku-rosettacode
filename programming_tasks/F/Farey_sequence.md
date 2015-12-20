@@ -2,7 +2,7 @@
 
 # [Farey sequence][1]
 
-```perl6
+```perl
 sub farey ($order) { unique 0/1, |(1..$order).map: { |(1..$^d).map: { $^n/$d } } }
  
 say "Farey sequence order ";

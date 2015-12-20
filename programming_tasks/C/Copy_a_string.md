@@ -4,7 +4,7 @@
 
 There is no special handling needed to copy a string; just assign it to a new variable:
 
-```perl6
+```perl
 my $original = 'Hello.';
 my $copy = $original;
 say $copy;            # prints "Hello."
@@ -16,7 +16,7 @@ say $original;        # prints "Hello."
 
 You can also bind a new variable to an existing one so that each refers to, and can modify the same string.
 
-```perl6
+```perl
 my $original = 'Hello.';
 my $bound := $original;
 say $bound;           # prints "Hello."
@@ -28,7 +28,7 @@ say $original;        # prints "Goodbye."
 
 You can also create a read-only binding which will allow read access to the string but prevent modification except through the original variable.
 
-```perl6
+```perl
 my $original = 'Hello.';
 my $bound-ro ::= $original;
 say $bound-ro;        # prints "Hello."

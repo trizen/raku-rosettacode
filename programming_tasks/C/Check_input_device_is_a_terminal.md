@@ -2,7 +2,7 @@
 
 # [Check input device is a terminal][1]
 
-```perl6
+```perl
 say $*IN.t ?? "Input comes from tty." !! "Input doesn't come from tty.";
 ```
 

@@ -10,7 +10,7 @@ In <tt>MAIN</tt>, the <tt>classify</tt> method generates pairs where each key is
 
 This program also makes heavy use of method calls that start with dot. In Perl&#160;6 this means a method call on the current topic, <tt>$\_</tt>, which is automatically set by any <tt>for</tt> or <tt>map</tt> construct that doesn't declare an explicit formal parameter on its closure.
 
-```perl6
+```perl
 my @data = do for q:to/---/.lines -> $line {
         E10297  32000   D101    Tyler Bennett
         E21437  47000   D050    John Rappl

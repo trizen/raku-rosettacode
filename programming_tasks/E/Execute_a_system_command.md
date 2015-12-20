@@ -2,7 +2,7 @@
 
 # [Execute a system command][1]
 
-```perl6
+```perl
 run "ls" or die $!; # output to stdout
  
 my @ls = qx/ls/;    # output to variable

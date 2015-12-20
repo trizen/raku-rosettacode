@@ -4,7 +4,7 @@
 
 This fairly abstract version does caching and filtering to reduce the number of values it needs to check and moves calculations out of the hot loop, but is still interminably slow... even for just up to 1,000,000.
 
-```perl6
+```perl
 constant @sq = ^10 X** 2;
 my $cnt = 0;
 my %cache;
@@ -30,7 +30,7 @@ say $cnt;
 
 All is not lost, however. Through the use of gradual typing, Perl 6 scales down as well as up, so this jit-friendly version is performant enough to brute force the larger calculation:
 
-```perl6
+```perl
 my @cache;
 @cache[1] = 1;
 @cache[89] = 89;
@@ -74,7 +74,7 @@ say $cnt;
 
 This runs in under ten minutes. We can reduce this to 4 minutes by writing in the NQP (Not Quite Perl6) subset of the language:
 
-```perl6
+```perl
 my $cache := nqp::list_i();
 nqp::bindpos_i($cache, 650, 0);
 nqp::bindpos_i($cache, 1, 1);

@@ -2,7 +2,7 @@
 
 # [Check that file exists][1]
 
-```perl6
+```perl
 'input.txt'.IO ~~ :e;
 'docs'.IO ~~ :d;
 '/input.txt'.IO ~~ :e;

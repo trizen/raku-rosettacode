@@ -2,6 +2,6 @@
 
 # [Self-hosting compiler][1]
 
-```perl6
+```perl
 eval slurp
 ```

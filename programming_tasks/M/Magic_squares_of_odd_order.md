@@ -2,7 +2,7 @@
 
 # [Magic squares of odd order][1]
 
-```perl6
+```perl
 sub MAIN (Int $n = 5) {
  
     note "Sorry, must be a positive odd integer." and exit if $n %% 2 or $n < 0;

@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Strand sort][1]
 
-```perl6
+```perl
 sub infix:<M> (@x, @y) {
     gather {
 	while @x and @y {

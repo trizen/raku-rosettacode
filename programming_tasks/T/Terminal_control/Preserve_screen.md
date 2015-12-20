@@ -2,7 +2,7 @@
 
 # [Terminal control/Preserve screen][1]
 
-```perl6
+```perl
 print "\e[?1049h\e[H";
 say "Alternate buffer!";
  

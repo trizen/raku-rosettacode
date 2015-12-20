@@ -4,7 +4,7 @@
 
 Perl 6 has both mutable and immutable containers of various sorts. Here are some of the most common ones:
 
-```perl6
+```perl
 # Array
 my @array = 1,2,3;
 @array.push: 4,5,6;
@@ -22,7 +22,7 @@ $s ∪= <d e f>;
 my $b = BagHash.new: <b a k l a v a>;
 $b ⊎= <a b c>;
 ```
-```perl6
+```perl
 # List
 my @list := 1,2,3;
 my @newlist := |@list, 4,5,6; # |@list will slip @list into the surrounding list instead of creating a list of lists
@@ -35,11 +35,11 @@ my $newset = $set ∪ <d e f>;
 my $bag = bag <b a k l a v a>;
 my $newbag = $bag ⊎ <b e e f>;
 ```
-```perl6
+```perl
 my $tail = d => e => f => Nil;
 my $new = a => b => c => $tail;
 ```
-```perl6
+```perl
 my $obj = Something.new: foo => 1, bar => 2;
 my $newobj = $obj but role { has $.baz = 3 } # anonymous mixin
 ```

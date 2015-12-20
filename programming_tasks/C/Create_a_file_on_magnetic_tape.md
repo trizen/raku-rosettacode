@@ -2,7 +2,7 @@
 
 # [Create a file on magnetic tape][1]
 
-```perl6
+```perl
 my $tape = open "/dev/tape", :w or die "Can't open tape: $!";
 $tape.say: "I am a tape file now, or hope to be soon.";
 $tape.close;

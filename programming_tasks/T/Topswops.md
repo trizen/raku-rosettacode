@@ -2,7 +2,7 @@
 
 # [Topswops][1]
 
-```perl6
+```perl
 sub postfix:<!>(@a) {
     @a == 1
         ?? [@a]

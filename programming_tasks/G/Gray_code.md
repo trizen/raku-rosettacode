@@ -2,7 +2,7 @@
 
 # [Gray code][1]
 
-```perl6
+```perl
 sub gray_encode ( Int $n --> Int ) {
     return $n +^ ( $n +> 1 );
 }
@@ -25,7 +25,7 @@ for ^32 -> $n {
 This version is a translation of the Haskell solution,
 and produces the same output as the first Perl 6 solution.
 
-```perl6
+```perl
 multi bin_to_gray ( [] ) { [] }
 multi bin_to_gray ( [$head, *@tail] ) {
     return [ $head, ( @tail Z+^ ($head, @tail) ) ];

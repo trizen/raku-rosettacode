@@ -2,7 +2,7 @@
 
 # [Geometric algebra][1]
 
-```perl6
+```perl
 unit class MultiVector;
 has Real %.blades{UInt};
 method clean { for %!blades { %!blades{.key} :delete unless .value; } }
@@ -79,7 +79,7 @@ multi infix:<==>(MultiVector $A, Real $x) returns Bool is export {
 
 And here is the code for verifying the solution:
 
-```perl6
+```perl
 use MultiVector;
 use Test;
  

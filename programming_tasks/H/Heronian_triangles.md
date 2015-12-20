@@ -2,7 +2,7 @@
 
 # [Heronian triangles][1]
 
-```perl6
+```perl
 sub hero($a, $b, $c) {
     my $s = ($a + $b + $c) / 2;
     my $a2 = $s * ($s - $a) * ($s - $b) * ($s - $c);

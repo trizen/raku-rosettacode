@@ -2,7 +2,7 @@
 
 # [Date format][1]
 
-```perl6
+```perl
 use DateTime::Utils;
  
 my $dt = DateTime.now;

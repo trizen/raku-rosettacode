@@ -2,6 +2,6 @@
 
 # [Input/Output for Lines of Text][1]
 
-```perl6
+```perl
 $*OUT.say($*IN.get) xx $*IN.get;
 ```

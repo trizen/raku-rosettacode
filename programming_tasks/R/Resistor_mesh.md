@@ -2,7 +2,7 @@
 
 # [Resistor mesh][1]
 
-```perl6
+```perl
 my $S = 10;
  
 my @fixed;

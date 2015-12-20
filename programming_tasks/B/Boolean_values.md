@@ -4,7 +4,7 @@
 
 Perl 6 provides an enumeration `Bool` with two values, `True` and `False`. Values of enumerations can be used as ordinary values or as mixins:
 
-```perl6
+```perl
 my Bool $crashed = False;
 my $val = 0 but True;
 ```

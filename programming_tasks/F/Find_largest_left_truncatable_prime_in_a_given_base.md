@@ -8,7 +8,7 @@ Using the Miller-Rabin definition of <tt>is-prime</tt> from [Miller-Rabin primal
 
 I believe the composites don't hurt the algorithm because they do not confer any selective advantage on their "children", so their average length is no longer than the correct solution. In addition, the candidates in the finalist set all appear to be largely independent of each other, so any given composite tends to contribute only a single candidate, if any. I have no proof of this; I prefer my math to have more vigor than rigor. <tt>:-)</tt>
 
-```perl6
+```perl
 for 3..* -> $base {
     say "Starting base $base...";
     my @stems = grep { is-prime($_, 100)}, ^$base;

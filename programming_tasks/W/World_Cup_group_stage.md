@@ -2,7 +2,7 @@
 
 # [World Cup group stage][1]
 
-```perl6
+```perl
 constant scoring = 0, 1, 3;
 constant r = 0..2;
 my @histo = [0 xx 10] xx 4;

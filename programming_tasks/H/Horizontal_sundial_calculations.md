@@ -2,7 +2,7 @@
 
 # [Horizontal sundial calculations][1]
 
-```perl6
+```perl
 sub postfix:<°> ($a) { $a * pi / 180 } # degrees to radians
 sub postfix:<®> ($a) { $a * 180 / pi } # radians to degrees
  

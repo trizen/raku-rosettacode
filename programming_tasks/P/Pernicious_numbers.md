@@ -4,7 +4,7 @@
 
 Straightforward implementation using Perl 6's _is-prime_ built-in subroutine.
 
-```perl6
+```perl
 sub is-pernicious(Int $n --> Bool) {
     is-prime [+] $n.base(2).comb;
 }

@@ -2,7 +2,7 @@
 
 # [Circles of given radius through two points][1]
 
-```perl6
+```perl
 sub circles(@A, @B where (not [and] @A Z== @B), $radius where * > 0) {
     my @middle = .5 X* (@A Z+ @B);
     my @diff = @A Z- @B;
@@ -37,7 +37,7 @@ NaN NaN and NaN NaN
 Another possibility is to use the Complex plane,
 for it often makes calculations easier with plane geometry:
 
-```perl6
+```perl
 sub circles($a, $b where $b != $a, $r) {
     my $h = ($b - $a)/2;
     my $l = sqrt($r**2 - $h.abs**2);

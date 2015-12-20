@@ -4,7 +4,7 @@
 
 Here we use delegation to handle all the normal hash methods that we don't need to override to define our new class.
 
-```perl6
+```perl
 class FixedHash {
         has $.hash handles *;
         method new(*@args) { self.bless: *, hash => Hash.new: @args }
@@ -41,7 +41,7 @@ Actually thrown at:
 
 By defining [FALLBACK](http://design.perl6.org/S12.html#FALLBACK\_methods) any class can handle undefined method calls. Since any class inherits plenty of methods from <tt>Any</tt> our magic object will be more of a novice conjurer then a master wizard proper.
 
-```perl6
+```perl
 class Magic {
         has %.hash;
         multi method FALLBACK($name, |c) is rw { # this will eat any extra parameters

@@ -2,7 +2,7 @@
 
 # [Inheritance/Single][1]
 
-```perl6
+```perl
 class Animal {}
 class Dog is Animal {}
 class Cat is Animal {}

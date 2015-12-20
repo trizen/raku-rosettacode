@@ -9,7 +9,7 @@ We will take the liberty of wrapping the array of cells
 as it does not affect the result much
 and it makes the implementation a lot easier.
 
-```perl6
+```perl
 class Automata {
     has ($.rule, @.cells);
     method gist { <| |>.join: @!cells.map({$_ ?? '#' !! ' '}).join }
@@ -29,7 +29,7 @@ class Automata {
 
 The rule proposed for this task is rule 0b01101000 = 104
 
-```perl6
+```perl
 my $size = 10;
 my Automata $a .= new:
     :rule(104),
@@ -55,7 +55,7 @@ say $a++ for ^10;
 Rule 104 is not particularly interesting so here is [Rule 90](http://en.wikipedia.org/wiki/Rule\_90" class="extiw" title="wp:Rule 90),
 which shows a [Sierpinski Triangle](http://en.wikipedia.org/wiki/Sierpinski\_Triangle" class="extiw" title="wp:Sierpinski Triangle).
 
-```perl6
+```perl
 my $size = 50;
 my Automata $a .= new: :rule(90), :cells( 0 xx $size div 2, 1, 0 xx $size div 2 );
  

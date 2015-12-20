@@ -2,7 +2,7 @@
 
 # [Rot-13][1]
 
-```perl6
+```perl
 sub rot13 { $^s.trans: 'a..mn..z' => 'n..za..m', :ii }
  
 multi MAIN ()        { print rot13 slurp }

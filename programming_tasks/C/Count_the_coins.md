@@ -2,7 +2,7 @@
 
 # [Count the coins][1]
 
-```perl6
+```perl
 sub ways-to-make-change($amount, @coins) {
     my @cache = $[1 xx @coins];
  
@@ -23,7 +23,7 @@ say ways-to-make-change 1000_00, [1,5,10,25,50,100];
 242
 13398445413854501
 ```
-```perl6
+```perl
 sub ways-to-make-change-slowly(\n, @coins) {
     my @table = [1 xx @coins], [0 xx @coins] xx n;
     for 1..n X ^@coins -> (\i, \j) {

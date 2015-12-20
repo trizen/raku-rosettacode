@@ -2,7 +2,7 @@
 
 # [Continued fraction][1]
 
-```perl6
+```perl
 sub continued-fraction(:@a, :@b, Int :$n = 100)
 {
     my $x = @a[$n - 1];

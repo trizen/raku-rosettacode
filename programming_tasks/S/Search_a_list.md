@@ -2,7 +2,7 @@
 
 # [Search a list][1]
 
-```perl6
+```perl
 sub find ($matcher, $container) {
     for $container.kv -> $k, $v {
         $v ~~ $matcher and return $k;

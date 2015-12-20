@@ -4,7 +4,7 @@
 
 The C code is modified to output a .pgm file.
 
-```perl6
+```perl
 my $x = my $y = 255;
 $x +|= 1; # must be odd
  

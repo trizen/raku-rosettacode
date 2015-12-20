@@ -8,7 +8,7 @@ Perl 6 is not installed by default on most systems and does not have a default i
 
 *File: echo.p6*
 
-```perl6
+```perl
 #!/path/to/perl6
 put @*ARGS;
 ```

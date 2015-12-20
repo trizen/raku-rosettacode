@@ -2,7 +2,7 @@
 
 # [Ackermann function][1]
 
-```perl6
+```perl
 sub A(Int $m, Int $n) {
     if    $m == 0 { $n + 1 } 
     elsif $n == 0 { A($m - 1, 1) }
@@ -13,7 +13,7 @@ sub A(Int $m, Int $n) {
 
 An implementation using multiple dispatch:
 
-```perl6
+```perl
 multi sub A(0,      Int $n) { $n + 1                   }
 multi sub A(Int $m, 0     ) { A($m - 1, 1)             }
 multi sub A(Int $m, Int $n) { A($m - 1, A($m, $n - 1)) }
@@ -26,7 +26,7 @@ Note that in either case, Int is defined to be arbitrary precision in Perl&#160;
 
 Here's a caching version of that, written in the sigilless style, with liberal use of Unicode, and the extra optimizing terms to make A(4,2) possible:
 
-```perl6
+```perl
 proto A(Int \𝑚, Int \𝑛) { (state @)[𝑚][𝑛] //= {*} }
  
 multi A(0,      Int \𝑛) { 𝑛 + 1 }
@@ -41,7 +41,7 @@ multi A(Int \𝑚, Int \𝑛) { A(𝑚 - 1, A(𝑚, 𝑛 - 1)) }
 
 Testing:
 
-```perl6
+```perl
 say A(4,1);
 say .chars, " digits starting with ", .substr(0,50), "..." given A(4,2);
 ```

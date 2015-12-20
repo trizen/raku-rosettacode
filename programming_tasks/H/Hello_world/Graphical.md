@@ -2,7 +2,7 @@
 
 # [Hello world/Graphical][1]
 
-```perl6
+```perl
 use GTK::Simple;
  
 my GTK::Simple::App $app .= new;
@@ -10,7 +10,7 @@ $app.border_width = 20;
 $app.set_content( GTK::Simple::Label.new(text => "Goodbye, World!") );
 $app.run;
 ```
-```perl6
+```perl
 # Translated from http://www.mono-project.com/GtkSharp:_Hello_World
  
 constant $GTK = "gtk-sharp,Version=2.12.0.0,Culture=neutral,PublicKeyToken=35e10195dab3c99f";

@@ -2,7 +2,7 @@
 
 # [Pascal's triangle/Puzzle][1]
 
-```perl6
+```perl
 # set up triangle
 my $rows = 5;
 my @tri = (1..$rows).map: { [ { x => 0, z => 0, v => 0, rhs => Nil } xx $_ ] }

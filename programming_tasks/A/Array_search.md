@@ -4,7 +4,7 @@
 
 There are several search operations that may be used. It mostly depends on whether you want to find actual values or pointers, and/or all possible values or a single value matching your criteria. The most appropriate for the given test data/operations are shown here.
 
-```perl6
+```perl
 use JSON::Tiny;
  
 my $cities = from-json('

@@ -2,7 +2,7 @@
 
 # [Permutations by swapping][1]
 
-```perl6
+```perl
 sub insert($x, @xs) { ([flat @xs[0 ..^ $_], $x, @xs[$_ .. *]] for 0 .. +@xs) }
 sub order($sg, @xs) { $sg > 0 ?? @xs !! @xs.reverse }
  

@@ -2,7 +2,7 @@
 
 # [Set][1]
 
-```perl6
+```perl
 use Test;
  
 my $a = set <a b c>;

@@ -2,7 +2,7 @@
 
 # [Thue-Morse][1]
 
-```perl6
+```perl
 my @tm = 0, { @_.map: + ! * } ... *;
  
 say @tm[^64].join;

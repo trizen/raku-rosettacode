@@ -4,7 +4,7 @@
 
 We note with glee that the task does not require us to print <em>consecutive</em> integers, so we'll print Fibonacci numbers instead. <tt>:-)</tt>
 
-```perl6
+```perl
 signal(Signal::SIGINT).tap: {
     note "Took { now - INIT now } seconds.";
     exit;

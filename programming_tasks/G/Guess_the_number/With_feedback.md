@@ -2,7 +2,7 @@
 
 # [Guess the number/With feedback][1]
 
-```perl6
+```perl
 my $maxnum = prompt("Hello, please give me an upper boundary: ");
 until 0 < $maxnum < Inf {
     say "Oops! The upper boundary should be > 0 and not Inf";

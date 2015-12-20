@@ -4,7 +4,7 @@
 
 We'll use minimal mappings for SDL2. The resulting code is embarrassingly slow, but it's better than nothing.
 
-```perl6
+```perl
 use NativeCall;
  
 class SDL_Window is repr('CStruct') {}

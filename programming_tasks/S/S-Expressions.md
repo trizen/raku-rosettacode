@@ -4,7 +4,7 @@
 
 This parses the task, but it isn't really a good lisp parser, because it always wants whitespace between lists, so `(()())` will fail ( `(() ())` wont)
 
-```perl6
+```perl
 grammar S-Exp {
   rule TOP    {^ <s-list> $};
  

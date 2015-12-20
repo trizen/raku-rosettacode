@@ -2,7 +2,7 @@
 
 # [Ordered Partitions][1]
 
-```perl6
+```perl
 sub partition(@mask is copy) {
     my $last = [+] @mask or return [[] xx @mask];
     sort gather for @mask.kv -> $k,$v {

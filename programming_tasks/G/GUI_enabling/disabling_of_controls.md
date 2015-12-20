@@ -4,7 +4,7 @@
 
 Extremely basic implementation using the GTK library.
 
-```perl6
+```perl
 use GTK::Simple;
  
 my GTK::Simple::App $app .= new( title => 'Controls Enable / Disable' );

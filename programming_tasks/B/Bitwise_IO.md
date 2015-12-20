@@ -2,7 +2,7 @@
 
 # [Bitwise IO][1]
 
-```perl6
+```perl
 sub encode-ascii(Str $s) {
     my @b = $s.ords».fmt("%07b")».comb;
     @b.push(0) until @b %% 8;   # padding

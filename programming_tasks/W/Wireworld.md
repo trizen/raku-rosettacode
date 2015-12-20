@@ -2,7 +2,7 @@
 
 # [Wireworld][1]
 
-```perl6
+```perl
 class Wireworld {
     has @.line;
  

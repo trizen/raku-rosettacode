@@ -6,7 +6,7 @@ For the incomplete gamma function we use a series expansion related to Kummer's 
 (see [http://en.wikipedia.org/wiki/Incomplete\_gamma\_function#Evaluation\_formulae](http://en.wikipedia.org/wiki/Incomplete\_gamma\_function#Evaluation\_formulae)). The gamma function is calculated
 in closed form, as we only need its value at integers and half integers.
 
-```perl6
+```perl
 sub incomplete-γ-series($s, $z) {
     my \numers = $z X** 1..*;
     my \denoms = [\*] $s X+ 1..*;

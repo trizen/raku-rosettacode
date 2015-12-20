@@ -2,7 +2,7 @@
 
 # [One of n lines in a file][1]
 
-```perl6
+```perl
 sub one_of_n($n) {
     my $choice;
     $choice = $_ if .rand < 1 for 1 .. $n;

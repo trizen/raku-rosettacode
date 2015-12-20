@@ -4,7 +4,7 @@
 
 This solution avoids creating the closure B if $k &lt;= 0 (that is, nearly every time).
 
-```perl6
+```perl
 sub A($k is copy, &x1, &x2, &x3, &x4, &x5) {
     $k <= 0
         ?? x4() + x5()

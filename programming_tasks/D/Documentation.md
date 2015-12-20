@@ -4,7 +4,7 @@
 
 Similarly to Perl 5, Perl 6 is documented using [Pod](http://perlcabal.org/syn/S26.html) (a redesigned version of POD). However, it's not simply ignored by the parser as in Perl 5, it's an internal part of the language spec and can be used to attach documentation objects to almost any part of the code.
 
-```perl6
+```perl
 #= it's yellow
 sub marine { ... }
 say &marine.WHY; # "it's yellow"

@@ -2,6 +2,6 @@
 
 # [Speech synthesis][1]
 
-```perl6
+```perl
 run 'espeak', 'This is an example of speech synthesis.';
 ```

@@ -2,7 +2,7 @@
 
 # [Abundant, deficient and perfect number classifications][1]
 
-```perl6
+```perl
 sub propdivsum (\x) {
     [+] (1 if x > 1), gather for 2 .. x.sqrt.floor -> \d {
         my \y = x div d;

@@ -4,7 +4,7 @@
 
 vlq\_encode() returns a string of characters whose ordinals are the encoded octets. vlq\_decode() takes a string and returns a decimal number.
 
-```perl6
+```perl
 sub vlq_encode ($number is copy) {
     my $string = '';
     my $t = 0x7F +& $number;

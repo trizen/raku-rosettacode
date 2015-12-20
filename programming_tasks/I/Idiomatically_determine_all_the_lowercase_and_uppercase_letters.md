@@ -4,7 +4,7 @@
 
 Perl 6 supports all the Unicode categories of characters natively. The constant <tt>0x1fffd</tt> is <em>not</em> a typo for <tt>0x10ffff</tt>: we're restricting the range of characters to the first two Unicode planes, since the 3rd plane is reserved for ideographs (category Lo, "letter other"), and the subsequent planes contain no letters (yet).
 
-```perl6
+```perl
 given (0..0x1fffd).chrs {
     say "Lowercase: ", .comb(/<:Ll>/);
     say "Uppercase: ", .comb(/<:Lu>/);

@@ -20,7 +20,7 @@ and thus
 
 <img class="tex" alt="\frac{dABC\_{1..9}}{dt} = ABC\_{10..18}" src="/mw/images/math/0/8/a/08a1cac764ae2904a3434a81a12aeda9.png" />
 
-```perl6
+```perl
 # Simple Vector implementation
 multi infix:<+>(@a, @b) { @a Z+ @b }
 multi infix:<->(@a, @b) { @a Z- @b }

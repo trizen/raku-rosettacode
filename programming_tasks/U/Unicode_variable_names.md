@@ -8,7 +8,7 @@ Perl 6 is written in Unicode so, with narrow restrictions, nearly any Unicode le
 
 See Perl 6 Synopsis 02. - [http://perlcabal.org/syn/S02.html#Names](http://perlcabal.org/syn/S02.html#Names)
 
-```perl6
+```perl
 my $Δ = 1;
 $Δ++;
 say $Δ;
@@ -17,7 +17,7 @@ say $Δ;
 
 Function and subroutine names can also use Unicode characters: (as can methods, classes, packages, whatever...)
 
-```perl6
+```perl
 my @ᐁ = (0, 45, 60, 90);
  
 sub π { pi };

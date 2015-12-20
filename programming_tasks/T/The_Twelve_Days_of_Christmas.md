@@ -2,7 +2,7 @@
 
 # [The Twelve Days of Christmas][1]
 
-```perl6
+```perl
 my @days = <first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth>;
  
 my @gifts = lines q:to/END/;

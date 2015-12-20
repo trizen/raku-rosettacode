@@ -2,6 +2,6 @@
 
 # [Hello world/Standard error][1]
 
-```perl6
+```perl
 note "Goodbye, World!";
 ```

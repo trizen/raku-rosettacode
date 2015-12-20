@@ -4,7 +4,7 @@
 
 This solution is similar to the Haskell one. It is slow.
 
-```perl6
+```perl
 say lcs("thisisatest", "testing123testing");sub lcs(Str $xstr, Str $ystr) {
     return "" unless $xstr && $ystr;
  
@@ -16,7 +16,7 @@ say lcs("thisisatest", "testing123testing");sub lcs(Str $xstr, Str $ystr) {
  
 say lcs("thisisatest", "testing123testing");
 ```
-```perl6
+```perl
  
 sub lcs(Str $xstr, Str $ystr) {
     my ($xlen, $ylen) = ($xstr, $ystr)>>.chars;

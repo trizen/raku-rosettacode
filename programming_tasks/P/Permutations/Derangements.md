@@ -2,7 +2,7 @@
 
 # [Permutations/Derangements][1]
 
-```perl6
+```perl
 sub derange (@result, @avail) {
     if not @avail { @result.item }
     else {

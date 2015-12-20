@@ -2,7 +2,7 @@
 
 # [Holidays related to Easter][1]
 
-```perl6
+```perl
 my @abbr = < Nil Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec >;
  
 my @holidays =

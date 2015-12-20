@@ -2,7 +2,7 @@
 
 # [Empty directory][1]
 
-```perl6
+```perl
 sub dir-is-empty ($d) { not dir $d }
 ```
 

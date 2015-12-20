@@ -2,13 +2,13 @@
 
 # [A+B][1]
 
-```perl6
+```perl
 say [+] get.words
 ```
-```perl6
+```perl
 $*IN.get.words.reduce(* + *).say
 ```
-```perl6
+```perl
 my ($a,$b) = $*IN.get.split(" ");
 say $a + $b;
 ```

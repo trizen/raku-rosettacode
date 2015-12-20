@@ -4,7 +4,7 @@
 
 List operators such as X are naturally lazy in Perl 6.
 
-```perl6
+```perl
 my $k = <a b c>;
 my $n = 2;
  
@@ -27,7 +27,7 @@ c c
 
 Here is an other approach, counting all <span class="texhtml" dir="ltr">_k_<sup>_n_</sup></span> possibilities in base <span class="texhtml" dir="ltr">_k_</span>:
 
-```perl6
+```perl
 my @k = <a b c>;
 my $n = 2;
 say @k[.polymod(+@k xx ($n-1))] for ^@k**$n

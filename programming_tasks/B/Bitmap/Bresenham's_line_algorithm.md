@@ -2,7 +2,7 @@
 
 # [Bitmap/Bresenham's line algorithm][1]
 
-```perl6
+```perl
 sub line(Bitmap $bitmap, $x0 is copy, $x1 is copy, $y0 is copy, $y1 is copy) {
     my $steep = abs($y1 - $y0) > abs($x1 - $x0);
     if $steep {

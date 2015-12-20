@@ -2,7 +2,7 @@
 
 # [Range expansion][1]
 
-```perl6
+```perl
 sub range-expansion (Str $range-description) {
     my $range-pattern = rx/ ( '-'? \d+ ) '-' ( '-'? \d+) /;
     my &expand = -> $term { $term ~~ $range-pattern ?? +$0..+$1 !! $term };

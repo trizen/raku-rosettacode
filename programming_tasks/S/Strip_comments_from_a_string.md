@@ -2,6 +2,6 @@
 
 # [Strip comments from a string][1]
 
-```perl6
+```perl
 $*IN.slurp.subst(/ \h* <[ # ; ]> \N* /, '', :g).print
 ```

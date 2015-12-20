@@ -4,7 +4,7 @@
 
 Perl 6 handles graphemes correctly by default.
 
-```perl6
+```perl
 say "hello world".flip;
 say "as⃝df̅".flip
 ```

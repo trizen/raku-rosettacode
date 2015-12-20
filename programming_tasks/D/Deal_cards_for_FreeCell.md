@@ -2,7 +2,7 @@
 
 # [Deal cards for FreeCell][1]
 
-```perl6
+```perl
 sub dealgame ($game-number = 1) {
     sub ms-lcg-method($seed = $game-number) { ( 214013 * $seed + 2531011 ) % 2**31 }
  

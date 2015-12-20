@@ -4,7 +4,7 @@
 
 No blocking here. Algorithm doesn't really work if either red or black text begins with 'A'.
 
-```perl6
+```perl
 constant $n = 9516311845790656153499716760847001433441357;
 constant $e = 65537;
 constant $d = 5617843187844953170308463622230283376298685;

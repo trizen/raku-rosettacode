@@ -2,7 +2,7 @@
 
 # [Calendar][1]
 
-```perl6
+```perl
 my $months-per-col = 3;
 my @week-day-names = <Mo Tu We Th Fr Sa Su>;
 my @month-names = <Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec>;

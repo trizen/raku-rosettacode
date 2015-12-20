@@ -7,7 +7,7 @@ The newly implemented factorial function is used to implement left factorial usi
 Note that this redefines the core prefix&#160;! (not) function.
 The last two lines are display code for the various sub task requirements.
 
-```perl6
+```perl
 multi sub postfix:<!> (0) { 1 };
 multi sub postfix:<!> ($n) { [*] 1 .. $n };
 multi sub prefix:<!> (0) { 0 };
@@ -57,7 +57,7 @@ While the code above seems like a pretty decent "mathematical" way to write this
 it's far from efficient, since it's recalculating every factorial many times for each individual left factorial, not to mention for each subsequent left factorial, so it's something like an O(N^3) algorithm, not even counting the sizes of the numbers as one of the dimensions.
 In Perl 6, a more idiomatic way is to write these functions as constant "triangular reduction" sequences; this works in O(N)-ish time because the sequences never have to recalculate a prior result:
 
-```perl6
+```perl
 constant fact = 1, |[\*] 1..*;
 constant leftfact = 0, |[\+] fact;
  

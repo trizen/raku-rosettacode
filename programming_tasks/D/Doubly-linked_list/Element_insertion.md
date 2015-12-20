@@ -4,7 +4,7 @@
 
 Using the generic definitions from [Doubly-linked\_list/Definition#Perl\_6](/wiki/Doubly-linked\_list/Definition#Perl\_6" title="Doubly-linked list/Definition):
 
-```perl6
+```perl
 class DLElem_Str does DLElem[Str] {}
 class DLList_Str does DLList[DLElem_Str] {}
  

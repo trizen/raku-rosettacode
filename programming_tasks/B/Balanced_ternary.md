@@ -2,7 +2,7 @@
 
 # [Balanced ternary][1]
 
-```perl6
+```perl
 class BT {
     has @.coeff;
  

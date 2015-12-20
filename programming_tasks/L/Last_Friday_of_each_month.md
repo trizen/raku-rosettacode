@@ -2,7 +2,7 @@
 
 # [Last Friday of each month][1]
 
-```perl6
+```perl
 sub MAIN (Int $year = Date.today.year) {
     my @fri;
     for Date.new("$year-01-01") .. Date.new("$year-12-31") {
@@ -36,7 +36,7 @@ $ ./lastfri 2038
 
 A solution without a result array to store things in:
 
-```perl6
+```perl
 sub MAIN (Int $year = Date.today.year) {
     say ~.value.reverse.first: *.day-of-week == 5
         for classify *.month, Date.new("$year-01-01") .. Date.new("$year-12-31");
@@ -50,7 +50,7 @@ Here, `classify` sorts the dates into one bin per month (but preserves the order
 
 Another variation where the data flow can be read left to right using feed operators:
 
-```perl6
+```perl
 sub MAIN (Int $year = Date.today.year) {
     .say for Date.new("$year-01-01") .. Date.new("$year-12-31") ==> classify *.month ==>
              map *.value.reverse.first: *.day-of-week == 5

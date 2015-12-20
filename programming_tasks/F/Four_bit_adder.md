@@ -2,7 +2,7 @@
 
 # [Four bit adder][1]
 
-```perl6
+```perl
 sub xor ($a, $b) { ($a and not $b) or (not $a and $b) }
  
 sub half-adder ($a, $b) {

@@ -2,7 +2,7 @@
 
 # [Bitmap][1]
 
-```perl6
+```perl
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

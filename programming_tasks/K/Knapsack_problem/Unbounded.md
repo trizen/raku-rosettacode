@@ -4,7 +4,7 @@
 
 Brute force, looked a lot at the Ruby solution.
 
-```perl6
+```perl
 class KnapsackItem {
   has $.volume;
   has $.weight;

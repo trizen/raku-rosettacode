@@ -12,7 +12,7 @@ Perl 6 can't compute arbitrary large floating point values, thus we will use log
 
 Notice that Perl6 can process arbitrary long integers, though. So it's not clear whether using floating points is useful in this case.
 
-```perl6
+```perl
 multi P($n, $k) { [*] $n - $k + 1 .. $n }
 multi C($n, $k) { P($n, $k) / [*] 1 .. $k }
  

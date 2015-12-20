@@ -2,7 +2,7 @@
 
 # [Perfect shuffle][1]
 
-```perl6
+```perl
 sub perfect-shuffle (@deck) {
     my $mid = @deck / 2;
     flat @deck[0 ..^ $mid] Z @deck[$mid .. *];

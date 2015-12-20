@@ -2,7 +2,7 @@
 
 # [User input/Graphical][1]
 
-```perl6
+```perl
 use GTK::Simple;
  
 my GTK::Simple::App $app .= new( title => 'User Interaction' );

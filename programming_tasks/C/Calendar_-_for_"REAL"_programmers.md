@@ -8,7 +8,7 @@ Uppercase is no challenge, who needs letters at all?
 
 [Requires the year to be supplied as a command-line argument, Snoopy to be available in snoopy.txt, and Unixish _cat_ and _cal_ commands.]
 
-```perl6
+```perl
 $_=["\0"..."~"];<
 114 117 110 32 34 99 97 116 32 115 110 111 111 112 121 46
 116 120 116 59 99 97 108 32 64 42 65 82 71 83 91 48 93 34

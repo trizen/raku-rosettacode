@@ -2,7 +2,7 @@
 
 # [File modification time][1]
 
-```perl6
+```perl
 use NativeCall;
  
 class utimbuf is repr('CStruct') {

@@ -2,7 +2,7 @@
 
 # [Floyd's triangle][1]
 
-```perl6
+```perl
 constant @floyd = gather for 1..* -> $s { take [++$ xx $s] }
  
 sub say-floyd($n) {

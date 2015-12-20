@@ -4,7 +4,7 @@
 
 Perl 6 has a system of declarators that introduce new names into various scopes.
 
-```perl6
+```perl
 my $lexical-variable;
 our $package-variable;
 state $persistent-lexical;
@@ -32,7 +32,7 @@ Method declarations are implicitly in "has" scope.
 
 In Perl 5, dynamic scoping is done via "local" to temporarily change the value of a global variable. This mechanism is still specced for Perl 6, albeit with a different keyword, <tt>temp</tt>, that better reflects what it's doing. None of the implementations yet implement <tt>temp</tt>, since Perl 6 does dynamic scoping via a more robust system of scanning up the call stack for the innermost dynamic declaration, which actually lives in the lexical scope of the function declaring it. We distinguish dynamic variables syntactically by introducing a "twigil" after the sigil. The twigil for dynamic variables is <tt>\*</tt> to represent that we don't know how to qualify the location of the variable.
 
-```perl6
+```perl
 sub a {
     my $*dyn = 'a';
     c();

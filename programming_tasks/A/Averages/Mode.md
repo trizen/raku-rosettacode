@@ -2,7 +2,7 @@
 
 # [Averages/Mode][1]
 
-```perl6
+```perl
 sub mode (@a) {
     my %counts;
     ++%counts{$_} for @a;

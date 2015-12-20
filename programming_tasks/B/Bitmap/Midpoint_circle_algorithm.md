@@ -4,7 +4,7 @@
 
 We'll augment the Pixel and Bitmap classes.
 
-```perl6
+```perl
 use MONKEY_TYPING;
 augment class Pixel { method Str { "$.R $.G $.B" } }
 augment class Bitmap {

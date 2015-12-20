@@ -21,7 +21,7 @@ nested loops. The X cross operator, along with Z, the zip operator, is a member 
 Third is the use of prefix <tt>^</tt> to generate a list of numbers in a range. Here it is
 used on an array to generate all the indexes of the array. We have a way of indicating a range by the infix <tt>..</tt> operator, and you can put a <tt>^</tt> on either end to exclude that endpoint. We found ourselves writing <tt>0 ..^ @a</tt> so often that we made <tt>^@a</tt> a shorthand for that. It's pronounced "upto". The array is evaluated in a numeric context, so it returns the number of elements it contains, which is exactly what you want for the exclusive limit of the range.
 
-```perl6
+```perl
 sub mmult(@a,@b) {
     my @p;
     for ^@a X ^@b[0] -> ($r, $c) {
@@ -60,7 +60,7 @@ Hence we need not rely on format tricks to hide floating-point inaccuracies.
 Just for the fun of it, here's a functional version that uses no temp variables or side effects.
 Some people will find this more readable and elegant, and others will, well, not.
 
-```perl6
+```perl
 sub mmult(\a,\b) {
     [
         for ^a -> \r {

@@ -2,7 +2,7 @@
 
 # [Digital root/Multiplicative digital root][1]
 
-```perl6
+```perl
 sub multiplicative-digital-root(Int $n) {
     return .elems - 1, .[.end]
         given $n, {[*] .comb} ... *.chars == 1

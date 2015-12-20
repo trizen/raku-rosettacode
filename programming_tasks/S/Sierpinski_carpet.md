@@ -2,7 +2,7 @@
 
 # [Sierpinski carpet][1]
 
-```perl6
+```perl
 sub carpet
 {
     (['#'], -> @c {
@@ -18,7 +18,7 @@ say carpet[3];
 
 Same as above, structured as an array bound to a sequence, with a separate sub for clarity.
 
-```perl6
+```perl
 sub weave ( @c ) {[
     @c.map({ $_ x 3 }), 
     @c.map({ $_ ~ .trans( '#' => ' ' ) ~ $_ }),

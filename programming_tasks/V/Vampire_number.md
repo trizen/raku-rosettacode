@@ -2,7 +2,7 @@
 
 # [Vampire number][1]
 
-```perl6
+```perl
 my @vampires := gather for 1 .. * -> $start, $end {
     map {
         my @fangs = is_vampire($_);

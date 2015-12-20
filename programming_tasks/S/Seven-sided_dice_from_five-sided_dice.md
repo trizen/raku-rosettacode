@@ -5,7 +5,7 @@
 Since rakudo is still pretty slow, we've done some interesting bits of optimization.
 We factor out the range object construction so that it doesn't have to be recreated each time, and we sneakily <em>subtract</em> the 1's from the 5's, which takes us back to 0 based without having to subtract 6.
 
-```perl6
+```perl
 my $d5 = 1..5;
 sub d5() { $d5.roll; }  # 1d5
  
@@ -19,7 +19,7 @@ sub d7() {
 
 Here's the test. We use a C-style for loop, except it's named `loop`, because it's currently faster than the other loops--and, er, doesn't segfault the GC on a million iterations...
 
-```perl6
+```perl
 my @dist;
 my $n = 1_000_000;
 my $expect = $n / 7;

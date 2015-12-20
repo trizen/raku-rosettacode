@@ -2,7 +2,7 @@
 
 # [General FizzBuzz][1]
 
-```perl6
+```perl
 # General case implementation of a "FizzBuzz" class.
 # Defaults to standard FizzBuzz unless a new schema is passed in.
 class FizzBuzz {
@@ -64,7 +64,7 @@ Using: 21 2 Pip 4 Squack 5 Pocketa 7 Queep
 
 Here's the same program in a more functional idiom:
 
-```perl6
+```perl
 sub genfizzbuzz($n, +@fb) {
     [Z~](
         do for @fb || <3 fizz 5 buzz> -> $i, $s {

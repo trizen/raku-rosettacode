@@ -2,7 +2,7 @@
 
 # [String prepend][1]
 
-```perl6
+```perl
 # explicit concatentation
 $_ = 'byte';
 $_ = 'kilo' ~ $_;

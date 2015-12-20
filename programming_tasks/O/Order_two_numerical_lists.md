@@ -4,7 +4,7 @@
 
 This is already a built-in comparison operator.
 
-```perl6
+```perl
 my @a = <1 2 4>;
 my @b = <1 2 4>;
 say @a," before ",@b," = ", @a before @b;

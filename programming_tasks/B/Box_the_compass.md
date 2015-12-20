@@ -2,7 +2,7 @@
 
 # [Box the compass][1]
 
-```perl6
+```perl
 sub point (Int $index) {
     my $ix = $index % 32;
     if $ix +& 1

@@ -4,7 +4,7 @@
 
 Since the list routines are supplied by the generic roles defined in [Doubly-linked\_list/Definition#Perl\_6](/wiki/Doubly-linked\_list/Definition#Perl\_6" title="Doubly-linked list/Definition), it suffices to say:
 
-```perl6
+```perl
 say $dll.list;
 say $dll.reverse;
 ```

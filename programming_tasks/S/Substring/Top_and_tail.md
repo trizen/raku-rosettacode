@@ -8,7 +8,7 @@ Perl 6 provides both functional and method forms of substr. Note that, unlike i
 
 We use musical sharps and flats to illustrate that Perl is comfortable with characters from any Unicode plane.
 
-```perl6
+```perl
 my $s = '𝄪♯♮♭𝄫';
  
 print qq:to/END/;

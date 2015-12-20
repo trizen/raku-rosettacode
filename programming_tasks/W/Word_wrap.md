@@ -2,7 +2,7 @@
 
 # [Word wrap][1]
 
-```perl6
+```perl
 my $s = "In olden times when wishing still helped one, there lived a king
 whose daughters were all beautiful, but the youngest was so beautiful
 that the sun itself, which has seen so much, was astonished whenever

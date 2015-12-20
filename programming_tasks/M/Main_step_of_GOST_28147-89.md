@@ -4,7 +4,7 @@
 
 Implemented to match explanation on Discussion page:
 
-```perl6
+```perl
 # sboxes from http://en.wikipedia.org/wiki/GOST_(block_cipher)
 constant sbox =
     [4, 10, 9, 2, 13, 8, 0, 14, 6, 11, 1, 12, 7, 15, 5, 3],

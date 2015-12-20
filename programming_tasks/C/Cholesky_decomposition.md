@@ -2,7 +2,7 @@
 
 # [Cholesky decomposition][1]
 
-```perl6
+```perl
 sub cholesky(@A) {
     my @L = @A »*» 0;
     for ^@A -> $i {

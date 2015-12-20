@@ -4,7 +4,7 @@
 
 Perl 6 tries to avoid generic terms such as "size" and "length", instead providing methods that are expressed in terms of the units appropriate to the abstraction level.
 
-```perl6
+```perl
 # Textual strings are measured in characters (graphemes)
 my $string = "abc";
  

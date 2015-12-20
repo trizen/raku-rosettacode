@@ -4,7 +4,7 @@
 
 This solution refuses to return an answer when the angles cancel out to a tiny magnitude.
 
-```perl6
+```perl
 sub deg2rad { $^d * pi / 180 }
 sub rad2deg { $^r * 180 / pi }
 sub phase ($c)  {

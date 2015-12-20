@@ -2,7 +2,7 @@
 
 # [File extension is in extensions list][1]
 
-```perl6
+```perl
 sub ext-in-list(@ext,@files) {
     for @files {
         when / :i @ext $ /      { say "True\t$_" }

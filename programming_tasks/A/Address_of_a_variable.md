@@ -2,7 +2,7 @@
 
 # [Address of a variable][1]
 
-```perl6
+```perl
 my $x; say $x.WHERE;
 ```
 

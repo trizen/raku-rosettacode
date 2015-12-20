@@ -7,7 +7,7 @@ and the sequence operator <tt>...</tt>, which can intuit an even or odd sequence
 The <tt>[+]</tt> is a reduction metaoperator; with <tt>+</tt> it just sums the list of values.
 <tt>%%</tt> is the divisible-by operator.
 
-```perl6
+```perl
 sub luhn-test ($cc-number --> Bool) {
     my @digits = $cc-number.comb.reverse;
     my $s1 = [+] @digits[0,2...@digits.end];
@@ -20,7 +20,7 @@ sub luhn-test ($cc-number --> Bool) {
 
 And we can test it like this:
 
-```perl6
+```perl
 use Test;
  
 my %cc-numbers =

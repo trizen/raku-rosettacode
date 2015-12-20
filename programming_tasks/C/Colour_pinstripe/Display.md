@@ -2,7 +2,7 @@
 
 # [Colour pinstripe/Display][1]
 
-```perl6
+```perl
 my $HOR = 1280;
 my $VERT = 720;
  

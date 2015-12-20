@@ -4,6 +4,6 @@
 
 The `dir` function takes the directory to traverse, and optionally a named parameter `test`, which can for example be a regex:
 
-```perl6
+```perl
 .say for dir(".", :test(/foo/))
 ```

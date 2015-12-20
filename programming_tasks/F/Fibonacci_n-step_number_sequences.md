@@ -2,7 +2,7 @@
 
 # [Fibonacci n-step number sequences][1]
 
-```perl6
+```perl
 sub fibo ($n) {
     constant @starters = 1,1,2,4 ... *;
     nacci @starters[^$n];
@@ -34,7 +34,7 @@ say nacci(2,1)[^20];
 
 A slightly more straight forward way of constructing a lazy list.
 
-```perl6
+```perl
 sub fib ($n, @xs is copy = [1]) {
     gather {
         take @xs[*];

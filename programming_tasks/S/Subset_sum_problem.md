@@ -2,7 +2,7 @@
 
 # [Subset sum problem][1]
 
-```perl6
+```perl
 my @pairs =
     alliance => -624, archbishop => -915, balm => 397, bonnet => 452,
     brute => 870, centipede => -658, cobol => 362, covariate => 590,

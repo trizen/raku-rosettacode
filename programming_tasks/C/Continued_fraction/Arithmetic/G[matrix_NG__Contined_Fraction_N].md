@@ -4,7 +4,7 @@
 
 All the important stuff takes place in the NG object. Everything else is helper subs for testing and display.
 
-```perl6
+```perl
 class NG {
     has ( $!a1, $!a, $!b1, $!b );
     submethod BUILD ( :$!a1, :$!a, :$!b1, :$!b ) { }
@@ -98,7 +98,7 @@ test_NG(|$_) for (
 
 The cf for (1+√2)/2 in the testing routine is an approximation. The NG object is capable of working with infinitely long continued fractions, but displaying them can be problematic. You can pass in a limit to the apply method to get a fixed maximum number of terms though. Here are the first 100 terms from the infinite cf (1+√2)/2 and its Rational representation.
 
-```perl6
+```perl
 my @continued-fraction = NG.new( 1,1,0,2 ).apply( ( 1, 2 xx * ), limit => 100 );
 say @continued-fraction.&ppcf.comb(/ . ** 1..80/).join("\n");
 say @continued-fraction.&cf2r.&pprat;

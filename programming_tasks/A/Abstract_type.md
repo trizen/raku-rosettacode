@@ -4,7 +4,7 @@
 
 Perl 6 supports roles, which are a bit like interfaces, but unlike interfaces in Java they can also contain some implementation.
 
-```perl6
+```perl
  
 use v6;
  

@@ -2,7 +2,7 @@
 
 # [Non-decimal radices/Convert][1]
 
-```perl6
+```perl
 sub from-base(Str $str, Int $base) {
     +":$base\<$str>";
 }

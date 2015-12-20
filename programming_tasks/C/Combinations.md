@@ -4,7 +4,7 @@
 
 There actually is a builtin:
 
-```perl6
+```perl
 .say for combinations(5,3);
 ```
 
@@ -25,7 +25,7 @@ There actually is a builtin:
 
 Here is an iterative routine with the same output:
 
-```perl6
+```perl
 sub combinations(Int $n, Int $k) {
     return ([],) unless $k;
     return if $k > $n || $n <= 0;
@@ -46,7 +46,7 @@ sub combinations(Int $n, Int $k) {
 
 or recursive with same output, but much slower:
 
-```perl6
+```perl
 sub combinations(Int $n, Int $k) {
     return [] if $k == 0;
     return () if $k > $n;

@@ -2,7 +2,7 @@
 
 # [Arithmetic-geometric mean][1]
 
-```perl6
+```perl
  
 sub agm( $a is copy, $g is copy ) {
     loop {

@@ -2,7 +2,7 @@
 
 # [Strip block comments][1]
 
-```perl6
+```perl
 sample().split(/ '/*' .+? '*/' /).print;
  
 sub sample {

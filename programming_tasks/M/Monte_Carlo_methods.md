@@ -28,7 +28,7 @@ Monte-Carlo π approximation:
 
 We don't really need to write a function, though. A lazy list would do:
 
-```perl6
+```perl
 my @pi = ([\+] 4 * (1 > [+] rand**2 xx 2) xx *) Z/ 1 .. *;
 say @pi[10, 1000, 10_000];
 ```

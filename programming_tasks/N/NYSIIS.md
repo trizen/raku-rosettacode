@@ -4,7 +4,7 @@
 
 This implementation removes common name suffixes similar to the reference implementation, even though it is not specified in the task description or on the linked [NYSIIS](http://en.wikipedia.org/wiki/New\_York\_State\_Identification\_and\_Intelligence\_System" class="extiw" title="wp:New York State Identification and Intelligence System) page. This algorithm isn't too friendly to certain French kings.&#160;:)
 
-```perl6
+```perl
 sub no_suffix ($name) {
     $name.uc.subst: /\h (<[JS]>R) | (<[IVX]>+) $/, '';
 }

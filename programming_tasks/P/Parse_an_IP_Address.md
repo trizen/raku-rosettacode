@@ -2,7 +2,7 @@
 
 # [Parse an IP Address][1]
 
-```perl6
+```perl
 grammar IP_Addr {
     token TOP { ^ [ <IPv4> | <IPv6> ] $ }
  

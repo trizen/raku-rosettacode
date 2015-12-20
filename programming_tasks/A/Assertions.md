@@ -2,7 +2,7 @@
 
 # [Assertions][1]
 
-```perl6
+```perl
 my $a = (1..100).pick;
  
 # with a (non-hygienic) macro

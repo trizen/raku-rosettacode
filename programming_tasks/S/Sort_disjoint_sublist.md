@@ -4,7 +4,7 @@
 
 Using L-value slice of the array, and \`sort\` as a mutating method:
 
-```perl6
+```perl
 my @values  = 7, 6, 5, 4, 3, 2, 1, 0;
 my @indices = 6, 1, 7;
  

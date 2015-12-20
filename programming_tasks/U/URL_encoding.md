@@ -2,7 +2,7 @@
 
 # [URL encoding][1]
 
-```perl6
+```perl
 my $url = 'http://foo bar/';
  
 say $url.subst(/<-alnum>/, *.ord.fmt("%%%02X"), :g);

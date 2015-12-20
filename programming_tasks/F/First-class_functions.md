@@ -4,7 +4,7 @@
 
 Here we use the <tt>Z</tt> ("zipwith") metaoperator to zip the 𝐴 and 𝐵 lists with a user-defined compose function, expressed as an infix operator, <tt>∘</tt>. The <tt>.()</tt> construct invokes the function contained in the <tt>$\_</tt> (current topic) variable.
 
-```perl6
+```perl
 sub infix:<∘> (&𝑔, &𝑓) { -> \x { 𝑔 𝑓 x } }
  
 my \𝐴 = &sin,  &cos,  { $_ ** <3/1> }
@@ -27,7 +27,7 @@ Output:
 
 Operators, both buildin and user-defined, are first class too.
 
-```perl6
+```perl
 my @a = 1,2,3;
 my @op = &infix:<+>, &infix:<->, &infix:<*>;
 for flat @a Z @op -> $v, &op { say 42.&op($v) }

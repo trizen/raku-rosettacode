@@ -2,7 +2,7 @@
 
 # [Runtime evaluation/In an environment][1]
 
-```perl6
+```perl
 sub eval_with_x($code, *@x) { [R-] @x.map: -> \x { eval $code } }
  
 say eval_with_x('3 * x', 5, 10);      # Says "15".

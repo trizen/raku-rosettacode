@@ -2,7 +2,7 @@
 
 # [Test a function][1]
 
-```perl6
+```perl
 use Test;
  
 my %tests =

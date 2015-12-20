@@ -2,7 +2,7 @@
 
 # [History variables][1]
 
-```perl6
+```perl
 class HistoryVar {
     has @.history;
     has $!var handles <Str gist FETCH Numeric>;

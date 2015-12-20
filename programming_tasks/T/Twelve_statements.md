@@ -2,7 +2,7 @@
 
 # [Twelve statements][1]
 
-```perl6
+```perl
 sub infix:<→> ($protasis,$apodosis) { !$protasis or $apodosis }
  
 my @tests = { True },  # (there's no 0th statement)

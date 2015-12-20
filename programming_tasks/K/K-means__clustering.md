@@ -4,7 +4,7 @@
 
 We use Complex numbers to represent points in the plane. We feed the algorithm with three artificially made clouds of points so we can easily see if the output makes sense.
 
-```perl6
+```perl
 sub infix:«-means++»(Int $K, @data) {
     my @means = @data.pick;
     until @means == $K {

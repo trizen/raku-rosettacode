@@ -8,6 +8,6 @@ As Perl 5. Perl 6 supports type constraints for variables and subroutines, unlik
 
 Alternatively, you can write it like this:
 
-```perl6
+```perl
 ($x, $y) .= reverse;
 ```

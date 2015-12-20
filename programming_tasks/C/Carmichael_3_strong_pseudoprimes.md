@@ -4,7 +4,7 @@
 
 An almost direct translation of the pseudocode. We take the liberty of going up to 67 to show we aren't limited to 32-bit integers. (Perl 6 uses arbitrary precision in any case.)
 
-```perl6
+```perl
 for (2..67).grep: *.is-prime -> \Prime1 {
     for 1 ^..^ Prime1 -> \h3 {
         my \g = h3 + Prime1;

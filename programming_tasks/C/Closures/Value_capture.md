@@ -4,7 +4,7 @@
 
 All blocks are anonymous closures in Perl 6, and parameters are lexicals, so it's easy to generate a list of them. We'll use a <tt>gather</tt>/<tt>take</tt> generator loop, and call the closures in random order, just to keep things interesting.
 
-```perl6
+```perl
 my @c = gather for ^10 -> $i {
     take { $i * $i }
 }
@@ -29,6 +29,6 @@ my @c = gather for ^10 -> $i {
 
 Or equivalently, using a more functional notation:
 
-```perl6
+```perl
 say .() for pick *, map -> $i { -> {$i * $i} }, ^10
 ```

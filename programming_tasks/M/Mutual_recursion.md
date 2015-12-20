@@ -4,7 +4,7 @@
 
 A direct translation of the definitions of <span class="texhtml" dir="ltr">_F_</span> and <span class="texhtml" dir="ltr">_M_</span>:
 
-```perl6
+```perl
 multi F(0) { 1 }; multi M(0) { 0 }
 multi F(\𝑛) { 𝑛 - M(F(𝑛 - 1)) }
 multi M(\𝑛) { 𝑛 - F(M(𝑛 - 1)) }

@@ -2,7 +2,7 @@
 
 # [Tokenize a string with escaping][1]
 
-```perl6
+```perl
 sub tokenize ($string, :$sep!, :$esc!) {
     return $string.match(/([ <!before $sep | $esc> . | $esc . ]*)+ % $sep/)\
                   .[0].map(*.subst: /$esc )> ./, '', :g);

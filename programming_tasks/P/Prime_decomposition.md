@@ -2,7 +2,7 @@
 
 # [Prime decomposition][1]
 
-```perl6
+```perl
 constant @primes = 2, 3, 5, -> *@p {
     my $n = @p[*-1];
     repeat { $n += 2 } while $n %% any @p.grep: * **2 <= $n;

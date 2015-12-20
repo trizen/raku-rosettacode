@@ -2,7 +2,7 @@
 
 # [Sieve of Eratosthenes][1]
 
-```perl6
+```perl
 sub sieve( Int $limit ) {
     my @is-prime = False, False, slip True xx $limit - 1;
  
@@ -20,7 +20,7 @@ sub sieve( Int $limit ) {
 
 A recursive version:
 
-```perl6
+```perl
 multi erat(Int $N) { erat 2 .. $N }
 multi erat(@a where @a[0] > sqrt @a[*-1]) { @a }
 multi erat(@a) { @a[0], erat(@a.grep: * % @a[0]) }
@@ -31,7 +31,7 @@ say erat 100;
 
 Of course, upper limits are for wusses. Here's a version using infinite streams, that just keeps going until you ^C it (works under Niecza, but not current Rakudo):
 
-```perl6
+```perl
 role Filter[Int $factor] {
     method next { repeat until $.value % $factor { callsame } }
 }

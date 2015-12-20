@@ -8,7 +8,7 @@ This solution spawns new Particles at a growing square border and displays the T
 
 With the given size of 100 and particle count of 1000, this takes about 25 seconds with Niecza on my notebook.
 
-```perl6
+```perl
 constant size = 100;
 constant particlenum = 1_000;
  

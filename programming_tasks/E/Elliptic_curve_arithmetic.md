@@ -2,7 +2,7 @@
 
 # [Elliptic curve arithmetic][1]
 
-```perl6
+```perl
 module EC;
 our ($A, $B) = (0, 7);
  

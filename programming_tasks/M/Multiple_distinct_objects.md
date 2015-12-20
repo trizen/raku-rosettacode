@@ -4,7 +4,7 @@
 
 Unlike in Perl 5, the list repetition operator evaluates the left argument thunk each time, so
 
-```perl6
+```perl
 my @a = Foo.new xx $n;
 ```
 

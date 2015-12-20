@@ -18,7 +18,7 @@ Use of a subscript is considered sufficiently explicit though.)
 
 The type of object contained in a scalar depends on how you assign it and how you use it.
 
-```perl6
+```perl
 my $x;
  
 $x = 1234;      say $x.WHAT; # (Int) Integer
@@ -41,7 +41,7 @@ $x = True;      say $x.WHAT; # (Bool) Boolean
 
 Objects may be converted between various types many times during an operation. Consider the following line of code.
 
-```perl6
+```perl
 say :16(([+] 1234.ords).sqrt.floor ~ "beef");
 ```
 
@@ -52,7 +52,7 @@ In English: Take the floor of the square root of the sum of the ordinals of the 
 
 Broken down step by step:
 
-```perl6
+```perl
 my $x = 1234;                                  say $x, ' ', $x.WHAT; # 1234 (Int)
 $x = 1234.ords;                                say $x, ' ', $x.WHAT; # 49 50 51 52 (List)
 $x = [+] 1234.ords;                            say $x, ' ', $x.WHAT; # 202 (Int)
@@ -69,7 +69,7 @@ Some types are not implicitly converted.
 For instance, you must explicitly request and cast to Complex numbers and FatRat numbers.
 (A normal Rat number has a denominator that is limited to 64 bits, with underflow to floating point to prevent performance degradation; a FatRat, in contrast, has an unlimited denominator size, and can chew up all your memory if you're not careful.)
 
-```perl6
+```perl
 $x = (-1).sqrt;           say $x, ' ', $x.WHAT; # NaN (Num)
 $x = (-1).Complex.sqrt;   say $x, ' ', $x.WHAT; # 6.12323399573677e-17+1i (Complex)
  

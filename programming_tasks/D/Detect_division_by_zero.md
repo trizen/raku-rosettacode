@@ -2,7 +2,7 @@
 
 # [Detect division by zero][1]
 
-```perl6
+```perl
 sub div($a, $b){
     my $r;
     try {
@@ -19,7 +19,7 @@ say div(1,0); # Inf, 1/0 constants are substituted for Infinity
 say div(1, sin(0)); # undef, and prints "tried to divide by zero"
  
 ```
-```perl6
+```perl
 multi div($a, $b){ return $a / $b }
 multi div($a, $b where { $b == 0 }){ 
     say 'lolicheatsyou'; 

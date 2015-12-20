@@ -2,7 +2,7 @@
 
 # [Evolutionary algorithm][1]
 
-```perl6
+```perl
 constant target = "METHINKS IT IS LIKE A WEASEL";
 constant mutate_chance = .08;
 constant @alphabet = flat 'A'..'Z',' ';

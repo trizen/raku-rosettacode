@@ -2,7 +2,7 @@
 
 # [Hello world/Web server][1]
 
-```perl6
+```perl
 my $sock = IO::Socket::INET.new(:localhost('0.0.0.0'), :localport(8080), :listen);
 say "Goodbye Web Server listening on $sock.localhost():$sock.localport()";
 while $sock.accept -> $client {

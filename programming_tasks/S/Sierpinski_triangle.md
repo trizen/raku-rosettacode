@@ -2,7 +2,7 @@
 
 # [Sierpinski triangle][1]
 
-```perl6
+```perl
 sub sierpinski ($n) {
     my @down  = '*';
     my $space = ' ';

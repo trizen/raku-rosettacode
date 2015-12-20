@@ -2,7 +2,7 @@
 
 # [Echo server][1]
 
-```perl6
+```perl
 my $socket = IO::Socket::INET.new:
     localhost => 'localhost',
     localport => 12321,

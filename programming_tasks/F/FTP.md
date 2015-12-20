@@ -2,7 +2,7 @@
 
 # [FTP][1]
 
-```perl6
+```perl
 use Net::FTP;
  
 my $host = 'kernel.org';

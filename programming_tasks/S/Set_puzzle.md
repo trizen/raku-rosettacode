@@ -4,7 +4,7 @@
 
 The trick here is to allocate three different bits for each enum, with the result that the cards of a matching set OR together to produce a 4-digit octal number that contains only the digits 1, 2, 4, or 7. This OR is done by funny looking <tt>[+|]</tt>, which is the reduction form of <tt>+|</tt>, which is the numeric bitwise OR. (Because Perl 6 stole the bare <tt>|</tt> operator for composing junctions instead.)
 
-```perl6
+```perl
 enum Color (red => 0o1000, green =>  0o2000, purple => 0o4000);
 enum Count (one =>  0o100, two =>     0o200, three =>   0o400);
 enum Shape (oval =>  0o10, squiggle => 0o20, diamond =>  0o40);

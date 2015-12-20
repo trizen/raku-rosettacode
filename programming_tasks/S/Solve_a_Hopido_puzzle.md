@@ -4,7 +4,7 @@
 
 Using the solver from [Solve\_a\_Hidato\_puzzle](/wiki/Solve\_a\_Hidato\_puzzle" title="Solve a Hidato puzzle).
 
-```perl6
+```perl
 my @adjacent = [3, 0],
       [2, -2],         [2, 2],
    [0, -3],                [0, 3],

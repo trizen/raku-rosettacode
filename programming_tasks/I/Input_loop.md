@@ -8,22 +8,22 @@ In Perl 6, filehandles etc. provide the `.lines` and `.words` methods which retu
 
 *Line-by-line* <small>_(line endings are automatically stripped)_</small>
 
-```perl6
+```perl
 for "filename.txt".IO.lines -> $line {
     ...
 }
 ```
-```perl6
+```perl
 for $*IN.lines -> $line {
     ...
 }
 ```
-```perl6
+```perl
 for pipe("find -iname '*.txt'").lines -> $filename {
     ...
 }
 ```
-```perl6
+```perl
 for pipe("find -iname '*.txt' -print0", :nl«\0»).lines -> $filename {
     ...
 }
@@ -32,7 +32,7 @@ for pipe("find -iname '*.txt' -print0", :nl«\0»).lines -> $filename {
 
 *Word-by-word*
 
-```perl6
+```perl
 for "filename.txt".IO.words -> $word {
     ...
 }

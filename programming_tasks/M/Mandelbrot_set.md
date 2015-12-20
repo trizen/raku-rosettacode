@@ -6,7 +6,7 @@ Variant of a Mandelbrot script from the [Perl 6 ecosystem](http://modules.perl6.
 Redirect into a file to save it. 
 Converted to a .png file for display here.
 
-```perl6
+```perl
 constant MAX_ITERATIONS = 50;
 my $width = my $height = +(@*ARGS[0] // 31);
  

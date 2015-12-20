@@ -2,7 +2,7 @@
 
 # [String concatenation][1]
 
-```perl6
+```perl
 my $s = 'hello';
 say $s ~ ' literal';
 my $s1 = $s ~ ' literal';
@@ -12,7 +12,7 @@ say $s1;
 
 An example of mutating concatenation:
 
-```perl6
+```perl
 $s ~= ' literal';
 say $s;
 ```

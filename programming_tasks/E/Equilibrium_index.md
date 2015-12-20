@@ -2,7 +2,7 @@
 
 # [Equilibrium index][1]
 
-```perl6
+```perl
 sub equilibrium_index(@list) {
     my ($left,$right) = 0, [+] @list;
  
@@ -20,7 +20,7 @@ my @list = -7, 1, 5, 2, -4, 3, 0;
 
 And here's an FP solution that manages to remain O(n):
 
-```perl6
+```perl
 sub equilibrium_index(@list) {
     my @a = [\+] @list;
     my @b := reverse [\+] reverse @list;
@@ -53,7 +53,7 @@ Therefore (by substituting L for R), L + C + L == S at all equilibrium points.
 
 Restated, 2L + C == S.
 
-```perl6
+```perl
 # Original example, with expanded calculations:
     0    1    2    3    4    5    6   # Index
    -7    1    5    2   -4    3    0   # C (Value at index)
@@ -64,7 +64,7 @@ Restated, 2L + C == S.
 
 If we build a hash as we walk the list, with 2L+C as hash keys, and arrays of C-indexes as hash values, we get:
 
-```perl6
+```perl
 {
      -7 => [ 0, 2 ],
     -13 => [ 1    ],
@@ -81,7 +81,7 @@ After we have finished walking the list, we will have the sum (S), which we look
 
 Note: In the code below, it is more convenient to calculate 2L+C \*after\* L has already been incremented by C; the calculation is simply 2L-C, because each L has an extra C in it. 2(L-C)+C == 2L-C.
 
-```perl6
+```perl
 sub eq_index ( *@list ) {
     my $sum = 0;
  

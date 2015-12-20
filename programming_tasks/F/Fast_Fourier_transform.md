@@ -2,7 +2,7 @@
 
 # [Fast Fourier transform][1]
 
-```perl6
+```perl
 sub fft {
     return @_ if @_ == 1;
     my @evn = fft( @_[0, 2 ... *] );

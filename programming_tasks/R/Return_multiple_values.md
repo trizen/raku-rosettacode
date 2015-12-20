@@ -4,7 +4,7 @@
 
 Each function officially returns one value, but by returning a Parcel you can transparently return a lazy list of arbitrary size.
 
-```perl6
+```perl
 sub foo($a,$b) {
     $a + $b, $a * $b, $b xx $a
 }

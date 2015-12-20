@@ -2,7 +2,7 @@
 
 # [Population count][1]
 
-```perl6
+```perl
 sub population-count(Int $n where * >= 0) { [+] $n.base(2).comb }
  
 say map &population-count, 3 «**« ^30;
@@ -20,7 +20,7 @@ Odious: 1 2 4 7 8 11 13 14 16 19 21 22 25 26 28 31 32 35 37 38 41 42 44 47 49 50
 
 That's the convenient way to write it, but the following avoids string processing and is therefore about twice as fast:
 
-```perl6
+```perl
 sub population-count(Int $n is copy where * >= 0) { 
     loop (my $c = 0; $n; $n +>= 1) { 
         $c += $n +& 1; 

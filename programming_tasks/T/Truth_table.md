@@ -2,7 +2,7 @@
 
 # [Truth table][1]
 
-```perl6
+```perl
 sub MAIN ($x) {
     my @n = $x.comb(/<ident>/);
     my &fun = eval "-> {('\\' «~« @n).join(',')} \{ [{ (@n,"so $x").join(',') }] \}";

@@ -4,7 +4,7 @@
 
 Suppose we set up a Turtle class like this:
 
-```perl6
+```perl
 enum Dir < north northeast east southeast south southwest west northwest >;
 my $debug = 0;
  
@@ -57,7 +57,7 @@ class Turtle {
 
 Now we can build the spiral in the normal way from outside-in like this:
 
-```perl6
+```perl
 sub MAIN($size as Int) {
     my $t = Turtle.new(dir => east);
     my $counter = 0;
@@ -79,7 +79,7 @@ sub MAIN($size as Int) {
 
 Or we can build the spiral from inside-out like this:
 
-```perl6
+```perl
 sub MAIN($size as Int) {
     my $t = Turtle.new(dir => ($size %% 2 ?? south !! north));
     my $counter = $size * $size;
@@ -96,7 +96,7 @@ sub MAIN($size as Int) {
 
 Note that with these "turtle graphics" we don't actually have to care about the coordinate system, since the `showmap` method can show whatever rectangle was modified by the turtle. So unlike the standard inside-out algorithm, we don't have to find the center of the matrix first.
 
-```perl6
+```perl
 sub spiral_matrix ( $n ) {
     my @sm;
     my $len = $n;

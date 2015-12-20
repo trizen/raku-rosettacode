@@ -5,7 +5,7 @@
 The computer plays a random game.
 Output is formatted in a similar way to that of the better python version.
 
-```perl6
+```perl
  
 use v6;
  

@@ -2,7 +2,7 @@
 
 # [Rosetta Code/Find unimplemented tasks][1]
 
-```perl6
+```perl
 use JSON::Tiny;
 sub MAIN ( Str $language = 'Perl_6' ) {
     my @done_tasks = set tasks($language);

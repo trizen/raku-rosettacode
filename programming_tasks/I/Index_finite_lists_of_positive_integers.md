@@ -4,7 +4,7 @@
 
 Here is a cheap solution using a base-11 encoding and string operations:
 
-```perl6
+```perl
 sub rank(*@n)      { :11(@n.join('A')) }
 sub unrank(Int $n) { $n.base(11).split('A') }
  
@@ -23,7 +23,7 @@ say unrank $n;
 
 Here is a bijective solution that does not use string operations.
 
-```perl6
+```perl
 multi infix:<rad> ()       { 0 }
 multi infix:<rad> ($a)     { $a }
 multi infix:<rad> ($a, $b) { $a * $*RADIX + $b }

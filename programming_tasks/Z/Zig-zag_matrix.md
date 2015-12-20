@@ -4,7 +4,7 @@
 
 Assuming the same Turtle class that is used in [Spiral\_matrix](/wiki/Spiral\_matrix" title="Spiral matrix):
 
-```perl6
+```perl
 sub MAIN($size as Int) {
     my $t = Turtle.new(dir => northeast);
     my $counter = 0;

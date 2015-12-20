@@ -2,7 +2,7 @@
 
 # [State name puzzle][1]
 
-```perl6
+```perl
 my @states = <
     Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware
     Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky

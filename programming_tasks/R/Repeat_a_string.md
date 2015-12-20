@@ -2,7 +2,7 @@
 
 # [Repeat a string][1]
 
-```perl6
+```perl
 "ha" x 5
 ```
 

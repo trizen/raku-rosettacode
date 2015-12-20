@@ -4,7 +4,7 @@
 
 This is specced as a built-in, but here's an explicit version:
 
-```perl6
+```perl
 sub expmod(Int $a is copy, Int $b is copy, $n) {
     my $c = 1;
     repeat while $b div= 2 {

@@ -2,7 +2,7 @@
 
 # [Euler's sum of powers conjecture][1]
 
-```perl6
+```perl
 constant MAX = 250;
  
 my %p5{Int};

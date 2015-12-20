@@ -2,7 +2,7 @@
 
 # [Hofstadter Figure-Figure sequences][1]
 
-```perl6
+```perl
 my @ffr;
 my @ffs;
  

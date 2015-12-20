@@ -2,7 +2,7 @@
 
 # [Combinations with repetitions][1]
 
-```perl6
+```perl
 proto combs_with_rep (UInt, @) {*}
  
 multi combs_with_rep (0,  @)  { () }

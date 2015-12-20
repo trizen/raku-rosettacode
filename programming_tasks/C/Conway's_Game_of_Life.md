@@ -2,7 +2,7 @@
 
 # [Conway's Game of Life][1]
 
-```perl6
+```perl
 class Automaton {
     subset World of Str where {
 	.lines>>.chars.uniq == 1 and m/^^<[.#\n]>+$$/

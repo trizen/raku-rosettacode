@@ -2,7 +2,7 @@
 
 # [Sum multiples of 3 and 5][1]
 
-```perl6
+```perl
 sub sum35($n) { [+] grep * %% (3|5), ^$n; }
  
 say sum35 1000;
@@ -16,7 +16,7 @@ say sum35 1000;
 
 Here's an analytical approach that scales much better for large values.
 
-```perl6
+```perl
 sub sum-mults($first, $limit) {
     (my $last = $limit - 1) -= $last % $first;
     ($last div $first) * ($first + $last) div 2;

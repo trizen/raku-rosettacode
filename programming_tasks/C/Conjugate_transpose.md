@@ -2,7 +2,7 @@
 
 # [Conjugate transpose][1]
 
-```perl6
+```perl
 for [ # Test Matrices
        [   1, 1+i, 2i],
        [ 1-i,   5, -3],

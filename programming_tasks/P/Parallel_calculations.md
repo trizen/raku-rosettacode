@@ -4,7 +4,7 @@
 
 Assuming that <tt>factors</tt> is defined exactly as in the prime decomposition task:
 
-```perl6
+```perl
 my @nums = 12757923, 12878611, 123456789, 15808973, 15780709, 197622519;
  
 my @factories;

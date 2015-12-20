@@ -2,7 +2,7 @@
 
 # [Formal power series][1]
 
-```perl6
+```perl
 class DerFPS { ... }
 class IntFPS { ... }
  

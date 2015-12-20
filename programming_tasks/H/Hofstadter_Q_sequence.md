@@ -4,7 +4,7 @@
 
 Similar concept as the perl5 solution, except that the cache is only filled on demand.
 
-```perl6
+```perl
 class Hofstadter {
   has @!c = 1,1;
   method at_pos ($me: Int $i) {
@@ -18,7 +18,7 @@ class Hofstadter {
 
 Testing:
 
-```perl6
+```perl
 my Hofstadter $Q .= new();
  
 say "first ten: $Q[^10]";
@@ -39,7 +39,7 @@ In the first 100_000 terms, 49798 terms are less than their preceding terms
 
 With a lazily generated array, we automatically get caching.
 
-```perl6
+```perl
 my @Q = 1, 1, -> $a, $b {
     (state $n = 1)++;
     @Q[$n - $a] + @Q[$n - $b]
@@ -49,7 +49,7 @@ my @Q = 1, 1, -> $a, $b {
 
 Testing:
 
-```perl6
+```perl
 say "first ten: ", @Q[^10];
 say "1000th: ", @Q[999];
 say "In the first 100_000 terms, ",

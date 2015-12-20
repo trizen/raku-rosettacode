@@ -2,7 +2,7 @@
 
 # [Price fraction][1]
 
-```perl6
+```perl
 my $table = q:to/END/;
 >=  0.00  <  0.06  :=  0.10
 >=  0.06  <  0.11  :=  0.18
@@ -45,7 +45,7 @@ Perhaps a better approach is just to build an array of 101 entries.
 Memory is cheap, and array lookup is blazing fast, especially important if used in a loop as below.
 Moreover, in Perl&#160;6 we don't have to worry about floating point misrepresentations of decimals because decimal fractions are stored as rationals.
 
-```perl6
+```perl
 my @price = map *.value, flat
     ( 0 ..^ 6  X=> 0.10),
     ( 6 ..^ 11 X=> 0.18),
@@ -79,7 +79,7 @@ Yet another approach is to use the conditional operator to encode the table.
 This allows each endpoint to be written once, avoiding duplication. The <tt>Rat()</tt>
 type in the signature coerces any numeric type to a rational.
 
-```perl6
+```perl
 sub price_fraction ( Rat() $n where { $^n >= 0 and $^n <= 1 } ) {
        ( $n <  0.06 ) ?? 0.10
     !! ( $n <  0.11 ) ?? 0.18

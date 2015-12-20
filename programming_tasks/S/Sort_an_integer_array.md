@@ -4,20 +4,20 @@
 
 If `@a` contains only numbers:
 
-```perl6
+```perl
 my @sorted = sort @a;
 ```
 
 
 If some elements of `@a` are strings or are otherwise non-numeric but you want to treat them as numbers:
 
-```perl6
+```perl
 my @sorted = sort +*, @a;
 ```
 
 
 For an in-place sort:
 
-```perl6
+```perl
 @a .= sort;
 ```

@@ -4,7 +4,7 @@
 
 This uses a pretty simple search algorithm that doesn't necessarily return the Taxicab numbers in order. Assuming we want all the Taxicab numbers within some range S to N, we'll search until we find N values. When we find the Nth value, we continue to search up to the cube root of the largest Taxicab number found up to that point. That ensures we will find all of them inside the desired range without needing to search arbitrarily or use magic numbers. Defaults to returning the Taxicab numbers from 1 to 25. Pass in a different start and end value if you want some other range.
 
-```perl6
+```perl
 sub MAIN ($start = 1, $end = 25) {
     my %taxi;
     my $taxis = 0;

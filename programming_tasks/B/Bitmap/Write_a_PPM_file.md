@@ -4,7 +4,7 @@
 
 We'll assume the Bitmap and Pixel classes have been imported already.
 
-```perl6
+```perl
 role PPM {
     method P6 returns Blob {
 	"P6\n{self.width} {self.height}\n255\n".encode('ascii')

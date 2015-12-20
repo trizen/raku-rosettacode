@@ -2,7 +2,7 @@
 
 # [Loops/Continue][1]
 
-```perl6
+```perl
 for 1 .. 10 {
     .print;
     if $_ %% 5 {
@@ -16,6 +16,6 @@ for 1 .. 10 {
 
 or without using a loop:
 
-```perl6
+```perl
 $_.join(", ").say for [1..5], [6..10];
 ```

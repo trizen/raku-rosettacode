@@ -4,7 +4,7 @@
 
 Here we just examine the ast of the Perl 6 compiler (which is written in Perl 6) to look for function calls.
 
-```perl6
+```perl
 my $text = qqx[perl6 --target=ast @*ARGS[]];
 my %fun;
 for $text.lines {

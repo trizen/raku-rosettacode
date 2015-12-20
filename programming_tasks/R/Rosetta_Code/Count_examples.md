@@ -2,7 +2,7 @@
 
 # [Rosetta Code/Count examples][1]
 
-```perl6
+```perl
 use LWP::Simple;
  
 my $site = "http://rosettacode.org";

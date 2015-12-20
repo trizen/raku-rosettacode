@@ -4,7 +4,7 @@
 
 Here is a naive, grossly inefficient implementation.
 
-```perl6
+```perl
 sub is-semiprime (Int $n --> Bool) {
     not $n.is-prime and
         .is-prime given 

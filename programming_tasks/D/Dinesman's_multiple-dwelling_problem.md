@@ -2,7 +2,7 @@
 
 # [Dinesman's multiple-dwelling problem][1]
 
-```perl6
+```perl
 sub parse_and_solve ($text) {
     my %ids;
     my $expr = (grammar {
@@ -52,7 +52,7 @@ Supports the same grammar for the problem statement, as the Perl solution.
 ```
 Baker=3 Cooper=2 Fletcher=4 Miller=5 Smith=1
 ```
-```perl6
+```perl
 # Contains only five floors. 5! = 120 permutations.
 for (flat (1..5).permutations) -> $b, $c, $f, $m, $s {
     say "Baker=$b Cooper=$c Fletcher=$f Miller=$m Smith=$s"

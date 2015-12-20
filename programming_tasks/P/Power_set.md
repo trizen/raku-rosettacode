@@ -2,7 +2,7 @@
 
 # [Power set][1]
 
-```perl6
+```perl
 sub powerset(Set $s) { $s.combinations.map(*.Set).Set }
 say powerset set <a b c d>;
 ```
@@ -15,7 +15,7 @@ set(set(), set(a), set(b), set(c), set(d), set(a, b), set(a, c), set(a, d), set(
 
 If you don't care about the actual <tt>Set</tt> type, the <tt>.combinations</tt> method by itself may be good enough for you:
 
-```perl6
+```perl
 .say for <a b c d>.combinations
 ```
 

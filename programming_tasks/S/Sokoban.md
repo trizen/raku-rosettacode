@@ -2,7 +2,7 @@
 
 # [Sokoban][1]
 
-```perl6
+```perl
 sub MAIN() {
     my $level = q:to//;
 #######

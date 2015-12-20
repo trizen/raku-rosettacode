@@ -2,7 +2,7 @@
 
 # [Sequence of primorial primes][1]
 
-```perl6
+```perl
 constant @primes     = grep *.is-prime, 2..*;
 constant @primorials = [\*] 1, @primes;
  

@@ -2,7 +2,7 @@
 
 # [Regular expressions][1]
 
-```perl6
+```perl
 use v6;
 if 'a long string' ~~ /string$/ {
    say "It ends with 'string'";

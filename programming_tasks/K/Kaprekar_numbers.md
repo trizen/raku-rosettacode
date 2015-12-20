@@ -2,7 +2,7 @@
 
 # [Kaprekar numbers][1]
 
-```perl6
+```perl
 sub kaprekar( Int $n ) {
     my $sq = $n ** 2;
     for 0 ^..^ $sq.chars -> $i {
@@ -22,7 +22,7 @@ print "\n";
 ```
 1 9 45 55 99 297 703 999 2223 2728 4879 4950 5050 5292 7272 7777 9999
 ```
-```perl6
+```perl
 sub kaprekar( Int $n, Int :$base = 10 ) {
     my $hi = $n ** 2;
     my $lo = 0;
@@ -121,7 +121,7 @@ Base 17 Kaprekar numbers < :17<1_000_000>
 
 Note that this algorithm allows the null string on the left, taken as zero, which automatically includes 1 as the first element of the sequence.
 
-```perl6
+```perl
 sub kaprekar-generator( :$base = 10 ) {
     my $base-m1 = $base - 1;
     gather loop (my $place = 1; ; ++$place) {

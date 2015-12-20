@@ -2,7 +2,7 @@
 
 # [Vector][1]
 
-```perl6
+```perl
 class Vector {
     has Real $.x;
     has Real $.y;

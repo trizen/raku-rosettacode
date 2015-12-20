@@ -2,7 +2,7 @@
 
 # [File input/output][1]
 
-```perl6
+```perl
 my $in = open "input.txt";
 my $out = open "output.txt", :w;
 for $in.lines -> $line {
@@ -13,6 +13,6 @@ for $in.lines -> $line {
 
 or, using the new slurp operator:
 
-```perl6
+```perl
 (open "output.txt", :w).print(slurp "input.txt")
 ```

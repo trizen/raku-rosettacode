@@ -4,7 +4,7 @@
 
 There is a built-in function for this:
 
-```perl6
+```perl
 mkpath 'path/to/dir'
 ```
 

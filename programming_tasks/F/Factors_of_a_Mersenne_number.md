@@ -2,7 +2,7 @@
 
 # [Factors of a Mersenne number][1]
 
-```perl6
+```perl
 my @primes = 2, 3, -> $n is copy {
     repeat { $n += 2 } until $n %% none do for @primes -> $p {
         last if $p > sqrt($n);

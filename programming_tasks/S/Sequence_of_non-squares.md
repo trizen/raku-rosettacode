@@ -2,7 +2,7 @@
 
 # [Sequence of non-squares][1]
 
-```perl6
+```perl
 sub nth_term (Int $n) { $n + round sqrt $n }
  
 say nth_term $_ for 1 .. 22;

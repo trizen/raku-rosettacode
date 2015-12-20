@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Selection sort][1]
 
-```perl6
+```perl
 sub selection_sort ( @a is copy ) {
     for 0 ..^ @a.end -> $i {
         my $min = [ $i+1 .. @a.end ].min: { @a[$_] };

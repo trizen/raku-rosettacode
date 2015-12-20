@@ -2,7 +2,7 @@
 
 # [String append][1]
 
-```perl6
+```perl
 my $str = "foo";
 $str ~= "bar";
 say $str;

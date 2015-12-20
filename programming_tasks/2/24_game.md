@@ -2,7 +2,7 @@
 
 # [24 game][1]
 
-```perl6
+```perl
 say "Here are your digits: ", 
 constant @digits = (1..9).roll(4)».Str;
  

@@ -4,7 +4,7 @@
 
 Perl 6 doesn't have a built-in for this, but with subsets it's easy to define a predicate for it.
 
-```perl6
+```perl
 subset Even of Int where * %% 2;
 subset Odd of Int where * % 2;
  

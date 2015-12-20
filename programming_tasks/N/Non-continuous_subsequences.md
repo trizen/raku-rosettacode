@@ -2,7 +2,7 @@
 
 # [Non-continuous subsequences][1]
 
-```perl6
+```perl
 sub non_continuous_subsequences ( *@list ) {
     @list.combinations.grep: { 1 != all( .[ 0 ^.. .end] Z- .[0 ..^ .end] ) }
 }

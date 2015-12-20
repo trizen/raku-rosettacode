@@ -2,7 +2,7 @@
 
 # [Five weekends][1]
 
-```perl6
+```perl
 # A month has 5 weekends iff it has 31 days and starts on Friday.
  
 my @years = 1900 .. 2100;

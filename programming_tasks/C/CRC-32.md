@@ -8,7 +8,7 @@ Library name and types are platform-dependent. As written the solution has been 
 
 Note: Buf $buf would be preferable, but NativeCall does not support Buf parameters, yet.
 
-```perl6
+```perl
 use NativeCall;
  
 sub crc32(int32 $crc, Str $buf, int32 $len --> int32) is native('/usr/lib/libz.dylib') { * }
@@ -25,7 +25,7 @@ say crc32(0, $buf, $buf.chars).fmt('%08x');
 
 A fairly generic implementation with no regard to execution speed:
 
-```perl6
+```perl
 sub crc(
     Blob $buf,
              # polynomial including leading term, default: ISO 3309/PNG/gzip

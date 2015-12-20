@@ -2,7 +2,7 @@
 
 # [Amb][1]
 
-```perl6
+```perl
 sub infix:<lf> ($a,$b) {
     next unless try $a.substr(*-1,1) eq $b.substr(0,1);
     "$a $b";
@@ -41,7 +41,7 @@ The <tt>amb</tt> operator itself uses a hyper to run the <tt>dethunk</tt> calls 
 If you consider lazy lists to be cheating on the idea of continuations, here's
 some admittedly grungy code that uses the continuation engine of regexes to solve it. At some point we'll wrap this up in nice syntax to let people write in a sublanguage of Perl 6 that looks more like a logic language.
 
-```perl6
+```perl
 sub amb($var,*@a) {
     "[{
         @a.pick(*).map: {"||\{ $var = '$_' }"}

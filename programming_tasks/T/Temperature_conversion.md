@@ -2,7 +2,7 @@
 
 # [Temperature conversion][1]
 
-```perl6
+```perl
 while my $answer = prompt 'Temperature: ' {
     my $k = do given $answer {
         when s/:i C $// { $_ + 273.15 }

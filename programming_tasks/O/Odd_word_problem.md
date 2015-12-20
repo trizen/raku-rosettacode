@@ -4,7 +4,7 @@
 
 A recursive solution, with the added feature that it treats each line separately.
 
-```perl6
+```perl
 my &in = { $*IN.getc // last }
  
 loop {

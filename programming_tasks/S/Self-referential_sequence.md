@@ -2,7 +2,7 @@
 
 # [Self-referential sequence][1]
 
-```perl6
+```perl
 my @list;
 my $longest = 0;
 my %seen;

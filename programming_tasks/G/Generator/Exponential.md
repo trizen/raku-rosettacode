@@ -4,7 +4,7 @@
 
 As with Haskell, generators are disguised as lazy lists in Perl&#160;6.
 
-```perl6
+```perl
 sub powers($m) { 0..* X** $m }
  
 my @squares = powers(2);

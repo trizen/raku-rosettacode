@@ -2,7 +2,7 @@
 
 # [Extreme floating point values][1]
 
-```perl6
+```perl
 print qq:to 'END'
 positive infinity: {Inf}
 negative infinity: {-Inf}

@@ -2,7 +2,7 @@
 
 # [Roman numerals/Encode][1]
 
-```perl6
+```perl
 my %symbols =
     1 => "I", 5 => "V", 10 => "X", 50 => "L", 100 => "C",
     500 => "D", 1_000 => "M";
@@ -20,7 +20,7 @@ multi sub roman (Int $n) {
      }
 }
 ```
-```perl6
+```perl
 for 1 .. 2_010 -> $x {
     say roman($x);
 }

@@ -2,7 +2,7 @@
 
 # [Visualize a tree][1]
 
-```perl6
+```perl
 sub visualize-tree($tree, &label, &children,
                    :$indent = '',
                    :@mid = ('├─', '│ '),

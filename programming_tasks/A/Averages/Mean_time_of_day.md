@@ -2,7 +2,7 @@
 
 # [Averages/Mean time of day][1]
 
-```perl6
+```perl
 sub tod2rad($_) { [+](.comb(/\d+/) Z* 3600,60,1) * pi / 43200 }
  
 sub rad2tod ($r) {

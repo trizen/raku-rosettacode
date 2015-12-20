@@ -2,7 +2,7 @@
 
 # [Middle three digits][1]
 
-```perl6
+```perl
 sub middle-three($n) {
     given $n.abs {
         when .chars < 3  { "$n is too short" }

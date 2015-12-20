@@ -2,7 +2,7 @@
 
 # [Digital root][1]
 
-```perl6
+```perl
 sub digroot ($r, :$base = 10) {
     my $root = $r.base($base);
     my $persistence = 0;
@@ -94,7 +94,7 @@ digital root H, persistence 3
 
 Or if you are more inclined to the functional programming persuasion, you can use the <tt>...</tt> sequence operator to calculate the values without side effects:
 
-```perl6
+```perl
 sub digroot ($r, :$base = 10) {
     my &sum = { [+](.comb.map({:36($_)})).base($base) }
  

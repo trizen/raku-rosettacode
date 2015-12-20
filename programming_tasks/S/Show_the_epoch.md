@@ -2,7 +2,7 @@
 
 # [Show the epoch][1]
 
-```perl6
+```perl
 say DateTime.new(0)
 ```
 

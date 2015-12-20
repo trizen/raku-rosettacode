@@ -2,7 +2,7 @@
 
 # [Calculate International Securities Identification Number][1]
 
-```perl6
+```perl
 sub isin-checksum ( $isin --> Int ) {
     (10 - ([+] flat map {([+] .comb) % 10}, ([~] flat map {:36($_)}, $isin.comb).flip.comb «*» (2,1)) % 10) % 10
 }

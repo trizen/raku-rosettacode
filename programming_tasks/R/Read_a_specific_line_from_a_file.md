@@ -2,7 +2,7 @@
 
 # [Read a specific line from a file][1]
 
-```perl6
+```perl
 say lines[6] // die "Short file";
 ```
 

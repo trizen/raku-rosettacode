@@ -2,7 +2,7 @@
 
 # [Sparkline in unicode][1]
 
-```perl6
+```perl
 constant @bars = '▁' ... '█';
 while prompt 'Numbers separated by anything: ' -> $_ {
     my @numbers = map +*, .comb(/ '-'? \d+ ['.' \d+]? /);

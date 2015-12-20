@@ -2,7 +2,7 @@
 
 # [Terminal control/Cursor movement][1]
 
-```perl6
+```perl
 shell "tput cub1";                  # one position to the left
 shell "tput cuf1";                  # one position to the right
 shell "tput cuu1";                  # up one line

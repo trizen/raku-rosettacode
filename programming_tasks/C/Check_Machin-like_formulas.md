@@ -4,7 +4,7 @@
 
 The task description requires exact computation. In this solution atan(a/b) produce floating points. Note that the Maxima solution is correct, since Maxima uses a symbolical representation of expressions.
 
-```perl6
+```perl
 use Test;
 plan *;
  

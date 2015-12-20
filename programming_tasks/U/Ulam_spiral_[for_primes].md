@@ -2,7 +2,7 @@
 
 # [Ulam spiral (for primes)][1]
 
-```perl6
+```perl
 sub MAIN($max = 160, $start = 1) {
     (my %world){0}{0} = 0;
     my $loc = 0+0i;

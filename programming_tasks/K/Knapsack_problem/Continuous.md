@@ -4,7 +4,7 @@
 
 This Solutions sorts the item by WEIGHT/VALUE
 
-```perl6
+```perl
 class KnapsackItem {
   has $.name;
   has $.weight is rw;

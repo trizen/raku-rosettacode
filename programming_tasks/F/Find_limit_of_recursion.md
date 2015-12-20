@@ -4,7 +4,7 @@
 
 Maximum recursion in Perl 6 is implementation dependent and subject to change as development proceeds.
 
-```perl6
+```perl
 my $x = 0;
 recurse;
  

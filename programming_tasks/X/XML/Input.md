@@ -2,7 +2,7 @@
 
 # [XML/Input][1]
 
-```perl6
+```perl
 use v6;
 use XML;
  

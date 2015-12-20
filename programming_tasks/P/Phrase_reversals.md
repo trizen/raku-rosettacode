@@ -2,7 +2,7 @@
 
 # [Phrase reversals][1]
 
-```perl6
+```perl
 my $s = 'rosetta code phrase reversal';
  
 say 'Input               : ', $s;

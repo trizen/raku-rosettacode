@@ -2,7 +2,7 @@
 
 # [Matrix transposition][1]
 
-```perl6
+```perl
 sub transpose(@m)
 {
     my @t;
@@ -26,7 +26,7 @@ say "transposed: ";
 
 A more concise solution:
 
-```perl6
+```perl
 sub transpose (@m) {
     ([ @m[*;$_] ] for ^@m[0]);
 }
@@ -51,7 +51,7 @@ my @a = < a b c d e >,
 
 Using the <tt>[Z]</tt> meta-operator.
 
-```perl6
+```perl
 say [Z] (<A B C>,<D E F>,<G H I>)
 ```
 

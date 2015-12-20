@@ -2,7 +2,7 @@
 
 # [Greatest subsequential sum][1]
 
-```perl6
+```perl
 sub maxsubseq (*@a) {
     my ($start, $end, $sum, $maxsum) = -1, -1, 0, 0;
     for @a.kv -> $i, $x {
@@ -39,7 +39,7 @@ The empty sequence is used to initialize $max\_subset, which fufills the "all ne
 
 Note that once the triangular comma bug is resolved, the inner-loop subset calculation line can be shortened to "my @subsets = [\,] @a;".
 
-```perl6
+```perl
 sub max_sub-seq ( *@a ) {
  
     my $max_subset = [];

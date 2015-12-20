@@ -2,7 +2,7 @@
 
 # [Lychrel numbers][1]
 
-```perl6
+```perl
 my @lychrels;
 my @palindromes;
 my @seeds;

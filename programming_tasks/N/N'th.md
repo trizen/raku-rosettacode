@@ -4,7 +4,7 @@
 
 (Spurious apostrophes intentionally omitted.)
 
-```perl6
+```perl
 my %irregulars = <1 st 2 nd 3 rd>, (11..13 X=> 'th');
  
 sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'th' ) }
@@ -22,7 +22,7 @@ say .list».&nth for [^26], [250..265], [1000..1025];
 
 If you want to get Unicodally fancy, use this version instead:
 
-```perl6
+```perl
 my %irregulars = <1 ˢᵗ 2 ⁿᵈ 3 ʳᵈ>, (11..13 X=> 'ᵗʰ');
  
 sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'ᵗʰ' ) }

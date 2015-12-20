@@ -6,7 +6,7 @@ All appropriate constructors, initializers, accessors, and destructors are provi
 To create only readonly accessors for better encapsulation, leave out all the "is rw" traits.
 Here we demonstrate that accessors can behave like variables and may be assigned.
 
-```perl6
+```perl
 class Point {
     has Real $.x is rw = 0;
     has Real $.y is rw = 0;
@@ -33,7 +33,7 @@ We could also have defined print methods directly.
 We could have factored this method out to a common role and composed it into each class.
 We could also have defined multi subs outside of the class, like this:
 
-```perl6
+```perl
 multi print (Point $p) { $p.perl.print }
 multi print (Circle $c) { $c.perl.print }
 ```

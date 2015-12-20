@@ -2,7 +2,7 @@
 
 # [Map range][1]
 
-```perl6
+```perl
 sub the_function(Range $a, Range $b, $s) {
   my ($a1, $a2) = $a.bounds;
   my ($b1, $b2) = $b.bounds;
@@ -31,7 +31,7 @@ for ^11 -> $x { say "$x maps to {the_function(0..10, -1..0, $x)}" }
 
 A more idiomatic way would be to return a closure that does the mapping without have to supply the ranges every time:
 
-```perl6
+```perl
 sub getmapper(Range $a, Range  $b) {
   my ($a1, $a2) = $a.bounds;
   my ($b1, $b2) = $b.bounds;

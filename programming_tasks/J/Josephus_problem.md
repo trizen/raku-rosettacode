@@ -4,7 +4,7 @@
 
 Straightforward implementation of the executioner's algorithm:
 
-```perl6
+```perl
 sub Execute(@prisoner, $k) {
     until @prisoner == 1 {
 	@prisoner.=rotate($k - 1);
@@ -25,7 +25,7 @@ Prisoner 30 survived.
 
 We don't have to use numbers. Any list will do:
 
-```perl6
+```perl
 my @dalton = <Joe Jack William Averell Rantanplan>;
 Execute @dalton, 2;
 say "{@dalton} survived.";

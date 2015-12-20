@@ -2,7 +2,7 @@
 
 # [Bitcoin/public point to address][1]
 
-```perl6
+```perl
 use SSL::Digest;
  
 constant BASE58 = <

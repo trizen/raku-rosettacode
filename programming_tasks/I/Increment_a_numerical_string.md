@@ -2,7 +2,7 @@
 
 # [Increment a numerical string][1]
 
-```perl6
+```perl
 my $s = "12345";
 $s++;
 ```

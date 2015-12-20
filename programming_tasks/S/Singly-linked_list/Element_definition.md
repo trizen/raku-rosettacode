@@ -4,6 +4,6 @@
 
 The <tt>Pair</tt> constructor is exactly equivalent to a cons cell.
 
-```perl6
+```perl
 my $elem = 42 => $nextelem;
 ```

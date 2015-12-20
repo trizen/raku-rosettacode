@@ -2,7 +2,7 @@
 
 # [Pi][1]
 
-```perl6
+```perl
 # based on http://www.mathpropress.com/stan/bibliography/spigot.pdf
  
 sub stream(&next, &safe, &prod, &cons, $z is copy, @x) {

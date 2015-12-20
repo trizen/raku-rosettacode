@@ -2,7 +2,7 @@
 
 # [Subleq][1]
 
-```perl6
+```perl
 my @memory = @*ARGS;
 my $ip = 0;
 while $ip >= 0 && $ip < @memory {

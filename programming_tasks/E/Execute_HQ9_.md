@@ -4,7 +4,7 @@
 
 The spec is kind of vague about how to do error handling... and whether white space is significant... and how the accumulator should be accessed... and pretty much everything else too.
 
-```perl6
+```perl
 class HQ9Interpreter {
     has @!code;
     has $!accumulator;
@@ -68,7 +68,7 @@ Jhq.k+hQ
 
 Or start a REPL (Read Execute Print Loop) and interact at the command line:
 
-```perl6
+```perl
 my $hq9 = HQ9Interpreter.new;
 while 1 {
     my $in = prompt('HQ9+>').chomp;

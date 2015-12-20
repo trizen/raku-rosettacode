@@ -2,7 +2,7 @@
 
 # [Count in factors][1]
 
-```perl6
+```perl
 constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;
  
 multi factors(1) { 1 }
@@ -65,7 +65,7 @@ Note also the '×' above is not ASCII 'x', but U+00D7 MULTIPLICATION SIGN. Perl&
 
 Here is a solution inspired from [Almost\_prime#C](/wiki/Almost\_prime#C" title="Almost prime). It doesn't use &amp;is-prime.
 
-```perl6
+```perl
 sub factor($n is copy) {
     $n == 1 ?? 1 !!
     gather {

@@ -2,7 +2,7 @@
 
 # [Greyscale bars/Display][1]
 
-```perl6
+```perl
 my $wininfo = qx[xwininfo -root];
 my ($width,$height) = ($wininfo ~~ /'Width: ' (\d+) .*? 'Height: ' (\d+)/).list;
 ($width,$height) = 1280,768 unless $width;

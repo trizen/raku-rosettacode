@@ -10,7 +10,7 @@ Unfortunately, Perl 6 does not yet have a date parsing module
 (mostly due to a reticence to inflict Western cultural imperialism on other cultures...
 or maybe just due to laziness), but that just gives us another opportunity to demonstrate the built-in grammar support.
 
-```perl6
+```perl
 my @month = <January February March April May June July August September October November December>;
 my %month = (@month Z=> ^12).flat, (@month».substr(0,3) Z=> ^12).flat, 'Sept' => 8;
  

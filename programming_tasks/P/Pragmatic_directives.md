@@ -4,7 +4,7 @@
 
 The Perl 6 pragma mechanism is nearly identical to Perl 5's, piggybacking on the notation for importing modules (pragmas are distinguished by case from normal modules, which are generally of mixed case). By convention pragmas are lowercase, unless they are indicating the use of an unsafe feature, in which case they are in all caps.
 
-```perl6
+```perl
 use MONKEY-TYPING;
 augment class Int {
     method times (&what) { what() xx self }  # pretend like we're Ruby

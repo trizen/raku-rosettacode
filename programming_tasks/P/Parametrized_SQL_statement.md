@@ -2,7 +2,7 @@
 
 # [Parametrized SQL statement][1]
 
-```perl6
+```perl
 use DBIish;
  
 my $db = DBIish.connect('DBI:mysql:mydatabase:host','login','password');

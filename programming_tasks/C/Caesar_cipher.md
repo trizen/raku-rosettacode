@@ -2,7 +2,7 @@
 
 # [Caesar cipher][1]
 
-```perl6
+```perl
 my @alpha = 'A' .. 'Z';
 sub encrypt ( $key where 1..25, $plaintext ) {
     $plaintext.trans( @alpha Z=> @alpha.rotate($key) );

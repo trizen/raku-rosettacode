@@ -2,7 +2,7 @@
 
 # [Ranking methods][1]
 
-```perl6
+```perl
 my @scores =
     Solomon => 44,
     Jason   => 42,

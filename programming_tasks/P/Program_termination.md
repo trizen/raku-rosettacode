@@ -2,7 +2,7 @@
 
 # [Program termination][1]
 
-```perl6
+```perl
 if $problem { exit $error-code }
 ```
 

@@ -2,7 +2,7 @@
 
 # [Terminal control/Clear the screen][1]
 
-```perl6
+```perl
 sub clear { print state $ = qx[clear] }
 clear;
 ```

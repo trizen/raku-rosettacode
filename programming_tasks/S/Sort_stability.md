@@ -8,7 +8,7 @@ The [sort](http://perlcabal.org/syn/S32/Containers.html#sort) built-in (availabl
 
 Short demonstration for sorting only on the second item of each array:
 
-```perl6
+```perl
 use v6;
 my @cities =
     ['UK', 'London'],

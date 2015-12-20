@@ -6,7 +6,7 @@ No need for a special type in Perl 6, since the <tt>Rat</tt> type is used for n
 (In order to achieve imprecision, you have to explicitly use scientific notation,
 or use the <tt>Num</tt> type, or calculate a result that requires a denominator in excess of <tt>2 \*\* 64</tt>. (There's no limit on the numerator.))
 
-```perl6
+```perl
 my @check = q:to/END/.lines.map: { [.split(/\t/)] };
     Hamburger   5.50    4000000000000000
     Milkshake   2.86    2

@@ -4,7 +4,7 @@
 
 Runs on Rakudo Warszawa (2012.12).
 
-```perl6
+```perl
 constant MAX_N  = 20;
 constant TRIALS = 100;
  

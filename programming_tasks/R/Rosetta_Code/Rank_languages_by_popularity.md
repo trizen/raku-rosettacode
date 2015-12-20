@@ -2,7 +2,7 @@
 
 # [Rosetta Code/Rank languages by popularity][1]
 
-```perl6
+```perl
 use HTTP::UserAgent;
 use JSON::Tiny;
  
@@ -47,7 +47,7 @@ sub uri-encode ($str) {
 
 Scraping the languages and categories pages.  Perl 6 automatically handles Unicode names correctly.
 
-```perl6
+```perl
 my $languages =  qx{wget -O - 'http://rosettacode.org/wiki/Category:Programming_Languages'};
 my $categories = qx{wget -O - 'http://www.rosettacode.org/mw/index.php?title=Special:Categories&limit=5000'};
  

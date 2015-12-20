@@ -2,7 +2,7 @@
 
 # [Exponentiation operator][1]
 
-```perl6
+```perl
 subset Natural of Int where { $^n >= 0 }
  
 multi pow (0,     0)            { fail '0**0 is undefined' }
@@ -15,7 +15,7 @@ sub infix:<***> ($a, $b) { pow $a, $b }
 
 Examples of use:
 
-```perl6
+```perl
 say pow .75, -5;
 say .75 *** -5;
 ```

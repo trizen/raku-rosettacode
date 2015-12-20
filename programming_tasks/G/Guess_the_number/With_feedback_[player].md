@@ -2,7 +2,7 @@
 
 # [Guess the number/With feedback (player)][1]
 
-```perl6
+```perl
 multi sub MAIN() { MAIN(0, 100) }
 multi sub MAIN($min is copy where ($min >= 0), $max is copy where ($max > $min)) {
     say "Think of a number between $min and $max and I'll guess it!";

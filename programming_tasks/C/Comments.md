@@ -2,7 +2,7 @@
 
 # [Comments][1]
 
-```perl6
+```perl
 my $x = 2; # Single-line comment.
  
 #`( 

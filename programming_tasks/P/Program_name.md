@@ -4,6 +4,6 @@
 
 In Perl 6, the name of the program being executed is in the special global variable <tt>$\*PROGRAM-NAME</tt>.
 
-```perl6
+```perl
 say $*PROGRAM-NAME;
 ```

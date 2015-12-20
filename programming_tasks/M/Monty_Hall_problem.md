@@ -4,7 +4,7 @@
 
 This implementation is parametric over the number of doors. [Increasing the number of doors in play makes the superiority of the switch strategy even more obvious](http://en.wikipedia.org/wiki/Monty\_Hall\_problem#Increasing\_the\_number\_of\_doors" class="extiw" title="wp:Monty Hall problem).
 
-```perl6
+```perl
 enum Prize <Car Goat>;
 enum Strategy <Stay Switch>;
  

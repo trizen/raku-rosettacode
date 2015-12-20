@@ -2,7 +2,7 @@
 
 # [Display a linear combination][1]
 
-```perl6
+```perl
 sub linear-combination(@coeff) {
     (@coeff Z=> map { "e($_)" }, 1 .. *)
     .grep(+*.key)

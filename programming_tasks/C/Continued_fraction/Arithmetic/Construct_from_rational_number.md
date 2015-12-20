@@ -4,7 +4,7 @@
 
 Straightforward implementation:
 
-```perl6
+```perl
 sub r2cf(Rat $x is copy) {
     gather loop {
 	$x -= take $x.floor;
@@ -30,6 +30,6 @@ say r2cf(.Rat) for <1/2 3 23/8 13/11 22/7 1.41 1.4142136>;
 
 As a silly one-liner:
 
-```perl6
+```perl
 sub r2cf(Rat $x is copy) { gather $x [R/]= 1 while ($x -= take $x.floor) > 0 }
 ```

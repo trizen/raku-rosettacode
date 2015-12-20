@@ -2,7 +2,7 @@
 
 # [Short-circuit evaluation][1]
 
-```perl6
+```perl
 sub a ($p) { print 'a'; $p }
 sub b ($p) { print 'b'; $p }
  

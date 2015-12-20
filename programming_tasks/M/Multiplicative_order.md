@@ -2,7 +2,7 @@
 
 # [Multiplicative order][1]
 
-```perl6
+```perl
 my @primes := 2, grep *.is-prime, (3,5,7...*);
  
 sub factor($a is copy) {

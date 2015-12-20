@@ -8,7 +8,7 @@ There is nowhere in the spec where it explicitly states that the sailors cannot 
 
 This will test combinations of sailors and coconuts to see if they form a valid pairing. The first 6 are done using brute force, testing every combination until a valid one is found. For cases of 7 to 15 sailors, it uses a carefully crafted filter to drastically reduce the number of trials needed to find a valid case (to one, as it happens...&#160;:-) )
 
-```perl6
+```perl
 my @ones = flat 'th', 'st', 'nd', 'rd', 'th' xx 6;
 my @teens = 'th' xx 10;
 my @suffix = lazy flat (@ones, @teens, @ones xx 8) xx *;

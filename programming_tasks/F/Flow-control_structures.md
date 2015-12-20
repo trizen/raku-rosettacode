@@ -8,7 +8,7 @@ Control flow is extensible in Perl 6; most abnormal control flow (including the
 
 Phasers are blocks that are transparent to the normal control flow but that are automatically called at an appropriate phase of compilation or execution. The current list of phasers may be found in [[S04/Phasers](http://perlcabal.org/syn/S04.html#Phasers)].
 
-```perl6
+```perl
 TOWN: goto TOWN;
 ```
 

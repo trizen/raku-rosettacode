@@ -4,7 +4,7 @@
 
 It is not possible to change lexical variable names at run time, but package variables are fair game, include in the GLOBAL package:
 
-```perl6
+```perl
 my $vname = prompt 'Variable name: ';
 $GLOBAL::($vname) = 42;
 say $GLOBAL::($vname);

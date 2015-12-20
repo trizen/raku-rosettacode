@@ -4,7 +4,7 @@
 
 A very lispy solution:
 
-```perl6
+```perl
 my $str = "Character,Speech
 The multitude,The messiah! Show us the messiah!
 Brians mother,<angry>Now you listen here! He's not the messiah; he's a very naughty boy! Now go away!</angry>

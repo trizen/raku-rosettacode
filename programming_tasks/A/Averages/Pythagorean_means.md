@@ -2,7 +2,7 @@
 
 # [Averages/Pythagorean means][1]
 
-```perl6
+```perl
 sub A { ([+] @_) / @_ }
 sub G { ([*] @_) ** (1 / @_) }
 sub H { @_ / [+] 1 X/ @_ }

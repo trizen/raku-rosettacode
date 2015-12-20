@@ -2,7 +2,7 @@
 
 # [Truncate a file][1]
 
-```perl6
+```perl
 use NativeCall;
  
 sub truncate(Str, Int --> int) is native {*}

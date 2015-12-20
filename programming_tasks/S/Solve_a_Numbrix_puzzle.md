@@ -4,7 +4,7 @@
 
 Using the Warnsdorff solver from [Solve\_a\_Hidato\_puzzle](/wiki/Solve\_a\_Hidato\_puzzle" title="Solve a Hidato puzzle):
 
-```perl6
+```perl
 my @adjacent =           [-1, 0],
                [ 0, -1],          [ 0, 1],
                          [ 1, 0];
@@ -39,7 +39,7 @@ solveboard q:to/END/;
 
 And
 
-```perl6
+```perl
 solveboard q:to/END/;
  0  0  0  0  0  0  0  0  0
  0 11 12 15 18 21 62 61  0

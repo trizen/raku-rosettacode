@@ -4,7 +4,7 @@
 
 Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](//tools.ietf.org/html/rfc3986) BNF grammar.
 
-```perl6
+```perl
 use URI;
  
 my @test-uris = <

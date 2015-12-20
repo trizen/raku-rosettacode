@@ -2,7 +2,7 @@
 
 # [Arithmetic evaluation][1]
 
-```perl6
+```perl
 sub ev (Str $s --> Num) {
  
     grammar expr {
@@ -45,7 +45,7 @@ sub ev (Str $s --> Num) {
 
 Testing:
 
-```perl6
+```perl
 say ev '5';                                    #   5
 say ev '1 + 2 - 3 * 4 / 5';                    #   0.6
 say ev '1 + 5*3.4 - .5  -4 / -2 * (3+4) -6';   #  25.5

@@ -2,7 +2,7 @@
 
 # [Real constants and functions][1]
 
-```perl6
+```perl
 say e;            # e
 say pi;           # pi
 say π,e;          # if you prefer unicode

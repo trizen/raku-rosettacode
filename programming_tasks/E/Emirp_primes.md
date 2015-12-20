@@ -4,7 +4,7 @@
 
 Build a lazy list using Perl 6's builtin &amp;is-prime, then display results based on parameters passed in.The default is to display an array slice starting and stopping at the given indicies. Alternately, ask for all values between two endpoints.
 
-```perl6
+```perl
 sub MAIN ($start, $stop, $display = <slice>) {
     my $end = $stop // $start; 
     my @emirps := gather for 1 .. * -> $n {

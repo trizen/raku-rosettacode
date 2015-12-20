@@ -2,7 +2,7 @@
 
 # [Stern-Brocot sequence][1]
 
-```perl6
+```perl
 constant Stern-Brocot = flat
     1, 1, -> *@a {
         @a[$_ - 1] + @a[$_], @a[$_] given ++$;

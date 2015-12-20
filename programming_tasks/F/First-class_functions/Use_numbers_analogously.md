@@ -2,7 +2,7 @@
 
 # [First-class functions/Use numbers analogously][1]
 
-```perl6
+```perl
 sub multiplied ($g, $f) { return { $g * $f * $^x } }
  
 my $x  = 2.0;

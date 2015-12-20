@@ -4,7 +4,7 @@
 
 Implemented to parallel the (generalized) formula. (i.e. clearer, but naive and very slow.)
 
-```perl6
+```perl
 use v6;
  
 # reciprocal difference:

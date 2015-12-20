@@ -4,7 +4,7 @@
 
 Apart from the <tt>$m++</tt> this can be viewed as a purely functional program; we use nested <tt>gather</tt>/<tt>take</tt> constructs to avoid accumulators.
 
-```perl6
+```perl
 constant @I = <zero one    two    three    four     five    six     seven     eight    nine
                ten  eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen>;
 constant @X = <0    X      twenty thirty   forty    fifty   sixty   seventy   eighty   ninety>;

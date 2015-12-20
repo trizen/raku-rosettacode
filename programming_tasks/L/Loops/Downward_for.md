@@ -2,7 +2,7 @@
 
 # [Loops/Downward for][1]
 
-```perl6
+```perl
 for 10 ... 0 {
     .say;
 }

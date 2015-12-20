@@ -2,7 +2,7 @@
 
 # [Constrained genericity][1]
 
-```perl6
+```perl
 subset Eatable of Any where { .^can('eat') };
  
 class Cake { method eat() {...} }

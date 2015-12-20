@@ -2,7 +2,7 @@
 
 # [Terminal control/Hiding the cursor][1]
 
-```perl6
+```perl
 run 'tput', 'civis';
 sleep 5;
 run 'tput', 'cvvis';

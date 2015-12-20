@@ -4,7 +4,7 @@
 
 Any Unicode character or combination of characters can be used for symbols in Perl 6. Here's some counting rods and some cuneiform:
 
-```perl6
+```perl
 sub postfix:<𒋦>($n) { say "$n trilobites" }
  
 sub term:<𝍧> { unival('𝍧') }
@@ -24,7 +24,7 @@ Of course, as in other languages, most of the characters you'll typically see in
 
 Actually, the above is a slight prevarication. The syntactic category notation does not allow you to use whitespace in the definition of a new symbol. But that leaves many more characters allowed than not allowed. Hence, it is much easier to enumerate the characters that <em>cannot</em> be used in symbols:
 
-```perl6
+```perl
 say .fmt("%4x"),"\t", uniname($_)
     if uniprop($_,'Z')
         for 0..0x1ffff;

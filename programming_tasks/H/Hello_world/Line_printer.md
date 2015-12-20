@@ -2,7 +2,7 @@
 
 # [Hello world/Line printer][1]
 
-```perl6
+```perl
 given open '/dev/lp0', :w { # Open the device for writing as the default
     .say('Hello World!');              # Send it the string
     .close;

@@ -7,7 +7,7 @@ Note that, to make runtime manageable, we have created a subset file:
 ```bash
 grep '^[ie]' unixdict.txt > dict.ie
 ```
-```perl6
+```perl
 my %anagram = slurp('dict.ie').words.map({[.comb]}).classify({ .sort.join });
  
 for %anagram.values.sort({ -@($_[0]) }) -> @aset {

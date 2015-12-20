@@ -2,7 +2,7 @@
 
 # [Multifactorial][1]
 
-```perl6
+```perl
 for 1 .. 5 -> $degree {
     sub mfact($n) { [*] $n, *-$degree ...^ * <= 0 };
     say "$degree: ", map &mfact, 1..10

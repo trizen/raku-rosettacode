@@ -2,7 +2,7 @@
 
 # [Inheritance/Multiple][1]
 
-```perl6
+```perl
 class Camera {}
 class MobilePhone {}
 class CameraPhone is Camera is MobilePhone {}

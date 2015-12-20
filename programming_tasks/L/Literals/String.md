@@ -34,7 +34,7 @@ Short       Long            Meaning
 In any case, an initial <tt>Q</tt>, <tt>q</tt>, or <tt>qq</tt> may omit the initial colon to form traditional Perl quotes such as <tt>qw//</tt>.
 And Q can be used by itself to introduce a quote that has no escapes at all except for the closing delimiter:
 
-```perl6
+```perl
 my $raw = Q'$@\@#)&!#';
 ```
 
@@ -71,7 +71,7 @@ Unlike in Perl 5, we don't use backticks as shorthand for what is now expressed
 Heredocs now have no special <tt>&lt;&lt;</tt> syntax,
 but fall out of the <tt>:to</tt> adverb:
 
-```perl6
+```perl
 say qq:to/END/;
     Your ad here.
     END
@@ -84,7 +84,7 @@ Indentation equivalent to the ending tag is automatically removed.
 
 Backslash sequences recognized by <tt>:b</tt> (and hence <tt>:qq</tt>) include:
 
-```perl6
+```perl
 "\a"        # BELL
 "\b"        # BACKSPACE
 "\t"        # TAB
