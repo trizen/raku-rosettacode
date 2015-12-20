@@ -46,7 +46,7 @@ my &multiply := { $^a * $^b };
 ```
 
 
-(And, in fact, our original <tt>@\_</tt> above is just a variadic self-declaring placeholder argument. And the famous Perl "topic", <tt>$\_</tt>, is just a self-declared parameter to a unary block.)
+(And, in fact, our original <tt>\@\_</tt> above is just a variadic self-declaring placeholder argument. And the famous Perl "topic", <tt>$\_</tt>, is just a self-declared parameter to a unary block.)
 
 
 

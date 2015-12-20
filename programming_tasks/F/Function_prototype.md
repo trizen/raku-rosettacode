@@ -18,7 +18,7 @@ sub foo ( --> Int) {...}
 
 
 A prototype declaration for a function that requires two arguments.
-Note that we can omit the variable name and just use the sigil in the stub, since we don't need to reference the argument until the actual definition of the routine. Also, unlike in Perl 5, a sigil like <tt>@</tt> defaults to binding a single positional argument.
+Note that we can omit the variable name and just use the sigil in the stub, since we don't need to reference the argument until the actual definition of the routine. Also, unlike in Perl 5, a sigil like <tt>\@</tt> defaults to binding a single positional argument.
 
 ```perl
 sub foo (@, $ --> Int) {...}
@@ -26,7 +26,7 @@ sub foo (@, $ --> Int) {...}
 
 
 A prototype declaration for a function that utilizes varargs after one required argument.
-Note the "slurpy" star turns the <tt>@</tt> sigil into a parameter that accepts all the rest of the positional arguments.
+Note the "slurpy" star turns the <tt>\@</tt> sigil into a parameter that accepts all the rest of the positional arguments.
 
 ```perl
 sub foo ($, *@ --> Int) {...}

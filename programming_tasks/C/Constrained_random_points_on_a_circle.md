@@ -34,7 +34,7 @@ This uses, among other things, a 0-based matrix rather than a hash, a <tt>given<
 
 
 
-After the <tt>given do</tt> has loaded up <tt>@matrix</tt> with our circle, the <tt>map</tt> on the first line substitutes a space for any undefined matrix element, and the extra space between elements is supplied by the stringification of the list value, performed by the prefix <tt>~</tt> operator, the unary equivalent of concatenation in Perl&#160;6.
+After the <tt>given do</tt> has loaded up <tt>\@matrix</tt> with our circle, the <tt>map</tt> on the first line substitutes a space for any undefined matrix element, and the extra space between elements is supplied by the stringification of the list value, performed by the prefix <tt>~</tt> operator, the unary equivalent of concatenation in Perl&#160;6.
 
 
 

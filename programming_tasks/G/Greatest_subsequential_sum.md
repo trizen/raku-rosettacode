@@ -24,8 +24,8 @@ Another solution, not translated from any other language:
 
 
 For each starting position, we calculate all the subsets starting at that position.
-They are combined with the best subset ($max\_subset) from previous loops, to form (@subsets).
-The best of those @subsets is saved at the new $max\_subset.
+They are combined with the best subset ($max\_subset) from previous loops, to form (\@subsets).
+The best of those \@subsets is saved at the new $max\_subset.
 
 
 
@@ -37,7 +37,7 @@ The empty sequence is used to initialize $max\_subset, which fufills the "all ne
 
 
 
-Note that once the triangular comma bug is resolved, the inner-loop subset calculation line can be shortened to "my @subsets = [\,] @a;".
+Note that once the triangular comma bug is resolved, the inner-loop subset calculation line can be shortened to "my \@subsets = [\,] \@a;".
 
 ```perl
 sub max_sub-seq ( *@a ) {

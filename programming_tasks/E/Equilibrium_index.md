@@ -29,7 +29,7 @@ sub equilibrium_index(@list) {
 ```
 
 
-The <tt>[\+]</tt> is a reduction that returns a list of partial results. The <tt>»==«</tt> is a vectorized equality comparison; it returns a vector of true and false. The <tt>Zxx</tt> is a zip with the list replication operator, so we return only the elements of the left list where the right list is true (which is taken to mean 1 here). And the <tt>^@list</tt> is just shorthand for <tt>0 ..^ @list</tt>. We could just as easily have used <tt>@list.keys</tt> there.
+The <tt>[\+]</tt> is a reduction that returns a list of partial results. The <tt>»==«</tt> is a vectorized equality comparison; it returns a vector of true and false. The <tt>Zxx</tt> is a zip with the list replication operator, so we return only the elements of the left list where the right list is true (which is taken to mean 1 here). And the <tt>^\@list</tt> is just shorthand for <tt>0 ..^ \@list</tt>. We could just as easily have used <tt>\@list.keys</tt> there.
 
 
 
@@ -104,4 +104,4 @@ The <tt>.classify</tt> method creates a hash, with its code block's return value
 
 
 
-We could have used <tt>.pairs</tt> instead of <tt>.keys</tt> to save the cost of <tt>@list</tt> lookups, but that would change each <tt>%h</tt> value to an Array of Pairs, which would complicate the return line.
+We could have used <tt>.pairs</tt> instead of <tt>.keys</tt> to save the cost of <tt>\@list</tt> lookups, but that would change each <tt>%h</tt> value to an Array of Pairs, which would complicate the return line.

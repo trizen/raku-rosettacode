@@ -30,4 +30,4 @@ Here the closure, <tt>\*+\*</tt>, is just a quick way to write a lambda, <tt>-&g
 
 
 
-At this point someone may complain that the solution is doesn't fit the specified task because the sequence operator doesn't do the check for negative. True, but the sequence operator is not the whole of the solution; this check is supplied by the subscripting operator itself when you ask for <tt>@fib[-1]</tt>. Instead of scattering all kinds of arbitrary boundary conditions throughout your functions, the sequence operator maps them quite naturally to the boundary of definedness at the start of a list.
+At this point someone may complain that the solution is doesn't fit the specified task because the sequence operator doesn't do the check for negative. True, but the sequence operator is not the whole of the solution; this check is supplied by the subscripting operator itself when you ask for <tt>\@fib[-1]</tt>. Instead of scattering all kinds of arbitrary boundary conditions throughout your functions, the sequence operator maps them quite naturally to the boundary of definedness at the start of a list.

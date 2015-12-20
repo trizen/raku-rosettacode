@@ -112,7 +112,7 @@ $ref.(@args)      # as object invocation, explicit postfix
 Note: whether a function may actually be called with a variable number of arguments depends entirely
 on whether a signature accepts a list at that position in the argument list, but
 describing that is not the purpose of this task. Suffice to say that we assume here that the
-foo function is declared with a signature of the form (\*@params). The calls above might be interpreted as having a single array argument if the signature indicates a normal parameter instead of a variadic one. What you cannot do in Perl 6 (unlike Perl 5) is pass an array as several fixed arguments. By default it must either represent a single argument, or be part of a variadic list. You can force the extra level of argument list interpolation using a prefix <tt>|</tt> however:
+foo function is declared with a signature of the form (\*\@params). The calls above might be interpreted as having a single array argument if the signature indicates a normal parameter instead of a variadic one. What you cannot do in Perl 6 (unlike Perl 5) is pass an array as several fixed arguments. By default it must either represent a single argument, or be part of a variadic list. You can force the extra level of argument list interpolation using a prefix <tt>|</tt> however:
 
 ```perl
 my @args = 1,2,3;

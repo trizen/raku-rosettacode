@@ -27,6 +27,6 @@ for grep Match, @chunks -> $s {
 ```
 
 
-Using the array <tt>@seps</tt> in a pattern automatically does alternation.
+Using the array <tt>\@seps</tt> in a pattern automatically does alternation.
 By default this would do longest-term matching (that is, <tt>|</tt> semantics), but we can force it to do left-to-right matching by embedding the array in a short-circuit alternation (that is, <tt>||</tt> semantics).
 As it happens, with the task's specified list of separators, it doesn't make any difference.

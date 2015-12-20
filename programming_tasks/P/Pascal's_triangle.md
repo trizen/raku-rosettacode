@@ -11,7 +11,7 @@ sub pascal { [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... * }
 ```
 
 
-One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the <tt>@</tt> sigil to indicate that the sequence should cache its values for reuse:
+One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the <tt>\@</tt> sigil to indicate that the sequence should cache its values for reuse:
 
 ```perl
 constant @pascal = [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... *;
