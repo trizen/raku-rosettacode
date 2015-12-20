@@ -52,4 +52,4 @@ $PPM.close;
 ```
 
 
-[<img alt="Perl 6 output" src="/mw/images/7/7c/Perl\_6\_xor\_pattern.png" width="200" height="200"/>](/wiki/File:Perl\_6\_xor\_pattern.png" class="image" title="Perl 6 output)
+[<img alt="Perl 6 output" src="/mw/images/7/7c/Perl_6_xor_pattern.png" width="200" height="200"/>](http://rosettacode.org/wiki/File:Perl_6_xor_pattern.png)

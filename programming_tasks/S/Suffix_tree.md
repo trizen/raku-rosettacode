@@ -23,7 +23,7 @@ multi suffix-tree(@a) {
 ```
 
 
-Displaying the tree is done with the code from [visualize a tree](/wiki/Visualize\_a\_tree" title="Visualize a tree):
+Displaying the tree is done with the code from [visualize a tree](http://rosettacode.org/wiki/Visualize_a_tree):
 
 ```perl
 my $tree = root => suffix-tree 'banana$';

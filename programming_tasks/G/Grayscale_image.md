@@ -27,8 +27,8 @@ sub MAIN ($filename = 'default.ppm') {
 ```
 
 
-Using the .ppm file from the [Write a PPM file](/wiki/Bitmap/Write\_a\_PPM\_file#Perl\_6" title="Bitmap/Write a PPM file) task:
+Using the .ppm file from the [Write a PPM file](http://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6) task:
 
 
 
-Original: [<img alt="Ppm-perl6.png" src="/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](/wiki/File:Ppm-perl6.png" class="image)   Grey Scale: [<img alt="Pgm-g2-perl6.png" src="/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](/wiki/File:Pgm-g2-perl6.png" class="image)
+Original: [<img alt="Ppm-perl6.png" src="/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Ppm-perl6.png)   Grey Scale: [<img alt="Pgm-g2-perl6.png" src="/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Pgm-g2-perl6.png)

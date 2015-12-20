@@ -2,4 +2,4 @@
 
 # [RCRPG][1]
 
-See [RCRPG/Perl\_6](/wiki/RCRPG/Perl\_6" title="RCRPG/Perl 6).
+See [RCRPG/Perl_6](http://rosettacode.org/wiki/RCRPG/Perl_6).

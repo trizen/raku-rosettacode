@@ -2,7 +2,7 @@
 
 # [Function prototype][1]
 
-There is no restriction on placement of prototype declarations. (Actually, we call them "stub declarations".) In fact, stub declarations are rarely needed in Perl 6 because post-declaration of functions is allowed, and normal [function declarations](http://design.perl6.org/S06.html#Subroutines\_and\_other\_code\_objects) do not bend the syntax the way they sometimes do in Perl 5.
+There is no restriction on placement of prototype declarations. (Actually, we call them "stub declarations".) In fact, stub declarations are rarely needed in Perl 6 because post-declaration of functions is allowed, and normal [function declarations](http://design.perl6.org/S06.html#Subroutines_and_other_code_objects) do not bend the syntax the way they sometimes do in Perl 5.
 
 
 
@@ -68,7 +68,7 @@ sub foo ($, :$option! --> Int) {...}
 ```
 
 
-A routine may unpack an <tt>Array</tt> automaticly. Here the first element is stored in a scalar and the rest in an <tt>Array</tt>. Other buildin types can be [unpacked](http://design.perl6.org/S06.html#Unpacking\_array\_parameters) as well.
+A routine may unpack an <tt>Array</tt> automaticly. Here the first element is stored in a scalar and the rest in an <tt>Array</tt>. Other buildin types can be [unpacked](http://design.perl6.org/S06.html#Unpacking_array_parameters) as well.
 
 ```perl
 sub foo ([$, @]) {...}

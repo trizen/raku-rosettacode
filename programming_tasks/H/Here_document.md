@@ -50,7 +50,7 @@ freewheelin;
 ```
 
 
-Both q and qq are specialised forms of [Q](http://design.perl6.org/S02.html#Q\_forms) which comes with many adverbs. Here a heredoc that only interpolates @-sigils. The lowest level of indentation is removed from every line.
+Both q and qq are specialised forms of [Q](http://design.perl6.org/S02.html#Q_forms) which comes with many adverbs. Here a heredoc that only interpolates @-sigils. The lowest level of indentation is removed from every line.
 
 ```perl
  

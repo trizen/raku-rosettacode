@@ -2,7 +2,7 @@
 
 # [Doubly-linked list/Element insertion][1]
 
-Using the generic definitions from [Doubly-linked\_list/Definition#Perl\_6](/wiki/Doubly-linked\_list/Definition#Perl\_6" title="Doubly-linked list/Definition):
+Using the generic definitions from [Doubly-linked_list/Definition#Perl_6](http://rosettacode.org/wiki/Doubly-linked_list/Definition#Perl_6):
 
 ```perl
 class DLElem_Str does DLElem[Str] {}

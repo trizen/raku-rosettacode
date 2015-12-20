@@ -11,7 +11,7 @@ say horner( [ -19, 7, -4, 6 ], 3 );
 ```
 
 
-A recursive version would spare us the need for reversing the list of coefficients. However, special care must be taken in order to write it, because the way Perl 6 implements lists is not optimized for this kind of treatment. [Lisp](/wiki/Lisp" title="Lisp" class="mw-redirect)-style lists are, and fortunately it is possible to emulate them with [Pairs](http://doc.perl6.org/type/Pair) and the reduction meta-operator:
+A recursive version would spare us the need for reversing the list of coefficients. However, special care must be taken in order to write it, because the way Perl 6 implements lists is not optimized for this kind of treatment. [Lisp](http://rosettacode.org/wiki/Lisp)-style lists are, and fortunately it is possible to emulate them with [Pairs](http://doc.perl6.org/type/Pair) and the reduction meta-operator:
 
 ```perl
 multi horner(Numeric $c, $) { $c }

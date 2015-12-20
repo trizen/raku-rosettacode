@@ -3,7 +3,7 @@
 # [Verify distribution uniformity/Chi-squared test][1]
 
 For the incomplete gamma function we use a series expansion related to Kummer's confluent hypergeometric function
-(see [http://en.wikipedia.org/wiki/Incomplete\_gamma\_function#Evaluation\_formulae](http://en.wikipedia.org/wiki/Incomplete\_gamma\_function#Evaluation\_formulae)). The gamma function is calculated
+(see [http://en.wikipedia.org/wiki/Incomplete_gamma_function#Evaluation_formulae](http://en.wikipedia.org/wiki/Incomplete_gamma_function#Evaluation_formulae)). The gamma function is calculated
 in closed form, as we only need its value at integers and half integers.
 
 ```perl

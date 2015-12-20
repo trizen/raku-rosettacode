@@ -2,7 +2,7 @@
 
 # [Zig-zag matrix][1]
 
-Assuming the same Turtle class that is used in [Spiral\_matrix](/wiki/Spiral\_matrix" title="Spiral matrix):
+Assuming the same Turtle class that is used in [Spiral_matrix](http://rosettacode.org/wiki/Spiral_matrix):
 
 ```perl
 sub MAIN($size as Int) {

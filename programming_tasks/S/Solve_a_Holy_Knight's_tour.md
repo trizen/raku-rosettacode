@@ -2,7 +2,7 @@
 
 # [Solve a Holy Knight's tour][1]
 
-Using the Warnsdorff algorithm from [Solve\_a\_Hidato\_puzzle](/wiki/Solve\_a\_Hidato\_puzzle" title="Solve a Hidato puzzle).
+Using the Warnsdorff algorithm from [Solve_a_Hidato_puzzle](http://rosettacode.org/wiki/Solve_a_Hidato_puzzle).
 
 ```perl
 my @adjacent =

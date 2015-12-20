@@ -10,7 +10,7 @@ repeat {
 ```
 
 
-`repeat ... until *condition*` is equivalent to `do ... while not *condition*`.
+`repeat ... until <i>condition</i>` is equivalent to `do ... while not <i>condition</i>`.
 
 ```perl
 my $val = 0;

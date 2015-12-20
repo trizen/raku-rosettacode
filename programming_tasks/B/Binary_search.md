@@ -2,7 +2,7 @@
 
 # [Binary search][1]
 
-With either of the below implementations of `binary\_search`, one could write a function to search any object that does `Positional` this way:
+With either of the below implementations of `binary_search`, one could write a function to search any object that does `Positional` this way:
 
 ```perl
 sub search (@a, $x --> Int) {

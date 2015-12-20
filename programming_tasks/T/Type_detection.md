@@ -6,7 +6,7 @@ Perl 6 is a dynamic language that has gradual, duck typing. It provides introspe
 
 
 
-This is really a very broad and kind of hand-wavey overview of Perl 6 types. For much more indepth coverage see [Perl 6 Synopsis S02: Bits and Pieces: Built-In Data Types](http://design.perl6.org/S02.html#Built-In\_Data\_Types%7C)
+This is really a very broad and kind of hand-wavey overview of Perl 6 types. For much more indepth coverage see [Perl 6 Synopsis S02: Bits and Pieces: Built-In Data Types](http://design.perl6.org/S02.html#Built-In_Data_Types%7C)
 
 ```perl
 sub type ($t) { say $t.perl, "\tis type: ", $t.WHAT }

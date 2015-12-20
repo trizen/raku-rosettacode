@@ -2,7 +2,7 @@
 
 # [Sum of a series][1]
 
-(Some of these work with [rakudo](/wiki/Rakudo" title="Rakudo), and others with [niecza](/wiki/Niecza" title="Niecza). Eventually they'll all work everywhere...)
+(Some of these work with [rakudo](http://rosettacode.org/wiki/Rakudo), and others with [niecza](http://rosettacode.org/wiki/Niecza). Eventually they'll all work everywhere...)
 
 
 

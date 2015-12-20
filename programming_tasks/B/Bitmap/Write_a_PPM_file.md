@@ -24,4 +24,4 @@ Converted to a png. (ppm files not locally supported)
 
 
 
-[<img alt="Ppm-perl6.png" src="/mw/images/2/27/Ppm-perl6.png" width="125" height="125"/>](/wiki/File:Ppm-perl6.png" class="image)
+[<img alt="Ppm-perl6.png" src="/mw/images/2/27/Ppm-perl6.png" width="125" height="125"/>](http://rosettacode.org/wiki/File:Ppm-perl6.png)

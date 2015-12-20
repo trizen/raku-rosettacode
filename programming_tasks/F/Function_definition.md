@@ -10,7 +10,7 @@ sub multiply { return @_[0] * @_[1]; }
 
 
 The return is optional on the final statement, since the last expression would return its value anyway. The final semicolon in a block is also optional.
-(Beware that a subroutine without an explicit signature, like this one, magically becomes variadic (rather than nullary) only if `@\_` or `%\_` appear in the body.) In fact, we can define the variadic version explicitly, which still works for two arguments:
+(Beware that a subroutine without an explicit signature, like this one, magically becomes variadic (rather than nullary) only if `@_` or `%_` appear in the body.) In fact, we can define the variadic version explicitly, which still works for two arguments:
 
 ```perl
 sub multiply { [*] @_ }

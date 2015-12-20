@@ -2,7 +2,7 @@
 
 # [Flow-control structures][1]
 
-Control flow is extensible in Perl 6; most abnormal control flow (including the standard loop and switch exits) is managed by throwing control exceptions that are caught by the code implementing the construct in question. Warnings are also handled via control exceptions, and turn into control flow if the dynamic context chooses not to resume after the warning. See [[S04/Control exceptions](http://perlcabal.org/syn/S04.html#Control\_Exceptions)] for more information.
+Control flow is extensible in Perl 6; most abnormal control flow (including the standard loop and switch exits) is managed by throwing control exceptions that are caught by the code implementing the construct in question. Warnings are also handled via control exceptions, and turn into control flow if the dynamic context chooses not to resume after the warning. See [[S04/Control exceptions](http://perlcabal.org/syn/S04.html#Control_Exceptions)] for more information.
 
 
 

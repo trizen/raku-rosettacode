@@ -25,7 +25,7 @@ my Str $z; say $z.WHAT; # Str()
 ```
 
 
-The user-interface for definedness are [type smilies](http://design.perl6.org/S12.html#Abstract\_vs\_Concrete\_types) and the <tt>with</tt>-statement.
+The user-interface for definedness are [type smilies](http://design.perl6.org/S12.html#Abstract_vs_Concrete_types) and the <tt>with</tt>-statement.
 
 ```perl
 my Int:D $i = 1; # if $i has to be defined you must provide a default value

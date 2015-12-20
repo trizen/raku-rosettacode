@@ -2,7 +2,7 @@
 
 # [Find largest left truncatable prime in a given base][1]
 
-Using the Miller-Rabin definition of <tt>is-prime</tt> from [Miller-Rabin primality test#Perl 6](/wiki/Miller-Rabin\_primality\_test#Perl\_6" title="Miller-Rabin primality test" class="mw-redirect), or the built-in, if available. For speed we do a single try, which allows a smattering of composites in, but this does not appear to damage the algorithm much, and the correct answer appears to be within a few candidates of the end all the time. We keep the last few hundred candidates, sort them into descending order, then pick the largest that passes Miller-Rabin with 100 tries.
+Using the Miller-Rabin definition of <tt>is-prime</tt> from [Miller-Rabin primality test#Perl 6](http://rosettacode.org/wiki/Miller-Rabin_primality_test#Perl_6), or the built-in, if available. For speed we do a single try, which allows a smattering of composites in, but this does not appear to damage the algorithm much, and the correct answer appears to be within a few candidates of the end all the time. We keep the last few hundred candidates, sort them into descending order, then pick the largest that passes Miller-Rabin with 100 tries.
 
 
 

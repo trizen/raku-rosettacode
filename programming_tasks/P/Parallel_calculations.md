@@ -19,7 +19,7 @@ Most of the parallelizing work is done by the hyperoperators that demand the fir
 
 
 
-The [rakudo](/wiki/Rakudo" title="Rakudo) system does not actually do hypers in parallel yet, but when it does, this can automatically parallelize. (Hypers do parallelize in [pugs](/wiki/Pugs" title="Pugs), but it doesn't do some of the other things we rely on here.) It will be up to each individual compiler to determine how many cores to use for any given hyperoperator; the construct merely promises the compiler that it can be parallelized, but does not require that it must be.
+The [rakudo](http://rosettacode.org/wiki/Rakudo) system does not actually do hypers in parallel yet, but when it does, this can automatically parallelize. (Hypers do parallelize in [pugs](http://rosettacode.org/wiki/Pugs), but it doesn't do some of the other things we rely on here.) It will be up to each individual compiler to determine how many cores to use for any given hyperoperator; the construct merely promises the compiler that it can be parallelized, but does not require that it must be.
 
 
 

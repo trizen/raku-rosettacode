@@ -2,7 +2,7 @@
 
 # [Interactive programming][1]
 
-Using [Rakudo](/wiki/Rakudo" title="Rakudo).
+Using [Rakudo](http://rosettacode.org/wiki/Rakudo).
 
 ```perl
 $ rakudo/perl6

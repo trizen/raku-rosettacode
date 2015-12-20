@@ -2,7 +2,7 @@
 
 # [URL parser][1]
 
-Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](//tools.ietf.org/html/rfc3986) BNF grammar.
+Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](http://rosettacode.org//tools.ietf.org/html/rfc3986) BNF grammar.
 
 ```perl
 use URI;

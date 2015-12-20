@@ -26,7 +26,7 @@ for 1 .. 5 -> $k {
 ```
 
 
-Here is a solution with identical output based on the <tt>factors</tt> routine from [Count\_in\_factors#Perl\_6](/wiki/Count\_in\_factors#Perl\_6" title="Count in factors) (to be included manually until we decide where in the distribution to put it).
+Here is a solution with identical output based on the <tt>factors</tt> routine from [Count_in_factors#Perl_6](http://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
 
 ```perl
 constant factory = 0..* Z=> (0, 0, map { +factors($_) }, 2..*);

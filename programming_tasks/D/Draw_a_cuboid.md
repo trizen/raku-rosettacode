@@ -50,4 +50,4 @@ cuboid $_ for [2,3,4], [3,4,2], [4,2,3], [1,1,1], [8,1,1], [1,8,1], [1,1,8];
 ```
 
 
-[<img alt="Cuboid Perl 6.png" src="/mw/images/d/d2/Cuboid\_Perl\_6.png" width="354" height="1548"/>](/wiki/File:Cuboid\_Perl\_6.png" class="image)
+[<img alt="Cuboid Perl 6.png" src="/mw/images/d/d2/Cuboid_Perl_6.png" width="354" height="1548"/>](http://rosettacode.org/wiki/File:Cuboid_Perl_6.png)

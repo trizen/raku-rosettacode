@@ -29,4 +29,4 @@ Instant:1403880985.109395 event reset by task
 ```
 
 
-See also [Handle\_a\_signal#Perl\_6](/wiki/Handle\_a\_signal#Perl\_6" title="Handle a signal) for an example of using Supplies to do reactive programming based on events (Unix signals in this case).
+See also [Handle_a_signal#Perl_6](http://rosettacode.org/wiki/Handle_a_signal#Perl_6) for an example of using Supplies to do reactive programming based on events (Unix signals in this case).

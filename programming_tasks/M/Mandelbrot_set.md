@@ -2,7 +2,7 @@
 
 # [Mandelbrot set][1]
 
-Variant of a Mandelbrot script from the [Perl 6 ecosystem](http://modules.perl6.org/). Produces a [Portable Pixel Map](/wiki/Write\_ppm\_file" title="Write ppm file" class="mw-redirect) to STDOUT. 
+Variant of a Mandelbrot script from the [Perl 6 ecosystem](http://modules.perl6.org/). Produces a [Portable Pixel Map](http://rosettacode.org/wiki/Write_ppm_file) to STDOUT. 
 Redirect into a file to save it. 
 Converted to a .png file for display here.
 

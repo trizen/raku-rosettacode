@@ -2,7 +2,7 @@
 
 # [Fractal tree][1]
 
-Image is created in [SVG](http://en.wikipedia.org/wiki/SVG" class="extiw" title="wp:SVG) format.
+Image is created in [SVG](http://en.wikipedia.org/wiki/SVG) format.
 
 ```perl
 my ($width, $height) = (1000,1000); # image dimension

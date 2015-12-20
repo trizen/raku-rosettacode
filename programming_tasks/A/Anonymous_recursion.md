@@ -2,7 +2,7 @@
 
 # [Anonymous recursion][1]
 
-In addition to the methods in the [Perl](/wiki/Perl" title="Perl" class="mw-redirect) entry above, and the Y-combinator described in [Y\_combinator](/wiki/Y\_combinator" title="Y combinator), you may also refer to an anonymous block or function from the inside:
+In addition to the methods in the [Perl](http://rosettacode.org/wiki/Perl) entry above, and the Y-combinator described in [Y_combinator](http://rosettacode.org/wiki/Y_combinator), you may also refer to an anonymous block or function from the inside:
 
 ```perl
 sub fib($n) {

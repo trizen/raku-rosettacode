@@ -2,7 +2,7 @@
 
 # [Monty Hall problem][1]
 
-This implementation is parametric over the number of doors. [Increasing the number of doors in play makes the superiority of the switch strategy even more obvious](http://en.wikipedia.org/wiki/Monty\_Hall\_problem#Increasing\_the\_number\_of\_doors" class="extiw" title="wp:Monty Hall problem).
+This implementation is parametric over the number of doors. [Increasing the number of doors in play makes the superiority of the switch strategy even more obvious](http://en.wikipedia.org/wiki/Monty_Hall_problem#Increasing_the_number_of_doors).
 
 ```perl
 enum Prize <Car Goat>;

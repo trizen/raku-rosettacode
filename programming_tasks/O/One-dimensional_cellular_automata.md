@@ -3,8 +3,8 @@
 # [One-dimensional cellular automata][1]
 
 We'll make a general algorithm capable of computing any cellular automata
-as defined by [Stephen Wolfram](http://en.wikipedia.org/wiki/Stephen\_Wolfram" class="extiw" title="wp:Stephen Wolfram)'s
-famous book *[A new kind of Science](http://en.wikipedia.org/wiki/A\_new\_kind\_of\_Science" class="extiw" title="wp:A new kind of Science)*.
+as defined by [Stephen Wolfram](http://en.wikipedia.org/wiki/Stephen_Wolfram)'s
+famous book *[A new kind of Science](http://en.wikipedia.org/wiki/A_new_kind_of_Science)*.
 We will take the liberty of wrapping the array of cells
 as it does not affect the result much
 and it makes the implementation a lot easier.
@@ -52,8 +52,8 @@ say $a++ for ^10;
 ```
 
 
-Rule 104 is not particularly interesting so here is [Rule 90](http://en.wikipedia.org/wiki/Rule\_90" class="extiw" title="wp:Rule 90),
-which shows a [Sierpinski Triangle](http://en.wikipedia.org/wiki/Sierpinski\_Triangle" class="extiw" title="wp:Sierpinski Triangle).
+Rule 104 is not particularly interesting so here is [Rule 90](http://en.wikipedia.org/wiki/Rule_90),
+which shows a [Sierpinski Triangle](http://en.wikipedia.org/wiki/Sierpinski_Triangle).
 
 ```perl
 my $size = 50;
