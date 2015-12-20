@@ -2,7 +2,7 @@
 
 # [Loop over multiple arrays simultaneously][1]
 
-```perl6
+```perl
 for <a b c> Z <A B C> Z 1, 2, 3 -> $x, $y, $z {
    say $x, $y, $z;
 }
@@ -15,13 +15,13 @@ The `Z` operator stops emitting items as soon as the shortest input list is exha
 
 Note that we can also factor out the concatenation by making the <tt>Z</tt> metaoperator apply the <tt>~</tt> concatenation operator across each triple:
 
-```perl6
+```perl
 .say for <a b c> Z~ <A B C> Z~ 1, 2, 3;
 ```
 
 
 We could also use the zip-to-string with the reduction metaoperator:
 
-```perl6
+```perl
 .say for [Z~] [<a b c>], [<A B C>], [1,2,3]
 ```
