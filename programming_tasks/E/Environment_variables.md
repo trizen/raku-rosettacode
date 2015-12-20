@@ -2,7 +2,7 @@
 
 # [Environment variables][1]
 
-The `%\*ENV` hash maps environment variables to their values:
+The `%*ENV` hash maps environment variables to their values:
 
 ```perl
 say %*ENV<HOME>;
