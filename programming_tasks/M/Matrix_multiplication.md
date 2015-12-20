@@ -18,8 +18,8 @@ nested loops. The X cross operator, along with Z, the zip operator, is a member 
 
 
 
-Third is the use of prefix <tt>^</tt> to generate a list of numbers in a range. Here it is
-used on an array to generate all the indexes of the array. We have a way of indicating a range by the infix <tt>..</tt> operator, and you can put a <tt>^</tt> on either end to exclude that endpoint. We found ourselves writing <tt>0 ..^ \@a</tt> so often that we made <tt>^\@a</tt> a shorthand for that. It's pronounced "upto". The array is evaluated in a numeric context, so it returns the number of elements it contains, which is exactly what you want for the exclusive limit of the range.
+Third is the use of prefix `^` to generate a list of numbers in a range. Here it is
+used on an array to generate all the indexes of the array. We have a way of indicating a range by the infix `..` operator, and you can put a `^` on either end to exclude that endpoint. We found ourselves writing `0 ..^ @a` so often that we made `^@a` a shorthand for that. It's pronounced "upto". The array is evaluated in a numeric context, so it returns the number of elements it contains, which is exactly what you want for the exclusive limit of the range.
 
 ```perl
 sub mmult(@a,@b) {
@@ -75,4 +75,4 @@ sub mmult(\a,\b) {
 ```
 
 
-Here we use Z with an "op" of <tt>\*</tt>, which is a zip with multiply. This, along with the <tt>[+]</tt> reduction operator, replaces the inner loop. We chose to split the outer X loop back into two loops to make it convenient to collect each subarray value in <tt>[...]</tt>. It just collects all the returned values from the inner loop and makes an array of them. The outer loop simply returns the outer array.
+Here we use Z with an "op" of `*`, which is a zip with multiply. This, along with the `[+]` reduction operator, replaces the inner loop. We chose to split the outer X loop back into two loops to make it convenient to collect each subarray value in `[...]`. It just collects all the returned values from the inner loop and makes an array of them. The outer loop simply returns the outer array.

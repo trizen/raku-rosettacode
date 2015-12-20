@@ -2,7 +2,7 @@
 
 # [Hofstadter-Conway $10,000 sequence][1]
 
-Here is a list-oriented version. Note that <tt>\@a</tt> is a lazy array, and the Z variants are "zipwith" operators.
+Here is a list-oriented version. Note that `@a` is a lazy array, and the Z variants are "zipwith" operators.
 
 ```perl
 my $n = 3;

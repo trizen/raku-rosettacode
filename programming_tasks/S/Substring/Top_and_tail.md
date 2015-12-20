@@ -2,7 +2,7 @@
 
 # [Substring/Top and tail][1]
 
-Perl 6 provides both functional and method forms of substr. Note that, unlike in Perl 5, offsets from the end do not use negative numbers, but instead require a function expressing the negative offset relative to the length parameter, which is supplied by the operator. The form <tt>\*-1</tt> is just a simple way to write such a function.
+Perl 6 provides both functional and method forms of substr. Note that, unlike in Perl 5, offsets from the end do not use negative numbers, but instead require a function expressing the negative offset relative to the length parameter, which is supplied by the operator. The form `*-1` is just a simple way to write such a function.
 
 
 

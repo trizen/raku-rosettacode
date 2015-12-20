@@ -25,7 +25,7 @@ say [lcm] @list;
 ```
 
 
-In addition to the reduce metaoperator, a general higher-order function, <tt>reduce</tt>, can apply any appropriate function. Reproducing the above in this form, using the function names of those operators, we have:
+In addition to the reduce metaoperator, a general higher-order function, `reduce`, can apply any appropriate function. Reproducing the above in this form, using the function names of those operators, we have:
 
 ```perl
 say reduce &infix:<+>, @list;

@@ -17,7 +17,7 @@ sub infix:<≡> is equiv(&infix:<eq>) (Trit $a, Trit $b) { Trit(1 + ($a-1) * ($b
 ```
 
 
-The precedence of each operator is specified as equivalent to an existing operator. We've taken the liberty of using a double arrow for implication, to avoid confusing it with <tt>⊃</tt>, (U+2283 SUPERSET OF).
+The precedence of each operator is specified as equivalent to an existing operator. We've taken the liberty of using a double arrow for implication, to avoid confusing it with `⊃`, (U+2283 SUPERSET OF).
 
 
 

@@ -2,7 +2,7 @@
 
 # [Closures/Value capture][1]
 
-All blocks are anonymous closures in Perl 6, and parameters are lexicals, so it's easy to generate a list of them. We'll use a <tt>gather</tt>/<tt>take</tt> generator loop, and call the closures in random order, just to keep things interesting.
+All blocks are anonymous closures in Perl 6, and parameters are lexicals, so it's easy to generate a list of them. We'll use a `gather`/`take` generator loop, and call the closures in random order, just to keep things interesting.
 
 ```perl
 my @c = gather for ^10 -> $i {

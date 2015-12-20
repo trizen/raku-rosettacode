@@ -7,7 +7,7 @@ say lines[6] // die "Short file";
 ```
 
 
-Without an argument, the <tt>lines</tt> function reads filenames from the command line, or defaults to standard input. It then returns a lazy list, which we subscript to get the 7th element. Assuming this code is in a program called <tt>line7</tt>:
+Without an argument, the `lines` function reads filenames from the command line, or defaults to standard input. It then returns a lazy list, which we subscript to get the 7th element. Assuming this code is in a program called `line7`:
 
 
 #### Output:

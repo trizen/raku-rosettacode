@@ -20,4 +20,4 @@ say Collie.new.^parents; # instantiated object
 ```
 
 
-The <tt>.^parents</tt> notation indicates a method call to the object's metaobject rather than to the object itself.
+The `.^parents` notation indicates a method call to the object's metaobject rather than to the object itself.

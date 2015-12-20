@@ -2,7 +2,7 @@
 
 # [Convert decimal number to rational][1]
 
-Decimals are natively represented as rationals in Perl 6, so if the task does not need to handle repeating decimals, it is trivially handled by the <tt>.nude</tt> method, which returns the numerator and denominator:
+Decimals are natively represented as rationals in Perl 6, so if the task does not need to handle repeating decimals, it is trivially handled by the `.nude` method, which returns the numerator and denominator:
 
 ```perl
 say .nude.join('/') for 0.9054054, 0.518518, 0.75;

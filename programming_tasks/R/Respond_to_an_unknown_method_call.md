@@ -22,7 +22,7 @@ Sparrow: Hoist the Jolly Roger mateys, full speed ahead!
 ```
 
 
-<tt>[FALLBACK](http://design.perl6.org/S12.html#FALLBACK_methods)</tt> will be called for any method that is not defined. Since any class inherits from <tt>Any</tt>, there will be plenty of already defined methods. Those which are not defined can also be used as L-Values by the magic of <tt>[is rw](http://design.perl6.org/S12.html#Lvalue_methods)</tt>.
+`<a rel="nofollow" class="external text" href="http://design.perl6.org/S12.html#FALLBACK_methods">FALLBACK</a>` will be called for any method that is not defined. Since any class inherits from `Any`, there will be plenty of already defined methods. Those which are not defined can also be used as L-Values by the magic of `<a rel="nofollow" class="external text" href="http://design.perl6.org/S12.html#Lvalue_methods">is rw</a>`.
 
 ```perl
 class L-Value { 

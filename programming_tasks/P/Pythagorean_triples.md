@@ -60,7 +60,7 @@ of which 703 are primitive.
 ```
 
 
-Here's a much faster version. Hint, "oyako" is Japanese for "parent/child". <tt>:-)</tt>
+Here's a much faster version. Hint, "oyako" is Japanese for "parent/child". `:-)`
 
 ```perl
 sub triples($limit) {
@@ -139,8 +139,8 @@ for 10,100,1000 ... * -> $limit {
 
 Using vectorized ops allows a bit more potential for parallelization, though this is probably not as big a win in this case, especially since we do a certain amount of multiplying by 1 that the scalar version doesn't need to do.
 Note the cute trick of adding complex numbers to add two numbers in parallel.
-The use of <tt>gather</tt>/<tt>take</tt> allows the summation to run in a different thread than the helper function, at least in theory...
+The use of `gather`/`take` allows the summation to run in a different thread than the helper function, at least in theory...
 
 
 
-In practice, this solution runs considerably slower than the previous one, due primarily to passing <tt>gather</tt>/<tt>take</tt> values up many levels of dynamic scope. Eventually this may be optimized.
+In practice, this solution runs considerably slower than the previous one, due primarily to passing `gather`/`take` values up many levels of dynamic scope. Eventually this may be optimized.

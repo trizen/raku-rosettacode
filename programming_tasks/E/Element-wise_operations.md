@@ -79,4 +79,4 @@ msay @a «/» 2;
 ```
 
 
-In addition to calling the underlying higher-order functions directly, it's supposed to be possible to name a function like <tt>&amp;[«+»]</tt> to get the first example above, but this is currently (2012-08) supported only be niecza.
+In addition to calling the underlying higher-order functions directly, it's supposed to be possible to name a function like `&amp;[«+»]` to get the first example above, but this is currently (2012-08) supported only be niecza.

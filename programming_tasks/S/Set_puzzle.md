@@ -2,7 +2,7 @@
 
 # [Set puzzle][1]
 
-The trick here is to allocate three different bits for each enum, with the result that the cards of a matching set OR together to produce a 4-digit octal number that contains only the digits 1, 2, 4, or 7. This OR is done by funny looking <tt>[+|]</tt>, which is the reduction form of <tt>+|</tt>, which is the numeric bitwise OR. (Because Perl 6 stole the bare <tt>|</tt> operator for composing junctions instead.)
+The trick here is to allocate three different bits for each enum, with the result that the cards of a matching set OR together to produce a 4-digit octal number that contains only the digits 1, 2, 4, or 7. This OR is done by funny looking `[+|]`, which is the reduction form of `+|`, which is the numeric bitwise OR. (Because Perl 6 stole the bare `|` operator for composing junctions instead.)
 
 ```perl
 enum Color (red => 0o1000, green =>  0o2000, purple => 0o4000);

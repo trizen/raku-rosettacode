@@ -92,7 +92,7 @@ digital root H, persistence 3
 ```
 
 
-Or if you are more inclined to the functional programming persuasion, you can use the <tt>...</tt> sequence operator to calculate the values without side effects:
+Or if you are more inclined to the functional programming persuasion, you can use the `...` sequence operator to calculate the values without side effects:
 
 ```perl
 sub digroot ($r, :$base = 10) {

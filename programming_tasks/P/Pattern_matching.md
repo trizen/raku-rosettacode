@@ -33,7 +33,7 @@ sub MAIN {
 ```
 
 
-This code uses generic comparison operators <tt>before</tt> and <tt>after</tt>, so it should work on any ordered type.
+This code uses generic comparison operators `before` and `after`, so it should work on any ordered type.
 
 
 #### Output:

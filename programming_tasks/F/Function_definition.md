@@ -46,11 +46,11 @@ my &multiply := { $^a * $^b };
 ```
 
 
-(And, in fact, our original <tt>\@\_</tt> above is just a variadic self-declaring placeholder argument. And the famous Perl "topic", <tt>$\_</tt>, is just a self-declared parameter to a unary block.)
+(And, in fact, our original `@_` above is just a variadic self-declaring placeholder argument. And the famous Perl "topic", `$_`, is just a self-declared parameter to a unary block.)
 
 
 
-You may also curry both built-in and user-defined operators by supplying a <tt>\*</tt> (known as "whatever") in place of the argument that is *not* to be curried:
+You may also curry both built-in and user-defined operators by supplying a `*` (known as "whatever") in place of the argument that is *not* to be curried:
 
 ```perl
 my &multiply := * * *;

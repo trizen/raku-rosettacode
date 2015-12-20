@@ -76,7 +76,7 @@ while prompt("value: ") -> $value {
 
 
 Yet another approach is to use the conditional operator to encode the table.
-This allows each endpoint to be written once, avoiding duplication. The <tt>Rat()</tt>
+This allows each endpoint to be written once, avoiding duplication. The `Rat()`
 type in the signature coerces any numeric type to a rational.
 
 ```perl

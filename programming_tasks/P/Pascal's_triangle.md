@@ -2,7 +2,7 @@
 
 # [Pascal's triangle][1]
 
-The following routine returns a lazy list of lines using the sequence operator (<tt>...</tt>). With a lazy result you need not tell the routine how many you want; you can just use a slice subscript to get the first N lines:
+The following routine returns a lazy list of lines using the sequence operator (`...`). With a lazy result you need not tell the routine how many you want; you can just use a slice subscript to get the first N lines:
 
 ```perl
 sub pascal { [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... * }
@@ -11,7 +11,7 @@ sub pascal { [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... * }
 ```
 
 
-One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the <tt>\@</tt> sigil to indicate that the sequence should cache its values for reuse:
+One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the `@` sigil to indicate that the sequence should cache its values for reuse:
 
 ```perl
 constant @pascal = [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... *;

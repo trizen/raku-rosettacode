@@ -34,7 +34,7 @@ I'm dead.
 ```
 
 
-Perl 6 comes with [phasers](http://design.perl6.org/S04.html#Phasers), that are called when certain conditions in the life of a program, routine or block are met. <tt>CATCH</tt> is one of them and works nicely together with <tt>LEAVE</tt> that is called even if an exception would force the current block to be left immediately. It's a nice place to put your cleanup code.
+Perl 6 comes with [phasers](http://design.perl6.org/S04.html#Phasers), that are called when certain conditions in the life of a program, routine or block are met. `CATCH` is one of them and works nicely together with `LEAVE` that is called even if an exception would force the current block to be left immediately. It's a nice place to put your cleanup code.
 
 ```perl
 sub f(){

@@ -2,7 +2,7 @@
 
 # [I before E except after C][1]
 
-This solution uses grammars and actions to parse the given file, the <tt>Bag</tt> for tallying up occurrences of each possible thing we're looking for ("ie", "ei", "cie", and "cei"), and junctions to determine the plausibility of a phrase from the subphrases. Note that a version of rakudo newer than the January 2014 compiler or Star releases is needed, as this code relies on a recent bugfix to the <tt>make</tt> function.
+This solution uses grammars and actions to parse the given file, the `Bag` for tallying up occurrences of each possible thing we're looking for ("ie", "ei", "cie", and "cei"), and junctions to determine the plausibility of a phrase from the subphrases. Note that a version of rakudo newer than the January 2014 compiler or Star releases is needed, as this code relies on a recent bugfix to the `make` function.
 
 ```perl
 grammar CollectWords {

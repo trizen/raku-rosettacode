@@ -11,8 +11,8 @@ empty              -- !@list.elems
 ```
 
 
-but there's also \@list.pop which removes a item from the end,
-and \@list.unshift which add a item on the start of the list.
+but there's also @list.pop which removes a item from the end,
+and @list.unshift which add a item on the start of the list.
 
 Example:
 

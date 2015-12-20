@@ -2,7 +2,7 @@
 
 # [Singly-linked list/Element definition][1]
 
-The <tt>Pair</tt> constructor is exactly equivalent to a cons cell.
+The `Pair` constructor is exactly equivalent to a cons cell.
 
 ```perl
 my $elem = 42 => $nextelem;

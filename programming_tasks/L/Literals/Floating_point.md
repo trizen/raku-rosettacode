@@ -12,4 +12,4 @@ Floating point numbers (the Num type) are written various forms of scientific no
 ```
 
 
-A number like <tt>3.1416</tt> is specifically not floating point, but rational (the Rat type), equivalent to <tt>3927/1250</tt>. On the other hand, <tt>Num(3.1416)</tt> would be considered a floating literal though by virtue of mandatory constant folding (not yet implemented).
+A number like `3.1416` is specifically not floating point, but rational (the Rat type), equivalent to `3927/1250`. On the other hand, `Num(3.1416)` would be considered a floating literal though by virtue of mandatory constant folding (not yet implemented).

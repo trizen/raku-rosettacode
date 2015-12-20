@@ -129,4 +129,4 @@ Note that all non-alphanumeric characters are reserved for escapes and operators
 
 
 
-Any lowercase backslash escape in a regex may be uppercased to negate it, hence <tt>\N</tt> matches anything that is not a newline.
+Any lowercase backslash escape in a regex may be uppercased to negate it, hence `\N` matches anything that is not a newline.

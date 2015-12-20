@@ -55,4 +55,4 @@ say .fmt("%4x"),"\t", uniname($_)
 
 
 We enforce the whitespace restriction to prevent insanity in the readers of programs.
-That being said, even the whitespace restriction is arbitrary, and can be bypassed by deriving a new grammar and switching to it. We view all other languages as dialects of Perl 6, even the insane ones. <tt>:-)</tt>
+That being said, even the whitespace restriction is arbitrary, and can be bypassed by deriving a new grammar and switching to it. We view all other languages as dialects of Perl 6, even the insane ones. `:-)`

@@ -6,7 +6,7 @@ This program is written mostly in the "sigilless" style for several reasons. Fir
 
 
 
-Second, it looks more like the original mathematical formulas to do it this way (which is also why we define a <tt>postfix:&lt;²&gt;</tt> for squaring values).
+Second, it looks more like the original mathematical formulas to do it this way (which is also why we define a `postfix:&lt;²&gt;` for squaring values).
 
 
 

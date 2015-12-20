@@ -2,13 +2,13 @@
 
 # [Top rank per group][1]
 
-We use tab-separated fields here from a heredoc; <tt>q:to/---/</tt> begins the heredoc. The <tt>Z=&gt;</tt> operator zips two lists into a list of pairs.
-In <tt>MAIN</tt>, the <tt>classify</tt> method generates pairs where each key is a different department, and each value all the entries in that department. We then sort the pairs and process each department separately. Within each department, we sort on salary (negated to reverse the order). The last statement is essentially a list comprehension that uses a slice subscript with the <tt>^</tt> "up to" operator to take the first N elements of the sorted employee list. The <tt>:v</tt> modifier returns only valid values. The <tt>.&lt;Name&gt;</tt> form is a slice hash subscript with literals strings. That in turn is just the subscript form of the <tt>&lt;...&gt;</tt> ("quote words") form, which is more familar to Perl 5 programmers as
-<tt>qw/.../</tt>. We used that form earlier to label the initial data set.
+We use tab-separated fields here from a heredoc; `q:to/---/` begins the heredoc. The `Z=&gt;` operator zips two lists into a list of pairs.
+In `MAIN`, the `classify` method generates pairs where each key is a different department, and each value all the entries in that department. We then sort the pairs and process each department separately. Within each department, we sort on salary (negated to reverse the order). The last statement is essentially a list comprehension that uses a slice subscript with the `^` "up to" operator to take the first N elements of the sorted employee list. The `:v` modifier returns only valid values. The `.&lt;Name&gt;` form is a slice hash subscript with literals strings. That in turn is just the subscript form of the `&lt;...&gt;` ("quote words") form, which is more familar to Perl 5 programmers as
+`qw/.../`. We used that form earlier to label the initial data set.
 
 
 
-This program also makes heavy use of method calls that start with dot. In Perl&#160;6 this means a method call on the current topic, <tt>$\_</tt>, which is automatically set by any <tt>for</tt> or <tt>map</tt> construct that doesn't declare an explicit formal parameter on its closure.
+This program also makes heavy use of method calls that start with dot. In Perl&#160;6 this means a method call on the current topic, `$_`, which is automatically set by any `for` or `map` construct that doesn't declare an explicit formal parameter on its closure.
 
 ```perl
 my @data = do for q:to/---/.lines -> $line {

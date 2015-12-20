@@ -2,7 +2,7 @@
 
 # [Ludic numbers][1]
 
-This implementation has no arbitrary upper limit, since it can keep adding new rotors on the fly. It just gets slower and slower instead... <tt>:-)</tt>
+This implementation has no arbitrary upper limit, since it can keep adding new rotors on the fly. It just gets slower and slower instead... `:-)`
 
 ```perl
 constant @ludic = gather {

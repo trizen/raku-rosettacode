@@ -2,7 +2,7 @@
 
 # [First-class functions][1]
 
-Here we use the <tt>Z</tt> ("zipwith") metaoperator to zip the 𝐴 and 𝐵 lists with a user-defined compose function, expressed as an infix operator, <tt>∘</tt>. The <tt>.()</tt> construct invokes the function contained in the <tt>$\_</tt> (current topic) variable.
+Here we use the `Z` ("zipwith") metaoperator to zip the 𝐴 and 𝐵 lists with a user-defined compose function, expressed as an infix operator, `∘`. The `.()` construct invokes the function contained in the `$_` (current topic) variable.
 
 ```perl
 sub infix:<∘> (&𝑔, &𝑓) { -> \x { 𝑔 𝑓 x } }

@@ -29,12 +29,12 @@ that thing grows slowly
 ```
 
 
-This uses lazy lists, created by the <tt>X</tt> metaoperator applied to a user-defined function, <tt>lf</tt>, that asserts the last-first condition,
-and short-circuits the match so that it does not need to generate parts of the search tree that cannot match. We use the <tt>first</tt> function to pull one element from the lazy list; a subscript of <tt>[0]</tt> would have worked just as well.
+This uses lazy lists, created by the `X` metaoperator applied to a user-defined function, `lf`, that asserts the last-first condition,
+and short-circuits the match so that it does not need to generate parts of the search tree that cannot match. We use the `first` function to pull one element from the lazy list; a subscript of `[0]` would have worked just as well.
 
 
 
-The <tt>amb</tt> operator itself uses a hyper to run the <tt>dethunk</tt> calls in parallel. Results are returned asyncronously via <tt>gather</tt>/<tt>take</tt>. The <tt>dethunk</tt> call traps failures after the failure has bypassed the <tt>take</tt>.
+The `amb` operator itself uses a hyper to run the `dethunk` calls in parallel. Results are returned asyncronously via `gather`/`take`. The `dethunk` call traps failures after the failure has bypassed the `take`.
 
 
 

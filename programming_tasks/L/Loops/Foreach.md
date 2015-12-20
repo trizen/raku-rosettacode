@@ -7,7 +7,7 @@ say $_ for @collection;
 ```
 
 
-Perl 6 leaves off the <tt>each</tt> from <tt>foreach</tt>, leaving us with <tt>for</tt> instead. The variable <tt>$\_</tt> refers to the current element, unless you assign a name to it using <tt>-&gt;</tt>.
+Perl 6 leaves off the `each` from `foreach`, leaving us with `for` instead. The variable `$_` refers to the current element, unless you assign a name to it using `-&gt;`.
 
 ```perl
 for @collection -> $currentElement { say $currentElement; }

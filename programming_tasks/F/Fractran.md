@@ -23,7 +23,7 @@ say FT[^100];
 
 
 
-We can weed out all the powers of two into another infinite constant list based on the first list. In this case the sequence is limited only by our patience, and a ^C from the terminal. The <tt>.msb</tt> method finds the most significant bit of an integer, which conveniently is the base-2 log of the power-of-two in question.
+We can weed out all the powers of two into another infinite constant list based on the first list. In this case the sequence is limited only by our patience, and a ^C from the terminal. The `.msb` method finds the most significant bit of an integer, which conveniently is the base-2 log of the power-of-two in question.
 
 ```perl
 constant FT = 2, &ft ... 0;

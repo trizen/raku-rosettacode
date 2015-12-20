@@ -37,7 +37,7 @@ my @deck = <2 3 4 5 6 7 8 9 J Q K A> X~ <♠ ♣ ♥ ♦>;
 ```
 
 
-Or you can always use the normal <tt>rand</tt> built-in
+Or you can always use the normal `rand` built-in
 to generate a subscript (which automatically truncates any fractional part):
 
 ```perl
@@ -45,7 +45,7 @@ to generate a subscript (which automatically truncates any fractional part):
 ```
 
 
-However, the <tt>pick</tt> and <tt>roll</tt> methods (not to be confused
+However, the `pick` and `roll` methods (not to be confused
 with the pick-and-roll method in basketball) are more general
 insofar as they may be used on any enumerable type:
 

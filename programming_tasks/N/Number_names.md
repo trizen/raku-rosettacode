@@ -2,7 +2,7 @@
 
 # [Number names][1]
 
-Apart from the <tt>$m++</tt> this can be viewed as a purely functional program; we use nested <tt>gather</tt>/<tt>take</tt> constructs to avoid accumulators.
+Apart from the `$m++` this can be viewed as a purely functional program; we use nested `gather`/`take` constructs to avoid accumulators.
 
 ```perl
 constant @I = <zero one    two    three    four     five    six     seven     eight    nine

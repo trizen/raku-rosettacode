@@ -2,7 +2,7 @@
 
 # [Rock-paper-scissors][1]
 
-This is slightly more complicated than it could be; it is a general case framework with input filtering. It weights the computers choices based on your previous choices. Type in at least the first two characters of your choice, or just hit enter to quit. Customize it by supplying your own <tt>%vs</tt> options/outcomes.
+This is slightly more complicated than it could be; it is a general case framework with input filtering. It weights the computers choices based on your previous choices. Type in at least the first two characters of your choice, or just hit enter to quit. Customize it by supplying your own `%vs` options/outcomes.
 
 
 

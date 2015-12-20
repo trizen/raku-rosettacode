@@ -12,25 +12,25 @@ has $.public-attribute;
 ```
 
 
-Lexically scoped variables, declared with <tt>my</tt>, are the norm.
+Lexically scoped variables, declared with `my`, are the norm.
 Function definitions are intrinsically lexical by default, but allow for forward references, unlike any other declaration.
 
 
 
-Package variables, declared with <tt>our</tt>, are de-emphasized. Unlike in Perl 5, almost no built-ins use package declarations for anything other than type names, and most of Perl 5's global punctuational variables become dynamic variables instead, with the final recourse in the GLOBAL and PROCESS packages. The per-interpreter GLOBAL package is mainly for users; all predefined process-wide information is stored in the PROCESS symbol table instead. The <tt>our</tt> declarator actually just declares an alias to a variable of the same name in the current package, and is in a sense just permission to use that global variable in the current scope as if it were a lexical. Type and constant declarations, including enums, are intrinsically considered "our" declarations, since Perl 6 considers constants to be degenerate types.
+Package variables, declared with `our`, are de-emphasized. Unlike in Perl 5, almost no built-ins use package declarations for anything other than type names, and most of Perl 5's global punctuational variables become dynamic variables instead, with the final recourse in the GLOBAL and PROCESS packages. The per-interpreter GLOBAL package is mainly for users; all predefined process-wide information is stored in the PROCESS symbol table instead. The `our` declarator actually just declares an alias to a variable of the same name in the current package, and is in a sense just permission to use that global variable in the current scope as if it were a lexical. Type and constant declarations, including enums, are intrinsically considered "our" declarations, since Perl 6 considers constants to be degenerate types.
 
 
 
-State variables, declared with <tt>state</tt>, are persistent lexicals that are not re-initialized on each function entry, but retain their previous value. An initializer is run only the first time through. State variables are similar but not identical to C static variables; in Perl each closure clone gets its own state variable, since such closures are really a form of generic code.
+State variables, declared with `state`, are persistent lexicals that are not re-initialized on each function entry, but retain their previous value. An initializer is run only the first time through. State variables are similar but not identical to C static variables; in Perl each closure clone gets its own state variable, since such closures are really a form of generic code.
 
 
 
-The <tt>has</tt> declarator is for declaring items in object scope.
+The `has` declarator is for declaring items in object scope.
 Method declarations are implicitly in "has" scope.
 
 
 
-In Perl 5, dynamic scoping is done via "local" to temporarily change the value of a global variable. This mechanism is still specced for Perl 6, albeit with a different keyword, <tt>temp</tt>, that better reflects what it's doing. None of the implementations yet implement <tt>temp</tt>, since Perl 6 does dynamic scoping via a more robust system of scanning up the call stack for the innermost dynamic declaration, which actually lives in the lexical scope of the function declaring it. We distinguish dynamic variables syntactically by introducing a "twigil" after the sigil. The twigil for dynamic variables is <tt>\*</tt> to represent that we don't know how to qualify the location of the variable.
+In Perl 5, dynamic scoping is done via "local" to temporarily change the value of a global variable. This mechanism is still specced for Perl 6, albeit with a different keyword, `temp`, that better reflects what it's doing. None of the implementations yet implement `temp`, since Perl 6 does dynamic scoping via a more robust system of scanning up the call stack for the innermost dynamic declaration, which actually lives in the lexical scope of the function declaring it. We distinguish dynamic variables syntactically by introducing a "twigil" after the sigil. The twigil for dynamic variables is `*` to represent that we don't know how to qualify the location of the variable.
 
 ```perl
 sub a {

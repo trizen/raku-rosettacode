@@ -15,7 +15,7 @@ say 5 choose 3;
 ```
 
 
-This method is efficient, as Perl 6 will not actually compute each element of the list, since it actually uses an iterator with a defined <tt>count-only</tt> method. Such method performs computations in a way similar to the following infix operator:
+This method is efficient, as Perl 6 will not actually compute each element of the list, since it actually uses an iterator with a defined `count-only` method. Such method performs computations in a way similar to the following infix operator:
 
 ```perl
 sub infix:<choose> { [*] ($^n ... 0) Z/ 1 .. $^p }
@@ -36,4 +36,4 @@ sub infix:<choose> { ([*] ($^n ... 0) Z/ 1 .. min($n - $^p, $p)).Int }
 ```
 
 
-And *this* is exactly what the <tt>count-only</tt> method does.
+And *this* is exactly what the `count-only` method does.

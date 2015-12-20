@@ -88,7 +88,7 @@ sub vdc($value, $base = 2) {
 
 
 We first define two sequences, one finite, one infinite.
-When we zip those sequences together, the finite sequence terminates the loop (which, since a Perl&#160;6 loop returns all its values, is merely another way of writing a <tt>map</tt>).
-We then sum with <tt>[+]</tt>, a reduction of the <tt>+</tt> operator.
-(We could have in-lined the sequences or used a traditional <tt>map</tt> operator, but this way seems more readable than the typical FP solution.)
-The <tt>do</tt> is necessary to introduce a statement where a term is expected, since Perl&#160;6 distinguishes "sentences" from "noun phrases" as a natural language might.
+When we zip those sequences together, the finite sequence terminates the loop (which, since a Perl&#160;6 loop returns all its values, is merely another way of writing a `map`).
+We then sum with `[+]`, a reduction of the `+` operator.
+(We could have in-lined the sequences or used a traditional `map` operator, but this way seems more readable than the typical FP solution.)
+The `do` is necessary to introduce a statement where a term is expected, since Perl&#160;6 distinguishes "sentences" from "noun phrases" as a natural language might.

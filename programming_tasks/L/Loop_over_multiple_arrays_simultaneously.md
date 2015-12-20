@@ -13,7 +13,7 @@ The `Z` operator stops emitting items as soon as the shortest input list is exha
 
 
 
-Note that we can also factor out the concatenation by making the <tt>Z</tt> metaoperator apply the <tt>~</tt> concatenation operator across each triple:
+Note that we can also factor out the concatenation by making the `Z` metaoperator apply the `~` concatenation operator across each triple:
 
 ```perl
 .say for <a b c> Z~ <A B C> Z~ 1, 2, 3;

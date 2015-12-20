@@ -7,7 +7,7 @@ The evaluation of Pn(x) is kept linear in n by also passing Pn-1(x) in the recur
 
 
 
-The <tt>quadrature</tt> function allows passing in a precalculated list of nodes for repeated integrations.
+The `quadrature` function allows passing in a precalculated list of nodes for repeated integrations.
 
 
 

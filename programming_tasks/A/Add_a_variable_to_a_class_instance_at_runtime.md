@@ -30,7 +30,7 @@ say $that.foo;            # 5 - value from the cloned object
 ```
 
 
-That's what's going on underneath, but often people just mix in an anonymous role directly using the <tt>but</tt> operator. Here we'll mix an attribute into a normal integer.
+That's what's going on underneath, but often people just mix in an anonymous role directly using the `but` operator. Here we'll mix an attribute into a normal integer.
 
 ```perl
 my $lue = 42 but role { has $.answer = "Life, the Universe, and Everything" }

@@ -27,7 +27,7 @@ say [+] 1 «/« (1..1000) »**» 2;
 ```
 
 
-Or we can use the <tt>X</tt> "cross" metaoperator, which is convenient even if one side or the other is a scalar. In this case, we demonstrate a scalar on either side:
+Or we can use the `X` "cross" metaoperator, which is convenient even if one side or the other is a scalar. In this case, we demonstrate a scalar on either side:
 
 ```perl
 say [+] 1 X/ (1..1000 X** 2);

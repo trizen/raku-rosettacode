@@ -2,21 +2,21 @@
 
 # [Undefined values][1]
 
-Perl 6 has "interesting" values of undef, but unlike Perl 5, doesn't actually have a value named <tt>undef</tt>. Instead, several very different meanings of undefinedness are distinguished. First, <tt>Nil</tt> represents the absence of a value. The absence of a value cannot be stored. Instead, an attempt to assign <tt>Nil</tt> to a storage location causes that location to revert to its uninitialized state, however that is defined.
+Perl 6 has "interesting" values of undef, but unlike Perl 5, doesn't actually have a value named `undef`. Instead, several very different meanings of undefinedness are distinguished. First, `Nil` represents the absence of a value. The absence of a value cannot be stored. Instead, an attempt to assign `Nil` to a storage location causes that location to revert to its uninitialized state, however that is defined.
 
 ```perl
 my $x; $x = 42; $x = Nil; say $x.WHAT; # prints Any()
 ```
 
 
-This <tt>Any</tt> is an example of another kind of undefined type, which is a typed undef. All reference types have an undefined value representing the type. You can think of it as a sort of "type gluon" that carries a type charge without being a "real" particle. Hence there are undefined values whose names represent types, such as <tt>Int</tt>, <tt>Num</tt>, <tt>Str</tt>, and all the other object types in Perl 6. As generic objects, such undefined values carry the same metaobject pointer that a real object of the type would have, without being instantiated as a real object. As such, these types are in the type hierarchy. For example, <tt>Int</tt> derives from <tt>Cool</tt>, <tt>Cool</tt> derives from <tt>Any</tt>, and <tt>Any</tt> derives from <tt>Mu</tt>, the most general undefined object (akin to Object in other languages). Since they are real objects of the type, even if undefined, they can be used in reasoning about the type. You don't have to instantiate a <tt>Method</tt> object in order to ask if <tt>Method</tt> is derived from <tt>Routine</tt>, for instance.
+This `Any` is an example of another kind of undefined type, which is a typed undef. All reference types have an undefined value representing the type. You can think of it as a sort of "type gluon" that carries a type charge without being a "real" particle. Hence there are undefined values whose names represent types, such as `Int`, `Num`, `Str`, and all the other object types in Perl 6. As generic objects, such undefined values carry the same metaobject pointer that a real object of the type would have, without being instantiated as a real object. As such, these types are in the type hierarchy. For example, `Int` derives from `Cool`, `Cool` derives from `Any`, and `Any` derives from `Mu`, the most general undefined object (akin to Object in other languages). Since they are real objects of the type, even if undefined, they can be used in reasoning about the type. You don't have to instantiate a `Method` object in order to ask if `Method` is derived from `Routine`, for instance.
 
 ```perl
 say Method ~~ Routine;  # Bool::True
 ```
 
 
-Variables default to <tt>Any</tt>, unless declared to be of another type:
+Variables default to `Any`, unless declared to be of another type:
 
 ```perl
 my     $x; say $x.WHAT; # Any()
@@ -25,7 +25,7 @@ my Str $z; say $z.WHAT; # Str()
 ```
 
 
-The user-interface for definedness are [type smilies](http://design.perl6.org/S12.html#Abstract_vs_Concrete_types) and the <tt>with</tt>-statement.
+The user-interface for definedness are [type smilies](http://design.perl6.org/S12.html#Abstract_vs_Concrete_types) and the `with`-statement.
 
 ```perl
 my Int:D $i = 1; # if $i has to be defined you must provide a default value

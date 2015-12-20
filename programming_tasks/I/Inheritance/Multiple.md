@@ -18,6 +18,6 @@ CameraPhone() Camera() MobilePhone() Any() Mu()
 ```
 
 
-The <tt>.^mro</tt> is not an ordinary method call,
+The `.^mro` is not an ordinary method call,
 but a call to the object's metaobject
 that returns the method resolution order for this type.

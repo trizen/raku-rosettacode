@@ -35,4 +35,4 @@ say $b.perl;
 ```
 
 
-Thanks to the <tt>rw</tt> trait on the <tt>pixel</tt> method, we don't actually need to define two separate methods, <tt>set-pixel</tt> and <tt>get-pixel</tt>, but that is an explicit requirement of the task.  (Beware your presuppositions!  In Perl 6, accessors only determine identity, not use.  In particular, identity is considered orthogonal to lvalue/rvalue context.)
+Thanks to the `rw` trait on the `pixel` method, we don't actually need to define two separate methods, `set-pixel` and `get-pixel`, but that is an explicit requirement of the task.  (Beware your presuppositions!  In Perl 6, accessors only determine identity, not use.  In particular, identity is considered orthogonal to lvalue/rvalue context.)

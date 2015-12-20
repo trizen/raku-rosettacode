@@ -31,7 +31,7 @@ Short       Long            Meaning
 ```
 
 
-In any case, an initial <tt>Q</tt>, <tt>q</tt>, or <tt>qq</tt> may omit the initial colon to form traditional Perl quotes such as <tt>qw//</tt>.
+In any case, an initial `Q`, `q`, or `qq` may omit the initial colon to form traditional Perl quotes such as `qw//`.
 And Q can be used by itself to introduce a quote that has no escapes at all except for the closing delimiter:
 
 ```perl
@@ -39,7 +39,7 @@ my $raw = Q'$@\@#)&!#';
 ```
 
 
-Note that the single quotes there imply no single quoting semantics as they would in Perl 5. They're just the quotes the programmer happened to choose, since they were most like the raw quoting. Single quotes imply <tt>:q</tt> only when used as normal single quotes are, as discussed below.
+Note that the single quotes there imply no single quoting semantics as they would in Perl 5. They're just the quotes the programmer happened to choose, since they were most like the raw quoting. Single quotes imply `:q` only when used as normal single quotes are, as discussed below.
 As in Perl 5, you can use any non-alphanumeric, non-whitespace characters for delimiters with the general forms of quoting, including matching bracket characters, including any Unicode brackets.
 
 
@@ -62,14 +62,14 @@ quasi {...} Q :code {...}
 ```
 
 
-The <tt>:qq</tt>-derived languages all give normal Perlish interpolation, but individual interpolations may be chosen or suppressed with extra adverbs.
+The `:qq`-derived languages all give normal Perlish interpolation, but individual interpolations may be chosen or suppressed with extra adverbs.
 
 
 
-Unlike in Perl 5, we don't use backticks as shorthand for what is now expressed as <tt>qqx//</tt> in Perl 6.
+Unlike in Perl 5, we don't use backticks as shorthand for what is now expressed as `qqx//` in Perl 6.
 (Backticks are now reserved for user-defined syntax.)
-Heredocs now have no special <tt>&lt;&lt;</tt> syntax,
-but fall out of the <tt>:to</tt> adverb:
+Heredocs now have no special `&lt;&lt;` syntax,
+but fall out of the `:to` adverb:
 
 ```perl
 say qq:to/END/;
@@ -82,7 +82,7 @@ Indentation equivalent to the ending tag is automatically removed.
 
 
 
-Backslash sequences recognized by <tt>:b</tt> (and hence <tt>:qq</tt>) include:
+Backslash sequences recognized by `:b` (and hence `:qq`) include:
 
 ```perl
 "\a"        # BELL
@@ -103,5 +103,5 @@ Backslash sequences recognized by <tt>:b</tt> (and hence <tt>:qq</tt>) include:
 ```
 
 
-Leading <tt>0</tt> specifically does not mean octal in Perl 6;
-you must use <tt>\o</tt> instead.
+Leading `0` specifically does not mean octal in Perl 6;
+you must use `\o` instead.

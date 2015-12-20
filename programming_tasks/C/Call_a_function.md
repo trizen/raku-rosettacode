@@ -4,7 +4,7 @@
 
 Fundamentally, nearly everything you do in Perl 6 is a function call if you look hard enough.
 At the lowest level, a function call merely requires a reference to any
-kind of invokable object, and a call to its <tt>postcircumfix:&lt;( )&gt;</tt> method.
+kind of invokable object, and a call to its `postcircumfix:&lt;( )&gt;` method.
 However, there are various forms of sugar and indirection that you
 can use to express these function calls differently. In particular,
 operators are all just sugar for function calls.
@@ -48,19 +48,19 @@ Method calls are included here because they do eventually dispatch to a true
 function via a dispatcher. However, the dispatcher in question is not going
 to dispatch to the same set of functions that a function call of that name
 would invoke. That's why there's a dispatcher, after all. Methods are declared
-with a different keyword, <tt>method</tt>, in Perl 6, but all that does is
+with a different keyword, `method`, in Perl 6, but all that does is
 install the actual function into a metaclass. Once it's there, it's merely
 a function that expects its first argument to be the invocant object. Hence we
 feel justified in including method call syntax as a form of indirect function call.
 
 
 
-Operators like <tt>+</tt> also go through a dispatcher, but in this case it is
+Operators like `+` also go through a dispatcher, but in this case it is
 multiply dispatched to all lexically scoped candidates for the function. Hence
 the candidate list is bound early, and the function itself can be bound early
 if the type is known. Perl 6 maintains a clear distinction between early-bound
 linguistic constructs that force Perlish semantics, and late-bound OO dispatch
-that puts the objects and/or classes in charge of semantics. (In any case, <tt>&amp;foo</tt>,
+that puts the objects and/or classes in charge of semantics. (In any case, `&amp;foo`,
 though being a hard ref to the function named "foo", may actually be a ref to
 a dispatcher to a list of candidates that, when called, makes all the candidates behave as a single unit.)
 
@@ -112,7 +112,7 @@ $ref.(@args)      # as object invocation, explicit postfix
 Note: whether a function may actually be called with a variable number of arguments depends entirely
 on whether a signature accepts a list at that position in the argument list, but
 describing that is not the purpose of this task. Suffice to say that we assume here that the
-foo function is declared with a signature of the form (\*\@params). The calls above might be interpreted as having a single array argument if the signature indicates a normal parameter instead of a variadic one. What you cannot do in Perl 6 (unlike Perl 5) is pass an array as several fixed arguments. By default it must either represent a single argument, or be part of a variadic list. You can force the extra level of argument list interpolation using a prefix <tt>|</tt> however:
+foo function is declared with a signature of the form (\*@params). The calls above might be interpreted as having a single array argument if the signature indicates a normal parameter instead of a variadic one. What you cannot do in Perl 6 (unlike Perl 5) is pass an array as several fixed arguments. By default it must either represent a single argument, or be part of a variadic list. You can force the extra level of argument list interpolation using a prefix `|` however:
 
 ```perl
 my @args = 1,2,3;

@@ -26,7 +26,7 @@ Variables in Perl 6 CORE tend be lower kebab-case for lexical variables and uppe
 
 
 
-In user space, there are very few restrictions on how things are named. Identifers of any type can not contain white space. Subroutines must start with a letter character, any unicode character that has a "letter" property. Variable names can't contain any of the sigil, twigil or comment characters ($, \@,&#160;%, \*,&#160;?, =,&#160;:, #). Outside of those few restrictions, it's pretty much a free-for-all.
+In user space, there are very few restrictions on how things are named. Identifers of any type can not contain white space. Subroutines must start with a letter character, any unicode character that has a "letter" property. Variable names can't contain any of the sigil, twigil or comment characters ($, @,&#160;%, \*,&#160;?, =,&#160;:, #). Outside of those few restrictions, it's pretty much a free-for-all.
 
 
 

@@ -2,10 +2,10 @@
 
 # [Luhn test of credit card numbers][1]
 
-Here we make use of <tt>comb</tt>, which splits into individual characters,
-and the sequence operator <tt>...</tt>, which can intuit an even or odd sequence from the first two values.
-The <tt>[+]</tt> is a reduction metaoperator; with <tt>+</tt> it just sums the list of values.
-<tt>%%</tt> is the divisible-by operator.
+Here we make use of `comb`, which splits into individual characters,
+and the sequence operator `...`, which can intuit an even or odd sequence from the first two values.
+The `[+]` is a reduction metaoperator; with `+` it just sums the list of values.
+`%%` is the divisible-by operator.
 
 ```perl
 sub luhn-test ($cc-number --> Bool) {

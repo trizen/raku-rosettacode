@@ -12,4 +12,4 @@ augment class Int {
 ```
 
 
-Unlike Perl 5, there is no <tt>use strict;</tt> pragma, however, since Perl 6 is strict by default. Importation of a pragma is lexically scoped as in Perl 5, but note that unlike in Perl 5, *all* importation is lexical in Perl 6, so pragmas are not special that way.
+Unlike Perl 5, there is no `use strict;` pragma, however, since Perl 6 is strict by default. Importation of a pragma is lexically scoped as in Perl 5, but note that unlike in Perl 5, *all* importation is lexical in Perl 6, so pragmas are not special that way.

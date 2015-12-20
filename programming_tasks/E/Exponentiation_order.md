@@ -44,4 +44,4 @@ demo '5³²';
 ```
 
 
-(Not to mention the fact that the form without parentheses looks like you're trying to raise something to the 32nd power. Nor are you even allowed to parenthesize it the other way: <tt>5(³²)</tt> would be a syntax error. Despite all that, for programs that do a lot of squaring or cubing, the postfix forms can enhance both readability and concision.)
+(Not to mention the fact that the form without parentheses looks like you're trying to raise something to the 32nd power. Nor are you even allowed to parenthesize it the other way: `5(³²)` would be a syntax error. Despite all that, for programs that do a lot of squaring or cubing, the postfix forms can enhance both readability and concision.)

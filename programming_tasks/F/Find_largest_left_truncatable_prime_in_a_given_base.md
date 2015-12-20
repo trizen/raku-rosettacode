@@ -2,11 +2,11 @@
 
 # [Find largest left truncatable prime in a given base][1]
 
-Using the Miller-Rabin definition of <tt>is-prime</tt> from [Miller-Rabin primality test#Perl 6](http://rosettacode.org/wiki/Miller-Rabin_primality_test#Perl_6), or the built-in, if available. For speed we do a single try, which allows a smattering of composites in, but this does not appear to damage the algorithm much, and the correct answer appears to be within a few candidates of the end all the time. We keep the last few hundred candidates, sort them into descending order, then pick the largest that passes Miller-Rabin with 100 tries.
+Using the Miller-Rabin definition of `is-prime` from [Miller-Rabin primality test#Perl 6](http://rosettacode.org/wiki/Miller-Rabin_primality_test#Perl_6), or the built-in, if available. For speed we do a single try, which allows a smattering of composites in, but this does not appear to damage the algorithm much, and the correct answer appears to be within a few candidates of the end all the time. We keep the last few hundred candidates, sort them into descending order, then pick the largest that passes Miller-Rabin with 100 tries.
 
 
 
-I believe the composites don't hurt the algorithm because they do not confer any selective advantage on their "children", so their average length is no longer than the correct solution. In addition, the candidates in the finalist set all appear to be largely independent of each other, so any given composite tends to contribute only a single candidate, if any. I have no proof of this; I prefer my math to have more vigor than rigor. <tt>:-)</tt>
+I believe the composites don't hurt the algorithm because they do not confer any selective advantage on their "children", so their average length is no longer than the correct solution. In addition, the candidates in the finalist set all appear to be largely independent of each other, so any given composite tends to contribute only a single candidate, if any. I have no proof of this; I prefer my math to have more vigor than rigor. `:-)`
 
 ```perl
 for 3..* -> $base {

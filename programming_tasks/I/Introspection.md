@@ -22,7 +22,7 @@ PROCESS vars of type Int add up to 28785
 ```
 
 
-Obviously Perl 6 doesn't maintain a lot of global integer variables... <tt>:-)</tt>
+Obviously Perl 6 doesn't maintain a lot of global integer variables... `:-)`
 
 
 

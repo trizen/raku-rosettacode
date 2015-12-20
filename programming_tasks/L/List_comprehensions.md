@@ -16,4 +16,4 @@ gather for 1..$n -> $x {
 ```
 
 
-Note that <tt>gather</tt>/<tt>take</tt> is the primitive in Perl&#160;6 corresponding to generators or coroutines in other languages. It is not, however, tied to function call syntax in Perl&#160;6. We can get away with that because lists are lazy, and the demand for more of the list is implicit; it does not need to be driven by function calls.
+Note that `gather`/`take` is the primitive in Perl&#160;6 corresponding to generators or coroutines in other languages. It is not, however, tied to function call syntax in Perl&#160;6. We can get away with that because lists are lazy, and the demand for more of the list is implicit; it does not need to be driven by function calls.

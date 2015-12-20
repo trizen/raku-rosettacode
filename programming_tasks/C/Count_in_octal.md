@@ -12,4 +12,4 @@ say .base(8) for ^Inf;
 ```
 
 
-Here we arbitrarily show as many lines of output as there are lines in the program. <tt>:-)</tt>
+Here we arbitrarily show as many lines of output as there are lines in the program. `:-)`

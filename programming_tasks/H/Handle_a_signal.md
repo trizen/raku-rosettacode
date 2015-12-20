@@ -2,7 +2,7 @@
 
 # [Handle a signal][1]
 
-We note with glee that the task does not require us to print <em>consecutive</em> integers, so we'll print Fibonacci numbers instead. <tt>:-)</tt>
+We note with glee that the task does not require us to print <em>consecutive</em> integers, so we'll print Fibonacci numbers instead. `:-)`
 
 ```perl
 signal(Signal::SIGINT).tap: {

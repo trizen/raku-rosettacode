@@ -25,7 +25,7 @@ say <Less Equal Greater>[($a <=> $b) + 1];
 ```
 
 
-A three-way comparison such as <tt>&lt;=&gt;</tt> actually returns an `Order` enum which stringifies into 'Decrease', 'Increase' or 'Same'. So if it's ok to use this particular vocabulary, you could say that this task is actually a built in:
+A three-way comparison such as `&lt;=&gt;` actually returns an `Order` enum which stringifies into 'Decrease', 'Increase' or 'Same'. So if it's ok to use this particular vocabulary, you could say that this task is actually a built in:
 
 ```perl
 say prompt("1st int: ") <=> prompt("2nd int: ");

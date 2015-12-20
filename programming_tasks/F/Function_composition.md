@@ -2,7 +2,7 @@
 
 # [Function composition][1]
 
-The function composition operator is <tt>∘</tt>, U+2218 RING OPERATOR (with a "Texas" version <tt>o</tt> for the Unicode challenged). Here we compose a routine, an operator, and a lambda:
+The function composition operator is `∘`, U+2218 RING OPERATOR (with a "Texas" version `o` for the Unicode challenged). Here we compose a routine, an operator, and a lambda:
 
 ```perl
 sub triple($n) { 3 * $n }

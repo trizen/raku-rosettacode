@@ -2,4 +2,4 @@
 
 # [Random number generator (included)][1]
 
-The implementation underlying the <tt>rand</tt> function is platform and VM dependent. The JVM backend uses that platform's SecureRandom class.
+The implementation underlying the `rand` function is platform and VM dependent. The JVM backend uses that platform's SecureRandom class.

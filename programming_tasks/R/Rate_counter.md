@@ -39,4 +39,4 @@ Rate: 14211.98 per second
 ```
 
 
-The <tt>Instant</tt> type in Perl 6 is defined to be based on TAI seconds, and represented with rational numbers that are more than sufficiently accurate to represent your clock's accuracy. The actual accuracy will depend on your clock's accuracy (even if you don't have an atomic clock in your kitchen, your smartphone can track various orbiting atomic clocks, right?) modulo the vagaries of returning the atomic time (or unreasonable facsimile) via system calls and library APIs.
+The `Instant` type in Perl 6 is defined to be based on TAI seconds, and represented with rational numbers that are more than sufficiently accurate to represent your clock's accuracy. The actual accuracy will depend on your clock's accuracy (even if you don't have an atomic clock in your kitchen, your smartphone can track various orbiting atomic clocks, right?) modulo the vagaries of returning the atomic time (or unreasonable facsimile) via system calls and library APIs.

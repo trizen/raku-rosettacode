@@ -6,7 +6,7 @@ There is no restriction on placement of prototype declarations. (Actually, we ca
 
 
 
-Note that the <tt>...</tt> in all of these stub bodies is literally part of the declaration syntax.
+Note that the `...` in all of these stub bodies is literally part of the declaration syntax.
 
 
 
@@ -18,7 +18,7 @@ sub foo ( --> Int) {...}
 
 
 A prototype declaration for a function that requires two arguments.
-Note that we can omit the variable name and just use the sigil in the stub, since we don't need to reference the argument until the actual definition of the routine. Also, unlike in Perl 5, a sigil like <tt>\@</tt> defaults to binding a single positional argument.
+Note that we can omit the variable name and just use the sigil in the stub, since we don't need to reference the argument until the actual definition of the routine. Also, unlike in Perl 5, a sigil like `@` defaults to binding a single positional argument.
 
 ```perl
 sub foo (@, $ --> Int) {...}
@@ -26,7 +26,7 @@ sub foo (@, $ --> Int) {...}
 
 
 A prototype declaration for a function that utilizes varargs after one required argument.
-Note the "slurpy" star turns the <tt>\@</tt> sigil into a parameter that accepts all the rest of the positional arguments.
+Note the "slurpy" star turns the `@` sigil into a parameter that accepts all the rest of the positional arguments.
 
 ```perl
 sub foo ($, *@ --> Int) {...}
@@ -68,7 +68,7 @@ sub foo ($, :$option! --> Int) {...}
 ```
 
 
-A routine may unpack an <tt>Array</tt> automaticly. Here the first element is stored in a scalar and the rest in an <tt>Array</tt>. Other buildin types can be [unpacked](http://design.perl6.org/S06.html#Unpacking_array_parameters) as well.
+A routine may unpack an `Array` automaticly. Here the first element is stored in a scalar and the rest in an `Array`. Other buildin types can be [unpacked](http://design.perl6.org/S06.html#Unpacking_array_parameters) as well.
 
 ```perl
 sub foo ([$, @]) {...}

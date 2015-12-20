@@ -10,4 +10,4 @@ say count-substring("ababababab","abab");
 ```
 
 
-Note that in Perl 6 the <tt>/$little/</tt> matches the variable literally, so there's no need to quote regex metacharacters. Also, prefix <tt>+</tt> forces numeric context in Perl&#160;6 (it's a no-op in Perl&#160;5). One other style point: we now tend to prefer hyphenated names over camelCase.
+Note that in Perl 6 the `/$little/` matches the variable literally, so there's no need to quote regex metacharacters. Also, prefix `+` forces numeric context in Perl&#160;6 (it's a no-op in Perl&#160;5). One other style point: we now tend to prefer hyphenated names over camelCase.

@@ -49,7 +49,7 @@ my @a = < a b c d e >,
 ```
 
 
-Using the <tt>[Z]</tt> meta-operator.
+Using the `[Z]` meta-operator.
 
 ```perl
 say [Z] (<A B C>,<D E F>,<G H I>)

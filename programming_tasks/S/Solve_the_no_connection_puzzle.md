@@ -2,7 +2,7 @@
 
 # [Solve the no connection puzzle][1]
 
-Using the Warnsdorff algorithm from [Solve_a_Hidato_puzzle](http://rosettacode.org/wiki/Solve_a_Hidato_puzzle). The idiosyncratic adjacency diagram is dealt with by the simple expedient of bending the two vertical lines <tt>||</tt> into two bows <tt>)(</tt>, such that adjacency can be calculated simply as a distance of 2 or less.
+Using the Warnsdorff algorithm from [Solve_a_Hidato_puzzle](http://rosettacode.org/wiki/Solve_a_Hidato_puzzle). The idiosyncratic adjacency diagram is dealt with by the simple expedient of bending the two vertical lines `||` into two bows `)(`, such that adjacency can be calculated simply as a distance of 2 or less.
 
 ```perl
 my @adjacent = gather -> $y, $x {

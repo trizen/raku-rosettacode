@@ -57,5 +57,5 @@ Cycle found! des_system_lib dw01 dw03 dw04
 
 
 Some differences from the Perl 5 version include use of
-formal parameters; use of <tt>»</tt> as a "hyper" operator, that is, a parallelizable implicit loop; and use of normal lambda-like notation to bind loop parameters, so we can have multiple loop parameters bound on each iteration. Also,
-since <tt>=&gt;</tt> is now a real pair composer rather than a synonym for comma, the data can be represented with real pair notation that points to quoted word lists delimited by angle brackets rather than <tt>[qw(...)]</tt>.
+formal parameters; use of `»` as a "hyper" operator, that is, a parallelizable implicit loop; and use of normal lambda-like notation to bind loop parameters, so we can have multiple loop parameters bound on each iteration. Also,
+since `=&gt;` is now a real pair composer rather than a synonym for comma, the data can be represented with real pair notation that points to quoted word lists delimited by angle brackets rather than `[qw(...)]`.

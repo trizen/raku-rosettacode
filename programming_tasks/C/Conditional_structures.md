@@ -9,7 +9,7 @@ if won() -> $prize {
 ```
 
 
-Switch structures are done by topicalization and by smartmatching in Perl 6. They are somewhat orthogonal, you can use a <tt>given</tt> block without <tt>when</tt>, and vice versa. But the typical use is:
+Switch structures are done by topicalization and by smartmatching in Perl 6. They are somewhat orthogonal, you can use a `given` block without `when`, and vice versa. But the typical use is:
 
 ```perl
 given lc prompt("Done? ") {
@@ -20,9 +20,9 @@ given lc prompt("Done? ") {
 ```
 
 
-<tt>when</tt> blocks are allowed in any block that topicalizes <tt>$\_</tt>, including a
-<tt>for</tt> loop (assuming one of its loop variables is bound to <tt>$\_</tt>)
-or the body of a method (if you have declared the invocant as <tt>$\_</tt>)." See [Synopsis 4](http://perlcabal.org/syn/S04.html#Switch_statements).
+`when` blocks are allowed in any block that topicalizes `$_`, including a
+`for` loop (assuming one of its loop variables is bound to `$_`)
+or the body of a method (if you have declared the invocant as `$_`)." See [Synopsis 4](http://perlcabal.org/syn/S04.html#Switch_statements).
 
 
 
@@ -37,4 +37,4 @@ $expression ?? do_something !! do_fallback
 ```
 
 
-<tt>and</tt>, <tt>or</tt>, <tt>&amp;&amp;</tt>, <tt>||</tt> and <tt>//</tt> work as in Perl 5.
+`and`, `or`, `&amp;&amp;`, `||` and `//` work as in Perl 5.

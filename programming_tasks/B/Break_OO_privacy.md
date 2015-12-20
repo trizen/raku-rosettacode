@@ -2,7 +2,7 @@
 
 # [Break OO privacy][1]
 
-We may call into the MOP (Meta-Object Protocol) via the <tt>.^</tt> operator, and the MOP knows all about the object, including any supposedly private bits. We ask for its attributes, find the correct one, and get its value.
+We may call into the MOP (Meta-Object Protocol) via the `.^` operator, and the MOP knows all about the object, including any supposedly private bits. We ask for its attributes, find the correct one, and get its value.
 
 ```perl
 class Foo {

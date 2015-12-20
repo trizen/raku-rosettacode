@@ -24,7 +24,7 @@ BEGIN require 'myfile.p6'
 ```
 
 
-None of these are true inclusion, unless the <tt>require</tt> cheats and modifies the current input string of the parser. To get a true textual inclusion, one could define an unhygienic textual macro like this:
+None of these are true inclusion, unless the `require` cheats and modifies the current input string of the parser. To get a true textual inclusion, one could define an unhygienic textual macro like this:
 
 ```perl
 macro include(AST $file) { slurp $file.eval }

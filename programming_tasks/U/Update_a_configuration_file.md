@@ -6,7 +6,7 @@ Implemented as a command-line script which can make arbitrary in-place updates t
 
 
 
-Assuming that the script is saved as <tt>conf-update</tt> and the config file as <tt>test.cfg</tt>, the four changes required by the task description could be performed with the command:
+Assuming that the script is saved as `conf-update` and the config file as `test.cfg`, the four changes required by the task description could be performed with the command:
 
 
 #### Output:

@@ -2,7 +2,7 @@
 
 # [Mad Libs][1]
 
-Some explanation: <tt>S:g[...] = ...</tt> is a global substitution that returns its result. <tt>%</tt> is an anonymous state variable in which we cache any results of a prompt using the <tt>//=</tt> operator, which assigns only if the left side is undefined. <tt>slurp</tt> reads an entire file from STDIN or as named in the argument list.
+Some explanation: `S:g[...] = ...` is a global substitution that returns its result. `%` is an anonymous state variable in which we cache any results of a prompt using the `//=` operator, which assigns only if the left side is undefined. `slurp` reads an entire file from STDIN or as named in the argument list.
 
 ```perl
 print S:g[ '<' (.*?) '>' ] = %.{$0} //= prompt "$0? " given slurp;

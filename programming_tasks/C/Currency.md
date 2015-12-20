@@ -2,9 +2,9 @@
 
 # [Currency][1]
 
-No need for a special type in Perl 6, since the <tt>Rat</tt> type is used for normal fractions.
+No need for a special type in Perl 6, since the `Rat` type is used for normal fractions.
 (In order to achieve imprecision, you have to explicitly use scientific notation,
-or use the <tt>Num</tt> type, or calculate a result that requires a denominator in excess of <tt>2 \*\* 64</tt>. (There's no limit on the numerator.))
+or use the `Num` type, or calculate a result that requires a denominator in excess of `2 ** 64`. (There's no limit on the numerator.))
 
 ```perl
 my @check = q:to/END/.lines.map: { [.split(/\t/)] };

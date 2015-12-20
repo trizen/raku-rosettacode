@@ -2,7 +2,7 @@
 
 # [Roots of unity][1]
 
-Perl 6 has a built-in function <tt>cis</tt> which returns a unitary complex number given its phase. Perl 6 also defines the <tt>tau = 2\*pi</tt> constant. Thus the k-th n-root of unity can simply be written <tt>cis(k\*τ/n)&lt;tt&gt;.
+Perl 6 has a built-in function `cis` which returns a unitary complex number given its phase. Perl 6 also defines the `tau = 2*pi` constant. Thus the k-th n-root of unity can simply be written <tt>cis(k\*τ/n)&lt;tt&gt;.
 
 ```perl
 constant n = 10;

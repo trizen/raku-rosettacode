@@ -2,7 +2,7 @@
 
 # [Maximum triangle path sum][1]
 
-The <tt>Z+</tt> and <tt>Zmax</tt> are examples of the zipwith metaoperator. We ought to be able to use <tt>[Z+]=</tt> as an assignment operator here, but rakudo has a bug. Note also we can use the <tt>Zmax</tt> metaoperator form because <tt>max</tt> is define as an infix in Perl 6.
+The `Z+` and `Zmax` are examples of the zipwith metaoperator. We ought to be able to use `[Z+]=` as an assignment operator here, but rakudo has a bug. Note also we can use the `Zmax` metaoperator form because `max` is define as an infix in Perl 6.
 
 ```perl
 my @rows = slurp("triangle.txt").lines.map: { [.words] }
@@ -25,7 +25,7 @@ Here's a more FPish version with the same output.
 
 
 
-We define our own operator and the use it in the reduction metaoperator form, <tt>[op]</tt>, which turns any infix into a list operator.
+We define our own operator and the use it in the reduction metaoperator form, `[op]`, which turns any infix into a list operator.
 
 ```perl
 sub infix:<op>(@a,@b) { (@a Zmax @a[1..*]) Z+ @b }

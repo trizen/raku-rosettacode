@@ -25,7 +25,7 @@ say "$s {balanced($s) ?? "is" !! "is not"} well-balanced"
 ```
 
 
-Here's a more idiomatic solution using a hyperoperator to compare all the characters to a backslash (which is between the brackets in ASCII), a triangle reduction to return the running sum, a <tt>given</tt> to make that list the topic, and then a topicalized junction and a topicalized subscript to test the criteria for balance.
+Here's a more idiomatic solution using a hyperoperator to compare all the characters to a backslash (which is between the brackets in ASCII), a triangle reduction to return the running sum, a `given` to make that list the topic, and then a topicalized junction and a topicalized subscript to test the criteria for balance.
 
 ```perl
 sub balanced($s) {

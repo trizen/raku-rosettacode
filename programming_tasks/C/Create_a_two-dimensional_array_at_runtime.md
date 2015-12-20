@@ -6,7 +6,7 @@ Line 1: The input parse doesn't care how you separate the dimensions as long as 
 
 
 
-Line 2: The list replication operator <tt>xx</tt> will automatically thunkify its left side so this produces new subarrays for each replication.
+Line 2: The list replication operator `xx` will automatically thunkify its left side so this produces new subarrays for each replication.
 
 
 

@@ -55,7 +55,7 @@ The first twenty numbers:
 ```
 
 
-Here we use a <tt>multi</tt> declaration with a constant parameter to match the degenerate case. We use <tt>copy</tt> parameters when we wish to reuse the formal parameter as a mutable variable within the function. (Parameters default to readonly in Perl&#160;6.) Note the use of <tt>gather</tt>/<tt>take</tt> as the final statement in the function, which is a common Perl&#160;6 idiom to set up a coroutine within a function to return a lazy list on demand.
+Here we use a `multi` declaration with a constant parameter to match the degenerate case. We use `copy` parameters when we wish to reuse the formal parameter as a mutable variable within the function. (Parameters default to readonly in Perl&#160;6.) Note the use of `gather`/`take` as the final statement in the function, which is a common Perl&#160;6 idiom to set up a coroutine within a function to return a lazy list on demand.
 
 
 

@@ -26,7 +26,7 @@ for 1..10 { .say if $_ %% 2 }
 ```
 
 
-Perl 6 has a system of metaoperators that modify the characteristics of normal operators. Among these is the <tt>R</tt> metaoperator, which is able to reverse the arguments of most infix operators (including user-defined ones).
+Perl 6 has a system of metaoperators that modify the characteristics of normal operators. Among these is the `R` metaoperator, which is able to reverse the arguments of most infix operators (including user-defined ones).
 So a reversed assignment is easy to write:
 
 ```perl
@@ -87,4 +87,4 @@ repeat {
 ```
 
 
-You can't just put the <tt>my</tt> on the <tt>$answer</tt> in the block because the conditional is outside the scope of the block, and would not see the declaration.
+You can't just put the `my` on the `$answer` in the block because the conditional is outside the scope of the block, and would not see the declaration.
