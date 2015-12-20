@@ -9,4 +9,4 @@ A collection of tasks from Rosettacode implemented in Perl 6
 
 ## DISCLAIMER
 
-I do NOT own the content of this collection in any way. The collection is created ONLY with the hope of making it easier to browse. If you wish to use the material in a context not directly compatible with the GNU Free Documentation License, you should seek permission from all of the contributors who edited the material you wish to use, as they hold license to their individual contributions.
+I do NOT own the content of this collection in any way. The collection is created ONLY in the hope of making it easier to browse. If you wish to use the material in a context not directly compatible with the GNU Free Documentation License, you should seek permission from all of the contributors who edited the material you wish to use, as they hold license to their individual contributions.
