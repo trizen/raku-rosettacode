@@ -4,7 +4,7 @@
 
 Fundamentally, nearly everything you do in Perl 6 is a function call if you look hard enough.
 At the lowest level, a function call merely requires a reference to any
-kind of invokable object, and a call to its `postcircumfix:&lt;( )&gt;` method.
+kind of invokable object, and a call to its `postcircumfix:<( )>` method.
 However, there are various forms of sugar and indirection that you
 can use to express these function calls differently. In particular,
 operators are all just sugar for function calls.
@@ -60,7 +60,7 @@ multiply dispatched to all lexically scoped candidates for the function. Hence
 the candidate list is bound early, and the function itself can be bound early
 if the type is known. Perl 6 maintains a clear distinction between early-bound
 linguistic constructs that force Perlish semantics, and late-bound OO dispatch
-that puts the objects and/or classes in charge of semantics. (In any case, `&amp;foo`,
+that puts the objects and/or classes in charge of semantics. (In any case, `&foo`,
 though being a hard ref to the function named "foo", may actually be a ref to
 a dispatcher to a list of candidates that, when called, makes all the candidates behave as a single unit.)
 

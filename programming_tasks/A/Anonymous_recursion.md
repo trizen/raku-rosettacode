@@ -26,7 +26,7 @@ say @fib[10];
 ```
 
 
-Here the closure, `*+*`, is just a quick way to write a lambda, `-&gt; $a, $b { $a + $b }`. The sequence operator implicitly maps the two arguments to the -2nd and -1st elements of the sequence. So the sequence operator certainly applies an anonymous lambda, but whether it's recursion or not depends on whether you view a sequence as iteration or as simply a convenient way of memoizing a recursion. Either view is justifiable.
+Here the closure, `*+*`, is just a quick way to write a lambda, `-> $a, $b { $a + $b }`. The sequence operator implicitly maps the two arguments to the -2nd and -1st elements of the sequence. So the sequence operator certainly applies an anonymous lambda, but whether it's recursion or not depends on whether you view a sequence as iteration or as simply a convenient way of memoizing a recursion. Either view is justifiable.
 
 
 

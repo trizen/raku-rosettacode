@@ -68,7 +68,7 @@ The `:qq`-derived languages all give normal Perlish interpolation, but individua
 
 Unlike in Perl 5, we don't use backticks as shorthand for what is now expressed as `qqx//` in Perl 6.
 (Backticks are now reserved for user-defined syntax.)
-Heredocs now have no special `&lt;&lt;` syntax,
+Heredocs now have no special `<<` syntax,
 but fall out of the `:to` adverb:
 
 ```perl

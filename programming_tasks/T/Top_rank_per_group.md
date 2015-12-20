@@ -2,8 +2,8 @@
 
 # [Top rank per group][1]
 
-We use tab-separated fields here from a heredoc; `q:to/---/` begins the heredoc. The `Z=&gt;` operator zips two lists into a list of pairs.
-In `MAIN`, the `classify` method generates pairs where each key is a different department, and each value all the entries in that department. We then sort the pairs and process each department separately. Within each department, we sort on salary (negated to reverse the order). The last statement is essentially a list comprehension that uses a slice subscript with the `^` "up to" operator to take the first N elements of the sorted employee list. The `:v` modifier returns only valid values. The `.&lt;Name&gt;` form is a slice hash subscript with literals strings. That in turn is just the subscript form of the `&lt;...&gt;` ("quote words") form, which is more familar to Perl 5 programmers as
+We use tab-separated fields here from a heredoc; `q:to/---/` begins the heredoc. The `Z=>` operator zips two lists into a list of pairs.
+In `MAIN`, the `classify` method generates pairs where each key is a different department, and each value all the entries in that department. We then sort the pairs and process each department separately. Within each department, we sort on salary (negated to reverse the order). The last statement is essentially a list comprehension that uses a slice subscript with the `^` "up to" operator to take the first N elements of the sorted employee list. The `:v` modifier returns only valid values. The `.<Name>` form is a slice hash subscript with literals strings. That in turn is just the subscript form of the `<...>` ("quote words") form, which is more familar to Perl 5 programmers as
 `qw/.../`. We used that form earlier to label the initial data set.
 
 

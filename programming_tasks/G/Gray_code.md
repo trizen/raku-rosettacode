@@ -85,6 +85,6 @@ for ^32 -> $n {
 
 
 Perl 6 distinguishes numeric bitwise operators with a leading `+` sign,
-so `+&lt;` and `+&gt;` are left and right shift,
-while `+&amp;` is a bitwise AND, while `+^` is bitwise XOR
+so `+<` and `+>` are left and right shift,
+while `+&` is a bitwise AND, while `+^` is bitwise XOR
 (here used as part of an assignment metaoperator).

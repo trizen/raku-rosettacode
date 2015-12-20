@@ -19,7 +19,7 @@ c b a
 ```
 
 
-Here is some generic code that works with any ordered type. To force lexicographic ordering, change `after` to `gt`. To force numeric order, replace it with `&gt;`.
+Here is some generic code that works with any ordered type. To force lexicographic ordering, change `after` to `gt`. To force numeric order, replace it with `>`.
 
 ```perl
 sub next_perm ( @a is copy ) {

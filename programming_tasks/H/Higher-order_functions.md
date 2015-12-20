@@ -7,7 +7,7 @@ The best type to use for the parameter of a higher-order function is `Callable` 
 
 
 Convenient syntax is provided for anonymous functions,
-either a bare block, or a parameterized block introduced with `-&gt;`, which serves as a "lambda":
+either a bare block, or a parameterized block introduced with `->`, which serves as a "lambda":
 
 ```perl
 sub twice(&todo) {

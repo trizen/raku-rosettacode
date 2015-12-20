@@ -11,4 +11,4 @@ given 3 {
 ```
 
 
-The scope of the `$_` variable is always lexical in Perl 6, though a function can access its caller's topic if it asks for it specially via `CALLER::&lt;$_&gt;`.
+The scope of the `$_` variable is always lexical in Perl 6, though a function can access its caller's topic if it asks for it specially via `CALLER::<$_>`.

@@ -3,7 +3,7 @@
 # [Singly-linked list/Traversal][1]
 
 Built-in list processing in Perl is not specifically based on singly-linked lists,
-but works at a higher abstraction level that encapsulates such implementation choices. Nonetheless, it's trivial to use the `Pair` type to build what is essentially a Lisp-style cons list, and in fact, the `=&gt;` pair constructor is right associative for precisely that reason.
+but works at a higher abstraction level that encapsulates such implementation choices. Nonetheless, it's trivial to use the `Pair` type to build what is essentially a Lisp-style cons list, and in fact, the `=>` pair constructor is right associative for precisely that reason.
 We traverse such a list here using a 3-part loop:
 
 ```perl
@@ -33,7 +33,7 @@ if anyone really cared to...
 Well, shoot, let's just go ahead and do it.
 We'll pretend the `Pair` type is really a list type.
 (And we show how you turn an ordinary list into a cons list using a reduction.
-Note how the `[=&gt;]` reduction is also right associative,
+Note how the `[=>]` reduction is also right associative,
 just like the base operator.)
 
 ```perl

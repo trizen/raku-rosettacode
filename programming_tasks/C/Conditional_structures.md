@@ -37,4 +37,4 @@ $expression ?? do_something !! do_fallback
 ```
 
 
-`and`, `or`, `&amp;&amp;`, `||` and `//` work as in Perl 5.
+`and`, `or`, `&&`, `||` and `//` work as in Perl 5.

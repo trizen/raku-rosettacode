@@ -9,7 +9,7 @@ my %hash = flat @keys Z @vals;
 ```
 
 
-or using the "zipwith" metaoperaotr on the `=&gt;` pair composer:
+or using the "zipwith" metaoperaotr on the `=>` pair composer:
 
 ```perl
 my @v = <a b c d e>;

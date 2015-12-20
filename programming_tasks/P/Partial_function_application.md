@@ -27,4 +27,4 @@ for [1..3], [2, 4 ... 8] X &fsf1, &fsf2 -> ($s, $f) {
 ```
 
 
-The `*+2` is also a form of partial application in Perl&#160;6. In this case we partially apply the `infix:&lt;+&gt;` function with a second argument of 2. That is, the star (known as the "whatever" star) indicates which argument <em>not</em> to apply. In contrast to languages that keep some arguments unbound by leaving holes, the explicit star in Perl&#160;6 allows us to avoid syntactic ambiguity in whether to expect a term or an infix operator; such self-clocking code contributes to better error messages when things go wrong.
+The `*+2` is also a form of partial application in Perl&#160;6. In this case we partially apply the `infix:<+>` function with a second argument of 2. That is, the star (known as the "whatever" star) indicates which argument <em>not</em> to apply. In contrast to languages that keep some arguments unbound by leaving holes, the explicit star in Perl&#160;6 allows us to avoid syntactic ambiguity in whether to expect a term or an infix operator; such self-clocking code contributes to better error messages when things go wrong.

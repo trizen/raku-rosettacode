@@ -141,7 +141,7 @@ B(100)  = -945980378191221252952274330694937218727028415330669361333856962043113
 ```
 
 
-And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects. We use zip with the pair constructor `=&gt;` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number. Output is identical to the previous solution, but runs about 3.5 times slower in rakudo, as of this writing (2014-03).
+And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects. We use zip with the pair constructor `=>` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number. Output is identical to the previous solution, but runs about 3.5 times slower in rakudo, as of this writing (2014-03).
 
 ```perl
 my sub infix:<bop>(\prev,\this) { this.key => this.key * (this.value - prev.value) }
