@@ -1,0 +1,53 @@
+[1]: http://rosettacode.org/wiki/FizzBuzz
+
+# [FizzBuzz][1]
+
+Most straightforwardly:
+
+```perl6
+for 1 .. 100 {
+    when $_ %% (3 & 5) { say 'FizzBuzz'; }
+    when $_ %% 3       { say 'Fizz'; }
+    when $_ %% 5       { say 'Buzz'; }
+    default            { .say; }
+}
+```
+
+
+Or abusing multi subs:
+
+```perl6
+multi sub fizzbuzz(Int $ where * %% 15) { 'FizzBuzz' }
+multi sub fizzbuzz(Int $ where * %%  5) { 'Buzz' }
+multi sub fizzbuzz(Int $ where * %%  3) { 'Fizz' }
+multi sub fizzbuzz(Int $number        ) { $number }
+(1 .. 100)».&fizzbuzz.join("\n").say;
+```
+
+
+Concisely (readable):
+
+```perl6
+say 'Fizz' x $_ %% 3 ~ 'Buzz' x $_ %% 5 || $_ for 1 .. 100;
+```
+
+
+Shortest FizzBuzz to date:
+
+```perl6
+say "Fizz"x$_%%3~"Buzz"x$_%%5||$_ for 1..100
+```
+
+
+And here's an implementation that never checks for divisibility:
+
+```perl6
+.say for
+    (
+      (flat ('' xx 2, 'Fizz') xx *)
+      Z~
+      (flat ('' xx 4, 'Buzz') xx *)
+    )
+    Z||
+    1 .. 100;
+```

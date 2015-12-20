@@ -1,0 +1,10 @@
+[1]: http://rosettacode.org/wiki/Rename_a_file
+
+# [Rename a file][1]
+
+```perl6
+rename 'input.txt', 'output.txt';
+rename 'docs', 'mydocs';
+rename '/input.txt', '/output.txt';
+rename '/docs', '/mydocs';
+```

@@ -1,8 +1,11 @@
-# perl6-rosettacode
+Perl6 tasks from RosettaCode
+=======
 
-Tasks from Rosettacode implemented in Perl 6
+A collection of tasks from Rosettacode implemented in Perl 6
 
-* Gitbook: ...
+* Github: https://github.com/trizen/perl6-rosettacode
+* Gitbook: http://trizen.gitbooks.io/perl6-rosettacode
+* RosettaCode: http://rosettacode.org/wiki/Perl_6
 
 ## DISCLAIMER
 
