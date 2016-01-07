@@ -31,4 +31,4 @@ Using the .ppm file from the [Write a PPM file](http://rosettacode.org/wiki/Bitm
 
 
 
-Original: [<img alt="Ppm-perl6.png" src="/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Ppm-perl6.png)   Grey Scale: [<img alt="Pgm-g2-perl6.png" src="/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Pgm-g2-perl6.png)
+Original: [<img alt="Ppm-perl6.png" src="http://rosettacode.org/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Ppm-perl6.png)   Grey Scale: [<img alt="Pgm-g2-perl6.png" src="http://rosettacode.org/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Pgm-g2-perl6.png)

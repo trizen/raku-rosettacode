@@ -3,6 +3,7 @@
 # [Exponentiation order][1]
 
 ```perl
+use MONKEY-SEE-NO-EVAL;
 sub demo($x) { say "  $x\t───► ", EVAL $x }
  
 demo '5**3**2';      # show ** is right associative
@@ -40,8 +41,8 @@ demo '5³²';
 #### Output:
 ```
   (5³)² ───► 15625
-  5³²   ───► 15625
+  5³²   ───► 23283064365386962890625
 ```
 
 
-(Not to mention the fact that the form without parentheses looks like you're trying to raise something to the 32nd power. Nor are you even allowed to parenthesize it the other way: `5(³²)` would be a syntax error. Despite all that, for programs that do a lot of squaring or cubing, the postfix forms can enhance both readability and concision.)
+The form without parentheses ends up raising to the 32nd power. Nor are you even allowed to parenthesize it the other way: `5(³²)` would be a syntax error. Despite all that, for programs that do a lot of squaring or cubing, the postfix forms can enhance both readability and concision.)

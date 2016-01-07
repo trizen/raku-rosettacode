@@ -31,7 +31,7 @@ Or, more consistently:
 
 
 
-Viewed as such, <span class="texhtml" dir="ltr">CF<sub>*n*</sub>(*x*)</span> could be written recursively:
+Viewed as such, <img class="mwe-math-fallback-image-inline tex" alt="\mathrm{CF}_n(x)" src="http://rosettacode.org/mw/images/math/b/5/e/b5e73d2cb94507acf0cd013e3983f854.png"/> could be written recursively:
 
 
 
@@ -39,7 +39,7 @@ Or in other words:
 
 
 
-where <img class="tex" alt="f\_n(x) = a\_n + \frac{b\_n}{x}" src="/mw/images/math/4/7/1/47199469d68ddcdfeb4096f415571576.png"/>
+where <img class="mwe-math-fallback-image-inline tex" alt="f_n(x) = a_n + \frac{b_n}{x}" src="http://rosettacode.org/mw/images/math/4/7/1/47199469d68ddcdfeb4096f415571576.png"/>
 
 
 

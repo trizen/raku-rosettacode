@@ -5,7 +5,7 @@
 ```perl
 sub multiplicative-digital-root(Int $n) {
     return .elems - 1, .[.end]
-        given $n, {[*] .comb} ... *.chars == 1
+        given cache($n, {[*] .comb} ... *.chars == 1)
 }
  
 for 123321, 7739, 893, 899998 {

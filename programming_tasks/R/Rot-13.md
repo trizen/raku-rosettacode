@@ -2,12 +2,12 @@
 
 # [Rot-13][1]
 
+As in Perl 5, there are `-n` and `-p` command-line options that ease the creation of a unix filter.
+
+
+
+Here for instance with `-p`
+
 ```perl
-sub rot13 { $^s.trans: 'a..mn..z' => 'n..za..m', :ii }
- 
-multi MAIN ()        { print rot13 slurp }
-multi MAIN (*@files) { print rot13 [~] map &slurp, @files }
+.=trans: 'a..mn..z' => 'n..za..m', :ii
 ```
-
-
-This illustrates use of multi-dispatch to MAIN based on number of arguments.

@@ -3,19 +3,12 @@
 # [Arithmetic-geometric mean][1]
 
 ```perl
- 
 sub agm( $a is copy, $g is copy ) {
-    loop {
-        given ($a + $g)/2, sqrt $a * $g {
-            return $a if @$_ ~~ ($a, $g);
-            ($a, $g) = @$_;
-        }
-    }
+    ($a, $g) = ($a + $g)/2, sqrt $a * $g until $a ≅ $g;
+    return $a;
 }
  
 say agm 1, 1/sqrt 2;
- 
- 
 ```
 
 #### Output:
@@ -24,16 +17,11 @@ say agm 1, 1/sqrt 2;
 ```
 
 
-Obviously the "fixed point" detector here is relying on the floating-point representation running out of bits, or this algorithm would not terminate before using up all memory.
-
-
-
 It's also possible to write it recursively:
 
 ```perl
- 
 sub agm( $a, $g ) {
-    @$_ ~~ ($a, $g) ?? $a !! agm(|@$_)
+    $a ≅ $g ?? $a !! agm(|@$_)
         given ($a + $g)/2, sqrt $a * $g;
 }
  

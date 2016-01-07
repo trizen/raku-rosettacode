@@ -3,13 +3,17 @@
 # [Loop over multiple arrays simultaneously][1]
 
 ```perl
-for <a b c> Z <A B C> Z 1, 2, 3 -> $x, $y, $z {
+for <a b c> Z <A B C> Z 1, 2, 3 -> ($x, $y, $z) {
    say $x, $y, $z;
 }
 ```
 
 
 The `Z` operator stops emitting items as soon as the shortest input list is exhausted. However, short lists are easily extended by replicating all or part of the list, or by appending any kind of lazy list generator to supply default values as necessary.
+
+
+
+Since `Z` will return a list of lists (in this example, the first list is `('a', 'A', 1)`, parentheses are used around in the lambda signature `($x, $y, $z)` to unpack the list for each iteration.
 
 
 
@@ -24,4 +28,18 @@ We could also use the zip-to-string with the reduction metaoperator:
 
 ```perl
 .say for [Z~] [<a b c>], [<A B C>], [1,2,3]
+```
+
+
+The common case of iterating over a list and a list of its indices can be done using the same method:
+
+```perl
+for ^Inf Z <a b c d> -> ($i, $letter) { ... }
+```
+
+
+or by using the `.kv` (key and value) method on the list (and dropping the parentheses because the list returned by `.kv` is a flattened list):
+
+```perl
+for <a b c d>.kv -> $i, $letter { ... }
 ```

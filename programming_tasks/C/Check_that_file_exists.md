@@ -7,4 +7,6 @@
 'docs'.IO ~~ :d;
 '/input.txt'.IO ~~ :e;
 '/docs'.IO ~~ :d
+run ('touch', "Abdu'l-Bahá.txt");
+"Abdu'l-Bahá.txt".IO ~~ :e;
 ```

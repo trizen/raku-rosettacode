@@ -6,7 +6,6 @@ For a start, you can get the length of the corresponding list of combinations:
 
 ```perl
 say combinations(5, 3).elems;
-say 5 choose 3;
 ```
 
 #### Output:
@@ -19,6 +18,7 @@ This method is efficient, as Perl 6 will not actually compute each element of th
 
 ```perl
 sub infix:<choose> { [*] ($^n ... 0) Z/ 1 .. $^p }
+say 5 choose 3;
 ```
 
 

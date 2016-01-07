@@ -52,7 +52,7 @@ say $a++ for ^10;
 ```
 
 
-Rule 104 is not particularly interesting so here is [Rule 90](http://en.wikipedia.org/wiki/Rule_90),
+Rule 104 is not particularly interesting so here is [Rule 90](http://en.wikipedia.org/wiki/Rule_90), 
 which shows a [Sierpinski Triangle](http://en.wikipedia.org/wiki/Sierpinski_Triangle).
 
 ```perl

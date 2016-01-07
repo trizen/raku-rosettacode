@@ -2,7 +2,7 @@
 
 # [Monte Carlo methods][1]
 
-We'll consider the upper-right quarter of the unitary disk centered at the origin. Its area is <img class="tex" alt="\pi \over 4" src="/mw/images/math/e/9/9/e996309bbdde3b8457909580d174720e.png"/>.
+We'll consider the upper-right quarter of the unitary disk centered at the origin. Its area is <img class="mwe-math-fallback-image-inline tex" alt="\pi \over 4" src="http://rosettacode.org/mw/images/math/e/9/9/e996309bbdde3b8457909580d174720e.png"/>.
 
 ```perl
 my @random_distances = ([+] rand**2 xx 2) xx *;

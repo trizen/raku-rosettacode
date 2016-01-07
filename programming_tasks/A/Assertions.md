@@ -2,6 +2,8 @@
 
 # [Assertions][1]
 
+*Note: This example does not work in the primary Perl 6 compiler, Rakudo.*
+
 ```perl
 my $a = (1..100).pick;
  

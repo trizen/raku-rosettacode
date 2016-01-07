@@ -11,7 +11,7 @@ sub is-k-almost-prime($n is copy, $k) returns Bool {
 }
  
 for 1 .. 5 -> $k {
-    say .[^10]
+    say ~.[^10]
         given grep { is-k-almost-prime($_, $k) }, 2 .. *
 }
 ```
@@ -27,6 +27,11 @@ for 1 .. 5 -> $k {
 
 
 Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](http://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
+
+
+
+
+
 
 ```perl
 constant factory = 0..* Z=> (0, 0, map { +factors($_) }, 2..*);

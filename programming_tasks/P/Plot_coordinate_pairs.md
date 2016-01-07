@@ -24,4 +24,4 @@ say SVG.serialize($svg);
 ```
 
 
-[<img alt="Coordinate-pairs-perl6.svg" src="/mw/images/thumb/b/b2/Coordinate-pairs-perl6.svg/512px-Coordinate-pairs-perl6.svg.png" width="512" height="512" />](http://rosettacode.org/mw/index.php?title=File:Coordinate-pairs-perl6.svg&amp;page=1)
+[<img alt="Coordinate-pairs-perl6.svg" src="http://rosettacode.org/mw/images/thumb/b/b2/Coordinate-pairs-perl6.svg/512px-Coordinate-pairs-perl6.svg.png" width="512" height="512" />](http://rosettacode.org/wiki/File:Coordinate-pairs-perl6.svg)

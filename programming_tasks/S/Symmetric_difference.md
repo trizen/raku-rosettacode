@@ -3,13 +3,17 @@
 # [Symmetric difference][1]
 
 ```perl
-my $A = set <John Serena Bob Mary Serena>;
-my $B = set <Jim Mary John Jim Bob>;
+my \A = set <John Serena Bob Mary Serena>;
+my \B = set <Jim Mary John Jim Bob>;
  
-say $A (^) $B;
+say  A ∖ B; # Set subtraction
+say  B ∖ A; # Set subtraction
+say  A ⊖ B; # Symmetric difference
 ```
 
 #### Output:
 ```
-set(Serena, Jim)
+set(Serena)
+set(Jim)
+set(Jim, Serena)
 ```

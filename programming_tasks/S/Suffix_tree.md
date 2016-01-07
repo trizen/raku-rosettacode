@@ -2,7 +2,7 @@
 
 # [Suffix tree][1]
 
-Here is quite a naive algorithm, probably <span class="texhtml" dir="ltr">*O*(*n*<sup>2</sup>)</span>.
+Here is quite a naive algorithm, probably <img class="mwe-math-fallback-image-inline tex" alt="O(n^2)" src="http://rosettacode.org/mw/images/math/1/8/9/189317b4b935a745fcfaf95940d2b4f0.png"/>.
 
 ```perl
 multi suffix-tree(Str $str) { suffix-tree map &flip, [\~] $str.flip.comb }

@@ -25,7 +25,7 @@ c c
 ```
 
 
-Here is an other approach, counting all <span class="texhtml" dir="ltr">*k*<sup>*n*</sup></span> possibilities in base <span class="texhtml" dir="ltr">*k*</span>:
+Here is an other approach, counting all <img class="mwe-math-fallback-image-inline tex" alt="k^n" src="http://rosettacode.org/mw/images/math/e/d/8/ed8ff3c12ebeab3386882a618c78afb8.png"/> possibilities in base <img class="mwe-math-fallback-image-inline tex" alt="k" src="http://rosettacode.org/mw/images/math/8/c/e/8ce4b16b22b58894aa86c421e8759df3.png"/>:
 
 ```perl
 my @k = <a b c>;

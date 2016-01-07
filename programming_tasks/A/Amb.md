@@ -41,6 +41,12 @@ The `amb` operator itself uses a hyper to run the `dethunk` calls in parallel. R
 If you consider lazy lists to be cheating on the idea of continuations, here's
 some admittedly grungy code that uses the continuation engine of regexes to solve it. At some point we'll wrap this up in nice syntax to let people write in a sublanguage of Perl 6 that looks more like a logic language.
 
+
+
+
+
+*Note: the compiler suggests adding `use MONKEY-SEE-NO-EVAL;` to enable regex interpolation, but that's not the only issue. The program outputs nothing.*
+
 ```perl
 sub amb($var,*@a) {
     "[{

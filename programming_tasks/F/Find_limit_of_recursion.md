@@ -2,32 +2,34 @@
 
 # [Find limit of recursion][1]
 
-Maximum recursion in Perl 6 is implementation dependent and subject to change as development proceeds.
+Maximum recursion depth is memory dependent. Values in excess of 1 million are easily achieved.
 
 ```perl
 my $x = 0;
 recurse;
  
 sub recurse () {
-   say ++$x;
+   ++$x;
+   say $x if $x %% 1_000_000;   
    recurse;
 }
 ```
 
 
-Using Rakudo 2011.01 this yields:
+When manually terminated memory use was on the order of 4Gb:
 
 
 #### Output:
 ```
-1
-2
-...
-...
-971
-972
-maximum recursion depth exceeded
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+7000000
+8000000
+9000000
+10000000
+^C
 ```
-
-
-This is because the Parrot VM currently imposes a limit of 1000. On the other hand, the niecza implementation has no limit, subject to availability of virtual memory. In any case, future Perl&#160;6 is likely to require tail call elimination in the absence of some declaration to the contrary.

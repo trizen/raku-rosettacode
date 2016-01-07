@@ -15,7 +15,7 @@ say 5!;
 ```
 
 
-This approach is much more efficient for repeated use, since it automatically caches. `[\*]` is the so-called triangular version of [\*]. It returns the intermediate results as a list.  Note that Perl 6 allows you to define constants lazily, which is rather helpful when your constant is of infinite size...
+This approach is much more efficient for repeated use, since it automatically caches.  `[\*]` is the so-called triangular version of [\*].  It returns the intermediate results as a list.  Note that Perl 6 allows you to define constants lazily, which is rather helpful when your constant is of infinite size...
 
 ```perl
 constant fact = 1, |[\*] 1..*;

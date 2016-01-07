@@ -2,13 +2,23 @@
 
 # [A+B][1]
 
+Short version with very little "line noise":
+
 ```perl
-say [+] get.words
+get.words.sum.say;
 ```
+
+
+Reduction operator `[+]`, and `say` as a function:
+
 ```perl
-$*IN.get.words.reduce(* + *).say
+say [+] get.words;
 ```
+
+
+Long version:
+
 ```perl
-my ($a,$b) = $*IN.get.split(" ");
+my ($a, $b) = $*IN.get.split(" ");
 say $a + $b;
 ```

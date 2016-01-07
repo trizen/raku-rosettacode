@@ -2,7 +2,7 @@
 
 # [Old Russian measure of length][1]
 
-Fairly straightfoward. Define a hash of conversion factors then apply them. Does some basic error trapping. Makes no attempt to do correct pluralization because I have no idea what the correct plurals are and little interest in researching them. Conversion factors from Wikipedia: [Obsolete Russian units of measurement](http://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement#Length).
+Fairly straightfoward. Define a hash of conversion factors then apply them. Makes no attempt to do correct pluralization because I have no idea what the correct plurals are and little interest in researching them. Conversion factors from Wikipedia: [Obsolete Russian units of measurement](http://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement#Length).
 
 ```perl
 convert(1, 'meter');
@@ -12,7 +12,7 @@ say '*' x 40, "\n";
 convert(1, 'milia');
  
 sub convert (Real $magnitude, $unit) {
-     my %factor = ( 
+     my %factor = 
         tochka     => 0.000254,
         liniya     => 0.00254,
         diuym      => 0.0254,
@@ -26,16 +26,14 @@ sub convert (Real $magnitude, $unit) {
         centimeter => 0.01,
         meter      => 1.0,
         kilometer  => 1000.0,
-    );
+    ;
  
-    die "Unknown unit $unit\n" unless %factor.exists($unit.lc);
- 
-    my $meters = $magnitude * %factor.delete($unit.lc);
+    my $meters = $magnitude * %factor{$unit.lc};
  
     say "$magnitude $unit to:\n", '_' x 40;
  
-    printf "%10s: %s\n", $_,  $meters / %factor{$_}
-      for %factor.keys.sort:{ +%factor{$^_} }
+    printf "%10s: %s\n", $_,  $meters / %factor{$_} unless $_ eq $unit.lc
+      for %factor.keys.sort:{ +%factor{$_} }
 }
  
 ```

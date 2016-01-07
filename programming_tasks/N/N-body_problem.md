@@ -6,11 +6,11 @@ We'll try to simulate the Sun+Earth+Moon system, with plausible astronomical val
 
 
 
-We use a 18-dimension vector <span class="texhtml" dir="ltr">*A**B**C*</span>.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
+We use a 18-dimension vector <img class="mwe-math-fallback-image-inline tex" alt="ABC" src="http://rosettacode.org/mw/images/math/9/0/2/902fbdd2b1df0c4f70b4a5d23525e932.png" />.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
 
 
 
-<img class="tex" alt="\frac{d\mathrm{position}}{dt} = \mathrm{speed}" src="/mw/images/math/8/6/f/86f97e87fec36db374a63b7197b77a37.png" />
+<img class="mwe-math-fallback-image-inline tex" alt="\frac{d\mathrm{position}}{dt} = \mathrm{speed}" src="http://rosettacode.org/mw/images/math/8/6/f/86f97e87fec36db374a63b7197b77a37.png" />
 
 
 
@@ -18,7 +18,7 @@ and thus
 
 
 
-<img class="tex" alt="\frac{dABC\_{1..9}}{dt} = ABC\_{10..18}" src="/mw/images/math/0/8/a/08a1cac764ae2904a3434a81a12aeda9.png" />
+<img class="mwe-math-fallback-image-inline tex" alt="\frac{dABC_{1..9}}{dt} = ABC_{10..18}" src="http://rosettacode.org/mw/images/math/0/8/a/08a1cac764ae2904a3434a81a12aeda9.png" />
 
 ```perl
 # Simple Vector implementation

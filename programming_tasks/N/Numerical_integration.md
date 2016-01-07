@@ -94,4 +94,4 @@ composite trapezoidal rule: 18000000
 ```
 
 
-Note that these integrations are done with rationals rather than floats, so should be fairly precise (though of course with so few iterations they are not terribly accurate (except when they are)). Some of the sums do overflow into Num (floating point)--currently rakudo allows 64-bit denominators--but at least all of the interval arithmetic is exact.
+Note that these integrations are done with rationals rather than floats, so should be fairly precise (though of course with so few iterations they are not terribly accurate (except when they are)).  Some of the sums do overflow into Num (floating point)--currently rakudo allows 64-bit denominators--but at least all of the interval arithmetic is exact.

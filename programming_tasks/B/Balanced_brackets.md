@@ -43,7 +43,7 @@ Of course, a Perl 5 programmer might just remove as many inner balanced pairs as
 
 ```perl
 sub balanced($_ is copy) {
-    () while s:g/'[]'//;
+    Nil while s:g/'[]'//;
     $_ eq '';
 }
  

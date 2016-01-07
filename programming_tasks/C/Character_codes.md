@@ -11,7 +11,6 @@ say chr(0x2a6a5);
 
 #### Output:
 ```
-0x2a6a5
-</dt></dl>
+0x2a6a5</dt></dl>
 𪚥
 ```

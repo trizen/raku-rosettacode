@@ -89,9 +89,9 @@ for @M -> @matrix {
 ```
 
 
-Perl 6 handles rational numbers internally as a ratio of two integers
-to maintain precision.
-For some situations it is useful to return the ratio
+Perl 6 handles rational numbers internally as a ratio of two integers 
+to maintain precision. 
+For some situations it is useful to return the ratio 
 rather than the floating point result.
 
 

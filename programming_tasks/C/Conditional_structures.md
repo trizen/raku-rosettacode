@@ -9,7 +9,7 @@ if won() -> $prize {
 ```
 
 
-Switch structures are done by topicalization and by smartmatching in Perl 6. They are somewhat orthogonal, you can use a `given` block without `when`, and vice versa. But the typical use is:
+Switch structures are done by topicalization and by smartmatching in Perl 6.  They are somewhat orthogonal, you can use a `given` block without `when`, and vice versa.  But the typical use is:
 
 ```perl
 given lc prompt("Done? ") {

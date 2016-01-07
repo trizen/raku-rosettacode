@@ -3,32 +3,30 @@
 # [Extract file extension][1]
 
 ```perl
-use v6 ;
- 
 sub extension ( Str $filename --> Str ) {
-   my $extension = $filename.split(/\./).pop ;
-   if ( $extension ) {
-      if ( $extension ~~ / <[\/_]> / ) {
-	 return "" ;
-      }
-      else {
-	 return "." ~ $extension ;
-      }
-   }
-   else {
-      return "" ;
-   }
+    given $filename.split(/\./)[*-1] {
+        when $filename   { "" }
+        when / <[\/_]> / { "" }
+        default          { "." ~ $_ }
+    }
 }
  
-.say for ("mywebsite.com/picture/image.png" , "http://mywebsite.com/picture/image.png" ,
-          "myuniquefile.longextension" , "/path/to.my/file" , "file.odd_one" ).map( { extension $_ } ) ;
- 
- 
+say "$_ -> ", extension($_).perl for (
+    'mywebsite.com/picture/image.png',
+    'http://mywebsite.com/picture/image.png',
+    'myuniquefile.longextension',
+    'IAmAFileWithoutExtension',
+    '/path/to.my/file',
+    'file.odd_one',
+)
 ```
 
 #### Output:
 ```
-.png
-.png
-.longextension
+mywebsite.com/picture/image.png -> ".png"
+http://mywebsite.com/picture/image.png -> ".png"
+myuniquefile.longextension -> ".longextension"
+IAmAFileWithoutExtension -> ""
+/path/to.my/file -> ""
+file.odd_one -> ""
 ```

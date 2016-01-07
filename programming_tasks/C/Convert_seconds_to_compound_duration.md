@@ -6,7 +6,7 @@ The built-in `polymod` method (which is a generalization of the `divmod` functio
 
 ```perl
 sub compound-duration ($seconds) {
-    ($seconds.polymod(60, 60, 24, 7) Z <sec min hr d wk>)\
+    ($seconds.polymod(60, 60, 24, 7) Z <sec min hr d wk>)
     .grep(*[0]).reverse.join(", ")
 }
 ```
