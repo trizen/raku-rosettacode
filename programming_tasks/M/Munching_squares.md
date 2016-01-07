@@ -31,10 +31,10 @@ Another way:
 
 ```perl
 my @colors = map -> $r, $g, $b { Buf.new: $r, $g, $b },
-		map -> $x { floor ($x/256) ** 3 * 256 },
-		    ((0...255) Z
-		     (255...0) Z
-		     (0,2...254),(254,252...0));
+        map -> $x { floor ($x/256) ** 3 * 256 },
+            ((0...255) Z
+             (255...0) Z
+             (0,2...254),(254,252...0));
  
  
 my $PPM = open "munching.ppm", :w, :bin or die "Can't create munching.ppm: $!";
@@ -42,7 +42,7 @@ my $PPM = open "munching.ppm", :w, :bin or die "Can't create munching.ppm: $!";
 $PPM.print: qq:to/EOH/;
     P6
     # munching.pgm
-    256 256 
+    256 256
     255
     EOH
  
@@ -52,4 +52,4 @@ $PPM.close;
 ```
 
 
-[<img alt="Perl 6 output" src="http://rosettacode.org/mw/images/thumb/7/7c/Perl_6_xor_pattern.png/200px-Perl_6_xor_pattern.png" width="200" height="200" srcset="/mw/images/7/7c/Perl_6_xor_pattern.png 1.5x, /mw/images/7/7c/Perl_6_xor_pattern.png 2x"/>](http://rosettacode.org/wiki/File:Perl_6_xor_pattern.png)
+[<img alt="Perl 6 output" src="http://rosettacode.org/mw/images/thumb/7/7c/Perl_6_xor_pattern.png/200px-Perl_6_xor_pattern.png" width="200" height="200" srcset="http://rosettacode.org/mw/images/7/7c/Perl_6_xor_pattern.png 1.5x, http://rosettacode.org/mw/images/7/7c/Perl_6_xor_pattern.png 2x"/>](http://rosettacode.org/wiki/File:Perl_6_xor_pattern.png)
