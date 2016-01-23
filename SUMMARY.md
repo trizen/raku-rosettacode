@@ -37,6 +37,8 @@
            * [Rational](programming_tasks/A/Arithmetic/Rational.md)
        * [Arithmetic-geometric mean](programming_tasks/A/Arithmetic-geometric_mean.md)
            * [Calculate Pi](programming_tasks/A/Arithmetic-geometric_mean/Calculate_Pi.md)
+       * Arithmetic coding
+           * [As a generalized change of radix](programming_tasks/A/Arithmetic_coding/As_a_generalized_change_of_radix.md)
        * [Arithmetic evaluation](programming_tasks/A/Arithmetic_evaluation.md)
        * [Array concatenation](programming_tasks/A/Array_concatenation.md)
        * [Array length](programming_tasks/A/Array_length.md)

@@ -1,0 +1,129 @@
+[1]: http://rosettacode.org/wiki/Arithmetic_coding/As_a_generalized_change_of_radix
+
+# [Arithmetic coding/As a generalized change of radix][1]
+
+```perl
+sub cumulative_freq(%freq) {
+    my %cf;
+    my $total = 0;
+    for (0..255).map({.chr}) -> $c {
+        if (%freq{$c}:exists) {
+            %cf{$c} = $total;
+            $total += %freq{$c};
+        }
+    }
+    return %cf;
+}
+ 
+sub arithmethic_coding($str, $radix) {
+    my @chars = $str.comb;
+ 
+    # The frequency characters
+    my %freq;
+    %freq{$_}++ for @chars;
+ 
+    # The cumulative frequency table
+    my %cf = cumulative_freq(%freq);
+ 
+    # Limit and base
+    my $lim  = @chars.end;
+    my $base = $lim + 1;
+ 
+    # Lower bound
+    my $L = 0;
+ 
+    # Product of all frequencies
+    my $pf = 1;
+ 
+    # Each term is multiplied by the product of the
+    # frequencies of all previously occurring symbols
+    for ^$base -> $i {
+        my $x = %cf{@chars[$i]} * $base**($lim - $i);
+        $L += $x * $pf;
+        $pf *= %freq{@chars[$i]};
+    }
+ 
+    # Upper bound
+    my $U = $L + $pf;
+ 
+    my $pow = 0;
+    loop {
+        $pf div= $radix;
+        last if $pf == 0;
+        ++$pow;
+    }
+ 
+    my $enc = ($U - 1) div ($radix ** $pow);
+    ($enc, $pow, %freq);
+}
+ 
+sub arithmethic_decoding($encoding, $radix, $pow, %freq) {
+ 
+    # Multiply encoding by radix^pow
+    my $enc = $encoding * $radix**$pow;
+ 
+    my $base = 0;
+    $base += $_ for %freq.values;
+ 
+    # Create the cumulative frequency table
+    my %cf = cumulative_freq(%freq);
+ 
+    # Create the dictionary
+    my %dict;
+    for %cf.kv -> $k,$v {
+        %dict{$v} = $k;
+    }
+ 
+    # Fill the gaps in the dictionary
+    my $lchar;
+    for ^$base -> $i {
+        if (%dict{$i}:exists) {
+            $lchar = %dict{$i};
+        }
+        elsif (defined $lchar) {
+            %dict{$i} = $lchar;
+        }
+    }
+ 
+    # Decode the input number
+    my $decoded = '';
+    for reverse(^$base) -> $i {
+ 
+        my $pow = $base**$i;
+        my $div = $enc div $pow;
+ 
+        my $c  = %dict{$div};
+        my $fv = %freq{$c};
+        my $cv = %cf{$c};
+ 
+        my $rem = ($enc - $pow*$cv) div $fv;
+ 
+        $enc = $rem;
+        $decoded ~= $c;
+    }
+ 
+    # Return the decoded output
+    return $decoded;
+}
+ 
+my $radix = 10;    # can be any integer greater or equal with 2
+ 
+for <DABDDB DABDDBBDDBA ABRACADABRA TOBEORNOTTOBEORTOBEORNOT> -> $str {
+    my ($enc, $pow, %freq) = arithmethic_coding($str, $radix);
+    my $dec = arithmethic_decoding($enc, $radix, $pow, %freq);
+ 
+    printf("%-25s=> %19s * %d^%s\n", $str, $enc, $radix, $pow);
+ 
+    if ($str ne $dec) {
+        die "\tHowever that is incorrect!";
+    }
+}
+```
+
+#### Output:
+```
+DABDDB                   =>                 251 * 10^2
+DABDDBBDDBA              =>              167351 * 10^6
+ABRACADABRA              =>             7954170 * 10^4
+TOBEORNOTTOBEORTOBEORNOT => 1150764267498783364 * 10^15
+```
