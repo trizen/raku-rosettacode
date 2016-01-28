@@ -147,6 +147,7 @@
        * [Count in octal](programming_tasks/C/Count_in_octal.md)
        * [Count occurrences of a substring](programming_tasks/C/Count_occurrences_of_a_substring.md)
        * [Count the coins](programming_tasks/C/Count_the_coins.md)
+       * [Cramer's rule](programming_tasks/C/Cramer's_rule.md)
        * [CRC-32](programming_tasks/C/CRC-32.md)
        * [Create a file](programming_tasks/C/Create_a_file.md)
        * [Create a file on magnetic tape](programming_tasks/C/Create_a_file_on_magnetic_tape.md)
