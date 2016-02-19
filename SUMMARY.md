@@ -4,6 +4,7 @@
 * [Programming tasks](programming_tasks/README.md)
    * 1
        * [100 doors](programming_tasks/1/100_doors.md)
+       * [15 Puzzle Game](programming_tasks/1/15_Puzzle_Game.md)
    * 2
        * [2048](programming_tasks/2/2048.md)
        * [24 game](programming_tasks/2/24_game.md)
