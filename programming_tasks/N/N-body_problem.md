@@ -6,11 +6,11 @@ We'll try to simulate the Sun+Earth+Moon system, with plausible astronomical val
 
 
 
-We use a 18-dimension vector <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url(&#39;/mw/index.php?title=Special:MathShowImage&amp;hash=902fbdd2b1df0c4f70b4a5d23525e932&amp;mode=mathml&#39;); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.343ex; width: 5.305ex;" /></span>.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
+We use a 18-dimension vector ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=902fbdd2b1df0c4f70b4a5d23525e932&mode=mathml).  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
 
 
 
-<meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url(&#39;/mw/index.php?title=Special:MathShowImage&amp;hash=a739273ab8fe4ada672cd16c895bbaca&amp;mode=mathml&#39;); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -2.005ex;height: 5.509ex; width: 18.898ex;" /></span>
+![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a739273ab8fe4ada672cd16c895bbaca&mode=mathml)
 
 
 
@@ -18,7 +18,7 @@ and thus
 
 
 
-<meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url(&#39;/mw/index.php?title=Special:MathShowImage&amp;hash=44998049241a1d4d8eb8a8e6344b7c5b&amp;mode=mathml&#39;); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -2.005ex;height: 5.509ex; width: 22.872ex;" /></span>
+![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=44998049241a1d4d8eb8a8e6344b7c5b&mode=mathml)
 
 ```perl
 # Simple Vector implementation
