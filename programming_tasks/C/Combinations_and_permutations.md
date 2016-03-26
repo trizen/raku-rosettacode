@@ -2,11 +2,11 @@
 
 # [Combinations and permutations][1]
 
-Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate <img class="mwe-math-fallback-image-inline tex" alt="\ln(n!)" src="http://rosettacode.org/mw/images/math/3/e/0/3e0f2b982252aad8d2031a3a9e70eb14.png"/>:
+Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ace1467263b72595ad730fc27d799714&mode=mathml):
 
 
 
-<img class="mwe-math-fallback-image-inline tex" alt="\ln n! \approx&#10;\frac{1}{2}\ln(2\pi n) + n\ln\left(\frac{n}{e} + \frac{1}{12 e n}\right)" src="http://rosettacode.org/mw/images/math/f/4/5/f459d58041f75e91fa5fd8d3f5a56f8d.png"/>
+![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=967db0496a7d29c0869c95a3f73e8ec1&mode=mathml)
 
 
 

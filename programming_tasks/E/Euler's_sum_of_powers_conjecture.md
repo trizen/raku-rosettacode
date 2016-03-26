@@ -20,7 +20,7 @@ for %p5.keys.sort -> $p {
     for @sk -> $s {
         next if $p <= $s;
         if %sum2{$p - $s} {
-            say (%sum2{$s}[],%sum2{$p-$s}[] X~ '⁵').join(' + ') ~ " =  %p5{$p}⁵";
+            say ((sort |%sum2{$s}[],|%sum2{$p-$s}[]) X~ '⁵').join(' + ') ~ " =  %p5{$p}" ~ "⁵";
             exit;
         }
     }
@@ -29,5 +29,5 @@ for %p5.keys.sort -> $p {
 
 #### Output:
 ```
-84⁵ + 27⁵ + 133⁵ + 110⁵ =  144⁵
+27⁵ + 84⁵ + 110⁵ + 133⁵ =  144⁵
 ```

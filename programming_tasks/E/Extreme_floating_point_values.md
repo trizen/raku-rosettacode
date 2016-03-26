@@ -2,12 +2,14 @@
 
 # [Extreme floating point values][1]
 
+Floating point limits are to a large extent implementation dependent. Right now, the Rakudo perl 6 interpreter running on moar VM on a 64 bit OS has in infinity threshold of 1e309.
+
 ```perl
 print qq:to 'END'
-positive infinity: {Inf}
-negative infinity: {-Inf}
-negative zero: {-0e0}
-not a number: {NaN}
+positive infinity: {1e309}
+negative infinity: {-1e309}
+negative zero: {0e0 * -1}
+not a number: {0 * 1e309}
 +Inf + 2.0 = {Inf + 2}
 +Inf - 10.1 = {Inf - 10.1}
 +Inf + -Inf = {Inf + -Inf}

@@ -18,3 +18,8 @@ my @times = ["23:00:17", "23:40:20", "00:12:45", "00:17:19"];
  
 say "{ mean-time(@times) } is the mean time of @times[]";
 ```
+
+#### Output:
+```
+23:47:43 is the mean time of 23:00:17 23:40:20 00:12:45 00:17:19
+```

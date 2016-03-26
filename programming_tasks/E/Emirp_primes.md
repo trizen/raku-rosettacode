@@ -7,7 +7,7 @@ Build a lazy list using Perl 6's builtin &amp;is-prime, then display results bas
 ```perl
 sub MAIN ($start, $stop, $display = <slice>) {
     my $end = $stop // $start; 
-    my @emirps := gather for 1 .. * -> $n {
+    my @emirps = lazy gather for 1 .. * -> $n {
         take $n if $n.is-prime 
           and (+$n.flip).is-prime
           and $n != +($n.flip)

@@ -3,7 +3,7 @@
 # [Prime conspiracy][1]
 
 ```perl
-my @primes := 2, |flat(3,5,7 ... *).grep: *.is-prime;
+my @primes := 2, |(3,5,7 ... *).grep: *.is-prime;
  
 my %conspiracy;
 my $upto = 1_000_000;

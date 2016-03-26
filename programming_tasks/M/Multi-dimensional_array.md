@@ -20,7 +20,7 @@ my @dim5[3,3,3,3,3];
  
 say @dim5[0;1;2;1;0]; # Perl 6
  
-email@example.com[0;1;2;1;4] = 'error'; # runtime error: Index 4 for dimension 5 out of range (must be 0..2)
+#@dim5[0;1;2;1;4] = 'error'; # runtime error: Index 4 for dimension 5 out of range (must be 0..2)
  
 # Note that the dimensions do not _need_ to be predeclared / allocated. Perl 6 will auto-vivify the necessary storage slots on first access.
  

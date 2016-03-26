@@ -26,7 +26,7 @@ sub MAIN ($start = 1, $end = 25) {
 sub display (%this_stuff, $start, $end) {
     my $i = $start; 
     printf "%4d %10d  =>\t%s\n", $i++, $_.key, 
-        ($_.value.map({ sprintf "%4d³ + %-s", $_[0], "$_[1]³" })).join: ",\t"
+        ($_.value.map({ sprintf "%4d³ + %-s", $_[0], "$_[1]\³" })).join: ",\t"
         for %this_stuff.grep( { $_.value.elems > 1 } ).sort( +*.key )[$start-1..$end-1];
     1;
 }

@@ -19,7 +19,7 @@ INIT say qq:to/STOP/;
     STOP
 END say '</svg>';
  
-my @vertices = map { cis( $_ * 2 * pi / $sides ) }, ^$sides;
+my @vertices = map { cis( $_ * τ / $sides ) }, ^$sides;
  
 for 0 ..^ $sides ** order -> $i {
    my $vector = [+] @vertices[$i.base($sides).fmt("%{order}d").comb] «*» @orders;
@@ -31,4 +31,4 @@ sub pgon (@q) { qq|<polygon points="{@q}"/>| }
 ```
 
 
-See [5th order pentaflake](https://gist.github.com/thundergnat/c1b6cde8fff98dcd3f1e#file-pentaflake-svg)
+See [5th order pentaflake](http://rosettacode.org/mw/images/5/57/Perl6_pentaflake.svg)

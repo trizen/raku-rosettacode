@@ -64,6 +64,7 @@
        * [Bacon cipher](programming_tasks/B/Bacon_cipher.md)
        * [Balanced brackets](programming_tasks/B/Balanced_brackets.md)
        * [Balanced ternary](programming_tasks/B/Balanced_ternary.md)
+       * [Barnsley fern](programming_tasks/B/Barnsley_fern.md)
        * [Base64 encode data](programming_tasks/B/Base64_encode_data.md)
        * [Benford's law](programming_tasks/B/Benford's_law.md)
        * [Bernoulli numbers](programming_tasks/B/Bernoulli_numbers.md)
@@ -379,6 +380,7 @@
        * [JortSort](programming_tasks/J/JortSort.md)
        * [Josephus problem](programming_tasks/J/Josephus_problem.md)
        * [JSON](programming_tasks/J/JSON.md)
+       * [Julia set](programming_tasks/J/Julia_set.md)
        * [Jump anywhere](programming_tasks/J/Jump_anywhere.md)
    * K
        * [K-d tree](programming_tasks/K/K-d_tree.md)
@@ -701,12 +703,11 @@
        * [Sort disjoint sublist](programming_tasks/S/Sort_disjoint_sublist.md)
        * [Sort stability](programming_tasks/S/Sort_stability.md)
        * [Sort using a custom comparator](programming_tasks/S/Sort_using_a_custom_comparator.md)
-       * Sorting Algorithms
-           * [Circle Sort](programming_tasks/S/Sorting_Algorithms/Circle_Sort.md)
        * Sorting algorithms
            * [Bead sort](programming_tasks/S/Sorting_algorithms/Bead_sort.md)
            * [Bogosort](programming_tasks/S/Sorting_algorithms/Bogosort.md)
            * [Bubble sort](programming_tasks/S/Sorting_algorithms/Bubble_sort.md)
+           * [Circle Sort](programming_tasks/S/Sorting_algorithms/Circle_Sort.md)
            * [Cocktail sort](programming_tasks/S/Sorting_algorithms/Cocktail_sort.md)
            * [Comb sort](programming_tasks/S/Sorting_algorithms/Comb_sort.md)
            * [Counting sort](programming_tasks/S/Sorting_algorithms/Counting_sort.md)

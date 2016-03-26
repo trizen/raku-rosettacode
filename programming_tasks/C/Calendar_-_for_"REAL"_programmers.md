@@ -6,6 +6,8 @@ Uppercase is no challenge, who needs letters at all?
 
 
 
+
+
 [Requires the year to be supplied as a command-line argument, Snoopy to be available in snoopy.txt, and Unixish *cat* and *cal* commands.]
 
 ```perl

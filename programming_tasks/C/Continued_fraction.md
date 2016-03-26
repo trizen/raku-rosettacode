@@ -31,7 +31,7 @@ Or, more consistently:
 
 
 
-Viewed as such, <img class="mwe-math-fallback-image-inline tex" alt="\mathrm{CF}_n(x)" src="http://rosettacode.org/mw/images/math/b/5/e/b5e73d2cb94507acf0cd013e3983f854.png"/> could be written recursively:
+Viewed as such, ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=e48ee36b1a3c54ddb341c72e565131ed&mode=mathml) could be written recursively:
 
 
 
@@ -39,7 +39,7 @@ Or in other words:
 
 
 
-where <img class="mwe-math-fallback-image-inline tex" alt="f_n(x) = a_n + \frac{b_n}{x}" src="http://rosettacode.org/mw/images/math/4/7/1/47199469d68ddcdfeb4096f415571576.png"/>
+where ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a59358d8eac1e8f71974271c5d11caf7&mode=mathml)
 
 
 

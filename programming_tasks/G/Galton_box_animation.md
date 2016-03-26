@@ -47,7 +47,7 @@ sub display-board(@positions, @stats is copy, $halfstep) {
         # make some space above the picture
         say "" for ^10;
  
-        my @output-lines = map { [map *.clone, @$_].item }, @board-tmpl;
+        my @output-lines = map { [ @$_ ] }, @board-tmpl;
         # place the coins
         for @positions.kv -> $line, $pos {
             next unless $pos.defined;
@@ -55,7 +55,7 @@ sub display-board(@positions, @stats is copy, $halfstep) {
         }
         # output the board with its coins
         for @output-lines -> @line {
-            say @line>>.chr.join("");
+            say @line.chrs;
         }
  
         # show the statistics

@@ -28,15 +28,28 @@ for 1 .. 5 -> $k {
 
 Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](http://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
 
-
-
-
-
-
 ```perl
-constant factory = 0..* Z=> (0, 0, map { +factors($_) }, 2..*);
+constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;
  
-sub almost($n) { map *.key, grep *.value == $n, factory }
+multi sub factors(1) { 1 }
+multi sub factors(Int $remainder is copy) {
+    gather for @primes -> $factor {
+        # if remainder < factor², we're done
+        if $factor * $factor > $remainder {
+            take $remainder if $remainder > 1;
+            last;
+        }
+        # How many times can we divide by this prime?
+        while $remainder %% $factor {
+            take $factor;
+            last if ($remainder div= $factor) === 1;
+        }
+    }
+}
  
-say almost($_)[^10] for 1..5;
+constant @factory = lazy 0..* Z=> flat (0, 0, map { +factors($_) }, 2..*);
+ 
+sub almost($n) { map *.key, grep *.value == $n, @factory }
+ 
+put almost($_)[^10] for 1..5;
 ```

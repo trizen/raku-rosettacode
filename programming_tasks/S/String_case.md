@@ -12,7 +12,6 @@ say $word.uc;         # all uppercase (method call)
 say $word.lc;         # all lowercase
 say $word.tc;         # first letter titlecase
 say $word.tclc;       # first letter titlecase, rest lowercase
-say $word.tcuc;       # first letter titlecase, rest uppercase
 say $word.wordcase;   # capitalize each word
  
 ```
@@ -27,6 +26,5 @@ ALPHA BETA
 alpha beta
 Alpha BETA
 Alpha beta
-ALPHA BETA
 Alpha Beta
 ```

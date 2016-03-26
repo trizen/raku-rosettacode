@@ -6,11 +6,11 @@ There is not yet a FixDecimal type module in Perl 6, and using FatRat all along 
 
 
 
-The trick to compute the square root of a rational <img class="mwe-math-fallback-image-inline tex" alt="n\over d" src="http://rosettacode.org/mw/images/math/7/b/0/7b0364285593c3f0b4f1547e879b7a30.png"/> up to a certain amount of decimals N is to write:
+The trick to compute the square root of a rational ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f840899ae807a7c043751f8529403bae&mode=mathml) up to a certain amount of decimals N is to write:
 
 
 
-<img class="mwe-math-fallback-image-inline tex" alt="\sqrt{\frac{n}{d}} = \sqrt{&#10;\frac{n 10^{2N} / d}{d 10^{2N} / d}&#10;} = \frac{\sqrt{n 10^{2N} / d}}{10^N}" src="http://rosettacode.org/mw/images/math/f/c/4/fc4a3d254c7dd00711e6cba90a07bb9b.png"/>
+![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7e8ff6a27540ed22f0e6bd1b2f7285f1&mode=mathml)
 
 
 
@@ -18,15 +18,15 @@ so that what we need is one square root of a big number that we'll truncate to i
 
 
 
-<img class="mwe-math-fallback-image-inline tex" alt="u_{n+1} = \frac{1}{2}(u_n + \frac{x}{u_n})" src="http://rosettacode.org/mw/images/math/e/f/1/ef1b37a4a4a2552a574dd4354a3f159e.png"/>
+![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2a9aefca4f9c8ffa48a812145167786e&mode=mathml)
 
 
 
-It's not too hard to see that such a sequence converges towards <img class="mwe-math-fallback-image-inline tex" alt="\sqrt x" src="http://rosettacode.org/mw/images/math/a/0/b/a0b9673c7c97664405abeea23b78087a.png"/>.
+It's not too hard to see that such a sequence converges towards ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f108a3d88b22ff91ddbd459b0f359bc9&mode=mathml).
 
 
 
-Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need <img class="mwe-math-fallback-image-inline tex" alt="a_n" src="http://rosettacode.org/mw/images/math/9/d/e/9ded7825070b255e7bc092cdc2c8e98a.png"/>, but rather <img class="mwe-math-fallback-image-inline tex" alt="a_n^2" src="http://rosettacode.org/mw/images/math/6/a/2/6a2ded63ebfb3deb8d76656e00d56e44.png"/>. Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
+Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=825b3fd5bafbc46b9a560ea9f16b21dd&mode=mathml), but rather ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2864884e3a76f4b27e189d49f4e6d0d1&mode=mathml). Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
 
 ```perl
 constant number-of-decimals = 100;

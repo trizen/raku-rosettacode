@@ -22,7 +22,7 @@ sub det(@matrix) {
     }
     $sign * $pivot
 }
-
+ 
 sub cramers_rule(@A, @terms) {
     gather for ^@A -> $i {
         my @Ai = @A.map: { [|$_] };
@@ -30,19 +30,19 @@ sub cramers_rule(@A, @terms) {
             @Ai[$j][$i] = @terms[$j];
         }
         take det(@Ai);
-    } »/» det(@A);
+    } »/» det(@A);
 }
-
+ 
 my @matrix = (
     [2, -1,  5,  1],
     [3,  2,  2, -6],
     [1,  3,  3, -1],
     [5, -2, -3,  3],
 );
-
+ 
 my @free_terms = (-3, -32, -47, 49);
 my ($w, $x, $y, $z) = |cramers_rule(@matrix, @free_terms);
-
+ 
 say "w = $w";
 say "x = $x";
 say "y = $y";

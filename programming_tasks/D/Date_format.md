@@ -3,7 +3,7 @@
 # [Date format][1]
 
 ```perl
-use DateTime::Utils;
+use DateTime::Format;
  
 my $dt = DateTime.now;
  

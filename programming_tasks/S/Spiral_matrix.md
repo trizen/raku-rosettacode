@@ -94,7 +94,7 @@ sub MAIN($size as Int) {
 ```
 
 
-Note that with these "turtle graphics" we don't actually have to care about the coordinate system, since the `showmap` method can show whatever rectangle was modified by the turtle. So unlike the standard inside-out algorithm, we don't have to find the center of the matrix first.
+Note that with these "turtle graphics" we don't actually have to care about the coordinate system, since the `showmap` method can show whatever rectangle was modified by the turtle.  So unlike the standard inside-out algorithm, we don't have to find the center of the matrix first.
 
 ```perl
 sub spiral_matrix ( $n ) {

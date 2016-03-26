@@ -2,7 +2,7 @@
 
 # [Order two numerical lists][1]
 
-This is already a built-in comparison operator.
+There is already a built-in comparison operator.
 
 ```perl
 my @a = <1 2 4>;
@@ -18,8 +18,8 @@ say @a," before ",@b," = ", @a before @b;
 say @a," before ",@b," = ", @a before @b;
  
 for 1..10 {
-    my @a = (^100).roll((2..3).pick);
-    my @b = @a.map: { Bool.pick ?? $_ !! (^100).roll((0..2).pick) }
+    my @a = flat (^100).roll((2..3).pick);
+    my @b = flat @a.map: { Bool.pick ?? $_ !! (^100).roll((0..2).pick) }
     say @a," before ",@b," = ", @a before @b;
 }
 ```

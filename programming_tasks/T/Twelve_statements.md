@@ -29,16 +29,16 @@ for reverse 0 ..^ 2**12 -> $i {
     my @result = @tests.map: { .(@assert).so }
     my @s = ( $_ if $_ and @assert[$_] for 1..12 );
     if @result eqv @assert {
-	push @good, "<{@s}> is consistent.";
+        push @good, "<{@s}> is consistent.";
     }
     else {
-	my @cons = gather for 1..12 {
-	    if @assert[$_] !eqv @result[$_] {
-		take @result[$_] ?? $_ !! "¬$_";
-	    }
-	}
-	my $mess = "<{@s}> implies {@cons}.";
-	if @cons == 1 { push @bad, $mess } else { push @ugly, $mess }
+        my @cons = gather for 1..12 {
+            if @assert[$_] !eqv @result[$_] {
+                take @result[$_] ?? $_ !! "¬$_";
+            }
+        }
+        my $mess = "<{@s}> implies {@cons}.";
+        if @cons == 1 { push @bad, $mess } else { push @ugly, $mess }
     }
 }
  

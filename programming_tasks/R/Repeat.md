@@ -18,7 +18,7 @@ repeat(&example, 3);
 ```
 
 
-Notes on the [<code>xx</code>](http://doc.perl6.org/language/operators#infix_xx) operator:
+Notes on the [`xx`](http://doc.perl6.org/language/operators#infix_xx) operator:
 
 
 

@@ -30,9 +30,7 @@ sub brent (&f, $x0) {
  
     my $μ = 0;
     $tortoise = $hare = $x0;
-    for ^$λ -> $i {
-        $hare = f($hare)
-    }
+    $hare = f($hare) for ^$λ;
  
     while ($tortoise != $hare) {
         $tortoise = f($tortoise);

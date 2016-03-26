@@ -10,16 +10,16 @@ There actually is a builtin:
 
 #### Output:
 ```
-0 1 2
-0 1 3
-0 1 4
-0 2 3
-0 2 4
-0 3 4
-1 2 3
-1 2 4
-1 3 4
-2 3 4
+(0 1 2)
+(0 1 3)
+(0 1 4)
+(0 2 3)
+(0 2 4)
+(0 3 4)
+(1 2 3)
+(1 2 4)
+(1 3 4)
+(2 3 4)
 ```
 
 
@@ -41,20 +41,4 @@ sub combinations(Int $n, Int $k) {
     }
 }
 .say for combinations(5,3);
-```
-
-
-or recursive with same output, but much slower:
-
-```perl
-sub combinations(Int $n, Int $k) {
-    return [] if $k == 0;
-    return () if $k > $n;
-    gather {
-        take [0, (1..^$n)[@$_]] for combinations($n-1, $k-1);
-        take [(1..^$n)[@$_]]    for combinations($n-1, $k  );
-    }
-}
- 
-.say for combinations(5, 3);
 ```

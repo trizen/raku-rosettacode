@@ -3,7 +3,7 @@
 # [Perlin noise][1]
 
 ```perl
-constant @p = map {:36($_)}, <
+constant @p = map {:36($_)}, flat <
 47 4G 3T 2J 2I F 3N D 5L 2N 2O 1H 5E 6H 7 69 3W 10 2V U 1X 3Y 8 2R 11 6O L A N
 5A 6 44 6V 3C 6I 23 0 Q 5H 1Q 2M 70 63 5N 39 Z B W 1L 4X X 2G 6L 45 1K 2F 4U K
 3H 3S 4R 4O 1W 4V 22 4L 1Z 3Q 3V 1C R 4M 25 42 4E 6F 2B 33 6D 3E 1O 5V 3P 6E 64

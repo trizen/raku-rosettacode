@@ -16,11 +16,11 @@ sub MAIN ($action = 'encode', $file = '') {
     die 'Only options are encode or decode.' unless $action ~~ any 'encode'|'decode';
  
     my $text = qq:to/END/;
-        Here we have to do is there will be a input/source file in which 
-        we are going to Encrypt the file by replacing every upper/lower 
-        case alphabets of the source file with another predetermined 
-        upper/lower case alphabets or symbols and save it into another 
-        output/encrypted file and then again convert that output/encrypted 
+        Here we have to do is there will be a input/source file in which
+        we are going to Encrypt the file by replacing every upper/lower
+        case alphabets of the source file with another predetermined
+        upper/lower case alphabets or symbols and save it into another
+        output/encrypted file and then again convert that output/encrypted
         file into original/decrypted file. This type of Encryption/Decryption
         scheme is often called a Substitution Cipher.
         END
@@ -47,7 +47,7 @@ sub decode ($text) { $text.trans($key => $chr) }
 ```
 Key = 3#}^",dLs*>tPMcZR!fmC rEKhlw1v4AOgj7Q]YI+|pDB82a&XFV9yzuH<WT%N;iS.0e:`G\n['6@_{bk)=-5qx(/?$JoU
 
-Encoded text: 
+Encoded text:
  +`=`3(`3n.x`35b3:b3[-35n`=`3([@@30`3.3[{kq5Z-bq=e`3G[@`3[{3(n[en3
 (`3.=`3\b[{\35b3]{e=?k535n`3G[@`30?3=`k@.e[{\3`x`=?3qkk`=Z@b(`=3
 e.-`3.@kn.0`5-3bG35n`3-bq=e`3G[@`3([5n3.{b5n`=3k=`:`5`=_[{`:3
@@ -56,12 +56,12 @@ bq5kq5Z`{e=?k5`:3G[@`3.{:35n`{3.\.[{3eb{x`=535n.53bq5kq5Z`{e=?k5`:3
 G[@`3[{5b3b=[\[{.@Z:`e=?k5`:3G[@`c39n[-35?k`3bG3]{e=?k5[b{ZQ`e=?k5[b{
 -en`_`3[-3bG5`{3e.@@`:3.3Vq0-5[5q5[b{37[kn`=c
 
-Decoded text: 
- Here we have to do is there will be a input/source file in which 
-we are going to Encrypt the file by replacing every upper/lower 
-case alphabets of the source file with another predetermined 
-upper/lower case alphabets or symbols and save it into another 
-output/encrypted file and then again convert that output/encrypted 
+Decoded text:
+ Here we have to do is there will be a input/source file in which
+we are going to Encrypt the file by replacing every upper/lower
+case alphabets of the source file with another predetermined
+upper/lower case alphabets or symbols and save it into another
+output/encrypted file and then again convert that output/encrypted
 file into original/decrypted file. This type of Encryption/Decryption
 scheme is often called a Substitution Cipher.
 ```

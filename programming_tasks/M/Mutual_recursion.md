@@ -2,7 +2,7 @@
 
 # [Mutual recursion][1]
 
-A direct translation of the definitions of <img class="mwe-math-fallback-image-inline tex" alt="F" src="http://rosettacode.org/mw/images/math/8/0/0/800618943025315f869e4e1f09471012.png"/> and <img class="mwe-math-fallback-image-inline tex" alt="M" src="http://rosettacode.org/mw/images/math/6/9/6/69691c7bdcc3ce6d5d8a1361f22d04ac.png"/>:
+A direct translation of the definitions of ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=800618943025315f869e4e1f09471012&mode=mathml) and ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=69691c7bdcc3ce6d5d8a1361f22d04ac&mode=mathml):
 
 ```perl
 multi F(0) { 1 }; multi M(0) { 0 }

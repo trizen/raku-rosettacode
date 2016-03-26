@@ -13,7 +13,9 @@ sub pick-FEN {
     # We try to find suitable king positions on non-adjacent squares.
     # If we could not find any, we return recursively
     return pick-FEN() unless
-    my @kings[2] = first -> [$a, $b] { $a !== $b && abs($a div 8 - $b div 8) | abs($a mod 8 - $b mod 8) > 1 }, (@n X @n);
+    my @kings[2] = first -> [$a, $b] {
+        $a !== $b && abs($a div 8 - $b div 8) | abs($a mod 8 - $b mod 8) > 1
+    }, (@n X @n);
  
     # We make a list of pieces we can pick (apart from the kings)
     my @pieces = <p P n N b B r R q Q>;

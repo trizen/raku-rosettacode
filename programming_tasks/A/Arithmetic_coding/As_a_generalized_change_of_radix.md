@@ -6,11 +6,9 @@
 sub cumulative_freq(%freq) {
     my %cf;
     my $total = 0;
-    for (0..255).map({.chr}) -> $c {
-        if (%freq{$c}:exists) {
-            %cf{$c} = $total;
-            $total += %freq{$c};
-        }
+    for %freq.keys.sort -> $c {
+        %cf{$c} = $total;
+        $total += %freq{$c};
     }
     return %cf;
 }
@@ -25,9 +23,8 @@ sub arithmethic_coding($str, $radix) {
     # The cumulative frequency table
     my %cf = cumulative_freq(%freq);
  
-    # Limit and base
-    my $lim  = @chars.end;
-    my $base = $lim + 1;
+    # Base
+    my $base = @chars.elems;
  
     # Lower bound
     my $L = 0;
@@ -37,10 +34,9 @@ sub arithmethic_coding($str, $radix) {
  
     # Each term is multiplied by the product of the
     # frequencies of all previously occurring symbols
-    for ^$base -> $i {
-        my $x = %cf{@chars[$i]} * $base**($lim - $i);
-        $L += $x * $pf;
-        $pf *= %freq{@chars[$i]};
+    for @chars -> $c {
+        $L = $L*$base + %cf{$c}*$pf;
+        $pf *= %freq{$c};
     }
  
     # Upper bound
@@ -62,8 +58,8 @@ sub arithmethic_decoding($encoding, $radix, $pow, %freq) {
     # Multiply encoding by radix^pow
     my $enc = $encoding * $radix**$pow;
  
-    my $base = 0;
-    $base += $_ for %freq.values;
+    # Base
+    my $base = [+] %freq.values;
  
     # Create the cumulative frequency table
     my %cf = cumulative_freq(%freq);

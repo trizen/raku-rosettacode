@@ -3,10 +3,28 @@
 # [Check that file exists][1]
 
 ```perl
-'input.txt'.IO ~~ :e;
-'docs'.IO ~~ :d;
-'/input.txt'.IO ~~ :e;
-'/docs'.IO ~~ :d
-run ('touch', "Abdu'l-Bahá.txt");
-"Abdu'l-Bahá.txt".IO ~~ :e;
+ 
+my $path = "/etc/passwd";
+say $path.IO.e ?? "Exists" !! "Does not exist";
+ 
+given $path.IO {
+    when :d { say "$path is a directory"; }
+    when :f { say "$path is a regular file"; }
+    when :e { say "$path is neither a directory nor a file, but it does exist"; }
+    default { say "$path does not exist" }
+}
+ 
+ 
+```
+
+
+`when` internally uses the smart match operator `~~`, so `when&#160;:e` really does `$given ~~&#160;:e` instead of the method call `$given.e`; both test whether the file exists.
+
+```perl
+ 
+run ('touch', "♥ Unicode.txt");
+ 
+say "♥ Unicode.txt".IO.e;      # "True"
+say "♥ Unicode.txt".IO ~~ :e;  # same
+ 
 ```

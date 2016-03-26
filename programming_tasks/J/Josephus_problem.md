@@ -7,8 +7,8 @@ Straightforward implementation of the executioner's algorithm:
 ```perl
 sub Execute(@prisoner, $k) {
     until @prisoner == 1 {
-	@prisoner.=rotate($k - 1);
-	@prisoner.shift;
+        @prisoner.=rotate($k - 1);
+        @prisoner.shift;
     }
 }
  

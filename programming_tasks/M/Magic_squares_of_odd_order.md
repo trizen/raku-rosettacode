@@ -2,27 +2,11 @@
 
 # [Magic squares of odd order][1]
 
-```perl
-sub MAIN (Int $n = 5) {
- 
-    note "Sorry, must be a positive odd integer." and exit if $n %% 2 or $n < 0;
- 
-    my $x = $n/2;
-    my $y = 0;
-    my $i = 1;
-    my @sq;
- 
-    @sq[($i % $n ?? $y-- !! $y++) % $n][($i % $n ?? $x++ !! $x) % $n] = $i++ for ^($n * $n);
- 
-    my $f = "%{$i.chars}d";
-    say .fmt($f, ' ') for @sq;
- 
-    say "\nThe magic number is ", [+] @sq[0].list;
-}
-```
+See [Magic squares/Perl 6](http://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
 
 
-Default, No parameter:
+
+With a parameter of 5:
 
 
 #### Output:
@@ -37,7 +21,7 @@ The magic number is 65
 ```
 
 
-With a parameter of 19
+With a parameter of 19:
 
 
 #### Output:

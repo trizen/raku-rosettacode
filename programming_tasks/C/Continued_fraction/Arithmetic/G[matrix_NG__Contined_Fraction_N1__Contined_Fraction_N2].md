@@ -12,15 +12,15 @@ class NG2 {
     method apply(@cf1, @cf2, :$limit = 30) {
         my @cfs = [@cf1], [@cf2];
         gather {
-            while @cfs[0].elems or @cfs[1].elems {
+            while @cfs[0] or @cfs[1] {
                 my $term;
                 (take $term if $term = self!extract) unless self!needterm;
                 my $from = self!from;
-                $from = @cfs[$from].elems ?? $from !! $from +^ 1; 
+                $from = @cfs[$from] ?? $from !! $from +^ 1;
                 self!inject($from, @cfs[$from].shift);
             }
             take self!drain while $!b;
-        }[ ^ $limit ];
+        }[ ^$limit ].grep: *.defined;
     }
  
     # Private methods
@@ -121,7 +121,7 @@ The NG2 object can work with infinitely long continued fractions, it does lazy e
 
 ```perl
 say "√2 expressed as a continued fraction: ";
-my @root2 = 1, 2 xx *;
+my @root2 = lazy flat 1, 2 xx *;
 my @result = NG2.new.operator(|%ops{'*'}).apply( @root2, @root2, limit => 6 );
 say @root2.&ppcf, "² = \n";
 say @result.&ppcf;
@@ -132,12 +132,12 @@ say "\nCoerced to a standard precision Rational: ", @result.&cf2r.Num.Rat;
 
 #### Output:
 ```
-√2 expressed as a continued fraction: 
-[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² = 
+√2 expressed as a continued fraction:
+[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² =
 
 [1;1,-58451683124983302025,-1927184886226364356176,-65467555105469489418600,-2223969688699736275876224]
 
-Converted back to an arbitrary (ludicrous) precision Rational: 
+Converted back to an arbitrary (ludicrous) precision Rational:
 32802382178012409621354320392819425499699206367450594986122623570838188983519955166754002 /
 16401191089006204810536863200564985394427741343927508600629139291039556821665755787817601
 

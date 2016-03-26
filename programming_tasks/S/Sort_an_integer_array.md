@@ -9,13 +9,6 @@ my @sorted = sort @a;
 ```
 
 
-If some elements of `@a` are strings or are otherwise non-numeric but you want to treat them as numbers:
-
-```perl
-my @sorted = sort +*, @a;
-```
-
-
 For an in-place sort:
 
 ```perl

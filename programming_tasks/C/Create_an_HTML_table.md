@@ -19,6 +19,3 @@ for 1 .. $rows -> $row {
  
 say tag('table', $table, 'cellspacing=4 style="text-align:right; border: 1px solid;"');
 ```
-
-
-Sample output:

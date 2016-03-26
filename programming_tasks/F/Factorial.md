@@ -5,7 +5,7 @@
 `[*]` is a reduction operator that multiplies all the following values together. Note that we don't need to start at 1, since the degenerate case of `[*]()` correctly returns 1, and multiplying by 1 to start off with is silly in any case.
 
 ```perl
-sub postfix:<!> ( UInt:D $n ) is looser(&prefix:<->) { [*] 2..$n }
+sub postfix:<!> (Int $n) { [*] 2..$n }
 say 5!;
 ```
 

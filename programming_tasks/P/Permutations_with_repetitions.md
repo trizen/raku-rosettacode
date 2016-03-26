@@ -25,7 +25,7 @@ c c
 ```
 
 
-Here is an other approach, counting all <img class="mwe-math-fallback-image-inline tex" alt="k^n" src="http://rosettacode.org/mw/images/math/e/d/8/ed8ff3c12ebeab3386882a618c78afb8.png"/> possibilities in base <img class="mwe-math-fallback-image-inline tex" alt="k" src="http://rosettacode.org/mw/images/math/8/c/e/8ce4b16b22b58894aa86c421e8759df3.png"/>:
+Here is an other approach, counting all ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=aafabbf195eb3424ca815b9afe5caff1&mode=mathml) possibilities in base ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=8ce4b16b22b58894aa86c421e8759df3&mode=mathml):
 
 ```perl
 my @k = <a b c>;

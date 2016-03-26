@@ -24,21 +24,3 @@ $bound = 'Goodbye.';
 say $bound;           # prints "Goodbye."
 say $original;        # prints "Goodbye."
 ```
-
-
-You can also create a read-only binding which will allow read access to the string but prevent modification except through the original variable.
-
-```perl
-my $original = 'Hello.';
-my $bound-ro ::= $original;
-say $bound-ro;        # prints "Hello."
-try {
-  $bound-ro = 'Runtime error!';
-  CATCH {
-    say "$!";         # prints "Cannot modify readonly value"
-  };
-};
-say $bound-ro;        # prints "Hello."
-$original = 'Goodbye.';
-say $bound-ro;        # prints "Goodbye."
-```

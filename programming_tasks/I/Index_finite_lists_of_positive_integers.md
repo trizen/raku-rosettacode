@@ -33,12 +33,12 @@ multi expand(Int $n is copy, Int $*RADIX) {
     my \RAD = $*RADIX;
  
     my @reversed-digits = gather while $n > 0 {
-	take $n % RAD;
-	$n div= RAD;
+        take $n % RAD;
+        $n div= RAD;
     }
  
     eager for ^RAD {
-	[rad] reverse @reversed-digits[$_, * + RAD ... *]
+        [rad] reverse @reversed-digits[$_, * + RAD ... *]
     }
 }
  
@@ -47,11 +47,11 @@ multi compress(@n is copy) {
     my \RAD = my $*RADIX = @n.elems;
  
     [rad] reverse gather while @n.any > 0 {
-	    (state $i = 0) %= RAD;
-	    take @n[$i] % RAD;
-	    @n[$i] div= RAD;
-	    $i++;
-	}
+        (state $i = 0) %= RAD;
+        take @n[$i] % RAD;
+        @n[$i] div= RAD;
+        $i++;
+    }
 }
  
 sub rank(@n) { compress (compress(@n), @n - 1)}

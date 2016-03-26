@@ -9,7 +9,7 @@ To save a bunch of memory, this algorithm throws away all the numbers that it kn
 Note: We only run to 10000 currently because mono gets major GC indigestion at 10200 or so...
 
 ```perl
-my @todo = [1];
+my @todo = $[1];
 my @sums = 0;
 sub nextrow($n) {
     for +@todo .. $n -> $l {

@@ -31,7 +31,7 @@ Calling a function with exactly one argument:
 foo 1             # as list operator
 foo(1)            # as named function
 foo.(1)           # as named function, explicit postfix
-$ref(1)           # as object invocation (must be hard ref)   
+$ref(1)           # as object invocation (must be hard ref)
 $ref.(1)          # as object invocation, explicit postfix
 1.$foo            # as pseudo-method meaning $foo(1) (hard ref only)
 1.$foo()          # as pseudo-method meaning $foo(1) (hard ref only)

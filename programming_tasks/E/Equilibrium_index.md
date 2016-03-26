@@ -24,7 +24,7 @@ And here's an FP solution that manages to remain O(n):
 sub equilibrium_index(@list) {
     my @a = [\+] @list;
     my @b := reverse [\+] reverse @list;
-    ^@list Zxx (@a »==« @b); 
+    ^@list Zxx (@a »==« @b);
 }
 ```
 

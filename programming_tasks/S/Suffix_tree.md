@@ -2,7 +2,7 @@
 
 # [Suffix tree][1]
 
-Here is quite a naive algorithm, probably <img class="mwe-math-fallback-image-inline tex" alt="O(n^2)" src="http://rosettacode.org/mw/images/math/1/8/9/189317b4b935a745fcfaf95940d2b4f0.png"/>.
+Here is quite a naive algorithm, probably ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=9f84a66d88d24c3b1bc91df5b5346a13&mode=mathml).
 
 ```perl
 multi suffix-tree(Str $str) { suffix-tree map &flip, [\~] $str.flip.comb }

@@ -63,3 +63,16 @@ sub align($column_width, $word, $aligment = @*ARGS[0]) {
         }
 }
 ```
+
+
+Or a more functional version, called like `./align.p6 left input.txt`, which however only supports left and right alignment (not center):
+
+```perl
+sub MAIN ($alignment where 'left'|'right', $file) {
+    my @lines := $file.IO.lines.map(*.split: '$').List;
+    my @widths = roundrobin(|@lines).map(*».chars.max);
+    my $align  = {left=>'-', right=>''}{$alignment};
+    my $format = @widths.map({ "%{++$}\${$align}{$_}s" }).join(" ") ~ "\n";
+    printf $format, |$_ for @lines;
+}
+```

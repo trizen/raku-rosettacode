@@ -11,7 +11,7 @@ sub align ( Str $σ, Str $t ) {
     @A[$_][ 0]<d s t> = $_, @s[1..$_].join, '-' x $_ for ^@s;
     @A[ 0][$_]<d s t> = $_, '-' x $_, @t[1..$_].join for ^@t;
  
-    for 1 ..^ @s X 1..^ @t -> \i, \j {
+    for 1 ..^ @s X 1..^ @t -> (\i, \j) {
 	if @s[i] ne @t[j] {
 	    @A[i][j]<d> = 1 + my $min =
 	    min @A[i-1][j]<d>, @A[i][j-1]<d>, @A[i-1][j-1]<d>;

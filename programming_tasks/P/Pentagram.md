@@ -12,21 +12,23 @@ INIT say qq:to/STOP/;
     <?xml version="1.0" standalone="no" ?>
      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
      "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-    <svg height="{$dim*2}" width="{$dim*2}" xmlns="http://www.w3.org/2000/svg">
+    <svg height="{$dim*2}" width="{$dim*2}" style="" xmlns="http://www.w3.org/2000/svg">
+    <rect height="100%" width="100%" style="fill:bisque;" />
     STOP
 END say '</svg>';
  
-my @vertices = map { 0.9 * $dim * cis($_ * 2 * pi / $sides) }, ^$sides;
-@vertices = map |*.reals, flat @vertices[0, 2 ... *], @vertices[1, 3 ... *];
+my @vertices = map { 0.9 * $dim * cis($_ * τ / $sides) }, ^$sides;
  
-say pline @vertices;
-for @vertices.rotor(4 => -2, :partial) -> @p {say pline @p};
+say pline map |*.reals, flat @vertices[0, 2 ... *], @vertices[1, 3 ... *];
  
-sub pline (*@q) {
+sub pline (@q) {
   qq:to/STOP/;
     <polyline points="@q[|^@q, 0, 1].fmt("%0.3f")"
-    style="fill:seashell;stroke:{<black red orange blue purple green>[$++ % 6]};stroke-width:2"
-    transform="translate($dim, $dim) rotate(180)" />
+    style="fill:seashell; stroke:blue; stroke-width:3;"
+    transform="translate($dim, $dim) rotate(-18)" />
     STOP
 }
 ```
+
+
+See [Pentagram](https://gist.github.com/thundergnat/70108a5160dd17dfe374#file-pentagram-svg)

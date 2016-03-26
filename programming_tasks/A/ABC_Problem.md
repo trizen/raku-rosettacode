@@ -6,7 +6,7 @@ Blocks are stored as precompiled regexes. We do an initial pass on the blockset 
 
 ```perl
 multi can-spell-word(Str $word, @blocks) {
-    my @regex = @blocks.map({ EVAL "/{.comb.join('|')}/" }).grep: { .ACCEPTS($word.uc) }
+    my @regex = @blocks.map({ my @c = .comb; rx/<@c>/ }).grep: { .ACCEPTS($word.uc) }
     can-spell-word $word.uc.comb.list, @regex;
 }
  
