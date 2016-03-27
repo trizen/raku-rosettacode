@@ -4,33 +4,29 @@
 
 ```perl
 use Image::PNG::Portable;
- 
+
 my ($w, $h) = 800, 600;
- 
 my $out = Image::PNG::Portable.new: :width($w), :height($h);
- 
+
 my $maxIter = 255;
- 
-my ($cX, $cY) = -0.7, 0.27015;
- 
+my $c = -0.7 + 0.27015i;
+
 julia($out);
- 
 $out.write: 'Julia-set-perl6.png';
- 
+
 sub julia ( $png ) {
     for ^$w -> $x {
         for ^$h -> $y {
-            my $zx = ($x - $w / 2) / $w * 3;
-            my $zy = ($y - $h / 2) / $h * 2;
+            my $z = Complex.new(($x - $w / 2) / $w * 3, ($y - $h / 2) / $h * 2);
             my $i = $maxIter;
-            while $zx² + $zy² < 4 and --$i {
-                ($zy, $zx) = 2 * $zx * $zy + $cY, $zx² - $zy² + $cX;
+            while (abs($z) < 2 and --$i) {
+                $z = $z*$z + $c;
             }
             $png.set: $x, $y, |hsv2rgb($i / $maxIter * 360, 1, ?$i).reverse;
         }
     }
 }
- 
+
 sub hsv2rgb ( $h, $s, $v ){
     my $c = $v * $s;
     my $x = $c * (1 - abs( (($h/60) % 2) - 1 ) );
