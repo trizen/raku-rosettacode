@@ -29,7 +29,7 @@ sub is_smith_number ( Int $n ) {
 }
  
 my @s = grep &is_smith_number, 2 ..^ 10_000;
-say "email@example.com} Smith numbers below 10_000";
+say "{@s.elems} Smith numbers below 10_000";
 say 'First 10: ', @s[  ^10      ];
 say 'Last  10: ', @s[ *-10 .. * ];
 ```
