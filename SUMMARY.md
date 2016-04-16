@@ -61,6 +61,7 @@
            * [Root mean square](programming_tasks/A/Averages/Root_mean_square.md)
            * [Simple moving average](programming_tasks/A/Averages/Simple_moving_average.md)
    * B
+       * [Babbage problem](programming_tasks/B/Babbage_problem.md)
        * [Bacon cipher](programming_tasks/B/Bacon_cipher.md)
        * [Balanced brackets](programming_tasks/B/Balanced_brackets.md)
        * [Balanced ternary](programming_tasks/B/Balanced_ternary.md)
@@ -569,6 +570,7 @@
            * [Player](programming_tasks/P/Pig_the_dice_game/Player.md)
        * Pinstripe
            * [Display](programming_tasks/P/Pinstripe/Display.md)
+       * [Plasma effect](programming_tasks/P/Plasma_effect.md)
        * [Playfair cipher](programming_tasks/P/Playfair_cipher.md)
        * [Playing cards](programming_tasks/P/Playing_cards.md)
        * [Plot coordinate pairs](programming_tasks/P/Plot_coordinate_pairs.md)
@@ -691,6 +693,7 @@
            * [Element insertion](programming_tasks/S/Singly-linked_list/Element_insertion.md)
            * [Traversal](programming_tasks/S/Singly-linked_list/Traversal.md)
        * [Sleep](programming_tasks/S/Sleep.md)
+       * [Smith numbers](programming_tasks/S/Smith_numbers.md)
        * [Sockets](programming_tasks/S/Sockets.md)
        * [Sokoban](programming_tasks/S/Sokoban.md)
        * [Solve a Hidato puzzle](programming_tasks/S/Solve_a_Hidato_puzzle.md)
@@ -839,6 +842,7 @@
            * [Graphical](programming_tasks/U/User_input/Graphical.md)
            * [Text](programming_tasks/U/User_input/Text.md)
    * V
+       * [Validate International Securities Identification Number](programming_tasks/V/Validate_International_Securities_Identification_Number.md)
        * [Vampire number](programming_tasks/V/Vampire_number.md)
        * [Van der Corput sequence](programming_tasks/V/Van_der_Corput_sequence.md)
        * [Variable-length quantity](programming_tasks/V/Variable-length_quantity.md)
