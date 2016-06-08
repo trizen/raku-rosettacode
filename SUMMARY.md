@@ -32,6 +32,7 @@
        * [Anonymous recursion](programming_tasks/A/Anonymous_recursion.md)
        * [Apply a callback to an array](programming_tasks/A/Apply_a_callback_to_an_array.md)
        * [Arbitrary-precision integers [included]](programming_tasks/A/Arbitrary-precision_integers_[included].md)
+       * [Archimedean spiral](programming_tasks/A/Archimedean_spiral.md)
        * Arithmetic
            * [Complex](programming_tasks/A/Arithmetic/Complex.md)
            * [Integer](programming_tasks/A/Arithmetic/Integer.md)
@@ -105,6 +106,7 @@
        * [Catalan numbers](programming_tasks/C/Catalan_numbers.md)
            * [Pascal's triangle](programming_tasks/C/Catalan_numbers/Pascal's_triangle.md)
        * [Catamorphism](programming_tasks/C/Catamorphism.md)
+       * [Chaos game](programming_tasks/C/Chaos_game.md)
        * [Character codes](programming_tasks/C/Character_codes.md)
        * [Chebyshev coefficients](programming_tasks/C/Chebyshev_coefficients.md)
        * [Check input device is a terminal](programming_tasks/C/Check_input_device_is_a_terminal.md)
@@ -553,6 +555,7 @@
        * [Pascal's triangle](programming_tasks/P/Pascal's_triangle.md)
            * [Puzzle](programming_tasks/P/Pascal's_triangle/Puzzle.md)
        * [Pascal matrix generation](programming_tasks/P/Pascal_matrix_generation.md)
+       * [Password generator](programming_tasks/P/Password_generator.md)
        * [Pathological floating point problems](programming_tasks/P/Pathological_floating_point_problems.md)
        * [Pattern matching](programming_tasks/P/Pattern_matching.md)
        * [Penney's game](programming_tasks/P/Penney's_game.md)
