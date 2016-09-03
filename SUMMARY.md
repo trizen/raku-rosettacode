@@ -51,6 +51,7 @@
        * Associative array
            * [Creation](programming_tasks/A/Associative_array/Creation.md)
            * [Iteration](programming_tasks/A/Associative_array/Iteration.md)
+       * [Atomic updates](programming_tasks/A/Atomic_updates.md)
        * [Average loop length](programming_tasks/A/Average_loop_length.md)
        * Averages
            * [Arithmetic mean](programming_tasks/A/Averages/Arithmetic_mean.md)
@@ -74,6 +75,7 @@
        * [Binary digits](programming_tasks/B/Binary_digits.md)
        * [Binary search](programming_tasks/B/Binary_search.md)
        * [Binary strings](programming_tasks/B/Binary_strings.md)
+       * [Birthday problem](programming_tasks/B/Birthday_problem.md)
        * Bitcoin
            * [Address validation](programming_tasks/B/Bitcoin/address_validation.md)
            * [Public point to address](programming_tasks/B/Bitcoin/public_point_to_address.md)
@@ -108,6 +110,7 @@
        * [Catamorphism](programming_tasks/C/Catamorphism.md)
        * [Chaos game](programming_tasks/C/Chaos_game.md)
        * [Character codes](programming_tasks/C/Character_codes.md)
+       * [Chat server](programming_tasks/C/Chat_server.md)
        * [Chebyshev coefficients](programming_tasks/C/Chebyshev_coefficients.md)
        * [Check input device is a terminal](programming_tasks/C/Check_input_device_is_a_terminal.md)
        * [Check Machin-like formulas](programming_tasks/C/Check_Machin-like_formulas.md)
@@ -121,6 +124,7 @@
        * Closures
            * [Value capture](programming_tasks/C/Closures/Value_capture.md)
        * [Collections](programming_tasks/C/Collections.md)
+       * [Color wheel](programming_tasks/C/Color_wheel.md)
        * Colour bars
            * [Display](programming_tasks/C/Colour_bars/Display.md)
        * Colour pinstripe
@@ -134,6 +138,8 @@
        * [Comments](programming_tasks/C/Comments.md)
        * [Compare a list of strings](programming_tasks/C/Compare_a_list_of_strings.md)
        * [Compile-time calculation](programming_tasks/C/Compile-time_calculation.md)
+       * Compiler
+           * [Lexical analyzer](programming_tasks/C/Compiler/lexical_analyzer.md)
        * [Compound data type](programming_tasks/C/Compound_data_type.md)
        * [Concurrent computing](programming_tasks/C/Concurrent_computing.md)
        * [Conditional structures](programming_tasks/C/Conditional_structures.md)
@@ -163,6 +169,7 @@
            * [Native demonstration](programming_tasks/C/Create_an_object/Native_demonstration.md)
        * [CSV data manipulation](programming_tasks/C/CSV_data_manipulation.md)
        * [CSV to HTML translation](programming_tasks/C/CSV_to_HTML_translation.md)
+       * [Cumulative standard deviation](programming_tasks/C/Cumulative_standard_deviation.md)
        * [Currency](programming_tasks/C/Currency.md)
        * [Currying](programming_tasks/C/Currying.md)
        * [Cut a rectangle](programming_tasks/C/Cut_a_rectangle.md)
@@ -178,6 +185,7 @@
        * Deconvolution
            * [1D](programming_tasks/D/Deconvolution/1D.md)
            * [2D ](programming_tasks/D/Deconvolution/2D_.md)
+       * [Deepcopy](programming_tasks/D/Deepcopy.md)
        * [Define a primitive data type](programming_tasks/D/Define_a_primitive_data_type.md)
        * [Delegates](programming_tasks/D/Delegates.md)
        * [Delete a file](programming_tasks/D/Delete_a_file.md)
@@ -605,6 +613,7 @@
        * [Program name](programming_tasks/P/Program_name.md)
        * [Program termination](programming_tasks/P/Program_termination.md)
        * [Proper divisors](programming_tasks/P/Proper_divisors.md)
+       * [Pythagoras tree](programming_tasks/P/Pythagoras_tree.md)
        * [Pythagorean triples](programming_tasks/P/Pythagorean_triples.md)
    * Q
        * [Quaternion type](programming_tasks/Q/Quaternion_type.md)
@@ -632,10 +641,15 @@
        * [Read entire file](programming_tasks/R/Read_entire_file.md)
        * [Real constants and functions](programming_tasks/R/Real_constants_and_functions.md)
        * [Reduced row echelon form](programming_tasks/R/Reduced_row_echelon_form.md)
+       * Reflection
+           * [Get source](programming_tasks/R/Reflection/Get_source.md)
+           * [List methods](programming_tasks/R/Reflection/List_methods.md)
+           * [List properties](programming_tasks/R/Reflection/List_properties.md)
        * [Regular expressions](programming_tasks/R/Regular_expressions.md)
        * [Remove duplicate elements](programming_tasks/R/Remove_duplicate_elements.md)
        * [Remove lines from a file](programming_tasks/R/Remove_lines_from_a_file.md)
        * [Rename a file](programming_tasks/R/Rename_a_file.md)
+       * [Rendezvous](programming_tasks/R/Rendezvous.md)
        * [Rep-string](programming_tasks/R/Rep-string.md)
        * [Repeat](programming_tasks/R/Repeat.md)
        * [Repeat a string](programming_tasks/R/Repeat_a_string.md)
@@ -668,10 +682,12 @@
        * [S-Expressions](programming_tasks/S/S-Expressions.md)
        * [Sailors  coconuts and a monkey problem](programming_tasks/S/Sailors__coconuts_and_a_monkey_problem.md)
        * [Same Fringe](programming_tasks/S/Same_Fringe.md)
+       * [Sattolo cycle](programming_tasks/S/Sattolo_cycle.md)
        * Scope
            * [Function names and labels](programming_tasks/S/Scope/Function_names_and_labels.md)
        * [Scope modifiers](programming_tasks/S/Scope_modifiers.md)
        * [Search a list](programming_tasks/S/Search_a_list.md)
+       * [Search a list of records](programming_tasks/S/Search_a_list_of_records.md)
        * [SEDOLs](programming_tasks/S/SEDOLs.md)
        * [Self-describing numbers](programming_tasks/S/Self-describing_numbers.md)
        * [Self-hosting compiler](programming_tasks/S/Self-hosting_compiler.md)
@@ -706,6 +722,7 @@
            * [Traversal](programming_tasks/S/Singly-linked_list/Traversal.md)
        * [Sleep](programming_tasks/S/Sleep.md)
        * [Smith numbers](programming_tasks/S/Smith_numbers.md)
+       * [Snake](programming_tasks/S/Snake.md)
        * [Sockets](programming_tasks/S/Sockets.md)
        * [Sokoban](programming_tasks/S/Sokoban.md)
        * [Solve a Hidato puzzle](programming_tasks/S/Solve_a_Hidato_puzzle.md)
@@ -713,6 +730,7 @@
        * [Solve a Hopido puzzle](programming_tasks/S/Solve_a_Hopido_puzzle.md)
        * [Solve a Numbrix puzzle](programming_tasks/S/Solve_a_Numbrix_puzzle.md)
        * [Solve the no connection puzzle](programming_tasks/S/Solve_the_no_connection_puzzle.md)
+       * [Sort a list of object identifiers](programming_tasks/S/Sort_a_list_of_object_identifiers.md)
        * [Sort an array of composite structures](programming_tasks/S/Sort_an_array_of_composite_structures.md)
        * [Sort an integer array](programming_tasks/S/Sort_an_integer_array.md)
        * [Sort by OID numbers](programming_tasks/S/Sort_by_OID_numbers.md)
@@ -785,6 +803,7 @@
        * [Sudoku](programming_tasks/S/Sudoku.md)
        * [Suffix tree](programming_tasks/S/Suffix_tree.md)
        * [Sum and product of an array](programming_tasks/S/Sum_and_product_of_an_array.md)
+       * [Sum and Product Puzzle](programming_tasks/S/Sum_and_Product_Puzzle.md)
        * [Sum digits of an integer](programming_tasks/S/Sum_digits_of_an_integer.md)
        * [Sum multiples of 3 and 5](programming_tasks/S/Sum_multiples_of_3_and_5.md)
        * [Sum of a series](programming_tasks/S/Sum_of_a_series.md)
