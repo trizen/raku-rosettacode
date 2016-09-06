@@ -89,8 +89,8 @@ sub test_NG2 ($rat1, $op, $rat2) {
     my @cf1 = $rat1.&r2cf;
     my @cf2 = $rat2.&r2cf;
     my @result = NG2.new.operator(|%ops{$op}).apply( @cf1, @cf2 );
-    say "{$rat1.&pprat} $op {$rat2.&pprat} => {@cf1.&ppcf} $op ",
-        "{@cf2.&ppcf} = {@result.&ppcf} => {@result.&cf2r.&pprat}\n";
+    say "{$rat1.&pprat} $op {$rat2.&pprat} => email@example.com&ppcf} $op ",
+        "email@example.com&ppcf} = email@example.com&ppcf} => email@example.com&cf2r.&pprat}\n";
 }
  
 # Testing
@@ -132,12 +132,12 @@ say "\nCoerced to a standard precision Rational: ", @result.&cf2r.Num.Rat;
 
 #### Output:
 ```
-√2 expressed as a continued fraction:
-[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² =
+√2 expressed as a continued fraction: 
+[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² = 
 
 [1;1,-58451683124983302025,-1927184886226364356176,-65467555105469489418600,-2223969688699736275876224]
 
-Converted back to an arbitrary (ludicrous) precision Rational:
+Converted back to an arbitrary (ludicrous) precision Rational: 
 32802382178012409621354320392819425499699206367450594986122623570838188983519955166754002 /
 16401191089006204810536863200564985394427741343927508600629139291039556821665755787817601
 

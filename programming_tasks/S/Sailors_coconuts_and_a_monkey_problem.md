@@ -35,7 +35,7 @@ sub check ($sailors, $coconuts) {
     if my @piles = is_valid($sailors, $coconuts) {
         say "\nSailors $sailors: Coconuts $coconuts:";
         for ^(@piles - 1) -> $k {
-             say "{$k+1}@suffix[$k+1] takes @piles[$k], gives 1 to the monkey."
+             say "email@example.com[$k+1] takes @piles[$k], gives 1 to the monkey."
         }
         say "The next morning, each sailor takes @piles[*-1]\nwith none left over for the monkey.";
         return True;

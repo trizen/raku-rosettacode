@@ -16,7 +16,7 @@
        * [A B](programming_tasks/A/A_B.md)
        * [ABC Problem](programming_tasks/A/ABC_Problem.md)
        * [Abstract type](programming_tasks/A/Abstract_type.md)
-       * [Abundant  deficient and perfect number classifications](programming_tasks/A/Abundant__deficient_and_perfect_number_classifications.md)
+       * [Abundant deficient and perfect number classifications](programming_tasks/A/Abundant_deficient_and_perfect_number_classifications.md)
        * [Accumulator factory](programming_tasks/A/Accumulator_factory.md)
        * [Ackermann function](programming_tasks/A/Ackermann_function.md)
        * [Add a variable to a class instance at runtime](programming_tasks/A/Add_a_variable_to_a_class_instance_at_runtime.md)
@@ -96,7 +96,7 @@
        * [Caesar cipher](programming_tasks/C/Caesar_cipher.md)
        * [Calculate International Securities Identification Number](programming_tasks/C/Calculate_International_Securities_Identification_Number.md)
        * [Calendar](programming_tasks/C/Calendar.md)
-       * [Calendar - for "REAL" programmers](programming_tasks/C/Calendar_-_for_"REAL"_programmers.md)
+       * [Calendar - for REAL programmers](programming_tasks/C/Calendar_-_for_REAL_programmers.md)
        * [Call a foreign-language function](programming_tasks/C/Call_a_foreign-language_function.md)
        * [Call a function](programming_tasks/C/Call_a_function.md)
        * [Call a function in a shared library](programming_tasks/C/Call_a_function_in_a_shared_library.md)
@@ -149,8 +149,8 @@
        * [Continued fraction](programming_tasks/C/Continued_fraction.md)
            * Arithmetic
                * [Construct from rational number](programming_tasks/C/Continued_fraction/Arithmetic/Construct_from_rational_number.md)
-               * [G[matrix NG  Contined Fraction N1  Contined Fraction N2]](programming_tasks/C/Continued_fraction/Arithmetic/G[matrix_NG__Contined_Fraction_N1__Contined_Fraction_N2].md)
-               * [G[matrix NG  Contined Fraction N]](programming_tasks/C/Continued_fraction/Arithmetic/G[matrix_NG__Contined_Fraction_N].md)
+               * [G[matrix NG Contined Fraction N1 Contined Fraction N2]](programming_tasks/C/Continued_fraction/Arithmetic/G[matrix_NG_Contined_Fraction_N1_Contined_Fraction_N2].md)
+               * [G[matrix NG Contined Fraction N]](programming_tasks/C/Continued_fraction/Arithmetic/G[matrix_NG_Contined_Fraction_N].md)
        * [Convert decimal number to rational](programming_tasks/C/Convert_decimal_number_to_rational.md)
        * [Convert seconds to compound duration](programming_tasks/C/Convert_seconds_to_compound_duration.md)
        * [Conway's Game of Life](programming_tasks/C/Conway's_Game_of_Life.md)
@@ -184,7 +184,7 @@
        * [Decision tables](programming_tasks/D/Decision_tables.md)
        * Deconvolution
            * [1D](programming_tasks/D/Deconvolution/1D.md)
-           * [2D ](programming_tasks/D/Deconvolution/2D_.md)
+           * [2D](programming_tasks/D/Deconvolution/2D.md)
        * [Deepcopy](programming_tasks/D/Deepcopy.md)
        * [Define a primitive data type](programming_tasks/D/Define_a_primitive_data_type.md)
        * [Delegates](programming_tasks/D/Delegates.md)
@@ -244,7 +244,7 @@
        * [Execute a Markov algorithm](programming_tasks/E/Execute_a_Markov_algorithm.md)
        * [Execute a system command](programming_tasks/E/Execute_a_system_command.md)
        * [Execute Brain****](programming_tasks/E/Execute_Brain****.md)
-       * [Execute HQ9 ](programming_tasks/E/Execute_HQ9_.md)
+       * [Execute HQ9](programming_tasks/E/Execute_HQ9.md)
        * [Exponentiation operator](programming_tasks/E/Exponentiation_operator.md)
        * [Exponentiation order](programming_tasks/E/Exponentiation_order.md)
        * [Extend your language](programming_tasks/E/Extend_your_language.md)
@@ -349,7 +349,7 @@
        * [Hickerson series of almost integers](programming_tasks/H/Hickerson_series_of_almost_integers.md)
        * [Higher-order functions](programming_tasks/H/Higher-order_functions.md)
        * [History variables](programming_tasks/H/History_variables.md)
-       * [Hofstadter-Conway  10 000 sequence](programming_tasks/H/Hofstadter-Conway__10_000_sequence.md)
+       * [Hofstadter-Conway 10 000 sequence](programming_tasks/H/Hofstadter-Conway_10_000_sequence.md)
        * [Hofstadter Figure-Figure sequences](programming_tasks/H/Hofstadter_Figure-Figure_sequences.md)
        * [Hofstadter Q sequence](programming_tasks/H/Hofstadter_Q_sequence.md)
        * [Holidays related to Easter](programming_tasks/H/Holidays_related_to_Easter.md)
@@ -397,7 +397,7 @@
        * [Jump anywhere](programming_tasks/J/Jump_anywhere.md)
    * K
        * [K-d tree](programming_tasks/K/K-d_tree.md)
-       * [K-means  clustering](programming_tasks/K/K-means__clustering.md)
+       * [K-means clustering](programming_tasks/K/K-means_clustering.md)
        * [Kaprekar numbers](programming_tasks/K/Kaprekar_numbers.md)
        * Keyboard input
            * [Obtain a Y or N response](programming_tasks/K/Keyboard_input/Obtain_a_Y_or_N_response.md)
@@ -680,7 +680,7 @@
            * [In an environment](programming_tasks/R/Runtime_evaluation/In_an_environment.md)
    * S
        * [S-Expressions](programming_tasks/S/S-Expressions.md)
-       * [Sailors  coconuts and a monkey problem](programming_tasks/S/Sailors__coconuts_and_a_monkey_problem.md)
+       * [Sailors coconuts and a monkey problem](programming_tasks/S/Sailors_coconuts_and_a_monkey_problem.md)
        * [Same Fringe](programming_tasks/S/Same_Fringe.md)
        * [Sattolo cycle](programming_tasks/S/Sattolo_cycle.md)
        * Scope
