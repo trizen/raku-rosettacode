@@ -5,10 +5,10 @@
 ```perl
 class NG2 {
     has ( $!a12, $!a1, $!a2, $!a, $!b12, $!b1, $!b2, $!b );
- 
+
     # Public methods
     method operator($!a12, $!a1, $!a2, $!a, $!b12, $!b1, $!b2, $!b ) { self }
- 
+
     method apply(@cf1, @cf2, :$limit = 30) {
         my @cfs = [@cf1], [@cf2];
         gather {
@@ -22,7 +22,7 @@ class NG2 {
             take self!drain while $!b;
         }[ ^$limit ].grep: *.defined;
     }
- 
+
     # Private methods
     method !inject ($n, $t) {
         multi sub xform(0, $t, $x12, $x1, $x2, $x) { $x2 + $x12 * $t, $x + $x1 * $t, $x12, $x1 }
@@ -57,7 +57,7 @@ class NG2 {
     self!extract;
     }
 }
- 
+
 sub r2cf(Rat $x is copy) { # Rational to continued fraction
     gather loop {
     $x -= take $x.floor;
@@ -65,34 +65,34 @@ sub r2cf(Rat $x is copy) { # Rational to continued fraction
     $x = 1 / $x;
     }
 }
- 
+
 sub cf2r(@a) { # continued fraction to Rational
     my $x = @a[* - 1].FatRat; # Use FatRats for arbitrary precision
     $x = @a[$_- 1] + 1 / $x for reverse 1 ..^ @a;
     $x
 }
- 
+
 # format continued fraction for pretty printing
 sub ppcf(@cf) { "[{ @cf.join(',').subst(',',';') }]" }
- 
+
 # format Rational for pretty printing. Use FatRats for arbitrary precision
 sub pprat($a) { $a.FatRat.denominator == 1 ?? $a !! $a.FatRat.nude.join('/') }
- 
+
 my %ops = ( # convenience hash of NG matrix operators
     '+' => (0,1,1,0,0,0,0,1),
     '-' => (0,1,-1,0,0,0,0,1),
     '*' => (1,0,0,0,0,0,0,1),
     '/' => (0,1,0,0,0,0,1,0)
 );
- 
+
 sub test_NG2 ($rat1, $op, $rat2) {
     my @cf1 = $rat1.&r2cf;
     my @cf2 = $rat2.&r2cf;
     my @result = NG2.new.operator(|%ops{$op}).apply( @cf1, @cf2 );
-    say "{$rat1.&pprat} $op {$rat2.&pprat} => email@example.com&ppcf} $op ",
-        "email@example.com&ppcf} = email@example.com&ppcf} => email@example.com&cf2r.&pprat}\n";
+    say "{$rat1.&pprat} $op {$rat2.&pprat} => {@cf1.&ppcf} $op ",
+        "{@cf2.&ppcf} = {@result.&ppcf} => {@result.&cf2r.&pprat}\n";
 }
- 
+
 # Testing
 test_NG2(|$_) for
    [   22/7, '+',  1/2 ],
@@ -132,12 +132,12 @@ say "\nCoerced to a standard precision Rational: ", @result.&cf2r.Num.Rat;
 
 #### Output:
 ```
-√2 expressed as a continued fraction: 
-[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² = 
+√2 expressed as a continued fraction:
+[1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,...]² =
 
 [1;1,-58451683124983302025,-1927184886226364356176,-65467555105469489418600,-2223969688699736275876224]
 
-Converted back to an arbitrary (ludicrous) precision Rational: 
+Converted back to an arbitrary (ludicrous) precision Rational:
 32802382178012409621354320392819425499699206367450594986122623570838188983519955166754002 /
 16401191089006204810536863200564985394427741343927508600629139291039556821665755787817601
 
