@@ -9,6 +9,8 @@
        * [2048](programming_tasks/2/2048.md)
        * [24 game](programming_tasks/2/24_game.md)
            * [Solve](programming_tasks/2/24_game/Solve.md)
+   * 4
+       * [4-rings or 4-squares puzzle](programming_tasks/4/4-rings_or_4-squares_puzzle.md)
    * 9
        * [99 Bottles of Beer](programming_tasks/9/99_Bottles_of_Beer.md)
        * [9 billion names of God the integer](programming_tasks/9/9_billion_names_of_God_the_integer.md)
@@ -29,8 +31,10 @@
        * [Amicable pairs](programming_tasks/A/Amicable_pairs.md)
        * [Anagrams](programming_tasks/A/Anagrams.md)
            * [Deranged anagrams](programming_tasks/A/Anagrams/Deranged_anagrams.md)
+       * [Angle difference between two bearings](programming_tasks/A/Angle_difference_between_two_bearings.md)
        * [Anonymous recursion](programming_tasks/A/Anonymous_recursion.md)
        * [Apply a callback to an array](programming_tasks/A/Apply_a_callback_to_an_array.md)
+       * [Apply a digitial filter [direct form II transposed]](programming_tasks/A/Apply_a_digitial_filter_[direct_form_II_transposed].md)
        * [Arbitrary-precision integers [included]](programming_tasks/A/Arbitrary-precision_integers_[included].md)
        * [Archimedean spiral](programming_tasks/A/Archimedean_spiral.md)
        * Arithmetic
@@ -202,6 +206,7 @@
        * [Dining philosophers](programming_tasks/D/Dining_philosophers.md)
        * [Discordian date](programming_tasks/D/Discordian_date.md)
        * [Display a linear combination](programming_tasks/D/Display_a_linear_combination.md)
+       * [Diversity prediction theorem](programming_tasks/D/Diversity_prediction_theorem.md)
        * [Documentation](programming_tasks/D/Documentation.md)
        * [Dot product](programming_tasks/D/Dot_product.md)
        * Doubly-linked list
@@ -275,6 +280,8 @@
        * [Find largest left truncatable prime in a given base](programming_tasks/F/Find_largest_left_truncatable_prime_in_a_given_base.md)
        * [Find limit of recursion](programming_tasks/F/Find_limit_of_recursion.md)
        * [Find palindromic numbers in both binary and ternary bases](programming_tasks/F/Find_palindromic_numbers_in_both_binary_and_ternary_bases.md)
+       * [Find the intersection of a line with a plane](programming_tasks/F/Find_the_intersection_of_a_line_with_a_plane.md)
+       * [Find the intersection of two lines](programming_tasks/F/Find_the_intersection_of_two_lines.md)
        * [Find the last Sunday of each month](programming_tasks/F/Find_the_last_Sunday_of_each_month.md)
        * [Find the missing permutation](programming_tasks/F/Find_the_missing_permutation.md)
        * [Find URI in text](programming_tasks/F/Find_URI_in_text.md)
@@ -287,6 +294,7 @@
        * [Flipping bits game](programming_tasks/F/Flipping_bits_game.md)
        * [Flow-control structures](programming_tasks/F/Flow-control_structures.md)
        * [Floyd's triangle](programming_tasks/F/Floyd's_triangle.md)
+       * [Floyd-Warshall algorithm](programming_tasks/F/Floyd-Warshall_algorithm.md)
        * [Forest fire](programming_tasks/F/Forest_fire.md)
        * [Fork](programming_tasks/F/Fork.md)
        * [Formal power series](programming_tasks/F/Formal_power_series.md)
@@ -469,6 +477,7 @@
        * [Man or boy test](programming_tasks/M/Man_or_boy_test.md)
        * [Mandelbrot set](programming_tasks/M/Mandelbrot_set.md)
        * [Map range](programming_tasks/M/Map_range.md)
+       * [Markov chain text generator](programming_tasks/M/Markov_chain_text_generator.md)
        * [Matrix-exponentiation operator](programming_tasks/M/Matrix-exponentiation_operator.md)
        * [Matrix arithmetic](programming_tasks/M/Matrix_arithmetic.md)
        * [Matrix multiplication](programming_tasks/M/Matrix_multiplication.md)
@@ -522,6 +531,7 @@
        * [Native shebang](programming_tasks/N/Native_shebang.md)
        * [Natural sorting](programming_tasks/N/Natural_sorting.md)
        * [Nautical bell](programming_tasks/N/Nautical_bell.md)
+       * [Negative base numbers](programming_tasks/N/Negative_base_numbers.md)
        * [Nested function](programming_tasks/N/Nested_function.md)
        * [Non-continuous subsequences](programming_tasks/N/Non-continuous_subsequences.md)
        * Non-decimal radices
@@ -627,6 +637,7 @@
        * [Quickselect algorithm](programming_tasks/Q/Quickselect_algorithm.md)
        * [Quine](programming_tasks/Q/Quine.md)
    * R
+       * [Ramer-Douglas-Peucker line simplification](programming_tasks/R/Ramer-Douglas-Peucker_line_simplification.md)
        * [Ramsey's theorem](programming_tasks/R/Ramsey's_theorem.md)
        * [Random number generator [device]](programming_tasks/R/Random_number_generator_[device].md)
        * [Random number generator [included]](programming_tasks/R/Random_number_generator_[included].md)
@@ -770,6 +781,7 @@
        * [Special variables](programming_tasks/S/Special_variables.md)
        * [Speech synthesis](programming_tasks/S/Speech_synthesis.md)
        * [Spiral matrix](programming_tasks/S/Spiral_matrix.md)
+       * [Split a character string based on change of character](programming_tasks/S/Split_a_character_string_based_on_change_of_character.md)
        * [Stable marriage problem](programming_tasks/S/Stable_marriage_problem.md)
        * [Stack](programming_tasks/S/Stack.md)
        * [Stack traces](programming_tasks/S/Stack_traces.md)
@@ -812,6 +824,7 @@
        * [Sum multiples of 3 and 5](programming_tasks/S/Sum_multiples_of_3_and_5.md)
        * [Sum of a series](programming_tasks/S/Sum_of_a_series.md)
        * [Sum of squares](programming_tasks/S/Sum_of_squares.md)
+       * [Sum to 100](programming_tasks/S/Sum_to_100.md)
        * [Superellipse](programming_tasks/S/Superellipse.md)
        * [Symmetric difference](programming_tasks/S/Symmetric_difference.md)
        * [Synchronous concurrency](programming_tasks/S/Synchronous_concurrency.md)
@@ -901,6 +914,7 @@
        * Walk a directory
            * [Non-recursively](programming_tasks/W/Walk_a_directory/Non-recursively.md)
            * [Recursively](programming_tasks/W/Walk_a_directory/Recursively.md)
+       * [Water collected between towers](programming_tasks/W/Water_collected_between_towers.md)
        * [Web scraping](programming_tasks/W/Web_scraping.md)
        * [Window creation](programming_tasks/W/Window_creation.md)
            * [X11](programming_tasks/W/Window_creation/X11.md)
