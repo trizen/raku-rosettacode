@@ -1,0 +1,107 @@
+[1]: http://rosettacode.org/wiki/Percolation/Site_percolation
+
+# [Percolation/Site percolation][1]
+
+```perl
+my $block = '▒';
+my $water = '+';
+my $pore  = ' ';
+my $grid  = 15;
+my @site;
+ 
+enum Direction <DeadEnd Up Right Down Left>;
+ 
+sub infix:<deq> ($a, $b) { $a.defined && ($a eq $b) }
+ 
+percolate(.6);
+ 
+say 'Sample percolation at .6';
+.join.say for @site;
+say "\n";
+ 
+my $tests = 1000;
+say "Doing $tests trials at each porosity:";
+for .1, .2 ... 1.0 -> $p {
+    printf "p = %0.1f: %0.3f\n" , $p, (sum percolate($p) xx $tests) / $tests;
+}
+ 
+sub percolate ( $prob  = .6 ) {
+    @site[0] = [$pore xx $grid];
+    @site[$grid+1] = [$pore xx $grid];
+ 
+    for 0..^$grid X 1..$grid -> ($x, $y) {
+        @site[$y][$x] = rand < $prob ?? $pore !! $block;
+    }
+    @site[0][0] = $water;
+ 
+    my @stack;
+    my $current = [0;0];
+ 
+    loop {
+        if my $dir = direction( $current ) {
+            @stack.push: $current;
+            $current = move( $dir, $current )
+        }
+        else {
+            return 0 unless @stack;
+            $current = @stack.pop
+        }
+        return 1 if $current[1] > $grid;
+    }
+ 
+    sub direction([$x,$y]) {
+	    my @neighbors =
+	        (Down  if @site[$y + 1][$x] deq $pore),
+	        (Left  if @site[$y][$x - 1] deq $pore),
+	        (Right if @site[$y][$x + 1] deq $pore),
+            (Up    if @site[$y - 1][$x] deq $pore);
+	    @neighbors.shift or DeadEnd
+    }
+ 
+    sub move ($dir, @cur) {
+	    my ($x,$y) = @cur;
+	    given $dir {
+	        when Up    { @site[--$y][$x] = $water }
+	        when Down  { @site[++$y][$x] = $water }
+	        when Left  { @site[$y][--$x] = $water }
+	        when Right { @site[$y][++$x] = $water }
+	    }
+	    [$x,$y];
+    }
+}
+```
+
+#### Output:
+```
+Sample percolation at .6
+++++           
+▒▒▒+ ▒ ▒ ▒ ▒ ▒▒
+ ▒▒++ ▒▒   ▒▒  
+   ▒+   ▒▒ ▒ ▒▒
+▒▒ ▒++++▒ ▒▒   
+ ▒ ▒+▒▒+▒   ▒  
+  ▒++▒++ ▒▒▒ ▒ 
+  ▒▒▒ +▒       
+▒▒ ▒ ▒++ ▒   ▒▒
+▒▒▒▒▒▒▒+▒▒▒    
+▒   ▒  +   ▒   
+ ▒▒   ▒+ ▒  ▒ ▒
+▒  ▒ ▒▒+    ▒  
+▒▒ ▒ ▒++▒   ▒  
+   ▒  +▒ ▒▒  ▒▒
+▒  ▒▒▒+    ▒▒ ▒
+      +        
+
+
+Doing 1000 trials at each porosity:
+p = 0.1: 0.000
+p = 0.2: 0.000
+p = 0.3: 0.000
+p = 0.4: 0.005
+p = 0.5: 0.096
+p = 0.6: 0.573
+p = 0.7: 0.959
+p = 0.8: 0.999
+p = 0.9: 1.000
+p = 1.0: 1.000
+```
