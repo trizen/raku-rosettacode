@@ -157,6 +157,8 @@
                * [Construct from rational number](programming_tasks/C/Continued_fraction/Arithmetic/Construct_from_rational_number.md)
                * [G matrix NG Contined Fraction N](programming_tasks/C/Continued_fraction/Arithmetic/G_matrix_NG_Contined_Fraction_N.md)
                * [G matrix NG Contined Fraction N1 Contined Fraction N2](programming_tasks/C/Continued_fraction/Arithmetic/G_matrix_NG_Contined_Fraction_N1_Contined_Fraction_N2.md)
+               * [Gmatrix NG Contined Fraction N](programming_tasks/C/Continued_fraction/Arithmetic/Gmatrix_NG_Contined_Fraction_N.md)
+               * [Gmatrix NG Contined Fraction N1 Contined Fraction N2](programming_tasks/C/Continued_fraction/Arithmetic/Gmatrix_NG_Contined_Fraction_N1_Contined_Fraction_N2.md)
        * [Convert decimal number to rational](programming_tasks/C/Convert_decimal_number_to_rational.md)
        * [Convert seconds to compound duration](programming_tasks/C/Convert_seconds_to_compound_duration.md)
        * [Conway's Game of Life](programming_tasks/C/Conway's_Game_of_Life.md)
@@ -426,6 +428,8 @@
        * [Knuth's algorithm S](programming_tasks/K/Knuth's_algorithm_S.md)
        * [Knuth's power tree](programming_tasks/K/Knuth's_power_tree.md)
        * [Knuth shuffle](programming_tasks/K/Knuth_shuffle.md)
+       * [Kronecker product](programming_tasks/K/Kronecker_product.md)
+       * [Kronecker product based fractals](programming_tasks/K/Kronecker_product_based_fractals.md)
    * L
        * [Langton's ant](programming_tasks/L/Langton's_ant.md)
        * [Largest int from concatenated ints](programming_tasks/L/Largest_int_from_concatenated_ints.md)
@@ -593,6 +597,8 @@
        * [Penney's game](programming_tasks/P/Penney's_game.md)
        * [Pentagram](programming_tasks/P/Pentagram.md)
        * Percolation
+           * [Bond percolation](programming_tasks/P/Percolation/Bond_percolation.md)
+           * [Mean cluster density](programming_tasks/P/Percolation/Mean_cluster_density.md)
            * [Mean run density](programming_tasks/P/Percolation/Mean_run_density.md)
            * [Site percolation](programming_tasks/P/Percolation/Site_percolation.md)
        * [Perfect numbers](programming_tasks/P/Perfect_numbers.md)
