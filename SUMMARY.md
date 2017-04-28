@@ -155,8 +155,6 @@
        * [Continued fraction](programming_tasks/C/Continued_fraction.md)
            * Arithmetic
                * [Construct from rational number](programming_tasks/C/Continued_fraction/Arithmetic/Construct_from_rational_number.md)
-               * [G matrix NG Contined Fraction N](programming_tasks/C/Continued_fraction/Arithmetic/G_matrix_NG_Contined_Fraction_N.md)
-               * [G matrix NG Contined Fraction N1 Contined Fraction N2](programming_tasks/C/Continued_fraction/Arithmetic/G_matrix_NG_Contined_Fraction_N1_Contined_Fraction_N2.md)
                * [Gmatrix NG Contined Fraction N](programming_tasks/C/Continued_fraction/Arithmetic/Gmatrix_NG_Contined_Fraction_N.md)
                * [Gmatrix NG Contined Fraction N1 Contined Fraction N2](programming_tasks/C/Continued_fraction/Arithmetic/Gmatrix_NG_Contined_Fraction_N1_Contined_Fraction_N2.md)
        * [Convert decimal number to rational](programming_tasks/C/Convert_decimal_number_to_rational.md)
