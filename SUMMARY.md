@@ -443,6 +443,7 @@
    * L
        * [Langton's ant](programming_tasks/L/Langton's_ant.md)
        * [Largest int from concatenated ints](programming_tasks/L/Largest_int_from_concatenated_ints.md)
+       * [Largest number divisible by its digits](programming_tasks/L/Largest_number_divisible_by_its_digits.md)
        * [Last Friday of each month](programming_tasks/L/Last_Friday_of_each_month.md)
        * [Last letter-first letter](programming_tasks/L/Last_letter-first_letter.md)
        * [Leap year](programming_tasks/L/Leap_year.md)
@@ -716,6 +717,7 @@
            * [Find bare lang tags](programming_tasks/R/Rosetta_Code/Find_bare_lang_tags.md)
            * [Find unimplemented tasks](programming_tasks/R/Rosetta_Code/Find_unimplemented_tasks.md)
            * [Fix code tags](programming_tasks/R/Rosetta_Code/Fix_code_tags.md)
+           * [List authors of task descriptions](programming_tasks/R/Rosetta_Code/List_authors_of_task_descriptions.md)
            * [Rank languages by popularity](programming_tasks/R/Rosetta_Code/Rank_languages_by_popularity.md)
        * [Rot-13](programming_tasks/R/Rot-13.md)
        * [RSA code](programming_tasks/R/RSA_code.md)
