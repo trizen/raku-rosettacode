@@ -1,0 +1,55 @@
+[1]: http://rosettacode.org/wiki/Voronoi_diagram
+
+# [Voronoi diagram][1]
+
+Perhaps "Inspired by Python" would be more accurate.
+
+
+
+Generates a Euclidean, a Taxicab and a Minkowski Voronoi diagram using the same set of domain points and colors.
+
+```perl
+use Image::PNG::Portable;
+ 
+my %type = ( # Voronoi diagram type distance calculation
+    'Taxicab'   => sub ($px, $py, $x, $y) { ($px - $x).abs  + ($py - $y).abs  },
+    'Euclidean' => sub ($px, $py, $x, $y) { ($px - $x)²     + ($py - $y)²     },
+    'Minkowski' => sub ($px, $py, $x, $y) { ($px - $x)³.abs + ($py - $y)³.abs },
+);
+ 
+my $width  = 400;
+my $height = 400;
+my $dots   = 30;
+ 
+my @domains = map { Hash.new(
+    'x' => (5..$width-5).roll,
+    'y' => (5..$height-5).roll,
+    'rgb' => [(64..255).roll xx 3]
+) }, ^$dots;
+ 
+for %type.keys -> $type {
+    my $img = voronoi(@domains, :w($width), :h($height), :$type);
+    @domains.map: *.&dot($img);
+    $img.write: "Voronoi-{$type}-perl6.png";
+}
+ 
+sub voronoi (@domains, :$w, :$h, :$type) {
+    my $png = Image::PNG::Portable.new: :width($w), :height($h);
+    for ^$w X ^$h -> ($x, $y) {
+        my ($, $i) = min @domains.map: { %type{$type}(%($_)<x>, %($_)<y>, $x, $y), $++ };
+        $png.set: $x, $y, |@domains[$i]<rgb>
+    }
+    $png
+}
+ 
+sub dot (%h, $png, $radius = 3) {
+    for %h<x> - $radius .. %h<x> + $radius -> $x {
+        for %h<y> - $radius .. %h<y> + $radius -> $y {
+            $png.set($x, $y, 0, 0, 0) if ( %h<x> - $x + (%h<y> - $y) * i ).abs <= $radius;
+        }
+    }
+}
+```
+
+
+See [Euclidean](https://github.com/thundergnat/rc/blob/master/img/Voronoi-Euclidean-perl6.png), [Taxicab](https://github.com/thundergnat/rc/blob/master/img/Voronoi-Taxicab-perl6.png) &amp; [Minkowski](https://github.com/thundergnat/rc/blob/master/img/Voronoi-Minkowski-perl6.png) Voronoi diagram example images.

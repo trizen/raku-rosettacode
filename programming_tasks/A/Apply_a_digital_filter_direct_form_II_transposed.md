@@ -1,6 +1,6 @@
-[1]: http://rosettacode.org/wiki/Apply_a_digitial_filter_(direct_form_II_transposed)
+[1]: http://rosettacode.org/wiki/Apply_a_digital_filter_(direct_form_II_transposed)
 
-# [Apply a digitial filter (direct form II transposed)][1]
+# [Apply a digital filter (direct form II transposed)][1]
 
 ```perl
 sub TDF-II-filter ( @signal, @a, @b ) {
