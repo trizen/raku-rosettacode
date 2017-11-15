@@ -512,6 +512,7 @@
        * [Magic squares of odd order](programming_tasks/M/Magic_squares_of_odd_order.md)
        * [Magic squares of singly even order](programming_tasks/M/Magic_squares_of_singly_even_order.md)
        * [Main step of GOST 28147-89](programming_tasks/M/Main_step_of_GOST_28147-89.md)
+       * [Make a backup file](programming_tasks/M/Make_a_backup_file.md)
        * [Make directory path](programming_tasks/M/Make_directory_path.md)
        * [Man or boy test](programming_tasks/M/Man_or_boy_test.md)
        * [Mandelbrot set](programming_tasks/M/Mandelbrot_set.md)
@@ -601,6 +602,7 @@
        * [Ordered Partitions](programming_tasks/O/Ordered_Partitions.md)
        * [Ordered words](programming_tasks/O/Ordered_words.md)
    * P
+       * [P-value correction](programming_tasks/P/P-value_correction.md)
        * [Palindrome detection](programming_tasks/P/Palindrome_detection.md)
        * [Pangram checker](programming_tasks/P/Pangram_checker.md)
        * [Paraffins](programming_tasks/P/Paraffins.md)
@@ -752,7 +754,9 @@
        * [Scope modifiers](programming_tasks/S/Scope_modifiers.md)
        * [Search a list](programming_tasks/S/Search_a_list.md)
        * [Search a list of records](programming_tasks/S/Search_a_list_of_records.md)
+       * [Secure temporary file](programming_tasks/S/Secure_temporary_file.md)
        * [SEDOLs](programming_tasks/S/SEDOLs.md)
+       * [Selective File Copy](programming_tasks/S/Selective_File_Copy.md)
        * [Self-describing numbers](programming_tasks/S/Self-describing_numbers.md)
        * [Self-hosting compiler](programming_tasks/S/Self-hosting_compiler.md)
        * [Self-referential sequence](programming_tasks/S/Self-referential_sequence.md)
@@ -841,6 +845,7 @@
        * [Stair-climbing puzzle](programming_tasks/S/Stair-climbing_puzzle.md)
        * [Standard deviation](programming_tasks/S/Standard_deviation.md)
        * [Start from a main routine](programming_tasks/S/Start_from_a_main_routine.md)
+       * [Starting a web browser](programming_tasks/S/Starting_a_web_browser.md)
        * [State name puzzle](programming_tasks/S/State_name_puzzle.md)
        * Statistics
            * [Basic](programming_tasks/S/Statistics/Basic.md)
