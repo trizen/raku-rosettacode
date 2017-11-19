@@ -4,7 +4,7 @@ Perl6 tasks from RosettaCode
 A collection of tasks from Rosettacode implemented in Perl 6
 
 * Github: https://github.com/trizen/perl6-rosettacode
-* Gitbook: https://trizen.gitbooks.io/rosettacode-perl6
+* Gitbook: https://trizen.gitbooks.io/perl6-rosettacode
 * RosettaCode: https://rosettacode.org/wiki/Perl_6
 
 ## DISCLAIMER
