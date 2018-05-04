@@ -1,0 +1,40 @@
+[1]: http://rosettacode.org/wiki/Hilbert_curve
+
+# [Hilbert curve][1]
+
+```perl
+use SVG;
+ 
+role Lindenmayer {
+    has %.rules;
+    method succ {
+	    self.comb.map( { %!rules{$^c} // $c } ).join but Lindenmayer(%!rules)
+    }
+}
+ 
+my $hilbert = 'A' but Lindenmayer( { A => '-BF+AFA+FB-', B => '+AF-BFB-FA+' } );
+ 
+$hilbert++ xx 7;
+my @points = (647, 13);
+ 
+for $hilbert.comb -> $v {
+    state ($x, $y) = @points[0,1];
+    state $d = -5 - 0i;
+    with $v {
+        when 'F' { @points.append: ($x += $d.re).round(.01), ($y += $d.im).round(.01) }
+        when /< + - >/ { $d *= "{$v}1i" }
+        default { }
+    }
+}
+ 
+say SVG.serialize(
+    svg => [
+        width => 660, height => 660, style => 'stroke:rgb(0,0,198)',
+        :rect[:width<100%>, :height<100%>, :fill<white>],
+        :polyline[ :points(@points.join: ','), :fill<white> ],
+    ],
+);
+```
+
+
+See: [Hilbert curve](https://github.com/thundergnat/rc/blob/master/img/hilbert-perl6.svg)
