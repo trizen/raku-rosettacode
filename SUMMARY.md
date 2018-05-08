@@ -296,6 +296,7 @@
        * [FASTA format](programming_tasks/F/FASTA_format.md)
        * [Faulhaber s formula](programming_tasks/F/Faulhaber_s_formula.md)
        * [Faulhaber s triangle](programming_tasks/F/Faulhaber_s_triangle.md)
+       * [Feigenbaum constant calculation](programming_tasks/F/Feigenbaum_constant_calculation.md)
        * [Fibonacci n-step number sequences](programming_tasks/F/Fibonacci_n-step_number_sequences.md)
        * [Fibonacci sequence](programming_tasks/F/Fibonacci_sequence.md)
        * [Fibonacci word](programming_tasks/F/Fibonacci_word.md)
