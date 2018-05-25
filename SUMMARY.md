@@ -468,6 +468,7 @@
        * [Knuth s power tree](programming_tasks/K/Knuth_s_power_tree.md)
        * [Knuth shuffle](programming_tasks/K/Knuth_shuffle.md)
        * [Koch curve](programming_tasks/K/Koch_curve.md)
+       * [Kolakoski sequence](programming_tasks/K/Kolakoski_sequence.md)
        * [Kronecker product](programming_tasks/K/Kronecker_product.md)
        * [Kronecker product based fractals](programming_tasks/K/Kronecker_product_based_fractals.md)
    * L
@@ -809,6 +810,7 @@
        * [Sieve of Eratosthenes](programming_tasks/S/Sieve_of_Eratosthenes.md)
        * [Simple database](programming_tasks/S/Simple_database.md)
        * [Simple windowed application](programming_tasks/S/Simple_windowed_application.md)
+       * [Sine wave](programming_tasks/S/Sine_wave.md)
        * [Singleton](programming_tasks/S/Singleton.md)
        * Singly-linked list
            * [Element definition](programming_tasks/S/Singly-linked_list/Element_definition.md)
