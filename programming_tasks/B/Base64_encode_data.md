@@ -1,14 +1,14 @@
-[1]: http://rosettacode.org/wiki/Base64_encode_data
+[1]: https://rosettacode.org/wiki/Base64_encode_data
 
 # [Base64 encode data][1]
 
 ```perl
 sub MAIN {
-    my $buf = slurp("/tmp/favicon.ico", :bin);
+    my $buf = slurp("./favicon.ico", :bin);
     say buf-to-Base64($buf);
 }
  
-my @base64map = 'A' .. 'Z', 'a' .. 'z', ^10, '+', '/';
+my @base64map = flat 'A' .. 'Z', 'a' .. 'z', ^10, '+', '/';
  
 sub buf-to-Base64($buf) {
     join '', gather for $buf.list -> $a, $b = [], $c = [] {

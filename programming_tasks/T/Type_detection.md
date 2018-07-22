@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Type_detection
+[1]: https://rosettacode.org/wiki/Type_detection
 
 # [Type detection][1]
 

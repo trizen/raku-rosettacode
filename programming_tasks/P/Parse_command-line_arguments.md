@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parse_command-line_arguments
+[1]: https://rosettacode.org/wiki/Parse_command-line_arguments
 
 # [Parse command-line arguments][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chebyshev_coefficients
+[1]: https://rosettacode.org/wiki/Chebyshev_coefficients
 
 # [Chebyshev coefficients][1]
 

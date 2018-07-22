@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Levenshtein_distance/Alignment
+[1]: https://rosettacode.org/wiki/Levenshtein_distance/Alignment
 
 # [Levenshtein distance/Alignment][1]
 
 ```perl
 sub align ( Str $σ, Str $t ) {
-    my @s = *, $σ.comb;
-    my @t = *, $t.comb;
+    my @s = flat *, $σ.comb;
+    my @t = flat *, $t.comb;
  
     my @A;
     @A[$_][ 0]<d s t> = $_, @s[1..$_].join, '-' x $_ for ^@s;
@@ -27,7 +27,7 @@ sub align ( Str $σ, Str $t ) {
     return @A[*-1][*-1]<s t>;
 }
  
-.say for align |<rosettacode raisethysword>;
+.say for align 'rosettacode', 'raisethysword';
 ```
 
 #### Output:

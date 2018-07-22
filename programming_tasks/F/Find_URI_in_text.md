@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_URI_in_text
+[1]: https://rosettacode.org/wiki/Find_URI_in_text
 
 # [Find URI in text][1]
 
@@ -6,7 +6,7 @@
 use v6;
 use IETF::RFC_Grammar::URI;
  
-say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute_URI> /, :g).list.join("\n");
+say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute-URI> /, :g).list.join("\n");
     this URI contains an illegal character, parentheses and a misplaced full stop:
     http://en.wikipedia.org/wiki/Erich_Kästner_(camera_designer). (which is handled by http://mediawiki.org/).
     and another one just to confuse the parser: http://en.wikipedia.org/wiki/-)
@@ -18,8 +18,8 @@ say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute_URI> /, :g).list.join("\
     leading junk ftp://domain.name/dangling_close_paren)
     EOF
  
-say $/;
-say "We matched $/, which is a $/.^name() at position $/.from() to $/.to()"
+say $/[*-1];
+say "We matched $/[*-1], which is a $/[*-1].^name() at position $/[*-1].from() to $/[*-1].to()"
  
 ```
 

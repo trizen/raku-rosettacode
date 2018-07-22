@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Remove_lines_from_a_file
+[1]: https://rosettacode.org/wiki/Remove_lines_from_a_file
 
 # [Remove lines from a file][1]
 

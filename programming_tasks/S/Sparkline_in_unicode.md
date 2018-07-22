@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sparkline_in_unicode
+[1]: https://rosettacode.org/wiki/Sparkline_in_unicode
 
 # [Sparkline in unicode][1]
 

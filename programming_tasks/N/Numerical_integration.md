@@ -1,8 +1,10 @@
-[1]: http://rosettacode.org/wiki/Numerical_integration
+[1]: https://rosettacode.org/wiki/Numerical_integration
 
 # [Numerical integration][1]
 
 ```perl
+use MONKEY-SEE-NO-EVAL;
+ 
 sub leftrect(&f, $a, $b, $n) {
     my $h = ($b - $a) / $n;
     $h * [+] do f($_) for $a, $a+$h ... $b-$h;
@@ -20,7 +22,8 @@ sub midrect(&f, $a, $b, $n) {
  
 sub trapez(&f, $a, $b, $n) {
     my $h = ($b - $a) / $n;
-    $h / 2 * [+] f($a), f($b), |do f($_) * 2 for $a+$h, $a+$h+$h ... $b-$h;
+    my $partial-sum += f($_) * 2 for $a+$h, $a+$h+$h ... $b-$h;
+    $h / 2 * [+] f($a), f($b), $partial-sum;
 }
  
 sub simpsons(&f, $a, $b, $n) {
@@ -94,4 +97,4 @@ composite trapezoidal rule: 18000000
 ```
 
 
-Note that these integrations are done with rationals rather than floats, so should be fairly precise (though of course with so few iterations they are not terribly accurate (except when they are)).  Some of the sums do overflow into Num (floating point)--currently rakudo allows 64-bit denominators--but at least all of the interval arithmetic is exact.
+Note that these integrations are done with rationals rather than floats, so should be fairly precise (though of course with so few iterations they are not terribly accurate (except when they are)). Some of the sums do overflow into Num (floating point)--currently rakudo allows 64-bit denominators--but at least all of the interval arithmetic is exact.

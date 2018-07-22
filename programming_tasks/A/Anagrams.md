@@ -1,13 +1,13 @@
-[1]: http://rosettacode.org/wiki/Anagrams
+[1]: https://rosettacode.org/wiki/Anagrams
 
 # [Anagrams][1]
 
 ```perl
-my %anagram = slurp('unixdict.txt').words.classify( { .comb.sort.join } );
+my @anagrams = 'unixdict.txt'.IO.words.classify(*.comb.sort.join).values;
  
-my $max = [max] map { +@($_) }, %anagram.values;
+my $max = @anagrams».elems.max;
  
-%anagram.values.grep( { +@($_) >= $max } )».join(' ')».say;
+.put for @anagrams.grep(*.elems == $max);
 ```
 
 #### Output:
@@ -21,15 +21,13 @@ abel able bale bela elba
 ```
 
 
-Just for the fun of it, here's one-liner that uses no temporaries.  Since it would be rather long, we've oriented it vertically:
+Just for the fun of it, here's a one-liner that uses no temporaries. Since it would be rather long, we've oriented it vertically:
 
 ```perl
- 
-.put for                             # print each element of the array made this way:
-slurp('unixdict.txt')\               # load file in memory
-.words\                              # extract words
-.classify( {.comb.sort.join} )\      # group by common anagram
-.classify( *.value.elems ).flat\     # group by number of anagrams in a group
-.max( :by(*.key) ).value\            # get the group with highest number of anagrams
-.flat».value                         # get all groups of anagrams in the group just selected
+.put for                         # print each element of the array made this way:
+    'unixdict.txt'.IO.words      # load words from file
+    .classify(*.comb.sort.join)  # group by common anagram
+    .classify(*.value.elems)     # group by number of anagrams in a group
+    .max(*.key).value            # get the group with highest number of anagrams
+    .map(*.value)                # get all groups of anagrams in the group just selected
 ```

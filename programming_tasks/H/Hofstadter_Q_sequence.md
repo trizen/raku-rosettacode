@@ -1,24 +1,25 @@
-[1]: http://rosettacode.org/wiki/Hofstadter_Q_sequence
+[1]: https://rosettacode.org/wiki/Hofstadter_Q_sequence
 
 # [Hofstadter Q sequence][1]
+
+### OO solution
+
+
 
 Similar concept as the perl5 solution, except that the cache is only filled on demand.
 
 ```perl
 class Hofstadter {
   has @!c = 1,1;
-  method at_pos ($me: Int $i) {
+  method AT-POS ($me: Int $i) {
     @!c.push($me[@!c.elems-$me[@!c.elems-1]] +
 	     $me[@!c.elems-$me[@!c.elems-2]]) until @!c[$i]:exists;
     return @!c[$i];
   }
 }
-```
-
-
-Testing:
-
-```perl
+ 
+# Testing:
+ 
 my Hofstadter $Q .= new();
  
 say "first ten: $Q[^10]";
@@ -37,6 +38,10 @@ In the first 100_000 terms, 49798 terms are less than their preceding terms
 ```
 
 
+### Idiomatic solution
+
+
+
 With a lazily generated array, we automatically get caching.
 
 ```perl
@@ -44,12 +49,9 @@ my @Q = 1, 1, -> $a, $b {
     (state $n = 1)++;
     @Q[$n - $a] + @Q[$n - $b]
 } ... *;
-```
-
-
-Testing:
-
-```perl
+ 
+# Testing:
+ 
 say "first ten: ", @Q[^10];
 say "1000th: ", @Q[999];
 say "In the first 100_000 terms, ",

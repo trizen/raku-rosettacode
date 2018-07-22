@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Special_characters
+[1]: https://rosettacode.org/wiki/Special_characters
 
 # [Special characters][1]
 

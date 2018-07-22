@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/Run_examples
+[1]: https://rosettacode.org/wiki/Rosetta_Code/Run_examples
 
 # [Rosetta Code/Run examples][1]
 
@@ -33,45 +33,49 @@ use HTTP::UserAgent;
 use URI::Escape;
 use JSON::Fast;
 use MONKEY-SEE-NO-EVAL;
- 
+
 my %*SUB-MAIN-OPTS = :named-anywhere;
- 
+
 unit sub MAIN(
     Str $run = '',        # Task or file name
     Str :$lang = 'perl6', # Language, default perl6 - should be same as in <lang *> markup
     Int :$skip = 0,       # Skip # to continue partially into a list
-    Bool :f(:$force),     # Override any task skip parameter in %resource hash
+    Bool :f(:$force),     # Override any task skip parameter in %resource hash
     Bool :l(:$local),     # Only use code from local cache
     Bool :r(:$remote),    # Only use code from remote server (refresh local cache)
     Bool :q(:$quiet),     # Less verbose, don't display source code
     Bool :d(:$deps),      # Load dependencies
     Bool :p(:$pause),     # pause after each task
-    Bool :b(:$broken),     # pause after each task marked broken
+    Bool :b(:$broken),    # pause after each task which is broken or fails in some way
 );
- 
+
 die 'You can select local or remote, but not both...' if $local && $remote;
- 
+
+## INITIALIZATION
+
 my $client   = HTTP::UserAgent.new;
 my $url      = 'http://rosettacode.org/mw';
- 
+
 my %c = ( # text colors
     code  => "\e[0;92m", # green
     delim => "\e[0;93m", # yellow
     cmd   => "\e[1;96m", # cyan
     warn  => "\e[0;91m", # red
+    dep   => "\e[40;36m",
     clr   => "\e[0m",    # clear formatting
 );
- 
+
 my $view      = 'xdg-open';       # image viewer, this will open default under Linux
 my %l         = load-lang($lang); # load languge parameters
 my %resource  = load-resources($lang);
 my $get-tasks = True;
- 
+
 my @tasks;
- 
+
 run('clear');
- 
- 
+
+## FIGURE OUT WHICH TASKS TO RUN
+
 if $run {
     if $run.IO.e and $run.IO.f {# is it a file?
         @tasks = $run.IO.lines; # yep, treat each line as a task name
@@ -80,9 +84,9 @@ if $run {
     }
     $get-tasks = False;         # don't need to retrieve task names from web
 }
- 
+
 if $get-tasks { # load tasks from web if cache is not found, older than one day or forced
-    if !"%l<dir>.tasks".IO.e or ("%l<dir>.tasks".IO.modified - now) > 86400 or $remote {
+    if !"%l<dir>.tasks".IO.e or (now - "%l<dir>.tasks".IO.modified) > 86400 or $remote {
         note 'Retrieving task list from site.';
         @tasks = mediawiki-query( # get tasks from web
         $url, 'pages',
@@ -98,33 +102,35 @@ if $get-tasks { # load tasks from web if cache is not found, older than one day 
         @tasks = "%l<dir>.tasks".IO.slurp.lines; # load tasks from file
     }
 }
- 
+
 note "Skipping first $skip tasks..." if $skip;
- 
+my $redo;
+
+## MAIN LOOP
+
 for @tasks -> $title {
+    $redo = False;
     next if $++ < $skip;
     next unless $title ~~ /\S/; # filter blank lines (from files)
-    say $skip + ++$, ")  $title";
- 
+    say my $tasknum = $skip + ++$, ")  $title";
+
     my $name = $title.subst(/<-[-0..9A..Za..z]>/, '_', :g);
     my $taskdir = "./rc/%l<dir>/$name";
- 
+
     my $modified = "$taskdir/$name.txt".IO.e ?? "$taskdir/$name.txt".IO.modified !! 0;
- 
+
     my $entry;
-    if $remote or !"$taskdir/$name.txt".IO.e or (($modified - now) > 86400 * 7) {
+    if $remote or !"$taskdir/$name.txt".IO.e or ((now - $modified) > 86400 * 7) {
         my $page = $client.get("{ $url }/index.php?title={ uri-escape $title }&action=raw").content;
- 
-        uh-oh("Whoops, can't find page: $url/$title :check spelling.") and next if $page.elems == 0;
-        say "Getting code from: http://rosettacode.org/wiki/{ $title.subst(' ', '_', :g) }#%l<language>";
- 
-        my $header = %l<header>; # can't interpolate hash into regex
-        $entry = $page.comb(/'=={{header|' $header '}}==' .+? [<?before \n'=='<-[={]>*'{{header'> || $] /).Str //
+
+        uh-oh("Whoops, can't find page: $url/$title :check spelling.") and next if $page.elems == 0;
+        say "Getting code from: http://rosettacode.org/wiki/{ $title.subst(' ', '_', :g) }#%l<language>";
+
+        $entry = $page.comb(/'=={{header|' $(%l<header>) '}}==' .+? [<?before \n'=='<-[={]>*'{{header'> || $] /).Str //
           uh-oh("No code found\nMay be bad markup");
- 
-        my $lang = %l<language>; # can't interpolate hash into regex
-        if $entry ~~ /^^ 'See [[' (.+?) '/' $lang / { # no code on main page, check sub page
-            $entry = $client.get("{ $url }/index.php?title={ uri-escape $/[0].Str ~ '/' ~ %l<language> }&action=raw").content;
+
+        if $entry ~~ /^^ 'See [[' (.+?) '/' $(%l<language>) / { # no code on main page, check sub page
+            $entry = $client.get("{ $url }/index.php?title={ uri-escape $/[0].Str ~ '/' ~ %l<language> }&action=raw").content;
         }
         mkdir $taskdir unless $taskdir.IO.d;
         spurt( "$taskdir/$name.txt", $entry );
@@ -137,14 +143,14 @@ for @tasks -> $title {
             next;
         }
     }
- 
+
     my @blocks = $entry.comb: %l<tag>;
- 
+
     unless @blocks {
         uh-oh("No code found\nMay be bad markup") unless %resource{"$name"}<skip> ~~ /'ok to skip'/;
         say "Skipping $name: ", %resource{"$name"}<skip>, "\n" if %resource{"$name"}<skip>
     }
- 
+
     for @blocks.kv -> $k, $v {
         my $n = +@blocks == 1 ?? '' !! $k;
         spurt( "$taskdir/$name$n%l<ext>", $v );
@@ -159,18 +165,21 @@ for @tasks -> $title {
             next;
         }
         say "\nTesting $name$n";
-        run-it($taskdir, "$name$n");
+        run-it($taskdir, "$name$n", $tasknum);
     }
     say  %c<delim>, '=' x 79, %c<clr>;
+    redo if $redo;
     pause if $pause;
- 
+
 }
- 
+
+## SUBROUTINES
+
 sub mediawiki-query ($site, $type, *%query) {
     my $url = "$site/api.php?" ~ uri-query-string(
         :action<query>, :format<json>, :formatversion<2>, |%query);
     my $continue = '';
- 
+
     gather loop {
         my $response = $client.get("$url&$continue");
         my $data = from-json($response.content);
@@ -178,8 +187,8 @@ sub mediawiki-query ($site, $type, *%query) {
         $continue = uri-query-string |($data.<query-continue>{*}».hash.hash or last);
     }
 }
- 
-sub run-it ($dir, $code) {
+
+sub run-it ($dir, $code, $tasknum) {
     my $current = $*CWD;
     chdir $dir;
     if %resource{$code}<file> -> $fn {
@@ -191,44 +200,81 @@ sub run-it ($dir, $code) {
     for @cmd -> $cmd {
         say "\nCommand line: {%c<cmd>}$cmd",%c<clr>;
         try shell $cmd;
+        CATCH {
+            when /'exit code: 137'/ { }
+            default {
+                .resume unless $broken;
+                uh-oh($_);
+                if pause.lc eq 'r' {
+                   unlink "$code.txt";
+                   $redo = True;
+               }
+           }
+        }
     }
     chdir $current;
-    say "\nDone $code";
+    say "\nDone task #$tasknum: $code";
 }
- 
+
 sub pause {
-    prompt "Press enter to procede:>";
+    prompt "Press enter to procede:> ";
     # or
     # sleep 5;
 }
- 
+
 sub dump-code ($fn) {
     say "\n", %c<delim>, ('vvvvvvvv' xx 7).join(' CODE '), %c<clr>, "\n", %c<code>;
     print $fn.IO.slurp;
     say %c<clr>,"\n\n",%c<delim>,('^^^^^^^^' xx 7).join(' CODE '),%c<clr>;
 }
- 
+
 sub uri-query-string (*%fields) { %fields.map({ "{.key}={uri-escape .value}" }).join('&') }
- 
+
 sub clear { "\r" ~ ' ' x 100 ~ "\r" }
- 
+
 sub uh-oh ($err) { put %c<warn>, "{'#' x 79}\n\n $err \n\n{'#' x 79}", %c<clr> }
- 
+
 multi check-dependencies ($fn, 'perl6') {
-    my @use = $fn.IO.slurp.comb(/<?after $$ 'use '> \N+? <?before \h* ';'>/);
+    my @use = $fn.IO.slurp.comb(/<?after ^^ \h* 'use '> \N+? <?before \h* ';'>/);
     if +@use {
         for @use -> $module {
-            next if $module eq any('v6','nqp') or $module.contains('MONKEY');
+            next if $module eq any('v6','nqp', 'NativeCall') or $module.contains('MONKEY')
+              or $module.contains('experimental') or $module.starts-with('lib');
             my $installed = $*REPO.resolve(CompUnit::DependencySpecification.new(:short-name($module)));
-            shell("zef install $module") unless $installed;
+            print %c<dep>;
+            if $installed {
+                say 'ok:            ', $module
+            } else {
+                say 'not installed: ', $module;
+                shell("zef install $module");
+            }
+            print %c<clr>;
         }
     }
 }
- 
+
+multi check-dependencies ($fn, 'perl') {
+    my @use = $fn.IO.slurp.comb(/<?after $$ \h* 'use '> \w+['::'\w+]* <?before \N+? ';'>/);
+    if +@use {
+        for @use -> $module {
+            next if $module eq $module.lc;
+            my $installed = shell( "%l<exe> -e 'eval \"use {$module}\"; exit 1 if \$@'" );
+            print %c<dep>;
+            if $installed {
+                say 'ok:            ', $module
+            } else {
+                say 'not installed: ', $module;
+                try shell("sudo cpan $module");
+            }
+            print %c<clr>;
+        }
+    }
+}
+
 multi check-dependencies  ($fn, $unknown) {
     note "Sorry, don't know how to handle dependancies for $unknown language."
 };
- 
+
 multi load-lang ('perl6') { ( # Language specific variables. Adjust to suit.
     language => 'Perl_6', # language category name
     exe      => 'perl6',  # executable name to run perl6 in a shell
@@ -239,27 +285,27 @@ multi load-lang ('perl6') { ( # Language specific variables. Adjust to suit.
     # and to avoid getting tripped up when trying to run _this_ task
     tag => rx/<?after '<lang ' 'perl6' '>' > .*? <?before '</' 'lang>'>/,
 ) }
- 
+
 multi load-lang ('perl') { (
     language => 'Perl',
     exe      => 'perl',
     ext      => '.pl',
     dir      => 'perl',
     header   => 'Perl',
-    tag => rx/<?after '<lang ' 'perl' '>' > .*? <?before '</' 'lang>'>/,
+    tag => rx/:i <?after '<lang ' 'perl' '>' > .*? <?before '</' 'lang>'>/,
 ) }
- 
+
 multi load-lang ('python') { (
     language => 'Python',
     exe      => 'python',
     ext      => '.py',
     dir      => 'python',
     header   => 'Python',
-    tag => rx/<?after '<lang ' 'python' '>' > .*? <?before '</' 'lang>'>/,
+    tag => rx/:i <?after '<lang ' 'python' '>' > .*? <?before '</' 'lang>'>/,
 ) }
- 
+
 multi load-lang ($unknown) { die "Sorry, don't know how to handle $unknown language." };
- 
+
 multi load-resources ($unknown) { () };
 ```
 

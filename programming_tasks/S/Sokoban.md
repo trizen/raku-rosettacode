@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sokoban
+[1]: https://rosettacode.org/wiki/Sokoban
 
 # [Sokoban][1]
 

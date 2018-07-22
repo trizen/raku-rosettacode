@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Mad_Libs
+[1]: https://rosettacode.org/wiki/Mad_Libs
 
 # [Mad Libs][1]
 

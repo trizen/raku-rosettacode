@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion
+[1]: https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion
 
 # [Gauss-Jordan matrix inversion][1]
 

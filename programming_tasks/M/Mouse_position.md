@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Mouse_position
+[1]: https://rosettacode.org/wiki/Mouse_position
 
 # [Mouse position][1]
 

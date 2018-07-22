@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Multifactorial
+[1]: https://rosettacode.org/wiki/Multifactorial
 
 # [Multifactorial][1]
 

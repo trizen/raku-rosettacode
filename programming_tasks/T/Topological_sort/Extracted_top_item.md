@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Topological_sort/Extracted_top_item
+[1]: https://rosettacode.org/wiki/Topological_sort/Extracted_top_item
 
 # [Topological sort/Extracted top item][1]
 

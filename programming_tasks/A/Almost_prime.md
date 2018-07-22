@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Almost_prime
+[1]: https://rosettacode.org/wiki/Almost_prime
 
 # [Almost prime][1]
 
@@ -26,7 +26,7 @@ for 1 .. 5 -> $k {
 ```
 
 
-Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](http://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
+Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](https://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
 
 ```perl
 constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;

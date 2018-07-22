@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Most_frequent_k_chars_distance
+[1]: https://rosettacode.org/wiki/Most_frequent_k_chars_distance
 
 # [Most frequent k chars distance][1]
 

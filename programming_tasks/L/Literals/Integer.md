@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Literals/Integer
+[1]: https://rosettacode.org/wiki/Literals/Integer
 
 # [Literals/Integer][1]
 

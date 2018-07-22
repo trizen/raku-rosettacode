@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/General_FizzBuzz
+[1]: https://rosettacode.org/wiki/General_FizzBuzz
 
 # [General FizzBuzz][1]
 

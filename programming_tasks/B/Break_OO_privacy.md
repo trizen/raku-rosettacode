@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Break_OO_privacy
+[1]: https://rosettacode.org/wiki/Break_OO_privacy
 
 # [Break OO privacy][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Binary_search
+[1]: https://rosettacode.org/wiki/Binary_search
 
 # [Binary search][1]
 

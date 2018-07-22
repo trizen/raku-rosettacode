@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Leonardo_numbers
+[1]: https://rosettacode.org/wiki/Leonardo_numbers
 
 # [Leonardo numbers][1]
 

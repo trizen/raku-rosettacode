@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Man_or_boy_test
+[1]: https://rosettacode.org/wiki/Man_or_boy_test
 
 # [Man or boy test][1]
 

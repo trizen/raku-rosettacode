@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Inverse_video
+[1]: https://rosettacode.org/wiki/Terminal_control/Inverse_video
 
 # [Terminal control/Inverse video][1]
 

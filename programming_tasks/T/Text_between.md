@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Text_between
+[1]: https://rosettacode.org/wiki/Text_between
 
 # [Text between][1]
 

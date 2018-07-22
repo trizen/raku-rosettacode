@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Knapsack_problem/Unbounded
+[1]: https://rosettacode.org/wiki/Knapsack_problem/Unbounded
 
 # [Knapsack problem/Unbounded][1]
 
@@ -10,8 +10,9 @@ class KnapsackItem {
   has $.weight;
   has $.value;
   has $.name;
-  method new($volume,$weight,$value, $name) {
-    self.bless(*, :$volume, :$weight, :$value, :$name)
+ 
+  method new($volume,$weight,$value,$name) {
+    self.bless(:$volume, :$weight, :$value, :$name)
   }
 };
  

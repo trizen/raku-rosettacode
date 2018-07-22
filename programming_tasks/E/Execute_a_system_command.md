@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Execute_a_system_command
+[1]: https://rosettacode.org/wiki/Execute_a_system_command
 
 # [Execute a system command][1]
 

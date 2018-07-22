@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Old_lady_swallowed_a_fly
+[1]: https://rosettacode.org/wiki/Old_lady_swallowed_a_fly
 
 # [Old lady swallowed a fly][1]
 
@@ -15,7 +15,7 @@ my @victims =
  
 my @history = "I guess she'll die...\n";
  
-for @victims».kv -> $victim, $_ is copy {
+for (flat @victims».kv) -> $victim, $_ is copy {
     say "There was an old lady who swallowed a $victim...";
  
     s/ «S» /she swallowed the $victim/;

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Semordnilap
+[1]: https://rosettacode.org/wiki/Semordnilap
 
 # [Semordnilap][1]
 

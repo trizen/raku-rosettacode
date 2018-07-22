@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Write_float_arrays_to_a_text_file
+[1]: https://rosettacode.org/wiki/Write_float_arrays_to_a_text_file
 
 # [Write float arrays to a text file][1]
 

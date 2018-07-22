@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/99_Bottles_of_Beer
+[1]: https://rosettacode.org/wiki/99_Bottles_of_Beer
 
 # [99 Bottles of Beer][1]
+
+### A Simple Way
 
 ```perl
 my $b = 99;
@@ -17,6 +19,10 @@ sub b($b) {
     "$b bottle{'s' if $b != 1} of beer";
 }
 ```
+
+
+### A Clearer Way
+
 
 
 Similar to "A Simple Way", but with proper variable and subroutine naming, declarator documentation, strongly-typed function definition, better code reuse, and external ternary logic.
@@ -41,6 +47,10 @@ sub sing(
     say "$quantity bottle$plural of beer$location"
 }
 ```
+
+
+### A More Extravagant Way
+
 ```perl
 my @quantities = flat (99 ... 1), 'No more', 99;
 my @bottles = flat 'bottles' xx 98, 'bottle', 'bottles' xx 2;

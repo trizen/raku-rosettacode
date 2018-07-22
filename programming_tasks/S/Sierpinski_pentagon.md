@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sierpinski_pentagon
+[1]: https://rosettacode.org/wiki/Sierpinski_pentagon
 
 # [Sierpinski pentagon][1]
 

@@ -1,12 +1,14 @@
-[1]: http://rosettacode.org/wiki/Runtime_evaluation
+[1]: https://rosettacode.org/wiki/Runtime_evaluation
 
 # [Runtime evaluation][1]
 
 Any syntactically valid sequence of statements may be run, and the snippet to be run can see its outer lexical scope at the point of the `eval`:
 
 ```perl
+use MONKEY-SEE-NO-EVAL;
+ 
 my ($a, $b) = (-5, 7);
-my $ans = eval 'abs($a * $b)';  # => 35
+my $ans = EVAL 'abs($a * $b)';  # => 35
 ```
 
 

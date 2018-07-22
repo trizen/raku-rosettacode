@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Galton_box_animation
+[1]: https://rosettacode.org/wiki/Galton_box_animation
 
 # [Galton box animation][1]
 

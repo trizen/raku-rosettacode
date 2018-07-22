@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Draw_a_cuboid
+[1]: https://rosettacode.org/wiki/Draw_a_cuboid
 
 # [Draw a cuboid][1]
 
@@ -50,4 +50,4 @@ cuboid $_ for [2,3,4], [3,4,2], [4,2,3], [1,1,1], [8,1,1], [1,8,1], [1,1,8];
 ```
 
 
-[<img alt="Cuboid Perl 6.png" src="http://rosettacode.org/mw/images/d/d2/Cuboid_Perl_6.png" width="354" height="1548"/>](http://rosettacode.org/wiki/File:Cuboid_Perl_6.png)
+[<img alt="Cuboid Perl 6.png" src="https://rosettacode.org/mw/images/d/d2/Cuboid_Perl_6.png" width="354" height="1548" />](https://rosettacode.org/wiki/File:Cuboid_Perl_6.png)

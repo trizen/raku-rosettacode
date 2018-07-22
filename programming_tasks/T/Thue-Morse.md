@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Thue-Morse
+[1]: https://rosettacode.org/wiki/Thue-Morse
 
 # [Thue-Morse][1]
 
-Use Ctrl-C to interrupt.
+First 8 of an infinite sequence
 
 ```perl
-.say for 0, { '0' ~ @_.join.trans( "01" => "10", :g) } ... *;
+.say for (0, { '0' ~ @_.join.trans( "01" => "10", :g) } ... *)[^8];
 ```
 
 #### Output:

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Vector
+[1]: https://rosettacode.org/wiki/Vector
 
 # [Vector][1]
 

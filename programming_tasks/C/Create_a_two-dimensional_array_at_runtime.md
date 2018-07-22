@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Create_a_two-dimensional_array_at_runtime
+[1]: https://rosettacode.org/wiki/Create_a_two-dimensional_array_at_runtime
 
 # [Create a two-dimensional array at runtime][1]
 

@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Coloured_text
+[1]: https://rosettacode.org/wiki/Terminal_control/Coloured_text
 
 # [Terminal control/Coloured text][1]
 
 ```perl
-use Term::ANSIColor;
+use Terminal::ANSIColor;
  
 say colored('RED ON WHITE', 'bold red on_white');
 say colored('GREEN', 'bold green');

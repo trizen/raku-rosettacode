@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm
+[1]: https://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm
 
 # [Parsing/RPN calculator algorithm][1]
 

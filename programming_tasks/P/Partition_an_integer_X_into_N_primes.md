@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes
+[1]: https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes
 
 # [Partition an integer X into N primes][1]
 
 ```perl
-my @primes = 2, 3, 5, -> $p { ($p + 2, $p + 4 ... &is-prime).tail } ... *; # lazy infinite list of primes
+my @primes = lazy gather for 1 .. * { .take if $_.is-prime }; # lazy infinite list of primes
  
 multi partition ( Int $number, 1 ) { $number.is-prime ?? $number !! [] } # short circuit for '1' partition
  

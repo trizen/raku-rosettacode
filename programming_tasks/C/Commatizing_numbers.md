@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Commatizing_numbers
+[1]: https://rosettacode.org/wiki/Commatizing_numbers
 
 # [Commatizing numbers][1]
 

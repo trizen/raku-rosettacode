@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pernicious_numbers
+[1]: https://rosettacode.org/wiki/Pernicious_numbers
 
 # [Pernicious numbers][1]
 

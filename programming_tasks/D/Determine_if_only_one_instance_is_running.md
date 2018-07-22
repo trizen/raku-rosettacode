@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Determine_if_only_one_instance_is_running
+[1]: https://rosettacode.org/wiki/Determine_if_only_one_instance_is_running
 
 # [Determine if only one instance is running][1]
 
@@ -27,7 +27,7 @@ if try link($lockpid, $lockfile) {
 }
 else {
     shell "kill -CONT `cat $lockfile` || rm $lockfile";
-    if try link($lockpid, $lockfile) {
+    if try link($lockfile, $lockpid) {
         $havelock = True;
     }
     else {

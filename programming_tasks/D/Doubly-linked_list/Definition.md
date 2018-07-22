@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Doubly-linked_list/Definition
+[1]: https://rosettacode.org/wiki/Doubly-linked_list/Definition
 
 # [Doubly-linked list/Definition][1]
 

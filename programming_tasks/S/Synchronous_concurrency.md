@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Synchronous_concurrency
+[1]: https://rosettacode.org/wiki/Synchronous_concurrency
 
 # [Synchronous concurrency][1]
 

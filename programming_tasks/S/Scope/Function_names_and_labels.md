@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Scope/Function_names_and_labels
+[1]: https://rosettacode.org/wiki/Scope/Function_names_and_labels
 
 # [Scope/Function names and labels][1]
 

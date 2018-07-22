@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_the_intersection_of_a_line_with_a_plane
+[1]: https://rosettacode.org/wiki/Find_the_intersection_of_a_line_with_a_plane
 
 # [Find the intersection of a line with a plane][1]
 
@@ -16,10 +16,10 @@ sub infix:<∙> ( @a, @b where +@a == +@b ) { [+] @a «*» @b } # dot product
  
 sub line-plane-intersection ($𝑳, $𝑷) {
     my $cos = $𝑷.n⃗ ∙ $𝑳.u⃗; # cosine between normal & ray
-    return 'Vectors are orthoganol; no intersection or line within plane'
+    return 'Vectors are orthogonal; no intersection or line within plane'
       if $cos == 0;
     my $𝑊 = $𝑳.P0 «-» $𝑷.V0;      # difference between P0 and V0
-    my $S𝐼 = -($𝑷.n⃗ ∙ $𝑊) / $cos;  # line segment where it intersets the plane
+    my $S𝐼 = -($𝑷.n⃗ ∙ $𝑊) / $cos;  # line segment where it intersects the plane
     $𝑊 «+» $S𝐼 «*» $𝑳.u⃗ «+» $𝑷.V0; # point where line intersects the plane
  }
  

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Unicode_variable_names
+[1]: https://rosettacode.org/wiki/Unicode_variable_names
 
 # [Unicode variable names][1]
 
@@ -25,4 +25,16 @@ sub π { pi };
 sub postfix:<°>($degrees) { $degrees * π / 180 };
  
 for @ᐁ -> $ಠ_ಠ { say sin $ಠ_ಠ° };
+ 
+sub c͓͈̃͂̋̈̆̽h̥̪͕ͣ͛̊aͨͣ̍͞ơ̱͔̖͖̑̽ș̻̥ͬ̃̈ͩ { 'HE COMES' }
 ```
+
+
+
+
+
+
+
+**See Also:**
+
+[Egyptian division](https://rosettacode.org/wiki/Egyptian_division#More_.22Egyptian.22_version)

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/System_time
+[1]: https://rosettacode.org/wiki/System_time
 
 # [System time][1]
 

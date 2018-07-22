@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sailors,_coconuts_and_a_monkey_problem
+[1]: https://rosettacode.org/wiki/Sailors,_coconuts_and_a_monkey_problem
 
 # [Sailors, coconuts and a monkey problem][1]
 
@@ -12,13 +12,13 @@ This will test combinations of sailors and coconuts to see if they form a valid 
 my @ones = flat 'th', 'st', 'nd', 'rd', 'th' xx 6;
 my @teens = 'th' xx 10;
 my @suffix = lazy flat (@ones, @teens, @ones xx 8) xx *;
-
+ 
 # brute force the first six
 for 1 .. 6 -> $sailors { for $sailors .. * -> $coconuts { last if check( $sailors, $coconuts ) } }
-
+ 
 # finesse 7 through 15
 for 7 .. 15 -> $sailors { next if check( $sailors, coconuts( $sailors ) ) }
-
+ 
 sub is_valid ( $sailors is copy, $nuts is copy ) {
     return 0, 0 if $sailors == $nuts == 1;
     my @shares;
@@ -30,7 +30,7 @@ sub is_valid ( $sailors is copy, $nuts is copy ) {
     push @shares, $nuts div $sailors;
     return @shares if !?($nuts % $sailors);
 }
-
+ 
 sub check ($sailors, $coconuts) {
     if my @piles = is_valid($sailors, $coconuts) {
         say "\nSailors $sailors: Coconuts $coconuts:";
@@ -42,7 +42,7 @@ sub check ($sailors, $coconuts) {
     }
     False;
 }
-
+ 
 multi sub coconuts ( $sailors where { $sailors % 2 == 0 } ) { ($sailors - 1) * ($sailors ** $sailors - 1) }
 multi sub coconuts ( $sailors where { $sailors % 2 == 1 } ) { $sailors ** $sailors - $sailors + 1 }
 ```

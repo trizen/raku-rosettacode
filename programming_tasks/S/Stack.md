@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Stack
+[1]: https://rosettacode.org/wiki/Stack
 
 # [Stack][1]
 

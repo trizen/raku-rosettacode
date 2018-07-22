@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Longest_increasing_subsequence
+[1]: https://rosettacode.org/wiki/Longest_increasing_subsequence
 
 # [Longest increasing subsequence][1]
+
+### Dynamic programming
+
+
 
 Straight-forward implementation of the algorithm described in the video.
 
@@ -28,6 +32,10 @@ say lis([0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15]);
 [2 4 5]
 [0 2 6 9 11 15]
 ```
+
+
+### Patience sorting
+
 ```perl
 sub lis(@deck is copy) {
     my @S = [@deck.shift() => Nil].item;

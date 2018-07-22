@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Morse_code
+[1]: https://rosettacode.org/wiki/Morse_code
 
 # [Morse code][1]
 
@@ -6,10 +6,10 @@ Here we use the user as the audio device.
 Just read the output, leaving extra pauses where indicated
 by either whitespace or underscore.
 
-```text
-my %m = ' ', '_ _ ',
+```perl
+my %m = ' ', '_ _ ',
 |<
-    !	---.
+    !	---.
     "	.-..-.
     $	...-..-
     '	.----.

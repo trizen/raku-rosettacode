@@ -1,9 +1,10 @@
-[1]: http://rosettacode.org/wiki/Count_the_coins
+[1]: https://rosettacode.org/wiki/Count_the_coins
 
 # [Count the coins][1]
 
 ```perl
-sub ways-to-make-change($amount, @coins) {
+# Recursive (cached)
+sub change-r($amount, @coins) {
     my @cache = $[1 xx @coins];
  
     multi ways($n where $n >= 0, @now [$coin,*@later]) {
@@ -11,20 +12,15 @@ sub ways-to-make-change($amount, @coins) {
     }
     multi ways($,@) { 0 }
  
-    ways($amount, @coins.sort(-*).list);  # sort descending
+    # more efficient to start with coins sorted in descending order
+    ways($amount, @coins.sort(-*).list);
 }
  
-say ways-to-make-change    1_00, [1,5,10,25];
-say ways-to-make-change 1000_00, [1,5,10,25,50,100];
-```
-
-#### Output:
-```
-242
-13398445413854501
-```
-```perl
-sub ways-to-make-change-slowly(\n, @coins) {
+change-r    1_00, [1,5,10,25];
+change-r 1000_00, [1,5,10,25,50,100];
+ 
+# Iterative
+sub change-i(\n, @coins) {
     my @table = [1 xx @coins], [0 xx @coins] xx n;
     for 1..n X ^@coins -> (\i, \j) {
         my \c = @coins[j];
@@ -35,6 +31,16 @@ sub ways-to-make-change-slowly(\n, @coins) {
     @table[*-1][*-1];
 }
  
-say ways-to-make-change-slowly    1_00, [1,5,10,25];
-say ways-to-make-change-slowly 1000_00, [1,5,10,25,50,100];
+say change-i    1_00, [1,5,10,25];
+say change-i 1000_00, [1,5,10,25,50,100];
+```
+
+
+Both versions produce the same output.
+
+
+#### Output:
+```
+242
+13398445413854501
 ```

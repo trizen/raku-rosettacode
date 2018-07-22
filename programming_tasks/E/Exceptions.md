@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Exceptions
+[1]: https://rosettacode.org/wiki/Exceptions
 
 # [Exceptions][1]
 

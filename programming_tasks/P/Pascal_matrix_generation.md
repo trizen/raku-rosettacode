@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pascal_matrix_generation
+[1]: https://rosettacode.org/wiki/Pascal_matrix_generation
 
 # [Pascal matrix generation][1]
 
@@ -7,48 +7,60 @@ Here is a rather more general solution than required. The `grow-matrix` function
 ```perl
 # Extend a matrix in 2 dimensions based on 3 neighbors.
 sub grow-matrix(@matrix, &func) {
-    my @m = @matrix.deepmap: { .clone }
-    my $s = +@m; #     West          North         NorthWest
-    @m[$s][0]  = func( 0,            @m[$s-1][0],  0             );
-    @m[0][$s]  = func( @m[0][$s-1],  0,            0             );
-    @m[$_][$s] = func( @m[$_][$s-1], @m[$_-1][$s], @m[$_-1][$s-1]) for 1 ..^ $s;
-    @m[$s][$_] = func( @m[$s][$_-1], @m[$s-1][$_], @m[$s-1][$_-1]) for 1 .. $s;
-    [@m];
+    my $n = @matrix.shape eq '*' ?? 1 !! @matrix.shape[0];
+    my @m[$n+1;$n+1];
+    for ^$n X ^$n -> ($i, $j) {
+       @m[$i;$j] = @matrix[$i;$j];
+    }
+#                     West         North        NorthWest
+    @m[$n; 0] = func( 0,           @m[$n-1;0],  0            );
+    @m[ 0;$n] = func( @m[0;$n-1],  0,           0            );
+    @m[$_;$n] = func( @m[$_;$n-1], @m[$_-1;$n], @m[$_-1;$n-1]) for 1 ..^ $n;
+    @m[$n;$_] = func( @m[$n;$_-1], @m[$n-1;$_], @m[$n-1;$_-1]) for 1 ..  $n;
+    @m;
 }
  
 # I am but mad north-northwest...
-sub madd-n-nw($m) { grow-matrix $m, -> $w, $n, $nw { $n + $nw } }
-sub madd-w-nw($m) { grow-matrix $m, -> $w, $n, $nw { $w + $nw } }
-sub madd-w-n ($m) { grow-matrix $m, -> $w, $n, $nw { $w + $n  } }
+sub madd-n-nw(@m) { grow-matrix @m, -> $w, $n, $nw {  $n + $nw } }
+sub madd-w-nw(@m) { grow-matrix @m, -> $w, $n, $nw {  $w + $nw } }
+sub madd-w-n (@m) { grow-matrix @m, -> $w, $n, $nw {  $w + $n  } }
  
 # Define 3 infinite sequences of Pascal matrices.
-constant upper-tri := [[1]], &madd-w-nw ... *;
-constant lower-tri := [[1]], &madd-n-nw ... *;
-constant symmetric := [[1]], &madd-w-n  ... *;
+constant upper-tri = [1], &madd-w-nw ... *;
+constant lower-tri = [1], &madd-n-nw ... *;
+constant symmetric = [1], &madd-w-n  ... *;
  
-# Pull out the 4th element of each sequence.
-.say for upper-tri[4][]; say '';
-.say for lower-tri[4][]; say '';
-.say for symmetric[4][];
+show_m upper-tri[4];
+show_m lower-tri[4];
+show_m symmetric[4];
+ 
+sub show_m (@m) {
+my \n = @m.shape[0];
+for ^n X ^n -> (\i, \j) {
+    print @m[i;j].fmt("%{1+max(@m).chars}d"); 
+    print "\n" if j+1 eq n;
+}
+say '';
+}
 ```
 
 #### Output:
 ```
-1 1 1 1 1
-0 1 2 3 4
-0 0 1 3 6
-0 0 0 1 4
-0 0 0 0 1
+ 1 1 1 1 1
+ 0 1 2 3 4
+ 0 0 1 3 6
+ 0 0 0 1 4
+ 0 0 0 0 1
 
-1 0 0 0 0
-1 1 0 0 0
-1 2 1 0 0
-1 3 3 1 0
-1 4 6 4 1
+ 1 0 0 0 0
+ 1 1 0 0 0
+ 1 2 1 0 0
+ 1 3 3 1 0
+ 1 4 6 4 1
 
-1 1 1 1 1
-1 2 3 4 5
-1 3 6 10 15
-1 4 10 20 35
-1 5 15 35 70
+  1  1  1  1  1
+  1  2  3  4  5
+  1  3  6 10 15
+  1  4 10 20 35
+  1  5 15 35 70
 ```

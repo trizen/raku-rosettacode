@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Department_Numbers
+[1]: https://rosettacode.org/wiki/Department_Numbers
 
 # [Department Numbers][1]
 

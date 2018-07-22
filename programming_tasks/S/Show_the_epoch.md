@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Show_the_epoch
+[1]: https://rosettacode.org/wiki/Show_the_epoch
 
 # [Show the epoch][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Unbias_a_random_generator
+[1]: https://rosettacode.org/wiki/Unbias_a_random_generator
 
 # [Unbias a random generator][1]
 
@@ -21,7 +21,7 @@ for 3 .. 6 -> $n {
         @fixed[ unbiased($n) ]++;
     }
     printf "N=%d   randN: %s, %4.1f%%   unbiased: %s, %4.1f%%\n",
-        $n, map { .perl, .[1] * 100 / $iterations }, $(@raw), $(@fixed);
+        $n, map { .perl, .[1] * 100 / $iterations }, @raw, @fixed;
 }
 ```
 

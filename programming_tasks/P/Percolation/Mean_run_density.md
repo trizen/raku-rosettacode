@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Percolation/Mean_run_density
+[1]: https://rosettacode.org/wiki/Percolation/Mean_run_density
 
 # [Percolation/Mean run density][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Time_a_function
+[1]: https://rosettacode.org/wiki/Time_a_function
 
 # [Time a function][1]
 

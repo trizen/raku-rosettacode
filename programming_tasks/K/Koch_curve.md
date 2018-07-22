@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Koch_curve
+[1]: https://rosettacode.org/wiki/Koch_curve
 
 # [Koch curve][1]
 

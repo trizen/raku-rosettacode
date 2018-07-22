@@ -1,29 +1,22 @@
-[1]: http://rosettacode.org/wiki/Ternary_logic
+[1]: https://rosettacode.org/wiki/Ternary_logic
 
 # [Ternary logic][1]
 
-Implementation:
+The precedence of each operator is specified as equivalent to an existing operator. We've taken the liberty of using a double arrow for implication, to avoid confusing it with `⊃`, (U+2283 SUPERSET OF).
 
 ```perl
+# Implementation:
 enum Trit <Foo Moo Too>;
  
 sub prefix:<¬> (Trit $a) { Trit(1-($a-1)) }
  
-sub infix:<∧> is equiv(&infix:<*>) (Trit $a, Trit $b) { $a min $b }
-sub infix:<∨> is equiv(&infix:<+>) (Trit $a, Trit $b) { $a max $b }
+sub infix:<∧> (Trit $a, Trit $b) is equiv(&infix:<*>) { $a min $b }
+sub infix:<∨> (Trit $a, Trit $b) is equiv(&infix:<+>) { $a max $b }
  
-sub infix:<⇒> is equiv(&infix:<..>) (Trit $a, Trit $b) { ¬$a max $b }
-sub infix:<≡> is equiv(&infix:<eq>) (Trit $a, Trit $b) { Trit(1 + ($a-1) * ($b-1)) }
-```
-
-
-The precedence of each operator is specified as equivalent to an existing operator.  We've taken the liberty of using a double arrow for implication, to avoid confusing it with `⊃`, (U+2283 SUPERSET OF).
-
-
-
-To test, we use this code:
-
-```perl
+sub infix:<⇒> (Trit $a, Trit $b) is equiv(&infix:<..>) { ¬$a max $b }
+sub infix:<≡> (Trit $a, Trit $b) is equiv(&infix:<eq>) { Trit(1 + ($a-1) * ($b-1)) }
+ 
+# Testing:
 say '¬';
 say "Too {¬Too}";
 say "Moo {¬Moo}";

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Taxicab_numbers
+[1]: https://rosettacode.org/wiki/Taxicab_numbers
 
 # [Taxicab numbers][1]
 

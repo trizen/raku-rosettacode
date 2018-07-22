@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chat_server
+[1]: https://rosettacode.org/wiki/Chat_server
 
 # [Chat server][1]
 
@@ -30,6 +30,12 @@ react {
             LAST {
                 broadcast "--- %s left ---", $name;
                 %connections{$name}:delete;
+                $conn.close ;
+            }
+            QUIT {
+                 default {
+                     say "oh no, $_";
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/I.Q._Puzzle
+[1]: https://rosettacode.org/wiki/I.Q._Puzzle
 
 # [I.Q. Puzzle][1]
 

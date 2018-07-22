@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/File_size_distribution
+[1]: https://rosettacode.org/wiki/File_size_distribution
 
 # [File size distribution][1]
 

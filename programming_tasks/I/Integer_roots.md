@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Integer_roots
+[1]: https://rosettacode.org/wiki/Integer_roots
 
 # [Integer roots][1]
 

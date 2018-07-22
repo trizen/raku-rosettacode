@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Create_a_file_on_magnetic_tape
+[1]: https://rosettacode.org/wiki/Create_a_file_on_magnetic_tape
 
 # [Create a file on magnetic tape][1]
 

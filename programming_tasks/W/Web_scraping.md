@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Web_scraping
+[1]: https://rosettacode.org/wiki/Web_scraping
 
 # [Web scraping][1]
 
 ```perl
 use HTTP::Client; # https://github.com/supernovus/perl6-http-client/
 my $site = "http://tycho.usno.navy.mil/cgi-bin/timer.pl";
-HTTP::Client.new.get($site).match(/'<BR>'( .+? <ws> UTC )/)[0].say
+HTTP::Client.new.get($site).content.match(/'<BR>'( .+? <ws> UTC )/)[0].say
 ```
 
 

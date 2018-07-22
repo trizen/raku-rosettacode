@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Modular_exponentiation
+[1]: https://rosettacode.org/wiki/Modular_exponentiation
 
 # [Modular exponentiation][1]
 

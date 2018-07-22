@@ -1,9 +1,13 @@
-[1]: http://rosettacode.org/wiki/Farey_sequence
+[1]: https://rosettacode.org/wiki/Farey_sequence
 
 # [Farey sequence][1]
 
 ```perl
-sub farey ($order) { unique 0/1, |(1..$order).map: { |(1..$^d).map: { $^n/$d } } }
+sub farey ($order) {
+    my @l = 0/1;
+    (1..$order).map: { push @l, |(1..$^d).map: { $^n/$d } }
+    unique gather @l.deepmap(*.take);
+}
  
 say "Farey sequence order ";
 say "$_: ", .&farey.sort.map: *.nude.join('/') for 1..11;

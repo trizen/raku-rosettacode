@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Averages/Mean_time_of_day
+[1]: https://rosettacode.org/wiki/Averages/Mean_time_of_day
 
 # [Averages/Mean time of day][1]
 

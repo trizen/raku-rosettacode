@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_duplicate_files
+[1]: https://rosettacode.org/wiki/Find_duplicate_files
 
 # [Find duplicate files][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_first_and_last_set_bit_of_a_long_integer
+[1]: https://rosettacode.org/wiki/Find_first_and_last_set_bit_of_a_long_integer
 
 # [Find first and last set bit of a long integer][1]
 

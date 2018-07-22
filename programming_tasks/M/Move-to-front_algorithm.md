@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Move-to-front_algorithm
+[1]: https://rosettacode.org/wiki/Move-to-front_algorithm
 
 # [Move-to-front algorithm][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sum_and_product_of_an_array
+[1]: https://rosettacode.org/wiki/Sum_and_product_of_an_array
 
 # [Sum and product of an array][1]
 

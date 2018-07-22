@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Knuth_shuffle
+[1]: https://rosettacode.org/wiki/Knuth_shuffle
 
 # [Knuth shuffle][1]
 

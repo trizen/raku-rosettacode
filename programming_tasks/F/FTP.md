@@ -1,52 +1,54 @@
-[1]: http://rosettacode.org/wiki/FTP
+[1]: https://rosettacode.org/wiki/FTP
 
 # [FTP][1]
 
 ```perl
 use Net::FTP;
  
-my $host = 'kernel.org';
-my $user = 'anonymous';
-my $password = '';
+my $ftp = Net::FTP.new(:host('mirrors.sohu.com'), :passive);
  
-my $ftp = Net::FTP.new( host => $host, :passive );
+$ftp.login();
  
-$ftp.login( user => $user, pass => $password );
+say $_<name>for $ftp.ls();
  
-$ftp.cwd( 'pub/linux/kernel' );
- 
-say $_<name> for $ftp.ls;
- 
-$ftp.get( 'README', :binary );
+$ftp.get( 'index.html', :binary );
 ```
 
 #### Output:
 ```
-COPYING
-CREDITS
-Historic
-README
-SillySounds
-crypto
-next
-people
-ports
-projects
-sha256sums.asc
-testing
-uemacs
-v1.0
-v1.1
-v1.2
-v1.3
-v2.0
-v2.1
-v2.2
-v2.3
-v2.4
-v2.5
-v2.6
-｢v3.0｣
-v3.x
-v4.x
+CPAN
+FOOTER.html
+FreeBSD
+HEADER.html
+OpenBSD
+anthon
+apache
+archlinux
+centos
+cygwin
+dag
+debian
+debian-backports
+debian-cd
+debian-multimedia
+debian-security
+deepin
+deepin-cd
+fedora
+fedora-epel
+gentoo
+help
+images
+index.html
+mysql
+nginx
+opensuse
+php
+python
+qt-all
+raspbian
+rsync
+ubuntu
+ubuntu-cn
+ubuntu-releases
 ```

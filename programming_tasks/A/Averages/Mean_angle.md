@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Averages/Mean_angle
+[1]: https://rosettacode.org/wiki/Averages/Mean_angle
 
 # [Averages/Mean angle][1]
 

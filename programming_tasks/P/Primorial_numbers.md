@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Primorial_numbers
+[1]: https://rosettacode.org/wiki/Primorial_numbers
 
 # [Primorial numbers][1]
 

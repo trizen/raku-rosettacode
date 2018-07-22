@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Draw_a_sphere
+[1]: https://rosettacode.org/wiki/Draw_a_sphere
 
 # [Draw a sphere][1]
 
@@ -12,9 +12,9 @@ my @light = normalize([ 3, 2, -5 ]);
  
 my $depth = 255;
  
-sub MAIN ($outfile = 'sphere-perl6.pgm') {
-    my $out = open( $outfile, :w, :bin ) or die "$!\n";
-    $out.say("P5\n$x $y\n$depth"); # .pgm header
+sub MAIN ($outfile = 'sphere-perl6.pgm') {   
+    spurt $outfile, "P5\n$x $y\n$depth\n"; # .pgm header
+    my $out = open( $outfile, :a, :bin ) or die "$!\n";
     $out.write( Blob.new(draw_sphere( ($x-1)/2, .9, .2) ) );
     $out.close;
 }

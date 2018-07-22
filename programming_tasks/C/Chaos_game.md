@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chaos_game
+[1]: https://rosettacode.org/wiki/Chaos_game
 
 # [Chaos game][1]
 
@@ -14,7 +14,7 @@ my @vertex = [0, 0], [$w, 0], [$w/2, $h];
 my ($x, $y) = (0, 0);
  
 for ^1e5 {
-    ($x, $y) = do given @vertex[3.rand] -> @v { ((($x, $y) »+« @v) »/» 2)».Int };
+    ($x, $y) = do given @vertex.pick -> @v { ((($x, $y) »+« @v) »/» 2)».Int };
     $png.set: $x, $y, 0, 255, 0;
 }
  

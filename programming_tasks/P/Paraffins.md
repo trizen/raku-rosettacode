@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Paraffins
+[1]: https://rosettacode.org/wiki/Paraffins
 
 # [Paraffins][1]
 
@@ -10,8 +10,8 @@ Note how lexical scoping &#8212; rather than global variables or repeated argume
 
 ```perl
 sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
-    my @rooted   = 1,1,0 xx $max-weight - 1;
-    my @unrooted = 1,1,0 xx $max-weight - 1;
+    my @rooted   = flat 1,1,0 xx $max-weight - 1;
+    my @unrooted = flat 1,1,0 xx $max-weight - 1;
  
     sub count-trees-with-centroid(Int $radius) {
         sub add-branches(
@@ -52,8 +52,8 @@ sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
 }
  
 my constant N = 100;
-my @paraffins := count-unrooted-trees(4, N);
-say .fmt('%3d'), ': ', @paraffins[$_] for 1 .. 30, N;
+my @paraffins = count-unrooted-trees(4, N);
+say .fmt('%3d'), ': ', @paraffins[$_] for flat 1 .. 30, N;
 ```
 
 #### Output:

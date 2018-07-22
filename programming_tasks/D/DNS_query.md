@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/DNS_query
+[1]: https://rosettacode.org/wiki/DNS_query
 
 # [DNS query][1]
 

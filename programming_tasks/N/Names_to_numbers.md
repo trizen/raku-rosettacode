@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Names_to_numbers
+[1]: https://rosettacode.org/wiki/Names_to_numbers
 
 # [Names to numbers][1]
 

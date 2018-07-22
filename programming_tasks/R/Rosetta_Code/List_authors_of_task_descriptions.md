@@ -1,101 +1,162 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/List_authors_of_task_descriptions
+[1]: https://rosettacode.org/wiki/Rosetta_Code/List_authors_of_task_descriptions
 
 # [Rosetta Code/List authors of task descriptions][1]
 
-The pseudocode above is no longer really useful as the page format has changed. Rather than checking **every** edit to see if it was a change to the task description, we'll just assume the user that created the page is the task author. This isn't 100% accurate; a very few pages got renamed and recreated by someone other than the original author without preserving the history, so they are misreported (15 Puzzle Game for instance,) but is as good as it is likely to get without extensive manual intervention. Any further edits to the task description are not credited. As it is, we must still make *thousands* of requests and pound the server pretty hard. Checking **every** edit would make the task several of orders of magnitude more abusive of the server (and my internet connection.)
-
-
-
-Each stage of the scraping process is saved to local files so it can be restarted without losing all your progress in the event of a timeout or error. If that happens though, you need to manually adjust where to restart the process.
+The pseudocode above is no longer really useful as the page format has changed significantly since this task was written. Rather than checking **every** edit to see if it was a change to the task description, we'll just assume the user that created the page is the task author. This isn't 100% accurate; a very few pages got renamed and recreated by someone other than the original author without preserving the history, so they are misreported (15 Puzzle Game for instance,) but is as good as it is likely to get without extensive manual intervention. Subsequent edits to the task description are not credited. As it is, we must still make *thousands* of requests and pound the server pretty hard. Checking **every** edit would make the task several of orders of magnitude more abusive of the server (and my internet connection.)
 
 ```perl
 use HTTP::UserAgent;
-use Gumbo;
+use URI::Escape;
+use JSON::Fast;
 use Sort::Naturally;
- 
-my $ua = HTTP::UserAgent.new;
- 
-for 'Programming_Tasks', 'Draft_Programming_Tasks' -> $category
-{ # Get lists of Tasks & Draft Tasks
-    # last; # Uncomment to skip this step
-    my $page = "http://rosettacode.org/wiki/Category:$category";
-    my $html =  $ua.get($page).content;
-    my $xmldoc = parse-html($html, :TAG<div>, :id<mw-pages>);
-    my @tasks = parse-html($xmldoc[0].Str, :TAG<li>).Str.comb( /'/wiki/' <-["]>+ / )>>.substr(6); #"
-    my $f = open("./RC_{$category}.txt", :w)  or die "$!\n";
-    $f.print( @tasks.join("\n") );
-    $f.close;
-}
- 
-for 'Programming_Tasks', 'Draft_Programming_Tasks' -> $category
-{ # Scrape info from each page.
-    # last; # Uncomment to skip this step
-    my @tasks = "./RC_{$category}.txt".IO.slurp.lines;
- 
-    for @tasks -> $title {
- 
-        my $ua = HTTP::UserAgent.new;
-        # Get the earliest edit
-        my $addr = "http://rosettacode.org/mw/index.php?title={$title}&dir=prev&limit=1&action=history";
- 
-        my $html = $ua.get: $addr;
- 
-        $html.content ~~ m|'<li><span class="mw-history-histlinks">' (.+?) '</ul>' |;
- 
-        my $line = $0.lines.tail;
-        # Parse out the User name
-        $line ~~ m| 'title="User:' <-[>]>+? '>' (.+?) '</a>' |;
- 
-        my $auth = $0;
-        # Oops, no user name, must be anonymous, get IP address instead
-        unless $auth {
-            $line ~~ m| '"mw-userlink mw-anonuserlink">' (.+?) '</a>' |;
-            $auth = $0;
+
+# Friendlier descriptions for task categories
+my %cat = (
+    'Programming_Tasks' => 'Task',
+    'Draft_Programming_Tasks' => 'Draft'
+);
+
+my $client = HTTP::UserAgent.new;
+
+my $url = 'http://rosettacode.org/mw';
+
+my $tablefile = './RC_Authors.txt';
+my $hashfile  = './RC_Authors.json';
+
+my %tasks;
+
+# clear screen
+run($*DISTRO.is-win ?? 'cls' !! 'clear');
+
+#=begin update
+
+note 'Retreiving task information...';
+
+for %cat.keys -> $category {
+    mediawiki-query(
+        $url, 'pages',
+        :generator<categorymembers>,
+        :gcmtitle("Category:$category"),
+        :gcmlimit<350>,
+        :rawcontinue(),
+        :prop<title>
+    ).map({
+        mediawiki-query(
+            $url, 'pages',
+            :titles(.<title>),
+            :prop<revisions>,
+            :rvprop<user|timestamp>,
+            :rvstart<2000-01-01T01:01:01Z>,
+            :rvdir<newer>,
+            :rvlimit<1>
+        )}
+    ).map({
+        print clear, 1 + $++, ' ', %cat{$category}, ' ', .[0]<title>;
+        %tasks{.[0]<title>}<category> = %cat{$category};
+        %tasks{.[0]<title>}<author> = .[0]<revisions>[0]<user>;
+        %tasks{.[0]<title>}<date> = .[0]<revisions>[0]<timestamp>.subst(/'T'.+$/, '')
         }
- 
-        # Parse out human readable title
-        $line ~~ m| '<a href="/mw/index.php?title=' $title '&amp;' .+? 'title="'(.+?)'">cur</a>' |;
- 
-        my $decoded = $0;
- 
-        # report progress
-        say "$decoded: $auth";
- 
-        # save it to a file
-        my $f = open("./RC_Authors.txt", :a)  or die "$!\n";
-        $f.say( "[[$title|$decoded]]\t$category\t$auth" );
-        $f.close;
- 
-        sleep 3; # Don't pound the server
-    }
-    sleep 300; # Wait between batches, seems to disconnect after 1000 requests without pause
+    )
 }
- 
-my %authors;
- 
-# Generate an HTML table from the results.
-my ($cnt, $draftcnt, $taskcnt);
-"./RC_Authors.txt".IO.slurp.lines.map: {
-    my ($task, $cat, $auth) = $_.split("\t");
-    $cnt++;
-    if $cat.contains('Draft') {
-        $cat = 'Draft:';
-        $draftcnt++;
-    } else {
-        $cat = 'Task: ';
-        $taskcnt++;
+
+print clear;
+
+# Save information to a local file
+note "\nTask information saved to local file: {$hashfile.IO.absolute}";
+$hashfile.IO.spurt(%tasks.&to-json);
+
+#=end update
+
+# Load information from local file
+%tasks = $hashfile.IO.e ?? $hashfile.IO.slurp.&from-json !! ( );
+
+# Convert saved task / author info to a table
+note "\nBuilding table...";
+my $count    = +%tasks;
+my $taskcnt  = +%tasks.grep: *.value.<category> eq %cat<Programming_Tasks>;
+my $draftcnt = $count - $taskcnt;
+
+# Open a file handle to dump table in
+my $out = open($tablefile, :w)  or die "$!\n";
+
+# Add table boilerplate and header
+$out.say:
+    "\{|class=\"wikitable sortable\"\n",
+    "|+ As of { Date.today } :: Total Tasks: { $count }:: Tasks: { $taskcnt }",
+    " ::<span style=\"background-color:#ffd\"> Draft Tasks: { $draftcnt } </span>",
+    ":: By {+%tasks{*}».<author>.unique} Authors\n",
+    "! Author !! Tasks !! Authored"
+;
+
+# Get sorted unique list of task authors
+for %tasks{*}».<author>.unique.sort(*.&naturally) -> $author {
+
+    # Get list of tasks by this author
+    my @these = %tasks.grep( { $_.value.<author> eq $author } );
+    my $s = +@these == 1 ?? '' !! 's';
+
+    # Add author and contributions link to the first two cells
+    $out.say:
+    $author ~~ /\d/
+      ?? "|-\n|data-sort-value=\"{ sort-key $author }\"|[[User:$author|$author]]\n"~
+         "|data-sort-value=\"{ +@these }\"|[[Special:Contributions/$author|"~
+         "{ +@these } task{ $s }]]"
+      !! "|-\n|[[User:$author|$author]]\n"~
+         "|data-sort-value=\"{ +@these }\"|[[Special:Contributions/$author|"~
+         "{ +@these } task{ $s }]]"
+    ;
+
+    if +@these > 2 {
+        $out.say: "|style=\"padding: 0px;\"|\n",
+          "\{|class=\"broadtable sortable\" style=\"width: 100%;\"\n",
+          "! Task Name !! Date Added !! Status";
     }
-    %authors{$auth}.push: "$cat $task";
-};
- 
-# Dump an HTML table to STDOUT, capture it for display
-say '<table border="1"><tr><th colspan="2">As of ', Date.today, ' | Total: ',
-    $cnt, ' / Tasks: ', $taskcnt, ' / Draft Tasks: ', $draftcnt,
-    '<tr><th>User</th><th>Authored</th></tr>';
-for %authors.sort(*.key.&naturally) -> $a {
-    print '<tr><td>', $a.key, '</td><td><ol><li>';
-    print $a.value.sort( *.substr(7) ).join('</li><li>');
-    say '</ol></td></tr>';
+    else {
+        $out.say: "|style=\"padding: 0px;\"|\n",
+          "\{|class=\"broadtable\" style=\"width: 100%;\"";
+   }
+
+    # Tasks by this author, sorted by name
+    for @these.sort({.key.&naturally}) -> $task {
+
+        my $color = $task.value.<category> eq 'Draft' ?? '#ffd' !! '#fff';
+
+        # add the task link, date and status to the table in the second cell
+        $out.say: "|-\n|style=\"background-color: $color;\"",
+          ( $task.key ~~ /\d/
+            ?? " data-sort-value=\"{ sort-key $task.key }\"| [[{uri-escape $task.key}|{$task.key}]]\n"
+            !! "| [[{uri-escape $task.key}|{$task.key}]]\n"
+          ),
+          "|style=\"width: 10em; background-color: $color;\"| {$task.value.<date>}\n",
+          "|style=\"width: 6em; background-color: $color;\"| {$task.value.<category>}",
+    }
+     $out.say: '|}'
 }
-say '</table>';
+$out.say( "|}\n" );
+$out.close;
+
+
+note "Table file saved as: {$tablefile.IO.absolute}";
+
+sub mediawiki-query ($site, $type, *%query) {
+    my $url = "$site/api.php?" ~ uri-query-string(
+        :action<query>, :format<json>, :formatversion<2>, |%query);
+    my $continue = '';
+
+    gather loop {
+        my $response = $client.get("$url&$continue");
+        my $data = from-json($response.content);
+        take $_ for $data.<query>.{$type}.values;
+        $continue = uri-query-string |($data.<query-continue>{*}».hash.hash or last);
+    }
+}
+
+sub uri-query-string (*%fields) { %fields.map({ "{.key}={uri-escape .value}" }).join("&") }
+
+sub sort-key ($a) { $a.lc.subst(/(\d+)/, ->$/ {0~(65+($0.chars)).chr~$0},:g) }
+
+sub clear { "\r" ~ ' ' x 100 ~ "\r" }
 ```
+
+
+See full output at [Rosetta_Code/List_authors_of_task_descriptions/Full_list](https://rosettacode.org/wiki/Rosetta_Code/List_authors_of_task_descriptions/Full_list)

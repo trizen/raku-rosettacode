@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Evaluate_binomial_coefficients
+[1]: https://rosettacode.org/wiki/Evaluate_binomial_coefficients
 
 # [Evaluate binomial coefficients][1]
 

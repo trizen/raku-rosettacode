@@ -1,19 +1,19 @@
-[1]: http://rosettacode.org/wiki/Multi-dimensional_array
+[1]: https://rosettacode.org/wiki/Multi-dimensional_array
 
 # [Multi-dimensional array][1]
 
 ```perl
-#Perl 6 supports multi dimension arrays natively. There are no arbitrary limits on the number of dimensions or maximum indicies. Theoretically, you could have an infinite number of dimensions of infinite length, though in practice more than a few dozen dimensions gets unwieldy. An infinite maximum index is a fairly common idiom though. You can assign an infinite lazy list to an array and it will only produce the values when they are accessed.
+#Perl 6 supports multi dimension arrays natively. There are no arbitrary limits on the number of dimensions or maximum indices. Theoretically, you could have an infinite number of dimensions of infinite length, though in practice more than a few dozen dimensions gets unwieldy. An infinite maximum index is a fairly common idiom though. You can assign an infinite lazy list to an array and it will only produce the values when they are accessed.
  
 my @integers = 1 .. Inf; # an infinite array containing all positive integers
  
 say @integers[100000]; #100001 (arrays are zero indexed.)
  
-# Multi dimension arrays may be predeclared which constrains the indicies to the declared size:
+# Multi dimension arrays may be predeclared which constrains the indices to the declared size:
  
 my @dim5[3,3,3,3,3];
  
-#Creates a preallocated 5 dimensional array where each branch has 3 storage slots and constrains the size to teh declared size.
+#Creates a preallocated 5 dimensional array where each branch has 3 storage slots and constrains the size to the declared size.
 #It can then be accessed like so:
  
 @dim5[0;1;2;1;0] = 'Perl 6';
@@ -45,10 +45,9 @@ say @b[*;2]; # Get the all of the values in the third "column"
  
 # By default, Perl 6 can store any object in an array, and it is not very compact. You can constrain the type of values that may be stored which can allow the optimizer to store them much more efficiently.
  
-my @c = 1 .. 10; # stores integers, but not very compact since there are no constraints on what the values _may_ be
+my @c = 1 .. 10; # Stores integers, but not very compactly since there are no constraints on what the values _may_ be
  
-my uint16 @d = 1 .. 10 # since there are and only can be unsigned 16 bit integers, the optimizer will use a much more compact memory layout.
+my uint16 @d = 1 .. 10 # Since there are and only can be unsigned 16 bit integers, the optimizer will use a much more compact memory layout.
  
-# indicies must be a positive integer. negative indicies are not permitted, fractional indicies will be truncated to an integer.
- 
+# Indices must be a positive integer. Negative indices are not permitted, fractional indices will be truncated to an integer.
 ```

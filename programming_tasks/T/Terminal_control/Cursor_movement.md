@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Cursor_movement
+[1]: https://rosettacode.org/wiki/Terminal_control/Cursor_movement
 
 # [Terminal control/Cursor movement][1]
 

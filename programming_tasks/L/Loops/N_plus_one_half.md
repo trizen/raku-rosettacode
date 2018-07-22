@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/N_plus_one_half
+[1]: https://rosettacode.org/wiki/Loops/N_plus_one_half
 
 # [Loops/N plus one half][1]
 

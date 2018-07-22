@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Natural_sorting
+[1]: https://rosettacode.org/wiki/Natural_sorting
 
 # [Natural sorting][1]
 
@@ -10,7 +10,7 @@ returns the original strings.
 
 
 
-The following are a series of subroutines to perform the various natural 
+The following are a series of subroutines to perform the various natural
 sorting transforms. They may be applied individually or mixed and matched
 to get the particular result desired. When more than one is strung
 together, they apply left to right. Some combinations may yield

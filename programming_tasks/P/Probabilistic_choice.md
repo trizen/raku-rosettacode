@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Probabilistic_choice
+[1]: https://rosettacode.org/wiki/Probabilistic_choice
 
 # [Probabilistic choice][1]
 

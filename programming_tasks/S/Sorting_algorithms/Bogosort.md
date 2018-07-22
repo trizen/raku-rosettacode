@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Bogosort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Bogosort
 
 # [Sorting algorithms/Bogosort][1]
 

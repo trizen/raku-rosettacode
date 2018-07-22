@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Memory_allocation
+[1]: https://rosettacode.org/wiki/Memory_allocation
 
 # [Memory allocation][1]
 

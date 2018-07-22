@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hostname
+[1]: https://rosettacode.org/wiki/Hostname
 
 # [Hostname][1]
 

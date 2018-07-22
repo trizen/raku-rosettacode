@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pythagorean_quadruples
+[1]: https://rosettacode.org/wiki/Pythagorean_quadruples
 
 # [Pythagorean quadruples][1]
 

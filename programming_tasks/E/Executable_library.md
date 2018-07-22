@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Executable_library
+[1]: https://rosettacode.org/wiki/Executable_library
 
 # [Executable library][1]
 

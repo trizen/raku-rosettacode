@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Fast_Fourier_transform
+[1]: https://rosettacode.org/wiki/Fast_Fourier_transform
 
 # [Fast Fourier transform][1]
 
@@ -7,20 +7,44 @@ sub fft {
     return @_ if @_ == 1;
     my @evn = fft( @_[0, 2 ... *] );
     my @odd = fft( @_[1, 3 ... *] ) Z*
-    map &cis, (0, tau / @_ ... *);
+    map &cis, (0, -tau / @_ ... *);
     return flat @evn »+« @odd, @evn »-« @odd;
 }
  
-my @seq    = ^16;
-my $cycles = 3;
-my @wave   = map { sin( tau * $_ / @seq * $cycles ) }, @seq;
-say "wave: ", @wave.fmt("%7.3f");
- 
-say "fft:  ", fft(@wave)».abs.fmt("%7.3f");
+.say for fft <1 1 1 1 0 0 0 0>;
 ```
 
 #### Output:
 ```
-wave:   0.000   0.924   0.707  -0.383  -1.000  -0.383   0.707   0.924   0.000  -0.924  -0.707   0.383   1.000   0.383  -0.707  -0.924
-fft:    0.000   0.000   0.000   8.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   8.000   0.000   0.000
+4+0i
+1-2.41421356237309i
+0+0i
+1-0.414213562373095i
+0+0i
+1+0.414213562373095i
+0+0i
+1+2.41421356237309i
+```
+
+
+For the fun of it, here is a purely functional version:
+
+```perl
+sub fft {
+    @_ == 1 ?? @_ !!
+    fft(@_[0,2...*]) «+«
+    fft(@_[1,3...*]) «*« map &cis, (0,-τ/@_...^-τ)
+}
+```
+
+
+This particular version is numerically inaccurate though, because of the pi approximation. It is possible to fix it with the 'cisPi' function available in the TrigPi module:
+
+```perl
+sub fft {
+    use TrigPi;
+    @_ == 1 ?? @_ !!
+    fft(@_[0,2...*]) «+«
+    fft(@_[1,3...*]) «*« map &cisPi, (0,-2/@_...^-2)
+}
 ```

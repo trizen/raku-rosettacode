@@ -1,44 +1,27 @@
-[1]: http://rosettacode.org/wiki/Hash_from_two_arrays
+[1]: https://rosettacode.org/wiki/Hash_from_two_arrays
 
 # [Hash from two arrays][1]
 
+Using the "zipwith" meta-operator on the `=>` pair composer:
+
 ```perl
 my @keys = <a b c d e>;
-my @vals = ^5;
-my %hash = flat @keys Z @vals;
+my @values = ^5;
+ 
+my %hash = @keys Z=> @values;
+ 
+ 
+#Alternatively, by assigning to a hash slice:
+%hash{@keys} = @values;
+ 
+ 
+# Or to create an anonymous hash:
+%( @keys Z=> @values );
+ 
+ 
+# All of these zip forms trim the result to the length of the shorter of their two input lists.
+# If you wish to enforce equal lengths, you can use a strict hyperoperator instead:
+ 
+quietly # suppress warnings about unused hash
+{ @keys »=>« @values };  # Will fail if the lists differ in length
 ```
-
-
-or using the "zipwith" metaoperaotr on the `=>` pair composer:
-
-```perl
-my @v = <a b c d e>;
-my %hash = @v Z=> @v.keys;
-```
-
-
-
-
-Alternatively:
-
-```perl
-my %hash;
-%hash{@keys} = @vals;
-```
-
-
-To create an anonymous hash value:
-
-```perl
-%( <a b c d e> Z=> ^5 )
-```
-
-
-All of these zip forms trim the result to the length of the shorter of their two input lists. If you wish to enforce equal lengths, you can use a strict hyperoperator instead:
-
-```perl
-{ @keys »=>« @values }
-```
-
-
-This will fail if the lists differ in length.

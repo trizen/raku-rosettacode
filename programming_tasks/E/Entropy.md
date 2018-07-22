@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Entropy
+[1]: https://rosettacode.org/wiki/Entropy
 
 # [Entropy][1]
 

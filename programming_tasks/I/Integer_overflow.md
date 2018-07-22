@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Integer_overflow
+[1]: https://rosettacode.org/wiki/Integer_overflow
 
 # [Integer overflow][1]
 

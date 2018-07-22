@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Distributed_programming
+[1]: https://rosettacode.org/wiki/Distributed_programming
 
 # [Distributed programming][1]
 

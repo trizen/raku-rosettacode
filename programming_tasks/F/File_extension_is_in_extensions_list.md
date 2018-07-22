@@ -1,53 +1,32 @@
-[1]: http://rosettacode.org/wiki/File_extension_is_in_extensions_list
+[1]: https://rosettacode.org/wiki/File_extension_is_in_extensions_list
 
 # [File extension is in extensions list][1]
 
+Does the extra credit requirement.
+
 ```perl
-sub ext-in-list(@ext,@files) {
-    for @files {
-        when / :i @ext $ /      { say "True\t$_" }
-        when / '.' <-[/.]>+ $ / { say "False\t$_" }
-        default                 { say "----\t$_" }
-    }
+sub check-extension ($filename, *@extensions) {
+    so $filename ~~ /:i '.' @extensions $/
 }
  
-ext-in-list
-    «
-        .c
-        .C#
-        .o
-        .yup
-        .½xy
-       '. embedded blanks '
-    »,
-    «
-        foo.c
-        foo.C
-        foo.C++
-        foo.c#
-        foo.zkl
-        somefile
-       'holy smoke'
-        afile.
-        /a/path/to/glory.yup/or_not
-        funny...
-        unusual.½xy
-       'fly_in_the_ointment. embedded blanks '
-    »;
+# Testing:
+ 
+my @extensions = <zip rar 7z gz archive A## tar.bz2>;
+my @files= <
+    MyData.a##  MyData.tar.Gz  MyData.gzip  MyData.7z.backup  MyData...  MyData
+    MyData_v1.0.tar.bz2  MyData_v1.0.bz2
+>;
+say "{$_.fmt: '%-19s'} - {check-extension $_, @extensions}" for @files;
 ```
 
 #### Output:
 ```
-True    foo.c
-True    foo.C
-False   foo.C++
-True    foo.c#
-False   foo.zkl
-----    somefile
-----    holy smoke
-----    afile.
-----    /a/path/to/glory.yup/or_not
-----    funny...
-True    unusual.½xy
-True    fly_in_the_ointment. embedded blanks 
+MyData.a##          - True
+MyData.tar.Gz       - True
+MyData.gzip         - False
+MyData.7z.backup    - False
+MyData...           - False
+MyData              - False
+MyData_v1.0.tar.bz2 - True
+MyData_v1.0.bz2     - False
 ```

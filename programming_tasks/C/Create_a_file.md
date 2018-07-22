@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Create_a_file
+[1]: https://rosettacode.org/wiki/Create_a_file
 
 # [Create a file][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Quine
+[1]: https://rosettacode.org/wiki/Quine
 
 # [Quine][1]
 

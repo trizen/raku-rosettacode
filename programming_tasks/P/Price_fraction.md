@@ -1,49 +1,43 @@
-[1]: http://rosettacode.org/wiki/Price_fraction
+[1]: https://rosettacode.org/wiki/Price_fraction
 
 # [Price fraction][1]
 
+Simple solution, doing a linear search.
+
+Note that in Perl&#160;6 we don't have to worry about floating-point misrepresentations of decimals, because decimal fractions are stored as rationals.
+
 ```perl
-my $table = q:to/END/;
->=  0.00  <  0.06  :=  0.10
->=  0.06  <  0.11  :=  0.18
->=  0.11  <  0.16  :=  0.26
->=  0.16  <  0.21  :=  0.32
->=  0.21  <  0.26  :=  0.38
->=  0.26  <  0.31  :=  0.44
->=  0.31  <  0.36  :=  0.50
->=  0.36  <  0.41  :=  0.54
->=  0.41  <  0.46  :=  0.58
->=  0.46  <  0.51  :=  0.62
->=  0.51  <  0.56  :=  0.66
->=  0.56  <  0.61  :=  0.70
->=  0.61  <  0.66  :=  0.74
->=  0.66  <  0.71  :=  0.78
->=  0.71  <  0.76  :=  0.82
->=  0.76  <  0.81  :=  0.86
->=  0.81  <  0.86  :=  0.90
->=  0.86  <  0.91  :=  0.94
->=  0.91  <  0.96  :=  0.98
->=  0.96  <  1.01  :=  1.00
-END
+sub price-fraction ($n where 0..1) {
+    when $n < 0.06 { 0.10 }
+    when $n < 0.11 { 0.18 }
+    when $n < 0.16 { 0.26 }
+    when $n < 0.21 { 0.32 }
+    when $n < 0.26 { 0.38 }
+    when $n < 0.31 { 0.44 }
+    when $n < 0.36 { 0.50 }
+    when $n < 0.41 { 0.54 }
+    when $n < 0.46 { 0.58 }
+    when $n < 0.51 { 0.62 }
+    when $n < 0.56 { 0.66 }
+    when $n < 0.61 { 0.70 }
+    when $n < 0.66 { 0.74 }
+    when $n < 0.71 { 0.78 }
+    when $n < 0.76 { 0.82 }
+    when $n < 0.81 { 0.86 }
+    when $n < 0.86 { 0.90 }
+    when $n < 0.91 { 0.94 }
+    when $n < 0.96 { 0.98 }
+    default        { 1.00 }
+}
  
-my $value = 0.44;
- 
-say price($value);
- 
-sub price($value)
-{
-	for $table.lines -> $line {
-		$line ~~ / '>=' \s+ (\S+) \s+ '<' \s+ (\S+) \s+ ':=' \s+ (\S+)/;
-		return $2 if $0 <= $value < $1;
-	}
-	fail "Out of range";
+while prompt("value: ") -> $value {
+    say price-fraction(+$value);
 }
 ```
 
 
-Perhaps a better approach is just to build an array of 101 entries.
-Memory is cheap, and array lookup is blazing fast, especially important if used in a loop as below.
-Moreover, in Perl&#160;6 we don't have to worry about floating point misrepresentations of decimals because decimal fractions are stored as rationals.
+If we expect to rescale many prices, a better approach would be to build a look-up array of 101 entries.
+Memory is cheap, and array indexing is blazing fast.
 
 ```perl
 my @price = map *.value, flat
@@ -70,42 +64,45 @@ my @price = map *.value, flat
 ;
  
 while prompt("value: ") -> $value {
-    say @price[ $value * 100 ] // note "Out of range";
+    say @price[$value * 100] // "Out of range";
 }
 ```
 
 
-Yet another approach is to use the conditional operator to encode the table.
-This allows each endpoint to be written once, avoiding duplication. The `Rat()`
-type in the signature coerces any numeric type to a rational.
+We can also build this same look-up array by parsing the table as formatted in the task description:
 
 ```perl
-sub price_fraction ( Rat() $n where { $^n >= 0 and $^n <= 1 } ) {
-       ( $n <  0.06 ) ?? 0.10
-    !! ( $n <  0.11 ) ?? 0.18
-    !! ( $n <  0.16 ) ?? 0.26
-    !! ( $n <  0.21 ) ?? 0.32
-    !! ( $n <  0.26 ) ?? 0.38
-    !! ( $n <  0.31 ) ?? 0.44
-    !! ( $n <  0.36 ) ?? 0.50
-    !! ( $n <  0.41 ) ?? 0.54
-    !! ( $n <  0.46 ) ?? 0.58
-    !! ( $n <  0.51 ) ?? 0.62
-    !! ( $n <  0.56 ) ?? 0.66
-    !! ( $n <  0.61 ) ?? 0.70
-    !! ( $n <  0.66 ) ?? 0.74
-    !! ( $n <  0.71 ) ?? 0.78
-    !! ( $n <  0.76 ) ?? 0.82
-    !! ( $n <  0.81 ) ?? 0.86
-    !! ( $n <  0.86 ) ?? 0.90
-    !! ( $n <  0.91 ) ?? 0.94
-    !! ( $n <  0.96 ) ?? 0.98
-    !!                   1.00
-    ;
+my $table = q:to/END/;
+>=  0.00  <  0.06  :=  0.10
+>=  0.06  <  0.11  :=  0.18
+>=  0.11  <  0.16  :=  0.26
+>=  0.16  <  0.21  :=  0.32
+>=  0.21  <  0.26  :=  0.38
+>=  0.26  <  0.31  :=  0.44
+>=  0.31  <  0.36  :=  0.50
+>=  0.36  <  0.41  :=  0.54
+>=  0.41  <  0.46  :=  0.58
+>=  0.46  <  0.51  :=  0.62
+>=  0.51  <  0.56  :=  0.66
+>=  0.56  <  0.61  :=  0.70
+>=  0.61  <  0.66  :=  0.74
+>=  0.66  <  0.71  :=  0.78
+>=  0.71  <  0.76  :=  0.82
+>=  0.76  <  0.81  :=  0.86
+>=  0.81  <  0.86  :=  0.90
+>=  0.86  <  0.91  :=  0.94
+>=  0.91  <  0.96  :=  0.98
+>=  0.96  <  1.01  :=  1.00
+END
+ 
+my @price;
+ 
+for $table.lines {
+    /:s '>='  (\S+)  '<'  (\S+)  ':='  (\S+)/;
+    @price[$0*100 ..^ $1*100] »=» +$2;
 }
  
 while prompt("value: ") -> $value {
-    last if $value ~~ /exit|quit/;
-    say price_fraction(+$value);
+    say @price[$value * 100] // "Out of range";
 }
 ```

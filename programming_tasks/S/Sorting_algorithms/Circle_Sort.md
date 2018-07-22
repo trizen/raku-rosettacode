@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_Algorithms/Circle_Sort
+[1]: https://rosettacode.org/wiki/Sorting_Algorithms/Circle_Sort
 
 # [Sorting Algorithms/Circle Sort][1]
 
@@ -10,7 +10,7 @@ pass accumulated swaps down the call stack.
 This does generic comparisons, so it works on any ordered type, including numbers or strings.
 
 ```perl
-sub circlesort (@x is rw, $beg, $end) {
+sub circlesort (@x, $beg, $end) {
     my $swaps = 0;
     if $beg < $end {
         my ($lo, $hi) = $beg, $end;

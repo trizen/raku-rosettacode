@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Metered_concurrency
+[1]: https://rosettacode.org/wiki/Metered_concurrency
 
 # [Metered concurrency][1]
 

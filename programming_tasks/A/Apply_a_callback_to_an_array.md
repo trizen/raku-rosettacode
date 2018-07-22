@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Apply_a_callback_to_an_array
+[1]: https://rosettacode.org/wiki/Apply_a_callback_to_an_array
 
 # [Apply a callback to an array][1]
 

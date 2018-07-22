@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Execute_HQ9+
+[1]: https://rosettacode.org/wiki/Execute_HQ9+
 
 # [Execute HQ9+][1]
 

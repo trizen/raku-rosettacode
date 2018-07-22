@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Idiomatically_determine_all_the_lowercase_and_uppercase_letters
+[1]: https://rosettacode.org/wiki/Idiomatically_determine_all_the_lowercase_and_uppercase_letters
 
 # [Idiomatically determine all the lowercase and uppercase letters][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Function_prototype
+[1]: https://rosettacode.org/wiki/Function_prototype
 
 # [Function prototype][1]
 

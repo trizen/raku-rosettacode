@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arithmetic/Rational
+[1]: https://rosettacode.org/wiki/Arithmetic/Rational
 
 # [Arithmetic/Rational][1]
 
@@ -12,7 +12,7 @@ for 2..2**19 -> $candidate {
             $sum += 1 / $factor + 1 / ($candidate / $factor);
         }
     }
-    if $sum.denominator == 1 {
+    if $sum.nude[1] == 1 {
         say "Sum of reciprocal factors of $candidate = $sum exactly", ($sum == 1 ?? ", perfect!" !! ".");
     }
 }

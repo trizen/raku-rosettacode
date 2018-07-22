@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/CSV_data_manipulation
+[1]: https://rosettacode.org/wiki/CSV_data_manipulation
 
 # [CSV data manipulation][1]
 
@@ -8,7 +8,7 @@ On the face of it this task is pretty simple. Especially given the sample CSV fi
 my $csvfile = './whatever.csv';
 my $fh = open($csvfile, :r);
 my @header = $fh.get.split(',');
-my @csv = map {[.split(',')]}, $fh.lines;
+my @csv = map {[.split(',')]>>.Num}, $fh.lines;
 close $fh;
  
 my $out = open($csvfile, :w);
@@ -23,7 +23,7 @@ But if your CSV file is at all complex you are better off using a CSV parsing mo
 ```perl
 use Text::CSV;
 my $csvfile = './whatever.csv';
-my @csv = Text::CSV.parse-file($file);
-modify(@csv); # do whatever;
+my @csv = Text::CSV.parse-file($csvfile);
+# modify(@csv); # do whatever;
 csv-write-file( @csv, :file($csvfile) );
 ```

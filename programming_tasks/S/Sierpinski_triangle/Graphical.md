@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sierpinski_triangle/Graphical
+[1]: https://rosettacode.org/wiki/Sierpinski_triangle/Graphical
 
 # [Sierpinski triangle/Graphical][1]
 

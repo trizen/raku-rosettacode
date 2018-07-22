@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Arithmetic_evaluation
+[1]: https://rosettacode.org/wiki/Arithmetic_evaluation
 
 # [Arithmetic evaluation][1]
 
 ```perl
-sub ev (Str $s --> Num) {
+sub ev (Str $s --> Numeric) {
  
     grammar expr {
         token TOP { ^ <sum> $ }
@@ -40,12 +40,9 @@ sub ev (Str $s --> Num) {
     sum $/<sum>;
  
 }
-```
-
-
-Testing:
-
-```perl
+ 
+# Testing:
+ 
 say ev '5';                                    #   5
 say ev '1 + 2 - 3 * 4 / 5';                    #   0.6
 say ev '1 + 5*3.4 - .5  -4 / -2 * (3+4) -6';   #  25.5

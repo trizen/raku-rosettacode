@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Day_of_the_week
+[1]: https://rosettacode.org/wiki/Day_of_the_week
 
 # [Day of the week][1]
 

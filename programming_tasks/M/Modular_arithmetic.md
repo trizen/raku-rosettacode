@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Modular_arithmetic
+[1]: https://rosettacode.org/wiki/Modular_arithmetic
 
 # [Modular arithmetic][1]
 
-There is a Panda module called Modular which works basically as Perl 5's Math::ModInt.
+There is an ecosystem module called Modular which works basically as Perl 5's Math::ModInt.
 
 ```perl
 use Modular;

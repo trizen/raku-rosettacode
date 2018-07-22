@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/MAC_Vendor_Lookup
+[1]: https://rosettacode.org/wiki/MAC_Vendor_Lookup
 
 # [MAC Vendor Lookup][1]
+
+Apparently there is some rate limiting on place now, sleep a bit between requests.
 
 ```perl
 use HTTP::UserAgent;
@@ -13,7 +15,7 @@ my $server = 'http://api.macvendors.com/';
  
 sub lookup ($mac) {
     my $response = $ua.get: "$server+$mac";
- 
+    sleep 1;
     return $response.is-success ?? $response.content !! 'N/A';
  
     CATCH {             # Normally you would report some information about what
@@ -25,7 +27,7 @@ for <
 BC:5F:F4
 FC-A1-3E
 10:dd:b1
-00,0d,4b
+00:0d:4b
 23:45:67
 > -> $mac { say lookup $mac }
 ```

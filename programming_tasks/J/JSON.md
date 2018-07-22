@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/JSON
+[1]: https://rosettacode.org/wiki/JSON
 
 # [JSON][1]
 

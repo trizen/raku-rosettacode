@@ -1,20 +1,19 @@
-[1]: http://rosettacode.org/wiki/Stern-Brocot_sequence
+[1]: https://rosettacode.org/wiki/Stern-Brocot_sequence
 
 # [Stern-Brocot sequence][1]
 
 ```perl
-constant Stern-Brocot = flat
-    1, 1, -> *@a {
-        @a[$_ - 1] + @a[$_], @a[$_] given ++$;
-    } ... *;
+constant @Stern-Brocot = 1, 1, {
+    |(@_[$_ - 1] + @_[$_], @_[$_]) given ++$
+} ... *;
  
-say Stern-Brocot[^15];
+say @Stern-Brocot[^15];
  
-for 1 .. 10, 100 -> $ix {
-    say "first occurrence of $ix is at index : ", 1 + Stern-Brocot.first($ix, :k);
+for (flat 1..10, 100) -> $ix {
+    say "first occurrence of $ix is at index : ", 1 + @Stern-Brocot.first($ix, :k);
 }
  
-say so 1 == all map ^1000: { [gcd] Stern-Brocot[$_, $_ + 1] }
+say so 1 == all map ^1000: { [gcd] @Stern-Brocot[$_, $_ + 1] }
 ```
 
 #### Output:

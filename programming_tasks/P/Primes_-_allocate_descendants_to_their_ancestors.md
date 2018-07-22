@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors
+[1]: https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors
 
 # [Primes - allocate descendants to their ancestors][1]
 
@@ -7,11 +7,11 @@ my $max = 99;
 my @primes = (2 .. $max).grep: *.is-prime;
 my %tree;
  
-sub insert ($n, $i = 0, $sum = 0, $prod = 1) {
+sub allocate ($n, $i = 0, $sum = 0, $prod = 1) {
     for @primes.kv -> $k, $p {
         next if $k < $i;
         if ($sum + $p) <= $max {
-            insert($n, $k, $sum + $p, $prod * $p);
+            allocate($n, $k, $sum + $p, $prod * $p);
         } else {
             last if $sum == $prod;
             %tree{$sum}<descendants>{$prod} = 1;
@@ -23,19 +23,23 @@ sub insert ($n, $i = 0, $sum = 0, $prod = 1) {
 }
  
 sub abbrev (@d) { # abbreviate long lists to first and last 5 elements
-    return @d if @d.elems < 11;
+    return @d if @d < 11;
     @d[0 .. 4], '...', @d[*-5 .. *-1];
 }
  
-.&insert for 1 .. $max;
+.&allocate for 1 .. $max;
  
-my $total = [+] (1..$max).map({ %tree{$_}<descendants>.keys.elems });
+my $total = [+] (1..$max).map({ %tree{$_}<descendants>.keys });
  
 for flat 1 .. 15, 46, 99 { # print some representative lines
-    printf "%2d, %2d Ancestors: %-15s", $_, %tree{$_}<ancestor>.elems,
+    printf "%2d, %2d Ancestors: %-15s", $_, %tree{$_}<ancestor>,
         "[{ %tree{$_}<ancestor>.keys.sort: +* }],";
-    printf "%4d Descendants: %s\n", %tree{$_}<descendants>.keys.elems,
-        "[{ abbrev(%tree{$_}<descendants>.keys.sort: +*) }]";
+    my $dn = 0; my $dl = '';
+    if (%tree{$_}<descendants> !eqv Any) {
+        $dn = %tree{$_}<descendants>.keys;
+        $dl = abbrev(%tree{$_}<descendants>.keys.sort: +*);
+    }
+    printf "%4d Descendants: %s", $dn, "[$dl]\n";
 }
  
 say "Total descendants: $total";

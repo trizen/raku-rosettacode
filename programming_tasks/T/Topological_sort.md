@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Topological_sort
+[1]: https://rosettacode.org/wiki/Topological_sort
 
 # [Topological sort][1]
 

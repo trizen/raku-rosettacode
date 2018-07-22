@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sattolo_cycle
+[1]: https://rosettacode.org/wiki/Sattolo_cycle
 
 # [Sattolo cycle][1]
 

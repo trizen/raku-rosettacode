@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/RSA_code
+[1]: https://rosettacode.org/wiki/RSA_code
 
 # [RSA code][1]
 

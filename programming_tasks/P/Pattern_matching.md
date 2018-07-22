@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pattern_matching
+[1]: https://rosettacode.org/wiki/Pattern_matching
 
 # [Pattern matching][1]
 
@@ -22,13 +22,13 @@ multi ins( $x, @s [$col, $a, $y, $b] ) {
 multi ins( $x, Any:U ) { [R, Any, $x, Any] }
  
 multi insert( $x, $s ) {
-    [B, ins($x,$s)[1..3]];
+    [B, |ins($x,$s)[1..3]];
 }
  
 sub MAIN {
     my $t = Any;
     $t = insert($_, $t) for (1..10).pick(*);
-    say $t.perl;
+    say $t.gist;
 }
 ```
 
@@ -38,5 +38,5 @@ This code uses generic comparison operators `before` and `after`, so it should w
 
 #### Output:
 ```
-[RedBlack::B, [RedBlack::R, [RedBlack::B, [RedBlack::R, Any, 1, Any], 2, Any], 3, [RedBlack::B, Any, 4, [RedBlack::R, Any, 5, Any]]], 6, [RedBlack::R, [RedBlack::B, Any, 7, Any], 8, [RedBlack::B, Any, 9, [RedBlack::R, Any, 10, Any]]]]
+[B [B [B (Any) 1 [R (Any) 2 (Any)]] 3 [B (Any) 4 [R (Any) 5 (Any)]]] 6 [B [B (Any) 7 (Any)] 8 [B [R (Any) 9 (Any)] 10 (Any)]]]
 ```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Integer_sequence
+[1]: https://rosettacode.org/wiki/Integer_sequence
 
 # [Integer sequence][1]
 

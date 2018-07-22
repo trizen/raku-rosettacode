@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Program_termination
+[1]: https://rosettacode.org/wiki/Program_termination
 
 # [Program termination][1]
 

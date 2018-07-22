@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Execute_SNUSP
+[1]: https://rosettacode.org/wiki/Execute_SNUSP
 
 # [Execute SNUSP][1]
 

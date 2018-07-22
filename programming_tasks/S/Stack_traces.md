@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Stack_traces
+[1]: https://rosettacode.org/wiki/Stack_traces
 
 # [Stack traces][1]
 

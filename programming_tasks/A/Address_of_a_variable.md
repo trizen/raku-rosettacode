@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Address_of_a_variable
+[1]: https://rosettacode.org/wiki/Address_of_a_variable
 
 # [Address of a variable][1]
 

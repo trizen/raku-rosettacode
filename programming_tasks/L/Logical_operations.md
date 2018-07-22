@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Logical_operations
+[1]: https://rosettacode.org/wiki/Logical_operations
 
 # [Logical operations][1]
 
@@ -40,11 +40,11 @@ logic(3,10);
 ```
 3 && 10 is 10
 3 || 10 is 3
-3 ^^ 10 is 
-!3 is 0
-3 ?& 10 is 1
-3 ?| 10 is 1
-3 ?^ 10 is 0
+3 ^^ 10 is Nil
+!3 is False
+3 ?& 10 is True
+3 ?| 10 is True
+3 ?^ 10 is False
 3 +& 10 is 2
 3 +| 10 is 11
 3 +^ 10 is 9
@@ -56,6 +56,6 @@ logic(3,10);
 3 ^ 10 is one(3, 10)
 3 and 10 is 10
 3 or 10 is 3
-3 xor 10 is 
-not 3 is 0
+3 xor 10 is Nil
+not 3 is False
 ```

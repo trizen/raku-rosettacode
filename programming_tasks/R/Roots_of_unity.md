@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Roots_of_unity
+[1]: https://rosettacode.org/wiki/Roots_of_unity
 
 # [Roots of unity][1]
 

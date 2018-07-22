@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Display_an_extended_character
+[1]: https://rosettacode.org/wiki/Terminal_control/Display_an_extended_character
 
 # [Terminal control/Display an extended character][1]
 

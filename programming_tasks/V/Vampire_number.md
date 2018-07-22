@@ -1,13 +1,24 @@
-[1]: http://rosettacode.org/wiki/Vampire_number
+[1]: https://rosettacode.org/wiki/Vampire_number
 
 # [Vampire number][1]
 
 ```perl
-my @vampires := gather for 1 .. * -> $start, $end {
-    map {
-        my @fangs = is_vampire($_);
-        take "$_: { @fangs.join(', ') }" if @fangs.elems
-    }, 10 ** $start .. 10 ** $end
+sub is_vampire (Int $num) {
+    my $digits = $num.comb.sort;
+    my @fangs;
+    for vfactors($num) -> $this {
+        my $that = $num div $this;
+        @fangs.push("$this x $that") if 
+            !($this %% 10 && $that %% 10) and 
+            ($this ~ $that).comb.sort eq $digits; 
+    }
+    return @fangs;
+}
+ 
+constant @vampires = gather for 1 .. * -> $n {
+    next if $n.log(10).floor %% 2;
+    my @fangs = is_vampire($n);
+    take "$n: { @fangs.join(', ') }" if @fangs.elems;
 }
  
 say "\nFirst 25 Vampire Numbers:\n";
@@ -24,18 +35,6 @@ for 16758243290880, 24959017348650, 14593825548650 {
     } else {
          say 'is not a vampire number.';
     }
-}
- 
-sub is_vampire (Int $num) {
-    my $digits = $num.comb.sort;
-    my @fangs;
-    for vfactors($num) -> $this {
-        my $that = $num div $this;
-        @fangs.push("$this x $that") if 
-            !($this %% 10 && $that %% 10) and 
-            ($this ~ $that).comb.sort eq $digits; 
-    }
-    return @fangs;
 }
  
 sub vfactors (Int $n) {

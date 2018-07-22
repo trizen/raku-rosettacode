@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Snake
+[1]: https://rosettacode.org/wiki/Snake
 
 # [Snake][1]
 
@@ -77,7 +77,6 @@ SDL_SetRenderDrawBlendMode($render, 1);
 my $snakepiece_srcrect = SDL_Rect.new(:w(64), :h(64));
 my $nompiece_srcrect   = SDL_Rect.new(:w(64), :h(64), :x(64));
  
-my $start = now;
 my $event = SDL_Event.new;
  
 enum GAME_KEYS (

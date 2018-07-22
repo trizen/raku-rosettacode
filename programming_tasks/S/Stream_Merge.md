@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Stream_Merge
+[1]: https://rosettacode.org/wiki/Stream_Merge
 
 # [Stream Merge][1]
 
@@ -10,7 +10,7 @@ sub merge_streams ( @streams ) {
     return gather while @s {
         my $h = @s.min: *.<HEAD>;
         take $h<HEAD>;
-        $h<HEAD> = $h<STREAM>.get
+        $h<HEAD> := $h<STREAM>.get
             orelse @s .= grep( { $_ !=== $h } );
     }
 }

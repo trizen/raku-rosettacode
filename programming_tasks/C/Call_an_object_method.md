@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/Call_an_object_method
+[1]: https://rosettacode.org/wiki/Call_an_object_method
 
 # [Call an object method][1]
+
+### Basic method calls
 
 ```perl
 class Thing { 
@@ -33,6 +35,10 @@ multi-example $thing: 42;
 ```
 
 
+### Meta-operators
+
+
+
 The `.` operator can be decorated with meta-operators.
 
 ```perl
@@ -45,7 +51,11 @@ say @array».uc;  # uppercase all the strings: A C D Y Z
 ```
 
 
-A method that is not in a class can be called by using the `&amp;` sigil explicitly.
+### Classless methods
+
+
+
+A method that is not in a class can be called by using the `&` sigil explicitly.
 
 ```perl
  

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Roman_numerals/Encode
+[1]: https://rosettacode.org/wiki/Roman_numerals/Encode
 
 # [Roman numerals/Encode][1]
 
@@ -19,8 +19,9 @@ multi sub roman (Int $n) {
             and return %symbols{$minus} ~ roman($n + $minus);
      }
 }
-```
-```perl
+ 
+# Sample usage
+ 
 for 1 .. 2_010 -> $x {
     say roman($x);
 }

@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Handle_a_signal
+[1]: https://rosettacode.org/wiki/Handle_a_signal
 
 # [Handle a signal][1]
 
 We note with glee that the task does not require us to print <em>consecutive</em> integers, so we'll print Fibonacci numbers instead. `:-)`
 
 ```perl
-signal(Signal::SIGINT).tap: {
+signal(SIGINT).tap: {
     note "Took { now - INIT now } seconds.";
     exit;
 }

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Gamma_function
+[1]: https://rosettacode.org/wiki/Gamma_function
 
 # [Gamma function][1]
 

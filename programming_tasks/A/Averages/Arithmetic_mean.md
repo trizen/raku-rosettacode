@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Averages/Arithmetic_mean
+[1]: https://rosettacode.org/wiki/Averages/Arithmetic_mean
 
 # [Averages/Arithmetic mean][1]
 

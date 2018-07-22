@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Count_in_factors
+[1]: https://rosettacode.org/wiki/Count_in_factors
 
 # [Count in factors][1]
 
@@ -63,7 +63,7 @@ Note also the '×' above is not ASCII 'x', but U+00D7 MULTIPLICATION SIGN. Perl&
 
 
 
-Here is a solution inspired from [Almost_prime#C](http://rosettacode.org/wiki/Almost_prime#C). It doesn't use &amp;is-prime.
+Here is a solution inspired from [Almost_prime#C](https://rosettacode.org/wiki/Almost_prime#C). It doesn't use &amp;is-prime.
 
 ```perl
 sub factor($n is copy) {

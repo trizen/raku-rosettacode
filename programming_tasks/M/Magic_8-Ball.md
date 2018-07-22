@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Magic_8-Ball
+[1]: https://rosettacode.org/wiki/Magic_8-Ball
 
 # [Magic 8-Ball][1]
 

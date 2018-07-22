@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Munchausen_numbers
+[1]: https://rosettacode.org/wiki/Munchausen_numbers
 
 # [Munchausen numbers][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Array_concatenation
+[1]: https://rosettacode.org/wiki/Array_concatenation
 
 # [Array concatenation][1]
 

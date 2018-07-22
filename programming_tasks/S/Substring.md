@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Substring
+[1]: https://rosettacode.org/wiki/Substring
 
 # [Substring][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Environment_variables
+[1]: https://rosettacode.org/wiki/Environment_variables
 
 # [Environment variables][1]
 

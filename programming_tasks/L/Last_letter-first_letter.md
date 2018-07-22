@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Last_letter-first_letter
+[1]: https://rosettacode.org/wiki/Last_letter-first_letter
 
 # [Last letter-first letter][1]
 

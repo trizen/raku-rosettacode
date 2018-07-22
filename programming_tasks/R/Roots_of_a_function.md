@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Roots_of_a_function
+[1]: https://rosettacode.org/wiki/Roots_of_a_function
 
 # [Roots of a function][1]
 
 Uses exact arithmetic.
 
 ```perl
-sub f($x) { $x*$x*$x - 3*$x*$x + 2*$x }
+sub f(\x) { x³ - 3*x² + 2*x }
  
 my $start = -1;
 my $stop = 3;

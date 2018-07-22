@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Naming_conventions
+[1]: https://rosettacode.org/wiki/Naming_conventions
 
 # [Naming conventions][1]
 
-Perl 6 is written in Unicode, and has consistent Unicode semantics regardless of the underlying text representations. By default Perl 6 presents Unicode in "NFG" formation, where each grapheme counts as one character. A grapheme is what the novice user would think of as a character in their normal everyday life, including any diacritics.
+Perl 6 is written in Unicode, and has consistent Unicode semantics regardless of the underlying text representations. By default Perl 6 presents Unicode in "NFG" formation, where each grapheme counts as one character. A grapheme is what the user would think of as a character in their normal everyday life, including any diacritics.
 
 
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sort_an_integer_array
+[1]: https://rosettacode.org/wiki/Sort_an_integer_array
 
 # [Sort an integer array][1]
 

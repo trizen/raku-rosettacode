@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Respond_to_an_unknown_method_call
+[1]: https://rosettacode.org/wiki/Respond_to_an_unknown_method_call
 
 # [Respond to an unknown method call][1]
 

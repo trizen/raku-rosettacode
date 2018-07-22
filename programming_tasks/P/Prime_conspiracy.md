@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Prime_conspiracy
+[1]: https://rosettacode.org/wiki/Prime_conspiracy
 
 # [Prime conspiracy][1]
 

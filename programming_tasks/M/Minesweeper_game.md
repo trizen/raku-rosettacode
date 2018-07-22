@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Minesweeper_game
+[1]: https://rosettacode.org/wiki/Minesweeper_game
 
 # [Minesweeper game][1]
 

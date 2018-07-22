@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Read_a_configuration_file
+[1]: https://rosettacode.org/wiki/Read_a_configuration_file
 
 # [Read a configuration file][1]
 
-This demonstrates several interesting features of Perl 6, including full grammar support, derived grammars, alternation split across derivations, and longest-token matching that works across derivations. It also shows off Perl 6's greatly cleaned up regex syntax.
+This demonstrates several interesting features of Perl 6, including full grammar support, derived grammars, alternation split across derivations, and longest-token matching that works across derivations. It also shows off Perl 6's greatly cleaned up regex syntax.
 
 ```perl
 my $fullname;
@@ -24,20 +24,20 @@ grammar ConfFile {
 	[ \n || { die "Parse failed at line $*linenum" } ]
     }
  
-    proto token line() {{*}}
+    proto token line() {*}
  
     token line:misc  { {} (\S+) { die "Unrecognized word: $0" } }
  
     token line:sym<comment> { ^^ [ ';' | '#' ] \N* }
     token line:sym<blank>   { ^^ \h* $$ }
  
-    token line:sym<fullname>       {:i fullname»       <rest> { $fullname = $<rest>[0].trim } }
-    token line:sym<favouritefruit> {:i favouritefruit» <rest> { $favouritefruit = $<rest>[0].trim } }
-    token line:sym<needspeeling>   {:i needspeeling»    <yes> { $needspeeling = defined $<yes>[0] } }
+    token line:sym<fullname>       {:i fullname»       <rest> { $fullname = $<rest>.trim } }
+    token line:sym<favouritefruit> {:i favouritefruit» <rest> { $favouritefruit = $<rest>.trim } }
+    token line:sym<needspeeling>   {:i needspeeling»    <yes> { $needspeeling = defined $<yes> } }
     token rest { \h* '='? (\N*) }
     token yes { :i \h* '='? \h*
     	[
-	    || ([yes|true|1]) 
+	    || ([yes|true|1])
 	    || [no|false|0] 
 	    || (<?>)
 	] \h*
@@ -45,25 +45,23 @@ grammar ConfFile {
 }
  
 grammar MyConfFile is ConfFile {
-    token line:sym<otherfamily>    {:i otherfamily»    <many> { @otherfamily = $<many>[0]».trim} }
-    token many { \h*'='? ([ <![,]> \N ]*) ** ',' }
+    token line:sym<otherfamily>    {:i otherfamily»    <rest> { @otherfamily = $<rest>.split(',')».trim } }
 }
  
 MyConfFile.parsefile('file.cfg');
  
-.perl.say for
-    :$fullname,
-    :$favouritefruit,
-    :$needspeeling,
-    :$seedsremoved,
-    :@otherfamily;
+say "fullname: $fullname";
+say "favouritefruit: $favouritefruit";
+say "needspeeling: $needspeeling";
+say "seedsremoved: $seedsremoved";
+print "otherfamily: "; say @otherfamily.perl;
 ```
 
 #### Output:
 ```
-"fullname" => "Foo Barber"
-"favouritefruit" => "banana"
-"needspeeling" => Bool::True
-"seedsremoved" => Bool::False
-"otherfamily" => ["Rhu Barber", "Harry Barber"]
+fullname: Foo Barber
+favouritefruit: banana
+needspeeling: True
+seedsremoved: False
+otherfamily: ["Rhu Barber", "Harry Barber"]
 ```

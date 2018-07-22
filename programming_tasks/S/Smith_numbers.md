@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Smith_numbers
+[1]: https://rosettacode.org/wiki/Smith_numbers
 
 # [Smith numbers][1]
 

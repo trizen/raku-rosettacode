@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parsing/RPN_to_infix_conversion
+[1]: https://rosettacode.org/wiki/Parsing/RPN_to_infix_conversion
 
 # [Parsing/RPN to infix conversion][1]
 

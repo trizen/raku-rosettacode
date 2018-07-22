@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Table_creation
+[1]: https://rosettacode.org/wiki/Table_creation
 
 # [Table creation][1]
 

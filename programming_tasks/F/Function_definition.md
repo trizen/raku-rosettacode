@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Function_definition
+[1]: https://rosettacode.org/wiki/Function_definition
 
 # [Function definition][1]
 
@@ -27,7 +27,6 @@ sub multiply (Rat $a, Rat $b --> Rat) { $a * $b }
 Same thing:
 
 ```perl
-sub multiply (Rat $a, Rat $b) returns Rat { $a * $b }
 my Rat sub multiply (Rat $a, Rat $b) { $a * $b }
 ```
 
@@ -69,5 +68,5 @@ curry a cascade of methods with only the original invocant missing:
 This is equivalent to:
 
 ```perl
-@list.grep( -> $obj { $obj.substr(0,1).lc.match(/<[0..9 a..f]>/) )
+@list.grep( -> $obj { $obj.substr(0,1).lc.match(/<[0..9 a..f]>/) } )
 ```

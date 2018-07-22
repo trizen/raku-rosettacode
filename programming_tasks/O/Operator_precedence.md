@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Operator_precedence
+[1]: https://rosettacode.org/wiki/Operator_precedence
 
 # [Operator precedence][1]
 

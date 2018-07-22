@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Convex_hull
+[1]: https://rosettacode.org/wiki/Convex_hull
 
 # [Convex hull][1]
 

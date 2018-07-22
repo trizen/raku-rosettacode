@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Population_count
+[1]: https://rosettacode.org/wiki/Population_count
 
 # [Population count][1]
 

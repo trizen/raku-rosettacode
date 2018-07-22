@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/File_modification_time
+[1]: https://rosettacode.org/wiki/File_modification_time
 
 # [File modification time][1]
 
@@ -11,11 +11,11 @@ class utimbuf is repr('CStruct') {
  
     submethod BUILD(:$atime, :$mtime) {
         $!actime = $atime;
-        $!modtime = $mtime;
+        $!modtime = $mtime.to-posix[0].round;
     }
 }
  
-sub sysutime(Str, utimbuf --> int) is native is symbol('utime') {*}
+sub sysutime(Str, utimbuf --> int32) is native is symbol('utime') {*}
  
 sub MAIN (Str $file) {
     my $mtime = $file.IO.modified // die "Can't stat $file: $!";

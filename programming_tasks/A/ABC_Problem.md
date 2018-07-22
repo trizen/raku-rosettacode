@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/ABC_Problem
+[1]: https://rosettacode.org/wiki/ABC_Problem
 
 # [ABC Problem][1]
 
-Blocks are stored as precompiled regexes. We do an initial pass on the blockset to include in the list only those regexes that match somewhere in the current word.  Conveniently, regexes scan the word for us.
+Blocks are stored as precompiled regexes. We do an initial pass on the blockset to include in the list only those regexes that match somewhere in the current word. Conveniently, regexes scan the word for us.
 
 ```perl
 multi can-spell-word(Str $word, @blocks) {

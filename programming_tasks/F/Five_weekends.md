@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Five_weekends
+[1]: https://rosettacode.org/wiki/Five_weekends
 
 # [Five weekends][1]
 

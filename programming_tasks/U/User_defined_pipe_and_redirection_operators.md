@@ -1,12 +1,12 @@
-[1]: http://rosettacode.org/wiki/User_defined_pipe_and_redirection_operators
+[1]: https://rosettacode.org/wiki/User_defined_pipe_and_redirection_operators
 
 # [User defined pipe and redirection operators][1]
 
-Implementing cat, redirect(&lt;), head, tail and tee. I share the same general lack of enthusiasm as the Perl example author to implement other the shell ops. Many of the ops already exist in some form in Perl 6, though they may have slightly different syntax and precedence as the shell ops. I didn't bother implementing pipe (|) as Perl 6 pretty much has chaining semantics built in.
+Implementing cat, redirect(&lt;), head, tail and tee. I share the same general lack of enthusiasm as the Perl example author to implement the other shell ops. Many of the ops already exist in some form in Perl 6, though they may have slightly different syntax and precedence as the shell ops. I didn't bother implementing pipe (|) as Perl 6 pretty much has chaining semantics built in.
 
 
 
-The less than '&lt;' operator is pretty low level in Perl 6 and would be troublesome to override, so is implemented as 'redirect'. The sort and unique directives don't really have any effect on the final result string, it would be the same without them, but it is following the task example.
+The less than '&lt;' operator is very low level in Perl 6 and would be troublesome to override, so is implemented as 'redirect'. The sort and unique directives don't really have any effect on the final result string, it would be the same without them, but it is following the task example.
 
 
 

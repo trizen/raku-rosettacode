@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Set_puzzle
+[1]: https://rosettacode.org/wiki/Set_puzzle
 
 # [Set puzzle][1]
 
@@ -10,10 +10,10 @@ enum Count (one =>  0o100, two =>     0o200, three =>   0o400);
 enum Shape (oval =>  0o10, squiggle => 0o20, diamond =>  0o40);
 enum Style (solid =>  0o1, open =>      0o2, striped =>   0o4);
  
-my @deck := (Color.enums X Count.enums X Shape.enums X Style.enums).tree;
+my @deck = Color.enums X Count.enums X Shape.enums X Style.enums;
  
 sub MAIN($DRAW = 9, $GOAL = $DRAW div 2) {
-    sub show-cards(@c) { printf "    %-6s %-5s %-8s %s\n", $_».key for @c }
+    sub show-cards(@c) { { printf "%9s%7s%10s%9s\n", @c[$_;*]».key } for ^@c }
  
     my @combinations = [^$DRAW].combinations(3);
  
@@ -38,33 +38,33 @@ sub MAIN($DRAW = 9, $GOAL = $DRAW div 2) {
 #### Output:
 ```
 Drew 9 cards:
-    red    two   diamond  striped
-    purple one   squiggle solid
-    purple three squiggle solid
-    red    two   squiggle striped
-    red    two   oval     striped
-    green  one   diamond  open
-    red    three diamond  solid
-    green  three squiggle open
-    purple two   diamond  striped
+   purple    two   diamond     open
+      red    two  squiggle  striped
+   purple  three  squiggle     open
+   purple    two  squiggle  striped
+      red  three      oval  striped
+      red    one   diamond  striped
+   purple    two      oval    solid
+    green  three   diamond    solid
+      red    two  squiggle     open
 
 Set 1:
-    red    two   diamond  striped
-    red    two   squiggle striped
-    red    two   oval     striped
+   purple    two   diamond     open
+   purple    two  squiggle  striped
+   purple    two      oval    solid
 
 Set 2:
-    purple one   squiggle solid
-    red    two   squiggle striped
-    green  three squiggle open
+   purple    two   diamond     open
+      red    one   diamond  striped
+    green  three   diamond    solid
 
 Set 3:
-    purple three squiggle solid
-    red    two   oval     striped
-    green  one   diamond  open
+      red    two  squiggle  striped
+      red  three      oval  striped
+      red    one   diamond  striped
 
 Set 4:
-    green  one   diamond  open
-    red    three diamond  solid
-    purple two   diamond  striped
+   purple  three  squiggle     open
+      red  three      oval  striped
+    green  three   diamond    solid
 ```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Numeric_error_propagation
+[1]: https://rosettacode.org/wiki/Numeric_error_propagation
 
 # [Numeric error propagation][1]
 
@@ -24,7 +24,7 @@ multi approx($x) { Approx.new: :$x, :c[0 xx +@INDEP] }
 # Each ± gets its own source slot.
 multi infix:<±>($a, $b) {
     .push: 0 for @INDEP; # lengthen older component lists
-    my $c = [ 0 xx @INDEP, $b ];
+    my $c = [ flat 0 xx @INDEP, $b ];
     @INDEP.push: $c;	 # add new component list
  
     approx $a, $c;

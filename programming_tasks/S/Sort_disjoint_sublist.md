@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Sort_disjoint_sublist
+[1]: https://rosettacode.org/wiki/Sort_disjoint_sublist
 
 # [Sort disjoint sublist][1]
+
+### Inline
+
+
 
 Using L-value slice of the array, and \`sort\` as a mutating method:
 
@@ -17,8 +21,12 @@ my @indices = 6, 1, 7;
 ```
 [7, 0, 5, 4, 3, 2, 1, 6]
 ```
+
+
+### Iterative
+
 ```perl
-sub disjointSort( @values is rw , @indices is rw --> List ) {
+sub disjointSort( @values, @indices --> List ) {
    my @sortedValues = @values[ @indices ].sort ;
    for @indices.sort -> $insert {
       @values[ $insert ] = @sortedValues.shift ;

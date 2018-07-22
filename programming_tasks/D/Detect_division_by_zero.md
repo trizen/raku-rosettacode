@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Detect_division_by_zero
+[1]: https://rosettacode.org/wiki/Detect_division_by_zero
 
 # [Detect division by zero][1]
 
@@ -19,6 +19,10 @@ say div(1,0); # Inf, 1/0 constants are substituted for Infinity
 say div(1, sin(0)); # undef, and prints "tried to divide by zero"
  
 ```
+
+
+### Using Multi Method Dispatch
+
 ```perl
 multi div($a, $b){ return $a / $b }
 multi div($a, $b where { $b == 0 }){ 

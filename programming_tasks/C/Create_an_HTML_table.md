@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Create_an_HTML_table
+[1]: https://rosettacode.org/wiki/Create_an_HTML_table
 
 # [Create an HTML table][1]
 

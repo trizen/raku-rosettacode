@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Polymorphic_copy
+[1]: https://rosettacode.org/wiki/Polymorphic_copy
 
 # [Polymorphic copy][1]
 

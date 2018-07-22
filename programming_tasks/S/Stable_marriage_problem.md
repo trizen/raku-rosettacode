@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Stable_marriage_problem
+[1]: https://rosettacode.org/wiki/Stable_marriage_problem
 
 # [Stable marriage problem][1]
 
@@ -28,9 +28,6 @@ my %she-likes =
     ivy  => < ian col hal gav fred bob abe ed jon dan >,
     jan  => < ed hal gav abe bob jon col ian fred dan >,
 ;
- 
-my \guys = %he-likes.keys;
-my \gals = %she-likes.keys;
  
 my %fiancé;
 my %fiancée;
@@ -64,7 +61,7 @@ sub match'em {                                          #'
 }
  
 sub check-stability {
-    my @instabilities = gather for guys X gals -> $m, $w {
+    my @instabilities = gather for flat %he-likes.keys X %she-likes.keys -> $m, $w {
 	if he-prefers($m, $w) and she-prefers($w, $m) {
 	    take "\t$w prefers $m to %fiancé{$w} and $m prefers $w to %fiancée{$m}";
 	}
@@ -79,7 +76,7 @@ sub check-stability {
     }
 }
  
-sub unmatched-guy { guys.first: { not %fiancée{$_} } }
+sub unmatched-guy { %he-likes.keys.first: { not %fiancée{$_} } }
  
 sub preferred-choice($guy) { %he-likes{$guy}.first: { not %proposed{"$guy $_" } } }
  
@@ -99,26 +96,25 @@ sub perturb'em {                                            #'
 #### Output:
 ```
 Matchmaking:
-        abi and abe
         cath and bob
-        hope and col
         ivy and dan
+        abi and jon
+        hope and ian
         jan and ed
-        bea and fred
-        gay and gav
-        eve and hal
-        hope dumped col for ian
-        dee and col
-        abi dumped abe for jon
+        eve and abe
+        eve dumped abe for hal
         ivy dumped dan for abe
         fay and dan
+        gay and gav
+        bea and fred
+        dee and col
 Stablility:
         (all marriages stable)
 Perturb:
         engage abi with fred and bea with jon
 Stablility:
-        bea prefers fred to jon and fred prefers bea to abi
-        eve prefers jon to hal and jon prefers eve to bea
         fay prefers jon to dan and jon prefers fay to bea
+        eve prefers jon to hal and jon prefers eve to bea
         gay prefers jon to gav and jon prefers gay to bea
+        bea prefers fred to jon and fred prefers bea to abi
 ```

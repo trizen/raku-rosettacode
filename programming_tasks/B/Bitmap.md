@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bitmap
+[1]: https://rosettacode.org/wiki/Bitmap
 
 # [Bitmap][1]
 
@@ -15,7 +15,7 @@ class Bitmap {
 	$i where ^$!width,
 	$j where ^$!height
 	--> Pixel
-    ) is rw { @!data[$i*$!height + $j] }
+    ) is rw { @!data[$i + $j * $!width] }
  
     method set-pixel ($i, $j, Pixel $p) {
 	self.pixel($i, $j) = $p.clone;
@@ -35,4 +35,4 @@ say $b.perl;
 ```
 
 
-Thanks to the `rw` trait on the `pixel` method, we don't actually need to define two separate methods, `set-pixel` and `get-pixel`, but that is an explicit requirement of the task.  (Beware your presuppositions!  In Perl 6, accessors only determine identity, not use.  In particular, identity is considered orthogonal to lvalue/rvalue context.)
+Thanks to the `rw` trait on the `pixel` method, we don't actually need to define two separate methods, `set-pixel` and `get-pixel`, but that is an explicit requirement of the task. (Beware your presuppositions! In Perl 6, accessors only determine identity, not use. In particular, identity is considered orthogonal to lvalue/rvalue context.)

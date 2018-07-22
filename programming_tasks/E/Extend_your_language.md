@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Extend_your_language
+[1]: https://rosettacode.org/wiki/Extend_your_language
 
 # [Extend your language][1]
 
@@ -11,10 +11,10 @@ This solution is hygienic in both lexical and dynamic variables; the only caveat
 ```perl
 my &if2  = -> \a, \b, &x { my @*IF2 = ?a,?b; x }
  
-my &if-both    = -> &x { x if @*IF2 ~~ (True,True)  }
-my &if-first   = -> &x { x if @*IF2 ~~ (True,False) }
-my &if-second  = -> &x { x if @*IF2 ~~ (False,True) }
-my &if-neither = -> &x { x if @*IF2 ~~ (False,False)}
+my &if-both    = -> &x { x if @*IF2 eq (True,True)  }
+my &if-first   = -> &x { x if @*IF2 eq (True,False) }
+my &if-second  = -> &x { x if @*IF2 eq (False,True) }
+my &if-neither = -> &x { x if @*IF2 eq (False,False)}
  
 sub test ($a,$b) {
     $_ = "G";          # Demo correct scoping of topic.
@@ -29,10 +29,7 @@ sub test ($a,$b) {
     }
 }
  
-test 1,1;
-test 1,0;
-test 0,1;
-test 0,0;
+say test |$_ for 1,0 X 1,0;
 ```
 
 #### Output:

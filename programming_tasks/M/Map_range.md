@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Map_range
+[1]: https://rosettacode.org/wiki/Map_range
 
 # [Map range][1]
 

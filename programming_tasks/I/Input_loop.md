@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Input_loop
+[1]: https://rosettacode.org/wiki/Input_loop
 
 # [Input loop][1]
 
@@ -19,12 +19,12 @@ for $*IN.lines -> $line {
 }
 ```
 ```perl
-for pipe("find -iname '*.txt'").lines -> $filename {
+for run(«find -iname *.txt», :out).out.lines -> $filename {
     ...
 }
 ```
 ```perl
-for pipe("find -iname '*.txt' -print0", :nl«\0»).lines -> $filename {
+for run(«find -iname *.txt -print0», :nl«\0», :out).out.lines -> $filename {
     ...
 }
 ```

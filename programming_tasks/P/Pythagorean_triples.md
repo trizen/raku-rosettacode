@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pythagorean_triples
+[1]: https://rosettacode.org/wiki/Pythagorean_triples
 
 # [Pythagorean triples][1]
 

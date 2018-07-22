@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_common_directory_path
+[1]: https://rosettacode.org/wiki/Find_common_directory_path
 
 # [Find common directory path][1]
 
@@ -39,7 +39,7 @@ my @dirs := </home/user1/tmp/coverage/test
              /home/user1/tmp/covert/operator
              /home/user1/tmp/coven/members>;
  
-my @comps := @dirs.map: { [ .comb(/ $sep [ <!before $sep> . ]* /) ] };
+my @comps = @dirs.map: { [ .comb(/ $sep [ <!before $sep> . ]* /) ] };
  
 say "The longest common path is ",
     gather for 0..* -> $column {

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Singly-linked_list/Traversal
+[1]: https://rosettacode.org/wiki/Singly-linked_list/Traversal
 
 # [Singly-linked list/Traversal][1]
 
@@ -37,7 +37,7 @@ Note how the `[=>]` reduction is also right associative,
 just like the base operator.)
 
 ```perl
-use MONKEY_TYPING;
+use MONKEY-TYPING;
 augment class Pair {
     method traverse () {
         gather loop (my $l = self; $l; $l.=value) {

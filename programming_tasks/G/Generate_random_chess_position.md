@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Generate_random_chess_position
+[1]: https://rosettacode.org/wiki/Generate_random_chess_position
 
 # [Generate random chess position][1]
 

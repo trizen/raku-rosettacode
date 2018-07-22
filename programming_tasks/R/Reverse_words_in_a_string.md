@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Reverse_words_in_a_string
+[1]: https://rosettacode.org/wiki/Reverse_words_in_a_string
 
 # [Reverse words in a string][1]
 

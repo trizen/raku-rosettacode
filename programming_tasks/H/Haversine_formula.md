@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Haversine_formula
+[1]: https://rosettacode.org/wiki/Haversine_formula
 
 # [Haversine formula][1]
 

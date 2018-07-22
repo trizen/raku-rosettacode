@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Draw_a_clock
+[1]: https://rosettacode.org/wiki/Draw_a_clock
 
 # [Draw a clock][1]
 

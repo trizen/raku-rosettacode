@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Reverse_a_string
+[1]: https://rosettacode.org/wiki/Reverse_a_string
 
 # [Reverse a string][1]
 

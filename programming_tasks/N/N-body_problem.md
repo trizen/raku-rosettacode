@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/N-body_problem
+[1]: https://rosettacode.org/wiki/N-body_problem
 
 # [N-body problem][1]
 
@@ -6,11 +6,11 @@ We'll try to simulate the Sun+Earth+Moon system, with plausible astronomical val
 
 
 
-We use a 18-dimension vector ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=902fbdd2b1df0c4f70b4a5d23525e932&mode=mathml).  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
+We use a 18-dimension vector ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=902fbdd2b1df0c4f70b4a5d23525e932&mode=mathml). The first nine dimensions are the positions of the three bodies. The other nine are the velocities. This allows us to write the dynamics as a first-temporal derivative equation, since
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a739273ab8fe4ada672cd16c895bbaca&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a739273ab8fe4ada672cd16c895bbaca&mode=mathml)
 
 
 
@@ -18,7 +18,11 @@ and thus
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=44998049241a1d4d8eb8a8e6344b7c5b&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=44998049241a1d4d8eb8a8e6344b7c5b&mode=mathml)
+
+
+
+To keep things compact, we'll only display the first 20 lines of output.
 
 ```perl
 # Simple Vector implementation
@@ -81,8 +85,8 @@ loop (
         0, 2*pi*au/year, 0,                      # Earth speed
         0, 2*pi*(au/year + 0.002*au/month), 0    # Moon speed
     ;
-    $t < 1;
-    $t, @ABC Z[+=] .01, dABC($t, @ABC, .01)
+    $t < .2;
+    ($t, @ABC) »+=« (.01, dABC($t, @ABC, .01))
 ) {
     printf "t = %.02f : %s\n", $t, @ABC.fmt("%+.3e");
 }

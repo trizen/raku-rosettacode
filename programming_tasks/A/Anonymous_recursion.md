@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Anonymous_recursion
+[1]: https://rosettacode.org/wiki/Anonymous_recursion
 
 # [Anonymous recursion][1]
 
-In addition to the methods in the [Perl](http://rosettacode.org/wiki/Perl) entry above, and the Y-combinator described in [Y_combinator](http://rosettacode.org/wiki/Y_combinator), you may also refer to an anonymous block or function from the inside:
+In addition to the methods in the [Perl](https://rosettacode.org/wiki/Perl) entry above, and the Y-combinator described in [Y_combinator](https://rosettacode.org/wiki/Y_combinator), you may also refer to an anonymous block or function from the inside:
 
 ```perl
 sub fib($n) {

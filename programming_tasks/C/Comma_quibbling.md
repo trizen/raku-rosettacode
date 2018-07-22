@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Comma_quibbling
+[1]: https://rosettacode.org/wiki/Comma_quibbling
 
 # [Comma quibbling][1]
 

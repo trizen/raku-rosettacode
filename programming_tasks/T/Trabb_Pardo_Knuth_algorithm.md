@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Trabb_Pardo–Knuth_algorithm
+[1]: https://rosettacode.org/wiki/Trabb_Pardo–Knuth_algorithm
 
 # [Trabb Pardo–Knuth algorithm][1]
 

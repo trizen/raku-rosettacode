@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Starting_a_web_browser
+[1]: https://rosettacode.org/wiki/Starting_a_web_browser
 
 # [Starting a web browser][1]
 
-Uses the code from the [Separate the house number from the street name](http://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name) task almost verbatim. Included here to make a complete, runnable example.
+Uses the code from the [Separate the house number from the street name](https://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name) task almost verbatim. Included here to make a complete, runnable example.
 
 ```perl
 use File::Temp;

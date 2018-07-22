@@ -1,10 +1,8 @@
-[1]: http://rosettacode.org/wiki/Statistics/Normal_distribution
+[1]: https://rosettacode.org/wiki/Statistics/Normal_distribution
 
 # [Statistics/Normal distribution][1]
 
 ```perl
-constant τ = 2 * pi;
- 
 sub normdist ($m, $σ) {
     my $r = sqrt -2 * log rand;
     my $Θ = τ * rand;

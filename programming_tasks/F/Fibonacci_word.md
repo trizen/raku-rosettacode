@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Fibonacci_word
+[1]: https://rosettacode.org/wiki/Fibonacci_word
 
 # [Fibonacci word][1]
 

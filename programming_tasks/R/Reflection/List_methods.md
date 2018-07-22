@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Reflection/List_methods
+[1]: https://rosettacode.org/wiki/Reflection/List_methods
 
 # [Reflection/List methods][1]
 

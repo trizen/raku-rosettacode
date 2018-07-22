@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loop_over_multiple_arrays_simultaneously
+[1]: https://rosettacode.org/wiki/Loop_over_multiple_arrays_simultaneously
 
 # [Loop over multiple arrays simultaneously][1]
 
@@ -17,6 +17,10 @@ Since `Z` will return a list of lists (in this example, the first list is `('a',
 
 
 
+### Factoring out concatenation
+
+
+
 Note that we can also factor out the concatenation by making the `Z` metaoperator apply the `~` concatenation operator across each triple:
 
 ```perl
@@ -29,6 +33,10 @@ We could also use the zip-to-string with the reduction metaoperator:
 ```perl
 .say for [Z~] [<a b c>], [<A B C>], [1,2,3]
 ```
+
+
+### A list and its indices
+
 
 
 The common case of iterating over a list and a list of its indices can be done using the same method:

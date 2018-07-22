@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Dining_philosophers
+[1]: https://rosettacode.org/wiki/Dining_philosophers
 
 # [Dining philosophers][1]
 
-We use locking mutexes for the forks, and a lollipop to keep the last person who finished eating from getting hungry until the next person finishes eating, which prevents a cycle of dependency from forming.  The algorithm should scale to many philosophers, and no philosopher need be singled out to be left-handed, so it's fair in that sense.
+We use locking mutexes for the forks, and a lollipop to keep the last person who finished eating from getting hungry until the next person finishes eating, which prevents a cycle of dependency from forming. The algorithm should scale to many philosophers, and no philosopher need be singled out to be left-handed, so it's fair in that sense.
 
 ```perl
 class Fork {

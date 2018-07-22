@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Four_bit_adder
+[1]: https://rosettacode.org/wiki/Four_bit_adder
 
 # [Four bit adder][1]
 

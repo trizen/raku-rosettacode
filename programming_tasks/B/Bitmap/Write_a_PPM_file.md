@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bitmap/Write_a_PPM_file
+[1]: https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file
 
 # [Bitmap/Write a PPM file][1]
 
@@ -40,4 +40,4 @@ Converted to a png. (ppm files not locally supported)
 
 
 
-[<img alt="Ppm-perl6.png" src="http://rosettacode.org/mw/images/2/27/Ppm-perl6.png" width="125" height="125"/>](http://rosettacode.org/wiki/File:Ppm-perl6.png)
+[<img alt="Ppm-perl6.png" src="https://rosettacode.org/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](https://rosettacode.org/wiki/File:Ppm-perl6.png)

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/N-queens_problem
+[1]: https://rosettacode.org/wiki/N-queens_problem
 
 # [N-queens problem][1]
 

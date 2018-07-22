@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Keyboard_macros
+[1]: https://rosettacode.org/wiki/Keyboard_macros
 
 # [Keyboard macros][1]
 

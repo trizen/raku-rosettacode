@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/First-class_functions/Use_numbers_analogously
+[1]: https://rosettacode.org/wiki/First-class_functions/Use_numbers_analogously
 
 # [First-class functions/Use numbers analogously][1]
 

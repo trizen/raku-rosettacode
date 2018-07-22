@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arena_storage_pool
+[1]: https://rosettacode.org/wiki/Arena_storage_pool
 
 # [Arena storage pool][1]
 

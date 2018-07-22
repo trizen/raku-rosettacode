@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Substring/Top_and_tail
+[1]: https://rosettacode.org/wiki/Substring/Top_and_tail
 
 # [Substring/Top and tail][1]
 

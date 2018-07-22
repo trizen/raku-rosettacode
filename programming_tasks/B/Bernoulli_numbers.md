@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Bernoulli_numbers
+[1]: https://rosettacode.org/wiki/Bernoulli_numbers
 
 # [Bernoulli numbers][1]
+
+### Simple
+
+
 
 First, a straighforward implementation of the naïve algorithm in the task description.
 
@@ -59,6 +63,10 @@ B(56) =          -2479392929313226753685415739663229/870
 B(58) =          84483613348880041862046775994036021/354
 B(60) = -1215233140483755572040304994079820246041491/56786730
 ```
+
+
+### With memoization
+
 
 
 Here is a much faster way, following the Perl solution that avoids recalculating previous values each time through the function. We do this in Perl 6 by not defining it as a function at all, but by defining it as an infinite sequence that we can read however many values we like from (52, in this case, to get up to B(100)). In this solution we've also avoided subscripting operations; rather we use a sequence operator (`...`) iterated over the list of the previous solution to find the next solution. We reverse the array in this case to make reference to the previous value in the list more natural, which means we take the last value of the list rather than the first value, and do so conditionally to avoid 0 values.
@@ -141,14 +149,37 @@ B(100)  = -945980378191221252952274330694937218727028415330669361333856962043113
 ```
 
 
-And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects. We use zip with the pair constructor `=>` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number. Output is identical to the previous solution, but runs about 3.5 times slower in rakudo, as of this writing (2014-03).
+### Functional
+
+
+
+And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects. We use zip with the pair constructor `=>` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number.
 
 ```perl
-my sub infix:<bop>(\prev,\this) { this.key => this.key * (this.value - prev.value) }
+sub infix:<bop>(\prev, \this) {
+    this.key => this.key * (this.value - prev.value)
+}
  
-constant bernoulli = grep *.value, map { (.key => .value.[*-1]) }, do
-        0 => [FatRat.new(1,1)],
-        -> (:key($pm),:value(@pa)) {
-             $pm + 1 => [ map *.value, [\bop] ($pm + 2 ... 1) Z=> FatRat.new(1, $pm + 2), @pa ];
-        } ... *;
+sub next-bernoulli ( (:key($pm), :value(@pa)) ) {
+    $pm + 1 => [
+        map *.value,
+        [\bop] ($pm + 2 ... 1) Z=> FatRat.new(1, $pm + 2), |@pa
+    ]
+}
+ 
+constant bernoulli =
+    grep *.value,
+    map { .key => .value[*-1] },
+    (0 => [FatRat.new(1,1)], &next-bernoulli ... *)
+;
+ 
+constant @bpairs = bernoulli[^52];
+ 
+my $width = [max] @bpairs.map: *.value.numerator.chars;
+my $form = "B(%d)\t= \%{$width}d/%d\n";
+ 
+printf $form, .key, .value.nude for @bpairs;
 ```
+
+
+Same output as memoization example

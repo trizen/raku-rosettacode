@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Longest_common_subsequence
+[1]: https://rosettacode.org/wiki/Longest_common_subsequence
 
 # [Longest common subsequence][1]
+
+### Recursion
+
+
 
 This solution is similar to the Haskell one. It is slow.
 
@@ -16,6 +20,10 @@ say lcs("thisisatest", "testing123testing");sub lcs(Str $xstr, Str $ystr) {
  
 say lcs("thisisatest", "testing123testing");
 ```
+
+
+### Dynamic Programming
+
 ```perl
  
 sub lcs(Str $xstr, Str $ystr) {
@@ -50,6 +58,10 @@ sub lcs(Str $xstr, Str $ystr) {
  
 say lcs("thisisatest", "testing123testing");
 ```
+
+
+### Bit Vector
+
 
 
 Bit parallel dynamic programming with nearly linear complexity O(n). It is fast.

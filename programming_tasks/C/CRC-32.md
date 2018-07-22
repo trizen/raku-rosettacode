@@ -1,26 +1,30 @@
-[1]: http://rosettacode.org/wiki/CRC-32
+[1]: https://rosettacode.org/wiki/CRC-32
 
 # [CRC-32][1]
 
-Library name and types are platform-dependent. As written the solution has been tested on Mac OS X 10.5.8.
-
-
-
-Note: Buf $buf would be preferable, but NativeCall does not support Buf parameters, yet.
+### Call to native function crc32 in zlib
 
 ```perl
 use NativeCall;
  
-sub crc32(int32 $crc, Str $buf, int32 $len --> int32) is native('/usr/lib/libz.dylib') { * }
+sub crc32(int32 $crc, Buf $buf, int32 $len --> int32) is native('z') { * }
  
-my $buf = 'The quick brown fox jumps over the lazy dog';
-say crc32(0, $buf, $buf.chars).fmt('%08x');
+my $buf = 'The quick brown fox jumps over the lazy dog'.encode;
+say crc32(0, $buf, $buf.bytes).fmt('%08x');
 ```
+
+
+The libary name "z" resolves to `/usr/lib/libz.so` on a typical Linux system and `/usr/lib/libz.dylib` on Mac OS X, but may need to be changed for other platforms. Types may be platform-dependent as well. As written, the solution has been tested on Mac OS X 10.5.8 and Arch Linux 2016.08.01 x86\_64.
+
 
 #### Output:
 ```
 414fa339
 ```
+
+
+### Pure Perl 6
+
 
 
 A fairly generic implementation with no regard to execution speed:
@@ -36,7 +40,7 @@ sub crc(
     :@bitorder = 0..7,    # default: eat bytes LSB-first
     :@crcorder = 0..$n-1, # default: MSB of checksum is coefficient of x⁰
 ) {
-    my @bit = flat ($buf.list X+& (1 X+< @bitorder).list)».so».Int, 0 xx $n;
+    my @bit = flat ($buf.list X+& (1 X+< @bitorder))».so».Int, 0 xx $n;
  
     @bit[0   .. $n-1] «+^=» @init;
     @bit[$_  ..$_+$n] «+^=» @poly if @bit[$_] for 0..@bit.end-$n;

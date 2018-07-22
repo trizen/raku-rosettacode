@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Run-length_encoding
+[1]: https://rosettacode.org/wiki/Run-length_encoding
 
 # [Run-length encoding][1]
 

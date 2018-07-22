@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Permutation_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Permutation_sort
 
 # [Sorting algorithms/Permutation sort][1]
 

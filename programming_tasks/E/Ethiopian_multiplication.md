@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ethiopian_multiplication
+[1]: https://rosettacode.org/wiki/Ethiopian_multiplication
 
 # [Ethiopian multiplication][1]
 

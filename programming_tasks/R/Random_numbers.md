@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Random_numbers
+[1]: https://rosettacode.org/wiki/Random_numbers
 
 # [Random numbers][1]
 

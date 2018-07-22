@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arithmetic-geometric_mean/Calculate_Pi
+[1]: https://rosettacode.org/wiki/Arithmetic-geometric_mean/Calculate_Pi
 
 # [Arithmetic-geometric mean/Calculate Pi][1]
 
@@ -6,11 +6,11 @@ There is not yet a FixDecimal type module in Perl 6, and using FatRat all along 
 
 
 
-The trick to compute the square root of a rational ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f840899ae807a7c043751f8529403bae&mode=mathml) up to a certain amount of decimals N is to write:
+The trick to compute the square root of a rational ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f840899ae807a7c043751f8529403bae&mode=mathml) up to a certain amount of decimals N is to write:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7e8ff6a27540ed22f0e6bd1b2f7285f1&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7e8ff6a27540ed22f0e6bd1b2f7285f1&mode=mathml)
 
 
 
@@ -18,15 +18,15 @@ so that what we need is one square root of a big number that we'll truncate to i
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2a9aefca4f9c8ffa48a812145167786e&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2a9aefca4f9c8ffa48a812145167786e&mode=mathml)
 
 
 
-It's not too hard to see that such a sequence converges towards ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f108a3d88b22ff91ddbd459b0f359bc9&mode=mathml).
+It's not too hard to see that such a sequence converges towards ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f108a3d88b22ff91ddbd459b0f359bc9&mode=mathml).
 
 
 
-Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=825b3fd5bafbc46b9a560ea9f16b21dd&mode=mathml), but rather ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2864884e3a76f4b27e189d49f4e6d0d1&mode=mathml). Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
+Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=825b3fd5bafbc46b9a560ea9f16b21dd&mode=mathml), but rather ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2864884e3a76f4b27e189d49f4e6d0d1&mode=mathml). Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
 
 ```perl
 constant number-of-decimals = 100;

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Read_a_specific_line_from_a_file
+[1]: https://rosettacode.org/wiki/Read_a_specific_line_from_a_file
 
 # [Read a specific line from a file][1]
 

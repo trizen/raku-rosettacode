@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Decision_tables
+[1]: https://rosettacode.org/wiki/Decision_tables
 
 # [Decision tables][1]
 

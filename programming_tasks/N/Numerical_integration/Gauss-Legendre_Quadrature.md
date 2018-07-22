@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Numerical_integration/Gauss-Legendre_Quadrature
+[1]: https://rosettacode.org/wiki/Numerical_integration/Gauss-Legendre_Quadrature
 
 # [Numerical integration/Gauss-Legendre Quadrature][1]
 

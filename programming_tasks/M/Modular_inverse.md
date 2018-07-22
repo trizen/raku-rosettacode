@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Modular_inverse
+[1]: https://rosettacode.org/wiki/Modular_inverse
 
 # [Modular inverse][1]
 

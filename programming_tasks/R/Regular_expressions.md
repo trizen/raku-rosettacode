@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Regular_expressions
+[1]: https://rosettacode.org/wiki/Regular_expressions
 
 # [Regular expressions][1]
 

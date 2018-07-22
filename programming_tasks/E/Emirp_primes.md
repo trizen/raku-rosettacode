@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Emirp_primes
+[1]: https://rosettacode.org/wiki/Emirp_primes
 
 # [Emirp primes][1]
 
 Build a lazy list using Perl 6's builtin &amp;is-prime, then display results based on parameters passed in.The default is to display an array slice starting and stopping at the given indicies. Alternately, ask for all values between two endpoints.
 
 ```perl
-sub MAIN ($start, $stop, $display = <slice>) {
+sub MAIN ($start, $stop = Nil, $display = <slice>) {
     my $end = $stop // $start; 
     my @emirps = lazy gather for 1 .. * -> $n {
         take $n if $n.is-prime 

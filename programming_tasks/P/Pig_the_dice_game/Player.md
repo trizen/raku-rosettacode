@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pig_the_dice_game/Player
+[1]: https://rosettacode.org/wiki/Pig_the_dice_game/Player
 
 # [Pig the dice game/Player][1]
 

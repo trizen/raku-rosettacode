@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Long_multiplication
+[1]: https://rosettacode.org/wiki/Long_multiplication
 
 # [Long multiplication][1]
 
@@ -23,15 +23,15 @@ sub long_multiply ( Str $x, Str $y ) {
     return groups_to_num @group_sums;
 }
  
-long_multiply( '18446744073709551616', '18446744073709551616' ).say;
+my $str = '18446744073709551616';
+long_multiply( $str, $str ).say;
+ 
+# cross-check with native implementation
+say +$str * +$str;
 ```
-
-
-In any case, integers are specced to be arbitrarily large, and most implementations support this already:
-
 
 #### Output:
 ```
-niecza> 18446744073709551616 * 18446744073709551616
+340282366920938463463374607431768211456
 340282366920938463463374607431768211456
 ```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Abbreviations,_automatic
+[1]: https://rosettacode.org/wiki/Abbreviations,_automatic
 
 # [Abbreviations, automatic][1]
 
@@ -10,10 +10,10 @@ Note that this is using a previous version of the date file that has erroneous d
 
 ```perl
 sub auto-abbreviate ( Str $string ) {
-    return Nil unless my @days = $string.words;
-    my $max = @days».chars.max;
+    return Nil unless my @words = $string.words;
+    my $max = @words.chars.max;
     for 0 .. $max {
-        return $_  if +@days».substr(0, $_).Set == 7;
+        return $_ if @words».substr(0, $_).Set == @words;
         return '∞' if $_ == $max;
     }
 }

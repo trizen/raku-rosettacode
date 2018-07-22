@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pangram_checker
+[1]: https://rosettacode.org/wiki/Pangram_checker
 
 # [Pangram checker][1]
 

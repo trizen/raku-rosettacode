@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Harshad_or_Niven_series
+[1]: https://rosettacode.org/wiki/Harshad_or_Niven_series
 
 # [Harshad or Niven series][1]
 
 ```perl
-constant @harshad = grep { $_ %% [+] .comb }, 1 .. *;
+constant @harshad = grep { $_ %% .comb.sum }, 1 .. *;
  
 say @harshad[^20];
 say @harshad.first: * > 1000;

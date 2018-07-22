@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Mutex
+[1]: https://rosettacode.org/wiki/Mutex
 
 # [Mutex][1]
 

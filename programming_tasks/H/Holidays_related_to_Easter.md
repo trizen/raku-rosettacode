@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Holidays_related_to_Easter
+[1]: https://rosettacode.org/wiki/Holidays_related_to_Easter
 
 # [Holidays related to Easter][1]
 

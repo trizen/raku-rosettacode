@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pick_random_element
+[1]: https://rosettacode.org/wiki/Pick_random_element
 
 # [Pick random element][1]
 
@@ -20,9 +20,9 @@ with or without replacement.
 Selection with replacement: (roll of a die)
 
 ```perl
-(1..6).roll;    # return 1 random value in the range 1 through 6
-(1..6).roll(3); # return a list of 3 random values in the range 1 through 6
-(1..6).roll(*); # return a lazy infinite list of random values in the range 1 through 6
+say (1..6).roll;          # return 1 random value in the range 1 through 6
+say (1..6).roll(3);       # return a list of 3 random values in the range 1 through 6
+say (1..6).roll(*)[^100]; # return first 100 values from a lazy infinite list of random values in the range 1 through 6
 ```
 
 
@@ -31,9 +31,9 @@ Selection without replacement: (pick a card from a deck)
 ```perl
 # define the deck
 my @deck = <2 3 4 5 6 7 8 9 J Q K A> X~ <♠ ♣ ♥ ♦>;
-@deck.pick;    # Pick a card
-@deck.pick(5); # Draw 5
-@deck.pick(*); # Get a shuffled deck
+say @deck.pick;    # Pick a card
+say @deck.pick(5); # Draw 5
+say @deck.pick(*); # Get a shuffled deck
 ```
 
 

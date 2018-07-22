@@ -1,12 +1,12 @@
-[1]: http://rosettacode.org/wiki/URL_parser
+[1]: https://rosettacode.org/wiki/URL_parser
 
 # [URL parser][1]
 
-Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](http://rosettacode.org//tools.ietf.org/html/rfc3986) BNF grammar.
+Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](https://rosettacode.org//tools.ietf.org/html/rfc3986) BNF grammar.
 
 ```perl
 use URI;
- 
+
 my @test-uris = <
     foo://example.com:8042/over/there?name=ferret#nose
     urn:example:animal:ferret:nose
@@ -20,9 +20,9 @@ my @test-uris = <
     telnet://192.0.2.16:80/
     urn:oasis:names:specification:docbook:dtd:xml:4.1.2
 >;
- 
+
 my $u = URI.new;
- 
+
 for @test-uris -> $uri {
     say "URI:\t", $uri;
         $u.parse($uri);
@@ -73,9 +73,9 @@ port:   389
 path:   /c=GB
 query:  objectClass?one
 
-URI:    mailto:email@example.com
+URI:    mailto:John.Doe@example.com
 scheme: mailto
-path:   email@example.com
+path:   John.Doe@example.com
 
 URI:    news:comp.infosystems.www.servers.unix
 scheme: news

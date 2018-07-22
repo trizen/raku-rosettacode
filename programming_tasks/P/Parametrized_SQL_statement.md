@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parametrized_SQL_statement
+[1]: https://rosettacode.org/wiki/Parametrized_SQL_statement
 
 # [Parametrized SQL statement][1]
 

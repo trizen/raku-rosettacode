@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Strip_a_set_of_characters_from_a_string
+[1]: https://rosettacode.org/wiki/Strip_a_set_of_characters_from_a_string
 
 # [Strip a set of characters from a string][1]
 

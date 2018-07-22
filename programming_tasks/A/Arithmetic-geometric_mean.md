@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arithmetic-geometric_mean
+[1]: https://rosettacode.org/wiki/Arithmetic-geometric_mean
 
 # [Arithmetic-geometric mean][1]
 

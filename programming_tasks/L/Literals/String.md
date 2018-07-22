@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Literals/String
+[1]: https://rosettacode.org/wiki/Literals/String
 
 # [Literals/String][1]
 

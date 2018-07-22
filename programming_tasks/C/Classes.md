@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Classes
+[1]: https://rosettacode.org/wiki/Classes
 
 # [Classes][1]
 

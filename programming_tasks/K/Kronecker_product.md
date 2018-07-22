@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Kronecker_product
+[1]: https://rosettacode.org/wiki/Kronecker_product
 
 # [Kronecker product][1]
 

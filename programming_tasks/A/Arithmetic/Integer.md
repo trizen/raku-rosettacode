@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arithmetic/Integer
+[1]: https://rosettacode.org/wiki/Arithmetic/Integer
 
 # [Arithmetic/Integer][1]
 

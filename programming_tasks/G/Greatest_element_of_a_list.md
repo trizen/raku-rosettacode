@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Greatest_element_of_a_list
+[1]: https://rosettacode.org/wiki/Greatest_element_of_a_list
 
 # [Greatest element of a list][1]
 

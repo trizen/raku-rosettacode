@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name
+[1]: https://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name
 
 # [Separate the house number from the street name][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Guess_the_number
+[1]: https://rosettacode.org/wiki/Guess_the_number
 
 # [Guess the number][1]
 

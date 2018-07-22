@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Multisplit
+[1]: https://rosettacode.org/wiki/Multisplit
 
 # [Multisplit][1]
 

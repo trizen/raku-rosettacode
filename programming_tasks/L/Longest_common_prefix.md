@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Longest_common_prefix
+[1]: https://rosettacode.org/wiki/Longest_common_prefix
 
 # [Longest common prefix][1]
 

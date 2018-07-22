@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/CUSIP
+[1]: https://rosettacode.org/wiki/CUSIP
 
 # [CUSIP][1]
 

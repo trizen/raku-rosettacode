@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/SEDOLs
+[1]: https://rosettacode.org/wiki/SEDOLs
 
 # [SEDOLs][1]
 

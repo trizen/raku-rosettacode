@@ -1,8 +1,12 @@
-[1]: http://rosettacode.org/wiki/Collections
+[1]: https://rosettacode.org/wiki/Collections
 
 # [Collections][1]
 
 Perl 6 has both mutable and immutable containers of various sorts. Here are some of the most common ones:
+
+
+
+### Mutable
 
 ```perl
 # Array
@@ -22,6 +26,10 @@ $s ∪= <d e f>;
 my $b = BagHash.new: <b a k l a v a>;
 $b ⊎= <a b c>;
 ```
+
+
+### Immutable
+
 ```perl
 # List
 my @list := 1,2,3;
@@ -35,11 +43,20 @@ my $newset = $set ∪ <d e f>;
 my $bag = bag <b a k l a v a>;
 my $newbag = $bag ⊎ <b e e f>;
 ```
+
+
+### Pair list (cons list)
+
 ```perl
 my $tail = d => e => f => Nil;
 my $new = a => b => c => $tail;
 ```
+
+
+### P6opaque object (immutable in structure)
+
 ```perl
+class Something { has $.foo; has $.bar };
 my $obj = Something.new: foo => 1, bar => 2;
 my $newobj = $obj but role { has $.baz = 3 } # anonymous mixin
 ```

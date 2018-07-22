@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Same_Fringe
+[1]: https://rosettacode.org/wiki/Same_Fringe
 
 # [Same Fringe][1]
 
@@ -13,12 +13,9 @@ sub fringe ($tree) {
 }
  
 sub samefringe ($a, $b) { fringe($a) eqv fringe($b) }
-```
-
-
-Testing:
-
-```perl
+ 
+# Testing:
+ 
 my $a = 1 => 2 => 3 => 4 => 5 => 6 => 7 => 8;
 my $b = 1 => (( 2 => 3 ) => (4 => (5 => ((6 => 7) => 8))));
 my $c = (((1 => 2) => 3) => 4) => 5 => 6 => 7 => 8;

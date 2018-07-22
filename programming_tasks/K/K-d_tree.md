@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/K-d_tree
+[1]: https://rosettacode.org/wiki/K-d_tree
 
 # [K-d tree][1]
 

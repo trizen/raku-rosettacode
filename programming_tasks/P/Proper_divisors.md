@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Proper_divisors
+[1]: https://rosettacode.org/wiki/Proper_divisors
 
 # [Proper divisors][1]
 

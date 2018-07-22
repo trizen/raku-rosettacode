@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Permutations/Rank_of_a_permutation
+[1]: https://rosettacode.org/wiki/Permutations/Rank_of_a_permutation
 
 # [Permutations/Rank of a permutation][1]
 

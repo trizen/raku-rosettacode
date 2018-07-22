@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Take_notes_on_the_command_line
+[1]: https://rosettacode.org/wiki/Take_notes_on_the_command_line
 
 # [Take notes on the command line][1]
 

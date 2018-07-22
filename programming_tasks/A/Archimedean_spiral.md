@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Archimedean_spiral
+[1]: https://rosettacode.org/wiki/Archimedean_spiral
 
 # [Archimedean spiral][1]
 

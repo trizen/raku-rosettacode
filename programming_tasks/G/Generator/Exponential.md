@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Generator/Exponential
+[1]: https://rosettacode.org/wiki/Generator/Exponential
 
 # [Generator/Exponential][1]
 

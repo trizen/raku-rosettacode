@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bacon_cipher
+[1]: https://rosettacode.org/wiki/Bacon_cipher
 
 # [Bacon cipher][1]
 

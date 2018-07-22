@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Case-sensitivity_of_identifiers
+[1]: https://rosettacode.org/wiki/Case-sensitivity_of_identifiers
 
 # [Case-sensitivity of identifiers][1]
 

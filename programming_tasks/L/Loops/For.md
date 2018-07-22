@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/For
+[1]: https://rosettacode.org/wiki/Loops/For
 
 # [Loops/For][1]
 

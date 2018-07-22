@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/For_with_a_specified_step
+[1]: https://rosettacode.org/wiki/Loops/For_with_a_specified_step
 
 # [Loops/For with a specified step][1]
 

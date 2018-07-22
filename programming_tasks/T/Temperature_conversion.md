@@ -1,6 +1,32 @@
-[1]: http://rosettacode.org/wiki/Temperature_conversion
+[1]: https://rosettacode.org/wiki/Temperature_conversion
 
 # [Temperature conversion][1]
+
+```perl
+my %scale =
+    Celcius    => { factor => 1  , offset => -273.15 },
+    Rankine    => { factor => 1.8, offset =>    0    },
+    Fahrenheit => { factor => 1.8, offset => -459.67 },
+;
+ 
+my $kelvin = +prompt "Enter a temperature in Kelvin: ";
+die "No such temperature!" if $kelvin < 0;
+ 
+for %scale.sort {
+    printf "%12s: %7.2f\n", .key, $kelvin * .value<factor> + .value<offset>;
+}
+```
+
+#### Output:
+```
+Enter a temperature in Kelvin: 21
+     Celcius: -252.15
+  Fahrenheit: -421.87
+     Rankine:   37.80
+```
+
+
+Alternative version that accepts the input in any of the four scales:
 
 ```perl
 while my $answer = prompt 'Temperature: ' {

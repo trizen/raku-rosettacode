@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/User_input/Text
+[1]: https://rosettacode.org/wiki/User_input/Text
 
 # [User input/Text][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_prepend
+[1]: https://rosettacode.org/wiki/String_prepend
 
 # [String prepend][1]
 

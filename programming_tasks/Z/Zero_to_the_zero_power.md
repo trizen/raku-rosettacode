@@ -1,14 +1,23 @@
-[1]: http://rosettacode.org/wiki/Zero_to_the_zero_power
+[1]: https://rosettacode.org/wiki/Zero_to_the_zero_power
 
 # [Zero to the zero power][1]
 
-Translation of REXX.
-
 ```perl
-say '0 ** 0 (zero to the zeroth power) ───► ', 0**0
+say '    type         n      n**n  exp(n,n)';
+say '--------  --------  --------  --------';
+ 
+for 0, 0.0, FatRat.new(0), 0e0, 0+0i {
+    printf "%8s  %8s  %8s  %8s\n", .^name, $_, $_**$_, exp($_,$_);
+}
 ```
 
 #### Output:
 ```
-0 ** 0 (zero to the zeroth power) ───► 1
+    type         n      n**n  exp(n,n)
+--------  --------  --------  --------
+     Int         0         1         1
+     Rat         0         1         1
+  FatRat         0         1         1
+     Num         0         1         1
+ Complex      0+0i      1+0i      1+0i
 ```

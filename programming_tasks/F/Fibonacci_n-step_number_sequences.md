@@ -1,16 +1,19 @@
-[1]: http://rosettacode.org/wiki/Fibonacci_n-step_number_sequences
+[1]: https://rosettacode.org/wiki/Fibonacci_n-step_number_sequences
 
 # [Fibonacci n-step number sequences][1]
 
+### Lazy List with Closure
+
 ```perl
+use MONKEY-SEE-NO-EVAL;
+ 
 sub fibo ($n) {
     constant @starters = 1,1,2,4 ... *;
     nacci @starters[^$n];
 }
  
 sub nacci (*@starter) {
-    my &fun = EVAL join '+', '*' xx @starter;
-    @starter, &fun ... *;
+    EVAL "|@starter, { join '+', '*' xx @starter } ... *";
 }
  
 for 2..10 -> $n { say fibo($n)[^20] }
@@ -30,6 +33,10 @@ say nacci(2,1)[^20];
 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 16336 32656 65280 130496 260864
 2 1 3 4 7 11 18 29 47 76 123 199 322 521 843 1364 2207 3571 5778 9349
 ```
+
+
+### Generative
+
 
 
 A slightly more straight forward way of constructing a lazy list.

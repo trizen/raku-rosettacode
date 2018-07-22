@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Problem_of_Apollonius
+[1]: https://rosettacode.org/wiki/Problem_of_Apollonius
 
 # [Problem of Apollonius][1]
 

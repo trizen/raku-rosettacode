@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/I_before_E_except_after_C
+[1]: https://rosettacode.org/wiki/I_before_E_except_after_C
 
 # [I before E except after C][1]
 
@@ -29,12 +29,12 @@ grammar CollectWords {
  
 class CollectWords::Actions {
     method TOP($/) {
-        make $<word>».ast.Bag;
+        make $<word>».ast.flat.Bag;
     }
  
     method word($/) {
         if $<with_c> + $<no_c> {
-            make ($<with_c>».ast, $<no_c>».ast);
+            make flat $<with_c>».ast, $<no_c>».ast;
         } else {
             make ();
         }
@@ -59,10 +59,10 @@ class CollectWords::Actions {
  
 sub plausible($good, $bad, $msg) {
     if $good > 2*$bad {
-        say "$msg: PLAUSIBLE ($good ✔ vs. $bad ✘)";
+        say "$msg: PLAUSIBLE ($good  vs. $bad ✘)";
         return True;
     } else {
-        say "$msg: NOT PLAUSIBLE ($good ✔ vs. $bad ✘)";
+        say "$msg: NOT PLAUSIBLE ($good  vs. $bad ✘)";
         return False;
     }
 }
@@ -77,10 +77,14 @@ say "I before E except after C: ", $phrasetest ?? "PLAUSIBLE" !! "NOT PLAUSIBLE"
 
 #### Output:
 ```
-I before E when not preceded by C: PLAUSIBLE (466 ✔ vs. 217 ✘)
-E before I when preceded by C: NOT PLAUSIBLE (13 ✔ vs. 24 ✘)
+I before E when not preceded by C: PLAUSIBLE (466  vs. 217 ✘)
+E before I when preceded by C: NOT PLAUSIBLE (13  vs. 24 ✘)
 I before E except after C: NOT PLAUSIBLE
 ```
+
+
+### Perl 6: Stretch Goal
+
 
 
 Note that within the original text file, a tab character was erroneously replaced with a space. Thus, the following changes to the text file are needed before this solution will run:
@@ -133,12 +137,12 @@ grammar CollectWords {
  
 class CollectWords::Actions {
     method TOP($/) {
-        make $<word>».ast».flat.Bag;
+        make $<word>».ast.flat.Bag;
     }
  
     method word($/) {
         if $<with_c> + $<no_c> {
-            make ($<with_c>».ast xx $<freq>, $<no_c>».ast xx $<freq>);
+            make flat $<with_c>».ast xx $<freq>, $<no_c>».ast xx $<freq>;
         } else {
             make ();
         }
@@ -155,10 +159,10 @@ class CollectWords::Actions {
  
 sub plausible($good, $bad, $msg) {
     if $good > 2*$bad {
-        say "$msg: PLAUSIBLE ($good ✔ vs. $bad ✘)";
+        say "$msg: PLAUSIBLE ($good  vs. $bad ✘)";
         return True;
     } else {
-        say "$msg: NOT PLAUSIBLE ($good ✔ vs. $bad ✘)";
+        say "$msg: NOT PLAUSIBLE ($good  vs. $bad ✘)";
         return False;
     }
 }
@@ -175,7 +179,7 @@ say "I before E except after C: ", $phrasetest ?? "PLAUSIBLE" !! "NOT PLAUSIBLE"
 
 #### Output:
 ```
-I before E when not preceded by C: NOT PLAUSIBLE (8222 ✔ vs. 4826 ✘)
-E before I when preceded by C: NOT PLAUSIBLE (327 ✔ vs. 994 ✘)
+I before E when not preceded by C: NOT PLAUSIBLE (8222  vs. 4826 ✘)
+E before I when preceded by C: NOT PLAUSIBLE (327  vs. 994 ✘)
 I before E except after C: NOT PLAUSIBLE
 ```

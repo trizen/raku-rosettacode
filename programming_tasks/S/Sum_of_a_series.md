@@ -1,12 +1,8 @@
-[1]: http://rosettacode.org/wiki/Sum_of_a_series
+[1]: https://rosettacode.org/wiki/Sum_of_a_series
 
 # [Sum of a series][1]
 
-(Some of these work with [rakudo](http://rosettacode.org/wiki/Rakudo), and others with [niecza](http://rosettacode.org/wiki/Niecza). Eventually they'll all work everywhere...)
-
-
-
-In general, the `$n`th partial sum of a series whose terms are given by a unary function `&amp;f` is
+In general, the `$n`th partial sum of a series whose terms are given by a unary function `&f` is
 
 ```perl
 [+] map &f, 1 .. $n
@@ -38,7 +34,14 @@ Note that cross ops are parsed as list infix precedence rather than using the pr
 
 
 
-In a lazy language like Perl 6, it's generally considered a stronger abstraction to write the correct infinite sequence, and then take the part of it you're interested in.
+With list comprehensions, you can write:
+
+```perl
+say [+] (1 / $_**2 for 1..1000);
+```
+
+
+That's fine for a single result, but if you're going to be evaluating the sequence multiple times, you don't want to be recalculating the sum each time, so it's more efficient to define the sequence as a constant to let the run-time automatically cache those values already calculated. In a lazy language like Perl 6, it's generally considered a stronger abstraction to write the correct infinite sequence, and then take the part of it you're interested in.
 Here we define an infinite sequence of partial sums (by adding a backslash into the reduction to make it look "triangular"), then take the 1000th term of that:
 
 ```perl
@@ -62,20 +65,10 @@ say ζish[1000];
 Perhaps the cleanest way is to just define the zeta function and evaluate it for s=2, possibly using memoization:
 
 ```perl
+use experimental :cached;
 sub ζ($s) is cached { [\+] 1..* X** -$s }
 say ζ(2)[1000];
 ```
 
 
 Notice how the thus-defined zeta function returns a lazy list of approximated values, which is arguably the closest we can get from the mathematical definition.
-
-
-
-Finally, if list comprehensions are your hammer, you can nail it this way:
-
-```perl
-say [+] (1 / $_**2 for 1..1000);
-```
-
-
-That's fine for a single result, but if you're going to be evaluating the sequence multiple times, you don't want to be recalculating the sum each time, so it's more efficient to define the sequence as a constant to let the run-time automatically cache those values already calculated.

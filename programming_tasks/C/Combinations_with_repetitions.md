@@ -1,6 +1,28 @@
-[1]: http://rosettacode.org/wiki/Combinations_with_repetitions
+[1]: https://rosettacode.org/wiki/Combinations_with_repetitions
 
 # [Combinations with repetitions][1]
+
+One could simply generate all [permutations](https://rosettacode.org/wiki/Permutations_with_repetitions#Perl_6), and then remove "duplicates":
+
+```perl
+my @S = <iced jam plain>;
+my $k = 2;
+ 
+.put for [X](@S xx $k).unique(as => *.sort.cache, with => &[eqv])
+```
+
+#### Output:
+```
+iced iced
+iced jam
+iced plain
+jam jam
+jam plain
+plain plain
+```
+
+
+Alternatively, a recursive solution:
 
 ```perl
 proto combs_with_rep (UInt, @) {*}

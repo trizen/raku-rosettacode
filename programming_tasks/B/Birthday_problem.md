@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Birthday_problem
+[1]: https://rosettacode.org/wiki/Birthday_problem
 
 # [Birthday problem][1]
 
 For a start, we can show off how to get the exact solution. If we pick n people, the total number of possible arrangements of birthdays is `365<sup>n</sup>`. Among those possibilities, there are `C<sup>n</sup><sub>365</sub>` where all birthdays are different. For each of these, there are `n!` possible ways to arrange the n people. So the solution is `1 - n!C<sup>n</sup><sub>365</sub>/365<sup>n</sup>`, which in Perl 6 can be written:
 
 ```perl
-say "$_ :", 1 - combinations(365, $_)/365**$_ * [*] 1..$_ for ^Inf
+say "$_ :", 1 - combinations(365, $_)/365**$_ * [*] 1..$_ for ^365
 ```
 
 #### Output:
@@ -32,7 +32,7 @@ sub simulation(:number-of-people($n), :sample-size($N) = 1_000) {
     $N R/ grep ?*, ((^365).roll($n).unique !== $n) xx $N;
 }
  
-for 2 .. Inf -> $n {
+for 2 .. 365 -> $n {
     printf "%3d people, theory: %.4f, simulation: %.4f\n", 
     $n, theory($n), simulation(number-of-people => $n);
 }

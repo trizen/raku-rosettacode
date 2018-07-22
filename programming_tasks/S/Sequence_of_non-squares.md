@@ -1,16 +1,20 @@
-[1]: http://rosettacode.org/wiki/Sequence_of_non-squares
+[1]: https://rosettacode.org/wiki/Sequence_of_non-squares
 
 # [Sequence of non-squares][1]
 
 ```perl
-sub nth_term (Int $n) { $n + round sqrt $n }
+sub nth-term (Int $n) { $n + round sqrt $n }
  
-say nth_term $_ for 1 .. 22;
+# Print the first 22 values of the sequence
+say (nth-term $_ for 1 .. 22);
  
-loop (my $i = 1; $i <= 1_000_000; $i++) {
-    $i.&nth_term.sqrt %% 1 and say "nth_term($i) is square.";
+# Check that the first million values of the sequence are indeed non-square
+for 1 .. 1_000_000 -> $i {
+    say "Oops, nth-term($i) is square!" if (sqrt nth-term $i) %% 1;
 }
 ```
 
-
-With a recent Rakudo using MoarVM the last test takes under a minute, but older Rakudos may take much longer.
+#### Output:
+```
+(2 3 5 6 7 8 10 11 12 13 14 15 17 18 19 20 21 22 23 24 26 27)
+```

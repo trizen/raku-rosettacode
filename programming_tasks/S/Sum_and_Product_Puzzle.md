@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sum_and_Product_Puzzle
+[1]: https://rosettacode.org/wiki/Sum_and_Product_Puzzle
 
 # [Sum and Product Puzzle][1]
 

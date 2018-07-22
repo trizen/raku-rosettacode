@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Egyptian_division
+[1]: https://rosettacode.org/wiki/Egyptian_division
 
 # [Egyptian division][1]
+
+### Normal version
+
+
 
 Only works with positive real numbers, not negative or complex.
 
@@ -25,6 +29,10 @@ for 580,34, 578,34, 7532795332300578,235117 -> $n, $d {
 578 divmod 34 = 17 remainder 0
 7532795332300578 divmod 235117 = 32038497141 remainder 81
 ```
+
+
+### More "Egyptian" version
+
 
 
 As a preceding version was determined to be "let's just say ... not Egyptian" we submit an alternate which is hopefully more "Egyptian". Now only handles positive Integers up to 10 million, mostly due to limitations on Egyptian notation for numbers.

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Playing_cards
+[1]: https://rosettacode.org/wiki/Playing_cards
 
 # [Playing cards][1]
 
@@ -15,7 +15,7 @@ class Card {
  
 class Deck {
     has Card @.cards = pick *,
-            map { Card.new(:$^pip, :$^suit) }, (Pip.pick(*) X Suit.pick(*));
+            map { Card.new(:$^pip, :$^suit) }, flat (Pip.pick(*) X Suit.pick(*));
  
     method shuffle { @!cards .= pick: * }
  

@@ -1,10 +1,10 @@
-[1]: http://rosettacode.org/wiki/Fork
+[1]: https://rosettacode.org/wiki/Fork
 
 # [Fork][1]
 
 ```perl
 use NativeCall;
-sub fork() returns Int is native { ... }
+sub fork() returns int32 is native { ... }
  
 if fork() -> $pid {
     print "I am the proud parent of $pid.\n";

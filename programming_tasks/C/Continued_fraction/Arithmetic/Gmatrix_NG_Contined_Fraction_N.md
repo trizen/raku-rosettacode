@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Continued_fraction/Arithmetic/G(matrix_NG,_Contined_Fraction_N)
+[1]: https://rosettacode.org/wiki/Continued_fraction/Arithmetic/G(matrix_NG,_Contined_Fraction_N)
 
 # [Continued fraction/Arithmetic/G(matrix NG, Contined Fraction N)][1]
 
-All the important stuff takes place in the NG object. Everything else is helper subs for testing and display.
+All the important stuff takes place in the NG object. Everything else is helper subs for testing and display. The NG object is capable of working with infinitely long continued fractions, but displaying them can be problematic. You can pass in a limit to the apply method to get a fixed maximum number of terms though. See the last example: 100 terms from the infinite cf (1+√2)/2 and its Rational representation.
 
 ```perl
 class NG {
@@ -10,7 +10,7 @@ class NG {
     submethod BUILD ( :$!a1, :$!a, :$!b1, :$!b ) { }
  
     # Public methods
-    method new( $a1, $a, $b1, $b ) { self.bless( *, :$a1, :$a, :$b1, :$b ) }
+    method new( $a1, $a, $b1, $b ) { self.bless( :$a1, :$a, :$b1, :$b ) }
     method apply(@cf, :$limit = Inf) {
         (gather {
             map { take self!extract unless self!needterm; self!inject($_) }, @cf;
@@ -75,11 +75,13 @@ test_NG(|$_) for (
     [ 2**.5, [<1 1 0 2>], "\n(1+√2)/2 (approximately)" ]
 );
  
+say '100 terms of (1+√2)/2 as a continued fraction and as a rational value:';
+ 
+my @continued-fraction = NG.new( 1,1,0,2 ).apply( (lazy flat 1, 2 xx * ), limit => 100 );
+say @continued-fraction.&ppcf.comb(/ . ** 1..80/).join("\n");
+say @continued-fraction.&cf2r.&pprat;
+ 
 ```
-
-
-**Output**
-
 
 #### Output:
 ```
@@ -93,19 +95,8 @@ test_NG(|$_) for (
 
 1.4142135623731e0 as a cf: [1;2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2] 
 (1+√2)/2 (approximately) = [1;4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4]        or 225058681/186444716
-```
 
-
-The cf for (1+√2)/2 in the testing routine is an approximation. The NG object is capable of working with infinitely long continued fractions, but displaying them can be problematic. You can pass in a limit to the apply method to get a fixed maximum number of terms though. Here are the first 100 terms from the infinite cf (1+√2)/2 and its Rational representation.
-
-```perl
-my @continued-fraction = NG.new( 1,1,0,2 ).apply( ( 1, 2 xx * ), limit => 100 );
-say @continued-fraction.&ppcf.comb(/ . ** 1..80/).join("\n");
-say @continued-fraction.&cf2r.&pprat;
-```
-
-#### Output:
-```
+100 terms of (1+√2)/2 and its rational value
 [1;4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4
 ,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4
 ,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4]

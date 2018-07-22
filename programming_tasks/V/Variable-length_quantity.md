@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Variable-length_quantity
+[1]: https://rosettacode.org/wiki/Variable-length_quantity
 
 # [Variable-length quantity][1]
 

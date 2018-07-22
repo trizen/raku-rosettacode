@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_append
+[1]: https://rosettacode.org/wiki/String_append
 
 # [String append][1]
 

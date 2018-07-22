@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Mastermind
+[1]: https://rosettacode.org/wiki/Mastermind
 
 # [Mastermind][1]
 
@@ -32,6 +32,7 @@ sub MAIN (
     sub header {
         my $num = $guesses - @guesses;
         qq:to/END/;
+        Valid letter, but wrong position: ○ - Correct letter and position: ●
         Guess the {$length} element sequence containing the letters {@valid}
         Repeats are {$repeat ?? '' !! 'not '}allowed. You have $num guess{ $num == 1 ?? '' !! 'es'} remaining.
         END
@@ -67,6 +68,7 @@ sub MAIN (
 
 #### Output:
 ```
+Valid letter, but wrong position: ○ - Correct letter and position: ●
 Guess the 4 element sequence containing the letters A B C D E F
 Repeats are not allowed. You have 5 guesses remaining.
 

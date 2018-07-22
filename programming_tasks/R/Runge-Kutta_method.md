@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Runge-Kutta_method
+[1]: https://rosettacode.org/wiki/Runge-Kutta_method
 
 # [Runge-Kutta method][1]
 
@@ -22,7 +22,7 @@ loop (
     ($t, $y) »+=« (δt, δy($t, $y, δt))
 ) {
     printf "y(%2d) = %12f ± %e\n", $t, $y, abs($y - ($t**2 + 4)**2 / 16)
-    if $t.narrow ~~ Int;
+    if $t %% 1;
 }
 ```
 

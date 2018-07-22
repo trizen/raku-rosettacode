@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Total_circles_area
+[1]: https://rosettacode.org/wiki/Total_circles_area
 
 # [Total circles area][1]
 
@@ -90,7 +90,7 @@ while @rawcircles {
  
 sub set_cbits(Point $p) {
     my $cbits = 0;
-    for @circles Z (1,2,4...*) -> $c, $b {
+    for @circles Z (1,2,4...*) -> ($c, $b) {
 	$cbits += $b if $c.contains($p);
     }
     $cbits;

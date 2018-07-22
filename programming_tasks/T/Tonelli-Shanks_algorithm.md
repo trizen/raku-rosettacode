@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Tonelli-Shanks_algorithm
+[1]: https://rosettacode.org/wiki/Tonelli-Shanks_algorithm
 
 # [Tonelli-Shanks algorithm][1]
 

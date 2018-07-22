@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/HTTPS
+[1]: https://rosettacode.org/wiki/HTTPS
 
 # [HTTPS][1]
 
@@ -14,5 +14,5 @@ or
 
 ```perl
 use HTTP::UserAgent;
-say HTTP::UserAgent.new.get: 'https://sourceforge.net/';
+say HTTP::UserAgent.new.get('https://sourceforge.net/').content;
 ```

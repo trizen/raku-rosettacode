@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Nautical_bell
+[1]: https://rosettacode.org/wiki/Nautical_bell
 
 # [Nautical bell][1]
 

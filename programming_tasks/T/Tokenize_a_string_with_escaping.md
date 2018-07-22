@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Tokenize_a_string_with_escaping
+[1]: https://rosettacode.org/wiki/Tokenize_a_string_with_escaping
 
 # [Tokenize a string with escaping][1]
 

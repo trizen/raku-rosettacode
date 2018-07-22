@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Do-while
+[1]: https://rosettacode.org/wiki/Loops/Do-while
 
 # [Loops/Do-while][1]
 

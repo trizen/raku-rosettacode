@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Nth_root
+[1]: https://rosettacode.org/wiki/Nth_root
 
 # [Nth root][1]
 

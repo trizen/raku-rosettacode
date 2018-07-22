@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Fivenum
+[1]: https://rosettacode.org/wiki/Fivenum
 
 # [Fivenum][1]
 

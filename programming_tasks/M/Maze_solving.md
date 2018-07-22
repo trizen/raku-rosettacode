@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Maze_solving
+[1]: https://rosettacode.org/wiki/Maze_solving
 
 # [Maze solving][1]
 

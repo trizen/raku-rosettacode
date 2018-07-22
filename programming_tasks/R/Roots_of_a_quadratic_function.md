@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Roots_of_a_quadratic_function
+[1]: https://rosettacode.org/wiki/Roots_of_a_quadratic_function
 
 # [Roots of a quadratic function][1]
 

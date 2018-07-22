@@ -1,12 +1,18 @@
-[1]: http://rosettacode.org/wiki/Make_directory_path
+[1]: https://rosettacode.org/wiki/Make_directory_path
 
 # [Make directory path][1]
 
 There is a built-in function for this:
 
 ```perl
-mkpath 'path/to/dir'
+mkdir 'path/to/dir'
 ```
 
 
-(`mkdir` also exists as a built-in function, but does not create nested subdirectories).
+Alternatively, a custom solution (as per task description) that only uses the built-in `mkdir` non-recursively. The "triangle reduce" meta-operator `[\ ]` is used get the intermediate results of a left fold with the comma operator on the list of path elements.
+
+```perl
+for [\,] $*SPEC.splitdir("../path/to/dir") -> @path {
+    mkdir $_ unless .e given $*SPEC.catdir(@path).IO;
+}
+```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Cumulative_standard_deviation
+[1]: https://rosettacode.org/wiki/Cumulative_standard_deviation
 
 # [Cumulative standard deviation][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Elementary_cellular_automaton/Infinite_length
+[1]: https://rosettacode.org/wiki/Elementary_cellular_automaton/Infinite_length
 
 # [Elementary cellular automaton/Infinite length][1]
 

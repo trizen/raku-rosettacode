@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Function_composition
+[1]: https://rosettacode.org/wiki/Function_composition
 
 # [Function composition][1]
 
@@ -7,5 +7,5 @@ The function composition operator is `∘`, U+2218 RING OPERATOR (with a "Texas"
 ```perl
 sub triple($n) { 3 * $n }
 my &f = &triple ∘ &prefix:<-> ∘ { $^n + 2 };
-say &f(5); # Prints "-21".
+say &f(5); # prints "-21".
 ```

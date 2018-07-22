@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Multiple_regression
+[1]: https://rosettacode.org/wiki/Multiple_regression
 
 # [Multiple regression][1]
 
@@ -10,31 +10,40 @@ Let's create four vectors containing our input data:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=6d51317055678716c670eef53bc4a0b9&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=6d51317055678716c670eef53bc4a0b9&mode=mathml)
 
 
 
-Then what we're looking for are three scalars ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7b7f9dbfea05c83784f8b85149852f08&mode=mathml), ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=b0603860fcffe94e5b8eec59ed813421&mode=mathml) and ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ae539dfcc999c28e25a0f3ae65c1de79&mode=mathml) such that:
+Then what we're looking for are three scalars ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7b7f9dbfea05c83784f8b85149852f08&mode=mathml), ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=b0603860fcffe94e5b8eec59ed813421&mode=mathml) and ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ae539dfcc999c28e25a0f3ae65c1de79&mode=mathml) such that:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=bddd5378dcc19922d4cc24ed135b3f3a&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=bddd5378dcc19922d4cc24ed135b3f3a&mode=mathml)
 
 
 
-To get for instance ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7b7f9dbfea05c83784f8b85149852f08&mode=mathml) we can first make the ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=b0603860fcffe94e5b8eec59ed813421&mode=mathml) and ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ae539dfcc999c28e25a0f3ae65c1de79&mode=mathml) terms disappear:
+To get for instance ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7b7f9dbfea05c83784f8b85149852f08&mode=mathml) we can first make the ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=b0603860fcffe94e5b8eec59ed813421&mode=mathml) and ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ae539dfcc999c28e25a0f3ae65c1de79&mode=mathml) terms disappear:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=77bff080723535c85621227af72dee59&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=77bff080723535c85621227af72dee59&mode=mathml)
 
 
 
-Noting ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=4d09086a4a272007c243ea764d5fdd0c&mode=mathml), we then get:
+Noting ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=4d09086a4a272007c243ea764d5fdd0c&mode=mathml), we then get:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=490caa42b7f48dc598b1badff0f1a763&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=490caa42b7f48dc598b1badff0f1a763&mode=mathml)
+
+
+
+**Note:** a number of the formulae above are invisible to the majority of browsers, including Chrome, IE/Edge, Safari and Opera. They may (subject to the installation of necessary fronts) be visible to Firefox.
+
+
+
+
+
 
 ```perl
 use Clifford;

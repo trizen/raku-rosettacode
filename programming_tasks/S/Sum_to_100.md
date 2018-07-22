@@ -1,8 +1,10 @@
-[1]: http://rosettacode.org/wiki/Sum_to_100
+[1]: https://rosettacode.org/wiki/Sum_to_100
 
 # [Sum to 100][1]
 
 ```perl
+my $sum = 100;
+my $N   = 10;
 my @ops = ['-', ''], |( [' + ', ' - ', ''] xx 8 );
 my @str = [X~] map { .Slip }, ( @ops Z 1..9 );
 my %sol = @str.classify: *.subst( ' - ', ' -', :g )\
@@ -10,16 +12,16 @@ my %sol = @str.classify: *.subst( ' - ', ' -', :g )\
  
 my %count.push: %sol.map({ .value.elems => .key });
  
-my $max_solutions    = %count.max( + *.key );
-my $first_unsolvable = first { %sol{$_} :!exists }, 1..*;
-my @two_largest_sums = %sol.keys.sort(-*)[^2];
+my $max-solutions    = %count.max( + *.key );
+my $first-unsolvable = first { %sol{$_} :!exists }, 1..*;
+sub n-largest-sums (Int $n) { %sol.sort(-*.key)[^$n].fmt: "%8s => %s\n" }
  
-given %sol{100}:p {
+given %sol{$sum}:p {
     say "{.value.elems} solutions for sum {.key}:";
     say "    $_" for .value.list;
 }
  
-say .perl for :$max_solutions, :$first_unsolvable, :@two_largest_sums;
+.say for :$max-solutions, :$first-unsolvable, "$N largest sums:", n-largest-sums($N);
 ```
 
 #### Output:
@@ -37,7 +39,17 @@ say .perl for :$max_solutions, :$first_unsolvable, :@two_largest_sums;
     123 + 45 - 67 + 8 - 9
     123 - 4 - 5 - 6 - 7 + 8 - 9
     123 - 45 - 67 + 89
-:max_solutions("46" => $["9", "-9"])
-:first_unsolvable(211)
-:two_largest_sums(["123456789", "23456790"])
+max-solutions => 46 => [-9 9]
+first-unsolvable => 211
+10 largest sums:
+123456789 => 123456789
+ 23456790 => 1 + 23456789
+ 23456788 => -1 + 23456789
+ 12345687 => 12345678 + 9
+ 12345669 => 12345678 - 9
+  3456801 => 12 + 3456789
+  3456792 => 1 + 2 + 3456789
+  3456790 => -1 + 2 + 3456789
+  3456788 => 1 - 2 + 3456789
+  3456786 => -1 - 2 + 3456789
 ```

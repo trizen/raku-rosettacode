@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parsing/Shunting-yard_algorithm
+[1]: https://rosettacode.org/wiki/Parsing/Shunting-yard_algorithm
 
 # [Parsing/Shunting-yard algorithm][1]
 

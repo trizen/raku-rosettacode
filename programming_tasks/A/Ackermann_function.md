@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ackermann_function
+[1]: https://rosettacode.org/wiki/Ackermann_function
 
 # [Ackermann function][1]
 
@@ -36,12 +36,8 @@ multi A(3,      Int \𝑛) { 5 + 8 * (2 ** 𝑛 - 1) }
  
 multi A(Int \𝑚, 0     ) { A(𝑚 - 1, 1) }
 multi A(Int \𝑚, Int \𝑛) { A(𝑚 - 1, A(𝑚, 𝑛 - 1)) }
-```
-
-
-Testing:
-
-```perl
+ 
+# Testing:
 say A(4,1);
 say .chars, " digits starting with ", .substr(0,50), "..." given A(4,2);
 ```

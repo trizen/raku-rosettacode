@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Fractal_tree
+[1]: https://rosettacode.org/wiki/Fractal_tree
 
 # [Fractal tree][1]
 

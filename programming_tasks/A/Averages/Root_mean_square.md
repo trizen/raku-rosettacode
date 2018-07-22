@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Averages/Root_mean_square
+[1]: https://rosettacode.org/wiki/Averages/Root_mean_square
 
 # [Averages/Root mean square][1]
 

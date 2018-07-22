@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_concatenation
+[1]: https://rosettacode.org/wiki/String_concatenation
 
 # [String concatenation][1]
 
@@ -7,15 +7,12 @@ my $s = 'hello';
 say $s ~ ' literal';
 my $s1 = $s ~ ' literal';
 say $s1;
-```
-
-
-An example of mutating concatenation:
-
-```perl
+ 
+# or, using mutating concatenation:
+ 
 $s ~= ' literal';
 say $s;
 ```
 
 
-Note also that most concatenation in Perl is done implicitly via interpolation.
+Note also that most concatenation in Perl 6 is done implicitly via interpolation.

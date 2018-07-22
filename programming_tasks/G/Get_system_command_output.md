@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Get_system_command_output
+[1]: https://rosettacode.org/wiki/Get_system_command_output
 
 # [Get system command output][1]
 

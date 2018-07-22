@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Longest_string_challenge
+[1]: https://rosettacode.org/wiki/Longest_string_challenge
 
 # [Longest string challenge][1]
 

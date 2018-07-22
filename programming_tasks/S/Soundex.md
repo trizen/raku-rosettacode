@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Soundex
+[1]: https://rosettacode.org/wiki/Soundex
 
 # [Soundex][1]
 

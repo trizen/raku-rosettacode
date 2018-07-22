@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Heronian_triangles
+[1]: https://rosettacode.org/wiki/Heronian_triangles
 
 # [Heronian triangles][1]
 

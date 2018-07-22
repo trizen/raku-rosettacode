@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/HTTP
+[1]: https://rosettacode.org/wiki/HTTP
 
 # [HTTP][1]
 

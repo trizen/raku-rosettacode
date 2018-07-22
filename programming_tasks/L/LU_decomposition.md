@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/LU_decomposition
+[1]: https://rosettacode.org/wiki/LU_decomposition
 
 # [LU decomposition][1]
 

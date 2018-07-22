@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/Permutations_by_swapping
+[1]: https://rosettacode.org/wiki/Permutations_by_swapping
 
 # [Permutations by swapping][1]
+
+### Recursive
 
 ```perl
 sub insert($x, @xs) { ([flat @xs[0 ..^ $_], $x, @xs[$_ .. *]] for 0 .. +@xs) }

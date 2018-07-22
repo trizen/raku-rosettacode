@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/FizzBuzz
+[1]: https://rosettacode.org/wiki/FizzBuzz
 
 # [FizzBuzz][1]
 
@@ -21,7 +21,14 @@ multi sub fizzbuzz(Int $ where * %% 15) { 'FizzBuzz' }
 multi sub fizzbuzz(Int $ where * %%  5) { 'Buzz' }
 multi sub fizzbuzz(Int $ where * %%  3) { 'Fizz' }
 multi sub fizzbuzz(Int $number        ) { $number }
-(1 .. 100)».&fizzbuzz.join("\n").say;
+(1 .. 100)».&fizzbuzz.say;
+```
+
+
+Or abusing list metaoperators:
+
+```perl
+[1..100].map({[~] ($_%%3, $_%%5) »||» "" Z&& <fizz buzz> or $_ })».say
 ```
 
 

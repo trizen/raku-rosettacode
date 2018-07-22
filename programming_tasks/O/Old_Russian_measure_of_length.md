@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Old_Russian_measure_of_length
+[1]: https://rosettacode.org/wiki/Old_Russian_measure_of_length
 
 # [Old Russian measure of length][1]
 

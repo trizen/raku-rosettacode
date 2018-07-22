@@ -1,7 +1,24 @@
-[1]: http://rosettacode.org/wiki/Input/Output_for_Lines_of_Text
+[1]: https://rosettacode.org/wiki/Input/Output_for_Lines_of_Text
 
 # [Input/Output for Lines of Text][1]
 
+Short version:
+
 ```perl
-$*OUT.say($*IN.get) xx $*IN.get;
+say get for ^get;
+```
+
+
+Verbose version:
+
+```perl
+sub do-stuff ($line) {
+    say $line;
+}
+ 
+my $n = +get;
+for ^$n {
+    my $line = get;
+    do-stuff $line;
+}
 ```

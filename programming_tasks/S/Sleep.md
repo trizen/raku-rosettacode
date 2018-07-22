@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sleep
+[1]: https://rosettacode.org/wiki/Sleep
 
 # [Sleep][1]
 

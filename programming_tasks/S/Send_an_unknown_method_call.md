@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Send_an_unknown_method_call
+[1]: https://rosettacode.org/wiki/Send_an_unknown_method_call
 
 # [Send an unknown method call][1]
 

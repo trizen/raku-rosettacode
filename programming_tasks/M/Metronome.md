@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Metronome
+[1]: https://rosettacode.org/wiki/Metronome
 
 # [Metronome][1]
 

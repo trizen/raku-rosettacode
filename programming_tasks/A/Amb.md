@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Amb
+[1]: https://rosettacode.org/wiki/Amb
 
 # [Amb][1]
+
+### Using Junctions
+
+
 
 Junctions are a construct that behave similarly to the wanted Amb operator. The only difference is, that they don't preserve the state that was True inside any control structure (like an if).
 
@@ -31,6 +35,10 @@ sub test (Str $l, Str $r) {
  
  
 ```
+
+
+### Using lazy lists
+
 
 
 
@@ -69,6 +77,10 @@ and short-circuits the match so that it does not need to generate parts of the s
 
 
 The `amb` operator itself uses a hyper to run the `dethunk` calls in parallel. Results are returned asyncronously via `gather`/`take`. The `dethunk` call traps failures after the failure has bypassed the `take`.
+
+
+
+### Using the regex engine
 
 
 

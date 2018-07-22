@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_the_intersection_of_two_lines
+[1]: https://rosettacode.org/wiki/Find_the_intersection_of_two_lines
 
 # [Find the intersection of two lines][1]
 

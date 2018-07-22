@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Zeckendorf_number_representation
+[1]: https://rosettacode.org/wiki/Zeckendorf_number_representation
 
 # [Zeckendorf number representation][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Kernighans_large_earthquake_problem
+[1]: https://rosettacode.org/wiki/Kernighans_large_earthquake_problem
 
 # [Kernighans large earthquake problem][1]
 

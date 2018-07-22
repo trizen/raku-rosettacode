@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Euler_method
+[1]: https://rosettacode.org/wiki/Euler_method
 
 # [Euler method][1]
 

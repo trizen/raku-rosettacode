@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Voronoi_diagram
+[1]: https://rosettacode.org/wiki/Voronoi_diagram
 
 # [Voronoi diagram][1]
 
@@ -10,6 +10,8 @@ Generates a Euclidean, a Taxicab and a Minkowski Voronoi diagram using the same 
 
 ```perl
 use Image::PNG::Portable;
+ 
+my @bars = '▁▂▃▄▅▆▇█▇▆▅▄▃▂▁'.comb;
  
 my %type = ( # Voronoi diagram type distance calculation
     'Taxicab'   => sub ($px, $py, $x, $y) { ($px - $x).abs  + ($py - $y).abs  },
@@ -28,6 +30,7 @@ my @domains = map { Hash.new(
 ) }, ^$dots;
  
 for %type.keys -> $type {
+    print "\nGenerating $type diagram...    ", ' ' x @bars;
     my $img = voronoi(@domains, :w($width), :h($height), :$type);
     @domains.map: *.&dot($img);
     $img.write: "Voronoi-{$type}-perl6.png";
@@ -35,9 +38,12 @@ for %type.keys -> $type {
  
 sub voronoi (@domains, :$w, :$h, :$type) {
     my $png = Image::PNG::Portable.new: :width($w), :height($h);
-    for ^$w X ^$h -> ($x, $y) {
-        my ($, $i) = min @domains.map: { %type{$type}(%($_)<x>, %($_)<y>, $x, $y), $++ };
-        $png.set: $x, $y, |@domains[$i]<rgb>
+    for ^$w -> $x {
+        print "\b" x 2+@bars, @bars.=rotate(1).join , '  ';
+        for ^$h -> $y {
+            my ($, $i) = min @domains.map: { %type{$type}(%($_)<x>, %($_)<y>, $x, $y), $++ };
+            $png.set: $x, $y, |@domains[$i]<rgb>
+        }
     }
     $png
 }
@@ -49,6 +55,7 @@ sub dot (%h, $png, $radius = 3) {
         }
     }
 }
+ 
 ```
 
 

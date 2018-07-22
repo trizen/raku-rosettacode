@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Cantor_set
+[1]: https://rosettacode.org/wiki/Cantor_set
 
 # [Cantor set][1]
 

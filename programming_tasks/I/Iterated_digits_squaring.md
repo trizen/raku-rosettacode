@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Iterated_digits_squaring
+[1]: https://rosettacode.org/wiki/Iterated_digits_squaring
 
 # [Iterated digits squaring][1]
 
@@ -7,11 +7,10 @@ This fairly abstract version does caching and filtering to reduce the number of 
 ```perl
 constant @sq = ^10 X** 2;
 my $cnt = 0;
-my %cache;
  
-sub Euler92($n) is cached {
+sub Euler92($n) {
     $n == any(1,89) ?? $n !!
-    Euler92( [+] @sq[$n.comb] )
+    (state %){$n} //= Euler92( [+] @sq[$n.comb] )
 }
  
 for 1 .. 1_000_000 -> $n {
@@ -72,9 +71,10 @@ say $cnt;
 ```
 
 
-This runs in under ten minutes. We can reduce this to 4 minutes by writing in the NQP (Not Quite Perl6) subset of the language:
+This runs in under ten minutes. We can reduce this significantly by writing in the NQP (Not Quite Perl6) subset of the language:
 
 ```perl
+use nqp;
 my $cache := nqp::list_i();
 nqp::bindpos_i($cache, 650, 0);
 nqp::bindpos_i($cache, 1, 1);

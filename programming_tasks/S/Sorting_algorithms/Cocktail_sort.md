@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort
 
 # [Sorting algorithms/Cocktail sort][1]
 

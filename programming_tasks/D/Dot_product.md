@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Dot_product
+[1]: https://rosettacode.org/wiki/Dot_product
 
 # [Dot product][1]
 

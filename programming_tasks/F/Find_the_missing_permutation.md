@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_the_missing_permutation
+[1]: https://rosettacode.org/wiki/Find_the_missing_permutation
 
 # [Find the missing permutation][1]
 
@@ -22,7 +22,8 @@ when you can just xor all the bits,
 and the missing one will just pop right out:
 
 ```perl
-say [~^] @givens;
+say [~^] <ABCD CABD ACDB DACB BCDA ACBD ADCB CDAB DABC BCAD CADB CDBA
+          CBAD ABDC ADBC BDCA DCBA BACD BADC BDAC CBDA DBCA DCAB>;
 ```
 
 #### Output:

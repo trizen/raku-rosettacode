@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Repeat
+[1]: https://rosettacode.org/wiki/Repeat
 
 # [Repeat][1]
 

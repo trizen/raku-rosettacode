@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Variadic_function
+[1]: https://rosettacode.org/wiki/Variadic_function
 
 # [Variadic function][1]
 
@@ -29,7 +29,7 @@ order: knock at the door
 ```
 
 
-Perl 6 also supports slurpy arrays and hashes, which are formal parameters that consume extra positional and keyword arguments like `@_` and `%_`. You can make a parameter slurpy with the `*` twigil. This implementation of `&amp;foo` works just like the last:
+Perl 6 also supports slurpy arrays and hashes, which are formal parameters that consume extra positional and keyword arguments like `@_` and `%_`. You can make a parameter slurpy with the `*` twigil. This implementation of `&foo` works just like the last:
 
 ```perl
 sub foo (*@positional, *%named) {

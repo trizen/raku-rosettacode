@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Non-continuous_subsequences
+[1]: https://rosettacode.org/wiki/Non-continuous_subsequences
 
 # [Non-continuous subsequences][1]
 

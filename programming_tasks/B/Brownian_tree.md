@@ -1,12 +1,8 @@
-[1]: http://rosettacode.org/wiki/Brownian_tree
+[1]: https://rosettacode.org/wiki/Brownian_tree
 
 # [Brownian tree][1]
 
 This solution spawns new Particles at a growing square border and displays the Tree every 50 particles and at the end using unicode UPPER/LOWER HALF BLOCK and FULL BLOCK.
-
-
-
-With the given size of 100 and particle count of 1000, this takes about 25 seconds with Niecza on my notebook.
 
 ```perl
 constant size = 100;
@@ -70,15 +66,10 @@ for ^particlenum -> $progress {
         }
     }
     set($x,$y);
-    display if $progress %% 50;
     if $spawnradius < mid && abs(($x|$y) - mid) > $spawnradius - 5 {
         $spawnradius = $spawnradius + 1;
     }
 }
  
-say "";
 display;
-say "";
-say "time elapsed: ", (now - BEGIN { now }).Num.fmt("%.2f"), " seconds";
-say "";
 ```

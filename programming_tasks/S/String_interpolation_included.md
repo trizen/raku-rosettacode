@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_interpolation_(included)
+[1]: https://rosettacode.org/wiki/String_interpolation_(included)
 
 # [String interpolation (included)][1]
 

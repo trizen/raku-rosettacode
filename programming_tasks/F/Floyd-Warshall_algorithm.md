@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Floyd-Warshall_algorithm
+[1]: https://rosettacode.org/wiki/Floyd-Warshall_algorithm
 
 # [Floyd-Warshall algorithm][1]
 

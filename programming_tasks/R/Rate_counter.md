@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rate_counter
+[1]: https://rosettacode.org/wiki/Rate_counter
 
 # [Rate counter][1]
 

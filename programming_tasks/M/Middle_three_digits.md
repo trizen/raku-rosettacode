@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Middle_three_digits
+[1]: https://rosettacode.org/wiki/Middle_three_digits
 
 # [Middle three digits][1]
 
@@ -36,4 +36,18 @@ The three middle digits of -12345 are:  234
 2002 has an even number of digits
 -2002 has an even number of digits
 0 is too short
+```
+
+
+It is also possible to write a regular expression with a code assertion:
+
+```perl
+for [\~] ^10 { say "$_ => $()" if m/^^(\d+) <(\d**3)> (\d+) $$ <?{ $0.chars == $1.chars}> / }
+```
+
+#### Output:
+```
+01234 => 123
+0123456 => 234
+012345678 => 345
 ```

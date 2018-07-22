@@ -1,14 +1,13 @@
-[1]: http://rosettacode.org/wiki/Orbital_elements
+[1]: https://rosettacode.org/wiki/Orbital_elements
 
 # [Orbital elements][1]
 
 We'll use the [Clifford geometric algebra library](https://github.com/grondilu/clifford) but only for the vector operations.
 
 ```perl
-subset PositiveReal of Real where * >= 0;
 sub orbital-state-vectors(
-    PositiveReal :$semimajor-axis,
-    PositiveReal :$eccentricity,
+    Real :$semimajor-axis where * >= 0,
+    Real :$eccentricity   where * >= 0,
     Real :$inclination,
     Real :$longitude-of-ascending-node,
     Real :$argument-of-periapsis,
@@ -28,7 +27,7 @@ sub orbital-state-vectors(
         2*$semimajor-axis !!
         $semimajor-axis*(1 - $eccentricity**2);
  
-    my ($c, $s) = map {.($true-anomaly)}, &cos, &sin;
+    my ($c, $s) = .cos, .sin given $true-anomaly;
  
     my \r = l/(1 + $eccentricity*$c);
     my \rprime = $s*r**2/l;
@@ -50,8 +49,6 @@ say orbital-state-vectors
     longitude-of-ascending-node => pi/6,
     argument-of-periapsis => pi/4,
     true-anomaly => 0;
- 
- 
 ```
 
 #### Output:

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Horizontal_sundial_calculations
+[1]: https://rosettacode.org/wiki/Horizontal_sundial_calculations
 
 # [Horizontal sundial calculations][1]
 

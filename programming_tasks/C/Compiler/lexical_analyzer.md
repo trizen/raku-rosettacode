@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Compiler/lexical_analyzer
+[1]: https://rosettacode.org/wiki/Compiler/lexical_analyzer
 
 # [Compiler/lexical analyzer][1]
 
@@ -30,48 +30,54 @@ grammar tiny_C {
     }
  
     proto token operator    {*}
-    token operator:sym<*>   { '*'               { make 'OP_MULTIPLY'  } }
-    token operator:sym</>   { '/'<!before '*'>  { make 'OP_DIVIDE'    } }
-    token operator:sym<+>   { '+'               { make 'OP_ADD'       } }
-    token operator:sym<->   { '-'               { make 'OP_SUBTRACT'  } }
-    token operator:sym('<='){ '<='              { make 'OP_LESSEQUAL' } }
-    token operator:sym('<') { '<'               { make 'OP_LESS'      } }
-    token operator:sym('>') { '>'               { make 'OP_GREATER'   } }
-    token operator:sym<!=>  { '!='              { make 'OP_NOTEQUAL'  } }
-    token operator:sym<=>   { '='               { make 'OP_ASSIGN'    } }
-    token operator:sym<&&>  { '&&'              { make 'OP_AND'       } }
+    token operator:sym<*>   { '*'               { make 'Op_multiply'    } }
+    token operator:sym</>   { '/'<!before '*'>  { make 'Op_divide'      } }
+    token operator:sym<%>   { '%'               { make 'Op_mod'         } }
+    token operator:sym<+>   { '+'               { make 'Op_add'         } }
+    token operator:sym<->   { '-'               { make 'Op_subtract'    } }
+    token operator:sym('<='){ '<='              { make 'Op_lessequal'   } }
+    token operator:sym('<') { '<'               { make 'Op_less'        } }
+    token operator:sym('>='){ '>='              { make 'Op_greaterequal'} }
+    token operator:sym('>') { '>'               { make 'Op_greater'     } }
+    token operator:sym<==>  { '=='              { make 'Op_equal'       } }
+    token operator:sym<!=>  { '!='              { make 'Op_notequal'    } }
+    token operator:sym<!>   { '!'               { make 'Op_not'         } }
+    token operator:sym<=>   { '='               { make 'Op_assign'      } }
+    token operator:sym<&&>  { '&&'              { make 'Op_and'         } }
+    token operator:sym<||>  { '||'              { make 'Op_or'          } }
  
     proto token keyword      {*}
-    token keyword:sym<if>    { 'if'    { make 'KEYWORD_IF'    } }
-    token keyword:sym<putc>  { 'putc'  { make 'KEYWORD_PUTC'  } }
-    token keyword:sym<while> { 'while' { make 'KEYWORD_WHILE' } }
-    token keyword:sym<print> { 'print' { make 'KEYWORD_PRINT' } }
+    token keyword:sym<if>    { 'if'    { make 'Keyword_if'    } }
+    token keyword:sym<else>  { 'else'  { make 'Keyword_else'  } }
+    token keyword:sym<putc>  { 'putc'  { make 'Keyword_putc'  } }
+    token keyword:sym<while> { 'while' { make 'Keyword_while' } }
+    token keyword:sym<print> { 'print' { make 'Keyword_print' } }
  
     proto token symbol  {*}
-    token symbol:sym<(> { '(' { make 'LEFT_PAREN'  } }
-    token symbol:sym<)> { ')' { make 'RIGHT_PAREN' } }
-    token symbol:sym<{> { '{' { make 'LEFT_BRACE'  } }
-    token symbol:sym<}> { '}' { make 'RIGHT_BRACE' } }
-    token symbol:sym<;> { ';' { make 'SEMICOLON'   } }
-    token symbol:sym<,> { ',' { make 'COMMA'       } }
+    token symbol:sym<(> { '(' { make 'LeftParen'  } }
+    token symbol:sym<)> { ')' { make 'RightParen' } }
+    token symbol:sym<{> { '{' { make 'LeftBrace'  } }
+    token symbol:sym<}> { '}' { make 'RightBrace' } }
+    token symbol:sym<;> { ';' { make 'Semicolon'   } }
+    token symbol:sym<,> { ',' { make 'Comma'       } }
  
-    token identifier { <[_A..Za..z]><[_A..Za..z0..9]>*    { make 'IDENTIFER ' ~ $/ } }
-    token integer    { <[0..9]>+                          { make 'INTEGER   ' ~ $/ } }
+    token identifier { <[_A..Za..z]><[_A..Za..z0..9]>* { make 'Identifier ' ~ $/ } }
+    token integer    { <[0..9]>+                       { make 'Integer '    ~ $/ } }
  
     token char {
         '\'' [<-[']> | '\n' | '\\\\'] '\''
-        { make 'CHAR_LITERAL ' ~ $/.subst("\\n", "\n").substr(1, *-1).ord }
+        { make 'Char_Literal ' ~ $/.subst("\\n", "\n").substr(1, *-1).ord }
     }
  
     token string {
         '"' <-["\n]>* '"' #'
         {
-            make 'STRING ' ~ $/;
+            make 'String ' ~ $/;
             note 'Error: Unknown escape sequence.' and exit if (~$/ ~~ m:r/ <!after <[\\]>>[\\<-[n\\]>]<!before <[\\]>> /);
         }
     }
  
-    token eoi { $ { make 'END_OF_INPUT' } }
+    token eoi { $ { make 'End_of_input' } }
  
     token error {
         | '\'''\''                   { note 'Error: Empty character constant.' and exit }
@@ -84,7 +90,7 @@ grammar tiny_C {
  
 sub parse_it ( $c_code ) {
     my $l;
-    my @pos = gather for $c_code.lines».chars.kv -> $line, $v {
+    my @pos = gather for $c_code.lines>>.chars.kv -> $line, $v {
         take [ $line + 1, $_ ] for 1 .. ($v+1); # v+1 for newline
         $l = $line+2;
     }
@@ -101,32 +107,38 @@ parse_it( $tokenizer );
 
 #### Output:
 ```
-  5  15 KEYWORD_PRINT
-  5  41 OP_SUBTRACT
-  6  15 KEYWORD_PUTC
-  6  41 OP_LESS
-  7  15 KEYWORD_IF
-  7  41 OP_GREATER
-  8  15 KEYWORD_WHILE
-  8  41 OP_LESSEQUAL
-  9  15 LEFT_BRACE
-  9  41 OP_NOTEQUAL
- 10  15 RIGHT_BRACE
- 10  41 OP_AND
- 11  15 LEFT_PAREN
- 11  41 SEMICOLON
- 12  15 RIGHT_PAREN
- 12  41 COMMA
- 13  15 OP_SUBTRACT
- 13  41 OP_ASSIGN
- 14  15 OP_MULTIPLY
- 14  41 INTEGER   42
- 15  15 OP_DIVIDE
- 15  41 STRING "String literal"
- 16  15 OP_ADD
- 16  41 IDENTIFER variable_name
- 17  26 CHAR_LITERAL 10
- 18  26 CHAR_LITERAL 92
- 19  26 CHAR_LITERAL 32
- 20   1 END_OF_INPUT
+  5  16 Keyword_print
+  5  40 Op_subtract
+  6  16 Keyword_putc
+  6  40 Op_less
+  7  16 Keyword_if
+  7  40 Op_greater
+  8  16 Keyword_else
+  8  40 Op_lessequal
+  9  16 Keyword_while
+  9  40 Op_greaterequal
+ 10  16 LeftBrace
+ 10  40 Op_equal
+ 11  16 RightBrace
+ 11  40 Op_notequal
+ 12  16 LeftParen
+ 12  40 Op_and
+ 13  16 RightParen
+ 13  40 Op_or
+ 14  16 Op_subtract
+ 14  40 Semicolon
+ 15  16 Op_not
+ 15  40 Comma
+ 16  16 Op_multiply
+ 16  40 Op_assign
+ 17  16 Op_divide
+ 17  40 Integer 42
+ 18  16 Op_mod
+ 18  40 String "String literal"
+ 19  16 Op_add
+ 19  40 Identifier variable_name
+ 20  26 Char_Literal 10
+ 21  26 Char_Literal 92
+ 22  26 Char_Literal 32
+ 23   1 End_of_input
 ```

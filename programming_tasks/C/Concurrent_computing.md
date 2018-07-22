@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Concurrent_computing
+[1]: https://rosettacode.org/wiki/Concurrent_computing
 
 # [Concurrent computing][1]
 

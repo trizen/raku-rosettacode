@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Mersenne_primes
+[1]: https://rosettacode.org/wiki/Mersenne_primes
 
 # [Mersenne primes][1]
 

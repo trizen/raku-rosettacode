@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Formal_power_series
+[1]: https://rosettacode.org/wiki/Formal_power_series
 
 # [Formal power series][1]
 

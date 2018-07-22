@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Closest-pair_problem
+[1]: https://rosettacode.org/wiki/Closest-pair_problem
 
 # [Closest-pair problem][1]
 

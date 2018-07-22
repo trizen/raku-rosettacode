@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Truncate_a_file
+[1]: https://rosettacode.org/wiki/Truncate_a_file
 
 # [Truncate a file][1]
 
 ```perl
 use NativeCall;
  
-sub truncate(Str, Int --> int) is native {*}
+sub truncate(Str, int32 --> int32) is native {*}
  
 sub MAIN (Str $file, Int $to) {
     given $file.IO { 

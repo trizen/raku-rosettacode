@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Formatted_numeric_output
+[1]: https://rosettacode.org/wiki/Formatted_numeric_output
 
 # [Formatted numeric output][1]
 

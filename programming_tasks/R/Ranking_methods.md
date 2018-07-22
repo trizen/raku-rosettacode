@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ranking_methods
+[1]: https://rosettacode.org/wiki/Ranking_methods
 
 # [Ranking methods][1]
 

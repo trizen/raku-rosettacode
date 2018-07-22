@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Munching_squares
+[1]: https://rosettacode.org/wiki/Munching_squares
 
 # [Munching squares][1]
 
 Here's one simple way:
 
 ```perl
-my $ppm = open("munching.ppm", :w, :bin) or
+my $ppm = open("munching0.ppm", :w) or
   die "Can't create munching.ppm: $!";
  
 $ppm.print(q :to 'EOT');
@@ -32,12 +32,12 @@ Another way:
 ```perl
 my @colors = map -> $r, $g, $b { Buf.new: $r, $g, $b },
 		map -> $x { floor ($x/256) ** 3 * 256 },
-		    ((0...255) Z
+		    (flat (0...255) Z
 		     (255...0) Z
-		     (0,2...254),(254,252...0));
+		     flat (0,2...254),(254,252...0));
  
  
-my $PPM = open "munching.ppm", :w, :bin or die "Can't create munching.ppm: $!";
+my $PPM = open "munching1.ppm", :w or die "Can't create munching.ppm: $!";
  
 $PPM.print: qq:to/EOH/;
     P6
@@ -52,4 +52,4 @@ $PPM.close;
 ```
 
 
-[<img alt="Perl 6 output" src="http://rosettacode.org/mw/images/thumb/7/7c/Perl_6_xor_pattern.png/200px-Perl_6_xor_pattern.png" width="200" height="200"/>](http://rosettacode.org/wiki/File:Perl_6_xor_pattern.png)
+[<img alt="Perl 6 output" src="https://rosettacode.org/mw/images/thumb/7/7c/Perl_6_xor_pattern.png/200px-Perl_6_xor_pattern.png" width="200" height="200" />](https://rosettacode.org/wiki/File:Perl_6_xor_pattern.png)

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Casting_out_nines
+[1]: https://rosettacode.org/wiki/Casting_out_nines
 
 # [Casting out nines][1]
 

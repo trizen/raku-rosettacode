@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Date_manipulation
+[1]: https://rosettacode.org/wiki/Date_manipulation
 
 # [Date manipulation][1]
 
@@ -12,7 +12,7 @@ or maybe just due to laziness), but that just gives us another opportunity to de
 
 ```perl
 my @month = <January February March April May June July August September October November December>;
-my %month = (@month Z=> ^12).flat, (@month».substr(0,3) Z=> ^12).flat, 'Sept' => 8;
+my %month = flat (@month Z=> ^12), (@month».substr(0,3) Z=> ^12), 'Sept' => 8;
  
 grammar US-DateTime {
     rule TOP { <month> <day>','? <year>','? <time> <tz> }
@@ -59,7 +59,7 @@ my $timezone = $<tz>.ast * 3600;
  
 my $dt = DateTime.new(:$year, :$month, :$day, :$hour, :$minute, :$timezone).in-timezone(0);
  
-$dt .= delta(12,hour);
+$dt = $dt.later(hours => 12);
  
 say "12 hours later, GMT: $dt";
 say "12 hours later, PST: $dt.in-timezone(-8 * 3600)";

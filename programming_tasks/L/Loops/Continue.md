@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Continue
+[1]: https://rosettacode.org/wiki/Loops/Continue
 
 # [Loops/Continue][1]
 

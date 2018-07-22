@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Last_Friday_of_each_month
+[1]: https://rosettacode.org/wiki/Last_Friday_of_each_month
 
 # [Last Friday of each month][1]
 

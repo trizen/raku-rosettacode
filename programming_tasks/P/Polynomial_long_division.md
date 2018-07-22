@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Polynomial_long_division
+[1]: https://rosettacode.org/wiki/Polynomial_long_division
 
 # [Polynomial long division][1]
 
@@ -34,4 +34,4 @@ Output:
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=0b87cf3373b9b349c7550caf5964ad1c&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=0b87cf3373b9b349c7550caf5964ad1c&mode=mathml)

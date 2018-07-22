@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Preserve_screen
+[1]: https://rosettacode.org/wiki/Terminal_control/Preserve_screen
 
 # [Terminal control/Preserve screen][1]
 

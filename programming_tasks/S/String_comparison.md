@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_comparison
+[1]: https://rosettacode.org/wiki/String_comparison
 
 # [String comparison][1]
 

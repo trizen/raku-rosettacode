@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Continued_fraction/Arithmetic/Construct_from_rational_number
+[1]: https://rosettacode.org/wiki/Continued_fraction/Arithmetic/Construct_from_rational_number
 
 # [Continued fraction/Arithmetic/Construct from rational number][1]
 

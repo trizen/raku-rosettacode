@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Cholesky_decomposition
+[1]: https://rosettacode.org/wiki/Cholesky_decomposition
 
 # [Cholesky decomposition][1]
 

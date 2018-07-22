@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/MD5
+[1]: https://rosettacode.org/wiki/MD5
 
 # [MD5][1]
 

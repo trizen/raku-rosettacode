@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Best_shuffle
+[1]: https://rosettacode.org/wiki/Best_shuffle
 
 # [Best shuffle][1]
 

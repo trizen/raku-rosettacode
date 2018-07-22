@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Stooge_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Stooge_sort
 
 # [Sorting algorithms/Stooge sort][1]
 
 ```perl
-sub stoogesort( @L is rw, $i = 0, $j = @L.end ) {
+sub stoogesort( @L, $i = 0, $j = @L.end ) {
     @L[$j,$i] = @L[$i,$j] if @L[$i] > @L[$j];
  
     my $interval = $j - $i;

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/The_Twelve_Days_of_Christmas
+[1]: https://rosettacode.org/wiki/The_Twelve_Days_of_Christmas
 
 # [The Twelve Days of Christmas][1]
 

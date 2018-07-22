@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Character_codes
+[1]: https://rosettacode.org/wiki/Character_codes
 
 # [Character codes][1]
 

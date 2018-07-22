@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Native_shebang
+[1]: https://rosettacode.org/wiki/Native_shebang
 
 # [Native shebang][1]
 

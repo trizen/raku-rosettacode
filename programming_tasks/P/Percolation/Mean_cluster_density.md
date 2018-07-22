@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Percolation/Mean_cluster_density
+[1]: https://rosettacode.org/wiki/Percolation/Mean_cluster_density
 
 # [Percolation/Mean cluster density][1]
 

@@ -1,18 +1,16 @@
-[1]: http://rosettacode.org/wiki/Return_multiple_values
+[1]: https://rosettacode.org/wiki/Return_multiple_values
 
 # [Return multiple values][1]
 
-Each function officially returns one value, but by returning a Parcel you can transparently return a lazy list of arbitrary size.
+Each function officially returns one value, but by returning a List or Seq you can transparently return a list of arbitrary (even infinite) size. The calling scope can destructure the list using assignment, if it so chooses:
 
 ```perl
-sub foo($a,$b) {
-    $a + $b, $a * $b, $b xx $a
+sub addmul($a, $b) {
+    $a + $b, $a * $b
 }
  
-say foo 3, 7;
+my ($add, $mul) = addmul 3, 7;
 ```
 
-#### Output:
-```
-10 21 7 7 7
-```
+
+In this example, the variable `$add` now holds the number 10, and `$mul` the number 21.

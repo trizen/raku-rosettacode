@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/LZW_compression
+[1]: https://rosettacode.org/wiki/LZW_compression
 
 # [LZW compression][1]
 
@@ -9,17 +9,17 @@ sub compress(Str $uncompressed --> Seq)  {
  
     my $w = "";
     gather {
-	for $uncompressed.comb -> $c {
-	    my $wc = $w ~ $c;
-	    if %dictionary{$wc}:exists { $w = $wc }
-	    else {
-		take %dictionary{$w};
-		%dictionary{$wc} = +%dictionary;
-		$w = $c;
-	    }
-	}
+  for $uncompressed.comb -> $c {
+      my $wc = $w ~ $c;
+      if %dictionary{$wc}:exists { $w = $wc }
+      else {
+    take %dictionary{$w};
+    %dictionary{$wc} = +%dictionary;
+    $w = $c;
+      }
+  }
  
-	take %dictionary{$w} if $w.chars;
+  take %dictionary{$w} if $w.chars;
     }
 }
  
@@ -29,16 +29,16 @@ sub decompress(@compressed --> Str) {
  
     my $w = shift @compressed;
     join '', gather {
-	take $w;
-	for @compressed -> $k {
-	    my $entry;
-	    if %dictionary{$k}:exists { take $entry = %dictionary{$k} }
-	    elsif $k == $dict-size    { take $entry = $w ~ $w.substr(0,1) }
-	    else                      { die "Bad compressed k: $k" }
+  take $w;
+  for @compressed -> $k {
+      my $entry;
+      if %dictionary{$k}:exists { take $entry = %dictionary{$k} }
+      elsif $k == $dict-size    { take $entry = $w ~ $w.substr(0,1) }
+      else                      { die "Bad compressed k: $k" }
  
-	    %dictionary{$dict-size++} = $w ~ $entry.substr(0,1);
-	    $w = $entry;
-	}
+      %dictionary{$dict-size++} = $w ~ $entry.substr(0,1);
+      $w = $entry;
+  }
     }
 }
  

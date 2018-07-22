@@ -1,13 +1,25 @@
-[1]: http://rosettacode.org/wiki/Rot-13
+[1]: https://rosettacode.org/wiki/Rot-13
 
 # [Rot-13][1]
 
-As in Perl 5, there are `-n` and `-p` command-line options that ease the creation of a unix filter.
-
-
-
-Here for instance with `-p`
-
 ```perl
-.=trans: 'a..mn..z' => 'n..za..m', :ii
+print slurp.trans: ['A'..'Z','a'..'z'] => ['N'..'Z','A'..'M','n'..'z','a'..'m']
+```
+
+
+Input:
+
+
+#### Output:
+```
+Rosetta Code
+```
+
+
+Output:
+
+
+#### Output:
+```
+Ebfrggn Pbqr
 ```

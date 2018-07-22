@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Number_reversal_game
+[1]: https://rosettacode.org/wiki/Number_reversal_game
 
 # [Number reversal game][1]
 

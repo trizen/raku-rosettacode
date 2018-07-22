@@ -1,23 +1,20 @@
-[1]: http://rosettacode.org/wiki/World_Cup_group_stage
+[1]: https://rosettacode.org/wiki/World_Cup_group_stage
 
 # [World Cup group stage][1]
 
 ```perl
 constant scoring = 0, 1, 3;
-constant r = 0..2;
 my @histo = [0 xx 10] xx 4;
  
-for ([X] r,r,r,r,r,r).tree -> @results {
+for [X] ^3 xx 6 -> @results {
     my @s;
  
-    for @results Z (^4).combinations(2)
-     -> $r,        @g {
+    for @results Z (^4).combinations(2) -> ($r, @g) {
         @s[@g[0]] += scoring[$r];
         @s[@g[1]] += scoring[2 - $r];
     }
  
-    for @histo Z @s.sort
-     -> @h,      $v {
+    for @histo Z @s.sort -> (@h, $v) {
         ++@h[$v];
     }
 }

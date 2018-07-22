@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Elliptic_curve_arithmetic
+[1]: https://rosettacode.org/wiki/Elliptic_curve_arithmetic
 
 # [Elliptic curve arithmetic][1]
 
 ```perl
-module EC;
+unit module EC;
 our ($A, $B) = (0, 7);
  
 role Horizon { method gist { 'EC Point at horizon' } }

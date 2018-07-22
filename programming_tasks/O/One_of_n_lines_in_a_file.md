@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/One_of_n_lines_in_a_file
+[1]: https://rosettacode.org/wiki/One_of_n_lines_in_a_file
 
 # [One of n lines in a file][1]
 

@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Two_Sum
+[1]: https://rosettacode.org/wiki/Two_Sum
 
 # [Two Sum][1]
 
 ```perl
 sub two_sum ( @numbers, $sum ) {
     die '@numbers is not sorted' unless [<=] @numbers;
-
+ 
     my ( $i, $j ) = 0, @numbers.end;
     while $i < $j {
         given $sum <=> @numbers[$i,$j].sum {
@@ -16,7 +16,7 @@ sub two_sum ( @numbers, $sum ) {
     }
     return;
 }
-
+ 
 say two_sum ( 0, 2, 11, 19, 90 ), 21;
 say two_sum ( 0, 2, 11, 19, 90 ), 25;
 ```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sort_three_variables
+[1]: https://rosettacode.org/wiki/Sort_three_variables
 
 # [Sort three variables][1]
 

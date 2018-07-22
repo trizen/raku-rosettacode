@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Equilibrium_index
+[1]: https://rosettacode.org/wiki/Equilibrium_index
 
 # [Equilibrium index][1]
 
@@ -23,13 +23,17 @@ And here's an FP solution that manages to remain O(n):
 ```perl
 sub equilibrium_index(@list) {
     my @a = [\+] @list;
-    my @b := reverse [\+] reverse @list;
-    ^@list Zxx (@a »==« @b);
+    my @b = reverse [\+] reverse @list;
+    ^@list Zxx (@a »==« @b); 
 }
 ```
 
 
 The `[\+]` is a reduction that returns a list of partial results. The `»==«` is a vectorized equality comparison; it returns a vector of true and false. The `Zxx` is a zip with the list replication operator, so we return only the elements of the left list where the right list is true (which is taken to mean 1 here). And the `^@list` is just shorthand for `0 ..^ @list`. We could just as easily have used `@list.keys` there.
+
+
+
+### Single-pass solution
 
 
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Inheritance/Single
+[1]: https://rosettacode.org/wiki/Inheritance/Single
 
 # [Inheritance/Single][1]
 

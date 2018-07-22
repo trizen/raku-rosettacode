@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Odd_word_problem
+[1]: https://rosettacode.org/wiki/Odd_word_problem
 
 # [Odd word problem][1]
 

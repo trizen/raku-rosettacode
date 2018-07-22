@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Memory_layout_of_a_data_structure
+[1]: https://rosettacode.org/wiki/Memory_layout_of_a_data_structure
 
 # [Memory layout of a data structure][1]
 

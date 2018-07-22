@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Increment_loop_index_within_loop_body
+[1]: https://rosettacode.org/wiki/Loops/Increment_loop_index_within_loop_body
 
 # [Loops/Increment loop index within loop body][1]
 

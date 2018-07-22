@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Color_wheel
+[1]: https://rosettacode.org/wiki/Color_wheel
 
 # [Color wheel][1]
 

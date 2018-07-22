@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Foreach
+[1]: https://rosettacode.org/wiki/Loops/Foreach
 
 # [Loops/Foreach][1]
 

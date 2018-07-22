@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/IBAN
+[1]: https://rosettacode.org/wiki/IBAN
 
 # [IBAN][1]
 

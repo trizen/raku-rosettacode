@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Straddling_checkerboard
+[1]: https://rosettacode.org/wiki/Straddling_checkerboard
 
 # [Straddling checkerboard][1]
 
@@ -11,16 +11,16 @@ We build the full table during .new, which simplifies .encode and .decode.
 ```perl
 class Straddling_Checkerboard {
     has @!flat_board; # 10x3 stored as 30x1
-    has $!plain2code; # Full translation table; invertable
+    has $!plain2code; # full translation table, invertable
     has @!table;      # Printable layout, like Wikipedia entry
  
     my $numeric_escape = '/';
     my $exclude = /<-[A..Z0..9.]>/; # Omit the escape character
  
-    method display_table { say ~ .list for @!table };
+    method display_table { gather { take ~ .list for @!table } };
  
     method decode ( Str $s --> Str ) {
-        $s.trans($!plain2code.invert);
+        $s.trans($!plain2code.antipairs);
     }
  
     method encode ( Str $s, :$collapse? --> Str ) {
@@ -30,27 +30,27 @@ class Straddling_Checkerboard {
  
     submethod BUILD ( :$alphabet, :$u where 0..9, :$v where 0..9 ) {
         die if $u == $v;
-        die if $alphabet.comb.sort.join ne [~] './', 'A'..'Z';
+        die if $alphabet.comb.sort.join ne [~] flat './', 'A'..'Z';
  
         @!flat_board = $alphabet.uc.comb;
         @!flat_board.splice( $u min $v, 0, Any );
         @!flat_board.splice( $u max $v, 0, Any );
  
-        @!table = [ ' ',             [ 0 ..  9]               ],
-                  [ ' ', @!flat_board[ 0 ..  9].map: * // ' ' ],
-                  [ $u,  @!flat_board[10 .. 19]               ],
-                  [ $v,  @!flat_board[20 .. 29]               ];
+        @!table = [ ' ',             [ 0 ..  9]                              ],
+                  [ ' ',|@!flat_board[ 0 ..  9].map: {.defined ?? $_ !! ' '} ],
+                  [ $u,  @!flat_board[10 .. 19]                              ],
+                  [ $v,  @!flat_board[20 .. 29]                              ];
  
         my @order = 0..9; # This may be passed as a param in the future
  
-        my @nums = @order,
+        my @nums = flat @order,
                    @order.map({ +"$u$_" }),
                    @order.map({ +"$v$_" });
  
-        my %p2c = @!flat_board Z=> @nums;
-        %p2c.delete(Any);
+        my %c2p = @nums Z=> @!flat_board;
+        %c2p{$_}:delete if %c2p{$_} eqv Any for keys %c2p;
+        my %p2c = %c2p.invert;
         %p2c{$_} = %p2c{$numeric_escape} ~ $_ for 0..9;
- 
         $!plain2code = [%p2c.keys] => [%p2c.values];
     }
 }
@@ -63,7 +63,7 @@ sub MAIN ( :$u = 3, :$v = 7, :$alphabet = 'HOLMESRTABCDFGIJKNPQUVWXYZ./' ) {
         my $original = 'One night-it was on the twentieth of March, 1888-I was returning';
         my $en = $sc.encode($original, :$collapse);
         my $de = $sc.decode($en);
-        say;
+        say '';
         say "Original: $original";
         say "Encoded:  $en";
         say "Decoded:  $de";

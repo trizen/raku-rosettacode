@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Associative_array/Iteration
+[1]: https://rosettacode.org/wiki/Associative_array/Iteration
 
 # [Associative array/Iteration][1]
 
@@ -6,6 +6,11 @@
 my %pairs = hello => 13, world => 31, '!' => 71;
  
 for %pairs.kv -> $k, $v {
+    say "(k,v) = ($k, $v)";
+}
+ 
+# Stable order
+for %pairs.sort(*.value)>>.kv -> ($k, $v) {
     say "(k,v) = ($k, $v)";
 }
  

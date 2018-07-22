@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Maze_generation
+[1]: https://rosettacode.org/wiki/Maze_generation
 
 # [Maze generation][1]
 

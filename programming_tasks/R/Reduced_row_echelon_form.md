@@ -1,30 +1,26 @@
-[1]: http://rosettacode.org/wiki/Reduced_row_echelon_form
+[1]: https://rosettacode.org/wiki/Reduced_row_echelon_form
 
 # [Reduced row echelon form][1]
 
 ```perl
 sub rref (@m) {
-    @m or return;
+    return unless @m;
     my ($lead, $rows, $cols) = 0, +@m, +@m[0];
  
     for ^$rows -> $r {
-        return @m if $lead >= $cols;
+        $lead < $cols or return @m;
         my $i = $r;
- 
-        until @m[$i][$lead] {
+        until @m[$i;$lead] {
             ++$i == $rows or next;
             $i = $r;
             ++$lead == $cols and return @m;
         }
- 
-        @m[$i, $r] = @m[$r, $i];
- 
-        my $lv = @m[$r][$lead];
+        @m[$i, $r] = @m[$r, $i] if $r != $i;
+        my $lv = @m[$r;$lead];
         @m[$r] »/=» $lv;
- 
         for ^$rows -> $n {
             next if $n == $r;
-            @m[$n] »-=» @m[$r] »*» @m[$n][$lead];
+            @m[$n] »-=» @m[$r] »*» (@m[$n;$lead] // 0);
         }
         ++$lead;
     }
@@ -89,9 +85,9 @@ for @M -> @matrix {
 ```
 
 
-Perl 6 handles rational numbers internally as a ratio of two integers 
-to maintain precision. 
-For some situations it is useful to return the ratio 
+Perl 6 handles rational numbers internally as a ratio of two integers
+to maintain precision.
+For some situations it is useful to return the ratio
 rather than the floating point result.
 
 
@@ -177,7 +173,7 @@ Reduced Row Echelon Form Matrix
 ```
 
 
-Re-implemented without the pseudocode, expressed as elementary matrix row operations. See 
+Re-implemented without the pseudocode, expressed as elementary matrix row operations. See
 [http://unapologetic.wordpress.com/2009/08/27/elementary-row-and-column-operations/](http://unapologetic.wordpress.com/2009/08/27/elementary-row-and-column-operations/)
 and
 [http://unapologetic.wordpress.com/2009/09/03/reduced-row-echelon-form/](http://unapologetic.wordpress.com/2009/09/03/reduced-row-echelon-form/)
@@ -188,37 +184,37 @@ First, a procedural version:
 
 ```perl
 sub swap_rows    ( @M,         $r1, $r2 ) { @M[ $r1, $r2 ] = @M[ $r2, $r1 ] };
-sub scale_row    ( @M, $scale, $r       ) { @M[$r]  =              @M[$r]  »*» $scale   };
-sub shear_row    ( @M, $scale, $r1, $r2 ) { @M[$r1] = @M[$r1].list »+» ( @M[$r2] »*» $scale ) };
+sub scale_row    ( @M, $scale, $r       ) { @M[$r]  =              @M[$r]  »*» $scale   };
+sub shear_row    ( @M, $scale, $r1, $r2 ) { @M[$r1] = @M[$r1].list »+» ( @M[$r2] »*» $scale ) };
 sub reduce_row   ( @M,         $r,  $c  ) { scale_row( @M, 1/@M[$r][$c], $r ) };
 sub clear_column ( @M,         $r,  $c  ) {
     for @M.keys.grep( * != $r ) -> $row_num {
         shear_row( @M, -1*@M[$row_num][$c], $row_num, $r );
     }
 }
- 
+
 my @M = (
     [<  1   2   -1    -4 >],
     [<  2   3   -1   -11 >],
     [< -2   0   -3    22 >],
 );
- 
+
 my $column_count = +@( @M[0] );
- 
+
 my $current_col = 0;
 while all( @M».[$current_col] ) == 0 {
     $current_col++;
     return if $current_col == $column_count; # Matrix was all-zeros.
 }
- 
+
 for @M.keys -> $current_row {
     reduce_row(   @M, $current_row, $current_col );
     clear_column( @M, $current_row, $current_col );
     $current_col++;
     return if $current_col == $column_count;
 }
- 
-say @($_)».fmt(' %4g') for @M;
+
+say @($_)».fmt(' %4g') for @M;
 ```
 
 
@@ -227,10 +223,10 @@ And the same code, recast into OO. Also, scale and shear are recast as unscale a
 ```perl
 class Matrix is Array {
     method unscale_row ( @M: $scale, $row ) {
-        @M[$row] = @M[$row] »/» $scale;
+        @M[$row] = @M[$row] »/» $scale;
     }
     method unshear_row ( @M: $scale, $r1, $r2 ) {
-        @M[$r1] = @M[$r1] »-» ( @M[$r2] »*» $scale );
+        @M[$r1] = @M[$r1] »-» ( @M[$r2] »*» $scale );
     }
     method reduce_row ( @M: $row, $col ) {
         @M.unscale_row( @M[$row][$col], $row );
@@ -242,14 +238,14 @@ class Matrix is Array {
     }
     method reduced_row_echelon_form ( @M: ) {
         my $column_count = +@( @M[0] );
- 
+
         my $current_col = 0;
         # Skip past all-zero columns.
         while all( @M».[$current_col] ) == 0 {
             $current_col++;
             return if $current_col == $column_count; # Matrix was all-zeros.
         }
- 
+
         for @M.keys -> $current_row {
             @M.reduce_row(   $current_row, $current_col );
             @M.clear_column( $current_row, $current_col );
@@ -258,24 +254,24 @@ class Matrix is Array {
         }
     }
 }
- 
+
 my $M = Matrix.new(
     [<  1   2   -1    -4 >],
     [<  2   3   -1   -11 >],
     [< -2   0   -3    22 >],
 );
- 
+
 $M.reduced_row_echelon_form;
- 
-say @($_)».fmt(' %4g') for @($M);
+
+say @($_)».fmt(' %4g') for @($M);
 ```
 
 
-Note that both versions can be simplified using Z+=, Z-=, X\*=, 
-and X/= to scale and shear. 
+Note that both versions can be simplified using Z+=, Z-=, X\*=,
+and X/= to scale and shear.
 Currently, Rakudo has a bug related to Xop= and Zop=.
 
 
 
-Note that the negative zeros in the output are innocuous, 
+Note that the negative zeros in the output are innocuous,
 and also occur in the Perl 5 version.

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Main_step_of_GOST_28147-89
+[1]: https://rosettacode.org/wiki/Main_step_of_GOST_28147-89
 
 # [Main step of GOST 28147-89][1]
 

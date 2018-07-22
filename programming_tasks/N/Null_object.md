@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Null_object
+[1]: https://rosettacode.org/wiki/Null_object
 
 # [Null object][1]
 

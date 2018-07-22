@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Convert_seconds_to_compound_duration
+[1]: https://rosettacode.org/wiki/Convert_seconds_to_compound_duration
 
 # [Convert seconds to compound duration][1]
 
@@ -9,12 +9,9 @@ sub compound-duration ($seconds) {
     ($seconds.polymod(60, 60, 24, 7) Z <sec min hr d wk>)
     .grep(*[0]).reverse.join(", ")
 }
-```
-
-
-Demonstration:
-
-```perl
+ 
+# Demonstration:
+ 
 for 7259, 86400, 6000000 {
     say "{.fmt: '%7d'} sec  =  {compound-duration $_}";
 }

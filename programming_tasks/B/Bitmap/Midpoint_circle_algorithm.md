@@ -1,11 +1,34 @@
-[1]: http://rosettacode.org/wiki/Bitmap/Midpoint_circle_algorithm
+[1]: https://rosettacode.org/wiki/Bitmap/Midpoint_circle_algorithm
 
 # [Bitmap/Midpoint circle algorithm][1]
 
-We'll augment the Pixel and Bitmap classes.
+We'll augment the Pixel and Bitmap classes from the [Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) task.
 
 ```perl
-use MONKEY_TYPING;
+use MONKEY-TYPING;
+ 
+class Pixel { has UInt ($.R, $.G, $.B) }
+class Bitmap {
+    has UInt ($.width, $.height);
+    has Pixel @!data;
+ 
+    method fill(Pixel $p) {
+        @!data = $p.clone xx ($!width*$!height)
+    }
+    method pixel(
+	$i where ^$!width,
+	$j where ^$!height
+	--> Pixel
+    ) is rw { @!data[$i + $j * $!width] }
+ 
+    method set-pixel ($i, $j, Pixel $p) {
+	self.pixel($i, $j) = $p.clone;
+    }
+    method get-pixel ($i, $j) returns Pixel {
+	self.pixel($i, $j);
+    }
+}
+ 
 augment class Pixel { method Str { "$.R $.G $.B" } }
 augment class Bitmap {
     method P3 {

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Variable_size/Get
+[1]: https://rosettacode.org/wiki/Variable_size/Get
 
 # [Variable size/Get][1]
 

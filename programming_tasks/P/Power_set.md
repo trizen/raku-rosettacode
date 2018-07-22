@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Power_set
+[1]: https://rosettacode.org/wiki/Power_set
 
 # [Power set][1]
 

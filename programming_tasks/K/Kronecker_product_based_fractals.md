@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Kronecker_product_based_fractals
+[1]: https://rosettacode.org/wiki/Kronecker_product_based_fractals
 
 # [Kronecker product based fractals][1]
 

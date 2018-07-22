@@ -1,13 +1,18 @@
-[1]: http://rosettacode.org/wiki/Dinesman's_multiple-dwelling_problem
+[1]: https://rosettacode.org/wiki/Dinesman's_multiple-dwelling_problem
 
 # [Dinesman's multiple-dwelling problem][1]
 
+### By parsing the problem
+
 ```perl
+use MONKEY-SEE-NO-EVAL;
+
 sub parse_and_solve ($text) {
     my %ids;
     my $expr = (grammar {
+        state $c = 0;
         rule TOP { <fact>+ { make join ' && ', $<fact>>>.made } }
- 
+
         rule fact { <name> (not)? <position>
                     { make sprintf $<position>.made.fmt($0 ??  "!(%s)" !! "%s"),
                                    $<name>.made }
@@ -23,16 +28,16 @@ sub parse_and_solve ($text) {
             || on <ordinal>          { make "\@f[%s] == {$<ordinal>.made}"            }
             || { note "Failed to parse line " ~ +$/.prematch.comb(/^^/); exit 1; }
         }
- 
-        token name    { :i <[a..z]>+              { make %ids{~$/} //= (state $)++ } }
+
+        token name    { :i <[a..z]>+              { make %ids{~$/} //= $c++ } }
         token ordinal { [1st | 2nd | 3rd | \d+th] { make +$/.match(/(\d+)/)[0]     } }
     }).parse($text).made;
- 
+
     EVAL 'for [1..%ids.elems].permutations -> @f {
-              say %ids.kv.map({ "$^a=@f[$^b]" }) if (' ~ $expr ~ ');
+              say %ids.kv.map({ "$^a=@f[$^b]" }) if (' ~ $expr ~ ');
           }'
 }
- 
+
 parse_and_solve Q:to/END/;
     Baker not on top
     Cooper not on bottom
@@ -52,6 +57,10 @@ Supports the same grammar for the problem statement, as the Perl solution.
 ```
 Baker=3 Cooper=2 Fletcher=4 Miller=5 Smith=1
 ```
+
+
+### Simple solution
+
 ```perl
 # Contains only five floors. 5! = 120 permutations.
 for (flat (1..5).permutations) -> $b, $c, $f, $m, $s {

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Inverted_index
+[1]: https://rosettacode.org/wiki/Inverted_index
 
 # [Inverted index][1]
 

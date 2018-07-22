@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Guess_the_number/With_feedback
+[1]: https://rosettacode.org/wiki/Guess_the_number/With_feedback
 
 # [Guess the number/With feedback][1]
 

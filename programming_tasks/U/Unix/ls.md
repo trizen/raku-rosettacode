@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Unix/ls
+[1]: https://rosettacode.org/wiki/Unix/ls
 
 # [Unix/ls][1]
 

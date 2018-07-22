@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/MD4
+[1]: https://rosettacode.org/wiki/MD4
 
 # [MD4][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Least_common_multiple
+[1]: https://rosettacode.org/wiki/Least_common_multiple
 
 # [Least common multiple][1]
 

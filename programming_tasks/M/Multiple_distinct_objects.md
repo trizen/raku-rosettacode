@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Multiple_distinct_objects
+[1]: https://rosettacode.org/wiki/Multiple_distinct_objects
 
 # [Multiple distinct objects][1]
 

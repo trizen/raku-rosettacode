@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Password_generator
+[1]: https://rosettacode.org/wiki/Password_generator
 
 # [Password generator][1]
 
@@ -8,9 +8,9 @@ my @chars =
   set('A' .. 'Z'),
   set('0' .. '9'),
   set(<!"#$%&'()*+,-./:;<=>?@[]^_{|}~>.comb);
- 
+
 # bleh. unconfuse syntax highlighter. '"
- 
+
 sub MAIN ( Int :$l = 8, Int :$c = 1, Str :$x = '' ) {
     note 'Password length must be >= 4' and exit if $l < 4;
     note 'Can not generate fewer than 0 passwords' and exit if $c < 0;
@@ -23,10 +23,10 @@ sub MAIN ( Int :$l = 8, Int :$c = 1, Str :$x = '' ) {
         @pswd.push( $chars    .roll ) for 4 ..^ $l;
         say [~] @pswd.pick(*);
     }
- 
+
     sub filter (Set $set) { $set ∖ set($x.comb) }
 }
- 
+
 sub USAGE() {
     say qq:to/END/;
     Specify a length:              --l=8 (default 8),

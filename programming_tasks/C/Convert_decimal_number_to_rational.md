@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Convert_decimal_number_to_rational
+[1]: https://rosettacode.org/wiki/Convert_decimal_number_to_rational
 
 # [Convert decimal number to rational][1]
 

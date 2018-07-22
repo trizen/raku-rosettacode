@@ -1,6 +1,10 @@
-[1]: http://rosettacode.org/wiki/Huffman_coding
+[1]: https://rosettacode.org/wiki/Huffman_coding
 
 # [Huffman coding][1]
+
+### By building a tree
+
+
 
 This version uses nested `Array`s to build a tree [like shown in this diagram](https://commons.wikimedia.org/wiki/File:HuffmanCodeAlg.png), and then recursively traverses the finished tree to accumulate the prefixes.
 
@@ -21,6 +25,10 @@ multi walk ([$node1, $node2], $prefix) { walk $node1, $prefix ~ '0';
 ```
 
 
+### Without building a tree
+
+
+
 This version uses an `Array` of `Pair`s to implement a simple priority queue. Each value of the queue is a `Hash` mapping from letters to prefixes, and when the queue is reduced the hashes are merged on-the-fly, so that the last one remaining is the wanted Huffman table.
 
 ```perl
@@ -35,11 +43,26 @@ sub huffman (%frequencies) {
     }
     @queue[0].value;
 }
-```
-```perl
+ 
+# Testing
+ 
 for huffman 'this is an example for huffman encoding'.comb.Bag {
     say "'{.key}' : {.value}";
 }
+ 
+# To demonstrate that the table can do a round trip:
+ 
+say '';
+my $original = 'this is an example for huffman encoding';
+ 
+my %encode-key = huffman $original.comb.Bag;
+my %decode-key = %encode-key.invert;
+my @codes      = %decode-key.keys;
+ 
+my $encoded = $original.subst: /./,      { %encode-key{$_} }, :g;
+my $decoded = $encoded .subst: /@codes/, { %decode-key{$_} }, :g;
+ 
+.say for $original, $encoded, $decoded;
 ```
 
 #### Output:
@@ -63,26 +86,7 @@ for huffman 'this is an example for huffman encoding'.comb.Bag {
 'i' : 1111
 'r' : 01101
 'l' : 00001
-```
 
-
-To demonstrate that the table can do a round trip:
-
-```perl
-my $original = 'this is an example for huffman encoding';
- 
-my %encode-key = huffman $original.comb.Bag;
-my %decode-key = %encode-key.invert;
-my @codes      = %decode-key.keys;
- 
-my $encoded = $original.subst: /./,      { %encode-key{$_} }, :g;
-my $decoded = $encoded .subst: /@codes/, { %decode-key{$_} }, :g;
- 
-.say for $original, $encoded, $decoded;
-```
-
-#### Output:
-```
 this is an example for huffman encoding
 1000000011111011110111110111101100101010111011100010010010011000000111011011110001101101101000110001111011100010100101010111010101100100011110011111101000000
 this is an example for huffman encoding

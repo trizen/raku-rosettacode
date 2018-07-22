@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Flipping_bits_game
+[1]: https://rosettacode.org/wiki/Flipping_bits_game
 
 # [Flipping bits game][1]
 
@@ -46,7 +46,7 @@ sub build (%hash) {
     my $string = '   ';
     $string ~= sprintf "%2s ", $_ for sort keys %hash{'1'};
     $string ~= "\n";
-    for sort keys %hash -> $key {
+    for %hash.keys.sort: +* -> $key {
         $string ~= sprintf "%2s ", $key;
         $string ~= sprintf "%2s ", %hash{$key}{$_} for sort keys %hash{$key};
         $string ~=  "\n";
@@ -56,7 +56,7 @@ sub build (%hash) {
  
 sub scramble(%hash) {
     my @keys = keys %hash;
-    @keys ,= keys %hash{'1'};
+    @keys.push: | keys %hash{'1'};
     flip $_,  %hash for @keys.pick( @keys/2 );
 }
 ```

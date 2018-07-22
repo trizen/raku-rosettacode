@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Word_wrap
+[1]: https://rosettacode.org/wiki/Word_wrap
 
 # [Word wrap][1]
 

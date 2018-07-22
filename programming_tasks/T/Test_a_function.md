@@ -1,9 +1,11 @@
-[1]: http://rosettacode.org/wiki/Test_a_function
+[1]: https://rosettacode.org/wiki/Test_a_function
 
 # [Test a function][1]
 
 ```perl
 use Test;
+ 
+sub palin( Str $string) { so $string.lc.comb(/\w/) eq  $string.flip.lc.comb(/\w/) }
  
 my %tests =
     'A man, a plan, a canal: Panama.'           => True,

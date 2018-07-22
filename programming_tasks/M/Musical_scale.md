@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Musical_scale
+[1]: https://rosettacode.org/wiki/Musical_scale
 
 # [Musical scale][1]
 

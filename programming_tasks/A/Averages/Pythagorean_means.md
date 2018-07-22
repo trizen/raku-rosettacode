@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Averages/Pythagorean_means
+[1]: https://rosettacode.org/wiki/Averages/Pythagorean_means
 
 # [Averages/Pythagorean means][1]
 

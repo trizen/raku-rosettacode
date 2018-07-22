@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Linux_CPU_utilization
+[1]: https://rosettacode.org/wiki/Linux_CPU_utilization
 
 # [Linux CPU utilization][1]
 

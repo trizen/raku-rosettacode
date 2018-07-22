@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Cycle_detection
+[1]: https://rosettacode.org/wiki/Cycle_detection
 
 # [Cycle detection][1]
 

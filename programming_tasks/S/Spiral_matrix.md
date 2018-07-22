@@ -1,78 +1,72 @@
-[1]: http://rosettacode.org/wiki/Spiral_matrix
+[1]: https://rosettacode.org/wiki/Spiral_matrix
 
 # [Spiral matrix][1]
+
+### Object-oriented Solution
+
+
 
 Suppose we set up a Turtle class like this:
 
 ```perl
-enum Dir < north northeast east southeast south southwest west northwest >;
-my $debug = 0;
- 
 class Turtle {
-    has @.loc = 0,0;
-    has Dir $.dir = north;
- 
     my @dv =  [0,-1], [1,-1], [1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1];
-    my @num-to-dir = Dir.invert.sort».value;
-    my $points = +Dir;
+    my $points = 8; # 'compass' points of neighbors on grid: north=0, northeast=1, east=2, etc.
  
-    my %world;
-    my $maxegg;
-    my $range-x;
-    my $range-y;
+    has @.loc = 0,0;
+    has $.dir = 0;
+    has %.world;
+    has $.maxegg;
+    has $.range-x;
+    has $.range-y;
  
     method turn-left ($angle = 90) { $!dir -= $angle / 45; $!dir %= $points; }
     method turn-right($angle = 90) { $!dir += $angle / 45; $!dir %= $points; }
  
     method lay-egg($egg) {
-	%world{~@!loc} = $egg;
-	$maxegg max= $egg;
-	$range-x minmax= @!loc[0];
-	$range-y minmax= @!loc[1];
+    %!world{~@!loc} = $egg;
+    $!maxegg max= $egg;
+    $!range-x minmax= @!loc[0];
+    $!range-y minmax= @!loc[1];
     }
  
     method look($ahead = 1) {
-	my $there = @!loc »+« (@dv[$!dir] X* $ahead);
-	say "looking @num-to-dir[$!dir] to $there" if $debug;
-	%world{~$there};
+    my $there = @!loc »+« @dv[$!dir] »*» $ahead;
+    %!world{~$there};
     }
  
     method forward($ahead = 1) {
-	my $there = @!loc »+« (@dv[$!dir] X* $ahead);
-	@!loc = @($there);
-	say " moving @num-to-dir[$!dir] to @!loc[]" if $debug;
+    my $there = @!loc »+« @dv[$!dir] »*» $ahead;
+    @!loc = @($there);
     }
  
     method showmap() {
-	my $form = "%{$maxegg.chars}s";
-	my $endx = $range-x.max;
-    	for $range-y.list X $range-x.list -> $y, $x {
-	    print (%world{"$x $y"} // '').fmt($form);
-	    print $x == $endx ?? "\n" !! ' ';
-	}
+    my $form = "%{$!maxegg.chars}s";
+    my $endx = $!range-x.max;
+        for $!range-y.list X $!range-x.list -> ($y, $x) {
+        print (%!world{"$x $y"} // '').fmt($form);
+        print $x == $endx ?? "\n" !! ' ';
+    }
     }
 }
-```
-
-
-Now we can build the spiral in the normal way from outside-in like this:
-
-```perl
-sub MAIN($size as Int) {
-    my $t = Turtle.new(dir => east);
-    my $counter = 0;
-    $t.forward(-1);
-    for 0..^ $size -> $ {
-	$t.forward;
-	$t.lay-egg($counter++);
-    }
-    for $size-1 ... 1 -> $run {
-	$t.turn-right;
-	$t.forward, $t.lay-egg($counter++) for 0..^$run;
-	$t.turn-right;
-	$t.forward, $t.lay-egg($counter++) for 0..^$run;
-    }
-    $t.showmap;
+ 
+# Now we can build the spiral in the normal way from outside-in like this:
+ 
+sub MAIN(Int $size = 5) {
+my $t = Turtle.new(dir => 2);
+my $counter = 0;
+$t.forward(-1);
+for 0..^ $size -> $ {
+    $t.forward;
+    $t.lay-egg($counter++);
+}
+for $size-1 ... 1 -> $run {
+    $t.turn-right;
+    $t.forward, $t.lay-egg($counter++) for 0..^$run;
+    $t.turn-right;
+    $t.forward, $t.lay-egg($counter++) for 0..^$run;
+}
+$t.showmap;
 }
 ```
 
@@ -80,21 +74,25 @@ sub MAIN($size as Int) {
 Or we can build the spiral from inside-out like this:
 
 ```perl
-sub MAIN($size as Int) {
-    my $t = Turtle.new(dir => ($size %% 2 ?? south !! north));
-    my $counter = $size * $size;
-    while $counter {
-	$t.lay-egg(--$counter);
-	$t.turn-left;
-	$t.turn-right if $t.look;
-	$t.forward;
-    }
-    $t.showmap;
+sub MAIN(Int $size = 5) {
+my $t = Turtle.new(dir => ($size %% 2 ?? 4 !! 0));
+my $counter = $size * $size;
+while $counter {
+    $t.lay-egg(--$counter);
+    $t.turn-left;
+    $t.turn-right if $t.look;
+    $t.forward;
+}
+$t.showmap;
 }
 ```
 
 
-Note that with these "turtle graphics" we don't actually have to care about the coordinate system, since the `showmap` method can show whatever rectangle was modified by the turtle.  So unlike the standard inside-out algorithm, we don't have to find the center of the matrix first.
+Note that with these "turtle graphics" we don't actually have to care about the coordinate system, since the `showmap` method can show whatever rectangle was modified by the turtle. So unlike the standard inside-out algorithm, we don't have to find the center of the matrix first.
+
+
+
+### Procedural Solution
 
 ```perl
 sub spiral_matrix ( $n ) {

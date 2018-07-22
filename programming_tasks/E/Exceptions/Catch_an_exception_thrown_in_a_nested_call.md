@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Exceptions/Catch_an_exception_thrown_in_a_nested_call
+[1]: https://rosettacode.org/wiki/Exceptions/Catch_an_exception_thrown_in_a_nested_call
 
 # [Exceptions/Catch an exception thrown in a nested call][1]
 

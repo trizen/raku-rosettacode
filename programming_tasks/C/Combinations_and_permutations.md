@@ -1,12 +1,12 @@
-[1]: http://rosettacode.org/wiki/Combinations_and_permutations
+[1]: https://rosettacode.org/wiki/Combinations_and_permutations
 
 # [Combinations and permutations][1]
 
-Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ace1467263b72595ad730fc27d799714&mode=mathml):
+Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ace1467263b72595ad730fc27d799714&mode=mathml):
 
 
 
-![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=967db0496a7d29c0869c95a3f73e8ec1&mode=mathml)
+![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=967db0496a7d29c0869c95a3f73e8ec1&mode=mathml)
 
 
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parse_an_IP_Address
+[1]: https://rosettacode.org/wiki/Parse_an_IP_Address
 
 # [Parse an IP Address][1]
 

@@ -1,51 +1,94 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/Rank_languages_by_popularity
+[1]: https://rosettacode.org/wiki/Rosetta_Code/Rank_languages_by_popularity
 
 # [Rosetta Code/Rank languages by popularity][1]
 
+### Perl 6: Using the API
+
+
+
+Note that this counts **only** the tasks. It does not include other non-task categories in the counts yielding more realistic, non-inflated numbers. Perl 6 is unicode aware and handles non-ASCII names natively. This does not attempt to 'unify' different language names that are the same behind the scenes as a result of Rosettacodes' capitalization peculiarities. (E.G. μC++, UC++ &amp; ΜC++)
+
 ```perl
 use HTTP::UserAgent;
-use JSON::Tiny;
+use URI::Escape;
+use JSON::Fast;
+use Sort::Naturally;
  
-.say for
-    mediawiki-query('http://rosettacode.org/mw', 'pages',
-                    generator => 'categorymembers',
-                    gcmtitle  => "Category:Programming Languages",
-                    prop      => 'categoryinfo')\
+my $client = HTTP::UserAgent.new;
  
-    .map({ .<categoryinfo><pages> || 0,
-           .<title>.subst(/^'Category:'/, '') })\
+my $url = 'http://rosettacode.org/mw';
  
-    .sort(-*[0])\
+my $tablefile = './RC_Popularity.txt';
  
-    .map({ sprintf "%3d. %3d - %s", ++$, @$_ });
+my %counts =
+    mediawiki-query(
+        $url, 'pages',
+        :generator<categorymembers>,
+        :gcmtitle<Category:Programming Languages>,
+        :gcmlimit<350>,
+        :rawcontinue(),
+        :prop<categoryinfo>
+    )
+    .map({ .<title>.subst(/^'Category:'/, '') => .<categoryinfo><pages> || 0 });
+ 
+my $out = open($tablefile, :w)  or die "$!\n";
+ 
+# Add table boilerplate and header
+$out.say:
+    "\{|class=\"wikitable sortable\"\n",
+    "|+ As of { Date.today } :: {+%counts} Languages\n",
+    "! Rank !! Language !! Count"
+;
+ 
+my @bg = <#fff; #ccc;>;
+my $ff = 0;
+my $rank = 1;
+my $ties = 0;
+ 
+# Get sorted unique task counts
+for %counts.values.unique.sort: -* -> $count {
+    $ff++;
+    # Get list of tasks with this count
+    my @these = %counts.grep( *.value == $count )».keys.sort: *.&naturally;
+ 
+    for @these {
+        $ties++;
+        $out.say:
+          "|-\n"~
+          "|style=\"background-color: { @bg[$ff % 2] }\"|$rank\n"~
+          "|style=\"background-color: { @bg[$ff % 2] }\"|[[:Category:$_|]]\n"~
+          "|style=\"background-color: { @bg[$ff % 2] }\"|$count";
+    }
+    $rank += $ties;
+    $ties = 0;
+}
+$out.say( "|}\n" );
+$out.close;
  
 sub mediawiki-query ($site, $type, *%query) {
     my $url = "$site/api.php?" ~ uri-query-string(
-        :action<query>, :format<json>, :gcmlimit<350>, :rawcontinue(), |%query);
+        :action<query>, :format<json>, :formatversion<2>, |%query);
     my $continue = '';
-    my $client = HTTP::UserAgent.new;
  
     gather loop {
         my $response = $client.get("$url&$continue");
- 
         my $data = from-json($response.content);
         take $_ for $data.<query>.{$type}.values;
- 
         $continue = uri-query-string |($data.<query-continue>{*}».hash.hash or last);
     }
 }
  
 sub uri-query-string (*%fields) {
-    %fields.map({ "{.key}={uri-encode .value}" }).join("&")
-}
- 
-sub uri-encode ($str) {
-    $str.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~-]>/, *.ord.fmt('%%%02X'), :g)
+    join '&', %fields.map: { "{.key}={uri-escape .value}" }
 }
 ```
 
 
-Scraping the languages and categories pages.  Perl 6 automatically handles Unicode names correctly.
+### Perl 6: Using web scraping
+
+
+
+Scraping the languages and categories pages. Perl 6 automatically handles Unicode names correctly.
 
 ```perl
 my $languages =  qx{wget -O - 'http://rosettacode.org/wiki/Category:Programming_Languages'};

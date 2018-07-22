@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ludic_numbers
+[1]: https://rosettacode.org/wiki/Ludic_numbers
 
 # [Ludic numbers][1]
 

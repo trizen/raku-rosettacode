@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Vector_products
+[1]: https://rosettacode.org/wiki/Vector_products
 
 # [Vector products][1]
 

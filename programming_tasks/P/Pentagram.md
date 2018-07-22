@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pentagram
+[1]: https://rosettacode.org/wiki/Pentagram
 
 # [Pentagram][1]
 
@@ -23,7 +23,7 @@ say pline map |*.reals, flat @vertices[0, 2 ... *], @vertices[1, 3 ... *];
  
 sub pline (@q) {
   qq:to/STOP/;
-    <polyline points="@q[|^@q, 0, 1].fmt("%0.3f")"
+    <polyline points="{@q[^@q, 0, 1].fmt("%0.3f")}"
     style="fill:seashell; stroke:blue; stroke-width:3;"
     transform="translate($dim, $dim) rotate(-18)" />
     STOP

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Random_number_generator_(included)
+[1]: https://rosettacode.org/wiki/Random_number_generator_(included)
 
 # [Random number generator (included)][1]
 

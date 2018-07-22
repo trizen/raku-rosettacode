@@ -1,9 +1,9 @@
-[1]: http://rosettacode.org/wiki/Subtractive_generator
+[1]: https://rosettacode.org/wiki/Subtractive_generator
 
 # [Subtractive generator][1]
 
 ```perl
-sub bentley_clever($seed) {
+sub bentley-clever($seed) {
     constant $mod = 1_000_000_000;
     my @seeds = ($seed % $mod, 1, (* - *) % $mod ... *)[^55];
     my @state = @seeds[ 34, (* + 34 ) % 55 ... 0 ];
@@ -18,7 +18,7 @@ sub bentley_clever($seed) {
     &subrand ... *;
 }
  
-my @sr := bentley_clever(292929);
+my @sr = bentley-clever(292929);
 .say for @sr[^10];
 ```
 

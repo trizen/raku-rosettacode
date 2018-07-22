@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chinese_zodiac
+[1]: https://rosettacode.org/wiki/Chinese_zodiac
 
 # [Chinese zodiac][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Boolean_values
+[1]: https://rosettacode.org/wiki/Boolean_values
 
 # [Boolean values][1]
 

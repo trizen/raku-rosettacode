@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Documentation
+[1]: https://rosettacode.org/wiki/Documentation
 
 # [Documentation][1]
 

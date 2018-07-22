@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Bitmap/Read_an_image_through_a_pipe
+[1]: https://rosettacode.org/wiki/Bitmap/Read_an_image_through_a_pipe
 
 # [Bitmap/Read an image through a pipe][1]
 
-Uses pieces from [ Bitmap](http://rosettacode.org/wiki/Bitmap#Perl_6) and [ Read a PPM file](http://rosettacode.org/wiki/Bitmap/Read_a_PPM_file#Perl_6) tasks. Included here to make a complete, runnable program.
+Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) and [ Read a PPM file](https://rosettacode.org/wiki/Bitmap/Read_a_PPM_file#Perl_6) tasks. Included here to make a complete, runnable program.
 
 
 
@@ -39,7 +39,7 @@ my $depth = getline($proc);
 my Bitmap $b = Bitmap.new( width => $width.Int, height => $height.Int) but PPM;
  
 $b.data = $proc.out.slurp.ords.rotor(3).map:
-  { Pixel.new(R => $_[0], G => $_[1], B => $_[2]) };
+  { Pixel.new(R => .[0], G => .[1], B => .[2]) };
  
 './camelia.ppm'.IO.open(:bin, :w).write: $b.P6;
 ```

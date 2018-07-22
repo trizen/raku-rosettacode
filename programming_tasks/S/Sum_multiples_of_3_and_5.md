@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sum_multiples_of_3_and_5
+[1]: https://rosettacode.org/wiki/Sum_multiples_of_3_and_5
 
 # [Sum multiples of 3 and 5][1]
 

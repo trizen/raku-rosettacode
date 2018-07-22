@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Diversity_prediction_theorem
+[1]: https://rosettacode.org/wiki/Diversity_prediction_theorem
 
 # [Diversity prediction theorem][1]
 
@@ -10,9 +10,9 @@ my $ce = ($cp - $truth)**2;        # collective error
 my $pd = avg-error($cp, @pred);    # prediction diversity
 return $ae, $ce, $pd;
 }
- 
+
 sub avg-error ($m, @v) { ([+] (@v X- $m) X**2) / +@v }
- 
+
 sub diversity-format (@stats) {
 gather {
     for <average-error crowd-error diversity> Z @stats -> ($label,$value) {
@@ -20,7 +20,7 @@ gather {
     }
 }
 }
- 
+
 .say for diversity-format diversity-calc(49, <48 47 51>);
 .say for diversity-format diversity-calc(49, <48 47 51 42>);
 ```

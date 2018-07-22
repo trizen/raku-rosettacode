@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Narcissist
+[1]: https://rosettacode.org/wiki/Narcissist
 
 # [Narcissist][1]
 

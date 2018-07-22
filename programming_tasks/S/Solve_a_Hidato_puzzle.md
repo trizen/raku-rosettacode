@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Solve_a_Hidato_puzzle
+[1]: https://rosettacode.org/wiki/Solve_a_Hidato_puzzle
 
 # [Solve a Hidato puzzle][1]
 
-This uses a Warnsdorff solver, which cuts down the number of tries by more than a factor of six over the brute force approach. Rather than recalculating degree over and over, we maintain an array of known degrees for each node.
+This uses a Warnsdorff solver, which cuts down the number of tries by more than a factor of six over the brute force approach. This same solver is used in:
 
 ```perl
 my @adjacent = [-1, -1], [-1, 0], [-1, 1],
@@ -64,7 +64,7 @@ sub solveboard($board) {
  
         my $old = @grid[$y][$x];
  
-        return False if $old and $old != $v;
+        return False if +$old and $old != $v;
         return False if @known[$v] and @known[$v] !eqv $coord;
  
         @grid[$y][$x] = $v;               # conjecture grid value

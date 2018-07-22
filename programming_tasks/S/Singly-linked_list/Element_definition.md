@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Singly-linked_list/Element_definition
+[1]: https://rosettacode.org/wiki/Singly-linked_list/Element_definition
 
 # [Singly-linked list/Element definition][1]
 

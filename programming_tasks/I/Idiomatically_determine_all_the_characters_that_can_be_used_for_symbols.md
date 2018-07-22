@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Idiomatically_determine_all_the_characters_that_can_be_used_for_symbols
+[1]: https://rosettacode.org/wiki/Idiomatically_determine_all_the_characters_that_can_be_used_for_symbols
 
 # [Idiomatically determine all the characters that can be used for symbols][1]
 
@@ -15,6 +15,21 @@ sub term:<𝍧> { unival('𝍧') }
 #### Output:
 ```
 8 trilobites
+```
+
+
+And here is a Zalgo-text symbol:
+
+```perl
+sub Z̧̔ͩ͌͑̉̎A̢̲̙̮̹̮͍̎L̔ͧ́͆G̰̬͎͔̱̅ͣͫO͙̔ͣ̈́̈̽̎ͣ ($n) { say "$n COMES" }
+ 
+ 
+Z̧̔ͩ͌͑̉̎A̢̲̙̮̹̮͍̎L̔ͧ́͆G̰̬͎͔̱̅ͣͫO͙̔ͣ̈́̈̽̎ͣ 'HE'
+```
+
+#### Output:
+```
+HE COMES
 ```
 
 

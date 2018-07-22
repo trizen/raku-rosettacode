@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Water_collected_between_towers
+[1]: https://rosettacode.org/wiki/Water_collected_between_towers
 
 # [Water collected between towers][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rendezvous
+[1]: https://rosettacode.org/wiki/Rendezvous
 
 # [Rendezvous][1]
 

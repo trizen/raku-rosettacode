@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Named_parameters
+[1]: https://rosettacode.org/wiki/Named_parameters
 
 # [Named parameters][1]
 
@@ -18,17 +18,14 @@ In the above signature:
 So, if we defined the function like this:
 
 ```perl
-sub funkshun ($a, $b?, $c = 15, :$d, *@e, *%f) {
+sub funkshun ($a, $b?, :$c = 15, :$d, *@e, *%f) {
    say "$a $b $c $d";
    say join ' ', @e;
    say join ' ', keys %f;
 }
-```
-
-
-this particularly thorny call:
-
-```perl
+ 
+# this particularly thorny call:
+ 
 funkshun
     'Alfa', k1 => 'v1', c => 'Charlie', 'Bravo', 'e1',
     d => 'Delta', 'e2', k2 => 'v2';

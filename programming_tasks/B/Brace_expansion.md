@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Brace_expansion
+[1]: https://rosettacode.org/wiki/Brace_expansion
 
 # [Brace expansion][1]
 
@@ -31,12 +31,9 @@ sub alternatives($_) {
 }
  
 sub brace-expand($s) { crosswalk BraceExpansion.parse($s) }
-```
-
-
-And to test...
-
-```perl
+ 
+# Testing:
+ 
 sub bxtest(*@s) {
     for @s -> $s {
         say "\n$s";

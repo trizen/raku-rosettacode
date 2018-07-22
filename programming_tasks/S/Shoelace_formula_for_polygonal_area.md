@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/Shoelace_formula_for_polygonal_area
+[1]: https://rosettacode.org/wiki/Shoelace_formula_for_polygonal_area
 
 # [Shoelace formula for polygonal area][1]
+
+### Index and mod offset
 
 ```perl
 sub area-by-shoelace(@p) {
@@ -14,6 +16,10 @@ say area-by-shoelace( [ (3,4), (5,11), (12,8), (9,5), (5,6) ] );
 ```
 30
 ```
+
+
+### Slice and rotation
+
 ```perl
 sub area-by-shoelace ( @p ) {
     my @x := @p».[0];

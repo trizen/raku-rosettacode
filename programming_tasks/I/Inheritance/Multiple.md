@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Inheritance/Multiple
+[1]: https://rosettacode.org/wiki/Inheritance/Multiple
 
 # [Inheritance/Multiple][1]
 

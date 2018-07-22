@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Create_an_object/Native_demonstration
+[1]: https://rosettacode.org/wiki/Create_an_object/Native_demonstration
 
 # [Create an object/Native demonstration][1]
 
@@ -7,7 +7,7 @@ Here we use delegation to handle all the normal hash methods that we don't need 
 ```perl
 class FixedHash {
         has $.hash handles *;
-        method new(*@args) { self.bless: *, hash => Hash.new: @args }
+        method new(*@args) { self.bless: hash => Hash.new: @args }
         method AT-KEY(FixedHash:D: $key is copy) is rw {
                 $!hash.EXISTS-KEY($key) ?? $!hash.AT-KEY($key) !! Failure.new(q{can't store value for unknown key});
         }

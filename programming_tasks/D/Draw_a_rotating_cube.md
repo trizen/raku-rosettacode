@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Draw_a_rotating_cube
+[1]: https://rosettacode.org/wiki/Draw_a_rotating_cube
 
 # [Draw a rotating cube][1]
 
@@ -39,12 +39,12 @@ given my $canvas = Terminal::Caca.new {
  
     # Unit cube from polygon mesh, aligned to axes
     my @mesh =
-      ( [1, 1, -1], [-1, -1, -1], [-1,  1, -1] ), # far face
-      ( [1, 1, -1], [-1, -1, -1], [ 1, -1, -1] ),
-      ( [1, 1,  1], [-1, -1,  1], [-1,  1,  1] ), # near face
-      ( [1, 1,  1], [-1, -1,  1], [ 1, -1,  1] );
-      @mesh.push: $_».rotate( 1) for @mesh[^4]; # positive and
-      @mesh.push: $_».rotate(-1) for @mesh[^4]; # negative rotations
+      [ [1, 1, -1], [-1, -1, -1], [-1,  1, -1] ], # far face
+      [ [1, 1, -1], [-1, -1, -1], [ 1, -1, -1] ],
+      [ [1, 1,  1], [-1, -1,  1], [-1,  1,  1] ], # near face
+      [ [1, 1,  1], [-1, -1,  1], [ 1, -1,  1] ];
+      @mesh.push: [$_».rotate( 1)] for @mesh[^4]; # positive and
+      @mesh.push: [$_».rotate(-1)] for @mesh[^4]; # negative rotations
  
     # Rotate to correct orientation for task
     for ^@mesh X ^@mesh[0] -> ($i, $j) {
@@ -52,7 +52,7 @@ given my $canvas = Terminal::Caca.new {
         @mesh[$i;$j] = rotate3d-z |@mesh[$i;$j], 40;
     }
  
-    my @colors = blue, green, red, brown, yellow, magenta;
+    my @colors = red, blue, green, cyan, magenta, yellow;
  
     loop {
         for ^359 -> $angle {

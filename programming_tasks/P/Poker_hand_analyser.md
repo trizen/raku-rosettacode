@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Poker_hand_analyser
+[1]: https://rosettacode.org/wiki/Poker_hand_analyser
 
 # [Poker hand analyser][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Vigenère_cipher
+[1]: https://rosettacode.org/wiki/Vigenère_cipher
 
 # [Vigenère cipher][1]
 

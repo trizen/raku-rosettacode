@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/First-class_functions
+[1]: https://rosettacode.org/wiki/First-class_functions
 
 # [First-class functions][1]
 

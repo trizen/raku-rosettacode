@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Levenshtein_distance
+[1]: https://rosettacode.org/wiki/Levenshtein_distance
 
 # [Levenshtein distance][1]
 

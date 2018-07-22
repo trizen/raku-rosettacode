@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Lucas-Lehmer_test
+[1]: https://rosettacode.org/wiki/Lucas-Lehmer_test
 
 # [Lucas-Lehmer test][1]
 

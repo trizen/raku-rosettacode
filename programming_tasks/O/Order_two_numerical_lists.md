@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Order_two_numerical_lists
+[1]: https://rosettacode.org/wiki/Order_two_numerical_lists
 
 # [Order two numerical lists][1]
 

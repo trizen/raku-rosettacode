@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Box_the_compass
+[1]: https://rosettacode.org/wiki/Box_the_compass
 
 # [Box the compass][1]
 

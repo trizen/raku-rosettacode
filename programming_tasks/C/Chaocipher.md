@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chaocipher
+[1]: https://rosettacode.org/wiki/Chaocipher
 
 # [Chaocipher][1]
 

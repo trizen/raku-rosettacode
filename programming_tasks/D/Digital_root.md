@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Digital_root
+[1]: https://rosettacode.org/wiki/Digital_root
 
 # [Digital root][1]
 

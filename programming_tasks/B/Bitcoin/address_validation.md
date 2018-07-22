@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bitcoin/address_validation
+[1]: https://rosettacode.org/wiki/Bitcoin/address_validation
 
 # [Bitcoin/address validation][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Yin_and_yang
+[1]: https://rosettacode.org/wiki/Yin_and_yang
 
 # [Yin and yang][1]
 
@@ -23,10 +23,11 @@ sub yin_yang ($rad, $cx, $cy, :$fill = 'white', :$stroke = 'black', :$angle = 90
  
 say '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">';
+<svg height="400" width="400" xmlns="http://www.w3.org/2000/svg" version="1.1"
+ xmlns:xlink="http://www.w3.org/1999/xlink">';
  
-yin_yang(40, 50, 50);
-yin_yang(20, 120, 120);
+yin_yang(100, 130, 130);
+yin_yang(50, 300, 300);
  
 say '</svg>';
 ```
@@ -37,9 +38,7 @@ svg image interpreter to actually view the output image.
 If that's the case, we may as well cheat harder.&#160;;-)
 
 ```perl
-sub cheat_harder ($scale) {
-     "<span style=\"font-size:$scale%;\">&#x262f;</span>";
-}
+sub cheat_harder ($scale) { "<span style=\"font-size:$scale%;\">&#x262f;</span>"; }
  
-say '<div><br /><br />', cheat_harder(700), cheat_harder(350), '</div>';
+say '<div>', cheat_harder(700), cheat_harder(350), '</div>';
 ```

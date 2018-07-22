@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Reflection/List_properties
+[1]: https://rosettacode.org/wiki/Reflection/List_properties
 
 # [Reflection/List properties][1]
 
@@ -28,4 +28,4 @@ $!c, False, Int, 42
 ```
 
 
-Public attributes (in this case, `$.b` and `$.c`) are really just attributes for which the compiler also auto-generates a method of the same name. See [Reflection/List_methods#Perl_6](http://rosettacode.org/wiki/Reflection/List_methods#Perl_6).
+Public attributes (in this case, `$.b` and `$.c`) are really just attributes for which the compiler also auto-generates a method of the same name. See [Reflection/List_methods#Perl_6](https://rosettacode.org/wiki/Reflection/List_methods#Perl_6).

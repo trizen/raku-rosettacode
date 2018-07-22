@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Subset_sum_problem
+[1]: https://rosettacode.org/wiki/Subset_sum_problem
 
 # [Subset sum problem][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/FASTA_format
+[1]: https://rosettacode.org/wiki/FASTA_format
 
 # [FASTA format][1]
 

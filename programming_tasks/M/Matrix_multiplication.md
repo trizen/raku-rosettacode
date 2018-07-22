@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Matrix_multiplication
+[1]: https://rosettacode.org/wiki/Matrix_multiplication
 
 # [Matrix multiplication][1]
 
-There are three ways in which this example differs significantly from the original Perl&#160;5 code.  These are not esoteric differences; all three of these features typically find heavy use in Perl&#160;6.
+There are three ways in which this example differs significantly from the original Perl&#160;5 code. These are not esoteric differences; all three of these features typically find heavy use in Perl&#160;6.
 
 
 
@@ -14,12 +14,12 @@ Also, we can bind the arrays to formal parameters that are really lexical variab
 
 
 Second, we use the X cross operator in conjunction with a two-parameter closure to avoid writing
-nested loops.  The X cross operator, along with Z, the zip operator, is a member of a class of operators that expect lists on both sides, so we call them "list infix" operators.  We tend to define these operators using capital letters so that they stand out visually from the lists on both sides.  The cross operator makes every possible combination of the one value from the first list followed by one value from the second.  The right side varies most rapidly, just like an inner loop.  (The X and Z operators may both also be used as meta-operators, Xop or Zop, distributing some other operator "op" over their generated list.  All metaoperators in Perl&#160;6 may be applied to user-defined operators as well.)
+nested loops. The X cross operator, along with Z, the zip operator, is a member of a class of operators that expect lists on both sides, so we call them "list infix" operators. We tend to define these operators using capital letters so that they stand out visually from the lists on both sides. The cross operator makes every possible combination of the one value from the first list followed by one value from the second. The right side varies most rapidly, just like an inner loop. (The X and Z operators may both also be used as meta-operators, Xop or Zop, distributing some other operator "op" over their generated list. All metaoperators in Perl&#160;6 may be applied to user-defined operators as well.)
 
 
 
-Third is the use of prefix `^` to generate a list of numbers in a range.  Here it is
-used on an array to generate all the indexes of the array.  We have a way of indicating a range by the infix `..` operator, and you can put a `^` on either end to exclude that endpoint.  We found ourselves writing `0 ..^ @a` so often that we made `^@a` a shorthand for that.  It's pronounced "upto". The array is evaluated in a numeric context, so it returns the number of elements it contains, which is exactly what you want for the exclusive limit of the range.
+Third is the use of prefix `^` to generate a list of numbers in a range. Here it is
+used on an array to generate all the indexes of the array. We have a way of indicating a range by the infix `..` operator, and you can put a `^` on either end to exclude that endpoint. We found ourselves writing `0 ..^ @a` so often that we made `^@a` a shorthand for that. It's pronounced "upto". The array is evaluated in a numeric context, so it returns the number of elements it contains, which is exactly what you want for the exclusive limit of the range.
 
 ```perl
 sub mmult(@a,@b) {
@@ -75,4 +75,4 @@ sub mmult(\a,\b) {
 ```
 
 
-Here we use Z with an "op" of `*`, which is a zip with multiply.  This, along with the `[+]` reduction operator, replaces the inner loop.  We chose to split the outer X loop back into two loops to make it convenient to collect each subarray value in `[...]`.  It just collects all the returned values from the inner loop and makes an array of them.  The outer loop simply returns the outer array.
+Here we use Z with an "op" of `*`, which is a zip with multiply. This, along with the `[+]` reduction operator, replaces the inner loop. We chose to split the outer X loop back into two loops to make it convenient to collect each subarray value in `[...]`. It just collects all the returned values from the inner loop and makes an array of them. The outer loop simply returns the outer array.

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Arithmetic_coding/As_a_generalized_change_of_radix
+[1]: https://rosettacode.org/wiki/Arithmetic_coding/As_a_generalized_change_of_radix
 
 # [Arithmetic coding/As a generalized change of radix][1]
 

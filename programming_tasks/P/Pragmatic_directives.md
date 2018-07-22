@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pragmatic_directives
+[1]: https://rosettacode.org/wiki/Pragmatic_directives
 
 # [Pragmatic directives][1]
 

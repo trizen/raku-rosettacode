@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Partial_function_application
+[1]: https://rosettacode.org/wiki/Partial_function_application
 
 # [Partial function application][1]
 

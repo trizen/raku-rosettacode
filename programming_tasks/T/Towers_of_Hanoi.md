@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Towers_of_Hanoi
+[1]: https://rosettacode.org/wiki/Towers_of_Hanoi
 
 # [Towers of Hanoi][1]
 

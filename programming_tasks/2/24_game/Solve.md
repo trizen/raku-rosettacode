@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/24_game/Solve
+[1]: https://rosettacode.org/wiki/24_game/Solve
 
 # [24 game/Solve][1]
 
@@ -6,7 +6,7 @@ A loose translation of the Perl entry. Does not return every possible permutatio
 
 
 
-Since Perl 6 uses Rational numbers for division (whenever possible) there is no loss of precision as is common with floating point division. So a comparison like  (1 + 7) / (1 / 3) == 24 "Just Works"<sup>&#8482;</sup>
+Since Perl 6 uses Rational numbers for division (whenever possible) there is no loss of precision as is common with floating point division. So a comparison like (1 + 7) / (1 / 3) == 24 "Just Works"<sup>&#8482;</sup>
 
 ```perl
 use MONKEY-SEE-NO-EVAL;

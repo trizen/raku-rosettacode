@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hamming_numbers
+[1]: https://rosettacode.org/wiki/Hamming_numbers
 
 # [Hamming numbers][1]
 

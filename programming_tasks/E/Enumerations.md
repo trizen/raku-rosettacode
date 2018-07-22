@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Enumerations
+[1]: https://rosettacode.org/wiki/Enumerations
 
 # [Enumerations][1]
 

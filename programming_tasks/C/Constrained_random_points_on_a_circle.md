@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Constrained_random_points_on_a_circle
+[1]: https://rosettacode.org/wiki/Constrained_random_points_on_a_circle
 
 # [Constrained random points on a circle][1]
 

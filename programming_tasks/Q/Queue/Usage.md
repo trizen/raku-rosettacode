@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Queue/Usage
+[1]: https://rosettacode.org/wiki/Queue/Usage
 
 # [Queue/Usage][1]
 
@@ -7,12 +7,12 @@ Perl 6 maintains the same list operators of Perl, for this task, the operations 
 ```text
 push (aka enqueue) -- @list.push
 pop (aka dequeue)  -- @list.shift
-empty              -- !@list.elems
+empty              -- !@list.elems
 ```
 
 
-but there's also @list.pop which removes a item from the end,
-and @list.unshift which add a item on the start of the list.
+but there's also `@list.pop` which removes a item from the end,
+and `@list.unshift` which add a item on the start of the list.
 
 Example:
 

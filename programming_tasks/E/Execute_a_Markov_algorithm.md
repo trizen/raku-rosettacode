@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Execute_a_Markov_algorithm
+[1]: https://rosettacode.org/wiki/Execute_a_Markov_algorithm
 
 # [Execute a Markov algorithm][1]
 

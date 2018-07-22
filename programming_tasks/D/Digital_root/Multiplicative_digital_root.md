@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Digital_root/Multiplicative_digital_root
+[1]: https://rosettacode.org/wiki/Digital_root/Multiplicative_digital_root
 
 # [Digital root/Multiplicative digital root][1]
 

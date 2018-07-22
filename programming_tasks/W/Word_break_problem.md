@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Word_break_problem
+[1]: https://rosettacode.org/wiki/Word_break_problem
 
 # [Word break problem][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Truncatable_primes
+[1]: https://rosettacode.org/wiki/Truncatable_primes
 
 # [Truncatable primes][1]
 

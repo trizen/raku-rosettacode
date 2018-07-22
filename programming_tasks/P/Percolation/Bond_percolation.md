@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Percolation/Bond_percolation
+[1]: https://rosettacode.org/wiki/Percolation/Bond_percolation
 
 # [Percolation/Bond percolation][1]
 

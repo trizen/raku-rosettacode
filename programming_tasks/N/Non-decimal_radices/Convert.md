@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Non-decimal_radices/Convert
+[1]: https://rosettacode.org/wiki/Non-decimal_radices/Convert
 
 # [Non-decimal radices/Convert][1]
 

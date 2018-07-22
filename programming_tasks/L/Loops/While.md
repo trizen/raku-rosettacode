@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/While
+[1]: https://rosettacode.org/wiki/Loops/While
 
 # [Loops/While][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Remove_duplicate_elements
+[1]: https://rosettacode.org/wiki/Remove_duplicate_elements
 
 # [Remove duplicate elements][1]
 

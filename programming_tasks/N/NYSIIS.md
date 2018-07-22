@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/NYSIIS
+[1]: https://rosettacode.org/wiki/NYSIIS
 
 # [NYSIIS][1]
 
@@ -31,12 +31,13 @@ sub nysiis ($name is copy) {
         s:c(1):g/K/C/;
         s:c(1):g/H(<-[AEIOU]>)/$0/;
         s:g/(<-[AEIOU]>)H/$0/;
-        s:g/(<-[AEIOU]>)W/$0/;
+        s:g/(.)W/$0/;
         s/ AY$ /Y/;
         s/  S$ //;
         s/  A$ //;
         s:g/ (.)$0+ /$0/;
      }
+     return $name;
 }
  
  

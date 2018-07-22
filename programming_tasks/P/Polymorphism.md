@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Polymorphism
+[1]: https://rosettacode.org/wiki/Polymorphism
 
 # [Polymorphism][1]
 

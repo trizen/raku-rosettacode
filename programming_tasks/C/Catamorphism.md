@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Catamorphism
+[1]: https://rosettacode.org/wiki/Catamorphism
 
 # [Catamorphism][1]
 
@@ -28,6 +28,7 @@ say [lcm] @list;
 In addition to the reduce metaoperator, a general higher-order function, `reduce`, can apply any appropriate function. Reproducing the above in this form, using the function names of those operators, we have:
 
 ```perl
+my @list = 1..10;
 say reduce &infix:<+>, @list;
 say reduce &infix:<*>, @list;
 say reduce &infix:<~>, @list;

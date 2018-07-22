@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Identity_matrix
+[1]: https://rosettacode.org/wiki/Identity_matrix
 
 # [Identity matrix][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Van_der_Corput_sequence
+[1]: https://rosettacode.org/wiki/Van_der_Corput_sequence
 
 # [Van der Corput sequence][1]
 
@@ -78,9 +78,9 @@ Here is a functional version that produces the same output:
 
 ```perl
 sub vdc($value, $base = 2) {
-    my @values := $value, { $_ div $base } ... 0;
-    my @denoms := $base,  { $_  *  $base } ... *;
-    [+] do for @values Z @denoms -> $v, $d {
+    my @values = $value, { $_ div $base } ... 0;
+    my @denoms = $base,  { $_  *  $base } ... *;
+    [+] do for (flat @values Z @denoms) -> $v, $d {
         $v mod $base / $d;
     }
 }

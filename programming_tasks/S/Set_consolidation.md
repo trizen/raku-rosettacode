@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Set_consolidation
+[1]: https://rosettacode.org/wiki/Set_consolidation
 
 # [Set consolidation][1]
 

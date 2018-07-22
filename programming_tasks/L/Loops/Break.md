@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Break
+[1]: https://rosettacode.org/wiki/Loops/Break
 
 # [Loops/Break][1]
 

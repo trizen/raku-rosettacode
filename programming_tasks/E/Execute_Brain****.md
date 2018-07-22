@@ -1,5 +1,5 @@
-[1]: http://rosettacode.org/wiki/Execute_Brain****
+[1]: https://rosettacode.org/wiki/Execute_Brain****
 
 # [Execute Brain****][1]
 
-[Implementation in Perl 6](http://rosettacode.org/wiki/Execute_Brain****/Perl_6).
+See [Execute_Brain****/Perl_6](https://rosettacode.org/wiki/Execute_Brain****/Perl_6).

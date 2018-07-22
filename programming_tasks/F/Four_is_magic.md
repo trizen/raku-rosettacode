@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Four_is_magic
+[1]: https://rosettacode.org/wiki/Four_is_magic
 
 # [Four is magic][1]
 

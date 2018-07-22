@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Implicit_type_conversion
+[1]: https://rosettacode.org/wiki/Implicit_type_conversion
 
 # [Implicit type conversion][1]
 
@@ -70,6 +70,7 @@ For instance, you must explicitly request and cast to Complex numbers and FatRat
 (A normal Rat number has a denominator that is limited to 64 bits, with underflow to floating point to prevent performance degradation; a FatRat, in contrast, has an unlimited denominator size, and can chew up all your memory if you're not careful.)
 
 ```perl
+my $x;
 $x = (-1).sqrt;           say $x, ' ', $x.WHAT; # NaN (Num)
 $x = (-1).Complex.sqrt;   say $x, ' ', $x.WHAT; # 6.12323399573677e-17+1i (Complex)
  

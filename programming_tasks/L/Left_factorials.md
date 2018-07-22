@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Left_factorials
+[1]: https://rosettacode.org/wiki/Left_factorials
 
 # [Left factorials][1]
 

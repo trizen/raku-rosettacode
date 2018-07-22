@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Bitmap/Bézier_curves/Cubic
+[1]: https://rosettacode.org/wiki/Bitmap/Bézier_curves/Cubic
 
 # [Bitmap/Bézier curves/Cubic][1]
 
-Uses pieces from [ Bitmap](http://rosettacode.org/wiki/Bitmap#Perl_6), and [ Bresenham's line algorithm](http://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#Perl_6) tasks. They are included here to make a complete, runnable program.
+Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6), and [ Bresenham's line algorithm](https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#Perl_6) tasks. They are included here to make a complete, runnable program.
 
 ```perl
 class Pixel { has UInt ($.R, $.G, $.B) }

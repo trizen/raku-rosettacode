@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Egyptian_fractions
+[1]: https://rosettacode.org/wiki/Egyptian_fractions
 
 # [Egyptian fractions][1]
 
@@ -6,13 +6,13 @@
 role Egyptian {
     method gist {
 	join ' + ',
-	    (self.abs >= 1 ?? "[{self.floor}]" !! Nil),
+	    ("[{self.floor}]" if self.abs >= 1),
 	    map {"1/$_"}, self.denominators;
     }
     method denominators {
 	my ($x, $y) = self.nude;
 	$x %= $y;
-	gather ($x, $y) = -$y % $x, $y * take ($y / $x).ceiling
+	my @denom = gather ($x, $y) = -$y % $x, $y * take ($y / $x).ceiling
 	    while $x;
     }
 }
@@ -49,7 +49,7 @@ Because the harmonic series diverges (albeit very slowly), it is possible to wri
 
 ```perl
 role Egyptian {
-    method gist { join ' + ', map {"1/$_"}, self[] }
+    method gist { join ' + ', map {"1/$_"}, self.list }
     method list {
 	my $sum = 0;
 	gather for 2 .. * {

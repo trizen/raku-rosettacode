@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Atomic_updates
+[1]: https://rosettacode.org/wiki/Atomic_updates
 
 # [Atomic updates][1]
 

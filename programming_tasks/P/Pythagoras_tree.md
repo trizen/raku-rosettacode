@@ -1,11 +1,10 @@
-[1]: http://rosettacode.org/wiki/Pythagoras_tree
+[1]: https://rosettacode.org/wiki/Pythagoras_tree
 
 # [Pythagoras tree][1]
 
 We'll generate a SVG image.
 
 ```perl
- 
 class Square {
     has Complex ($.position, $.edge);
     method size { $!edge.abs }

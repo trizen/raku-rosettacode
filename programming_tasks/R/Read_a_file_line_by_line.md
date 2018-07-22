@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Read_a_file_line_by_line
+[1]: https://rosettacode.org/wiki/Read_a_file_line_by_line
 
 # [Read a file line by line][1]
 

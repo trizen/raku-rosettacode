@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Special_variables
+[1]: https://rosettacode.org/wiki/Special_variables
 
 # [Special variables][1]
 

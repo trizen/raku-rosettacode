@@ -1,9 +1,20 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Bead_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Bead_sort
 
 # [Sorting algorithms/Bead sort][1]
 
 ```perl
-use List::Utils;
+# routine cribbed from List::Utils;
+sub transpose(@list is copy) {
+    gather {
+        while @list {
+            my @heads;
+            if @list[0] !~~ Positional { @heads = @list.shift; }
+            else { @heads = @list.map({$_.shift unless $_ ~~ []}); }
+            @list = @list.map({$_ unless $_ ~~ []});
+            take [@heads];
+        }
+    }
+}
  
 sub beadsort(@l) {
     (transpose(transpose(map {[1 xx $_]}, @l))).map(*.elems);
@@ -24,7 +35,7 @@ Here we simulate the dropping beads by using the `push` method.
 ```perl
 sub beadsort(*@list) {
     my @rods;
-    for ^«@list -> $x { @rods[$x].push(1) }
+    for words ^«@list -> $x { @rods[$x].push(1) }
     gather for ^@rods[0] -> $y {
         take [+] @rods.map: { .[$y] // last }
     }

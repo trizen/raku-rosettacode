@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Pancake_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Pancake_sort
 
 # [Sorting algorithms/Pancake sort][1]
 

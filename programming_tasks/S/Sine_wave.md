@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sine_wave
+[1]: https://rosettacode.org/wiki/Sine_wave
 
 # [Sine wave][1]
 

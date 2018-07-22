@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Empty_string
+[1]: https://rosettacode.org/wiki/Empty_string
 
 # [Empty string][1]
 

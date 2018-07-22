@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sieve_of_Eratosthenes
+[1]: https://rosettacode.org/wiki/Sieve_of_Eratosthenes
 
 # [Sieve of Eratosthenes][1]
 
@@ -20,37 +20,32 @@ sub sieve( Int $limit ) {
 ```
 
 
+### A set-based approach
 
 
 
-
-
-
-
-A recursive version:
+More or less the same as the first Python example:
 
 ```perl
-multi erat(Int $N) { erat 2 .. $N }
-multi erat(@a where @a[0] > sqrt @a[*-1]) { @a }
-multi erat(@a) { @a[0], erat(@a.grep: * % @a[0]) }
+sub eratsieve($n) {
+    # Requires n(1 - 1/(log(n-1))) storage
+    my $multiples = set();
+    gather for 2..$n -> $i {
+        unless $i (&) $multiples { # is subset
+            take $i;
+            $multiples (+)= set($i**2, *+$i ... (* > $n)); # union
+        }
+    }
+}
  
-say erat 100;
+say flat eratsieve(100);
 ```
 
 
-Of course, upper limits are for wusses. Here's a version using infinite streams, that just keeps going until you ^C it (works under Niecza, but not current Rakudo):
+This gives:
 
-```perl
-role Filter[Int $factor] {
-    method next { repeat until $.value % $factor { callsame } }
-}
- 
-class Stream {
-    has Int $.value is rw = 1;
- 
-    method next { ++$.value }
-    method filter { self but Filter[$.value] }
-}
- 
-.next, say .value for Stream.new, *.filter ... *;
+
+#### Output:
+```
+ (2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97)
 ```

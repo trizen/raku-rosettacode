@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Priority_queue
+[1]: https://rosettacode.org/wiki/Priority_queue
 
 # [Priority queue][1]
 

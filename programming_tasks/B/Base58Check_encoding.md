@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Base58Check_encoding
+[1]: https://rosettacode.org/wiki/Base58Check_encoding
 
 # [Base58Check encoding][1]
 

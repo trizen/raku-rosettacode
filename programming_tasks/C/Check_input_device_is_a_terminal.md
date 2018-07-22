@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Check_input_device_is_a_terminal
+[1]: https://rosettacode.org/wiki/Check_input_device_is_a_terminal
 
 # [Check input device is a terminal][1]
 

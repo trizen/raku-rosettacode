@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Filter
+[1]: https://rosettacode.org/wiki/Filter
 
 # [Filter][1]
 
@@ -11,6 +11,7 @@ my @even = grep * %% 2, @a;
 Alternatively:
 
 ```perl
+my @a = 1..6;
 my @even = @a.grep(* %% 2);
 ```
 
@@ -18,5 +19,6 @@ my @even = @a.grep(* %% 2);
 Destructive:
 
 ```perl
+my @a = 1..6;
 @a .= grep(* %% 2);
 ```

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Count_in_octal
+[1]: https://rosettacode.org/wiki/Count_in_octal
 
 # [Count in octal][1]
 

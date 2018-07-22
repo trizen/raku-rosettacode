@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Nested
+[1]: https://rosettacode.org/wiki/Loops/Nested
 
 # [Loops/Nested][1]
 

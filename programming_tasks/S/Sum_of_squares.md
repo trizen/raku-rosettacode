@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sum_of_squares
+[1]: https://rosettacode.org/wiki/Sum_of_squares
 
 # [Sum of squares][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Start_from_a_main_routine
+[1]: https://rosettacode.org/wiki/Start_from_a_main_routine
 
 # [Start from a main routine][1]
 

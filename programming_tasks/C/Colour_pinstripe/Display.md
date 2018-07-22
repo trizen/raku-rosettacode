@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Colour_pinstripe/Display
+[1]: https://rosettacode.org/wiki/Colour_pinstripe/Display
 
 # [Colour pinstripe/Display][1]
 
@@ -16,7 +16,7 @@ my @colors = map -> $r, $g, $b { [$r, $g, $b] },
                    255,255,  0,
                    255,255,255;
  
-my $PPM = open "pinstripes.ppm", :w, :bin or die "Can't create pinstripes.ppm: $!";
+my $PPM = open "pinstripes.ppm", :w or die "Can't create pinstripes.ppm: $!";
  
 $PPM.print: qq:to/EOH/;
     P3

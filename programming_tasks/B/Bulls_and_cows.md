@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bulls_and_cows
+[1]: https://rosettacode.org/wiki/Bulls_and_cows
 
 # [Bulls and cows][1]
 

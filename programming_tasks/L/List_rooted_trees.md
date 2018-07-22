@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/List_rooted_trees
+[1]: https://rosettacode.org/wiki/List_rooted_trees
 
 # [List rooted trees][1]
 

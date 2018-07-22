@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Montgomery_reduction
+[1]: https://rosettacode.org/wiki/Montgomery_reduction
 
 # [Montgomery reduction][1]
 

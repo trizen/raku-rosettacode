@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Superellipse
+[1]: https://rosettacode.org/wiki/Superellipse
 
 # [Superellipse][1]
 

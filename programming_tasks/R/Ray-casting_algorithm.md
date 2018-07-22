@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ray-casting_algorithm
+[1]: https://rosettacode.org/wiki/Ray-casting_algorithm
 
 # [Ray-casting algorithm][1]
 

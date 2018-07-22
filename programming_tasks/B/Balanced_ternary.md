@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Balanced_ternary
+[1]: https://rosettacode.org/wiki/Balanced_ternary
 
 # [Balanced ternary][1]
 
@@ -10,10 +10,10 @@ class BT {
     my %bt2co = %co2bt.invert;
  
     multi method new (Str $s) {
-	self.bless(*, coeff => %bt2co{$s.flip.comb});
+	self.bless(coeff => %bt2co{$s.flip.comb});
     }
     multi method new (Int $i where $i >= 0) {
-	self.bless(*, coeff => carry $i.base(3).comb.reverse);
+	self.bless(coeff => carry $i.base(3).comb.reverse);
     }
     multi method new (Int $i where $i < 0) {
 	self.new(-$i).neg;
@@ -39,8 +39,8 @@ sub carry (*@digits is copy) {
 multi prefix:<-> (BT $x) { $x.neg }
  
 multi infix:<+> (BT $x, BT $y) {
-    my ($b,$a) = sort +*.coeff, $x, $y;
-    BT.new: coeff => carry $a.coeff Z+ $b.coeff, 0 xx *;
+    my ($b,$a) = sort +*.coeff, ($x, $y);
+    BT.new: coeff => carry ($a.coeff Z+ |$b.coeff, |(0 xx $a.coeff - $b.coeff));
 }
  
 multi infix:<-> (BT $x, BT $y) { $x + $y.neg }
@@ -51,7 +51,7 @@ multi infix:<*> (BT $x, BT $y) {
     my @z = 0 xx @x+@y-1;
     my @safe;
     for @x -> $xd {
-	@z = @z Z+ (@y X* $xd), 0 xx *;
+	@z = @z Z+ |(@y X* $xd), |(0 xx @z-@y);
 	@safe.push: @z.shift;
     }
     BT.new: coeff => carry @safe, @z;

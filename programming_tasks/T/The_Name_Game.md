@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/The_Name_Game
+[1]: https://rosettacode.org/wiki/The_Name_Game
 
 # [The Name Game][1]
 

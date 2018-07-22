@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Variable_size/Set
+[1]: https://rosettacode.org/wiki/Variable_size/Set
 
 # [Variable size/Set][1]
 

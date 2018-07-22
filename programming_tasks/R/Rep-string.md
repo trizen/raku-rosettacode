@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rep-string
+[1]: https://rosettacode.org/wiki/Rep-string
 
 # [Rep-string][1]
 

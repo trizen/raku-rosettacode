@@ -1,42 +1,52 @@
-[1]: http://rosettacode.org/wiki/Lychrel_numbers
+[1]: https://rosettacode.org/wiki/Lychrel_numbers
 
 # [Lychrel numbers][1]
 
 ```perl
-my @lychrels;
-my @palindromes;
+my %lychrels;
 my @seeds;
+my @palindromes;
+my $count;
 my $max = 500;
+my $limit = '10_000';
  
-for 1 .. 10000 -> $int {
+for 1 .. $limit -> $int {
     my @test;
-    my $count = 0;
-    @lychrels.push( $int => [@test] ) if lychrel($int);
+    my $index = 0;
+    if $int.&is-lychrel {
+        print "\b" x 20, "Found Lychrel: $int";
+        %lychrels.push: ($int => @test).invert;
+        @palindromes.push: $int if $int == $int.flip;
+        $count++;
+    }
+    print "\b" x 20;
  
-    sub lychrel (Int $l) {
-        return True if $count++ > $max;
+    sub is-lychrel (Int $l) {
+        return True if $index++ > $max;
         @test.push: my $m = $l + $l.flip;
         return False if $m == $m.flip;
-        lychrel($m);
+        $m.&is-lychrel;
     }
 }
  
-@seeds = @lychrels[0];
-for @lychrels -> $l {
-    @palindromes.push: $l.key if $l.key == $l.key.flip;
-    my $trial = 0;
-    for @seeds -> $s {
-        last if any($s.value) ~~ any($l.value);
-        $trial++;
+for %lychrels{*}»[0].unique.sort -> $ly {
+    my $next = False;
+    for %lychrels -> $l {
+        for $l.value[1..*] -> $lt {
+            $next = True and last if $ly == $lt;
+            last if $ly < $lt;
+        }
+        last if $next;
     }
-    @seeds.push: $l if $trial == +@seeds;
+    next if $next;
+    @seeds.push: $ly;
 }
  
-say "   Number of Lychrel seed numbers < 10_000: ", +@seeds;
-say "             Lychrel seed numbers < 10_000: ", join ", ", @seeds>>.keys;
-say "Number of Lychrel related numbers < 10_000: ", +@lychrels -@seeds;
-say "    Number of Lychrel palindromes < 10_000: ", +@palindromes;
-say "              Lychrel palindromes < 10_000: ", join ", ", @palindromes;
+say "   Number of Lychrel seed numbers < $limit: ", +@seeds;
+say "             Lychrel seed numbers < $limit: ", join ", ", @seeds;
+say "Number of Lychrel related numbers < $limit: ", +$count - @seeds;
+say "    Number of Lychrel palindromes < $limit: ", +@palindromes;
+say "              Lychrel palindromes < $limit: ", join ", ", @palindromes;
 ```
 
 #### Output:

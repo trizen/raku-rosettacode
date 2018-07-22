@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Secure_temporary_file
+[1]: https://rosettacode.org/wiki/Secure_temporary_file
 
 # [Secure temporary file][1]
 

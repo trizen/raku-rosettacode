@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Read_a_file_character_by_character/UTF8
+[1]: https://rosettacode.org/wiki/Read_a_file_character_by_character/UTF8
 
 # [Read a file character by character/UTF8][1]
 

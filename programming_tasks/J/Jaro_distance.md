@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Jaro_distance
+[1]: https://rosettacode.org/wiki/Jaro_distance
 
 # [Jaro distance][1]
 

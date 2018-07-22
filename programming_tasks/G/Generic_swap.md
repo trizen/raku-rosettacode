@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Generic_swap
+[1]: https://rosettacode.org/wiki/Generic_swap
 
 # [Generic swap][1]
 

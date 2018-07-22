@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Search_a_list_of_records
+[1]: https://rosettacode.org/wiki/Search_a_list_of_records
 
 # [Search a list of records][1]
 

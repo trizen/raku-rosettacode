@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Comments
+[1]: https://rosettacode.org/wiki/Comments
 
 # [Comments][1]
 

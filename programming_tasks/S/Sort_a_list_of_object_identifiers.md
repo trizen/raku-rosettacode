@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sort_a_list_of_object_identifiers
+[1]: https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers
 
 # [Sort a list of object identifiers][1]
 

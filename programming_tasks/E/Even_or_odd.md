@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Even_or_odd
+[1]: https://rosettacode.org/wiki/Even_or_odd
 
 # [Even or odd][1]
 

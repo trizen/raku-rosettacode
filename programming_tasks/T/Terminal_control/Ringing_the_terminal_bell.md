@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Ringing_the_terminal_bell
+[1]: https://rosettacode.org/wiki/Terminal_control/Ringing_the_terminal_bell
 
 # [Terminal control/Ringing the terminal bell][1]
 

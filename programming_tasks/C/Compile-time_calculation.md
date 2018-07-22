@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Compile-time_calculation
+[1]: https://rosettacode.org/wiki/Compile-time_calculation
 
 # [Compile-time calculation][1]
 

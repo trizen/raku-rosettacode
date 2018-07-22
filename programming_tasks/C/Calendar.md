@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Calendar
+[1]: https://rosettacode.org/wiki/Calendar
 
 # [Calendar][1]
 

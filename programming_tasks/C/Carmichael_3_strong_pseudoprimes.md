@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes
+[1]: https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes
 
 # [Carmichael 3 strong pseudoprimes][1]
 

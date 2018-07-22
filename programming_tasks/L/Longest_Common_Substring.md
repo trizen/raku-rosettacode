@@ -1,9 +1,8 @@
-[1]: http://rosettacode.org/wiki/Longest_Common_Substring
+[1]: https://rosettacode.org/wiki/Longest_Common_Substring
 
 # [Longest Common Substring][1]
 
 ```perl
-use v6;
  
 sub createSubstrings( Str $word --> Array ) {
    my $length = $word.chars ;

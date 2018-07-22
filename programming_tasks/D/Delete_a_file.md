@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Delete_a_file
+[1]: https://rosettacode.org/wiki/Delete_a_file
 
 # [Delete a file][1]
 

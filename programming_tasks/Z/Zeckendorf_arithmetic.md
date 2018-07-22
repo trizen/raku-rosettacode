@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Zeckendorf_arithmetic
+[1]: https://rosettacode.org/wiki/Zeckendorf_arithmetic
 
 # [Zeckendorf arithmetic][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Amicable_pairs
+[1]: https://rosettacode.org/wiki/Amicable_pairs
 
 # [Amicable pairs][1]
 

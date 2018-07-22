@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Monty_Hall_problem
+[1]: https://rosettacode.org/wiki/Monty_Hall_problem
 
 # [Monty Hall problem][1]
 

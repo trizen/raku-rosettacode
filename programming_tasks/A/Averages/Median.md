@@ -1,17 +1,23 @@
-[1]: http://rosettacode.org/wiki/Averages/Median
+[1]: https://rosettacode.org/wiki/Averages/Median
 
 # [Averages/Median][1]
 
 ```perl
 sub median {
   my @a = sort @_;
-  return (@a[@a.end / 2] + @a[@a / 2]) / 2;
+  return (@a[(*-1) div 2] + @a[* div 2]) / 2;
 }
 ```
+
+
+Notes:
+
+
+
 
 
 In a slightly more compact way:
 
 ```perl
-sub median { 2 R/ [+] @_.sort[@_.end / 2, @_ / 2] }
+sub median { @_.sort[(*-1)/2, */2].sum / 2 }
 ```

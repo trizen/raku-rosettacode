@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Damm_algorithm
+[1]: https://rosettacode.org/wiki/Damm_algorithm
 
 # [Damm algorithm][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Modulinos
+[1]: https://rosettacode.org/wiki/Modulinos
 
 # [Modulinos][1]
 

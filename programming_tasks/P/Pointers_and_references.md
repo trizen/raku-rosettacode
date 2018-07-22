@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pointers_and_references
+[1]: https://rosettacode.org/wiki/Pointers_and_references
 
 # [Pointers and references][1]
 

@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Matrix_arithmetic
+[1]: https://rosettacode.org/wiki/Matrix_arithmetic
 
 # [Matrix arithmetic][1]
 
-Uses the permutations generator from the [Permutations by swapping](http://rosettacode.org/wiki/Permutations_by_swapping#Perl_6) task. This implementation is naive and brute-force (slow) but exact.
+Uses the permutations generator from the [Permutations by swapping](https://rosettacode.org/wiki/Permutations_by_swapping#Perl_6) task. This implementation is naive and brute-force (slow) but exact.
 
 ```perl
 sub insert ($x, @xs) { ([flat @xs[0 ..^ $_], $x, @xs[$_ .. *]] for 0 .. @xs) }

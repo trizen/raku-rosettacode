@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Mutual_recursion
+[1]: https://rosettacode.org/wiki/Mutual_recursion
 
 # [Mutual recursion][1]
 
-A direct translation of the definitions of ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=800618943025315f869e4e1f09471012&mode=mathml) and ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=69691c7bdcc3ce6d5d8a1361f22d04ac&mode=mathml):
+A direct translation of the definitions of ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=800618943025315f869e4e1f09471012&mode=mathml) and ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=69691c7bdcc3ce6d5d8a1361f22d04ac&mode=mathml):
 
 ```perl
 multi F(0) { 1 }; multi M(0) { 0 }

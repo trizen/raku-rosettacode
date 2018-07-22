@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Conjugate_transpose
+[1]: https://rosettacode.org/wiki/Conjugate_transpose
 
 # [Conjugate transpose][1]
 

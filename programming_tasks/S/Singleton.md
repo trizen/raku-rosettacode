@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Singleton
+[1]: https://rosettacode.org/wiki/Singleton
 
 # [Singleton][1]
 

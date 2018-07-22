@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Card_shuffles
+[1]: https://rosettacode.org/wiki/Card_shuffles
 
 # [Card shuffles][1]
 

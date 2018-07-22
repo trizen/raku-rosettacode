@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/15_Puzzle_Game
+[1]: https://rosettacode.org/wiki/15_Puzzle_Game
 
 # [15 Puzzle Game][1]
 
-Most of this is interface code. Reused substantial portions from the [2048](http://rosettacode.org/wiki/2048#Perl_6) task. Use the arrow keys to slide tiles, press 'q' to quit or 'n' for a new puzzle. Requires a POSIX termios aware terminal. Ensures that the puzzle is solvable by shuffling the board with an even number of swaps, then checking for even taxicab parity for the empty space.
+Most of this is interface code. Reused substantial portions from the [2048](https://rosettacode.org/wiki/2048#Perl_6) task. Use the arrow keys to slide tiles, press 'q' to quit or 'n' for a new puzzle. Requires a POSIX termios aware terminal. Ensures that the puzzle is solvable by shuffling the board with an even number of swaps, then checking for even taxicab parity for the empty space.
 
 ```perl
 use Term::termios;
@@ -38,9 +38,15 @@ new();
  
 sub new () {
     loop {
-        @board = shuffle();
-        last if parity-ok(@board);
-    }
+       @board = shuffle();
+       last if parity-ok(@board);
+   }
+}
+ 
+sub parity-ok (@b) {
+    my $row = @b.first(/' '/,:k);
+    my $col = @b[$row].first(/' '/,:k);
+    so ([3,3] <<->> [$row,$col]).sum %% 2;
 }
  
 sub shuffle () {
@@ -52,10 +58,6 @@ sub shuffle () {
         @c[$xm;$xd] = $temp;
     }
     @c;
-}
- 
-sub parity-ok (@b) {
-    so (sum @b».grep(/' '/,:k).grep(/\d/, :kv)) %% 2;
 }
  
 sub row (@row) { '│' ~ (join '│', @row».&center) ~ '│' }
@@ -90,19 +92,21 @@ sub slide (@c is copy) {
     @c;
 }
  
-multi sub move('up') {
+proto sub move (|) {*};
+ 
+multi move('up') {
     map { @board[*;$_] = reverse slide reverse @board[*;$_] }, ^n;
 }
  
-multi sub move('down') {
+multi move('down') {
     map { @board[*;$_] = slide @board[*;$_] }, ^n;
 }
  
-multi sub move('left') {
+multi move('left') {
     map { @board[$_] = reverse slide reverse @board[$_] }, ^n;
 }
  
-multi sub move('right') {
+multi move('right') {
     map { @board[$_] = slide @board[$_] }, ^n;
 }
  

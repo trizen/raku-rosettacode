@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Radix_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Radix_sort
 
 # [Sorting algorithms/Radix sort][1]
 
@@ -11,8 +11,9 @@ sub radsort (@ints) {
  
     for reverse ^$maxlen -> $r {
         my @buckets = @list.classify( *.substr($r,1) ).sort: *.key;
-        if !$r and @buckets[0].key eq '-' { @buckets[0].value .= reverse }
-        @list = map *.value.values, @buckets;
+        @buckets[0].value = @buckets[0].value.reverse.List
+            if !$r and @buckets[0].key eq '-';
+        @list = flat map *.value.values, @buckets;
     }
     @list».Int;
 }

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/A+B
+[1]: https://rosettacode.org/wiki/A+B
 
 # [A+B][1]
 

@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...
+[1]: https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...
 
 # [Four is the number of letters in the ...][1]
 
-Uses the Lingua::EN::Numbers::Cardinal module to generate both cardinal and ordinal numbers. This module places commas in number words between 3-orders-of-magnitude clusters. E.G. `12345678.&amp;ordinal` becomes: twelve million, three hundred forty-five thousand, six hundred seventy-eighth. Uses a custom 'no-commas' routine to filter them out for accurate character counts. Generates the 'sentence' lazily so only the words needed are ever calculated and reified.
+Uses the Lingua::EN::Numbers::Cardinal module to generate both cardinal and ordinal numbers. This module places commas in number words between 3-orders-of-magnitude clusters. E.G. `12345678.&ordinal` becomes: twelve million, three hundred forty-five thousand, six hundred seventy-eighth. Uses a custom 'no-commas' routine to filter them out for accurate character counts. Generates the 'sentence' lazily so only the words needed are ever calculated and reified.
 
 ```perl
 use Lingua::EN::Numbers::Cardinal;

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Snake_And_Ladder
+[1]: https://rosettacode.org/wiki/Snake_And_Ladder
 
 # [Snake And Ladder][1]
 

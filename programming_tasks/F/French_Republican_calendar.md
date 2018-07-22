@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/French_Republican_calendar
+[1]: https://rosettacode.org/wiki/French_Republican_calendar
 
 # [French Republican calendar][1]
 

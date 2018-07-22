@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Visualize_a_tree
+[1]: https://rosettacode.org/wiki/Visualize_a_tree
 
 # [Visualize a tree][1]
 
@@ -9,7 +9,7 @@ sub visualize-tree($tree, &label, &children,
                    :@end = ('└─', '  '),
 ) {
     sub visit($node, *@pre) {
-        gather {
+        | gather {
             take @pre[0] ~ label($node);
             my @children := children($node);
             my $end = @children.end;

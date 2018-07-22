@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Check_that_file_exists
+[1]: https://rosettacode.org/wiki/Check_that_file_exists
 
 # [Check that file exists][1]
 
@@ -18,7 +18,7 @@ given $path.IO {
 ```
 
 
-`when` internally uses the smart match operator `~~`, so `when&#160;:e` really does `$given ~~&#160;:e` instead of the method call `$given.e`; both test whether the file exists.
+`when` internally uses the smart match operator `~~`, so `when :e` really does `$given ~~ :e` instead of the method call `$given.e`; both test whether the file exists.
 
 ```perl
  

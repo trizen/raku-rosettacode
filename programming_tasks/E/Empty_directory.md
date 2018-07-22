@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Empty_directory
+[1]: https://rosettacode.org/wiki/Empty_directory
 
 # [Empty directory][1]
 

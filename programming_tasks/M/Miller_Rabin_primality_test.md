@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Miller–Rabin_primality_test
+[1]: https://rosettacode.org/wiki/Miller–Rabin_primality_test
 
 # [Miller–Rabin primality test][1]
 

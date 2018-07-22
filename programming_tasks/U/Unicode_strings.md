@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Unicode_strings
+[1]: https://rosettacode.org/wiki/Unicode_strings
 
 # [Unicode strings][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parallel_Brute_Force
+[1]: https://rosettacode.org/wiki/Parallel_Brute_Force
 
 # [Parallel Brute Force][1]
 
@@ -6,8 +6,8 @@ This solution can be changed from parallel to serial by removing the `.race` met
 
 ```perl
 use Digest::SHA;
-constant @alpha2 = 'aa'  ..  'zz';
-constant @alpha3 = 'aaa' .. 'zzz';
+constant @alpha2 = [X~] <a   m p y z> xx 2;
+constant @alpha3 = [X~] <e l m p x z> xx 3;
  
 my %WANTED = set <
     3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b
@@ -22,8 +22,7 @@ sub find_it ( $first_two ) {
     }
 }
  
-.say for flat @alpha2.race.map: &find_it;
- 
+.say for flat @alpha2.race.map: {.&find_it.cache};
 ```
 
 #### Output:

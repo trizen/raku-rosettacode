@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Sort_an_array_of_composite_structures
+[1]: https://rosettacode.org/wiki/Sort_an_array_of_composite_structures
 
 # [Sort an array of composite structures][1]
 
 ```perl
 my class Employee {
    has Str $.name;
-   has Num $.wage;
+   has Rat $.wage;
 }
  
 my $boss     = Employee.new( name => "Frank Myers"     , wage => 6755.85 );

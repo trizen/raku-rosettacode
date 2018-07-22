@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort
 
 # [Sorting algorithms/Sleep sort][1]
 

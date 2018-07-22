@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Shell_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort
 
 # [Sorting algorithms/Shell sort][1]
 

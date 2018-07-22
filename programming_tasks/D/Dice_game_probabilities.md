@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Dice_game_probabilities
+[1]: https://rosettacode.org/wiki/Dice_game_probabilities
 
 # [Dice game probabilities][1]
 
@@ -6,7 +6,7 @@
 sub likelihoods ($roll) {
     my ($dice, $faces) = $roll.comb(/\d+/);
     my @counts;
-    @counts[$_]++ for [X+] |((1..$faces,) xx $dice);
+    @counts[$_]++ for [X+] |(1..$faces,) xx $dice;
     return [@counts[]:p], $faces ** $dice;
 }
  
@@ -15,7 +15,7 @@ sub beating-probability ([$roll1, $roll2]) {
     my (@c2, $p2) := likelihoods $roll2;
     my $p12 = $p1 * $p2;
  
-    [+] gather for @c1 X @c2 -> $p, $q {
+    [+] gather for flat @c1 X @c2 -> $p, $q {
 	take $p.value * $q.value / $p12 if $p.key > $q.key;
     }
 }

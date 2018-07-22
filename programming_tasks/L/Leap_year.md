@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Leap_year
+[1]: https://rosettacode.org/wiki/Leap_year
 
 # [Leap year][1]
 

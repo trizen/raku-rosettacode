@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Menu
+[1]: https://rosettacode.org/wiki/Menu
 
 # [Menu][1]
 

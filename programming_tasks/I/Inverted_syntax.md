@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Inverted_syntax
+[1]: https://rosettacode.org/wiki/Inverted_syntax
 
 # [Inverted syntax][1]
 

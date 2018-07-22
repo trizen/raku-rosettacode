@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/Find_bare_lang_tags
+[1]: https://rosettacode.org/wiki/Rosetta_Code/Find_bare_lang_tags
 
 # [Rosetta Code/Find bare lang tags][1]
 
@@ -14,7 +14,7 @@ for lines() {
     %blanks{$lang}++;
     $total++;
   }
-  when ms/ '==' '{{' 'header' '|' ( \S+? ) '}}' '==' / {
+  when ms/ '==' '{{' 'header' '|' ( <-[}]>+? ) '}}' '==' / {
     $lang = $0.lc;
   }
 }

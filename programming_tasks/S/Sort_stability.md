@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sort_stability
+[1]: https://rosettacode.org/wiki/Sort_stability
 
 # [Sort stability][1]
 

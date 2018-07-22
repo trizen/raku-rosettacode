@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Interactive_programming
+[1]: https://rosettacode.org/wiki/Interactive_programming
 
 # [Interactive programming][1]
 
-Using [Rakudo](http://rosettacode.org/wiki/Rakudo).
+Using [Rakudo](https://rosettacode.org/wiki/Rakudo).
 
 ```perl
 $ rakudo/perl6

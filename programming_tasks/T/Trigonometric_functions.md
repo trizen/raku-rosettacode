@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Trigonometric_functions
+[1]: https://rosettacode.org/wiki/Trigonometric_functions
 
 # [Trigonometric functions][1]
 

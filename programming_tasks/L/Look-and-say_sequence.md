@@ -1,11 +1,11 @@
-[1]: http://rosettacode.org/wiki/Look-and-say_sequence
+[1]: https://rosettacode.org/wiki/Look-and-say_sequence
 
 # [Look-and-say sequence][1]
 
-In Perl 6 it is natural to avoid explicit loops; rather we use the sequence operator to define a lazy sequence. We print all values until we interrupt with Ctrl-C.
+In Perl 6 it is natural to avoid explicit loops; rather we use the sequence operator to define a lazy infinite sequence. We'll print the first 15 values here.
 
 ```perl
-.say for '1', *.subst(/(.)$0*/, { .chars ~ .[0] }, :g) ... *;
+.say for ('1', *.subst(/(.)$0*/, { .chars ~ .[0] }, :g) ... *)[^15];
 ```
 
 #### Output:
@@ -20,5 +20,9 @@ In Perl 6 it is natural to avoid explicit loops; rather we use the sequence oper
 1113213211
 31131211131221
 13211311123113112211
-^C
+11131221133112132113212221
+3113112221232112111312211312113211
+1321132132111213122112311311222113111221131221
+11131221131211131231121113112221121321132132211331222113112211
+311311222113111231131112132112311321322112111312211312111322212311322113212221
 ```

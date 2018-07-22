@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Reverse_the_gender_of_a_string
+[1]: https://rosettacode.org/wiki/Reverse_the_gender_of_a_string
 
 # [Reverse the gender of a string][1]
 

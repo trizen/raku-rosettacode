@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Generate_Chess960_starting_position
+[1]: https://rosettacode.org/wiki/Generate_Chess960_starting_position
 
 # [Generate Chess960 starting position][1]
 
@@ -39,10 +39,8 @@ generates 40320 candidates only to throw most of them away. This is essentially 
 but written in the form of a list comprehension rather than nested map and grep. (The list comprehension is actually faster currently.) Note that the constant is calculated at compile time, because, well, it's a constant. Just a big fancy one.
 
 ```perl
-constant chess960 = eager
-    .subst(:nth(2), /'♜'/, '♚') 
-        if / '♝' [..]* '♝' /
-            for < ♛ ♜ ♜ ♜ ♝ ♝ ♞ ♞ >.permutations».join.uniq;
+constant chess960 =
+   < ♛ ♜ ♜ ♜ ♝ ♝ ♞ ♞ >.permutations».join.unique.grep( / '♝' [..]* '♝' / )».subst(:nth(2), /'♜'/, '♚');
  
 .say for chess960;
 ```
@@ -51,7 +49,7 @@ constant chess960 = eager
 Here's a much faster way (about 30x) to generate all 960 variants by construction. No need to filter for uniqueness, since it produces exactly 960 entries.
 
 ```perl
-constant chess960 = eager gather for 0..3 -> $q {
+constant chess960 = gather for 0..3 -> $q {
     (my @q = <♜ ♚ ♜>).splice($q, 0, '♛');
     for 0 .. @q -> $n1 {
         (my @n1 = @q).splice($n1, 0, '♞');

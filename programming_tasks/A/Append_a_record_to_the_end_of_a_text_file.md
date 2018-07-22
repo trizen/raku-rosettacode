@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Append_a_record_to_the_end_of_a_text_file
+[1]: https://rosettacode.org/wiki/Append_a_record_to_the_end_of_a_text_file
 
 # [Append a record to the end of a text file][1]
 

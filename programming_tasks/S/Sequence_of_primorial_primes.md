@@ -1,12 +1,12 @@
-[1]: http://rosettacode.org/wiki/Sequence_of_primorial_primes
+[1]: https://rosettacode.org/wiki/Sequence_of_primorial_primes
 
 # [Sequence of primorial primes][1]
 
 ```perl
-constant @primes     = grep *.is-prime, 2..*;
+constant @primes     = |grep *.is-prime, 2..*;
 constant @primorials = [\*] 1, @primes;
  
-my @pp_indexes := @primorials.pairs.map: {
+my @pp_indexes := |@primorials.pairs.map: {
     .key if ( .value + any(1, -1) ).is-prime
 };
  

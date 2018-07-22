@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/List_comprehensions
+[1]: https://rosettacode.org/wiki/List_comprehensions
 
 # [List comprehensions][1]
 

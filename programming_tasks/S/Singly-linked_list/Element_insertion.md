@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Singly-linked_list/Element_insertion
+[1]: https://rosettacode.org/wiki/Singly-linked_list/Element_insertion
 
 # [Singly-linked list/Element insertion][1]
 

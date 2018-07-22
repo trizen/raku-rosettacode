@@ -1,16 +1,15 @@
-[1]: http://rosettacode.org/wiki/Fractran
+[1]: https://rosettacode.org/wiki/Fractran
 
 # [Fractran][1]
 
 A Fractran program potentially returns an infinite list, and infinite lists are a common data structure in Perl 6. The limit is therefore enforced only by slicing the infinite list.
 
 ```perl
-sub ft (\n) {
-    first Int, map (* * n).narrow,
-        |<17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1>, 0
-} 
-constant FT = 2, &ft ... 0;
-say FT[^100];
+sub fractran(@program) {
+    2, { first Int, map (* * $_).narrow, @program } ... 0
+}
+say fractran(<17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11
+        15/14 15/2 55/1>)[^100];
 ```
 
 #### Output:
@@ -20,23 +19,21 @@ say FT[^100];
 
 
 **Extra credit:**
-
-
-
 We can weed out all the powers of two into another infinite constant list based on the first list. In this case the sequence is limited only by our patience, and a ^C from the terminal. The `.msb` method finds the most significant bit of an integer, which conveniently is the base-2 log of the power-of-two in question.
 
 ```perl
-constant FT = 2, &ft ... 0;
-constant FT2 = FT.grep: { not $_ +& ($_ - 1) }
-for 1..* -> $i {
-    given FT2[$i] {
-        say $i, "\t", .msb, "\t", $_;
-    }
+sub fractran(@program) {
+    2, { first Int, map (* * $_).narrow, @program } ... 0
+}
+for fractran <17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11
+        15/14 15/2 55/1> {
+        say $++, "\t", .msb, "\t", $_ if 1 +< .msb == $_;
 }
 ```
 
 #### Output:
 ```
+0       1       2
 1       2       4
 2       3       8
 3       5       32
@@ -46,16 +43,5 @@ for 1..* -> $i {
 7       17      131072
 8       19      524288
 9       23      8388608
-10      29      536870912
-11      31      2147483648
-12      37      137438953472
-13      41      2199023255552
-14      43      8796093022208
-15      47      140737488355328
-16      53      9007199254740992
-17      59      576460752303423488
-18      61      2305843009213693952
-19      67      147573952589676412928
-20      71      2361183241434822606848
 ^C
 ```

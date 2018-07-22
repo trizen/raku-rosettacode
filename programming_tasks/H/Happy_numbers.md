@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Happy_numbers
+[1]: https://rosettacode.org/wiki/Happy_numbers
 
 # [Happy numbers][1]
 

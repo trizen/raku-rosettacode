@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Delegates
+[1]: https://rosettacode.org/wiki/Delegates
 
 # [Delegates][1]
 

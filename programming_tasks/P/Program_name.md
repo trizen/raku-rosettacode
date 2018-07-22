@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Program_name
+[1]: https://rosettacode.org/wiki/Program_name
 
 # [Program name][1]
 

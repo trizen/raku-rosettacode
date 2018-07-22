@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Input/Output_for_Pairs_of_Numbers
+[1]: https://rosettacode.org/wiki/Input/Output_for_Pairs_of_Numbers
 
 # [Input/Output for Pairs of Numbers][1]
 

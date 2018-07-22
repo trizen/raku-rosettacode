@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Text_processing/Max_licenses_in_use
+[1]: https://rosettacode.org/wiki/Text_processing/Max_licenses_in_use
 
 # [Text processing/Max licenses in use][1]
 

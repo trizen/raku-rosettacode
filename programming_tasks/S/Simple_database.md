@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Simple_database
+[1]: https://rosettacode.org/wiki/Simple_database
 
 # [Simple database][1]
 

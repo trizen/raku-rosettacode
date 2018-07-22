@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Currency
+[1]: https://rosettacode.org/wiki/Currency
 
 # [Currency][1]
 

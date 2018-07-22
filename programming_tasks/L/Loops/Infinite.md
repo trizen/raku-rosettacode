@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Loops/Infinite
+[1]: https://rosettacode.org/wiki/Loops/Infinite
 
 # [Loops/Infinite][1]
 

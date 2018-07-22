@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Function_frequency
+[1]: https://rosettacode.org/wiki/Function_frequency
 
 # [Function frequency][1]
 

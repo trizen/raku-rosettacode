@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Enforced_immutability
+[1]: https://rosettacode.org/wiki/Enforced_immutability
 
 # [Enforced immutability][1]
 
@@ -22,7 +22,7 @@ constant fibonacci = 0, 1, *+* ... *;
 Variables are considered mutable by default, but may be marked as readonly after initialization:
 
 ```perl
-my $pi ::= 3 + rand;
+my $pi := 3 + rand;
 ```
 
 
@@ -52,7 +52,6 @@ A number of built-in types are considered immutable value types, including:
 #### Output:
 ```
 Str         Perl string (finite sequence of Unicode characters)
-Bit         Perl single bit (allows traits, aliasing, undefinedness, etc.)
 Int         Perl integer (allows Inf/NaN, arbitrary precision, etc.)
 Num         Perl number (approximate Real, generally via floating point)
 Rat         Perl rational (exact Real, limited denominator)
@@ -66,15 +65,12 @@ Range       A pair of Ordered endpoints
 Set         Unordered collection of values that allows no duplicates
 Bag         Unordered collection of values that allows duplicates
 Enum        An immutable Pair
-EnumMap     A mapping of Enums with no duplicate keys
+Map         A mapping of Enums with no duplicate keys
 Signature   Function parameters (left-hand side of a binding)
-Parcel      Arguments in a comma list
-LoL         Arguments in a semicolon list
 Capture     Function call arguments (right-hand side of a binding)
 Blob        An undifferentiated mass of ints, an immutable Buf
 Instant     A point on the continuous atomic timeline
 Duration    The difference between two Instants
-HardRoutine A routine that is committed to not changing
 ```
 
 

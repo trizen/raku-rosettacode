@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/JortSort
+[1]: https://rosettacode.org/wiki/JortSort
 
 # [JortSort][1]
 

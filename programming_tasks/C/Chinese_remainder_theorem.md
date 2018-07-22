@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Chinese_remainder_theorem
+[1]: https://rosettacode.org/wiki/Chinese_remainder_theorem
 
 # [Chinese remainder theorem][1]
 

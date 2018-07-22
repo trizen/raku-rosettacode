@@ -1,10 +1,10 @@
-[1]: http://rosettacode.org/wiki/Knapsack_problem/Bounded
+[1]: https://rosettacode.org/wiki/Knapsack_problem/Bounded
 
 # [Knapsack problem/Bounded][1]
 
 ```perl
 my class KnapsackItem { has $.name; has $.weight; has $.unit; }
- 
+
 multi sub pokem ([],           $,  $v = 0) { $v }
 multi sub pokem ([$,  *@],     0,  $v = 0) { $v }
 multi sub pokem ([$i, *@rest], $w, $v = 0) {
@@ -13,15 +13,15 @@ multi sub pokem ([$i, *@rest], $w, $v = 0) {
     my @skip = pokem @rest, $w, $v;
     if $w >= $i.weight { # next one fits
       my @put = pokem @rest, $w - $i.weight, $v + $i.unit;
-      return (%cache{$key} = @put, $i.name).list if @put[0] > @skip[0];
+      return (%cache{$key} = |@put, $i.name).list if @put[0] > @skip[0];
     }
-    return (%cache{$key} = @skip).list;
+    return (%cache{$key} = |@skip).list;
   }
 }
- 
+
 my $MAX_WEIGHT = 400;
-my @table = map     -> $name,  $weight,  $unit,     $count {
-    KnapsackItem.new( :$name, :$weight, :$unit ) xx $count;
+my @table = flat map -> $name,  $weight,  $unit,     $count {
+     KnapsackItem.new( :$name, :$weight, :$unit ) xx $count;
 },
         'map',                         9,      150,    1,
         'compass',                     13,     35,     1,
@@ -44,18 +44,18 @@ my @table = map     -> $name,  $weight,  $unit,     $count {
         'sunglasses',                  7,      20,     1,
         'towel',                       18,     12,     2,
         'socks',                       4,      50,     1,
-        'book',                        30,     10,     2,
+        'book',                        30,     10,     2
         ;
- 
+
 my ($value, @result) = pokem @table, $MAX_WEIGHT;
- 
+
 (my %hash){$_}++ for @result;
- 
+
 say "Value = $value";
 say "Tourist put in the bag:";
 say "  # ITEM";
-for %hash.kv -> $item, $number {
-  say "  $number $item";
+for %hash.sort -> $item {
+  say "  {$item.value} {$item.key}";
 }
 ```
 
@@ -64,15 +64,15 @@ for %hash.kv -> $item, $number {
 Value = 1010
 Tourist put in the bag:
   # ITEM
+  3 banana
+  1 cheese
+  1 compass
+  2 glucose
+  1 map
+  1 note-case
   1 socks
   1 sunglasses
-  1 note-case
-  1 waterproof overclothes
   1 suntan cream
-  1 cheese
-  3 banana
-  2 glucose
   1 water
-  1 compass
-  1 map
+  1 waterproof overclothes
 ```

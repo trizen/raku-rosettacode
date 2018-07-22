@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Tokenize_a_string
+[1]: https://rosettacode.org/wiki/Tokenize_a_string
 
 # [Tokenize a string][1]
 

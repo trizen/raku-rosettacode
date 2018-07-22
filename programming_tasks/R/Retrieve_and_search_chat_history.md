@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Retrieve_and_search_chat_history
+[1]: https://rosettacode.org/wiki/Retrieve_and_search_chat_history
 
 # [Retrieve and search chat history][1]
 

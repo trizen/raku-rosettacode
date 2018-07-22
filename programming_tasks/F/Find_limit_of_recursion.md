@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Find_limit_of_recursion
+[1]: https://rosettacode.org/wiki/Find_limit_of_recursion
 
 # [Find limit of recursion][1]
 

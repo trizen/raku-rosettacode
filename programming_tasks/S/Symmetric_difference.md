@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Symmetric_difference
+[1]: https://rosettacode.org/wiki/Symmetric_difference
 
 # [Symmetric difference][1]
 

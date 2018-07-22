@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hickerson_series_of_almost_integers
+[1]: https://rosettacode.org/wiki/Hickerson_series_of_almost_integers
 
 # [Hickerson series of almost integers][1]
 

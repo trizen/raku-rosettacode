@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hello_world/Newbie
+[1]: https://rosettacode.org/wiki/Hello_world/Newbie
 
 # [Hello world/Newbie][1]
 

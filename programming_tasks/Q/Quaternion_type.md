@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Quaternion_type
+[1]: https://rosettacode.org/wiki/Quaternion_type
 
 # [Quaternion type][1]
 

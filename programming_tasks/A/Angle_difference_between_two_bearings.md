@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Angle_difference_between_two_bearings
+[1]: https://rosettacode.org/wiki/Angle_difference_between_two_bearings
 
 # [Angle difference between two bearings][1]
 

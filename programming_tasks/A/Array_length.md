@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Array_length
+[1]: https://rosettacode.org/wiki/Array_length
 
 # [Array length][1]
 
@@ -6,12 +6,12 @@ To get the number of elements of an array in Perl 6 you put the array in a coerc
 
 ```perl
  
-my @array = <apple orange banana>;
+my @array = <apple orange>;
  
-say @array.elems;  # 3
-say elems @array;  # 3
-say +@array;       # 3
-say @array + 1;    # 4
+say @array.elems;  # 2
+say elems @array;  # 2
+say + @array;      # 2
+say @array + 0;    # 2
  
 ```
 

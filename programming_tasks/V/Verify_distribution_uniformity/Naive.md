@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Verify_distribution_uniformity/Naive
+[1]: https://rosettacode.org/wiki/Verify_distribution_uniformity/Naive
 
 # [Verify distribution uniformity/Naive][1]
 
-Since the tested function is rolls of a 7 sided die, the test numbers are magnitudes of 10<sup>x</sup> bumped up to the closest multiple of 7. This reduces spurious error from there not being an integer expected value. 
+Since the tested function is rolls of a 7 sided die, the test numbers are magnitudes of 10<sup>x</sup> bumped up to the closest multiple of 7. This reduces spurious error from there not being an integer expected value.
 
 ```perl
 my $d7 = 1..7;

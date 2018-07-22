@@ -1,8 +1,6 @@
-[1]: http://rosettacode.org/wiki/Average_loop_length
+[1]: https://rosettacode.org/wiki/Average_loop_length
 
 # [Average loop length][1]
-
-Runs on Rakudo Warszawa (2012.12).
 
 ```perl
 constant MAX_N  = 20;
@@ -11,7 +9,7 @@ constant TRIALS = 100;
 for 1 .. MAX_N -> $N {
     my $empiric = TRIALS R/ [+] find-loop(random-mapping($N)).elems xx TRIALS;
     my $theoric = [+]
-        map -> $k { $N ** ($k + 1) R/ [*] $k**2, $N - $k + 1 .. $N }, 1 .. $N;
+        map -> $k { $N ** ($k + 1) R/ [*] flat $k**2, $N - $k + 1 .. $N }, 1 .. $N;
  
     FIRST say " N    empiric      theoric      (error)";
     FIRST say "===  =========  ============  =========";
@@ -22,7 +20,7 @@ for 1 .. MAX_N -> $N {
 }
  
 sub random-mapping { hash .list Z=> .roll given ^$^size }
-sub find-loop { 0, %^mapping{*} ...^ { (state %){$_}++ } }
+sub find-loop { 0, | %^mapping{*} ...^ { (%){$_}++ } }
 ```
 
 #### Output:

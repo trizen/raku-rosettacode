@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Forward_difference
+[1]: https://rosettacode.org/wiki/Forward_difference
 
 # [Forward difference][1]
 

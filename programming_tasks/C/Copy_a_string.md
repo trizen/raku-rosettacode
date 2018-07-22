@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Copy_a_string
+[1]: https://rosettacode.org/wiki/Copy_a_string
 
 # [Copy a string][1]
 

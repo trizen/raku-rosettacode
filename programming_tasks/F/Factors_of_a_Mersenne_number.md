@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Factors_of_a_Mersenne_number
+[1]: https://rosettacode.org/wiki/Factors_of_a_Mersenne_number
 
 # [Factors of a Mersenne number][1]
 

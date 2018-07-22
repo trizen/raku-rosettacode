@@ -1,6 +1,8 @@
-[1]: http://rosettacode.org/wiki/Greatest_common_divisor
+[1]: https://rosettacode.org/wiki/Greatest_common_divisor
 
 # [Greatest common divisor][1]
+
+### Iterative
 
 ```perl
 sub gcd (Int $a is copy, Int $b is copy) {
@@ -9,14 +11,26 @@ sub gcd (Int $a is copy, Int $b is copy) {
    return abs $a;
 }
 ```
+
+
+### Recursive
+
 ```perl
 multi gcd (0,      0)      { fail }
 multi gcd (Int $a, 0)      { abs $a }
 multi gcd (Int $a, Int $b) { gcd $b, $a % $b }
 ```
+
+
+### Concise
+
 ```perl
 my &gcd = { ($^a.abs, $^b.abs, * % * ... 0)[*-2] }
 ```
+
+
+### Actually, it's a built-in infix
+
 ```perl
 my $gcd = $a gcd $b;
 ```

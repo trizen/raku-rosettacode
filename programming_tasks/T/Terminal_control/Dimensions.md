@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Dimensions
+[1]: https://rosettacode.org/wiki/Terminal_control/Dimensions
 
 # [Terminal control/Dimensions][1]
 

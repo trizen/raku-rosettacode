@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rock-paper-scissors
+[1]: https://rosettacode.org/wiki/Rock-paper-scissors
 
 # [Rock-paper-scissors][1]
 
@@ -30,7 +30,7 @@ my %vs = (
  
 my %choices = %vs<options>.map({; $_.substr(0,2).lc => $_ });
 my $keys    = %choices.keys.join('|');
-my $prompt  = %vs<options>.map({$_.subst(/(\w\w)/,->$/{"[$0]"})}).join(' ')~"? ";
+my $prompt  = %vs<options>.map({$_.subst(/(\w\w)/, -> $/ {"[$0]"})}).join(' ')~"? ";
 my %weight  = %choices.keys »=>» 1;
  
 my @stats = 0,0,0;
@@ -40,7 +40,7 @@ while my $player = (prompt "Round {++$round}: " ~ $prompt).lc {
     $player.=substr(0,2);
     say 'Invalid choice, try again.' and $round-- and next
       unless $player.chars == 2 and $player ~~ /<$keys>/;
-    my $computer = %weight.keys.map( { $_ xx %weight{$_} } ).pick;
+    my $computer = (flat %weight.keys.map( { $_ xx %weight{$_} } )).pick;
     %weight{$_.key}++ for %vs{$player}.grep( { $_.value[0] == 1 } );
     my $result = %vs{$player}{$computer}[0];
     @stats[$result]++;

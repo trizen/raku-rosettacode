@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hello_world/Newline_omission
+[1]: https://rosettacode.org/wiki/Hello_world/Newline_omission
 
 # [Hello world/Newline omission][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Currying
+[1]: https://rosettacode.org/wiki/Currying
 
 # [Currying][1]
 

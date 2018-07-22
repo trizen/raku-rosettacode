@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Self-describing_numbers
+[1]: https://rosettacode.org/wiki/Self-describing_numbers
 
 # [Self-describing numbers][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Strip_comments_from_a_string
+[1]: https://rosettacode.org/wiki/Strip_comments_from_a_string
 
 # [Strip comments from a string][1]
 

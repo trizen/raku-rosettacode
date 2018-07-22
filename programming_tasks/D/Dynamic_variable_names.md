@@ -1,11 +1,20 @@
-[1]: http://rosettacode.org/wiki/Dynamic_variable_names
+[1]: https://rosettacode.org/wiki/Dynamic_variable_names
 
 # [Dynamic variable names][1]
 
-It is not possible to change lexical variable names at run time, but package variables are fair game, include in the GLOBAL package:
+You can [interpolate strings as variable names](https://docs.perl6.org/language/packages#Interpolating_into_names):
 
 ```perl
-my $vname = prompt 'Variable name: ';
-$GLOBAL::($vname) = 42;
-say $GLOBAL::($vname);
+our $our-var = 'The our var';
+my  $my-var  = 'The my var';
+ 
+my $name  = prompt 'Variable name: ';
+my $value = $::('name'); # use the right sigil, etc
+ 
+put qq/Var ($name) starts with value ｢$value｣/;
+ 
+$::('name') = 137;
+ 
+put qq/Var ($name) ends with value ｢{$::('name')}｣/;
+ 
 ```

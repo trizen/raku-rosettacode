@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/One-time_pad
+[1]: https://rosettacode.org/wiki/One-time_pad
 
 # [One-time pad][1]
 

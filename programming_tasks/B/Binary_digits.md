@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Binary_digits
+[1]: https://rosettacode.org/wiki/Binary_digits
 
 # [Binary digits][1]
 

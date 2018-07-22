@@ -1,22 +1,20 @@
-[1]: http://rosettacode.org/wiki/Anagrams/Deranged_anagrams
+[1]: https://rosettacode.org/wiki/Anagrams/Deranged_anagrams
 
 # [Anagrams/Deranged anagrams][1]
 
-Note that, to make runtime manageable, we have created a subset file:
-
-```bash
-grep '^[ie]' unixdict.txt > dict.ie
-```
 ```perl
-my %anagram = slurp('dict.ie').words.map({[.comb]}).classify({ .sort.join });
+my @anagrams = 'unixdict.txt'.IO.words
+    .map(*.comb.cache)             # explode words into lists of characters
+    .classify(*.sort.join).values  # group words with the same characters
+    .grep(* > 1)                   # only take groups with more than one word
+    .sort(-*[0])                   # sort by length of the first word
+;
  
-for %anagram.values.sort({ -@($_[0]) }) -> @aset {
-    for     0   ..^ @aset.end -> $i {
-        for $i ^..  @aset.end -> $j {
-            if none(  @aset[$i].list Zeq @aset[$j].list ) {
-                say "{@aset[$i].join}   {@aset[$j].join}";
-                exit;
-            }
+for @anagrams -> @group {
+    for @group.combinations(2) -> [@a, @b] {
+        if none @a Zeq @b {
+            say "{@a.join}   {@b.join}";
+            exit;
         }
     }
 }

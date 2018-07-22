@@ -1,8 +1,8 @@
-[1]: http://rosettacode.org/wiki/Magic_squares_of_singly_even_order
+[1]: https://rosettacode.org/wiki/Magic_squares_of_singly_even_order
 
 # [Magic squares of singly even order][1]
 
-See [Magic squares/Perl 6](http://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
+See [Magic squares/Perl 6](https://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
 
 
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Parametric_polymorphism
+[1]: https://rosettacode.org/wiki/Parametric_polymorphism
 
 # [Parametric polymorphism][1]
 

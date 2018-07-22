@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Command-line_arguments
+[1]: https://rosettacode.org/wiki/Command-line_arguments
 
 # [Command-line arguments][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Strip_block_comments
+[1]: https://rosettacode.org/wiki/Strip_block_comments
 
 # [Strip block comments][1]
 

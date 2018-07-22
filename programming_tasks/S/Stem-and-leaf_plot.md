@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Stem-and-leaf_plot
+[1]: https://rosettacode.org/wiki/Stem-and-leaf_plot
 
 # [Stem-and-leaf plot][1]
 

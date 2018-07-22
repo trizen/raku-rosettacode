@@ -1,23 +1,22 @@
-[1]: http://rosettacode.org/wiki/Calculating_the_value_of_e
+[1]: https://rosettacode.org/wiki/Calculating_the_value_of_e
 
 # [Calculating the value of e][1]
 
 ```perl
 # If you need high precision: Sum of a Taylor series method.
-# Adjust the precision parameter to suit. Theoretically the
-# precision should be ∞. Practically, calculating an infinite
+# Adjust the terms parameter to suit. Theoretically the
+# terms could be ∞. Practically, calculating an infinite
 # series takes an awfully long time so limit to 500.
  
-my $precision = 500;
-sub postfix:<!> (Int $n) { [*] 2..$n }
-my \𝑒 = sum map { 1 / FatRat.new(.!) }, ^$precision;
-say 𝑒 .comb(80).join: "\n";
+sub postfix:<!> (Int $n) { (constant f = 1, |[\*] 1..*)[$n] }
+sub 𝑒 (Int $terms) { sum map { FatRat.new(1,.!) }, ^$terms }
+ 
+say 𝑒(500).comb(80).join: "\n";
  
 say '';
  
 # Or, if you don't need high precision, it's a built-in.
 say e;
- 
 ```
 
 #### Output:

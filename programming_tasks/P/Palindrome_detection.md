@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Palindrome_detection
+[1]: https://rosettacode.org/wiki/Palindrome_detection
 
 # [Palindrome detection][1]
 

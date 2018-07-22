@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Topic_variable
+[1]: https://rosettacode.org/wiki/Topic_variable
 
 # [Topic variable][1]
 

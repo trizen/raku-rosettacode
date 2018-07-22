@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Verify_distribution_uniformity/Chi-squared_test
+[1]: https://rosettacode.org/wiki/Verify_distribution_uniformity/Chi-squared_test
 
 # [Verify distribution uniformity/Chi-squared test][1]
 

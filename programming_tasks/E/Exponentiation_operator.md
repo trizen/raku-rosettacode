@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Exponentiation_operator
+[1]: https://rosettacode.org/wiki/Exponentiation_operator
 
 # [Exponentiation operator][1]
 
@@ -10,12 +10,9 @@ multi pow ($base, Natural $exp) { [*] $base xx $exp }
 multi pow ($base, Int $exp)     { 1 / pow $base, -$exp }
  
 sub infix:<***> ($a, $b) { pow $a, $b }
-```
-
-
-Examples of use:
-
-```perl
+ 
+# Testing
+ 
 say pow .75, -5;
 say .75 *** -5;
 ```

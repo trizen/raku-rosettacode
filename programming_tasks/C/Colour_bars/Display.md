@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Colour_bars/Display
+[1]: https://rosettacode.org/wiki/Colour_bars/Display
 
 # [Colour bars/Display][1]
 
@@ -16,7 +16,7 @@ my @colors = map -> $r, $g, $b { Buf.new: |(($r, $g, $b) xx $HOR div 8) },
                 255,255,  0,
                 255,255,255;
  
-my $PPM = open "colorbars.ppm", :w, :bin or die "Can't create colorbars.ppm: $!";
+my $PPM = open "colorbars.ppm", :w or die "Can't create colorbars.ppm: $!";
  
 $PPM.print: qq:to/EOH/;
     P6

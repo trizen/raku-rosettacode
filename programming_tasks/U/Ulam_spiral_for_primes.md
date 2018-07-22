@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Ulam_spiral_(for_primes)
+[1]: https://rosettacode.org/wiki/Ulam_spiral_(for_primes)
 
 # [Ulam spiral (for primes)][1]
 

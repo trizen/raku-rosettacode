@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sum_digits_of_an_integer
+[1]: https://rosettacode.org/wiki/Sum_digits_of_an_integer
 
 # [Sum digits of an integer][1]
 

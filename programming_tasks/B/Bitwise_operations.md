@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Bitwise_operations
+[1]: https://rosettacode.org/wiki/Bitwise_operations
 
 # [Bitwise operations][1]
 
@@ -8,7 +8,7 @@ constant BITS = MAXINT.base(2).chars;
  
 # define rotate ops for the fun of it
 multi sub infix:<⥁>(Int:D \a, Int:D \b) { :2[(a +& MAXINT).polymod(2 xx BITS-1).list.rotate(b).reverse] }
-multi sub infix:<⥀>(Int:D \a, Int:D \b) { :2[(a +& MAXINT).polymod(2 xx BITS-1).reverse.rotate(b)] }
+multi sub infix:<⥀>(Int:D \a, Int:D \b) { :2[(a +& MAXINT).polymod(2 xx BITS-1).reverse.list.rotate(b)] }
  
 sub int-bits (Int $a, Int $b) {
     say '';

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Strip_whitespace_from_a_string/Top_and_tail
+[1]: https://rosettacode.org/wiki/Strip_whitespace_from_a_string/Top_and_tail
 
 # [Strip whitespace from a string/Top and tail][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Aliquot_sequence_classifications
+[1]: https://rosettacode.org/wiki/Aliquot_sequence_classifications
 
 # [Aliquot sequence classifications][1]
 

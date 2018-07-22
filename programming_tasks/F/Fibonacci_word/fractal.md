@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Fibonacci_word/fractal
+[1]: https://rosettacode.org/wiki/Fibonacci_word/fractal
 
 # [Fibonacci word/fractal][1]
 

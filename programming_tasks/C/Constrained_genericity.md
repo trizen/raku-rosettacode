@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Constrained_genericity
+[1]: https://rosettacode.org/wiki/Constrained_genericity
 
 # [Constrained genericity][1]
 

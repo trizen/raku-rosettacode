@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Pig_the_dice_game
+[1]: https://rosettacode.org/wiki/Pig_the_dice_game
 
 # [Pig the dice game][1]
 

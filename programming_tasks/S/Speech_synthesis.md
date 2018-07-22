@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Speech_synthesis
+[1]: https://rosettacode.org/wiki/Speech_synthesis
 
 # [Speech synthesis][1]
 

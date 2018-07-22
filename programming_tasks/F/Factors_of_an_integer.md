@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Factors_of_an_integer
+[1]: https://rosettacode.org/wiki/Factors_of_an_integer
 
 # [Factors of an integer][1]
 

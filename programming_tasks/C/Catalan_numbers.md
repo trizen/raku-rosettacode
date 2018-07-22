@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Catalan_numbers
+[1]: https://rosettacode.org/wiki/Catalan_numbers
 
 # [Catalan numbers][1]
 
@@ -13,13 +13,10 @@ or
 
 ```perl
 constant Catalan = 1, |[\*] (2, 6 ... *) Z/ 2 .. *;
-```
-
-
-In both cases, the sixteen first values can be seen with:
-
-```perl
-.say for Catalan[^15];
+ 
+ 
+# In both cases, the sixteen first values can be seen with:
+.say for Catalan[^16];
 ```
 
 #### Output:

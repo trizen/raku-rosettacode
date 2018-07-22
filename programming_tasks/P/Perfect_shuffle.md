@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Perfect_shuffle
+[1]: https://rosettacode.org/wiki/Perfect_shuffle
 
 # [Perfect shuffle][1]
 

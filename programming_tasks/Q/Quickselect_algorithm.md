@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Quickselect_algorithm
+[1]: https://rosettacode.org/wiki/Quickselect_algorithm
 
 # [Quickselect algorithm][1]
 

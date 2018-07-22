@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Abstract_type
+[1]: https://rosettacode.org/wiki/Abstract_type
 
 # [Abstract type][1]
 

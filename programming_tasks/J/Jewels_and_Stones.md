@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Jewels_and_Stones
+[1]: https://rosettacode.org/wiki/Jewels_and_Stones
 
 # [Jewels and Stones][1]
 

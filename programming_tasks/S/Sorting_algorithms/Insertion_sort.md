@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
+[1]: https://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
 
 # [Sorting algorithms/Insertion sort][1]
 

@@ -1,12 +1,16 @@
-[1]: http://rosettacode.org/wiki/Largest_number_divisible_by_its_digits
+[1]: https://rosettacode.org/wiki/Largest_number_divisible_by_its_digits
 
 # [Largest number divisible by its digits][1]
+
+### Base 10
+
+
 
 The number can not have a zero in it, that implies that it can not have a 5 either since if it has a 5, it must be divisible by 5, but the only numbers divisible by 5 end in 5 or 0. It can't be zero, and if it is odd, it can't be divisible by 2, 4, 6 or 8. So that leaves 98764321 as possible digits the number can contain. The sum of those 8 digits is not divisible by three so the largest possible integer must use no more than 7 of them (since 3, 6 and 9 would be eliminated). Strictly by removing possibilities that cannot possibly work we are down to at most 7 digits.
 
 
 
-We can deduce that the digit that won't get used is one of 1, 4, or 7 since those are the only ones where the removal will yield a sum divisible by 3, but practically, the code to accommodate that is longer running and more complex than just brute-forcing it from here.
+We can deduce that the digit that won't get used is one of 1, 4, or 7 since those are the only ones where the removal will yield a sum divisible by 3. It is *extremely* unlikely be 1, since EVERY number is divisible by 1. Removing it reduces the number of digits available but doesn't gain anything as far as divisibility. It is unlikely to be 7 since 7 is prime and can't be made up of multiples of other numbers. Practically though, the code to accommodate these observations is longer running and more complex than just brute-forcing it from here.
 
 
 
@@ -45,6 +49,10 @@ Found 9867312
 9867312 / 1 = 9867312
 9867312 / 2 = 4933656
 ```
+
+
+### Base 16
+
 
 
 There are fewer analytical optimizations available for base 16. Other than 0, no digits can be ruled out so a much larger space must be searched. We'll start at the largest possible permutation (FEDCBA987654321) and work down so as soon as we find **a** solution, we know it is **the** solution.

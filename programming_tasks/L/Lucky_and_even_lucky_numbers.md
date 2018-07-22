@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Lucky_and_even_lucky_numbers
+[1]: https://rosettacode.org/wiki/Lucky_and_even_lucky_numbers
 
 # [Lucky and even lucky numbers][1]
 
@@ -69,6 +69,6 @@ $ ./lucky 6000 -6100 evenLucky
 6018 6020 6022 6026 6036 6038 6050 6058 6074 6090 6092
 $ ./lucky 10000
 115591
-$ ./lucky 10000 EVENLUCKY
+$ ./lucky 10000 , EVENLUCKY
 111842
 ```

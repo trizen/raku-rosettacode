@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Discordian_date
+[1]: https://rosettacode.org/wiki/Discordian_date
 
 # [Discordian date][1]
 

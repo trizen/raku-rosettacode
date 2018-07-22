@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Polynomial_regression
+[1]: https://rosettacode.org/wiki/Polynomial_regression
 
 # [Polynomial regression][1]
 

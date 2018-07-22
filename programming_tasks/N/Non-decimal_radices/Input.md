@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Non-decimal_radices/Input
+[1]: https://rosettacode.org/wiki/Non-decimal_radices/Input
 
 # [Non-decimal radices/Input][1]
 

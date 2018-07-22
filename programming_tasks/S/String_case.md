@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/String_case
+[1]: https://rosettacode.org/wiki/String_case
 
 # [String case][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Extensible_prime_generator
+[1]: https://rosettacode.org/wiki/Extensible_prime_generator
 
 # [Extensible prime generator][1]
 

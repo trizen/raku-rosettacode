@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Terminal_control/Unicode_output
+[1]: https://rosettacode.org/wiki/Terminal_control/Unicode_output
 
 # [Terminal control/Unicode output][1]
 

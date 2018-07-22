@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Update_a_configuration_file
+[1]: https://rosettacode.org/wiki/Update_a_configuration_file
 
 # [Update a configuration file][1]
 
@@ -18,15 +18,13 @@ conf-update --/needspeeling --seedsremoved --numberofbananas=1024 --numberofstra
 The script:
 
 ```perl
-#!/usr/bin/env perl6
+use File::Temp;
  
-my $tmpfile = tmpfile;
+my ($tmpfile, $out) = tempfile;
  
 sub MAIN ($file, *%changes) {
     %changes.=map({; .key.uc => .value });
     my %seen;
- 
-    my $out = open $tmpfile, :w;
  
     for $file.IO.lines {
         when /:s ^ ('#' .* | '') $/ {
@@ -47,17 +45,12 @@ sub MAIN ($file, *%changes) {
     say $out: format-line .key, |(.value ~~ Bool ?? (Nil, .value) !! (.value, True))
         for %changes;
  
-    run 'mv', $tmpfile, $file; # work-around for NYI `move $tmpfile, $file;`
+    $out.close;
+ 
+    copy $tmpfile, $file;
 }
- 
-END { unlink $tmpfile if $tmpfile.IO.e }
- 
  
 sub format-line ($key, $value, $enabled) {
     ("; " if !$enabled) ~ $key.uc ~ (" $value" if defined $value);
-}
- 
-sub tmpfile {
-    $*SPEC.catfile: $*SPEC.tmpdir, ("a".."z").roll(20).join
 }
 ```

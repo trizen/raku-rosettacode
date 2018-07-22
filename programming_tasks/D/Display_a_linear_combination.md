@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Display_a_linear_combination
+[1]: https://rosettacode.org/wiki/Display_a_linear_combination
 
 # [Display a linear combination][1]
 

@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/Tasks_without_examples
+[1]: https://rosettacode.org/wiki/Rosetta_Code/Tasks_without_examples
 
 # [Rosetta Code/Tasks without examples][1]
 

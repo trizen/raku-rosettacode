@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Rosetta_Code/Fix_code_tags
+[1]: https://rosettacode.org/wiki/Rosetta_Code/Fix_code_tags
 
 # [Rosetta Code/Fix code tags][1]
 
@@ -22,7 +22,7 @@ my @langs = <
 $_ = slurp;
  
 for @langs -> $l {
-    s:g [ '<'  $l '>' ] = "<lang $l>";
+    s:g:i [ '<' 'lang '?  $l '>' ] = "<lang $l>";
     s:g [ '</' $l '>' ] = '</' ~ 'lang>';
 }
  

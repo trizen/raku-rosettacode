@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Continued_fraction
+[1]: https://rosettacode.org/wiki/Continued_fraction
 
 # [Continued fraction][1]
 
@@ -31,7 +31,7 @@ Or, more consistently:
 
 
 
-Viewed as such, ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=e48ee36b1a3c54ddb341c72e565131ed&mode=mathml) could be written recursively:
+Viewed as such, ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=e48ee36b1a3c54ddb341c72e565131ed&mode=mathml) could be written recursively:
 
 
 
@@ -39,7 +39,7 @@ Or in other words:
 
 
 
-where ![image](http://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a59358d8eac1e8f71974271c5d11caf7&mode=mathml)
+where ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a59358d8eac1e8f71974271c5d11caf7&mode=mathml)
 
 
 

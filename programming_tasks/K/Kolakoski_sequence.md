@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Kolakoski_sequence
+[1]: https://rosettacode.org/wiki/Kolakoski_sequence
 
 # [Kolakoski sequence][1]
 

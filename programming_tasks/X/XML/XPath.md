@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/XML/XPath
+[1]: https://rosettacode.org/wiki/XML/XPath
 
 # [XML/XPath][1]
 

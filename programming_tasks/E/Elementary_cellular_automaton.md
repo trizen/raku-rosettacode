@@ -1,28 +1,35 @@
-[1]: http://rosettacode.org/wiki/Elementary_cellular_automaton
+[1]: https://rosettacode.org/wiki/Elementary_cellular_automaton
 
 # [Elementary cellular automaton][1]
 
+Using the `Automaton` class defined at [One-dimensional_cellular_automata#Perl_6](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Perl_6):
+
 ```perl
 class Automaton {
-    has ($.rule, @.cells);
-    method gist { <| |>.join: @!cells.map({+$_ ?? '#' !! ' '}).join }
-    method code { $!rule.fmt("%08b").flip.comb }
+    has $.rule;
+    has @.cells;
+    has @.code = $!rule.fmt('%08b').flip.comb».Int;
+ 
+    method gist { "|{ @!cells.map({+$_ ?? '#' !! ' '}).join }|" }
+ 
     method succ {
-        self.new: :$!rule, :cells(
-            self.code[
-                   (4 X* @!cells.rotate(-1))
-                Z+ (2 X* @!cells)
-                Z+       @!cells.rotate(1)
+        self.new: :$!rule, :@!code, :cells( 
+            @!code[
+                    4 «*« @!cells.rotate(-1)
+                »+« 2 «*« @!cells
+                »+«       @!cells.rotate(1)
             ]
         )
     }
 }
  
-my $size = 10;
+my @padding = 0 xx 10;
+ 
 my Automaton $a .= new:
     :rule(30),
-    :cells( flat 0 xx $size, 1, 0 xx $size );
-say $a++ for ^$size;
+    :cells(flat @padding, 1, @padding);
+ 
+say $a++ for ^10;
 ```
 
 #### Output:
@@ -37,38 +44,4 @@ say $a++ for ^$size;
 |   ## ####  ######   |
 |  ##  #   ###     #  |
 | ## #### ##  #   ### |
-```
-
-
-Unfortunately that version is somewhat slow due to the (as yet) unoptimized vector operations, as well as rebuilding the code every iteration. The following version runs about ten times faster and produces the same output:
-
-```perl
-class Automaton {
-    has $.rule;
-    has @.cells;
-    has @.code;
- 
-    method new (|args) { self.bless(|args).init }
-    method init { @!code ||= $!rule.fmt("%08b").flip.comb».Int; self; }
- 
-    method gist { <| |>.join: @!cells.map({$_ ?? '#' !! ' '}).join }
-    method succ {
-        my \size = +@!cells;
-        self.new: :$!rule, :@!code, :cells(
-            @!code[
-                for ^size -> \i {
-                    4 * @!cells[(i - 1) % size] +
-                    2 * @!cells[i] +
-                        @!cells[(i+1) % size];
-                }
-            ]
-        );
-    }
-}
- 
-my $size = 10;
-my Automaton $a .= new:
-    :rule(30),
-    :cells( 0 xx $size, 1, 0 xx $size );
-say $a++ for ^$size;
 ```

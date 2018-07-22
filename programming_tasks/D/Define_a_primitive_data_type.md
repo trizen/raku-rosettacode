@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Define_a_primitive_data_type
+[1]: https://rosettacode.org/wiki/Define_a_primitive_data_type
 
 # [Define a primitive data type][1]
 

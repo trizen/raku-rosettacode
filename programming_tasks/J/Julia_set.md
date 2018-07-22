@@ -1,19 +1,20 @@
-[1]: http://rosettacode.org/wiki/Julia_set
+[1]: https://rosettacode.org/wiki/Julia_set
 
 # [Julia set][1]
 
 ```perl
 use Image::PNG::Portable;
-
+ 
 my ($w, $h) = 800, 600;
 my $out = Image::PNG::Portable.new: :width($w), :height($h);
-
+ 
 my $maxIter = 255;
 my $c = -0.7 + 0.27015i;
-
+ 
 julia($out);
+ 
 $out.write: 'Julia-set-perl6.png';
-
+ 
 sub julia ( $png ) {
     for ^$w -> $x {
         for ^$h -> $y {
@@ -26,7 +27,7 @@ sub julia ( $png ) {
         }
     }
 }
-
+ 
 sub hsv2rgb ( $h, $s, $v ){
     my $c = $v * $s;
     my $x = $c * (1 - abs( (($h/60) % 2) - 1 ) );

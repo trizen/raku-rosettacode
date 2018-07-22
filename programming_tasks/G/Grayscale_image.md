@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Grayscale_image
+[1]: https://rosettacode.org/wiki/Grayscale_image
 
 # [Grayscale image][1]
 
@@ -16,7 +16,7 @@ sub MAIN ($filename = 'default.ppm') {
  
     $out.say("P5\n$dim\n$depth");
  
-    for $in.slurp.ords -> $r, $g, $b {
+    for $in.lines.ords -> $r, $g, $b {
         my $gs = $r * 0.2126 + $g * 0.7152 + $b * 0.0722;
         $out.print: chr($gs min 255);
     }
@@ -27,8 +27,8 @@ sub MAIN ($filename = 'default.ppm') {
 ```
 
 
-Using the .ppm file from the [Write a PPM file](http://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6) task:
+Using the .ppm file from the [Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6) task:
 
 
 
-Original: [<img alt="Ppm-perl6.png" src="http://rosettacode.org/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Ppm-perl6.png)   Grey Scale: [<img alt="Pgm-g2-perl6.png" src="http://rosettacode.org/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](http://rosettacode.org/wiki/File:Pgm-g2-perl6.png)
+Original: [<img alt="Ppm-perl6.png" src="https://rosettacode.org/mw/images/2/27/Ppm-perl6.png" width="125" height="125" />](https://rosettacode.org/wiki/File:Ppm-perl6.png) Grey Scale: [<img alt="Pgm-g2-perl6.png" src="https://rosettacode.org/mw/images/f/fe/Pgm-g2-perl6.png" width="125" height="125" />](https://rosettacode.org/wiki/File:Pgm-g2-perl6.png)

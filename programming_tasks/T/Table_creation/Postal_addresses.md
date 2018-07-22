@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Table_creation/Postal_addresses
+[1]: https://rosettacode.org/wiki/Table_creation/Postal_addresses
 
 # [Table creation/Postal addresses][1]
 
@@ -10,6 +10,7 @@ use DBIish;
 my $dbh = DBIish.connect('SQLite', :database<addresses.sqlite3>);
  
 my $sth = $dbh.do(q:to/STATEMENT/);
+    DROP TABLE IF EXISTS Address;
     CREATE TABLE Address (
         addrID      INTEGER PRIMARY KEY AUTOINCREMENT,
         addrStreet  TEXT NOT NULL,

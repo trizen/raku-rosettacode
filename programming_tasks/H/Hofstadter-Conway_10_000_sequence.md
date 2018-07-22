@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Hofstadter-Conway_$10,000_sequence
+[1]: https://rosettacode.org/wiki/Hofstadter-Conway_$10,000_sequence
 
 # [Hofstadter-Conway $10,000 sequence][1]
 

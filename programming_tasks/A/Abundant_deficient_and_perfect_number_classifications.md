@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Abundant,_deficient_and_perfect_number_classifications
+[1]: https://rosettacode.org/wiki/Abundant,_deficient_and_perfect_number_classifications
 
 # [Abundant, deficient and perfect number classifications][1]
 

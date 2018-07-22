@@ -1,32 +1,46 @@
-[1]: http://rosettacode.org/wiki/Extract_file_extension
+[1]: https://rosettacode.org/wiki/Extract_file_extension
 
 # [Extract file extension][1]
 
+The built-in `IO::Path` class has an `.extension` method:
+
 ```perl
-sub extension ( Str $filename --> Str ) {
-    given $filename.split(/\./)[*-1] {
-        when $filename   { "" }
-        when / <[\/_]> / { "" }
-        default          { "." ~ $_ }
-    }
+say $path.IO.extension;
+```
+
+
+Contrary to this task's specification, it
+
+
+
+
+
+Here's a custom implementation which does satisfy the task requirements:
+
+```perl
+sub extension (Str $path --> Str) {
+    $path.match(/:i ['.' <[a..z0..9]>+]? $ /).Str
 }
  
-say "$_ -> ", extension($_).perl for (
-    'mywebsite.com/picture/image.png',
-    'http://mywebsite.com/picture/image.png',
-    'myuniquefile.longextension',
-    'IAmAFileWithoutExtension',
-    '/path/to.my/file',
-    'file.odd_one',
-)
+# Testing:
+ 
+printf "%-35s %-11s %-12s\n", $_, extension($_).perl, $_.IO.extension.perl
+for <
+    http://example.com/download.tar.gz
+    CharacterModel.3DS
+    .desktop
+    document
+    document.txt_backup
+    /etc/pam.d/login
+>;
 ```
 
 #### Output:
 ```
-mywebsite.com/picture/image.png -> ".png"
-http://mywebsite.com/picture/image.png -> ".png"
-myuniquefile.longextension -> ".longextension"
-IAmAFileWithoutExtension -> ""
-/path/to.my/file -> ""
-file.odd_one -> ""
+http://example.com/download.tar.gz  ".gz"       "gz"        
+CharacterModel.3DS                  ".3DS"      "3DS"       
+.desktop                            ".desktop"  "desktop"   
+document                            ""          ""          
+document.txt_backup                 ""          "txt_backup"
+/etc/pam.d/login                    ""          ""
 ```

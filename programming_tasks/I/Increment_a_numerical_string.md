@@ -1,4 +1,4 @@
-[1]: http://rosettacode.org/wiki/Increment_a_numerical_string
+[1]: https://rosettacode.org/wiki/Increment_a_numerical_string
 
 # [Increment a numerical string][1]
 
