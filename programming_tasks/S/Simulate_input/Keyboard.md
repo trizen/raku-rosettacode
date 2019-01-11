@@ -1,0 +1,39 @@
+[1]: https://rosettacode.org/wiki/Simulate_input/Keyboard
+
+# [Simulate input/Keyboard][1]
+
+Use libxdo bindings to send text / keystrokes to any application that will accept keystrokes from X11.
+
+```perl
+use X11::libxdo;
+ 
+my $xdo = Xdo.new;
+ 
+my $active = $xdo.get-active-window;
+ 
+my $command = $*VM.config<os> eq 'darwin' ?? 'open' !! 'xdg-open';
+ 
+shell "$command https://www.google.com";
+ 
+sleep 1;
+ 
+my $match = rx[^'Google -'];
+ 
+say my $w = $xdo.search(:name($match))<ID>;
+ 
+sleep .25;
+ 
+if $w {
+    $xdo.activate-window($w);
+    say "Window name: ", $xdo.get-window-name( $w );
+    $xdo.type($w, 'Perl 6');
+    sleep .25;
+    $xdo.send-sequence($w, 'Tab');
+    sleep .5;
+    $xdo.send-sequence($w, 'Tab');
+    sleep .5;
+    $xdo.send-sequence($w, 'Tab');
+    sleep .5;
+    $xdo.send-sequence($w, 'Return');
+}
+```
