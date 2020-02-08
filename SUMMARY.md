@@ -75,6 +75,7 @@
        * Associative array
            * [Creation](programming_tasks/A/Associative_array/Creation.md)
            * [Iteration](programming_tasks/A/Associative_array/Iteration.md)
+           * [Merging](programming_tasks/A/Associative_array/Merging.md)
        * [Atomic updates](programming_tasks/A/Atomic_updates.md)
        * [Attractive numbers](programming_tasks/A/Attractive_numbers.md)
        * [Average loop length](programming_tasks/A/Average_loop_length.md)
@@ -242,6 +243,7 @@
        * [CUSIP](programming_tasks/C/CUSIP.md)
        * [Cut a rectangle](programming_tasks/C/Cut_a_rectangle.md)
        * [Cycle detection](programming_tasks/C/Cycle_detection.md)
+       * [Cyclotomic Polynomial](programming_tasks/C/Cyclotomic_Polynomial.md)
    * D
        * [Damm algorithm](programming_tasks/D/Damm_algorithm.md)
        * [Data Encryption Standard](programming_tasks/D/Data_Encryption_Standard.md)
@@ -353,6 +355,7 @@
        * [Factorions](programming_tasks/F/Factorions.md)
        * [Factors of a Mersenne number](programming_tasks/F/Factors_of_a_Mersenne_number.md)
        * [Factors of an integer](programming_tasks/F/Factors_of_an_integer.md)
+       * [Fairshare between two and more](programming_tasks/F/Fairshare_between_two_and_more.md)
        * [Farey sequence](programming_tasks/F/Farey_sequence.md)
        * [Fast Fourier transform](programming_tasks/F/Fast_Fourier_transform.md)
        * [FASTA format](programming_tasks/F/FASTA_format.md)
@@ -360,6 +363,7 @@
        * [Faulhaber's triangle](programming_tasks/F/Faulhaber's_triangle.md)
        * [Feigenbaum constant calculation](programming_tasks/F/Feigenbaum_constant_calculation.md)
        * [Fermat numbers](programming_tasks/F/Fermat_numbers.md)
+       * [Fibonacci matrix-exponentiation](programming_tasks/F/Fibonacci_matrix-exponentiation.md)
        * [Fibonacci n-step number sequences](programming_tasks/F/Fibonacci_n-step_number_sequences.md)
        * [Fibonacci sequence](programming_tasks/F/Fibonacci_sequence.md)
        * [Fibonacci word](programming_tasks/F/Fibonacci_word.md)
@@ -387,6 +391,7 @@
            * [Use numbers analogously](programming_tasks/F/First-class_functions/Use_numbers_analogously.md)
        * [First class environments](programming_tasks/F/First_class_environments.md)
        * [First perfect square in base N with N unique digits](programming_tasks/F/First_perfect_square_in_base_N_with_N_unique_digits.md)
+       * [First power of 2 that has leading decimal digits of 12](programming_tasks/F/First_power_of_2_that_has_leading_decimal_digits_of_12.md)
        * [Five weekends](programming_tasks/F/Five_weekends.md)
        * [Fivenum](programming_tasks/F/Fivenum.md)
        * [Fixed length records](programming_tasks/F/Fixed_length_records.md)
@@ -530,6 +535,7 @@
        * [Jewels and Stones](programming_tasks/J/Jewels_and_Stones.md)
        * [JortSort](programming_tasks/J/JortSort.md)
        * [Josephus problem](programming_tasks/J/Josephus_problem.md)
+       * [Joystick position](programming_tasks/J/Joystick_position.md)
        * [JSON](programming_tasks/J/JSON.md)
        * [Julia set](programming_tasks/J/Julia_set.md)
        * [Jump anywhere](programming_tasks/J/Jump_anywhere.md)
@@ -617,6 +623,7 @@
        * [Lychrel numbers](programming_tasks/L/Lychrel_numbers.md)
        * [LZW compression](programming_tasks/L/LZW_compression.md)
    * M
+       * [Möbius function](programming_tasks/M/Möbius_function.md)
        * [MAC Vendor Lookup](programming_tasks/M/MAC_Vendor_Lookup.md)
        * [Mad Libs](programming_tasks/M/Mad_Libs.md)
        * [Magic 8-Ball](programming_tasks/M/Magic_8-Ball.md)
@@ -651,6 +658,7 @@
        * [Memory layout of a data structure](programming_tasks/M/Memory_layout_of_a_data_structure.md)
        * [Menu](programming_tasks/M/Menu.md)
        * [Mersenne primes](programming_tasks/M/Mersenne_primes.md)
+       * [Mertens function](programming_tasks/M/Mertens_function.md)
        * [Metallic ratios](programming_tasks/M/Metallic_ratios.md)
        * [Metaprogramming](programming_tasks/M/Metaprogramming.md)
        * [Metered concurrency](programming_tasks/M/Metered_concurrency.md)
@@ -742,6 +750,7 @@
        * [Ordered words](programming_tasks/O/Ordered_words.md)
    * P
        * [P-value correction](programming_tasks/P/P-value_correction.md)
+       * [Palindrome dates](programming_tasks/P/Palindrome_dates.md)
        * [Palindrome detection](programming_tasks/P/Palindrome_detection.md)
        * [Palindromic gapful numbers](programming_tasks/P/Palindromic_gapful_numbers.md)
        * [Pangram checker](programming_tasks/P/Pangram_checker.md)
@@ -758,6 +767,7 @@
            * [RPN to infix conversion](programming_tasks/P/Parsing/RPN_to_infix_conversion.md)
            * [Shunting-yard algorithm](programming_tasks/P/Parsing/Shunting-yard_algorithm.md)
        * [Partial function application](programming_tasks/P/Partial_function_application.md)
+       * [Particle Swarm Optimization](programming_tasks/P/Particle_Swarm_Optimization.md)
        * [Partition an integer X into N primes](programming_tasks/P/Partition_an_integer_X_into_N_primes.md)
        * [Pascal's triangle](programming_tasks/P/Pascal's_triangle.md)
            * [Puzzle](programming_tasks/P/Pascal's_triangle/Puzzle.md)
@@ -862,6 +872,8 @@
        * [Readline interface](programming_tasks/R/Readline_interface.md)
        * [Real constants and functions](programming_tasks/R/Real_constants_and_functions.md)
        * [Recaman's sequence](programming_tasks/R/Recaman's_sequence.md)
+       * [Record sound](programming_tasks/R/Record_sound.md)
+       * [Recursive descent parser generator](programming_tasks/R/Recursive_descent_parser_generator.md)
        * [Reduced row echelon form](programming_tasks/R/Reduced_row_echelon_form.md)
        * Reflection
            * [Get source](programming_tasks/R/Reflection/Get_source.md)
@@ -965,6 +977,7 @@
        * Simulate input
            * [Keyboard](programming_tasks/S/Simulate_input/Keyboard.md)
            * [Mouse](programming_tasks/S/Simulate_input/Mouse.md)
+       * [Simulated annealing](programming_tasks/S/Simulated_annealing.md)
        * [Sine wave](programming_tasks/S/Sine_wave.md)
        * [Singleton](programming_tasks/S/Singleton.md)
        * Singly-linked list
@@ -1026,6 +1039,7 @@
            * [Text](programming_tasks/S/Spinning_rod_animation/Text.md)
        * [Spiral matrix](programming_tasks/S/Spiral_matrix.md)
        * [Split a character string based on change of character](programming_tasks/S/Split_a_character_string_based_on_change_of_character.md)
+       * [Spoof game](programming_tasks/S/Spoof_game.md)
        * [SQL-based authentication](programming_tasks/S/SQL-based_authentication.md)
        * [Square-free integers](programming_tasks/S/Square-free_integers.md)
        * [Square but not cube](programming_tasks/S/Square_but_not_cube.md)
@@ -1168,6 +1182,7 @@
        * [URL encoding](programming_tasks/U/URL_encoding.md)
        * [URL parser](programming_tasks/U/URL_parser.md)
        * [URL shortener](programming_tasks/U/URL_shortener.md)
+       * [Use another language to call a function](programming_tasks/U/Use_another_language_to_call_a_function.md)
        * [User defined pipe and redirection operators](programming_tasks/U/User_defined_pipe_and_redirection_operators.md)
        * User input
            * [Graphical](programming_tasks/U/User_input/Graphical.md)
@@ -1194,6 +1209,7 @@
        * [Vigenère cipher](programming_tasks/V/Vigenère_cipher.md)
            * [Cryptanalysis](programming_tasks/V/Vigenère_cipher/Cryptanalysis.md)
        * [Visualize a tree](programming_tasks/V/Visualize_a_tree.md)
+       * [VList](programming_tasks/V/VList.md)
        * [Vogel's approximation method](programming_tasks/V/Vogel's_approximation_method.md)
        * [Voronoi diagram](programming_tasks/V/Voronoi_diagram.md)
    * W
@@ -1211,11 +1227,13 @@
        * [Word break problem](programming_tasks/W/Word_break_problem.md)
        * [Word count](programming_tasks/W/Word_count.md)
        * [Word frequency](programming_tasks/W/Word_frequency.md)
+       * [Word search](programming_tasks/W/Word_search.md)
        * [Word wrap](programming_tasks/W/Word_wrap.md)
        * [World Cup group stage](programming_tasks/W/World_Cup_group_stage.md)
        * [Write entire file](programming_tasks/W/Write_entire_file.md)
        * [Write float arrays to a text file](programming_tasks/W/Write_float_arrays_to_a_text_file.md)
        * [Write language name in 3D ASCII](programming_tasks/W/Write_language_name_in_3D_ASCII.md)
+       * [Write to Windows event log](programming_tasks/W/Write_to_Windows_event_log.md)
    * X
        * [Xiaolin Wu's line algorithm](programming_tasks/X/Xiaolin_Wu's_line_algorithm.md)
        * XML
