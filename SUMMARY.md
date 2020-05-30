@@ -17,6 +17,7 @@
        * [99 Bottles of Beer](programming_tasks/9/99_Bottles_of_Beer.md)
        * [9 billion names of God the integer](programming_tasks/9/9_billion_names_of_God_the_integer.md)
    * A
+       * [A* search algorithm](programming_tasks/A/A*_search_algorithm.md)
        * [A B](programming_tasks/A/A_B.md)
        * [Abbreviations automatic](programming_tasks/A/Abbreviations_automatic.md)
        * [Abbreviations easy](programming_tasks/A/Abbreviations_easy.md)
@@ -176,6 +177,7 @@
        * [Church Numerals](programming_tasks/C/Church_Numerals.md)
        * [Cipolla's algorithm](programming_tasks/C/Cipolla's_algorithm.md)
        * [Circles of given radius through two points](programming_tasks/C/Circles_of_given_radius_through_two_points.md)
+       * [Circular primes](programming_tasks/C/Circular_primes.md)
        * [Classes](programming_tasks/C/Classes.md)
        * [Closest-pair problem](programming_tasks/C/Closest-pair_problem.md)
        * Closures
@@ -203,6 +205,7 @@
        * Compiler
            * [Code generator](programming_tasks/C/Compiler/code_generator.md)
            * [Lexical analyzer](programming_tasks/C/Compiler/lexical_analyzer.md)
+           * [Verifying Syntax](programming_tasks/C/Compiler/Verifying_Syntax.md)
            * [Virtual machine interpreter](programming_tasks/C/Compiler/virtual_machine_interpreter.md)
        * [Compound data type](programming_tasks/C/Compound_data_type.md)
        * [Concurrent computing](programming_tasks/C/Concurrent_computing.md)
@@ -326,6 +329,7 @@
        * [Enumerations](programming_tasks/E/Enumerations.md)
        * [Environment variables](programming_tasks/E/Environment_variables.md)
        * [Equilibrium index](programming_tasks/E/Equilibrium_index.md)
+       * [Esthetic numbers](programming_tasks/E/Esthetic_numbers.md)
        * [Ethiopian multiplication](programming_tasks/E/Ethiopian_multiplication.md)
        * [Euler's identity](programming_tasks/E/Euler's_identity.md)
        * [Euler's sum of powers conjecture](programming_tasks/E/Euler's_sum_of_powers_conjecture.md)
@@ -596,6 +600,8 @@
            * [Integer](programming_tasks/L/Literals/Integer.md)
            * [String](programming_tasks/L/Literals/String.md)
        * [Logical operations](programming_tasks/L/Logical_operations.md)
+       * [Logistic Curve Fitting in Epidemiology](programming_tasks/L/Logistic_Curve_Fitting_in_Epidemiology.md)
+       * [Long literals with continuations](programming_tasks/L/Long_literals_with_continuations.md)
        * [Long multiplication](programming_tasks/L/Long_multiplication.md)
        * [Long primes](programming_tasks/L/Long_primes.md)
        * [Longest common prefix](programming_tasks/L/Longest_common_prefix.md)
@@ -630,11 +636,13 @@
    * M
        * [Möbius function](programming_tasks/M/Möbius_function.md)
        * [MAC Vendor Lookup](programming_tasks/M/MAC_Vendor_Lookup.md)
+       * [Machine code](programming_tasks/M/Machine_code.md)
        * [Mad Libs](programming_tasks/M/Mad_Libs.md)
        * [Magic 8-Ball](programming_tasks/M/Magic_8-Ball.md)
        * [Magic squares of doubly even order](programming_tasks/M/Magic_squares_of_doubly_even_order.md)
        * [Magic squares of odd order](programming_tasks/M/Magic_squares_of_odd_order.md)
        * [Magic squares of singly even order](programming_tasks/M/Magic_squares_of_singly_even_order.md)
+       * [Magnanimous numbers](programming_tasks/M/Magnanimous_numbers.md)
        * [Main step of GOST 28147-89](programming_tasks/M/Main_step_of_GOST_28147-89.md)
        * [Make a backup file](programming_tasks/M/Make_a_backup_file.md)
        * [Make directory path](programming_tasks/M/Make_directory_path.md)
@@ -682,6 +690,7 @@
        * Monads
            * [List monad](programming_tasks/M/Monads/List_monad.md)
            * [Maybe monad](programming_tasks/M/Monads/Maybe_monad.md)
+           * [Writer monad](programming_tasks/M/Monads/Writer_monad.md)
        * [Monte Carlo methods](programming_tasks/M/Monte_Carlo_methods.md)
        * [Montgomery reduction](programming_tasks/M/Montgomery_reduction.md)
        * [Monty Hall problem](programming_tasks/M/Monty_Hall_problem.md)
@@ -721,6 +730,7 @@
        * [Nested templated data](programming_tasks/N/Nested_templated_data.md)
        * [Next highest int from digits](programming_tasks/N/Next_highest_int_from_digits.md)
        * [Nim Game](programming_tasks/N/Nim_Game.md)
+       * [Nimber arithmetic](programming_tasks/N/Nimber_arithmetic.md)
        * [Non-continuous subsequences](programming_tasks/N/Non-continuous_subsequences.md)
        * Non-decimal radices
            * [Convert](programming_tasks/N/Non-decimal_radices/Convert.md)
@@ -858,7 +868,9 @@
            * [Usage](programming_tasks/Q/Queue/Usage.md)
        * [Quickselect algorithm](programming_tasks/Q/Quickselect_algorithm.md)
        * [Quine](programming_tasks/Q/Quine.md)
+       * [Quoting constructs](programming_tasks/Q/Quoting_constructs.md)
    * R
+       * [Railway circuit](programming_tasks/R/Railway_circuit.md)
        * [Ramanujan's constant](programming_tasks/R/Ramanujan's_constant.md)
        * [Ramer-Douglas-Peucker line simplification](programming_tasks/R/Ramer-Douglas-Peucker_line_simplification.md)
        * [Ramsey's theorem](programming_tasks/R/Ramsey's_theorem.md)
@@ -1026,6 +1038,7 @@
            * [Bubble sort](programming_tasks/S/Sorting_algorithms/Bubble_sort.md)
            * [Circle Sort](programming_tasks/S/Sorting_algorithms/Circle_Sort.md)
            * [Cocktail sort](programming_tasks/S/Sorting_algorithms/Cocktail_sort.md)
+           * [Cocktail sort with shifting bounds](programming_tasks/S/Sorting_algorithms/Cocktail_sort_with_shifting_bounds.md)
            * [Comb sort](programming_tasks/S/Sorting_algorithms/Comb_sort.md)
            * [Counting sort](programming_tasks/S/Sorting_algorithms/Counting_sort.md)
            * [Cycle sort](programming_tasks/S/Sorting_algorithms/Cycle_sort.md)
@@ -1256,6 +1269,7 @@
            * [Output](programming_tasks/X/XML/Output.md)
            * [XPath](programming_tasks/X/XML/XPath.md)
        * [XML Validation](programming_tasks/X/XML_Validation.md)
+       * [XXXX redacted](programming_tasks/X/XXXX_redacted.md)
    * Y
        * [Y combinator](programming_tasks/Y/Y_combinator.md)
        * [Yahoo search interface](programming_tasks/Y/Yahoo_search_interface.md)
