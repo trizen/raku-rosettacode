@@ -1,6 +1,10 @@
-[1]: https://rosettacode.org/wiki/Primalty_by_Wilson's_theorem
+[1]: https://rosettacode.org/wiki/Primality_by_Wilson%27s_theorem
 
-# [Primalty by Wilson's theorem][1]
+# [Primality by Wilson's theorem][1]
+
+
+
+
 
 Not a particularly recommended way to test for primality, especially for larger numbers. It *works*, but is slow and memory intensive.
 
