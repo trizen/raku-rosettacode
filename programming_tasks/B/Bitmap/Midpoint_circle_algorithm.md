@@ -4,7 +4,7 @@
 
 We'll augment the Pixel and Bitmap classes from the [Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) task.
 
-```raku
+```perl
 use MONKEY-TYPING;
  
 class Pixel { has UInt ($.R, $.G, $.B) }

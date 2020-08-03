@@ -2,13 +2,13 @@
 
 # [Tokenize a string][1]
 
-```raku
+```perl
 'Hello,How,Are,You,Today'.split(',').join('.').say;
 ```
 
 
 Or with function calls:
 
-```raku
+```perl
 say join '.', split ',', 'Hello,How,Are,You,Today';
 ```

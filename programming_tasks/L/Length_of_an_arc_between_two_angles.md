@@ -2,7 +2,7 @@
 
 # [Length of an arc between two angles][1]
 
-```raku
+```perl
 sub arc ( \r, \a1, \a2 ) { r × (τ - abs(a2 - a1)) }
 sub postfix:<°> (\d) { d × τ / 360 }
  

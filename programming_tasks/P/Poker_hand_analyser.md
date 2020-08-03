@@ -4,7 +4,7 @@
 
 This solution handles jokers. It has been written as a Perl 6 grammar.
 
-```raku
+```perl
 use v6;
  
 grammar PokerHand {

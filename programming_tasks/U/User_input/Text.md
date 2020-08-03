@@ -2,7 +2,7 @@
 
 # [User input/Text][1]
 
-```raku
+```perl
 my $str = prompt("Enter a string: ");
 my $int = prompt("Enter a integer: ");
 ```

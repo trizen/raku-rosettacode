@@ -2,7 +2,7 @@
 
 # [Topological sort][1]
 
-```raku
+```perl
 sub print_topo_sort ( %deps ) {
     my %ba;
     for %deps.kv -> $before, @afters {

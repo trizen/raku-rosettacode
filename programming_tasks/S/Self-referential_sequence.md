@@ -2,7 +2,7 @@
 
 # [Self-referential sequence][1]
 
-```raku
+```perl
 my @list;
 my $longest = 0;
 my %seen;

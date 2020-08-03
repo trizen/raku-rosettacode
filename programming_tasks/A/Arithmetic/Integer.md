@@ -2,7 +2,7 @@
 
 # [Arithmetic/Integer][1]
 
-```raku
+```perl
 my Int $a = get.floor;
 my Int $b = get.floor;
  

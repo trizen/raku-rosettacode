@@ -4,7 +4,7 @@
 
 Koch curve, actually a full Koch snowflake.
 
-```raku
+```perl
 use SVG;
  
 role Lindenmayer {
@@ -45,7 +45,7 @@ See: [Koch snowflake](https://github.com/thundergnat/rc/blob/master/img/koch1.sv
 
 Variation using 90° angles:
 
-```raku
+```perl
 use SVG;
  
 role Lindenmayer {

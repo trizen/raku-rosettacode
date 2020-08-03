@@ -4,7 +4,7 @@
 
 Here is a naive, grossly inefficient implementation.
 
-```raku
+```perl
 sub is-semiprime (Int $n --> Bool) {
     not $n.is-prime and
         .is-prime given 
@@ -52,7 +52,7 @@ ok 20 - 37 97 11 31
 
 Here is a more verbose, but MUCH more efficient implementation. Demonstrating using it to find an infinite list of semiprimes and to check a range of integers to find the semiprimes.
 
-```raku
+```perl
 sub is-semiprime ( Int $n where * > 0 ) {
     return False if $n.is-prime;
     my $factor = find-factor( $n );

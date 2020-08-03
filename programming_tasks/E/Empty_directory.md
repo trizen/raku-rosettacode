@@ -2,7 +2,7 @@
 
 # [Empty directory][1]
 
-```raku
+```perl
 sub dir-is-empty ($d) { not dir $d }
 ```
 

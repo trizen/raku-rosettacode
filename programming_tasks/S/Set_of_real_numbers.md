@@ -2,7 +2,7 @@
 
 # [Set of real numbers][1]
 
-```raku
+```perl
 class Iv {
     has $.range handles <min max excludes-min excludes-max minmax ACCEPTS>;
     method empty {

@@ -4,7 +4,7 @@
 
 Pretty much a line for line translation of the Python code on the Wikipedia page.
 
-```raku
+```perl
 sub cyclical-function (\x) { (x * x + 1) % 255 };
  
 my ( $l, $s ) = brent( &cyclical-function, 3 );

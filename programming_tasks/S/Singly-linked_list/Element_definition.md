@@ -4,6 +4,6 @@
 
 The `Pair` constructor is exactly equivalent to a cons cell.
 
-```raku
+```perl
 my $elem = 42 => $nextelem;
 ```

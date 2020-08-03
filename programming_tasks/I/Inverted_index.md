@@ -2,7 +2,7 @@
 
 # [Inverted index][1]
 
-```raku
+```perl
 sub MAIN (*@files) {
     my %norm; 
     do for @files -> $file {

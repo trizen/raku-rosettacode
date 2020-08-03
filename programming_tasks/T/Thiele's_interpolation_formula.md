@@ -4,7 +4,7 @@
 
 Implemented to parallel the (generalized) formula. (i.e. clearer, but naive and very slow.)
 
-```raku
+```perl
 # reciprocal difference:
 multi sub ρ(&f, @x where * < 1) { 0 } # Identity
 multi sub ρ(&f, @x where * == 1) { &f(@x[0]) }

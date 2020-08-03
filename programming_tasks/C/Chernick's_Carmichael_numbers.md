@@ -4,7 +4,7 @@
 
 Use the ntheory library from Perl 5 for primality testing since it is much, *much* faster than Perl 6s built-in .is-prime method.
 
-```raku
+```perl
 use Inline::Perl5;
 use ntheory:from<Perl5> <:all>;
  

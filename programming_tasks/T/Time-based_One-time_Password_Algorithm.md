@@ -4,7 +4,7 @@
 
 This is a minimal attempt that covers only the "Time-based" part of the requirement.
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 # Reference:

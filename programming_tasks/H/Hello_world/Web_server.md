@@ -2,7 +2,7 @@
 
 # [Hello world/Web server][1]
 
-```raku
+```perl
 my $listen = IO::Socket::INET.new(:listen, :localhost<localhost>, :localport(8080));
 loop {
     my $conn = $listen.accept;
@@ -15,7 +15,7 @@ loop {
 
 Async:
 
-```raku
+```perl
 react {
     whenever IO::Socket::Async.listen('0.0.0.0', 8080) -> $conn {
         whenever $conn.Supply.lines -> $line {

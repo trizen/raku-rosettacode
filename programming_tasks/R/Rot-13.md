@@ -2,7 +2,7 @@
 
 # [Rot-13][1]
 
-```raku
+```perl
 print slurp.trans: ['A'..'Z','a'..'z'] => ['N'..'Z','A'..'M','n'..'z','a'..'m']
 ```
 

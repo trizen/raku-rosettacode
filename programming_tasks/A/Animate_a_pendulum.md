@@ -4,7 +4,7 @@
 
 Handles window resizing, modifies pendulum length and period as window height changes. May need to tweek $ppi scaling to get good looking animation.
 
-```raku
+```perl
 use SDL2::Raw;
 use Cairo;
  

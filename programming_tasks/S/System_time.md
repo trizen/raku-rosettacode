@@ -2,7 +2,7 @@
 
 # [System time][1]
 
-```raku
+```perl
 say DateTime.now;
 dd DateTime.now.Instant;
 ```

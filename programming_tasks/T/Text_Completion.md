@@ -8,7 +8,7 @@
 
 ### Hamming distance
 
-```raku
+```perl
 sub MAIN ( Str $user_word = 'complition', Str $filename = 'words.txt' ) {
     my @s1 = $user_word.comb;
     my @listed = gather for $filename.IO.lines -> $line {
@@ -49,7 +49,7 @@ Sorenson-Dice tends to return relatively low percentages even for small differen
 
 Using unixdict.txt from www.puzzlers.org
 
-```raku
+```perl
 sub sorenson ($phrase, %hash) {
     my $match = bigram $phrase;
     %hash.race.map: { [(2 * +($match ∩ .value) / (+$match + .value)).round(.001), .key] }

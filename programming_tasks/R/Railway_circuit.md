@@ -2,7 +2,7 @@
 
 # [Railway circuit][1]
 
-```raku
+```perl
 #!/usr/bin/env raku
  
 # 20200406 Raku programming solution

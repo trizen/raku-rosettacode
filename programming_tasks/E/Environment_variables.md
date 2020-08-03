@@ -4,6 +4,6 @@
 
 The `%*ENV` hash maps environment variables to their values:
 
-```raku
+```perl
 say %*ENV<HOME>;
 ```

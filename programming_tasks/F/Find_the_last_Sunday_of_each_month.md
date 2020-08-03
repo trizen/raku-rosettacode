@@ -2,7 +2,7 @@
 
 # [Find the last Sunday of each month][1]
 
-```raku
+```perl
 sub MAIN ($year = Date.today.year) {
     for 1..12 -> $month {
         my $month-end = Date.new($year, $month, Date.new($year,$month,1).days-in-month);

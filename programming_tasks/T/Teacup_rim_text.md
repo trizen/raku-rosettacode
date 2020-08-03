@@ -12,7 +12,7 @@ As the specs keep changing, this version will accept ANY text file as its dictio
 
 Defaults to unixdict.txt, minimum 3 characters and mono-character 'words' disallowed. Feed a file name to use a different word list, an integer to --min-chars and/or a truthy value to --mono to allow mono-chars.
 
-```raku
+```perl
 my %*SUB-MAIN-OPTS = :named-anywhere;
  
 unit sub MAIN ( $dict = 'unixdict.txt', :$min-chars = 3, :$mono = False );

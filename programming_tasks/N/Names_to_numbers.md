@@ -2,7 +2,7 @@
 
 # [Names to numbers][1]
 
-```raku
+```perl
 my $DEBUG = False;
  
 constant @M = ('ones', 'thousand',

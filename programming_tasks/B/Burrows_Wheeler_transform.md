@@ -2,7 +2,7 @@
 
 # [Burrows–Wheeler transform][1]
 
-```raku
+```perl
 # STX can be any character that doesn't appear in the text.
 # Using a visible character here for ease of viewing. 
  

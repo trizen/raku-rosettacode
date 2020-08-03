@@ -2,7 +2,7 @@
 
 # [Chinese remainder theorem][1]
 
-```raku
+```perl
 # returns x where (a * x) % b == 1
 sub mul-inv($a is copy, $b is copy) {
     return 1 if $b == 1;

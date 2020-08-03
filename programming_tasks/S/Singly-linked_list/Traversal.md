@@ -6,7 +6,7 @@ Built-in list processing in Perl is not specifically based on singly-linked list
 but works at a higher abstraction level that encapsulates such implementation choices. Nonetheless, it's trivial to use the `Pair` type to build what is essentially a Lisp-style cons list, and in fact, the `=>` pair constructor is right associative for precisely that reason.
 We traverse such a list here using a 3-part loop:
 
-```raku
+```perl
 my $list = 1 => 2 => 3 => 4 => 5 => 6 => Mu;
  
 loop (my $l = $list; $l; $l.=value) {
@@ -36,7 +36,7 @@ We'll pretend the `Pair` type is really a list type.
 Note how the `[=>]` reduction is also right associative,
 just like the base operator.)
 
-```raku
+```perl
 use MONKEY-TYPING;
 augment class Pair {
     method traverse () {

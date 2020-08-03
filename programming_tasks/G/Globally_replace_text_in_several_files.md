@@ -4,7 +4,7 @@
 
 Current Perl 6 implementations do not yet support the -i flag for editing files in place, so we roll our own (rather unsafe) version:
 
-```raku
+```perl
 slurp($_).subst('Goodbye London!', 'Hello New York!', :g) ==> spurt($_)
     for <a.txt b.txt c.txt>;
 ```

@@ -5,7 +5,7 @@
 We avoid taking square roots in the slow method because the squares are just as comparable.
 (This doesn't always work in the fast method because of distance assumptions in the algorithm.)
 
-```raku
+```perl
 sub MAIN ($N = 5000) {
     my @points = (^$N).map: { [rand * 20 - 10, rand * 20 - 10] }
  

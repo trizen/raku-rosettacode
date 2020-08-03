@@ -4,7 +4,7 @@
 
 Perl&#160;6 does not offer a fixed precision decimal. It *does* have IEEE 754 floating point numbers so let's try implementing the floating point option as shown in Python. Need to explicitly specify scientific notation numbers to force floating point Nums.
 
-```raku
+```perl
 constant ε = (1e0, */2e0 … *+1e0==1e0)[*-1];
  
 sub kahan (*@nums) {

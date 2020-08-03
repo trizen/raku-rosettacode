@@ -4,7 +4,7 @@
 
 As long as all values are kept as rationals (type `Rat`) calculations are done full precision.
 
-```raku
+```perl
 my $e = 63;
 for -7..21 -> $n {
     my $num = '12345679' ~ '012345679' x ($n+7);

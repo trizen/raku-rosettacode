@@ -2,7 +2,7 @@
 
 # [Ray-casting algorithm][1]
 
-```raku
+```perl
 constant ε = 0.0001;
  
 sub ray-hits-seg([\Px,\Py], [[\Ax,\Ay], [\Bx,\By]] --> Bool) {

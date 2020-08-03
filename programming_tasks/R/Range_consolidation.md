@@ -8,7 +8,7 @@ In Perl 6, a Range is a first class object with its own specialized notation. Pe
 
 Note: the output is in standard Perl 6 notation for Ranges.
 
-```raku
+```perl
 # Union
 sub infix:<∪> (Range $a, Range $b) { Range.new($a.min,max($a.max,$b.max)) }
  

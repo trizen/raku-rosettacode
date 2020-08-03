@@ -2,7 +2,7 @@
 
 # [Old lady swallowed a fly][1]
 
-```raku
+```perl
 my @victims =
     fly    => "  I don't know why S—",
     spider => "  That wriggled and jiggled and tickled inside her.",

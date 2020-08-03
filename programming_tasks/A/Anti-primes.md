@@ -8,7 +8,7 @@ At its heart, this task is almost exactly the same as [Proper_Divisors](https://
 
 Implemented as an auto-extending lazy list. Displaying the count of anti-primes less than 5e5 also because... why not.
 
-```raku
+```perl
 sub propdiv (\x) {
     my @l = 1 if x > 1;
     (2 .. x.sqrt.floor).map: -> \d {

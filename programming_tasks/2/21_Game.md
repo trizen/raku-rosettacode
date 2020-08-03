@@ -4,7 +4,7 @@
 
 Since there is no requirement that the computer play sensibly, it always plays a random guess so the player has some chance to win.
 
-```raku
+```perl
 say qq :to 'HERE';
     The 21 game. Each player chooses to add 1, 2, or 3 to a running total.
     The player whose turn it is when the total reaches 21 wins. Enter q to quit.

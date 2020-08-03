@@ -2,7 +2,7 @@
 
 # [Multi-dimensional array][1]
 
-```raku
+```perl
 #Perl 6 supports multi dimension arrays natively. There are no arbitrary limits on the number of dimensions or maximum indices. Theoretically, you could have an infinite number of dimensions of infinite length, though in practice more than a few dozen dimensions gets unwieldy. An infinite maximum index is a fairly common idiom though. You can assign an infinite lazy list to an array and it will only produce the values when they are accessed.
  
 my @integers = 1 .. Inf; # an infinite array containing all positive integers

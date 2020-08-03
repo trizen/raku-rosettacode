@@ -12,14 +12,14 @@ Most of the following tests are somewhat pointless in Perl 6. To a large extent,
 
 For example, in Perl 6, the sum of .1, .2, .3, &amp; .4 is *identically* equal to 1.
 
-```raku
+```perl
 say 0.1 + 0.2 + 0.3 + 0.4 === 1.0000000000000000000000000000000000000000000000000000000000000000000000000; # True
 ```
 
 
 It's also *approximately* equal to 1 but... ¯\\_(ツ)\_/¯
 
-```raku
+```perl
 for
     100000000000000.01, 100000000000000.011,
     100.01, 100.011,

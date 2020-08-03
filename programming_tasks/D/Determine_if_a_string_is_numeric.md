@@ -8,7 +8,7 @@ Perl 6 tries very hard to DWIM (do what I mean). As part of that, numeric string
 
 Note: These routines are usable for most cases but won't detect unicode non-digit numeric forms; E.G. vulgar fractions, Roman numerals, circled numbers, etc. If it is necessary to detect those as numeric, a full fledged grammar may be necessary.
 
-```raku
+```perl
 sub is-number-w-ws( Str $term --> Bool ) { # treat Falsey strings as numeric
     $term.Numeric !~~ Failure;
 }

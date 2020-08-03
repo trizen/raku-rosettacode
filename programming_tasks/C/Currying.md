@@ -4,7 +4,7 @@
 
 All callable objects have an "assuming" method that can do partial application of either positional or named arguments. Here we curry the built-in subtraction operator.
 
-```raku
+```perl
 my &negative = &infix:<->.assuming(0);
 say negative 1;
 ```

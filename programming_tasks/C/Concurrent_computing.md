@@ -4,7 +4,7 @@
 
 Hyper-operators are unordered:
 
-```raku
+```perl
 my @words = <Enjoy Rosetta Code>;
 @words».say
 ```

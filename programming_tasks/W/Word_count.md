@@ -25,7 +25,7 @@ A more accurate regex matcher would be some kind of Unicode aware /\w/ minus und
 
 Here is a sample that shows the result when using various different matchers.
 
-```raku
+```perl
 sub MAIN ($filename, $top = 10) {
     my $file = $filename.IO.slurp.lc.subst(/ (<[\w]-[_]>'-')\n(<[\w]-[_]>) /, {$0 ~ $1}, :g );
     my @matcher = (

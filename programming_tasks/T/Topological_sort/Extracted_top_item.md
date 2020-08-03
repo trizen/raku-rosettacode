@@ -2,7 +2,7 @@
 
 # [Topological sort/Extracted top item][1]
 
-```raku
+```perl
 sub top_topos ( %deps, *@top ) {
     my %ba;
     for %deps.kv -> $after, @befores {

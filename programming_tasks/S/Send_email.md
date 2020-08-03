@@ -2,7 +2,7 @@
 
 # [Send email][1]
 
-```raku
+```perl
 use Email::Simple;
 
 my $to      = 'mail@example.com';

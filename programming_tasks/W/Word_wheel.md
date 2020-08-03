@@ -12,7 +12,7 @@ Defaults to task specified wheel, unixdict.txt, minimum 3 letters.
 
 Using [Terminal::Boxer](https://modules.raku.org/search/?q=Terminal%3A%3ABoxer) from the Raku ecosystem.
 
-```raku
+```perl
 use Terminal::Boxer;
  
 my %*SUB-MAIN-OPTS = :named-anywhere;

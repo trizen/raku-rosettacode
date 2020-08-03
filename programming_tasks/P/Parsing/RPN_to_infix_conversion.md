@@ -2,7 +2,7 @@
 
 # [Parsing/RPN to infix conversion][1]
 
-```raku
+```perl
 my @tests = '3 4 2 * 1 5 - 2 3 ^ ^ / +',
             '1 2 + 3 4 + ^ 5 6 + ^';
  

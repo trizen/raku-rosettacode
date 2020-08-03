@@ -4,7 +4,7 @@
 
 First, check if any vertex is inside each other triangle (that should cover most overlapping cases including enclosures). Then see if an edge of triangle A intersects any of two edges of B (for shapes like Star of David [[1]](https://en.wikipedia.org/wiki/Star_of_David))
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 # Reference:

@@ -2,7 +2,7 @@
 
 # [The ISAAC Cipher][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 use v6.d; 

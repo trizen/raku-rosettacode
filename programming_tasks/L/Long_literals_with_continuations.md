@@ -8,7 +8,7 @@ Incorrectly marked incorrect. Enforcing rules that exists only in somebodies hea
 
 Not really sure I understand the point of this task. Seems to be load some list into memory and manipulate it somehow. Exceptionally boring to just read it in and then read it back out again. Perform some more interesting manipulations. Use &lt; &gt; quoting construct for literal string; unlimited (memory limited) characters, spaces don't matter, new-lines don't matter, blank lines don't matter.
 
-```raku
+```perl
 my %periodic;
 %periodic<revision-date> = Date.new(2020,3,23);
 %periodic<table> = |<

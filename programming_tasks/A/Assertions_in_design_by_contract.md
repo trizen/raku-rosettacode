@@ -24,7 +24,7 @@ When Perl 6 encounters a design-by-contract violation, it will fail with an erro
 
 In this snippet, the routine repeat takes one Integer that must be greater than 1, a String and returns a String. (Note that as written, it is incorrect since it actually returns a boolean.)
 
-```raku
+```perl
 sub repeat ( Int $repeat where * > 1, Str $message, --> Str ) {
     say $message x $repeat;
     True # wrong return type

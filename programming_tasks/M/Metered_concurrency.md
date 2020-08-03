@@ -4,7 +4,7 @@
 
 Uses a buffered channel to hand out a limited number of tickets.
 
-```raku
+```perl
 class Semaphore {
     has $.tickets = Channel.new;
     method new ($max) {

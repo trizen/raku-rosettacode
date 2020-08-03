@@ -4,7 +4,7 @@
 
 Blocks are stored as precompiled regexes. We do an initial pass on the blockset to include in the list only those regexes that match somewhere in the current word. Conveniently, regexes scan the word for us.
 
-```raku
+```perl
 multi can-spell-word(Str $word, @blocks) {
     my @regex = @blocks.map({ my @c = .comb; rx/<@c>/ }).grep: { .ACCEPTS($word.uc) }
     can-spell-word $word.uc.comb.list, @regex;

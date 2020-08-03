@@ -4,7 +4,7 @@
 
 As in previous versions of Perl, in Perl6 the topic variable is $\_. In addition to a direct affectation, it can also be set with the 'given' keyword. A method can be called from it with an implicit call:
 
-```raku
+```perl
 given 3 {
     .say for $_**2, .sqrt;
 }

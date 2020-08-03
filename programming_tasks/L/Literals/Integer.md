@@ -4,7 +4,7 @@
 
 These all print 255.
 
-```raku
+```perl
 say 255;
 say 0d255;
 say 0xff;

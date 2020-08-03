@@ -2,7 +2,7 @@
 
 # [24 game][1]
 
-```raku
+```perl
 use MONKEY-SEE-NO-EVAL;
  
 say "Here are your digits: ", 

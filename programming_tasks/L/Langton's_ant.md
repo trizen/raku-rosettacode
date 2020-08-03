@@ -4,7 +4,7 @@
 
 In this version we use 4-bits-per-char graphics to shrink the output to a quarter the area of ASCII graphics.
 
-```raku
+```perl
 constant @vecs = [1,0,1], [0,-1,1], [-1,0,1], [0,1,1];
 constant @blocky = ' ▘▝▀▖▌▞▛▗▚▐▜▄▙▟█'.comb;
 constant $size = 100;

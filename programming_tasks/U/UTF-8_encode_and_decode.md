@@ -4,7 +4,7 @@
 
 Pretty much all built in to the language.
 
-```raku
+```perl
 say sprintf("%-18s %-36s|%8s| %7s |%14s | %s\n", 'Character|', 'Name', 'Ordinal', 'Unicode', 'UTF-8 encoded', 'decoded'), '-' x 100;
  
 for < A ö Ж € 𝄞 😜 👨‍👩‍👧‍👦> -> $char {

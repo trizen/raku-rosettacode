@@ -2,7 +2,7 @@
 
 # [Multiplication tables][1]
 
-```raku
+```perl
 my $max = 12;
 my $width = chars $max**2;
 my $f = "%{$width}s";

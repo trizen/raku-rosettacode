@@ -54,7 +54,7 @@ If you add a forward solidus (directory separator: **/**) to a filename, it will
 
 Notice that all of the above operations will fail to apply if you lack sufficient permissions for the affected files or directories.
 
-```raku
+```perl
 use Sort::Naturally;
 use File::Temp;
  

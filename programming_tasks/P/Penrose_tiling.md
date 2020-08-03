@@ -4,7 +4,7 @@
 
 Generated with a P3 tile set using a Lindenmayer system.
 
-```raku
+```perl
 use SVG;
  
 role Lindenmayer {

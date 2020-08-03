@@ -4,7 +4,7 @@
 
 ### Lazy List with Closure
 
-```raku
+```perl
 use MONKEY-SEE-NO-EVAL;
  
 sub fibo ($n) {
@@ -41,7 +41,7 @@ say nacci(2,1)[^20];
 
 A slightly more straight forward way of constructing a lazy list.
 
-```raku
+```perl
 sub fib ($n, @xs is copy = [1]) {
     flat gather {
         take @xs[*];

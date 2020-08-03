@@ -8,7 +8,7 @@ Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) and [ Read 
 
 Uses imagemagick convert to pipe the image in.
 
-```raku
+```perl
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

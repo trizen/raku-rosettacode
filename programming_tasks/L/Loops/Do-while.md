@@ -2,7 +2,7 @@
 
 # [Loops/Do-while][1]
 
-```raku
+```perl
 my $val = 0;
 repeat {
     say ++$val;
@@ -12,7 +12,7 @@ repeat {
 
 `repeat ... until <i>condition</i>` is equivalent to `do ... while not <i>condition</i>`.
 
-```raku
+```perl
 my $val = 0;
 repeat {
     say ++$val;
@@ -22,7 +22,7 @@ repeat {
 
 (Here we've used `%%`, the "divisible-by" operator.)
 
-```raku
+```perl
 my $val = 0;
 repeat while $val % 6 {
     say ++$val;

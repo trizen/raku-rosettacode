@@ -4,7 +4,7 @@
 
 This example works with MacOS, customize with the appropriate `screencapture` utility for other OSes.
 
-```raku
+```perl
 use GD::Raw;
  
 my $file = '/tmp/one-pixel-screen-capture.png';
@@ -33,7 +33,7 @@ RGB: 20, 2, 124
 
 Alternately, a version that should work in any X11 environment. Needs X11::xdo and MagickWand installed.
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 signal(SIGINT).tap: { sleep .1; cleanup(); print "\n" xx 50, "\e[H\e[J"; exit(0) }

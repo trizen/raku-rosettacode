@@ -2,7 +2,7 @@
 
 # [Hailstone sequence][1]
 
-```raku
+```perl
 sub hailstone($n) { $n, { $_ %% 2 ?? $_ div 2 !! $_ * 3 + 1 } ... 1 }
 
 my @h = hailstone(27);

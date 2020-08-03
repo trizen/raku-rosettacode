@@ -2,7 +2,7 @@
 
 # [SQL-based authentication][1]
 
-```raku
+```perl
  
 use v6;
 use DBIish;

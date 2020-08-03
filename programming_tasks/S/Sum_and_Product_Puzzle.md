@@ -2,7 +2,7 @@
 
 # [Sum and Product Puzzle][1]
 
-```raku
+```perl
 sub grep-unique (&by, @list) { @list.classify(&by).values.grep(* == 1).map(*[0]) }
 sub sums        ($n)         { ($_, $n - $_ for 2 .. $n div 2) }
 sub sum         ([$x, $y])   { $x + $y }

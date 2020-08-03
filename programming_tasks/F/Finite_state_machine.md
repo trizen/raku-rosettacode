@@ -2,7 +2,7 @@
 
 # [Finite state machine][1]
 
-```raku
+```perl
 #===== The state machine =====#
  
 class StateMachine {

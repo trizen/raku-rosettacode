@@ -8,7 +8,7 @@
 
 The following routine returns a lazy list of lines using the sequence operator (`...`). With a lazy result you need not tell the routine how many you want; you can just use a slice subscript to get the first N lines:
 
-```raku
+```perl
 sub pascal {
     [1], { [0, |$_ Z+ |$_, 0] } ... *
 }
@@ -19,7 +19,7 @@ sub pascal {
 
 One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the `@` sigil to indicate that the sequence should cache its values for reuse, and use an explicit parameter `$prev` for variety:
 
-```raku
+```perl
 constant @pascal = [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... *;
  
 .say for @pascal[^10];
@@ -32,7 +32,7 @@ Since we use ordinary subscripting, non-positive inputs throw an index-out-of-bo
 
 ### recursive
 
-```raku
+```perl
 multi sub pascal (1) { $[1] }
 multi sub pascal (Int $n where 2..*) {
     my @rows = pascal $n - 1;
@@ -49,7 +49,7 @@ Non-positive inputs throw a multiple-dispatch error.
 
 ### iterative
 
-```raku
+```perl
 sub pascal ($n where $n >= 1) {
    say my @last = 1;
    for 1 .. $n - 1 -> $row {

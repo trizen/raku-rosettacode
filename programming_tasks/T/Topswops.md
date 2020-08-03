@@ -2,7 +2,7 @@
 
 # [Topswops][1]
 
-```raku
+```perl
 sub swops(@a is copy) {
     my $count = 0;
     until @a[0] == 1 {

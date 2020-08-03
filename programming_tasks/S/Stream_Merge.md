@@ -2,7 +2,7 @@
 
 # [Stream Merge][1]
 
-```raku
+```perl
 sub merge_streams ( @streams ) {
     my @s = @streams.map({ hash( STREAM => $_, HEAD => .get ) })\
                     .grep({ .<HEAD>.defined });

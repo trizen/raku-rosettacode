@@ -4,7 +4,7 @@
 
 Also test a value that has a zero check digit.
 
-```raku
+```perl
 sub check-digit ($isbn) {
      (10 - (sum (|$isbn.comb(/<[0..9]>/)) »*» (1,3)) % 10).substr: *-1
 }

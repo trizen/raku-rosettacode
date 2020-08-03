@@ -4,7 +4,7 @@
 
 Here is a straightforward, naive implementation. It works but takes ages.
 
-```raku
+```perl
 sub is-narcissistic(Int $n) { $n == [+] $n.comb »**» $n.chars }
  
 for 0 .. * {
@@ -41,7 +41,7 @@ Here the program was interrupted but if you're patient enough you'll see all the
 
 Here's a faster version that precalculates the values for base 1000 digits:
 
-```raku
+```perl
 sub kigits($n) {
     my int $i = $n;
     my int $b = 1000;

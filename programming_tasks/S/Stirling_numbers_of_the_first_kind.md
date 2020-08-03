@@ -2,7 +2,7 @@
 
 # [Stirling numbers of the first kind][1]
 
-```raku
+```perl
 sub Stirling1 (Int \n, Int \k) {
     return 1 unless n || k;
     return 0 unless n && k;

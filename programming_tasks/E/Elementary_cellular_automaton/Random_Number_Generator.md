@@ -2,7 +2,7 @@
 
 # [Elementary cellular automaton/Random Number Generator][1]
 
-```raku
+```perl
 class Automaton {
     has $.rule;
     has @.cells;

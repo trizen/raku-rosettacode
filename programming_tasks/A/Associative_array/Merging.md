@@ -4,7 +4,7 @@
 
 I must say I somewhat disagree with the terminology. The requested operation is an update not a merge. Demonstrate both an update and a merge. Associative arrays are commonly called hashes in Perl 6.
 
-```raku
+```perl
 # Show original hashes
 say my %base   = :name('Rocket Skates'), :price<12.75>, :color<yellow>;
 say my %update = :price<15.25>, :color<red>, :year<1974>;

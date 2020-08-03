@@ -4,7 +4,7 @@
 
 You can [interpolate strings as variable names](https://docs.perl6.org/language/packages#Interpolating_into_names):
 
-```raku
+```perl
 our $our-var = 'The our var';
 my  $my-var  = 'The my var';
  

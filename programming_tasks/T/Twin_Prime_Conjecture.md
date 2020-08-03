@@ -2,7 +2,7 @@
 
 # [Twin Prime Conjecture][1]
 
-```raku
+```perl
 use Lingua::EN::Numbers;
  
 use Math::Primesieve;

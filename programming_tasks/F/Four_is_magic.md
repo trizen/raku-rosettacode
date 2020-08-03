@@ -4,7 +4,7 @@
 
 Lingua::EN::Numbers::Cardinal module available from the [Perl 6 ecosystem](https://modules.perl6.org/search/?q=Lingua%3A%3AEN%3A%3ANumbers%3A%3ACardinal).
 
-```raku
+```perl
 use Lingua::EN::Numbers::Cardinal;
  
 sub card ($n) { cardinal($n).subst(/','/, '', :g) }

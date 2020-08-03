@@ -2,7 +2,7 @@
 
 # [Elliptic curve arithmetic][1]
 
-```raku
+```perl
 unit module EC;
 our ($A, $B) = (0, 7);
  

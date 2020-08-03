@@ -2,7 +2,7 @@
 
 # [Color wheel][1]
 
-```raku
+```perl
 use Image::PNG::Portable;
  
 my ($w, $h) = 300, 300;

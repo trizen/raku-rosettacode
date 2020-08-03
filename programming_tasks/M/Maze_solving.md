@@ -4,7 +4,7 @@
 
 (Includes maze generation code.)
 
-```raku
+```perl
 constant mapping = :OPEN(' '),
 		      :N< ╵ >,
 		      :E< ╶ >,

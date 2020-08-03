@@ -2,7 +2,7 @@
 
 # [Count the coins][1]
 
-```raku
+```perl
 # Recursive (cached)
 sub change-r($amount, @coins) {
     my @cache = $[1 xx @coins];

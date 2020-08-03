@@ -4,7 +4,7 @@
 
 We'll define subroutines implementing the LCG algorithm for each version. We'll make them return a lazy list.
 
-```raku
+```perl
 constant modulus = 2**31;
 sub bsd  {
     $^seed, ( 1103515245 * * + 12345 ) % modulus ... *

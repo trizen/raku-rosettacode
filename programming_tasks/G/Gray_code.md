@@ -2,7 +2,7 @@
 
 # [Gray code][1]
 
-```raku
+```perl
 sub gray_encode ( Int $n --> Int ) {
     return $n +^ ( $n +> 1 );
 }

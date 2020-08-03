@@ -4,7 +4,7 @@
 
 YahooSearch.pm6:
 
-```raku
+```perl
  
 use Gumbo;
 use LWP::Simple;

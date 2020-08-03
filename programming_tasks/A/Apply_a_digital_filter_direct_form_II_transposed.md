@@ -2,7 +2,7 @@
 
 # [Apply a digital filter (direct form II transposed)][1]
 
-```raku
+```perl
 sub TDF-II-filter ( @signal, @a, @b ) {
     my @out = 0 xx @signal;
     for ^@signal -> $i {

@@ -8,7 +8,7 @@ Writing the conditional blocks is no problem, since there's no distinction betwe
 
 This solution is hygienic in both lexical and dynamic variables; the only caveat is that the user's program must avoid the dynamic variable being used by the implementation of conditional, `$*IF2`. This does not seem like a great hardship. (The conditionals will also nest correctly since that's how dynamic variables behave.)
 
-```raku
+```perl
 my &if2  = -> \a, \b, &x { my @*IF2 = ?a,?b; x }
  
 my &if-both    = -> &x { x if @*IF2 eq (True,True)  }

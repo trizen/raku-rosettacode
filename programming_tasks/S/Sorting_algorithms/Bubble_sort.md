@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Bubble sort][1]
 
-```raku
+```perl
 sub bubble_sort (@a) {
     for ^@a -> $i {
         for $i ^..^ @a -> $j {

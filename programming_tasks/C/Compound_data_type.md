@@ -4,7 +4,7 @@
 
 ### Array
 
-```raku
+```perl
 my @point = 3, 8;
  
 my Int @point = 3, 8; # or constrain to integer elements
@@ -13,7 +13,7 @@ my Int @point = 3, 8; # or constrain to integer elements
 
 ### Hash
 
-```raku
+```perl
 my %point = x => 3, y => 8;
  
 my Int %point = x => 3, y => 8; # or constrain the hash to have integer values
@@ -22,7 +22,7 @@ my Int %point = x => 3, y => 8; # or constrain the hash to have integer values
 
 ### Class instance
 
-```raku
+```perl
 class Point { has $.x is rw; has $.y is rw; }
 my Point $point .= new(x => 3, y => 8);
 ```
@@ -30,7 +30,7 @@ my Point $point .= new(x => 3, y => 8);
 
 ### [Set](http://design.perl6.org/S32/Containers.html#Set)
 
-```raku
+```perl
 my $s1 = set <a b c d>; # order is not preserved
 my $s2 = set <c d e f>;
 say $s1 (&) $s2; # OUTPUT«set(c, e)»

@@ -4,7 +4,7 @@
 
 The following is specced to work, but implementation of shaped arrays is not quite complete.
 
-```raku
+```perl
 enum T_RS232 <
     carrier_detect
     received_data
@@ -25,7 +25,7 @@ my bit @signal[T_RS232];
 
 In the absence of shaped arrays, you can do the usual bit-twiddling tricks on a native integer of sufficient size. (Such an integer could presumably be mapped directly to a device register.)
 
-```raku
+```perl
 $signal +|= 1 +< signal_ground;
 ```
 

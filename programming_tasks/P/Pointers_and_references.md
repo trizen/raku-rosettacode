@@ -4,7 +4,7 @@
 
 In Perl 6 all non-native values are boxed and accessed via implicit references. (This is like Java or Python, but unlike C or Perl 5, which use explicit referencing and dereferencing.) Variables are references to containers that can contain references to other values. Basic binding (aliasing) of references to names is supported via the `:=` operator, while assignment to mutable containers implies a dereference from the name to the container, followed by copying of values rather than by duplicating pointers. (Assignment of a bare object reference copies the reference as if it were a value, but the receiving container automatically dereferences as necessary, so to all appearances you are putting the object itself into the destination rather than its reference, and we just think the object can be in more than one place at the same time.)
 
-```raku
+```perl
 my $foo = 42;    # place a reference to 42 in $foo's item container
 $foo++;          # deref $foo name, then increment the container's contents to 43
 $foo.say;        # deref $foo name, then $foo's container, and call a method on 43.

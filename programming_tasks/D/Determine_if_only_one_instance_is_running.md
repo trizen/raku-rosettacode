@@ -4,7 +4,7 @@
 
 An old-school Unix solution, none the worse for the wear:
 
-```raku
+```perl
 my $name = $*PROGRAM-NAME;
 my $pid = $*PID;
  

@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Heapsort][1]
 
-```raku
+```perl
 sub heap_sort ( @list ) {
     for ( 0 ..^ +@list div 2 ).reverse -> $start {
         _sift_down $start, @list.end, @list;

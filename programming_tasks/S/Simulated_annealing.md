@@ -2,7 +2,7 @@
 
 # [Simulated annealing][1]
 
-```raku
+```perl
 # simulation setup
 my \cities = 100;  # number of cities
 my \kmax   = 1e6;  # iterations to run

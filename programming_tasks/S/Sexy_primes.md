@@ -2,7 +2,7 @@
 
 # [Sexy primes][1]
 
-```raku
+```perl
 use Math::Primesieve;
 my $sieve = Math::Primesieve.new;
  

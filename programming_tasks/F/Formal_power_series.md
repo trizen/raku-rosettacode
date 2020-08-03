@@ -2,7 +2,7 @@
 
 # [Formal power series][1]
 
-```raku
+```perl
 class DerFPS { ... }
 class IntFPS { ... }
  

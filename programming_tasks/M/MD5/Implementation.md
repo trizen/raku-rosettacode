@@ -2,7 +2,7 @@
 
 # [MD5/Implementation][1]
 
-```raku
+```perl
 sub infix:<⊞>(uint32 $a, uint32 $b --> uint32) { ($a + $b) +& 0xffffffff }
 sub infix:«<<<»(uint32 $a, UInt $n --> uint32) { ($a +< $n) +& 0xffffffff +| ($a +> (32-$n)) }
  

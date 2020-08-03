@@ -4,7 +4,7 @@
 
 Straightforward implementation of the executioner's algorithm:
 
-```raku
+```perl
 sub Execute(@prisoner, $k) {
     until @prisoner == 1 {
 	@prisoner.=rotate($k - 1);

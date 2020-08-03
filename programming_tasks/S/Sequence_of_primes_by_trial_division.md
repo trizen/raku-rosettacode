@@ -4,7 +4,7 @@
 
 Here is a straightforward implementation of the naive algorithm.
 
-```raku
+```perl
 constant @primes = 2, 3, { first * %% none(@_), (@_[* - 1], * + 2 ... *) } ... *;
  
 say @primes[^100];

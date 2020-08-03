@@ -2,7 +2,7 @@
 
 # [Primes - allocate descendants to their ancestors][1]
 
-```raku
+```perl
 my $max = 99;
 my @primes = (2 .. $max).grep: *.is-prime;
 my %tree;

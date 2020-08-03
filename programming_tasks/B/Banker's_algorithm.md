@@ -5,7 +5,7 @@
 Based on the Python3 solution by Shubham Singh found
 [here](https://www.geeksforgeeks.org/program-bankers-algorithm-set-1-safety-algorithm/)
 
-```raku
+```perl
 my @avail = <3 1 1 2>;                        # Available instances of resource
 my @maxm  = <3 3 2 2>, <1 2 3 4>, <1 3 5 0>;  # Maximum resources that can be allocated to processes
 my @allot = <1 2 2 1>, <1 0 3 3>, <1 2 1 0>;  # Resources allocated to processes

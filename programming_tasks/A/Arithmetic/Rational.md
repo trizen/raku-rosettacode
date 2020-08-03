@@ -4,7 +4,7 @@
 
 Perl 6 supports rational arithmetic natively.
 
-```raku
+```perl
 for 2..2**19 -> $candidate {
     my $sum = 1 / $candidate;
     for 2 .. ceiling(sqrt($candidate)) -> $factor {
@@ -21,7 +21,7 @@ for 2..2**19 -> $candidate {
 
 Note also that ordinary decimal literals are stored as Rats, so the following loop always stops exactly on 10 despite 0.1 not being exactly representable in floating point:
 
-```raku
+```perl
 for 1.0, 1.1, 1.2 ... 10 { .say }
 ```
 

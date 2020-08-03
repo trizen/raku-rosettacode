@@ -2,7 +2,7 @@
 
 # [Brazilian numbers][1]
 
-```raku
+```perl
 multi is-Brazilian (Int $n where $n %% 2 && $n > 6) { True }
  
 multi is-Brazilian (Int $n) {

@@ -8,7 +8,7 @@ Here is quite a naive algorithm, probably ![image](https://rosettacode.org/mw/in
 
 The display code is a variant of the [visualize a tree](https://rosettacode.org/wiki/Visualize_a_tree#Perl6) task code.
 
-```raku
+```perl
 multi suffix-tree(Str $str) { suffix-tree flat map &flip, [\~] $str.flip.comb }
 multi suffix-tree(@a) {
     hash

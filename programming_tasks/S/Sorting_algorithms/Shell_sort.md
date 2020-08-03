@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Shell sort][1]
 
-```raku
+```perl
 sub shell_sort ( @a is copy ) {
     loop ( my $gap = (@a/2).round; $gap > 0; $gap = ( $gap * 5 / 11 ).round ) {
         for $gap .. @a.end -> $i {

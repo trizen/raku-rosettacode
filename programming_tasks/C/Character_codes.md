@@ -4,7 +4,7 @@
 
 Both Perl 5 and Perl 6 have good Unicode support. Note that even characters outside the BMP are considered single characters, not a surrogate pair. Here we use the character "four dragons" (with 64 strokes!) to demonstrate that.
 
-```raku
+```perl
 say ord('𪚥').fmt('0x%04x');
 say chr(0x2a6a5);
 ```

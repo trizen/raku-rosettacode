@@ -2,7 +2,7 @@
 
 # [Sequence of non-squares][1]
 
-```raku
+```perl
 sub nth-term (Int $n) { $n + round sqrt $n }
  
 # Print the first 22 values of the sequence

@@ -2,7 +2,7 @@
 
 # [Rate counter][1]
 
-```raku
+```perl
 sub runrate($N where $N > 0, &todo) {
     my $n = $N;
  

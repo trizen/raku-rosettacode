@@ -8,7 +8,7 @@
 
 2 - 6 takes a few seconds, 7 &amp; 8 take a few minutes; I got tired of waiting for 9.
 
-```raku
+```perl
 sub super ($d) {
     my $run = $d x $d;
     "First 10 super-{$d} numbers:\n{ (^∞ .grep: ($d * * ** $d).Str.contains($run) )[^10]}\n"
@@ -52,7 +52,7 @@ Since waiting can be tiresome, make things faster with the `race` concurrency fu
 
 Concurrency makes little difference for d &lt; 6, but the benefits accrue rapidly after that (greater than 10-fold speed-up for d = 8, with an 8-core CPU). However, in the end, you'll still have to wait a quite bit or the super-9 values.
 
-```raku
+```perl
 sub super-d ($d,$max) {
     my $max-plus = $max + floor 2*$max/$d;
     my @super[2*$max-plus];

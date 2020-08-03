@@ -4,7 +4,7 @@
 
 Uses the same library as Perl, so comes with the same caveats.
 
-```raku
+```perl
 use Math::Polynomial::Cyclotomic:from<Perl5> <cyclo_poly_iterate cyclo_poly>;
  
 say 'First 30 cyclotomic polynomials:';

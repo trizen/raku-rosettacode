@@ -16,7 +16,7 @@ Third, together with the use of Unicode, we are emphasizing the social contract 
 
 Finally, writing in an [SSA style](https://en.wikipedia.org/wiki/Static_single_assignment_form) tends to help the optimizer.
 
-```raku
+```perl
 class Circle {
    has $.x;
    has $.y;

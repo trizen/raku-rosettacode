@@ -2,7 +2,7 @@
 
 # [Move-to-front algorithm][1]
 
-```raku
+```perl
 sub encode ( Str $word ) {
     my @sym = 'a' .. 'z';
     gather for $word.comb -> $c {

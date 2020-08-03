@@ -2,6 +2,6 @@
 
 # [Hello world/Text][1]
 
-```raku
+```perl
 say 'Hello world!';
 ```

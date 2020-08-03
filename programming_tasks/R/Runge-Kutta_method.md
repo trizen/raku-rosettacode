@@ -2,7 +2,7 @@
 
 # [Runge-Kutta method][1]
 
-```raku
+```perl
 sub runge-kutta(&yp) {
     return -> \t, \y, \δt {
         my $a = δt * yp( t, y );

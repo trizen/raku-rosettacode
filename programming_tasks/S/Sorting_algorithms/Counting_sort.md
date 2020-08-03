@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Counting sort][1]
 
-```raku
+```perl
 sub counting-sort (@ints) {
     my $off = @ints.min;
     (my @counts)[$_ - $off]++ for @ints;

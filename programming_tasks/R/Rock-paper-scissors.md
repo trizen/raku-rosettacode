@@ -8,7 +8,7 @@ This is slightly more complicated than it could be; it is a general case framewo
 
 Here is standard Rock-Paper-Scissors.
 
-```raku
+```perl
 my %vs = (
     options => [<Rock Paper Scissors>],
     ro => {
@@ -78,7 +78,7 @@ Tie. - (W:0 L:3 T:2)
 
 Here is example output from the same code only with a different&#160;%vs data structure implementing [Rock-Paper-Scissors-Lizard-Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
 
-```raku
+```perl
 my %vs = (
     options => [<Rock Paper Scissors Lizard Spock>],
     ro => {

@@ -2,7 +2,7 @@
 
 # [CUSIP][1]
 
-```raku
+```perl
 sub divmod ($v, $r) { $v div $r, $v mod $r }
 my %chr = (flat 0..9, 'A'..'Z', <* @ #>) Z=> 0..*;
  

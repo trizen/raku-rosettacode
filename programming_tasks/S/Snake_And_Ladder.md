@@ -4,7 +4,7 @@
 
 Snakes and ladders is entirely chance based, so human interaction is not really required. This version allows up to one human player against any number of computer players and asks for input... but doesn't really *need* or even *use* it. I didn't bother to implement a graphical interface.
 
-```raku
+```perl
         # board layout
 my %snl =  4, 14,  9, 31, 17,  7, 20, 38, 28, 84, 40, 59, 51, 67, 54, 34,
           62, 19, 63, 81, 64, 60, 71, 91, 87, 24, 93, 73, 95, 75, 99, 78;

@@ -2,7 +2,7 @@
 
 # [QR decomposition][1]
 
-```raku
+```perl
 # sub householder translated from https://codereview.stackexchange.com/questions/120978/householder-transformation
  
 use v6;

@@ -2,7 +2,7 @@
 
 # [Kronecker product][1]
 
-```raku
+```perl
 sub kronecker_product ( @a, @b ) {
     return (@a X @b).map: { .[0].list X* .[1].list };
 }

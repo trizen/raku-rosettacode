@@ -2,7 +2,7 @@
 
 # [Chaocipher][1]
 
-```raku
+```perl
 my @left;
 my @right;
  

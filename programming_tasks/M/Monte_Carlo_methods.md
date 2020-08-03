@@ -4,7 +4,7 @@
 
 We'll consider the upper-right quarter of the unitary disk centered at the origin. Its area is ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=1bced3de59030a7be8a5b3b67a2a691a&mode=mathml).
 
-```raku
+```perl
 my @random_distances = ([+] rand**2 xx 2) xx *;
  
 sub approximate_pi(Int $n) {
@@ -28,7 +28,7 @@ Monte-Carlo π approximation:
 
 We don't really need to write a function, though. A lazy list would do:
 
-```raku
+```perl
 my @pi = ([\+] 4 * (1 > [+] rand**2 xx 2) xx *) Z/ 1 .. *;
 say @pi[10, 1000, 10_000];
 ```

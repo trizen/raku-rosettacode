@@ -4,7 +4,7 @@
 
 We'll generate a SVG image.
 
-```raku
+```perl
 class Square {
     has Complex ($.position, $.edge);
     method size { $!edge.abs }

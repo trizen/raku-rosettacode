@@ -8,7 +8,7 @@
 
 Reference: Used [this](https://www.movable-type.co.uk/scripts/geohash.html) for verification.
 
-```raku
+```perl
 #20200615 Raku programming solution
  
 use Geo::Hash;
@@ -45,7 +45,7 @@ Alternately, a roll-your-own version that will work with any Real coordinate, no
 The geo-decode routine returns the range in which the actual value will be found; converted here to the mid-point with the interval size. Probably better
 to specify an odd precision so the error interval ends up the same for both latitude and longitude.
 
-```raku
+```perl
 my @Geo32 = <0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z>;
  
 sub geo-encode ( Rat(Real) $latitude, Rat(Real) $longitude, Int $precision = 9 ) {

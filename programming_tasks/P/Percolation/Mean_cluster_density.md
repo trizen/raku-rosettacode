@@ -2,7 +2,7 @@
 
 # [Percolation/Mean cluster density][1]
 
-```raku
+```perl
 my @perc;
 my $fill = 'x';
  

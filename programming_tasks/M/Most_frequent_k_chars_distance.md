@@ -12,7 +12,7 @@ The "most frequent k characters" hashing function is straightforward enough to i
 
 Maybe I am too hasty though. Lets give it a try. Implement a MFKC routine and run an assortment of words through it to get a feel for how it hashes different words.
 
-```raku
+```perl
 # Fairly straightforward implementation, actually returns a list of pairs
 # which can be joined to make a string or manipulated further.
  

@@ -2,7 +2,7 @@
 
 # [HTTP][1]
 
-```raku
+```perl
  
 use v6;
 # Using LWP::Simple from: git://github.com/cosimo/perl6-lwp-simple.git
@@ -15,7 +15,7 @@ print LWP::Simple.get("http://www.rosettacode.org");
 
 or, without LWP::Simple:
 
-```raku
+```perl
  
 use v6;
  

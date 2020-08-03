@@ -2,7 +2,7 @@
 
 # [Loops/Break][1]
 
-```raku
+```perl
 loop {
     say my $n = (0..19).pick;
     last if $n == 10;

@@ -2,6 +2,6 @@
 
 # [Formatted numeric output][1]
 
-```raku
+```perl
 say 7.125.fmt('%09.3f');
 ```

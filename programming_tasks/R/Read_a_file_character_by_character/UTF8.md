@@ -8,14 +8,14 @@ Perl 6 has a built in method .getc to get a single character from an open file h
 
 To read a single character at a time from the Standard Input terminal; $\*IN in Perl 6:
 
-```raku
+```perl
 .say while defined $_ = $*IN.getc;
 ```
 
 
 Or, from a file:
 
-```raku
+```perl
 my $filename = 'whatever';
  
 my $in = open( $filename, :r ) or die "$!\n";

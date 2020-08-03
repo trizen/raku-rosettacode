@@ -2,7 +2,7 @@
 
 # [Ethiopian multiplication][1]
 
-```raku
+```perl
 sub halve  (Int $n is rw)    { $n div= 2 }
 sub double (Int $n is rw)    { $n *= 2 }
 sub even   (Int $n --> Bool) { $n %% 2 }
@@ -28,7 +28,7 @@ say ethiopic-mult(17,34);
 
 More succinctly using implicit typing, primed lambdas, and an infinite loop:
 
-```raku
+```perl
 sub ethiopic-mult {
     my &halve  = * div= 2;
     my &double = * *= 2;
@@ -49,7 +49,7 @@ say ethiopic-mult(17,34);
 
 More succinctly still, using a pure functional approach (reductions, mappings, lazy infinite sequences):
 
-```raku
+```perl
 sub halve  { $^n div 2 }
 sub double { $^n * 2   }
 sub even   { $^n %% 2  }

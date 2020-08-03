@@ -4,7 +4,7 @@
 
 The built-in `polymod` method (which is a generalization of the `divmod` function known from other languages), is a perfect match for a task like this:
 
-```raku
+```perl
 sub compound-duration ($seconds) {
     ($seconds.polymod(60, 60, 24, 7) Z <sec min hr d wk>)
     .grep(*[0]).reverse.join(", ")

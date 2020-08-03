@@ -2,7 +2,7 @@
 
 # [Percentage difference between images][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 use v6;

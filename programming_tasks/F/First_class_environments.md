@@ -4,7 +4,7 @@
 
 Fairly straightforward. Set up an array of hashes containing the current values and iteration counts then pass each hash in turn with a code reference to a routine to calculate the next iteration.
 
-```raku
+```perl
 my $calculator = sub ($n is rw) {
     return ($n == 1) ?? 1 !! $n %% 2 ?? $n div 2 !! $n * 3 + 1
 };

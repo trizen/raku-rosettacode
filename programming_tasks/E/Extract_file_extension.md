@@ -4,7 +4,7 @@
 
 The built-in `IO::Path` class has an `.extension` method:
 
-```raku
+```perl
 say $path.IO.extension;
 ```
 
@@ -17,7 +17,7 @@ Contrary to this task's specification, it
 
 Here's a custom implementation which does satisfy the task requirements:
 
-```raku
+```perl
 sub extension (Str $path --> Str) {
     $path.match(/:i ['.' <[a..z0..9]>+]? $ /).Str
 }

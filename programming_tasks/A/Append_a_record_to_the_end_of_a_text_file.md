@@ -4,7 +4,7 @@
 
 This is kind of silly as it takes a string, converts it to a record, and then instantly converts it back to a string to write out to a file. Most of the "record handling" code is just demonstrating a possible way to store records in memory. It really has nothing to do with appending a string to a file.
 
-```raku
+```perl
 class record {
     has $.name;
     has $.password;

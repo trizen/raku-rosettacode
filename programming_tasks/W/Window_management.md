@@ -4,7 +4,7 @@
 
 This are generic window handling routines. They work for any window managed by the X11 display server, not just windows created by the program.
 
-```raku
+```perl
 use X11::libxdo;
  
 my $xdo = Xdo.new;

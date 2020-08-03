@@ -2,7 +2,7 @@
 
 # [Forward difference][1]
 
-```raku
+```perl
 sub dif(@array [$, *@tail]) { @tail Z- @array }
 sub difn($array, $n) { ($array, &dif ... *)[$n] }
 ```

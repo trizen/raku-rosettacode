@@ -4,7 +4,7 @@
 
 ### Basic method calls
 
-```raku
+```perl
 class Thing { 
   method regular-example() { say 'I haz a method' }
  
@@ -41,7 +41,7 @@ multi-example $thing: 42;
 
 The `.` operator can be decorated with meta-operators.
 
-```raku
+```perl
  
 my @array = <a z c d y>;
 @array .= sort;  # short for @array = @array.sort;
@@ -57,7 +57,7 @@ say @array».uc;  # uppercase all the strings: A C D Y Z
 
 A method that is not in a class can be called by using the `&` sigil explicitly.
 
-```raku
+```perl
  
 my $object = "a string";  # Everything is an object.
 my method example-method {

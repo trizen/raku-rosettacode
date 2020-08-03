@@ -2,7 +2,7 @@
 
 # [Stern-Brocot sequence][1]
 
-```raku
+```perl
 constant @Stern-Brocot = 1, 1, {
     |(@_[$_ - 1] + @_[$_], @_[$_]) given ++$
 } ... *;

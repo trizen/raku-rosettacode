@@ -2,7 +2,7 @@
 
 # [Sieve of Eratosthenes][1]
 
-```raku
+```perl
 sub sieve( Int $limit ) {
     my @is-prime = False, False, slip True xx $limit - 1;
  
@@ -26,7 +26,7 @@ sub sieve( Int $limit ) {
 
 More or less the same as the first Python example:
 
-```raku
+```perl
 sub eratsieve($n) {
     # Requires n(1 - 1/(log(n-1))) storage
     my $multiples = set();

@@ -2,7 +2,7 @@
 
 # [Casting out nines][1]
 
-```raku
+```perl
 sub cast-out(\BASE = 10, \MIN = 1, \MAX = BASE**2 - 1) {
   my \B9 = BASE - 1;
   my @ran = ($_ if $_ % B9 == $_**2 % B9 for ^B9);

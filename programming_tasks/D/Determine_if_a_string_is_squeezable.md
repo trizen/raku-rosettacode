@@ -2,7 +2,7 @@
 
 # [Determine if a string is squeezable][1]
 
-```raku
+```perl
 map {
     my $squeeze = $^phrase;
     sink $^reg;

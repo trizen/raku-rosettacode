@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Gnome sort][1]
 
-```raku
+```perl
 sub gnome_sort (@a) {
     my ($i, $j) = 1, 2;
     while $i < @a {

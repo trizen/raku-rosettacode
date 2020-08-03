@@ -4,7 +4,7 @@
 
 Meh. The rules leave out some corner cases (see Steve) but what the heck, technically correct is the best kind of correct.
 
-```raku
+```perl
 sub mangle ($name, $initial) {
     my $fl = $name.lc.substr(0,1);
     $fl ~~ /<[aeiou]>/

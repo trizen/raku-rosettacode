@@ -8,7 +8,7 @@ Traditionally these are know as [throbbers](http://en.wikipedia.org/wiki/throbbe
 
 This implementation will accept an array of elements to use as its throbber frames, or as a scrolling marquee and optionally a delay before it returns the next element.
 
-```raku
+```perl
 class throbber {
     has @.frames;
     has $.delay is rw = 0;

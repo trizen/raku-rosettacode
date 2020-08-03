@@ -2,7 +2,7 @@
 
 # [Terminal control/Hiding the cursor][1]
 
-```raku
+```perl
  
 say 'Hiding the cursor for 5 seconds...';
 run 'tput', 'civis';

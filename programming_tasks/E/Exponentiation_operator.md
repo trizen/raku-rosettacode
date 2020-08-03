@@ -2,7 +2,7 @@
 
 # [Exponentiation operator][1]
 
-```raku
+```perl
 subset Natural of Int where { $^n >= 0 }
  
 multi pow (0,     0)            { fail '0**0 is undefined' }

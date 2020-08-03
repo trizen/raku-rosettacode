@@ -2,7 +2,7 @@
 
 # [Mouse position][1]
 
-```raku
+```perl
 use java::awt::MouseInfo:from<java>;
  
 given MouseInfo.getPointerInfo.getLocation {

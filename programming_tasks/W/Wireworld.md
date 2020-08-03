@@ -2,7 +2,7 @@
 
 # [Wireworld][1]
 
-```raku
+```perl
 class Wireworld {
     has @.line;
     method height () { @!line.elems }

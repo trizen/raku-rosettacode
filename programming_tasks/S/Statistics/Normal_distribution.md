@@ -2,7 +2,7 @@
 
 # [Statistics/Normal distribution][1]
 
-```raku
+```perl
 sub normdist ($m, $σ) {
     my $r = sqrt -2 * log rand;
     my $Θ = τ * rand;

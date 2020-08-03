@@ -2,7 +2,7 @@
 
 # [Constrained random points on a circle][1]
 
-```raku
+```perl
 my @range = -15..16;
  
 my @points = gather for @range X @range -> ($x, $y) {
@@ -20,7 +20,7 @@ for @range X @range -> ($x, $y) { %matrix{$y}{$x} = ' ' }
 
 Turning that program completely inside-out and reducing to a single statement with a single non-parameter variable, we get this version, which also works:
 
-```raku
+```perl
 (say ~.map: { $_ // ' ' } for my @matrix) given do
     -> [$x, $y] { @matrix[$x][$y] = '*' } for pick 100, do
         for ^32 X ^32 -> ($x, $y) {

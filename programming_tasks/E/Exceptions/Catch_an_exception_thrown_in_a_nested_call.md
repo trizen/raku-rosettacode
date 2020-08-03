@@ -2,7 +2,7 @@
 
 # [Exceptions/Catch an exception thrown in a nested call][1]
 
-```raku
+```perl
 sub foo() {
     for 0..1 -> $i {
         bar $i;

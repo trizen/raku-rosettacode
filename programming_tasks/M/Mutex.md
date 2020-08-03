@@ -2,7 +2,7 @@
 
 # [Mutex][1]
 
-```raku
+```perl
 my $lock = Lock.new;
  
 $lock.protect: { your-ad-here() }

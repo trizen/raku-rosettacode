@@ -4,7 +4,7 @@
 
 Using named parameters:
 
-```raku
+```perl
 method sorttable(:$column = 0, :$reverse, :&ordering = &infix:<cmp>) {
     my @result = self»[$column].sort: &ordering;
     return $reverse ?? @result.reverse !! @result;
@@ -14,7 +14,7 @@ method sorttable(:$column = 0, :$reverse, :&ordering = &infix:<cmp>) {
 
 Using optional positional parameters:
 
-```raku
+```perl
 method sorttable-pos($column = 0, $reverse?, &ordering = &infix:<cmp>) {
     my @result = self»[$column].sort: &ordering;
     return $reverse ?? @result.reverse !! @result;

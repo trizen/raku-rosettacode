@@ -2,7 +2,7 @@
 
 # [RIPEMD-160][1]
 
-```raku
+```perl
 =for CREDITS
 Crypto-JS v2.0.0
 http:#code.google.com/p/crypto-js/

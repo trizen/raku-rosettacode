@@ -4,7 +4,7 @@
 
 Note that Perl 6 does not attempt to be a printer driver. This example allows users to specify the dpi and paper size, then generates an image and passes it to the default printer. Defaults to 300 dpi and US letter paper.
 
-```raku
+```perl
 unit sub MAIN ($dpi = 300, $size = 'letter');
  
 my $filename = './Color-pinstripe-printer-perl6.png';

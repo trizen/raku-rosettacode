@@ -2,7 +2,7 @@
 
 # [Fast Fourier transform][1]
 
-```raku
+```perl
 sub fft {
     return @_ if @_ == 1;
     my @evn = fft( @_[0, 2 ... *] );
@@ -29,7 +29,7 @@ sub fft {
 
 For the fun of it, here is a purely functional version:
 
-```raku
+```perl
 sub fft {
     @_ == 1 ?? @_ !!
     fft(@_[0,2...*]) «+«
@@ -40,7 +40,7 @@ sub fft {
 
 This particular version is numerically inaccurate though, because of the pi approximation. It is possible to fix it with the 'cisPi' function available in the TrigPi module:
 
-```raku
+```perl
 sub fft {
     use TrigPi;
     @_ == 1 ?? @_ !!

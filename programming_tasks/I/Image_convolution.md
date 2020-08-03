@@ -2,7 +2,7 @@
 
 # [Image convolution][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 # Reference:

@@ -8,7 +8,7 @@ This [SO answer](https://stackoverflow.com/a/50771971/3386748), by JJ Merelo, ex
 
 query.p6
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 sub MAIN (Int :l(:len(:$length))) {

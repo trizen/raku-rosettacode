@@ -4,7 +4,7 @@
 
 Slightly modified from an example provided with the `Audio::PortAudio` module distribution.
 
-```raku
+```perl
 use Audio::PortAudio;
 use Audio::Sndfile;
  

@@ -2,6 +2,6 @@
 
 # [Terminal control/Ringing the terminal bell][1]
 
-```raku
+```perl
 print 7.chr;
 ```

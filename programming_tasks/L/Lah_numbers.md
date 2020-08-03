@@ -2,7 +2,7 @@
 
 # [Lah numbers][1]
 
-```raku
+```perl
 constant @factorial = 1, |[\*] 1..*;
  
 sub Lah (Int \n, Int \k) {

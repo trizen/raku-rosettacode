@@ -16,7 +16,7 @@ Line 3: Subscripting with a closure automatically passes the size of the dimensi
 
 Line 4: Print each line of the array.
 
-```raku
+```perl
 my ($major,$minor) = prompt("Dimensions? ").comb(/\d+/);
 my @array = [ '@' xx $minor ] xx $major;
 @array[ *.rand ][ *.rand ] = ' ';
@@ -40,7 +40,7 @@ Dimensions? 5x35
 The most recent versions of Rakudo have preliminary support for 'shaped arrays'. Natively shaped arrays are a flexible feature for declaring typed, potentially multi-dimensional arrays, potentially with pre-defined
 dimensions. They will make memory-efficient matrix storage and matrix operations possible.
 
-```raku
+```perl
 my ($major,$minor) = +«prompt("Dimensions? ").comb(/\d+/);
 my Int @array[$major;$minor] = (7 xx $minor ) xx $major;
 @array[$major div 2;$minor div 2] = 42;

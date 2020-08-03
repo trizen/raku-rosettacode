@@ -4,7 +4,7 @@
 
 This solution uses grammars and actions to parse the given file, the `Bag` for tallying up occurrences of each possible thing we're looking for ("ie", "ei", "cie", and "cei"), and junctions to determine the plausibility of a phrase from the subphrases. Note that a version of rakudo newer than the January 2014 compiler or Star releases is needed, as this code relies on a recent bugfix to the `make` function.
 
-```raku
+```perl
 grammar CollectWords {
     token TOP {
         [^^ <word> $$ \n?]+
@@ -108,7 +108,7 @@ Note that within the original text file, a tab character was erroneously replace
 
 This solution requires just a few modifications to the grammar and actions from the non-stretch goal.
 
-```raku
+```perl
 grammar CollectWords {
     token TOP {
         ^^ \t Word \t PoS \t Freq $$ \n

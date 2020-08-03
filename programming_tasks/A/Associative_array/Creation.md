@@ -4,7 +4,7 @@
 
 The fatarrow, `=>`, is no longer just a quoting comma; it now constructs a `Pair` object. But you can still define a hash with an ordinary list of even length.
 
-```raku
+```perl
 my %h1 = key1 => 'val1', 'key-2' => 2, three => -238.83, 4 => 'val3';
 my %h2 = 'key1', 'val1', 'key-2', 2, 'three', -238.83, 4, 'val3';
  

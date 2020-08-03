@@ -20,7 +20,7 @@ Phasers are blocks that are transparent to the normal control flow but that are 
 
 ### goto
 
-```raku
+```perl
 TOWN: goto TOWN;
 ```
 

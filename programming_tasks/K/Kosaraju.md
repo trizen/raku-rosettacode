@@ -8,7 +8,7 @@ Inspired by Python &amp; Kotlin entries.
 
 Accepts a hash of lists/arrays holding the vertex (name =&gt; (neighbors)) pairs. No longer limited to continuous, positive, integer vertex names.
 
-```raku
+```perl
 sub kosaraju (%k) {
     my %g = %k.keys.sort Z=> flat ^%k;
     my %h = %g.invert;

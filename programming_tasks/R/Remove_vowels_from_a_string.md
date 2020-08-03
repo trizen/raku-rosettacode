@@ -20,7 +20,7 @@ Spec is 'Remove vowels from a string'; nothing about what they should be replace
 
 Strings from [http://mylanguages.org/](http://mylanguages.org/). No affiliation, but it's a nice resource. (note: these are not all the same sentence but are all from the same paragraph. They frankly were picked based on their vowel load.)
 
-```raku
+```perl
 my @vowels = (0x20 .. 0x2fff).map: { .chr if .chr.samemark('x') ~~ m:i/<[aæeiıoœu]>/ }
  
 my $text = q:to/END/;

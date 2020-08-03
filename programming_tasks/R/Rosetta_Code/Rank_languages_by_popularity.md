@@ -8,7 +8,7 @@
 
 Note that this counts **only** the tasks. It does not include other non-task categories in the counts yielding more realistic, non-inflated numbers. Perl 6 is unicode aware and handles non-ASCII names natively. This does not attempt to 'unify' different language names that are the same behind the scenes as a result of Rosettacodes' capitalization peculiarities. (E.G. μC++, UC++ &amp; ΜC++)
 
-```raku
+```perl
 use HTTP::UserAgent;
 use URI::Escape;
 use JSON::Fast;
@@ -90,7 +90,7 @@ sub uri-query-string (*%fields) {
 
 Scraping the languages and categories pages. Perl 6 automatically handles Unicode names correctly.
 
-```raku
+```perl
 my $languages =  qx{wget -O - 'http://rosettacode.org/wiki/Category:Programming_Languages'};
 my $categories = qx{wget -O - 'http://www.rosettacode.org/mw/index.php?title=Special:Categories&limit=5000'};
  

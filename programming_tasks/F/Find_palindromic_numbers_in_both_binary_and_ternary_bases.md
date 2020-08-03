@@ -4,7 +4,7 @@
 
 Instead of searching for numbers that are palindromes in one base then checking the other, generate palindromic trinary numbers directly, then check to see if they are also binary palindromes (with additional simplifying constraints as noted in other entries). Outputs the list in decimal, binary and trinary.
 
-```raku
+```perl
 constant palindromes = 0, 1, |gather for 1 .. * -> $p {
     my $pal = $p.base(3);
     my $n = :3($pal ~ '1' ~ $pal.flip);

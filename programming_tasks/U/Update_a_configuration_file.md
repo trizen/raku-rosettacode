@@ -17,7 +17,7 @@ conf-update --/needspeeling --seedsremoved --numberofbananas=1024 --numberofstra
 
 The script:
 
-```raku
+```perl
 use File::Temp;
  
 my ($tmpfile, $out) = tempfile;

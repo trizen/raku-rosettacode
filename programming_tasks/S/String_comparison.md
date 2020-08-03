@@ -8,7 +8,7 @@ Perl 6 uses strong typing dynamically (and gradual typing statically), but norma
 
 String comparisons never do case folding because that's a very complicated subject in the modern world of Unicode. (You can explicitly apply an appropriate case-folding function to the arguments before doing the comparison, or for "equality" testing you can do matching with a case-insensitive regex, assuming Unicode's language-neutral case-folding rules are okay.)
 
-```raku
+```perl
 sub compare($a,$b) {
     my $A = "{$a.WHAT.^name} '$a'";
     my $B = "{$b.WHAT.^name} '$b'";

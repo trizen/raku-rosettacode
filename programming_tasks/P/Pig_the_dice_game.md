@@ -2,7 +2,7 @@
 
 # [Pig the dice game][1]
 
-```raku
+```perl
 constant DIE = 1..6;
  
 sub MAIN (Int :$players = 2, Int :$goal = 100) {

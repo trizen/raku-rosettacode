@@ -4,21 +4,21 @@
 
 Perl 6 has "interesting" values of undef, but unlike Perl 5, doesn't actually have a value named `undef`. Instead, several very different meanings of undefinedness are distinguished. First, `Nil` represents the absence of a value. The absence of a value cannot be stored. Instead, an attempt to assign `Nil` to a storage location causes that location to revert to its uninitialized state, however that is defined.
 
-```raku
+```perl
 my $x; $x = 42; $x = Nil; say $x.WHAT; # prints Any()
 ```
 
 
 This `Any` is an example of another kind of undefined type, which is a typed undef. All reference types have an undefined value representing the type. You can think of it as a sort of "type gluon" that carries a type charge without being a "real" particle. Hence there are undefined values whose names represent types, such as `Int`, `Num`, `Str`, and all the other object types in Perl 6. As generic objects, such undefined values carry the same metaobject pointer that a real object of the type would have, without being instantiated as a real object. As such, these types are in the type hierarchy. For example, `Int` derives from `Cool`, `Cool` derives from `Any`, and `Any` derives from `Mu`, the most general undefined object (akin to Object in other languages). Since they are real objects of the type, even if undefined, they can be used in reasoning about the type. You don't have to instantiate a `Method` object in order to ask if `Method` is derived from `Routine`, for instance.
 
-```raku
+```perl
 say Method ~~ Routine;  # Bool::True
 ```
 
 
 Variables default to `Any`, unless declared to be of another type:
 
-```raku
+```perl
 my     $x; say $x.WHAT; # Any()
 my Int $y; say $y.WHAT; # Int()
 my Str $z; say $z.WHAT; # Str()
@@ -27,7 +27,7 @@ my Str $z; say $z.WHAT; # Str()
 
 The user-interface for definedness are [type smilies](http://design.perl6.org/S12.html#Abstract_vs_Concrete_types) and the `with`-statement.
 
-```raku
+```perl
 my Int:D $i = 1; # if $i has to be defined you must provide a default value
 multi sub foo(Int:D $i where * != 0){ (0..100).roll / $i } # we will never divide by 0
 multi sub foo(Int:U $i){ die 'WELP! $i is undefined' } # because undefinedness is deadly
@@ -40,7 +40,7 @@ with 0 { say '0 may not divide but it is defined' }
 
 There are further some [operators](http://design.perl6.org/S03.html) for your convenience.
 
-```raku
+```perl
 my $is-defined = 1;
 my $ain't-defined = Any;
 my $doesn't-matter;

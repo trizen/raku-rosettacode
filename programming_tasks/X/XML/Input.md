@@ -2,7 +2,7 @@
 
 # [XML/Input][1]
 
-```raku
+```perl
 use XML;
  
 my $xml = from-xml '<Students>

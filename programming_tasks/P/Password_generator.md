@@ -2,7 +2,7 @@
 
 # [Password generator][1]
 
-```raku
+```perl
 my @chars =
   set('a' .. 'z'),
   set('A' .. 'Z'),

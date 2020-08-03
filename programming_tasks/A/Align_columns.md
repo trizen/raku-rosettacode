@@ -4,7 +4,7 @@
 
 Call with parameter left (default), center or right.
 
-```raku
+```perl
 my @lines = 
 q|Given$a$text$file$of$many$lines,$where$fields$within$a$line$
 are$delineated$by$a$single$'dollar'$character,$write$a$program
@@ -33,7 +33,7 @@ sub align($column_width, $word, $aligment = @*ARGS[0]) {
 
 Or a more functional version, called like `./align.p6 left input.txt`, which however only supports left and right alignment (not center):
 
-```raku
+```perl
 sub MAIN ($alignment where 'left'|'right', $file) {
     my @lines := $file.IO.lines.map(*.split('$').cache).cache;
     my @widths = roundrobin(|@lines).map(*».chars.max);

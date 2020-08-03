@@ -2,7 +2,7 @@
 
 # [A* search algorithm][1]
 
-```raku
+```perl
 # 20200427 Raku programming solution
  
 class AStarGraph {

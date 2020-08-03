@@ -4,7 +4,7 @@
 
 Uses exact arithmetic.
 
-```raku
+```perl
 sub f(\x) { x³ - 3*x² + 2*x }
  
 my $start = -1;

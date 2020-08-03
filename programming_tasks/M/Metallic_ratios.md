@@ -4,7 +4,7 @@
 
 Note: Arrays, Lists and Sequences are zero indexed in Perl 6.
 
-```raku
+```perl
 use Rat::Precise;
 use Lingua::EN::Numbers;
  

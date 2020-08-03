@@ -8,7 +8,7 @@ The .trans method in Perl 6 improves on Perl 5's tr/// by allowing multi-charact
 
 We build the full table during .new, which simplifies .encode and .decode.
 
-```raku
+```perl
 class Straddling_Checkerboard {
     has @!flat_board; # 10x3 stored as 30x1
     has $!plain2code; # full translation table, invertable

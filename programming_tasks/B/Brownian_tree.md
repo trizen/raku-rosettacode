@@ -4,7 +4,7 @@
 
 This solution spawns new Particles at a growing square border and displays the Tree every 50 particles and at the end using unicode UPPER/LOWER HALF BLOCK and FULL BLOCK.
 
-```raku
+```perl
 constant size = 100;
 constant particlenum = 1_000;
  

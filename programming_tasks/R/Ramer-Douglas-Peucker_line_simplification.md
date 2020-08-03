@@ -2,7 +2,7 @@
 
 # [Ramer-Douglas-Peucker line simplification][1]
 
-```raku
+```perl
 sub norm (*@list) { @list»².sum.sqrt }
  
 sub perpendicular-distance (@start, @end where @end !eqv @start, @point) {

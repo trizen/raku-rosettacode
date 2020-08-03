@@ -2,7 +2,7 @@
 
 # [French Republican calendar][1]
 
-```raku
+```perl
 use v6;
 constant @month_names = <
     Vendémiaire Brumaire Frimaire  Nivôse   Pluviôse  Ventôse

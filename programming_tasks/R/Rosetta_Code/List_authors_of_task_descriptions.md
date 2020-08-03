@@ -4,7 +4,7 @@
 
 The pseudocode above is no longer really useful as the page format has changed significantly since this task was written. Rather than checking **every** edit to see if it was a change to the task description, we'll just assume the user that created the page is the task author. This isn't 100% accurate; a very few pages got renamed and recreated by someone other than the original author without preserving the history, so they are misreported (15 Puzzle Game for instance,) but is as good as it is likely to get without extensive manual intervention. Subsequent edits to the task description are not credited. As it is, we must still make *thousands* of requests and pound the server pretty hard. Checking **every** edit would make the task several of orders of magnitude more abusive of the server (and my internet connection.)
 
-```raku
+```perl
 use HTTP::UserAgent;
 use URI::Escape;
 use JSON::Fast;

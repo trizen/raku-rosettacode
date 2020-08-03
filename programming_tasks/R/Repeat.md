@@ -2,7 +2,7 @@
 
 # [Repeat][1]
 
-```raku
+```perl
 sub repeat (&f, $n) { f() xx $n };
  
 sub example { say rand }

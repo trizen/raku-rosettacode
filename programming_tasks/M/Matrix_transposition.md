@@ -2,7 +2,7 @@
 
 # [Matrix transposition][1]
 
-```raku
+```perl
 # Transposition can be done with the reduced zip meta-operator
 # on list-of-lists data structures
  

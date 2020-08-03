@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Bead sort][1]
 
-```raku
+```perl
 # routine cribbed from List::Utils;
 sub transpose(@list is copy) {
     gather {
@@ -32,7 +32,7 @@ say beadsort(@list).perl;
 
 Here we simulate the dropping beads by using the `push` method.
 
-```raku
+```perl
 sub beadsort(*@list) {
     my @rods;
     for words ^«@list -> $x { @rods[$x].push(1) }

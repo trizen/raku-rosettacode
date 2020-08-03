@@ -6,7 +6,7 @@ Here we use the user as the audio device.
 Just read the output, leaving extra pauses where indicated
 by either whitespace or underscore.
 
-```raku
+```perl
 my %m = ' ', '_ _ ',
 |<
     !	---.

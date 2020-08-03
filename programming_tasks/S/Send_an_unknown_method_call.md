@@ -4,7 +4,7 @@
 
 Just for the fun of it, we'll mix in an anonymous role into an integer instead of defining a class.
 
-```raku
+```perl
 my $object = 42 but role { method add-me($x) { self + $x } }
 my $name = 'add-me';
 say $object."$name"(5);  # 47

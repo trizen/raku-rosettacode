@@ -4,7 +4,7 @@
 
 The library can be written as a module:
 
-```raku
+```perl
 module Hailstone {
     our sub hailstone($n) is export {
 	$n, { $_ %% 2 ?? $_ div 2 !! $_ * 3 + 1 } ... 1
@@ -31,7 +31,7 @@ hailstone(27) = 27 82 41 124 [...] 8 4 2 1
 
 It can then be used with a program such as:
 
-```raku
+```perl
 use Hailstone;
 my %score; %score{hailstone($_).elems}++ for 1 .. 100_000;
 say "Most common length is {.key}, occurring {.value} times." given max :by(*.value), %score;

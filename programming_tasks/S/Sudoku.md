@@ -2,7 +2,7 @@
 
 # [Sudoku][1]
 
-```raku
+```perl
 use v6;
 my @A = <
     5 3 0  0 2 4  7 0 0 
@@ -65,7 +65,7 @@ solve;
 
 This is an alternative solution that uses a more ellaborate set of choices instead of brute-forcing it.
 
-```raku
+```perl
 #!/usr/bin/env perl6
 use v6;
 #

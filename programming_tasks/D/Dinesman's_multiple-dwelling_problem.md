@@ -4,7 +4,7 @@
 
 ### By parsing the problem
 
-```raku
+```perl
 use MONKEY-SEE-NO-EVAL;
 
 sub parse_and_solve ($text) {
@@ -61,7 +61,7 @@ Baker=3 Cooper=2 Fletcher=4 Miller=5 Smith=1
 
 ### Simple solution
 
-```raku
+```perl
 # Contains only five floors. 5! = 120 permutations.
 for (flat (1..5).permutations) -> $b, $c, $f, $m, $s {
     say "Baker=$b Cooper=$c Fletcher=$f Miller=$m Smith=$s"

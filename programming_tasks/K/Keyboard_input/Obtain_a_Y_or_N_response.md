@@ -2,7 +2,7 @@
 
 # [Keyboard input/Obtain a Y or N response][1]
 
-```raku
+```perl
 my $TTY = open("/dev/tty");
  
 sub prompt-char($prompt) {

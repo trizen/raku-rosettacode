@@ -9,7 +9,7 @@ pass accumulated swaps down the call stack.
 
 This does generic comparisons, so it works on any ordered type, including numbers or strings.
 
-```raku
+```perl
 sub circlesort (@x, $beg, $end) {
     my $swaps = 0;
     if $beg < $end {

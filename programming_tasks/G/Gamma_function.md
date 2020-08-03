@@ -2,7 +2,7 @@
 
 # [Gamma function][1]
 
-```raku
+```perl
 sub Γ(\z) {
     constant g = 9;
     z < .5 ?? pi/ sin(pi * z) / Γ(1 - z) !!

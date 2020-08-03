@@ -9,7 +9,7 @@ This is an *incredibly* inefficient way of finding prime numbers.
 
 
 
-```raku
+```perl
 my \𝜑 = 0, |(1..*).hyper(:8degree).map: -> $t { +(^$t).grep: * gcd $t == 1 };
  
 printf "𝜑(%2d) = %3d %s\n", $_, 𝜑[$_], $_ - 𝜑[$_] - 1 ?? '' !! 'Prime' for 1 .. 25;

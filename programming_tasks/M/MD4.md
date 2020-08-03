@@ -2,7 +2,7 @@
 
 # [MD4][1]
 
-```raku
+```perl
 sub md4($str) {
     my @buf = $str.ords;
     my $buflen = @buf.elems;

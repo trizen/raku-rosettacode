@@ -2,7 +2,7 @@
 
 # [EKG sequence convergence][1]
 
-```raku
+```perl
 sub infix:<shares-divisors-with> { ($^a gcd $^b) > 1 }
  
 sub next-EKG ( *@s ) {

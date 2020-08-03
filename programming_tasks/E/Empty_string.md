@@ -2,7 +2,7 @@
 
 # [Empty string][1]
 
-```raku
+```perl
 my $s = '';
 say 'String is empty' unless $s;
 say 'String is not empty' if $s;

@@ -2,7 +2,7 @@
 
 # [File size][1]
 
-```raku
+```perl
 say 'input.txt'.IO.s;
 say '/input.txt'.IO.s;
 ```
@@ -10,6 +10,6 @@ say '/input.txt'.IO.s;
 
 Cross-platform version of the second one:
 
-```raku
+```perl
 say $*SPEC.rootdir.IO.child("input.txt").s;
 ```

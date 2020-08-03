@@ -2,7 +2,7 @@
 
 # [Farey sequence][1]
 
-```raku
+```perl
 sub farey ($order) {
     my @l = 0/1;
     (1..$order).map: { push @l, |(1..$^d).map: { $^n/$d } }

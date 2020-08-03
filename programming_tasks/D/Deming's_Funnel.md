@@ -2,7 +2,7 @@
 
 # [Deming's Funnel][1]
 
-```raku
+```perl
 sub mean { @_ R/ [+] @_ }
 sub stddev {
     # <(x - <x>)²> = <x²> - <x>²

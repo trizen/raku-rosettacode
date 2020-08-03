@@ -4,7 +4,7 @@
 
 By default, all strings of digits are parsed as base 10 numbers, including those with a leading zero. Numbers with a prefix 0b, 0o, 0d or 0x are parsed as binary, octal, decimal or hexadecimal respectively.
 
-```raku
+```perl
 say 0b11011;  # -> 27
 say 0o11011;  # -> 4617
 say 0d11011;  # -> 11011
@@ -14,7 +14,7 @@ say 0x11011;  # -> 69649
 
 Additionally, there are built-in adverbial prefix operators to parse strings of "digits" of radix 2 through radix 36 into decimal. They will fail with a runtime error if they are fed a digit that is not valid in that radix.
 
-```raku
+```perl
 my $n = '11011';
  
 say  :2($n); # -> 27

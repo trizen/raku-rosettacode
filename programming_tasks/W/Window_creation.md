@@ -8,7 +8,7 @@
 
 Exit either by clicking the button or the close window control in the upper corner.
 
-```raku
+```perl
 use GTK::Simple;
 use GTK::Simple::App;
  

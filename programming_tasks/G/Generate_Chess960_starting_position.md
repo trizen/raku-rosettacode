@@ -4,7 +4,7 @@
 
 First, using a list with three rooks and no king, we keep generating a random piece order until the two bishops are on opposite colors. Then we sneakily promote the second of the three rooks to a king.
 
-```raku
+```perl
 repeat until m/ '♗' [..]* '♗' / { $_ = < ♖ ♖ ♖ ♕ ♗ ♗ ♘ ♘ >.pick(*).join }
 s:2nd['♖'] = '♔';
 say .comb;
@@ -18,7 +18,7 @@ say .comb;
 
 Here's a more "functional" solution that avoids side effects
 
-```raku
+```perl
 sub chess960 {
     .subst(:nth(2), /'♜'/, '♚') given
     first rx/ '♝' [..]* '♝' /,
@@ -38,7 +38,7 @@ We can also pregenerate the list of 960 positions, though the method we use belo
 generates 40320 candidates only to throw most of them away. This is essentially the same filtering algorithm
 but written in the form of a list comprehension rather than nested map and grep. (The list comprehension is actually faster currently.) Note that the constant is calculated at compile time, because, well, it's a constant. Just a big fancy one.
 
-```raku
+```perl
 constant chess960 =
    < ♛ ♜ ♜ ♜ ♝ ♝ ♞ ♞ >.permutations».join.unique.grep( / '♝' [..]* '♝' / )».subst(:nth(2), /'♜'/, '♚');
  
@@ -48,7 +48,7 @@ constant chess960 =
 
 Here's a much faster way (about 30x) to generate all 960 variants by construction. No need to filter for uniqueness, since it produces exactly 960 entries.
 
-```raku
+```perl
 constant chess960 = gather for 0..3 -> $q {
     (my @q = <♜ ♚ ♜>).splice($q, 0, '♛');
     for 0 .. @q -> $n1 {

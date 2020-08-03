@@ -2,7 +2,7 @@
 
 # [Unbias a random generator][1]
 
-```raku
+```perl
 sub randN ( $n where 3..6 ) {
     return ( $n.rand / ($n - 1) ).Int;
 }

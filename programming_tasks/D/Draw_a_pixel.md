@@ -4,7 +4,7 @@
 
 Really? Draw a single pixel? Sigh.
 
-```raku
+```perl
 use GTK::Simple;
 use GTK::Simple::DrawingArea;
 use Cairo;

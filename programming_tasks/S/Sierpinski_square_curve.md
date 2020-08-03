@@ -3,7 +3,7 @@
 # [Sierpinski square curve][1]
 
 
-```raku
+```perl
 use SVG;
  
 role Lindenmayer {

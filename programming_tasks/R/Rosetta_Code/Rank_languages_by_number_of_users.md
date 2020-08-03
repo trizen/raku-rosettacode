@@ -8,7 +8,7 @@ Use the mediawiki API rather than web scraping since it is much faster and less 
 
 This is all done in a single pass; ties are not detected until a language has the same count as a previous one, so ties are marked by a **T** next to the count indicating that **this** language has the same count as the **previous**.
 
-```raku
+```perl
 use HTTP::UserAgent;
 use URI::Escape;
 use JSON::Fast;

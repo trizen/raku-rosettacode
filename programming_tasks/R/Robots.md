@@ -4,7 +4,7 @@
 
 The bots single-mindedly chase you, taking the shortest path, ignoring obstacles. Use arrow keys to navigate your character(╂) around the board. Avoid bots(☗) and hazards(☢). "Kill" bots by causing them to crash into hazards or other bots. A dead bot creates another hazard. If you eliminate all of the bots on the board, another wave will spawn in random positions. If you touch a hazard or are touched by a bot, you die(†).
 
-```raku
+```perl
 use Term::termios;
  
 constant $saved   = Term::termios.new(fd => 1).getattr;

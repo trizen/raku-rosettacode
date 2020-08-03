@@ -16,7 +16,7 @@ There is additional syntax you can add to stop at the nearest value, last value 
 
 Also note: The iterator function for the sequence is literally a function. It is any expression that produces a value. These sequences all use simple arithmatic increments but that is not a limitation of the sequence operator.
 
-```raku
+```perl
 # Given sequence definitions
 #   start  stop  inc.   Comment
 for   -2,    2,    1, # Normal

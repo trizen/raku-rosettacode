@@ -2,7 +2,7 @@
 
 # [N-smooth numbers][1]
 
-```raku
+```perl
 sub smooth-numbers (*@list) {
     cache my \Smooth := gather {
         my %i = (flat @list) Z=> (Smooth.iterator for ^@list);

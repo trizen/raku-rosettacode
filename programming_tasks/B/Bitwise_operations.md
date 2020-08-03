@@ -2,7 +2,7 @@
 
 # [Bitwise operations][1]
 
-```raku
+```perl
 constant MAXINT = uint.Range.max;
 constant BITS = MAXINT.base(2).chars;
  

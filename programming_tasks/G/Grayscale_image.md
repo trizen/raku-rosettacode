@@ -4,7 +4,7 @@
 
 This script expects to be fed a P6 .ppm file name at the command line. It will convert it to grey scale and save it as a binary portable grey map (P5 .pgm) file.
 
-```raku
+```perl
 sub MAIN ($filename = 'default.ppm') {
  
     my $in = open($filename, :r, :enc<iso-8859-1>);

@@ -2,7 +2,7 @@
 
 # [Kolakoski sequence][1]
 
-```raku
+```perl
 sub kolakoski (*@seed) {
     my $k = @seed[0] == 1 ?? 1 !! 0;
     my @k = flat @seed[0] == 1 ?? (1, @seed[1] xx @seed[1]) !! @seed[0] xx @seed[0],

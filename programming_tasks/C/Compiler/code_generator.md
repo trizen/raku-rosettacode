@@ -4,7 +4,7 @@
 
 Using 'while-count' example, input used is here: [ast.txt](https://github.com/SqrtNegInf/Rosettacode-Perl6-Smoke/blob/master/ref/ast.txt)
 
-```raku
+```perl
 my %opnames = <
     Less   lt     LessEqual    le     Multiply mul    Subtract sub    NotEqual ne
     Divide div    GreaterEqual ge     Equal    eq     Greater  gt     Negate   neg

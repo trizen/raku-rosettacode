@@ -4,7 +4,7 @@
 
 ### Traditional subs and sigils
 
-```raku
+```perl
 constant $zero  = sub (Code $f) {
                   sub (     $x) { $x }}
  
@@ -50,7 +50,7 @@ say map &to_int,
 
 ### Arrow subs without sigils
 
-```raku
+```perl
 my \zero  = -> \f {                 -> \x { x               }}
 my \succ  = -> \n {         -> \f { -> \x { f.(n.(f)(x))    }}}
 my \add   = -> \n { -> \m { -> \f { -> \x { m.(f)(n.(f)(x)) }}}}

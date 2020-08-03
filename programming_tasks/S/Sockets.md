@@ -4,7 +4,7 @@
 
 Will fail with a connect error if there is not a socket server of some kind available on the specified host and port.
 
-```raku
+```perl
 my $host = '127.0.0.1';
 my $port = 256;
  

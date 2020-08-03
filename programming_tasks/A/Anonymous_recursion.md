@@ -4,7 +4,7 @@
 
 In addition to the methods in the [Perl](https://rosettacode.org/wiki/Perl) entry above, and the Y-combinator described in [Y_combinator](https://rosettacode.org/wiki/Y_combinator), you may also refer to an anonymous block or function from the inside:
 
-```raku
+```perl
 sub fib($n) {
     die "Naughty fib" if $n < 0;
     return {
@@ -20,7 +20,7 @@ say fib(10);
 
 However, using any of these methods is insane, when Perl 6 provides a sort of inside-out combinator that lets you define lazy infinite constants, where the demand for a particular value is divorced from dependencies on more primitive values. This operator, known as the sequence operator, does in a sense provide anonymous recursion to a closure that refers to more primitive values.
 
-```raku
+```perl
 constant @fib = 0, 1, *+* ... *;
 say @fib[10];
 ```

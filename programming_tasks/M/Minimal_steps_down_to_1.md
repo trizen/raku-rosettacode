@@ -2,7 +2,7 @@
 
 # [Minimal steps down to 1][1]
 
-```raku
+```perl
 use Lingua::EN::Numbers;
 
 for [2,3], 1, 2000,

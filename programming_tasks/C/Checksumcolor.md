@@ -4,7 +4,7 @@
 
 To determine the colors, rather than breaking the md5sum into groups of 3 characters, (which leaves two lonely characters at the end), I elected to replicate the first 5 characters onto the end, then for each character, used it and the 5 characters following as a true-color index. I also added an option to output as HTML code for ease of pasting in here.
 
-```raku
+```perl
 unit sub MAIN ($mode = 'ANSI');
  
 if $*OUT.t or $mode eq 'HTML' { # if OUT is a terminal or if in HTML $module

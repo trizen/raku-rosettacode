@@ -2,7 +2,7 @@
 
 # [Call a foreign-language function][1]
 
-```raku
+```perl
 use NativeCall;
  
 sub strdup(Str $s --> OpaquePointer) is native {*}

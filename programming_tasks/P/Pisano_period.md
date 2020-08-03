@@ -7,7 +7,7 @@
 
 Didn't bother making two differently named routines, just made a multi that will auto dispatch to the correct candidate.
 
-```raku
+```perl
 use Prime::Factor;
  
 constant @fib := 1,1,*+*…*;

@@ -4,7 +4,7 @@
 
 A breadth-first search that uses disk files to avoid memory exhaustion. Each candidate sequence is encoded at one character per name, so to avoid reuse of names we merely have to make sure there are no repeat characters in our encoded string. (The encoding starts at ASCII space for the first name, so newline is not among the encoded characters.)
 
-```raku
+```perl
 my @names = <
     audino bagon baltoy banette bidoof braviary bronzor carracosta charmeleon
     cresselia croagunk darmanitan deino emboar emolga exeggcute gabite

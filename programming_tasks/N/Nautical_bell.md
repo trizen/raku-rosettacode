@@ -4,7 +4,7 @@
 
 Perl 6 uses [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) (GMT) time internally and by default. This will display the current UTC time and on the half hour, display a graphical representation of the bell. If run in a terminal with the system bell enabled, will also chime the system alarm bell.
 
-```raku
+```perl
 my @watch = <Middle Morning Forenoon Afternoon Dog First>;
 my @ordinal = <One Two Three Four Five Six Seven Eight>;
  

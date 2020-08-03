@@ -8,7 +8,7 @@
 
 Only works with positive real numbers, not negative or complex.
 
-```raku
+```perl
 sub egyptian-divmod (Real $dividend is copy where * >= 0, Real $divisor where * > 0) {
     my $accumulator = 0;
     ([1, $divisor], { [.[0] + .[0], .[1] + .[1]] } … ^ *.[1] > $dividend)
@@ -45,7 +45,7 @@ Note: if the below is just a mass of "unknown glyph" boxes, try [installing](htt
 
 This is intended to be humorous and should not be regarded as good (or even sane) programming practice. That being said, 𓂽 &amp; 𓂻 really are the ancient Egyptian symbols for addition and subtraction, and the Egyptian number notation is as accurate as possible. Everything else owes more to whimsy than rigor.
 
-```raku
+```perl
 my (\𓄤, \𓄊, \𓎆, \𓄰) = (0, 1, 10, 10e7);
 sub infix:<𓂽> { $^𓃠 + $^𓃟 }
 sub infix:<𓂻> { $^𓃲 - $^𓆊 }

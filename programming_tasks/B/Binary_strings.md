@@ -2,7 +2,7 @@
 
 # [Binary strings][1]
 
-```raku
+```perl
 # Perl 6 is perfectly fine with NUL *characters* in strings:
 my Str $s = 'nema' ~ 0.chr ~ 'problema!';
 say $s;

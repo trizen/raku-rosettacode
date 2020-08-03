@@ -2,7 +2,7 @@
 
 # [Non-decimal radices/Convert][1]
 
-```raku
+```perl
 sub from-base(Str $str, Int $base) {
     +":$base\<$str>";
 }

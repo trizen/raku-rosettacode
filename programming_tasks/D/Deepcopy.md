@@ -14,7 +14,7 @@ Perl 6 doesn't currently provide a proper mechanism for deep copies, but dependi
 
 `.deepmap` constructs a copy of the data structure, and `.clone` makes a shallow copy of each leaf node. Limitations:
 
-```raku
+```perl
 my %x = foo => 0, bar => [0, 1];
 my %y = %x.deepmap(*.clone);
  
@@ -38,7 +38,7 @@ say %y;
 
 `.perl` serializes the data structure to Perl 6 code, and `.EVAL` deserializes it. Limitations:
 
-```raku
+```perl
 use MONKEY-SEE-NO-EVAL;
  
 my %x = foo => 0, bar => [0, 1];

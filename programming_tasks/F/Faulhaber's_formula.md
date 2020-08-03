@@ -2,7 +2,7 @@
 
 # [Faulhaber's formula][1]
 
-```raku
+```perl
 sub bernoulli_number($n) {
  
     return 1/2 if $n == 1;

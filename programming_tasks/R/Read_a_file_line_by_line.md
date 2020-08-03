@@ -4,7 +4,7 @@
 
 The lines method is lazy so the following code does indeed read the file line by line, and not all at once.
 
-```raku
+```perl
 for open('test.txt').lines
 {
   .say
@@ -14,7 +14,7 @@ for open('test.txt').lines
 
 In order to be more explicit about the file being read on line at a time, one can write:
 
-```raku
+```perl
 my $f = open 'test.txt';
 while my $line = $f.get {
     say $line;

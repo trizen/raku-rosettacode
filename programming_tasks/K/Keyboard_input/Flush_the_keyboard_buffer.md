@@ -4,7 +4,7 @@
 
 Using termios to set some input attributes, flush the buffer &amp; do unbuffered reads. Longer than strictly necessary to demonstrate concepts and make it easy to verify that it actually works as advertised.
 
-```raku
+```perl
 use Term::termios;
  
 constant $saved   = Term::termios.new( :fd($*IN.native-descriptor) ).getattr;

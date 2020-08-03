@@ -12,7 +12,7 @@ Junctions are a construct that behave similarly to the wanted Amb operator. The 
 
 There is currently a trick, how you only get the "true" values from a Junction for any test: return from a subroutine. Because of DeMorgans Law, you'll have to switch and and or, since you want to return on falseness. Just look at 'all' in combination with the sub(){return unless test} as the amb operator.
 
-```raku
+```perl
  
 #| an array of four words, that have more possible values. 
 #| Normally we would want `any' to signify we want any of the values, but well negate later and thus we need `all'
@@ -44,7 +44,7 @@ sub test (Str $l, Str $r) {
 
 
 
-```raku
+```perl
 sub infix:<lf> ($a,$b) {
     next unless try $a.substr(*-1,1) eq $b.substr(0,1);
     "$a $b";
@@ -93,7 +93,7 @@ some admittedly grungy code that uses the continuation engine of regexes to solv
 
 *Note: the compiler suggests adding `use MONKEY-SEE-NO-EVAL;` to enable regex interpolation, but that's not the only issue. The program outputs nothing.*
 
-```raku
+```perl
 sub amb($var,*@a) {
     "[{
         @a.pick(*).map: {"||\{ $var = '$_' }"}

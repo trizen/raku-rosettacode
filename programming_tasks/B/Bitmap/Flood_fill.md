@@ -4,7 +4,7 @@
 
 Using bits and pieces from various other bitmap tasks.
 
-```raku
+```perl
 class Pixel { has Int ($.R, $.G, $.B) }
 class Bitmap {
     has Int ($.width, $.height);

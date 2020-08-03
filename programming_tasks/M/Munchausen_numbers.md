@@ -2,7 +2,7 @@
 
 # [Munchausen numbers][1]
 
-```raku
+```perl
 sub is_munchausen ( Int $n ) {
     constant @powers = 0, |map { $_ ** $_ }, 1..9;
     $n == @powers[$n.comb].sum;

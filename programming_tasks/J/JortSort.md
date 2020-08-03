@@ -2,14 +2,14 @@
 
 # [JortSort][1]
 
-```raku
+```perl
 sub jort-sort { @_ eqv @_.sort }
 ```
 
 
 Actually, there's a better internal sort that seems to work best for lists that are already completely sorted, but tends to fails for any other list. The name of this sort, `[!after]`, is completely opaque, so we're pretty much forced to hide it inside a subroutine to prevent widespread panic.
 
-```raku
+```perl
 sub jort-sort-more-better-sorta { [!after] @_ }
 ```
 

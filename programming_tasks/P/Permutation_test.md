@@ -2,7 +2,7 @@
 
 # [Permutation test][1]
 
-```raku
+```perl
 sub stats ( @test, @all ) {
     (([+] @test) / +@test ) - ([+] flat @all, (@test X* -1)) / (@all - @test)
 }

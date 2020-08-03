@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Cycle sort][1]
 
-```raku
+```perl
 sub cycle_sort ( @nums ) {
     my $writes = 0;
  

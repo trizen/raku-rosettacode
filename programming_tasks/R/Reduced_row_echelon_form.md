@@ -2,7 +2,7 @@
 
 # [Reduced row echelon form][1]
 
-```raku
+```perl
 sub rref (@m) {
     return unless @m;
     my ($lead, $rows, $cols) = 0, +@m, +@m[0];
@@ -182,7 +182,7 @@ and
 
 First, a procedural version:
 
-```raku
+```perl
 sub swap_rows    ( @M,         $r1, $r2 ) { @M[ $r1, $r2 ] = @M[ $r2, $r1 ] };
 sub scale_row    ( @M, $scale, $r       ) { @M[$r]  =              @M[$r]  »*» $scale   };
 sub shear_row    ( @M, $scale, $r1, $r2 ) { @M[$r1] = @M[$r1].list »+» ( @M[$r2] »*» $scale ) };
@@ -220,7 +220,7 @@ say @($_)».fmt(' %4g') for @M;
 
 And the same code, recast into OO. Also, scale and shear are recast as unscale and unshear, which fit the problem better.
 
-```raku
+```perl
 class Matrix is Array {
     method unscale_row ( @M: $scale, $row ) {
         @M[$row] = @M[$row] »/» $scale;

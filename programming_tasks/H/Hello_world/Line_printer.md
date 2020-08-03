@@ -2,7 +2,7 @@
 
 # [Hello world/Line printer][1]
 
-```raku
+```perl
 my $lp = open '/dev/lp0', :w;
 $lp.say: 'Hello World!';
 $lp.close;
@@ -11,7 +11,7 @@ $lp.close;
 
 Or using `given` to avoid having to write the variable name repeatedly:
 
-```raku
+```perl
 given open '/dev/lp0', :w {
     .say: 'Hello World!';
     .close;

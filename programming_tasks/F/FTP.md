@@ -2,7 +2,7 @@
 
 # [FTP][1]
 
-```raku
+```perl
 use Net::FTP;
  
 my $ftp = Net::FTP.new(:host('mirrors.sohu.com'), :passive);

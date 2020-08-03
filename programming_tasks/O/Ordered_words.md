@@ -4,7 +4,7 @@
 
 Here we assume the dictionary is provided on standard input.
 
-```raku
+```perl
 say lines.grep({ [le] .comb }).classify(*.chars).max(*.key).value
 ```
 

@@ -2,7 +2,7 @@
 
 # [Repeat a string][1]
 
-```raku
+```perl
 print "ha" x 5
 ```
 

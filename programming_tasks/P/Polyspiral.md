@@ -8,7 +8,7 @@
 
 Sort of an ersatz animation. Write updates to a svg file, most modern viewers will update as the content changes.
 
-```raku
+```perl
 use SVG;
 my $w = 600;
 my $h = 600;
@@ -66,7 +66,7 @@ See [polyspiral-perl6.gif](https://github.com/thundergnat/rc/blob/master/img/pol
 
 Uses the same basic algorithm but fully animated. Use the up / down arrow keys to speed up / slow down the update speed. Use PgUp / PgDn keys to increment / decrement animation speed by large amounts. Use left / right arrow keys to reverse the "direction" of angle change. Press Space bar to toggle animation / reset to minimum speed. Left Control key to toggle stationary / rotating center. Use + / - keys to add remove line segments.
 
-```raku
+```perl
 use SDL2::Raw;
  
 my $width  = 900;

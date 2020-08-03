@@ -4,7 +4,7 @@
 
 This solution refuses to return an answer when the angles cancel out to a tiny magnitude.
 
-```raku
+```perl
 # Of course, you can still use pi and 180.
 sub deg2rad { $^d * tau / 360 }
 sub rad2deg { $^r * 360 / tau }

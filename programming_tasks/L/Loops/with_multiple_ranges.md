@@ -22,7 +22,7 @@ Various looping constructs often do use sequences as their iterator but not excl
 
 Displaying the j sequence as well since it isn't very large.
 
-```raku
+```perl
 sub comma { ($^i < 0 ?? '-' !! '') ~ $i.abs.flip.comb(3).join(',').flip }
  
 my \x     =  5;

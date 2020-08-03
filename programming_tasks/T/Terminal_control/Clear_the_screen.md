@@ -2,7 +2,7 @@
 
 # [Terminal control/Clear the screen][1]
 
-```raku
+```perl
 sub clear { print state $ = qx[clear] }
 clear;
 ```

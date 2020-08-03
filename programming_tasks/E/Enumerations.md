@@ -2,7 +2,7 @@
 
 # [Enumerations][1]
 
-```raku
+```perl
 enum Fruit <Apple Banana Cherry>; # Numbered 0 through 2.
  
 enum ClassicalElement (

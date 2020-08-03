@@ -2,7 +2,7 @@
 
 # [FASTA format][1]
 
-```raku
+```perl
 grammar FASTA {
  
     rule TOP    { <entry>+ }

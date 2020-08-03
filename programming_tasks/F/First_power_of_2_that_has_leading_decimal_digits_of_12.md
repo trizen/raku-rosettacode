@@ -4,7 +4,7 @@
 
 Uses logs similar to Go and Pascal entries. Takes advantage of patterns in the powers to cut out a bunch of calculations.
 
-```raku
+```perl
 use Lingua::EN::Numbers;
  
 constant $ln2ln10 = log(2) / log(10);

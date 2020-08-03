@@ -2,7 +2,7 @@
 
 # [Check that file exists][1]
 
-```raku
+```perl
  
 my $path = "/etc/passwd";
 say $path.IO.e ?? "Exists" !! "Does not exist";
@@ -20,7 +20,7 @@ given $path.IO {
 
 `when` internally uses the smart match operator `~~`, so `when :e` really does `$given ~~ :e` instead of the method call `$given.e`; both test whether the file exists.
 
-```raku
+```perl
  
 run ('touch', "♥ Unicode.txt");
  

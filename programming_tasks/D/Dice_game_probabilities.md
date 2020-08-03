@@ -2,7 +2,7 @@
 
 # [Dice game probabilities][1]
 
-```raku
+```perl
 sub likelihoods ($roll) {
     my ($dice, $faces) = $roll.comb(/\d+/);
     my @counts;

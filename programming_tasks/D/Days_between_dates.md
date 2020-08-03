@@ -4,7 +4,7 @@
 
 Dates are first class objects in Perl 6 and may have arithmetic in days done directly on them.
 
-```raku
+```perl
 say Date.new('2019-09-30') - Date.new('2019-01-01');
  
 say Date.new('2019-03-01') - Date.new('2019-02-01');

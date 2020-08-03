@@ -2,7 +2,7 @@
 
 # [Parsing/Shunting-yard algorithm][1]
 
-```raku
+```perl
 my %prec =
     '^' => 4,
     '*' => 3,

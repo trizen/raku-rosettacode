@@ -2,7 +2,7 @@
 
 # [Playfair cipher][1]
 
-```raku
+```perl
 # Instantiate a specific encoder/decoder.
  
 sub playfair( $key,

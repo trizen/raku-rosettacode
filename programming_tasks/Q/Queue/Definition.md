@@ -4,7 +4,7 @@
 
 We could build a new container class to do FIFO pretty easily, but Arrays already do everything needed by a FIFO queue, so it is easier to just compose a Role on the existing Array class.
 
-```raku
+```perl
 role FIFO {
     method enqueue ( *@values ) { # Add values to queue, returns the number of values added.
         self.push: @values;

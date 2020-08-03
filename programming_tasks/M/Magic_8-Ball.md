@@ -2,7 +2,7 @@
 
 # [Magic 8-Ball][1]
 
-```raku
+```perl
 put 'Please enter your question or a blank line to quit.';
  
 ["It is certain", "It is decidedly so", "Without a doubt", "Yes, definitely",

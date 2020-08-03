@@ -4,7 +4,7 @@
 
 Perl6 has no native graphics libraries built in, but makes it fairly easy to bind to third party libraries. Here we'll use bindings to [Libcaca](http://en.wikipedia.org/wiki/Libcaca), the **C**olor **A**S**C**II **A**rt library to generate a rotating cube in an ASCII terminal.
 
-```raku
+```perl
 use lib 'lib';
 use Terminal::Caca;
 given my $canvas = Terminal::Caca.new {

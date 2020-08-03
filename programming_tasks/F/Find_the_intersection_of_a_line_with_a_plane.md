@@ -2,7 +2,7 @@
 
 # [Find the intersection of a line with a plane][1]
 
-```raku
+```perl
 class Line {
     has $.P0; # point
     has $.u⃗;  # ray

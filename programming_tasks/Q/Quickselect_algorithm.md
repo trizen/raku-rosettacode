@@ -2,7 +2,7 @@
 
 # [Quickselect algorithm][1]
 
-```raku
+```perl
 my @v = <9 8 7 6 5 0 1 2 3 4>;
 say map { select(@v, $_) }, 1 .. 10;
  

@@ -2,7 +2,7 @@
 
 # [Stable marriage problem][1]
 
-```raku
+```perl
 my %he-likes =
     abe  => < abi eve cath ivy jan dee fay bea hope gay >,
     bob  => < cath hope abi dee eve fay bea jan ivy gay >,

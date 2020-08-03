@@ -4,7 +4,7 @@
 
 The input .wav file (notes.wav) is created by the [[Musical Scale#Go](https://rosettacode.org/wiki/Musical_scale#Go)] entry.
 
-```raku
+```perl
 # 20200721 Raku programming solution
  
 my \freqs = < 261.6 293.6 329.6 349.2 392.0 440.0 493.9 523.3 >;

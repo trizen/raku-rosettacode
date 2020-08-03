@@ -2,7 +2,7 @@
 
 # [Date format][1]
 
-```raku
+```perl
 use DateTime::Format;
  
 my $dt = DateTime.now;
@@ -15,7 +15,7 @@ say strftime('%A, %B %d, %Y', $dt);
 Rudimentary DateTime operations are built-in,
 as the DateTime class itself is built into a Perl 6 compiler:
 
-```raku
+```perl
 use DateTime::Format;
  
 my $dt = DateTime.now;

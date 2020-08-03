@@ -4,7 +4,7 @@
 
 Code golf is a entertaining passtime, even if it isn't appropriate for this site. To a large extent, I agree with [Hout](https://rosettacode.org/mw/index.php?title=User:Hout&amp;action=edit&amp;redlink=1), I am not really on board with mocking anybody, especially espousing it as an official RosettaCode position. So, feel free to mark this incorrect.
 
-```raku
+```perl
 #`(
 Sort of vague as to what we are trying to accomplish here. If we are just
 trying to transform from one format to another, probably easiest to just

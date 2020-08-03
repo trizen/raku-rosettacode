@@ -2,7 +2,7 @@
 
 # [XML Validation][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 # 20191009 Perl 6 programming solution

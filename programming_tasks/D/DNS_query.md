@@ -2,7 +2,7 @@
 
 # [DNS query][1]
 
-```raku
+```perl
 use Net::DNS;
  
 my $resolver = Net::DNS.new('8.8.8.8');

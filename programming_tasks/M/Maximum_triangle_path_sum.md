@@ -4,7 +4,7 @@
 
 The `Z+` and `Zmax` are examples of the zipwith metaoperator. Note also we can use the `Zmax` metaoperator form because `max` is define as an infix in Perl 6.
 
-```raku
+```perl
 my $triangle = q|         55
                         94 48
                        95 30 96

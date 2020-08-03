@@ -8,7 +8,7 @@ A loose translation of the Perl entry. Does not return every possible permutatio
 
 Since Perl 6 uses Rational numbers for division (whenever possible) there is no loss of precision as is common with floating point division. So a comparison like (1 + 7) / (1 / 3) == 24 "Just Works"<sup>&#8482;</sup>
 
-```raku
+```perl
 use MONKEY-SEE-NO-EVAL;
  
 my @digits;

@@ -2,7 +2,7 @@
 
 # [UPC][1]
 
-```raku
+```perl
 sub decode_UPC ( Str $line ) {
     constant @patterns1 = '   ## #', '  ##  #', '  #  ##', ' #### #', ' #   ##',
                           ' ##   #', ' # ####', ' ### ##', ' ## ###', '   # ##';

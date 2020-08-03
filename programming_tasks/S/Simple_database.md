@@ -5,7 +5,7 @@
 A generic client/server JSON database.
 server.p6:
 
-```raku
+```perl
 #!/usr/bin/env perl6
 use JSON::Fast ;
 sub MAIN( :$server='0.0.0.0', :$port=3333, :$dbfile='db' ) {
@@ -115,7 +115,7 @@ sub MAIN( :$server='0.0.0.0', :$port=3333, :$dbfile='db' ) {
 
 client.p6
 
-```raku
+```perl
 #!/usr/bin/env perl6
 use JSON::Fast ;
 multi MAIN('set', $topic,  $message='', :$server='localhost', :$port='3333', :$json='') {

@@ -4,7 +4,7 @@
 
 We'll use [FatRat](http://doc.perl6.org/type/FatRat) values, and a series for an [approximation of ln(2)](http://mathworld.wolfram.com/NaturalLogarithmof2.html).
 
-```raku
+```perl
 constant ln2 = [+] (1/2.FatRat, */2 ... *) Z/ 1 .. 100;
 constant h = [\*] 1/2, |(1..*) X/ ln2;
  

@@ -8,7 +8,7 @@
 
 Similar concept as the perl5 solution, except that the cache is only filled on demand.
 
-```raku
+```perl
 class Hofstadter {
   has @!c = 1,1;
   method AT-POS ($me: Int $i) {
@@ -44,7 +44,7 @@ In the first 100_000 terms, 49798 terms are less than their preceding terms
 
 With a lazily generated array, we automatically get caching.
 
-```raku
+```perl
 my @Q = 1, 1, -> $a, $b {
     (state $n = 1)++;
     @Q[$n - $a] + @Q[$n - $b]

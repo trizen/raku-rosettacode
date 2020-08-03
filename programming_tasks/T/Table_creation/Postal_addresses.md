@@ -4,7 +4,7 @@
 
 Like Perl DBI, Perl 6 DBIish supports many different databases. An example using SQLite is shown here.
 
-```raku
+```perl
 use DBIish;
  
 my $dbh = DBIish.connect('SQLite', :database<addresses.sqlite3>);

@@ -2,7 +2,7 @@
 
 # [Loops/Downward for][1]
 
-```raku
+```perl
 for 10 ... 0 {
     .say;
 }

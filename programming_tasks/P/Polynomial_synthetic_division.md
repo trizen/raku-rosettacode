@@ -2,7 +2,7 @@
 
 # [Polynomial synthetic division][1]
 
-```raku
+```perl
 sub synthetic-division ( @numerator, @denominator ) {
     my @result = @numerator.clone;
     my $end    = @denominator.end;

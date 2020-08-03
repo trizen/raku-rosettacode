@@ -2,7 +2,7 @@
 
 # [Active Directory/Search for a user][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
 
 # 20190718 Perl 6 programming solution

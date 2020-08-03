@@ -2,7 +2,7 @@
 
 # [Mian-Chowla sequence][1]
 
-```raku
+```perl
 my @mian-chowla = 1, |(2..Inf).map: -> $test {
     state $index = 1;
     state %sums  = 2 => 1;

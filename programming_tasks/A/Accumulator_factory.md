@@ -2,7 +2,7 @@
 
 # [Accumulator factory][1]
 
-```raku
+```perl
 sub accum ($n is copy) { sub { $n += $^x } }
  
 #Example use:

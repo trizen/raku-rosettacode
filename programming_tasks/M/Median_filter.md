@@ -2,7 +2,7 @@
 
 # [Median filter][1]
 
-```raku
+```perl
 # Reference: https://github.com/azawawi/perl6-magickwand
  
 # WIP by module author

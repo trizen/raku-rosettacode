@@ -4,7 +4,7 @@
 
 Using a closure:
 
-```raku
+```perl
 sub sd (@a) {
     my $mean = @a R/ [+] @a;
     sqrt @a R/ [+] map (* - $mean)**2, @a;
@@ -22,7 +22,7 @@ say f $_ for 2, 4, 4, 4, 5, 5, 7, 9;
 
 Using a state variable:
 
-```raku
+```perl
 # remember that <(x-<x>)²> = <x²> - <x>²
 sub stddev($x) {
     sqrt

@@ -2,7 +2,7 @@
 
 # [Loops/For][1]
 
-```raku
+```perl
 for ^5 {
  
 	for 0..$_ {
@@ -17,13 +17,13 @@ for ^5 {
 
 or using only one for loop:
 
-```raku
+```perl
 say '*' x $_ for 1..5;
 ```
 
 
 or without using any loops at all:
 
-```raku
+```perl
 ([\~] "*" xx 5).join("\n").say;
 ```

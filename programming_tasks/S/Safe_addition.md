@@ -40,7 +40,7 @@ stringification, not calculation. Calculations are always done at full (exact) p
 
 
 
-```raku
+```perl
 say "Floating points: (Nums)";
 say "Error: " ~ (2**-53).Num;
  

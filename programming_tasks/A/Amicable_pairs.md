@@ -2,7 +2,7 @@
 
 # [Amicable pairs][1]
 
-```raku
+```perl
 sub propdivsum (\x) {
     my @l = x > 1, gather for 2 .. x.sqrt.floor -> \d {
         my \y = x div d;

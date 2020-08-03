@@ -2,7 +2,7 @@
 
 # [Take notes on the command line][1]
 
-```raku
+```perl
 my $file = 'notes.txt';
  
 multi MAIN() {

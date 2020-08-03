@@ -4,20 +4,20 @@
 
 ### Byte Length
 
-```raku
+```perl
 say 'møøse'.encode('UTF-8').bytes;
 ```
 
 
 ### Character Length
 
-```raku
+```perl
 say 'møøse'.codes;
 ```
 
 
 ### Grapheme Length
 
-```raku
+```perl
 say 'møøse'.chars;
 ```

@@ -2,7 +2,7 @@
 
 # [Longest Common Substring][1]
 
-```raku
+```perl
  
 sub createSubstrings( Str $word --> Array ) {
    my $length = $word.chars ;

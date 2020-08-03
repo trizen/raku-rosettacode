@@ -2,7 +2,7 @@
 
 # [Chemical Calculator][1]
 
-```raku
+```perl
 my %ATOMIC_MASS =
     H  =>   1.008       , Fe =>  55.845    , Te => 127.60       , Ir => 192.217    ,
     He =>   4.002602    , Co =>  58.933194 , I  => 126.90447    , Pt => 195.084    ,

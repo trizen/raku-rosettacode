@@ -4,7 +4,7 @@
 
 Most of the logic is lifted straight from the [Abelian sandpile model](https://rosettacode.org/wiki/Abelian_sandpile_model#Raku) task.
 
-```raku
+```perl
 class ASP {
     has $.h = 3;
     has $.w = 3;

@@ -4,7 +4,7 @@
 
 This implementation has no arbitrary upper limit, since it can keep adding new rotors on the fly. It just gets slower and slower instead... `:-)`
 
-```raku
+```perl
 constant @ludic = gather {
         my @taken = take 1;
         my @rotor;

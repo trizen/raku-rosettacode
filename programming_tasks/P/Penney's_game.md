@@ -2,7 +2,7 @@
 
 # [Penney's game][1]
 
-```raku
+```perl
 enum Coin <Heads Tails>;
 enum Yay <Yay Good Super Hah Ooh Yipee Sweet Cool Yes Haha>;
 enum Boo <Drat Darn Crumb Oops Rats Bah Criminy Argh Shards>;

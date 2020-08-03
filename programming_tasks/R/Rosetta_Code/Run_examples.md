@@ -28,7 +28,7 @@ Run with no parameters to run every implemented task on Rosetta Code. Feed it a 
 
 Note: This is set up to run under Linux. It could be adapted for Windows (or OSX I suppose) fairly easily but I don't have access to those OSs, nor do I care to seek it.
 
-```raku
+```perl
 use HTTP::UserAgent;
 use URI::Escape;
 use JSON::Fast;

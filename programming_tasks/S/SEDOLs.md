@@ -2,7 +2,7 @@
 
 # [SEDOLs][1]
 
-```raku
+```perl
 sub sedol( Str $s ) {
     die 'No vowels allowed' if $s  ~~ /<[AEIOU]>/;
     die 'Invalid format'    if $s !~~ /^ <[0..9B..DF..HJ..NP..TV..Z]>**6 $ /;

@@ -8,7 +8,7 @@ This uses a Warnsdorff solver, which cuts down the number of tries by more than 
 
 The idiosyncratic adjacency diagram is dealt with by the simple expedient of bending the two vertical lines `||` into two bows `)(`, such that adjacency can be calculated simply as a distance of 2 or less.
 
-```raku
+```perl
 my @adjacent = gather -> $y, $x {
     take [$y,$x] if abs($x|$y) > 2;
 } for flat -5 .. 5 X -5 .. 5;

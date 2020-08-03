@@ -8,7 +8,7 @@
 
 This is a pure perl 6 version that uses no outside libraries. It uses a variant of Pollard's rho factoring algorithm and is fairly performent when factoring numbers &lt; 2⁸⁰; typically taking well under a second on an i7. It starts to slow down with larger numbers, but really bogs down factoring numbers that have more than 1 factor larger than about 2⁴⁰.
 
-```raku
+```perl
 sub prime-factors ( Int $n where * > 0 ) {
     return $n if $n.is-prime;
     return [] if $n == 1;
@@ -65,7 +65,7 @@ There is a Perl 6 module available: Prime::Factor, that uses essentially this al
 
 If you really need a speed boost, load the highly optimized Perl 5 ntheory module. It needs a little extra plumbing to deal with the lack of built-in big integer support, but for large number factoring the interface overhead is worth it.
 
-```raku
+```perl
 use Inline::Perl5;
 my $p5 = Inline::Perl5.new();
 $p5.use( 'ntheory' );

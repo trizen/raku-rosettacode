@@ -4,7 +4,7 @@
 
 Using [Rakudo](https://rosettacode.org/wiki/Rakudo).
 
-```raku
+```perl
 $ rakudo/perl6
 > sub f($str1,$str2,$sep) { $str1~$sep x 2~$str2 };
 f

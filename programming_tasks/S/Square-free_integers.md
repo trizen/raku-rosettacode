@@ -4,7 +4,7 @@
 
 The prime factoring algorithm is not really the best option for finding long runs of sequential square-free numbers. It works, but is probably better suited for testing arbitrary numbers rather than testing every sequential number from 1 to some limit. If you know that that is going to be your use case, there are faster algorithms.
 
-```raku
+```perl
 # Prime factorization routines
 sub prime-factors ( Int $n where * > 0 ) {
     return $n if $n.is-prime;

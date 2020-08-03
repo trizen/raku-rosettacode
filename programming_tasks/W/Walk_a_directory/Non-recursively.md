@@ -4,6 +4,6 @@
 
 The `dir` function takes the directory to traverse, and optionally a named parameter `test`, which is [smart-matched](https://docs.perl6.org/routine/$TILDE$TILDE) against the basename of each file (so for example we can use a regex):
 
-```raku
+```perl
 .say for dir ".", :test(/foo/);
 ```

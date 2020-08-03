@@ -13,7 +13,7 @@ operators are all just sugar for function calls.
 
 Calling a function that requires no arguments:
 
-```raku
+```perl
 foo               # as list operator
 foo()             # as function
 foo.()            # as function, explicit postfix form
@@ -27,7 +27,7 @@ $ref.()           # as object invocation, explicit postfix
 
 Calling a function with exactly one argument:
 
-```raku
+```perl
 foo 1             # as list operator
 foo(1)            # as named function
 foo.(1)           # as named function, explicit postfix
@@ -68,7 +68,7 @@ a dispatcher to a list of candidates that, when called, makes all the candidates
 
 Calling a function with exactly two arguments:
 
-```raku
+```perl
 foo 1,2           # as list operator
 foo(1,2)          # as named function
 foo.(1,2)         # as named function, explicit postfix
@@ -92,7 +92,7 @@ The optionality is all on the binding end.
 
 Calling a function with a variable number of arguments (varargs):
 
-```raku
+```perl
 foo @args         # as list operator
 foo(@args)        # as named function
 foo.(@args)       # as named function, explicit postfix
@@ -114,7 +114,7 @@ on whether a signature accepts a list at that position in the argument list, but
 describing that is not the purpose of this task. Suffice to say that we assume here that the
 foo function is declared with a signature of the form (\*@params). The calls above might be interpreted as having a single array argument if the signature indicates a normal parameter instead of a variadic one. What you cannot do in Perl 6 (unlike Perl 5) is pass an array as several fixed arguments. By default it must either represent a single argument, or be part of a variadic list. You can force the extra level of argument list interpolation using a prefix `|` however:
 
-```raku
+```perl
 my @args = 1,2,3;
 foo(|@args);  # equivalent to foo(1,2,3)
 ```
@@ -122,7 +122,7 @@ foo(|@args);  # equivalent to foo(1,2,3)
 
 Calling a function with named arguments:
 
-```raku
+```perl
 foo :a, :b(4), :!c, d => "stuff"
 foo(:a, :b(4), :!c, d => "stuff")
 ```
@@ -131,28 +131,28 @@ foo(:a, :b(4), :!c, d => "stuff")
 ...and so on. Operators may also be called with named arguments, but only
 colon adverbials are allowed:
 
-```raku
+```perl
 1 + 1 :a :b(4) :!c :d("stuff")   # calls infix:<+>(1,1,:a, :b(4), :!c, d => "stuff")
 ```
 
 
 Using a function in statement context:
 
-```raku
+```perl
 foo(); bar(); baz();    # evaluate for side effects
 ```
 
 
 Using a function in first class context within an expression:
 
-```raku
+```perl
 1 / find-a-func(1,2,3)(4,5,6) ** 2;
 ```
 
 
 Obtaining the return value of a function:
 
-```raku
+```perl
 my $result = somefunc(1,2,3) + 2;
 ```
 

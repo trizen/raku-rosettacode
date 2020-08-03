@@ -2,7 +2,7 @@
 
 # [Parsing/RPN calculator algorithm][1]
 
-```raku
+```perl
 my $proggie = '3 4 2 * 1 5 - 2 3 ^ ^ / +';
  
 class RPN is Array {

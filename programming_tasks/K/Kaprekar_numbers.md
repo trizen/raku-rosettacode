@@ -4,7 +4,7 @@
 
 ### String version (slow)
 
-```raku
+```perl
 sub kaprekar( Int $n ) {
     my $sq = $n ** 2;
     for 0 ^..^ $sq.chars -> $i {
@@ -28,7 +28,7 @@ print "\n";
 
 ### Numeric version (medium)
 
-```raku
+```perl
 sub kaprekar( Int $n, Int :$base = 10 ) {
     my $hi = $n ** 2;
     my $lo = 0;
@@ -131,7 +131,7 @@ Note that this algorithm allows the null string on the left, taken as zero, whic
 
 ### Casting out nines (fast)
 
-```raku
+```perl
 sub kaprekar-generator( :$base = 10 ) {
     my $base-m1 = $base - 1;
     gather loop (my $place = 1; ; ++$place) {

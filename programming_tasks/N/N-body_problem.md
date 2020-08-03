@@ -24,7 +24,7 @@ and thus
 
 To keep things compact, we'll only display the first 20 lines of output.
 
-```raku
+```perl
 # Simple Vector implementation
 multi infix:<+>(@a, @b) { @a Z+ @b }
 multi infix:<->(@a, @b) { @a Z- @b }

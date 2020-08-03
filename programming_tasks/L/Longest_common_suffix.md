@@ -2,7 +2,7 @@
 
 # [Longest common suffix][1]
 
-```raku
+```perl
 sub longest-common-suffix ( *@words ) {
     return '' unless +@words;
     my $min = @words».chars.min;

@@ -2,7 +2,7 @@
 
 # [Classes][1]
 
-```raku
+```perl
 class Camel { has Int $.humps = 1; }
  
 my Camel $a .= new;
@@ -15,7 +15,7 @@ say $b.humps;
 
 A more complex example:
 
-```raku
+```perl
 class Butterfly {
     has Int $!age;   # With the ! twigil, no public accessor method is generated
     has Str $.name;

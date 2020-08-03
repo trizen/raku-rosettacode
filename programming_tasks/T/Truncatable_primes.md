@@ -2,7 +2,7 @@
 
 # [Truncatable primes][1]
 
-```raku
+```perl
 constant ltp = $[2, 3, 5, 7], -> @ltp {
     $[ grep { .&is-prime }, ((1..9) X~ @ltp) ]
 } ... *;

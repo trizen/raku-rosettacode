@@ -4,7 +4,7 @@
 
 A Fractran program potentially returns an infinite list, and infinite lists are a common data structure in Perl 6. The limit is therefore enforced only by slicing the infinite list.
 
-```raku
+```perl
 sub fractran(@program) {
     2, { first Int, map (* * $_).narrow, @program } ... 0
 }
@@ -21,7 +21,7 @@ say fractran(<17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11
 **Extra credit:**
 We can weed out all the powers of two into another infinite constant list based on the first list. In this case the sequence is limited only by our patience, and a ^C from the terminal. The `.msb` method finds the most significant bit of an integer, which conveniently is the base-2 log of the power-of-two in question.
 
-```raku
+```perl
 sub fractran(@program) {
     2, { first Int, map (* * $_).narrow, @program } ... 0
 }

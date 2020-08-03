@@ -4,13 +4,13 @@
 
 If `@a` contains only numbers:
 
-```raku
+```perl
 my @sorted = sort @a;
 ```
 
 
 For an in-place sort:
 
-```raku
+```perl
 @a .= sort;
 ```

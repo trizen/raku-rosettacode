@@ -2,7 +2,7 @@
 
 # [Increasing gaps between consecutive Niven numbers][1]
 
-```raku
+```perl
 use Lingua::EN::Numbers;
  
 unit sub MAIN (Int $threshold = 10000000);

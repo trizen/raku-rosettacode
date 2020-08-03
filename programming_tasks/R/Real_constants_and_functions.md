@@ -2,7 +2,7 @@
 
 # [Real constants and functions][1]
 
-```raku
+```perl
 say e;            # e
 say π; # or pi    # pi
 say τ; # or tau   # tau

@@ -4,7 +4,7 @@
 
 ### Infix
 
-```raku
+```perl
 class Resistor {
     has Str        $.symbol;
     has Numeric  ( $.voltage, $.resistance );

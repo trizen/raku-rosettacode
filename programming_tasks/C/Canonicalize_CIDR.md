@@ -4,7 +4,7 @@
 
 ### String manipulation
 
-```raku
+```perl
 #!/usr/bin/env raku
  
 # canonicalize a CIDR block: make sure none of the host bits are set
@@ -40,7 +40,7 @@ $ canonicalize_cidr.raku 87.70.141.1/22
 
 ### Bit mask and shift
 
-```raku
+```perl
 # canonicalize a IP4 CIDR block
 sub CIDR-IP4-canonicalize ($address) {
   constant @mask = 24, 16, 8, 0;

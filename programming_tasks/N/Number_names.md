@@ -4,7 +4,7 @@
 
 Apart from the `$m++` this can be viewed as a purely functional program; we use nested `gather`/`take` constructs to avoid accumulators.
 
-```raku
+```perl
 constant @I = <zero one    two    three    four     five    six     seven     eight    nine
                ten  eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen>;
 constant @X = <0    X      twenty thirty   forty    fifty   sixty   seventy   eighty   ninety>;
@@ -64,7 +64,7 @@ one hundred ninety eight trillion, seven hundred twenty three billion, four hund
 
 Alternately, we could use the Lingua::EN::Numbers::Cardinal module from the Perl 6 ecosystem. It will return similar output for similar inputs as above, but also handles fractions with configurable reduction and denominator, exponential notation, and ordinal notation.
 
-```raku
+```perl
 use Lingua::EN::Numbers::Cardinal;
  
 put join "\n", .&cardinal, .&cardinal(:improper) with -7/4;

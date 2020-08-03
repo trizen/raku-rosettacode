@@ -2,7 +2,7 @@
 
 # [Kronecker product based fractals][1]
 
-```raku
+```perl
 sub kronecker-product ( @a, @b ) { (@a X @b).map: { (.[0].list X* .[1].list).Array } }
  
 sub kronecker-fractal ( @pattern, $order = 4 ) {

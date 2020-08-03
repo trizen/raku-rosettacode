@@ -2,7 +2,7 @@
 
 # [Loops/Nested][1]
 
-```raku
+```perl
 my @a = [ (1..20).roll(10) ] xx *;
  
 LINE: for @a -> @line {

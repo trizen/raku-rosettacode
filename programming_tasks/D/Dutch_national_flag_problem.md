@@ -4,7 +4,7 @@
 
 Here are five ways to do it, all one liners (apart from the test apparatus).
 
-```raku
+```perl
 enum NL <red white blue>;
 my @colors;
  

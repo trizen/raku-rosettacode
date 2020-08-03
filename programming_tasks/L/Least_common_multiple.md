@@ -4,7 +4,7 @@
 
 This function is provided as an infix so that it can be used productively with various metaoperators.
 
-```raku
+```perl
 say 3 lcm 4;            # infix
 say [lcm] 1..20;        # reduction
 say ~(1..10 Xlcm 1..10) # cross

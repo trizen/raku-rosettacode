@@ -2,7 +2,7 @@
 
 # [Substring][1]
 
-```raku
+```perl
 my $str = 'abcdefgh';
 my $n = 2;
 my $m = 3;

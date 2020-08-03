@@ -2,7 +2,7 @@
 
 # [Pythagorean quadruples][1]
 
-```raku
+```perl
 my \N = 2200;
 my @sq = (0 .. N)»²;
 my @not = False xx N;

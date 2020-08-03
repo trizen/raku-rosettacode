@@ -4,7 +4,7 @@
 
 Here's one simple way:
 
-```raku
+```perl
 my $ppm = open("munching0.ppm", :w) or
   die "Can't create munching.ppm: $!";
  
@@ -29,7 +29,7 @@ $ppm.close();
 
 Another way:
 
-```raku
+```perl
 my @colors = map -> $r, $g, $b { Buf.new: $r, $g, $b },
 		map -> $x { floor ($x/256) ** 3 * 256 },
 		    (flat (0...255) Z

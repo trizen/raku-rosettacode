@@ -28,7 +28,7 @@ We don't bother to pre-calculate and store the words, just generate them on the 
 
 Official pronunciation guide:
 
-```raku
+```perl
 # SYNTHETICS HANDLING
 my @synth = flat < b d f h j k l m n p r s t w y z > X~ < a e i o u >;
 my %htnys = @synth.antipairs;
@@ -154,7 +154,7 @@ Capriciously and somewhat randomly cutting down the list we arrive at this.
 
 10 times better accuracy in the same three, 6-letter word space.
 
-```raku
+```perl
 # SYNTHETICS HANDLING
 my @synth = flat < b d f j k n p r s t w > X~ < a e i o u >;
 my %htnys = @synth.antipairs;

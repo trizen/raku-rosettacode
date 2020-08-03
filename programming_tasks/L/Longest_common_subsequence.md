@@ -8,7 +8,7 @@
 
 This solution is similar to the Haskell one. It is slow.
 
-```raku
+```perl
 say lcs("thisisatest", "testing123testing");sub lcs(Str $xstr, Str $ystr) {
     return "" unless $xstr && $ystr;
  
@@ -24,7 +24,7 @@ say lcs("thisisatest", "testing123testing");
 
 ### Dynamic Programming
 
-```raku
+```perl
  
 sub lcs(Str $xstr, Str $ystr) {
     my ($xlen, $ylen) = ($xstr, $ystr)>>.chars;
@@ -66,7 +66,7 @@ say lcs("thisisatest", "testing123testing");
 
 Bit parallel dynamic programming with nearly linear complexity O(n). It is fast.
 
-```raku
+```perl
 sub lcs(Str $xstr, Str $ystr) {
     my ($a,$b) = ([$xstr.comb],[$ystr.comb]);
  

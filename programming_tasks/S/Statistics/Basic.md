@@ -2,7 +2,7 @@
 
 # [Statistics/Basic][1]
 
-```raku
+```perl
 for 100, 1_000, 10_000 -> $N {
     say "size: $N";
     my @data = rand xx $N;

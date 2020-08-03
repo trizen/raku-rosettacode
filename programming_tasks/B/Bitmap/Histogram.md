@@ -4,7 +4,7 @@
 
 Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Raku), [ Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Raku) and [ Grayscale image](https://rosettacode.org/wiki/Grayscale_image#Raku) tasks. Included here to make a complete, runnable program.
 
-```raku
+```perl
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

@@ -4,7 +4,7 @@
 
 Pretty basic, but good enough. Could start earlier but 3/2/1 digit years require different handling that isn't necessary for this task. (And would be pretty pointless anyway assuming we need 2 digits for the month and two digits for the day. ISO:8601 anybody?)
 
-```raku
+```perl
 my $start = '1000-01-01';
  
 my @palindate = {

@@ -2,7 +2,7 @@
 
 # [Remove lines from a file][1]
 
-```raku
+```perl
 sub MAIN ($filename, $beg, $len) {
     my @lines = split /^^/, slurp $filename;
     unlink $filename;  # or rename

@@ -2,7 +2,7 @@
 
 # [Symmetric difference][1]
 
-```raku
+```perl
 my \A = set <John Serena Bob Mary Serena>;
 my \B = set <Jim Mary John Jim Bob>;
  

@@ -6,7 +6,7 @@ No need for a special type in Perl 6, since the `Rat` type is used for normal f
 (In order to achieve imprecision, you have to explicitly use scientific notation,
 or use the `Num` type, or calculate a result that requires a denominator in excess of `2 ** 64`. (There's no limit on the numerator.))
 
-```raku
+```perl
 my @check = q:to/END/.lines.map: { [.split(/\s+/)] };
     Hamburger   5.50    4000000000000000
     Milkshake   2.86    2

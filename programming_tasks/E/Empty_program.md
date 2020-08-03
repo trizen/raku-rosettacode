@@ -4,20 +4,20 @@
 
 The empty program is valid and does nothing but return a successful exit code:
 
-```raku
+```perl
  
 ```
 
 
 It is also possible to just specify that the program is written in Perl6:
 
-```raku
+```perl
 use v6;
 ```
 
 
 or even:
 
-```raku
+```perl
 v6;
 ```

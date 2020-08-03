@@ -8,7 +8,7 @@ A minor modification of the [Jaro distance](https://rosettacode.org/wiki/Jaro_di
 
 using the unixdict.txt file from www.puzzlers.org
 
-```raku
+```perl
 sub jaro-winkler ($s, $t) {
  
     return 0 if $s eq $t;

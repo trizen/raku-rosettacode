@@ -4,7 +4,7 @@
 
 This algorithm is concise but not really well suited to finding large quantities of consecutive attractive numbers. It works, but isn't especially speedy. More than a hundred thousand or so gets tedious. There are other, much faster (though more verbose) algorithms that *could* be used. This algorithm **is** well suited to finding **arbitrary** attractive numbers though.
 
-```raku
+```perl
 use Prime::Factor;
  
 sub display ($n,$m) { ($n..$m).hyper.grep: *.&prime-factors.elems.is-prime }

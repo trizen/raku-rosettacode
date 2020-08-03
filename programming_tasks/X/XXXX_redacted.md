@@ -2,7 +2,7 @@
 
 # [XXXX redacted][1]
 
-```raku
+```perl
 sub redact ( Str $str, Str $redact, :i(:$insensitive) = False, :p(:$partial) = False, :o(:$overkill) = False ) {
     my $rx =
         $insensitive ??

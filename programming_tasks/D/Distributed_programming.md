@@ -15,7 +15,7 @@ Server.p6:
 Usage:
   server.p6 [--server=<Any>] [--port=<Any>]
 ```
-```raku
+```perl
 #!/usr/bin/env perl6
 use JSON::Fast ;
 sub MAIN( :$server='0.0.0.0' , :$port=3333 ) {
@@ -65,7 +65,7 @@ Usage:
   client.p6 [--server=<Any>] [--port=<Any>] get <topic>
   client.p6 [--server=<Any>] [--port=<Any>] dump
 ```
-```raku
+```perl
 #!/usr/bin/env perl6
 use JSON::Fast ;
 multi MAIN('set', $topic,  $message='', :$server='localhost', :$port='3333', :$json='') {

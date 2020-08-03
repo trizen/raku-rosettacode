@@ -4,7 +4,7 @@
 
 Since the list routines are supplied by the generic roles defined in [Doubly-linked_list/Definition#Raku](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Raku), it suffices to say:
 
-```raku
+```perl
 say $dll.list;
 say $dll.reverse;
 ```

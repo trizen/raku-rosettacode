@@ -4,7 +4,7 @@
 
 ### Call to native function crc32 in zlib
 
-```raku
+```perl
 use NativeCall;
  
 sub crc32(int32 $crc, Buf $buf, int32 $len --> int32) is native('z') { * }
@@ -29,7 +29,7 @@ The libary name "z" resolves to `/usr/lib/libz.so` on a typical Linux system and
 
 A fairly generic implementation with no regard to execution speed:
 
-```raku
+```perl
 sub crc(
     Blob $buf,
              # polynomial including leading term, default: ISO 3309/PNG/gzip

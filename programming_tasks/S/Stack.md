@@ -4,7 +4,7 @@
 
 Perl 6 still has the stack functions from Perl 5, but now they also can be accessed by object notation:
 
-```raku
+```perl
 my @stack;          # just a array
 @stack.push($elem); # add $elem to the end of @stack
 $elem = @stack.pop; # get the last element back

@@ -4,7 +4,7 @@
 
 This shows a complete example. (Other entries in the section focus on aspects of this solution.)
 
-```raku
+```perl
 role DLElem[::T] {
     has DLElem[T] $.prev is rw;
     has DLElem[T] $.next is rw;

@@ -2,7 +2,7 @@
 
 # [Universal Turing machine][1]
 
-```raku
+```perl
 sub run_utm(:$state! is copy, :$blank!, :@rules!, :@tape = [$blank], :$halt, :$pos is copy = 0) {
     $pos += @tape if $pos < 0;
     die "Bad initial position" unless $pos ~~ ^@tape;

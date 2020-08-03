@@ -2,7 +2,7 @@
 
 # [Recaman's sequence][1]
 
-```raku
+```perl
 my @recamans = 0, {
    state %seen;
    state $term;

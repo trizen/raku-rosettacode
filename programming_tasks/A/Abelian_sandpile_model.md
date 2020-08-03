@@ -4,7 +4,7 @@
 
 Defaults to a stack of 1000 and showing progress. Pass in a custom stack size if desired and -hide-progress to run without displaying progress (much faster.)
 
-```raku
+```perl
 sub cleanup { print "\e[0m\e[?25h\n"; exit(0) }
  
 signal(SIGINT).tap: { cleanup(); exit(0) }

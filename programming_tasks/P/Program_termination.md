@@ -2,7 +2,7 @@
 
 # [Program termination][1]
 
-```raku
+```perl
 if $problem { exit $error-code }
 ```
 

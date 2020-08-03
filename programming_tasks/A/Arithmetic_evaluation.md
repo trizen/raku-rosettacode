@@ -2,7 +2,7 @@
 
 # [Arithmetic evaluation][1]
 
-```raku
+```perl
 sub ev (Str $s --> Numeric) {
  
     grammar expr {

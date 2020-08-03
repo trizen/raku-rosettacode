@@ -2,7 +2,7 @@
 
 # [RPG Attributes Generator][1]
 
-```raku
+```perl
 my ( $min_sum, $hero_attr_min, $hero_count_min ) = 75, 15, 2;
 my @attr-names = <Str Int Wis Dex Con Cha>;
  

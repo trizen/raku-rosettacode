@@ -4,7 +4,7 @@
 
 With at least two values on the left-hand side, the sequence operator (`...`) can infer an arithmetic series. (With at least three values, it can infer a geometric sequence, too.)
 
-```raku
+```perl
 for 2, 4 ... 8 {
     print "$_, ";
 }

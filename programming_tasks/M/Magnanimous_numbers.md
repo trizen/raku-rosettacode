@@ -2,7 +2,7 @@
 
 # [Magnanimous numbers][1]
 
-```raku
+```perl
 my @magnanimous = lazy flat ^10, (10 .. 1001).hyper.map( {
     my $last;
     (1 .. .chars - 1).map: -> \c { ++$last and last unless (.substr(0,c) + .substr(c)).is-prime }

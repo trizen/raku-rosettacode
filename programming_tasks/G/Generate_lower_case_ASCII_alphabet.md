@@ -2,6 +2,6 @@
 
 # [Generate lower case ASCII alphabet][1]
 
-```raku
+```perl
 say my @letters = 'a'..'z';
 ```

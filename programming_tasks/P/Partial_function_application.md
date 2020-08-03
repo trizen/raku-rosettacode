@@ -4,7 +4,7 @@
 
 All Code objects have the .assuming method, which partially applies its arguments. For both type safety reasons and parsing sanity reasons we do not believe in implicit partial application by leaving out arguments. Also, people can understand "assuming" without being steeped in FP culture.
 
-```raku
+```perl
 sub fs ( Code $f, @s ) { @s.map: { .$f } }
  
 sub f1 ( $n ) { $n *  2 }

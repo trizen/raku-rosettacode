@@ -4,7 +4,7 @@
 
 Linux only terminal based joystick testing utility. Reads events from the joystick asynchronously, allows a main processing loop if desired. This uses the main loop to check for and compensate for a resized terminal but not really anything else. Hit control-c to exit; needs one extra event from the the joystick to exit completely. Only shows the first 3 axes, no matter how many are available. Tested with an Logitech extreme joystick and an Xbox controller.
 
-```raku
+```perl
 use experimental :pack;
  
 # Joysticks generally show up in the /dev/input/ directory as js(n) where n is

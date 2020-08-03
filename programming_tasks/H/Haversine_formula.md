@@ -2,7 +2,7 @@
 
 # [Haversine formula][1]
 
-```raku
+```perl
 class EarthPoint {
         has $.lat; # latitude
         has $.lon; # longitude

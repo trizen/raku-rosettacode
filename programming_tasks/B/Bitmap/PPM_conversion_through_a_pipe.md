@@ -2,7 +2,7 @@
 
 # [Bitmap/PPM conversion through a pipe][1]
 
-```raku
+```perl
 #!/usr/bin/env perl6
  
 # Reference:

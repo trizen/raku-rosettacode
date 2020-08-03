@@ -4,7 +4,7 @@
 
 The NG2 object can work with infinitely long continued fractions, it does lazy evaluation. By default, it is limited to returning the first 30 terms. Pass in a limit value if you want something other than default.
 
-```raku
+```perl
 class NG2 {
     has ( $!a12, $!a1, $!a2, $!a, $!b12, $!b1, $!b2, $!b );
  

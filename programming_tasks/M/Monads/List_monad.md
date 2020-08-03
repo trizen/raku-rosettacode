@@ -16,7 +16,7 @@ Here's a simple, if contrived example. take the numbers from 0 to 9, add 3 to ea
 
 The \* in the bind blocks are typically referred to as "whatever"; whatever + 3 etc. The guillemot (») is the hyper operator; descend into the data structure and apply the following operator/function to each member.
 
-```raku
+```perl
 multi bind (@list, &code) { @list.map: &code };
  
 multi bind ($item, &code) { $item.&code };

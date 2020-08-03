@@ -5,7 +5,7 @@
 It is similar to Haskell, but separate something like [inversion vector](https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)).
 It is easy generate random inversion vector without BigInt.
 
-```raku
+```perl
 use v6;
  
 sub rank2inv ( $rank, $n = * ) {

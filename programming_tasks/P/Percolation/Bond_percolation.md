@@ -4,7 +4,7 @@
 
 Starts "filling" from the top left. Fluid flow favours directions in Down, Left, Right, Up order. I interpreted p to be porosity, so small p mean low permeability, large p means high permeability.
 
-```raku
+```perl
 my @bond;
 my $grid = 10;
 my $geom = $grid - 1;

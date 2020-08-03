@@ -4,7 +4,7 @@
 
 In Perl 6, case modification is implemented as builtin subroutine or method:
 
-```raku
+```perl
 my $word = "alpha BETA" ;
 say uc $word;         # all uppercase (subroutine call)
 say $word.uc;         # all uppercase (method call)

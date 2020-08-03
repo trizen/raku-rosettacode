@@ -4,7 +4,7 @@
 
 This demonstrates several interesting features of Perl 6, including full grammar support, derived grammars, alternation split across derivations, and longest-token matching that works across derivations. It also shows off Perl 6's greatly cleaned up regex syntax.
 
-```raku
+```perl
 my $fullname;
 my $favouritefruit;
 my $needspeeling = False;

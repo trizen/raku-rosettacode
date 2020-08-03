@@ -4,6 +4,6 @@
 
 As Perl 5, except `DateTime` is built-in, so you don't need to download a module of that name:
 
-```raku
+```perl
 say join ' ', grep { Date.new($_, 12, 25).day-of-week == 7 }, 2008 .. 2121;
 ```

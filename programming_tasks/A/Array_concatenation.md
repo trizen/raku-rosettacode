@@ -2,7 +2,7 @@
 
 # [Array concatenation][1]
 
-```raku
+```perl
 # the prefix:<|> operator (called "slip") can be used to interpolate arrays into a list:
 sub cat-arrays(@a, @b) { 
 	|@a, |@b 

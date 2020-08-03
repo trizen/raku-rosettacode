@@ -2,7 +2,7 @@
 
 # [Fivenum][1]
 
-```raku
+```perl
 sub fourths ( Int $end ) {
     my $end_22 = $end div 2 / 2;
  

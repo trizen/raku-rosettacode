@@ -2,7 +2,7 @@
 
 # [Pangram checker][1]
 
-```raku
+```perl
 constant Eng = set 'a' .. 'z';
 constant Cyr = set <а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я ё>;
 constant Hex = set 'a' .. 'f';

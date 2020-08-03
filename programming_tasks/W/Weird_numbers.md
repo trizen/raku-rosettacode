@@ -2,7 +2,7 @@
 
 # [Weird numbers][1]
 
-```raku
+```perl
 sub abundant (\x) {
     my @l = x.is-prime ?? 1 !! flat
     1, (2 .. x.sqrt.floor).map: -> \d {

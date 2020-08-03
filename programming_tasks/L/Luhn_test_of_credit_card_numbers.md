@@ -6,7 +6,7 @@ Here we make use of `comb`, which splits into individual characters,
 and the sequence operator `...`, which can intuit an even or odd sequence from the first two values.
 `%%` is the divisible-by operator.
 
-```raku
+```perl
 sub luhn-test ($number --> Bool) {
     my @digits = $number.comb.reverse;
     my $sum = @digits[0,2...*].sum

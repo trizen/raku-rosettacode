@@ -4,7 +4,7 @@
 
 Since the tested function is rolls of a 7 sided die, the test numbers are magnitudes of 10<sup>x</sup> bumped up to the closest multiple of 7. This reduces spurious error from there not being an integer expected value.
 
-```raku
+```perl
 my $d7 = 1..7;
 sub roll7 { $d7.roll };
  

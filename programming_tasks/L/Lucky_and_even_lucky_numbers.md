@@ -2,7 +2,7 @@
 
 # [Lucky and even lucky numbers][1]
 
-```raku
+```perl
 sub luck(\a,\b) {
     gather {
 	my @taken = take a;

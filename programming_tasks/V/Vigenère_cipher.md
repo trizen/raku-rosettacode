@@ -2,7 +2,7 @@
 
 # [Vigenère cipher][1]
 
-```raku
+```perl
 sub s2v ($s) { $s.uc.comb(/ <[ A..Z ]> /)».ord »-» 65 }
 sub v2s (@v) { (@v »%» 26 »+» 65)».chr.join }
  

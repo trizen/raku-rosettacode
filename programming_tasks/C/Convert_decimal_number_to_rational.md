@@ -4,7 +4,7 @@
 
 Decimals are natively represented as rationals in Perl 6, so if the task does not need to handle repeating decimals, it is trivially handled by the `.nude` method, which returns the numerator and denominator:
 
-```raku
+```perl
 say .nude.join('/') for 0.9054054, 0.518518, 0.75;
 ```
 
@@ -18,7 +18,7 @@ say .nude.join('/') for 0.9054054, 0.518518, 0.75;
 
 However, if we want to take repeating decimals into account, then we can get a bit fancier.
 
-```raku
+```perl
 sub decimal_to_fraction ( Str $n, Int $rep_digits = 0 ) returns Str {
     my ( $int, $dec ) = ( $n ~~ /^ (\d+) \. (\d+) $/ )».Str or die;
  

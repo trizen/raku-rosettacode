@@ -2,7 +2,7 @@
 
 # [Random numbers][1]
 
-```raku
+```perl
 sub randnorm ($mean, $stddev) {
     $mean + $stddev * sqrt(-2 * log rand) * cos(2 * pi * rand)
 }

@@ -2,7 +2,7 @@
 
 # [Singly-linked list/Element insertion][1]
 
-```raku
+```perl
 my $letters = 'A' => 'C' => Mu;
  
 sub insert-after($list, $after, $new) {

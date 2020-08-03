@@ -4,6 +4,6 @@
 
 There is a `dir` builtin command which returns a list of IO::Path objects. We stringify them all with a hyperoperator before sorting the strings.
 
-```raku
+```perl
 .say for sort ~«dir
 ```

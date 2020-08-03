@@ -2,7 +2,7 @@
 
 # [Sutherland-Hodgman polygon clipping][1]
 
-```raku
+```perl
 sub intersection ($L11, $L12, $L21, $L22) {
     my ($Δ1x, $Δ1y) = $L11 »-« $L12;
     my ($Δ2x, $Δ2y) = $L21 »-« $L22;

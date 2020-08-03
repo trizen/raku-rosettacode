@@ -2,7 +2,7 @@
 
 # [File modification time][1]
 
-```raku
+```perl
 use NativeCall;
  
 class utimbuf is repr('CStruct') {

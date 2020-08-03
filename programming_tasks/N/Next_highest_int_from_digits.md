@@ -7,7 +7,7 @@
 
 Minimal error trapping. Assumes that the passed number is an integer. Handles positive or negative integers, always returns next largest regardless (if possible).
 
-```raku
+```perl
 use Lingua::EN::Numbers;
  
 sub next-greatest-index ($str, &op = &infix:«<» ) {

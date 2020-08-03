@@ -2,7 +2,7 @@
 
 # [Stack traces][1]
 
-```raku
+```perl
 sub g { say Backtrace.new.concise }
 sub f { g }
 sub MAIN { f }

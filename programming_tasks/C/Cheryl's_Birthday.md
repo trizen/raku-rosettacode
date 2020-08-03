@@ -2,7 +2,7 @@
 
 # [Cheryl's Birthday][1]
 
-```raku
+```perl
 my @dates =
     { :15day, :5month },
     { :16day, :5month },

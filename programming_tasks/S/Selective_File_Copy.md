@@ -12,7 +12,7 @@ This is WAY more complicated than it could be. Could achieve the same effect in 
 
 Since the sfc.dat file is binary encoded, I can't include it here easily as text so [here is a link to an online copy](https://github.com/thundergnat/rc/blob/master/sfc.dat) instead.
 
-```raku
+```perl
 my @format = ( # arbitrary and made up record format
     'field a' => { offset => 0,  length => 5, type => 'Str' },
     'field b' => { offset => 5,  length => 5, type => 'Str' },

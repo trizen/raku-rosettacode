@@ -8,7 +8,7 @@ It seems somewhat pointless to write a special purpose routine to do text matchi
 
 This version doesn't use strings for meta indexes ('start' and 'end'), rather it accepts regex assertions which are parsed differently from strings. This allows much more robust and fine grained control over what does and doesn't match. (and allows delimiter strings of 'start' and 'end' incidentally.) See the 11th example below which will confound nearly all of the current string only based implementations.
 
-```raku
+```perl
 sub text-between ( $text, $start, $end ) {
     return $/»[0]».Str if $text ~~ m:g/ $start (.*?) $end /;
     []

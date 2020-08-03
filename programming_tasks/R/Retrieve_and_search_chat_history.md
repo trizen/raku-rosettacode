@@ -4,7 +4,7 @@
 
 No dependencies or third party libraries huh? How about no modules, no requires, no libraries, no imports at all. Implemented using a bare compiler, strictly with built-ins. (Which makes it kind-of verbose, but thems the trade-offs.)
 
-```raku
+```perl
 my $needle = @*ARGS.shift // '';
 my @haystack;
  

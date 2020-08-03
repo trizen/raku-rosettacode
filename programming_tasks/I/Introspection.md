@@ -2,7 +2,7 @@
 
 # [Introspection][1]
 
-```raku
+```perl
 use v6;   # require Perl 6
  
 my $bloop = -123;

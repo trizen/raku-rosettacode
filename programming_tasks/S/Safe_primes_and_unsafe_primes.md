@@ -4,7 +4,7 @@
 
 Perl&#160;6 has a built-in method .is-prime to test for prime numbers. It's great for testing individual numbers or to find/filter a few thousand numbers, but when you are looking for millions, it becomes a drag. No fear, the Perl&#160;6 ecosystem has a fast prime sieve module available which can produce 10 million primes in a few seconds. Once we have the primes, it is just a small matter of filtering and formatting them appropriately.
 
-```raku
+```perl
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 use Math::Primesieve;

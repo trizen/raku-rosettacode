@@ -2,7 +2,7 @@
 
 # [Euler method][1]
 
-```raku
+```perl
 sub euler ( &f, $y0, $a, $b, $h ) {
     my $y = $y0;
     my @t_y;

@@ -2,7 +2,7 @@
 
 # [Pinstripe/Display][1]
 
-```raku
+```perl
 my $HOR = 1280;
 my $VERT = 720;
  

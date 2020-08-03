@@ -2,7 +2,7 @@
 
 # [Seven-sided dice from five-sided dice][1]
 
-```raku
+```perl
 my $d5 = 1..5;
 sub d5() { $d5.roll; }  # 1d5
  

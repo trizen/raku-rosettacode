@@ -4,7 +4,7 @@
 
 Most straightforwardly:
 
-```raku
+```perl
 for 1 .. 100 {
     when $_ %% (3 & 5) { say 'FizzBuzz'; }
     when $_ %% 3       { say 'Fizz'; }
@@ -16,7 +16,7 @@ for 1 .. 100 {
 
 Or abusing multi subs:
 
-```raku
+```perl
 multi sub fizzbuzz(Int $ where * %% 15) { 'FizzBuzz' }
 multi sub fizzbuzz(Int $ where * %%  5) { 'Buzz' }
 multi sub fizzbuzz(Int $ where * %%  3) { 'Fizz' }
@@ -27,28 +27,28 @@ multi sub fizzbuzz(Int $number        ) { $number }
 
 Or abusing list metaoperators:
 
-```raku
+```perl
 [1..100].map({[~] ($_%%3, $_%%5) »||» "" Z&& <fizz buzz> or $_ })».say
 ```
 
 
 Concisely (readable):
 
-```raku
+```perl
 say 'Fizz' x $_ %% 3 ~ 'Buzz' x $_ %% 5 || $_ for 1 .. 100;
 ```
 
 
 Shortest FizzBuzz to date:
 
-```raku
+```perl
 say "Fizz"x$_%%3~"Buzz"x$_%%5||$_ for 1..100
 ```
 
 
 And here's an implementation that never checks for divisibility:
 
-```raku
+```perl
 .say for
     (
       (flat ('' xx 2, 'Fizz') xx *)

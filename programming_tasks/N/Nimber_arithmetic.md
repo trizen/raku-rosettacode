@@ -4,7 +4,7 @@
 
 (or at least, heavily inspired by)
 
-```raku
+```perl
 sub infix:<⊕> (Int $x, Int $y) { $x +^ $y }
  
 sub infix:<⊗> (Int $x, Int $y) {

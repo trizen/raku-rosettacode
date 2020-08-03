@@ -4,7 +4,7 @@
 
 Apparently there is some rate limiting on place now, sleep a bit between requests.
 
-```raku
+```perl
 use HTTP::UserAgent;
  
 my $ua = HTTP::UserAgent.new;

@@ -21,7 +21,7 @@ Here we have 5 players:
  player 3 randomly picks whether to roll again or not biased so that there is a 90% chance that it will.
  player 4 randomly chooses to roll again but gets more consrvative as its score get closer to the goal.
 ```
-```raku
+```perl
 my $games = @*ARGS ?? (shift @*ARGS) !! 100;
  
 constant DIE = 1 .. 6;

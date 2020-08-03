@@ -2,7 +2,7 @@
 
 # [Diversity prediction theorem][1]
 
-```raku
+```perl
 sub diversity-calc($truth, @pred) {
 my $ae = avg-error($truth, @pred); # average individual error
 my $cp = ([+] @pred)/+@pred;       # collective prediction

@@ -5,7 +5,7 @@
 US census algorithm, so "Ashcraft" and "Burroughs" adjusted to match.
 We fake up a first consonant in some cases to make up for the fact that we always trim the first numeric code (so that the 'l' of 'Lloyd' is properly deleted).
 
-```raku
+```perl
 sub soundex ($name --> Str) {
     my $first = substr($name,0,1).uc;
     gather {

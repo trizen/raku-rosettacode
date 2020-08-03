@@ -2,7 +2,7 @@
 
 # [Make a backup file][1]
 
-```raku
+```perl
 # Back up the given path/filename with a default extension .bk(n)
 # where n is in the range 1 - $limit (default 3).
 # Prints 'File not found' to STDERR if the file does not exist.

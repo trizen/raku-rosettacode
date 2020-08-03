@@ -4,7 +4,7 @@
 
 To demonstrate we're not limited to Latin-1, we'll print the fullwidth variant.
 
-```raku
+```perl
 say '￡';
 say "\x[FFE1]";
 say "\c[FULLWIDTH POUND SIGN]";

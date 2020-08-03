@@ -4,7 +4,7 @@
 
 We'll use a L-System role, and draw the dragon in SVG.
 
-```raku
+```perl
 use SVG;
  
 role Lindenmayer {

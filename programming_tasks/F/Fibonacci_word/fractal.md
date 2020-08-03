@@ -2,7 +2,7 @@
 
 # [Fibonacci word/fractal][1]
 
-```raku
+```perl
 constant @fib-word = '1', '0', { $^b ~ $^a } ... *;
  
 sub MAIN($m = 17, $scale = 3) {

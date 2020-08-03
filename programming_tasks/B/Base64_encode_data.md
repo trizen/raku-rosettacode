@@ -2,7 +2,7 @@
 
 # [Base64 encode data][1]
 
-```raku
+```perl
 sub MAIN {
     my $buf = slurp("./favicon.ico", :bin);
     say buf-to-Base64($buf);

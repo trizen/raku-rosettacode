@@ -2,7 +2,7 @@
 
 # [Card shuffles][1]
 
-```raku
+```perl
 use v6;
  
 sub overhand ( @cards ) {

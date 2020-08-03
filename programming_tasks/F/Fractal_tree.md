@@ -4,7 +4,7 @@
 
 Image is created in [SVG](http://en.wikipedia.org/wiki/SVG) format.
 
-```raku
+```perl
 my ($width, $height) = (1000,1000); # image dimension
 my $scale = 6/10; # branch scale relative to trunk
 my $length = 400; # trunk size

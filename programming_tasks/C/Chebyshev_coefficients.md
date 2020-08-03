@@ -2,7 +2,7 @@
 
 # [Chebyshev coefficients][1]
 
-```raku
+```perl
 sub chebft ( Code $func, Real $a, Real $b, Int $n ) {
  
     my $bma = 0.5 * ( $b - $a );

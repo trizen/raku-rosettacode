@@ -2,7 +2,7 @@
 
 # [Towers of Hanoi][1]
 
-```raku
+```perl
 subset Peg of Int where 1|2|3;
  
 multi hanoi (0,      Peg $a,     Peg $b,     Peg $c)     { }

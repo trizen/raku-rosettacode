@@ -2,7 +2,7 @@
 
 # [Loops/Infinite][1]
 
-```raku
+```perl
 loop {
     say 'SPAM';
 }
@@ -11,7 +11,7 @@ loop {
 
 In addition, there are various ways of writing lazy, infinite lists in Perl&#160;6:
 
-```raku
+```perl
 print "SPAM\n" xx *;      # repetition operator
 print "SPAM\n", ~* ... *; # sequence operator
 map {say "SPAM"}, ^Inf;   # upto operator

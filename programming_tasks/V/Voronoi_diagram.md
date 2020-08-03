@@ -8,7 +8,7 @@ Perhaps "Inspired by Python" would be more accurate.
 
 Generates a Euclidean, a Taxicab and a Minkowski Voronoi diagram using the same set of domain points and colors.
 
-```raku
+```perl
 use Image::PNG::Portable;
  
 my @bars = '▁▂▃▄▅▆▇█▇▆▅▄▃▂▁'.comb;

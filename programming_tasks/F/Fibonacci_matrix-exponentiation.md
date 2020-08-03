@@ -4,7 +4,7 @@
 
 Following the general approach of Sidef, and relying on Perl for `fibmod` function. Borrowed/adapted routines from [Ramanujan's_constant](https://rosettacode.org/wiki/Ramanujan%27s_constant) task to allow `FatRat` calculations throughout. Does not quite meet task spec, as n^64 results not working yet.
 
-```raku
+```perl
 use Math::Matrix;
 use Inline::Perl5;
 my $p5 = Inline::Perl5.new();

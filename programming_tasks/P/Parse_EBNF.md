@@ -5,7 +5,7 @@
 This parses the EBNF rule set using a perl 6 grammar, then if it parses as valid EBNF, constructs a grammar and parses the test strings with that. EBNF rule sets that are naively syntactically correct but missing rules will parse as valid but will give a runtime failure warning about missing methods.
 It is implemented and exercised using the flavor of EBNF and test cases specified on the [test page](https://rosettacode.org/wiki/Parse_EBNF/Tests).
 
-```raku
+```perl
 # A perl 6 grammar to parse EBNF
 grammar EBNF {
   rule         TOP { ^ <title>? '{' [ <production> ]+ '}' <comment>? $ }

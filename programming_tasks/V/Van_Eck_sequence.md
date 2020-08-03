@@ -16,7 +16,7 @@ among others.
 
 Implemented as lazy, extendable lists.
 
-```raku
+```perl
 sub n-van-ecks ($init) {
     $init, -> $i, {
         state %v;

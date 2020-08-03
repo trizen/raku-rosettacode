@@ -2,7 +2,7 @@
 
 # [Find common directory path][1]
 
-```raku
+```perl
 my $sep = '/';
 my @dirs = </home/user1/tmp/coverage/test
             /home/user1/tmp/covert/operator
@@ -33,7 +33,7 @@ The longest common path is /home/user1/tmp
 
 If you'd prefer a pure FP solution without side effects, you can use this:
 
-```raku
+```perl
 my $sep := '/';
 my @dirs := </home/user1/tmp/coverage/test
              /home/user1/tmp/covert/operator
@@ -51,7 +51,7 @@ say "The longest common path is ",
 
 Or here's another factoring, that focuses on building the result with cumulative sequences and getting the solution with \`first\`:
 
-```raku
+```perl
 my $sep = '/';
 my @dirs = </home/user1/tmp/coverage/test
             /home/user1/tmp/covert/operator
