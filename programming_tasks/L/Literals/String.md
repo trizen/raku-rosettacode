@@ -34,7 +34,7 @@ Short       Long            Meaning
 In any case, an initial `Q`, `q`, or `qq` may omit the initial colon to form traditional Perl quotes such as `qw//`.
 And Q can be used by itself to introduce a quote that has no escapes at all except for the closing delimiter:
 
-```perl
+```raku
 my $raw = Q'$@\@#)&!#';
 ```
 
@@ -71,7 +71,7 @@ Unlike in Perl 5, we don't use backticks as shorthand for what is now expressed
 Heredocs now have no special `<<` syntax,
 but fall out of the `:to` adverb:
 
-```perl
+```raku
 say qq:to/END/;
     Your ad here.
     END
@@ -84,7 +84,7 @@ Indentation equivalent to the ending tag is automatically removed.
 
 Backslash sequences recognized by `:b` (and hence `:qq`) include:
 
-```perl
+```raku
 "\a"        # BELL
 "\b"        # BACKSPACE
 "\t"        # TAB

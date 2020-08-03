@@ -2,7 +2,7 @@
 
 # [Montgomery reduction][1]
 
-```perl
+```raku
 sub montgomery-reduce($m, $a is copy) {
     for 0..$m.msb {
         $a += $m if $a +& 1;

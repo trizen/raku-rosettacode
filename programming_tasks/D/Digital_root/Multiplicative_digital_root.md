@@ -2,7 +2,7 @@
 
 # [Digital root/Multiplicative digital root][1]
 
-```perl
+```raku
 sub multiplicative-digital-root(Int $n) {
     return .elems - 1, .[.end]
         given cache($n, {[*] .comb} ... *.chars == 1)

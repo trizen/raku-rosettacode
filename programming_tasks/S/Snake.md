@@ -4,7 +4,7 @@
 
 This is a variation of a demo script included in the examples folder for the Perl 6 SDL2::Raw library bindings.
 
-```perl
+```raku
 use SDL2::Raw;
 use Cairo;
  

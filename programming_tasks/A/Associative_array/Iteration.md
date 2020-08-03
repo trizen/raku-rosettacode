@@ -2,7 +2,7 @@
 
 # [Associative array/Iteration][1]
 
-```perl
+```raku
 my %pairs = hello => 13, world => 31, '!' => 71;
  
 for %pairs.kv -> $k, $v {

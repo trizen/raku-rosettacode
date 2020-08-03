@@ -2,7 +2,7 @@
 
 # [Write float arrays to a text file][1]
 
-```perl
+```raku
 sub writedat ( $filename, @x, @y, $x_precision = 3, $y_precision = 5 ) {
     my $fh = open $filename, :w;
  
@@ -34,7 +34,7 @@ File contents
 
 In Perl 6 Real::base can be used to convert to Str with arbitrary precision and any base you like. Using the hyper-operator &gt;&gt;. let us strip loops, many temporary variables and is a candidate for autothreading.
 
-```perl
+```raku
 sub writefloat($filename, @x, @y, :$x-precision = 3, :$y-precision = 5) {
     constant TAB = "\t" xx *;
     constant NL = "\n" xx *;

@@ -2,7 +2,7 @@
 
 # [Semordnilap][1]
 
-```perl
+```raku
 my $words = set slurp("unixdict.txt").lines;
  
 my @sems = gather for $words.flat -> $word {

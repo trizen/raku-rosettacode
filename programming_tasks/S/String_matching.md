@@ -4,7 +4,7 @@
 
 Using string methods:
 
-```perl
+```raku
 $haystack.starts-with($needle)  # True if $haystack starts with $needle
 $haystack.contains($needle)     # True if $haystack contains $needle
 $haystack.ends-with($needle)    # True if $haystack ends with $needle
@@ -13,7 +13,7 @@ $haystack.ends-with($needle)    # True if $haystack ends with $needle
 
 Using regexes:
 
-```perl
+```raku
 so $haystack ~~ /^ $needle  /  # True if $haystack starts with $needle
 so $haystack ~~ /  $needle  /  # True if $haystack contains $needle
 so $haystack ~~ /  $needle $/  # True if $haystack ends with $needle
@@ -22,7 +22,7 @@ so $haystack ~~ /  $needle $/  # True if $haystack ends with $needle
 
 Using `substr`:
 
-```perl
+```raku
 substr($haystack, 0, $needle.chars) eq $needle  # True if $haystack starts with $needle
 substr($haystack, *-$needle.chars) eq $needle   # True if $haystack ends with $needle
 ```
@@ -30,6 +30,6 @@ substr($haystack, *-$needle.chars) eq $needle   # True if $haystack ends with $n
 
 Bonus task:
 
-```perl
+```raku
 $haystack.match($needle, :g)».from;  # List of all positions where $needle appears in $haystack
 ```

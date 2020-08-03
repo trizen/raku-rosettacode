@@ -4,7 +4,7 @@
 
 At the end of running any top-level code (which can preprocess the arguments if it likes), Perl 6 automatically examines any remaining arguments and transforms them into a call to a `MAIN` routine, if one is defined. The arguments are parsed based on the signature of the routine, so that options are mapped to named arguments.
 
-```perl
+```raku
 sub MAIN (Bool :$b, Str :$s = '', Int :$n = 0, *@rest) {
     say "Bool: $b";
     say "Str: $s";

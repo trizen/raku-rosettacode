@@ -2,7 +2,7 @@
 
 # [Zumkeller numbers][1]
 
-```perl
+```raku
 use ntheory:from<Perl5> <factor is_prime>;
  
 sub zumkeller ($range)  {

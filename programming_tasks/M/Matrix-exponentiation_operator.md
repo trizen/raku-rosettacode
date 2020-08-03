@@ -2,7 +2,7 @@
 
 # [Matrix-exponentiation operator][1]
 
-```perl
+```raku
 subset SqMat of Array where { .elems == all(.[]».elems) }
  
 multi infix:<*>(SqMat $a, SqMat $b) {[

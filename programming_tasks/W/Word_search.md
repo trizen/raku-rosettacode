@@ -2,7 +2,7 @@
 
 # [Word search][1]
 
-```perl
+```raku
 my $rows = 10;
 my $cols = 10;
  

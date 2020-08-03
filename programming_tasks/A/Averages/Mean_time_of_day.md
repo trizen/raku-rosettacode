@@ -2,7 +2,7 @@
 
 # [Averages/Mean time of day][1]
 
-```perl
+```raku
 sub tod2rad($_) { [+](.comb(/\d+/) Z* 3600,60,1) * tau / 86400 }
  
 sub rad2tod ($r) {

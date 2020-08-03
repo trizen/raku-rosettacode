@@ -20,7 +20,7 @@ In order to accommodate the most possible digits, the number must be divisible b
 
 All these optimizations get the run time to well under 1 second.
 
-```perl
+```raku
 my $magic-number = 9 * 8 * 7;                        # 504
  
 my $div = 9876432 div $magic-number * $magic-number; # largest 7 digit multiple of 504 < 9876432
@@ -57,7 +57,7 @@ Found 9867312
 
 There are fewer analytical optimizations available for base 16. Other than 0, no digits can be ruled out so a much larger space must be searched. We'll start at the largest possible permutation (FEDCBA987654321) and work down so as soon as we find **a** solution, we know it is **the** solution.
 
-```perl
+```raku
 my $hex = 'FEDCBA987654321';        # largest possible hex number
 my $magic-number = [lcm] 1 .. 15;   # find least common multiple
 my $div = :16($hex) div $magic-number * $magic-number;

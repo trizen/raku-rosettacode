@@ -4,7 +4,7 @@
 
 For efficiency (and novelty), this program explicitly implements long multiplication, but in base 10000. That base was chosen because multiplying two 5-digit numbers can overflow a 32-bit integer, but two 4-digit numbers cannot.
 
-```perl
+```raku
 sub num_to_groups ( $num ) { $num.flip.comb(/.**1..4/)».flip     };
 sub groups_to_num ( @g   ) { [~] flat @g.pop, @g.reverse».fmt('%04d') };
  

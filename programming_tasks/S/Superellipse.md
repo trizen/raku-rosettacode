@@ -4,7 +4,7 @@
 
 Generate an svg image to STDOUT. Redirect into a file to capture it.
 
-```perl
+```raku
 constant a = 200;
 constant b = 200;
 constant n = 2.5;

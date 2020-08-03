@@ -4,7 +4,7 @@
 
 Generate an SVG image file.
 
-```perl
+```raku
 use SVG;
 use SVG::Plot;
  

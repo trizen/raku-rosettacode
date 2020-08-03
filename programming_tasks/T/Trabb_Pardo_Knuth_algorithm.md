@@ -2,7 +2,7 @@
 
 # [Trabb Pardo–Knuth algorithm][1]
 
-```perl
+```raku
 my @nums = prompt("Please type 11 space-separated numbers: ").words
     until @nums == 11;
 for @nums.reverse -> $n {

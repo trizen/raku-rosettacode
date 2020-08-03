@@ -12,7 +12,7 @@ This is a very simple simulation. It assumes a constant ~2G+ acceleration in a g
 
 The motion is a little "notchy" as the vertical resolution in a terminal is rather low. Exits after the rocket leaves the visible area of the terminal. See the [example animated gif](https://github.com/thundergnat/rc/blob/master/img/rocket-perl6.gif)
 
-```perl
+```raku
 signal(SIGINT).tap: { cleanup() }
  
 my ($rows,$cols) = qx/stty size/.words;

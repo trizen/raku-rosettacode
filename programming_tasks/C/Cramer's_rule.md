@@ -2,7 +2,7 @@
 
 # [Cramer's rule][1]
 
-```perl
+```raku
 sub det(@matrix) {
     my @a = @matrix.map: { [|$_] };
     my $sign = +1;

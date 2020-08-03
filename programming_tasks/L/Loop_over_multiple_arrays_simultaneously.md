@@ -2,7 +2,7 @@
 
 # [Loop over multiple arrays simultaneously][1]
 
-```perl
+```raku
 for <a b c> Z <A B C> Z 1, 2, 3 -> ($x, $y, $z) {
    say $x, $y, $z;
 }
@@ -23,14 +23,14 @@ Since `Z` will return a list of lists (in this example, the first list is `('a',
 
 Note that we can also factor out the concatenation by making the `Z` metaoperator apply the `~` concatenation operator across each triple:
 
-```perl
+```raku
 .say for <a b c> Z~ <A B C> Z~ 1, 2, 3;
 ```
 
 
 We could also use the zip-to-string with the reduction metaoperator:
 
-```perl
+```raku
 .say for [Z~] [<a b c>], [<A B C>], [1,2,3]
 ```
 
@@ -41,13 +41,13 @@ We could also use the zip-to-string with the reduction metaoperator:
 
 The common case of iterating over a list and a list of its indices can be done using the same method:
 
-```perl
+```raku
 for ^Inf Z <a b c d> -> ($i, $letter) { ... }
 ```
 
 
 or by using the `.kv` (key and value) method on the list (and dropping the parentheses because the list returned by `.kv` is a flattened list):
 
-```perl
+```raku
 for <a b c d>.kv -> $i, $letter { ... }
 ```

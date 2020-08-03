@@ -2,7 +2,7 @@
 
 # [I.Q. Puzzle][1]
 
-```perl
+```raku
  
 constant @start =  <
         0

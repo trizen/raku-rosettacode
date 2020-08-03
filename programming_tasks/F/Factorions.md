@@ -2,7 +2,7 @@
 
 # [Factorions][1]
 
-```perl
+```raku
 constant @factorial = 1, |[\*] 1..*;
  
 constant $limit = 1500000;

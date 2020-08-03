@@ -2,7 +2,7 @@
 
 # [Strip block comments][1]
 
-```perl
+```raku
 sample().split(/ '/*' .+? '*/' /).print;
  
 sub sample {

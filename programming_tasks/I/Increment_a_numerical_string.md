@@ -2,7 +2,7 @@
 
 # [Increment a numerical string][1]
 
-```perl
+```raku
 my $s = "12345";
 $s++;
 ```

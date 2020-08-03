@@ -2,7 +2,7 @@
 
 # [Dijkstra's algorithm][1]
 
-```perl
+```raku
 class Graph {
   has (%.edges, %.nodes);
  

@@ -8,7 +8,7 @@ It's the [Letter frequency](https://rosettacode.org/wiki/Letter_frequency#Perl_6
 
 The specs for what "pretty print" means are sadly lacking. Ah well, just makes it easily defensible if I do *anything at all*.
 
-```perl
+```raku
 my $dna = join '', lines q:to/END/;
     CGTAAAAAATTACAACGTCCTTTGGCTATCTCTTAAACTCCTGCTAAATG
     CTCGTGCTTTCCAATTATGTAAGCGTTCCGAGACGGGGTGGTCGATTCTG

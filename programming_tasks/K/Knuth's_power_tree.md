@@ -4,7 +4,7 @@
 
 Paths are random. It is possible replace `.pick(*)` with `.reverse` if you want paths as in Perl, or remove it for Python paths.
 
-```perl
+```raku
 use v6;
  
 sub power-path ($n ) {

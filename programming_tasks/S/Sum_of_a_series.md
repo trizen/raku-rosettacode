@@ -4,28 +4,28 @@
 
 In general, the `$n`th partial sum of a series whose terms are given by a unary function `&f` is
 
-```perl
+```raku
 [+] map &f, 1 .. $n
 ```
 
 
 So what's needed in this case is
 
-```perl
+```raku
 say [+] map { 1 / $^n**2 }, 1 .. 1000;
 ```
 
 
 Or, using the "hyper" metaoperator to vectorize, we can use a more "point free" style while keeping traditional precedence:
 
-```perl
+```raku
 say [+] 1 «/« (1..1000) »**» 2;
 ```
 
 
 Or we can use the `X` "cross" metaoperator, which is convenient even if one side or the other is a scalar. In this case, we demonstrate a scalar on either side:
 
-```perl
+```raku
 say [+] 1 X/ (1..1000 X** 2);
 ```
 
@@ -36,7 +36,7 @@ Note that cross ops are parsed as list infix precedence rather than using the pr
 
 With list comprehensions, you can write:
 
-```perl
+```raku
 say [+] (1 / $_**2 for 1..1000);
 ```
 
@@ -44,7 +44,7 @@ say [+] (1 / $_**2 for 1..1000);
 That's fine for a single result, but if you're going to be evaluating the sequence multiple times, you don't want to be recalculating the sum each time, so it's more efficient to define the sequence as a constant to let the run-time automatically cache those values already calculated. In a lazy language like Perl 6, it's generally considered a stronger abstraction to write the correct infinite sequence, and then take the part of it you're interested in.
 Here we define an infinite sequence of partial sums (by adding a backslash into the reduction to make it look "triangular"), then take the 1000th term of that:
 
-```perl
+```raku
 constant @x = [\+] 0, { 1 / ++(state $n) ** 2 } ... *;
 say @x[1000];  # prints 1.64393456668156
 ```
@@ -56,7 +56,7 @@ Note that infinite constant sequences can be lazily generated in Perl 6, or thi
 
 A cleaner style is to combine these approaches with a more FP look:
 
-```perl
+```raku
 constant ζish = [\+] map -> \𝑖 { 1 / 𝑖**2 }, 1..*;
 say ζish[1000];
 ```
@@ -64,7 +64,7 @@ say ζish[1000];
 
 Perhaps the cleanest way is to just define the zeta function and evaluate it for s=2, possibly using memoization:
 
-```perl
+```raku
 use experimental :cached;
 sub ζ($s) is cached { [\+] 1..* X** -$s }
 say ζ(2)[1000];

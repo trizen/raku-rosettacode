@@ -2,7 +2,7 @@
 
 # [Water collected between towers][1]
 
-```perl
+```raku
 sub max_l ( @a ) {  [\max] @a }
 sub max_r ( @a ) { ([\max] @a.reverse).reverse }
  

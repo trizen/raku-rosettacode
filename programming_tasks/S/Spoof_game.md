@@ -2,7 +2,7 @@
 
 # [Spoof game][1]
 
-```perl
+```raku
 sub query_for_integer ($prompt) { loop { ($_ = prompt "$prompt ") ~~ /^ \d+ $/ ?? return $_ !! say '(need an integer)'; } }
  
 sub spoof_for_2 {

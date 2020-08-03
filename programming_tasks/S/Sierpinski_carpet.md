@@ -2,7 +2,7 @@
 
 # [Sierpinski carpet][1]
 
-```perl
+```raku
 sub carpet
 {
     (['#'], -> @c {

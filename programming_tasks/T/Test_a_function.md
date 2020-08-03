@@ -2,7 +2,7 @@
 
 # [Test a function][1]
 
-```perl
+```raku
 use Test;
  
 sub palin( Str $string) { so $string.lc.comb(/\w/) eq  $string.flip.lc.comb(/\w/) }

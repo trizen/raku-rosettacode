@@ -2,7 +2,7 @@
 
 # [Prime conspiracy][1]
 
-```perl
+```raku
 my @primes := 2, |(3,5,7 ... *).grep: *.is-prime;
  
 my %conspiracy;

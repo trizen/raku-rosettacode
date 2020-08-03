@@ -2,7 +2,7 @@
 
 # [Events][1]
 
-```perl
+```raku
 note now, " program start";
 my $event = Channel.new;
  

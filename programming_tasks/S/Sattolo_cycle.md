@@ -4,7 +4,7 @@
 
 This modifies the array passed as argument, in-place.
 
-```perl
+```raku
 sub sattolo-cycle (@array) {
     for reverse 1 .. @array.end -> $i {
         my $j = (^$i).pick;

@@ -4,7 +4,7 @@
 
 Using bindings to libxdo so any window managed by an X11 display server can receive mouse events.
 
-```perl
+```raku
 use X11::libxdo;
 my $xdo = Xdo.new;
  

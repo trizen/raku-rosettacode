@@ -2,7 +2,7 @@
 
 # [Arithmetic coding/As a generalized change of radix][1]
 
-```perl
+```raku
 sub cumulative_freq(%freq) {
     my %cf;
     my $total = 0;

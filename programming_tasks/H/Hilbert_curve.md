@@ -2,7 +2,7 @@
 
 # [Hilbert curve][1]
 
-```perl
+```raku
 use SVG;
  
 role Lindenmayer {
@@ -41,7 +41,7 @@ See: [Hilbert curve](https://github.com/thundergnat/rc/blob/master/img/hilbert-p
 
 There is a variation of a Hilbert curve known as a [Moore curve](http://en.wikipedia.org/wiki/Moore_curve) which is essentially 4 Hilbert curves joined together in a loop.
 
-```perl
+```raku
 use SVG;
  
 role Lindenmayer {

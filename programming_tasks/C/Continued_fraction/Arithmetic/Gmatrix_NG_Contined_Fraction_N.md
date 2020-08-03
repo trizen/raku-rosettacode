@@ -4,7 +4,7 @@
 
 All the important stuff takes place in the NG object. Everything else is helper subs for testing and display. The NG object is capable of working with infinitely long continued fractions, but displaying them can be problematic. You can pass in a limit to the apply method to get a fixed maximum number of terms though. See the last example: 100 terms from the infinite cf (1+√2)/2 and its Rational representation.
 
-```perl
+```raku
 class NG {
     has ( $!a1, $!a, $!b1, $!b );
     submethod BUILD ( :$!a1, :$!a, :$!b1, :$!b ) { }

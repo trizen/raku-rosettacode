@@ -8,7 +8,7 @@ Saving the "Days of Week, Also Known As" table to a local file DoWAKA.txt. Note:
 
 Note that this is using a previous version of the date file that has erroneous duplicate day names (see line 90). Since the effort was already expended to catch such problems, it may as well be demonstrated.
 
-```perl
+```raku
 sub auto-abbreviate ( Str $string ) {
     return Nil unless my @words = $string.words;
     my $max = @words.chars.max;

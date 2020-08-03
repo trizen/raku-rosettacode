@@ -2,7 +2,7 @@
 
 # [Combinations with repetitions/Square Digit Chain][1]
 
-```perl
+```raku
 #!/usr/bin/env perl6
  
 use v6;

@@ -2,7 +2,7 @@
 
 # [Singleton][1]
 
-```perl
+```raku
 class Singleton {
     # We create a lexical variable in the class block that holds our single instance.
     my Singleton $instance = Singleton.bless; # You can add initialization arguments here.

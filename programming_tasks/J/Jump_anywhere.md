@@ -4,7 +4,7 @@
 
 ### Label-based jumps
 
-```perl
+```raku
     outer-loop: loop {
         inner-loop: loop {
             # NYI # goto inner-loop if rand > 0.5; # Hard goto
@@ -44,7 +44,7 @@ Produces random output, but here's a representative run:
 
 Continuations in Perl 6 are currently limited to use in generators via the gather/take model:
 
-```perl
+```raku
     my @list = lazy gather for ^100 -> $i {
         if $i.is-prime {
             say "Taking prime $i";
@@ -81,7 +81,7 @@ Notice that no further execution of the loop occurs. If we then asked for the el
 
 Exceptions are fairly typical in Perl6:
 
-```perl
+```raku
     die "This is a generic, untyped exception";
 ```
 
@@ -92,7 +92,7 @@ Will walk up the stack until either some \`CATCH\` block intercepts the specific
 
 But if a failure should be recoverable (e.g. execution might reasonably continue along another path) a failure is often the right choice. The fail operator is like "return", but the returned value will only be valid in boolean context or for testing definedness. Any other operation will produce the original exception with the original exception's execution context (e.g. traceback) along with the current context.
 
-```perl
+```raku
     sub foo() { fail "oops" }
     my $failure = foo;
     say "Called foo";
@@ -121,7 +121,7 @@ Produces:
 
 However, an exception can \`.resume\` in order to jump back to the failure point (this is why the stack is not unwound until after exception handling).
 
-```perl
+```raku
   sub foo($i) {
       if $i == 0 {
           die "Are you sure you want /0?";

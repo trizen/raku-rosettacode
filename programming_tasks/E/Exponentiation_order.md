@@ -4,7 +4,7 @@
 
 Note that the reduction forms automatically go right-to-left because the base operator is right-associative. Most other operators are left-associative and would automatically reduce left-to-right instead.
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
 sub demo($x) { say "  $x\t───► ", EVAL $x }
  

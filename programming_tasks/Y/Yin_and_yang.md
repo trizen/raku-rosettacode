@@ -4,7 +4,7 @@
 
 Translation / Modification of C and Perl examples.
 
-```perl
+```raku
 sub circle ($rad, $cx, $cy, $fill = 'white', $stroke = 'black' ){
     say "<circle cx='$cx' cy='$cy' r='$rad' fill='$fill' stroke='$stroke' stroke-width='1'/>";
 }
@@ -37,7 +37,7 @@ Seems like something of a cheat since it relies on a web browser /
 svg image interpreter to actually view the output image.
 If that's the case, we may as well cheat harder.&#160;;-)
 
-```perl
+```raku
 sub cheat_harder ($scale) { "<span style=\"font-size:$scale%;\">&#x262f;</span>"; }
  
 say '<div>', cheat_harder(700), cheat_harder(350), '</div>';

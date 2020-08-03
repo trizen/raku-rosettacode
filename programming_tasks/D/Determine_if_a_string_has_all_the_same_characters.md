@@ -4,7 +4,7 @@
 
 The last string demonstrates how Perl 6 can recognize that glyphs made up of different combinations of combining characters can compare the same. It is built up from explicit codepoints to show that each of the glyphs is made up of different combinations.
 
-```perl
+```raku
   -> $str {
     my $i = 0;
     print "\n{$str.perl} (length: {$str.chars}), has ";

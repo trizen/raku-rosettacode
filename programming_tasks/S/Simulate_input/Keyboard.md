@@ -4,7 +4,7 @@
 
 Use libxdo bindings to send text / keystrokes to any application that will accept keystrokes from X11.
 
-```perl
+```raku
 use X11::libxdo;
  
 my $xdo = Xdo.new;

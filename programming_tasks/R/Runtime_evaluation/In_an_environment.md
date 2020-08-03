@@ -4,7 +4,7 @@
 
 For security, you must explicitly allow use of 'EVAL'.
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
 sub eval_with_x($code, *@x) { [R-] @x.map: -> \x { EVAL $code } }
  

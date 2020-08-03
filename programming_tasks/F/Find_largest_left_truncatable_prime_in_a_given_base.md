@@ -4,7 +4,7 @@
 
 Pretty fast for bases 3 .. 11. 12 is slow. 18 is glacial.
 
-```perl
+```raku
 for 3 .. * -> $base {
     say "Starting base $base...";
     my @stems = grep { .is-prime }, ^$base;

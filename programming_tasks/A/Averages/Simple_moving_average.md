@@ -2,7 +2,7 @@
 
 # [Averages/Simple moving average][1]
 
-```perl
+```raku
 sub sma-generator (Int $P where * > 0) {
     sub ($x) {
         state @a = 0 xx $P;

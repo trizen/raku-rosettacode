@@ -2,7 +2,7 @@
 
 # [Trigonometric functions][1]
 
-```perl
+```raku
 say sin(pi/3);
 say cos(pi/4);
 say tan(pi/6);

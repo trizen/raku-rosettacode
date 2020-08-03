@@ -4,7 +4,7 @@
 
 Using module LMDB - bindings to the openLDAP library. Requires an LDAP instance.
 
-```perl
+```raku
 use LMDB;
  
 my %DB := LMDB::DB.open(:path<some-dir>, %connection-parameters);

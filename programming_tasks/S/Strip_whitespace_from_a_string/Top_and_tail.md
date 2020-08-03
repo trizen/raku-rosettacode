@@ -2,7 +2,7 @@
 
 # [Strip whitespace from a string/Top and tail][1]
 
-```perl
+```raku
 my $s = "\r\n \t\x2029 Good Stuff \x202F\n";
 say $s.trim;
 say $s.trim.perl;

@@ -4,7 +4,7 @@
 
 Bitmap class from [Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) task.
 
-```perl
+```raku
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

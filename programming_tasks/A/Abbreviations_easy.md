@@ -4,7 +4,7 @@
 
 Demonstrate that inputting an empty string returns an empty string in addition to the required test input.
 
-```perl
+```raku
 <
 Add ALTer  BAckup Bottom  CAppend Change SCHANGE  CInsert CLAst COMPress COpy
 COUnt COVerlay CURsor DELete CDelete Down DUPlicate Xedit EXPand EXTract Find

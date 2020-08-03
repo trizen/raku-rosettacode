@@ -2,7 +2,7 @@
 
 # [String interpolation (included)][1]
 
-```perl
+```raku
 my $extra = "little";
 say "Mary had a $extra lamb";           # variable interpolation
 say "Mary had a { $extra } lamb";       # expression interpolation

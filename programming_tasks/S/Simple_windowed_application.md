@@ -2,7 +2,7 @@
 
 # [Simple windowed application][1]
 
-```perl
+```raku
 use GTK::Simple;
 use GTK::Simple::App;
  

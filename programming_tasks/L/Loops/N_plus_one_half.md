@@ -2,7 +2,7 @@
 
 # [Loops/N plus one half][1]
 
-```perl
+```raku
 for 1 .. 10 {
     .print;
     last when 10;

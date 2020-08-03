@@ -5,7 +5,7 @@
 
 Not really clear whether a line graph or bar graph was desired, so generate both. Also, 100 points don't really give a good feel for the overall shape so do 500.
 
-```perl
+```raku
 my @yellowstone = 1, 2, 3, -> $q, $p {
     state @used = True xx 4;
     state $min  = 3;

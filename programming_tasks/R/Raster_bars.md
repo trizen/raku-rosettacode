@@ -12,7 +12,7 @@ Not really sure what is meant by "swaying".
 
 Generate random colored bars and display them. (They ended up looking more plastic than metallic; ah well.)
 
-```perl
+```raku
 use SDL2::Raw;
 use Cairo;
  

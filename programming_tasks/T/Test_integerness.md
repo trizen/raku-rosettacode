@@ -8,7 +8,7 @@ In Perl 6, all numeric types have a method called `narrow`, which returns an obj
 
 For the extra credit task, we can add another multi candidate that checks the distance between the number and it's nearest integer, but then we'll have to handle complex numbers specially.
 
-```perl
+```raku
 multi is-int ($n) { $n.narrow ~~ Int }
  
 multi is-int ($n, :$tolerance!) {

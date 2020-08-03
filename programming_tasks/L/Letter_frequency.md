@@ -4,7 +4,7 @@
 
 In perl6, whenever you want to count things in a collection, the rule of thumb is to use the Bag structure.
 
-```perl
+```raku
 .&ws.say for slurp.comb.Bag.sort: -*.value;
  
 sub ws ($pair) { 

@@ -4,7 +4,7 @@
 
 Deviates very slightly from the task spec. Generates a randomized de Bruijn sequence and replaces the 4444th digit with a the digit plus 1 mod 10 rather than a '.', mostly so it can demonstrate detection of extra PINs as well as missing ones.
 
-```perl
+```raku
 # Generate the sequence
 my $seq;
  

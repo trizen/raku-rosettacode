@@ -8,7 +8,7 @@ This is something best done with a module which is heavily tested, tries to acco
 
 Almost verbatim from the synopsis:
 
-```perl
+```raku
 use File::Temp;
  
 # Generate a temp file in a temp dir

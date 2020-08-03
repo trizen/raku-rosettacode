@@ -2,7 +2,7 @@
 
 # [Keyboard macros][1]
 
-```perl
+```raku
 my $TTY = open("/dev/tty");
 my @INPUT;
  

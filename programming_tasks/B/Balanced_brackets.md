@@ -8,7 +8,7 @@ There's More Than One Way To Do It.
 
 ### Depth counter
 
-```perl
+```raku
 sub balanced($s) {
     my $l = 0;
     for $s.comb {
@@ -35,7 +35,7 @@ say "$s {balanced($s) ?? "is" !! "is not"} well-balanced"
 
 Here's a more idiomatic solution using a hyperoperator to compare all the characters to a backslash (which is between the brackets in ASCII), a triangle reduction to return the running sum, a `given` to make that list the topic, and then a topicalized junction and a topicalized subscript to test the criteria for balance.
 
-```perl
+```raku
 sub balanced($s) {
     .none < 0 and .[*-1] == 0
         given ([\+] '\\' «leg« $s.comb).cache;
@@ -53,7 +53,7 @@ say "$s { balanced($s) ?? "is" !! "is not" } well-balanced"
 
 Of course, a Perl 5 programmer might just remove as many inner balanced pairs as possible and then see what's left.
 
-```perl
+```raku
 sub balanced($_ is copy) {
     Nil while s:g/'[]'//;
     $_ eq '';
@@ -67,7 +67,7 @@ say "$s is", ' not' x not balanced($s), " well-balanced";
 
 ### Parsing with a grammar
 
-```perl
+```raku
 grammar BalBrack { token TOP { '[' <TOP>* ']' } }
  
 my $n = prompt "Number of bracket pairs: ";

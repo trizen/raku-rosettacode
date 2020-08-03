@@ -2,7 +2,7 @@
 
 # [Faces from a mesh][1]
 
-```perl
+```raku
 sub check-equivalence ($a, $b) { so $a.Bag eqv $b.Bag }
  
 sub edge-to-periphery (@a is copy) {

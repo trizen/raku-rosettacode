@@ -5,7 +5,7 @@
 Note that Perl 6 regexes don't care about unquoted whitespace, and that backrefs
 count from 0, not from 1.
 
-```perl
+```raku
 sub encode($str) { $str.subst(/(.) $0*/, { $/.chars ~ $0 }, :g) }
  
 sub decode($str) { $str.subst(/(\d+) (.)/, { $1 x $0 }, :g) }

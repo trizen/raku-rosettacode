@@ -2,7 +2,7 @@
 
 # [Zero to the zero power][1]
 
-```perl
+```raku
 say '    type         n      n**n  exp(n,n)';
 say '--------  --------  --------  --------';
  

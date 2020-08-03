@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Comb sort][1]
 
-```perl
+```raku
 sub comb_sort ( @a is copy ) {
     my $gap = +@a;
     my $swaps = 1;

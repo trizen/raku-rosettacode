@@ -4,14 +4,14 @@
 
 The recursive formulas are easily written into a constant array, either:
 
-```perl
+```raku
 constant Catalan = 1, { [+] @_ Z* @_.reverse } ... *;
 ```
 
 
 or
 
-```perl
+```raku
 constant Catalan = 1, |[\*] (2, 6 ... *) Z/ 2 .. *;
  
  

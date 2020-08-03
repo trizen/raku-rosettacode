@@ -4,7 +4,7 @@
 
 Using *stty* just for the heck of it.
 
-```perl
+```raku
 my $stty = qx[stty -a];
 my $lines = $stty.match(/ 'rows '    <( \d+/);
 my $cols  = $stty.match(/ 'columns ' <( \d+/);

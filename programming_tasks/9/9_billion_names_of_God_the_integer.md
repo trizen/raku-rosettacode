@@ -4,7 +4,7 @@
 
 To save a bunch of memory, this algorithm throws away all the numbers that it knows it's not going to use again, on the assumption that the function will only be called with increasing values of $n. (It could easily be made to recalculate if it notices a regression.)
 
-```perl
+```raku
 my @todo = $[1];
 my @sums = 0;
 sub nextrow($n) {

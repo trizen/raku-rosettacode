@@ -2,7 +2,7 @@
 
 # [Commatizing numbers][1]
 
-```perl
+```raku
 commatize 'pi=3.14159265358979323846264338327950288419716939937510582097494459231', :at(6), :ins(' '), :by(5);
 commatize 'The author has two Z$100000000000000 Zimbabwe notes (100 trillion).', :ins<.>;
 commatize '-in Aus$+1411.8millions';

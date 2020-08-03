@@ -4,7 +4,7 @@
 
 This is a very dumb, straightforward translation of the C code. It is very slow so we'll interrupt the execution and display the partial output.
 
-```perl
+```raku
 subset Byte of Int where ^256;
 my @grid of Byte = 0;
  

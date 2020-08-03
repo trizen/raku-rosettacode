@@ -2,7 +2,7 @@
 
 # [Short-circuit evaluation][1]
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
  
 sub a ($p) { print 'a'; $p }

@@ -4,7 +4,7 @@
 
 Extending `class Cell` from [Singly-linked_list/Element_definition#Perl_6](https://rosettacode.org/wiki/Singly-linked_list/Element_definition#Perl_6):
 
-```perl
+```raku
     method delete ($value --> Cell) {
         my $prev = Nil;
         my $cell = self;
@@ -30,7 +30,7 @@ Extending `class Cell` from [Singly-linked_list/Element_definition#Perl_6](https
 
 Usage:
 
-```perl
+```raku
 my $list = cons 10, (cons 20, (cons 10, (cons 30, Nil)));
  
 $list = $list.delete(10);

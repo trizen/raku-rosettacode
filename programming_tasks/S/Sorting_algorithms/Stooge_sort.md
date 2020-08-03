@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Stooge sort][1]
 
-```perl
+```raku
 sub stoogesort( @L, $i = 0, $j = @L.end ) {
     @L[$j,$i] = @L[$i,$j] if @L[$i] > @L[$j];
  

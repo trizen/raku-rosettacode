@@ -4,7 +4,7 @@
 
 This is a somewhat fragile toy encoder / decoder and shouldn't be used for anything serious.
 
-```perl
+```raku
 #`[
 Set srand to set the encode / decode "key", and
 generate a lazy, reproducible stream of "random"

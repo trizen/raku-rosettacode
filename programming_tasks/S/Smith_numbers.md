@@ -2,7 +2,7 @@
 
 # [Smith numbers][1]
 
-```perl
+```raku
 constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;
  
 multi factors ( 1 ) { 1 }

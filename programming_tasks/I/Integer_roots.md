@@ -2,7 +2,7 @@
 
 # [Integer roots][1]
 
-```perl
+```raku
 sub integer_root ( Int $p where * >= 2, Int $n --> Int ) {
     my Int $d = $p - 1;
  

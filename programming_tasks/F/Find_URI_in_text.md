@@ -2,7 +2,7 @@
 
 # [Find URI in text][1]
 
-```perl
+```raku
 use v6;
 use IETF::RFC_Grammar::URI;
  

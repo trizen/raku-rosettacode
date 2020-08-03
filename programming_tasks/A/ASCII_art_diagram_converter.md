@@ -2,7 +2,7 @@
 
 # [ASCII art diagram converter][1]
 
-```perl
+```raku
 grammar RFC1025 {
     rule  TOP {  <.line-separator> [<line> <.line-separator>]+ }
     rule  line-separator { <.ws> '+--'+ '+' }

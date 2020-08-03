@@ -2,7 +2,7 @@
 
 # [Two Sum][1]
 
-```perl
+```raku
 sub two_sum ( @numbers, $sum ) {
     die '@numbers is not sorted' unless [<=] @numbers;
  

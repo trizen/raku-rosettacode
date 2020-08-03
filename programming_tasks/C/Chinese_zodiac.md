@@ -2,7 +2,7 @@
 
 # [Chinese zodiac][1]
 
-```perl
+```raku
 sub Chinese-zodiac ( Int $year ) {
     my @heaven  = <甲 jiă 乙 yĭ 丙 bĭng 丁 dīng 戊 wù 己 jĭ 庚 gēng 辛 xīn 壬 rén 癸 gŭi>.pairup;
     my @earth   = <子 zĭ 丑 chŏu 寅 yín 卯 măo 辰 chén 巳 sì 午 wŭ 未 wèi 申 shēn 酉 yŏu 戌 xū 亥 hài>.pairup;

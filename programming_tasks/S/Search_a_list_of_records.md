@@ -6,7 +6,7 @@ The built-in method `.first` fulfills the requirements of this task.
 
 It takes any [smart-matcher](https://docs.perl6.org/language/operators#infix_~~) as a predicate. The `:k` adverb makes it return the key (i.e. numerical index) instead of the value of the element.
 
-```perl
+```raku
 my @cities =
   { name => 'Lagos',                population => 21.0  },
   { name => 'Cairo',                population => 15.2  },

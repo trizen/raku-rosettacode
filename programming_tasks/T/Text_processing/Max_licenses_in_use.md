@@ -4,7 +4,7 @@
 
 Redirecting the mlijobs.txt file to STDIN:
 
-```perl
+```raku
 my %licenses;
  
 %licenses<count max> = 0,0;

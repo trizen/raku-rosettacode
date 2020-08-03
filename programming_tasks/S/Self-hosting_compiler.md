@@ -2,7 +2,7 @@
 
 # [Self-hosting compiler][1]
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
 EVAL slurp
 ```

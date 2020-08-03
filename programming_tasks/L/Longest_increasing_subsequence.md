@@ -8,7 +8,7 @@
 
 Straight-forward implementation of the algorithm described in the video.
 
-```perl
+```raku
 sub lis(@d) {
     my @l = [].item xx @d;
     @l[0].push: @d[0];
@@ -36,7 +36,7 @@ say lis([0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15]);
 
 ### Patience sorting
 
-```perl
+```raku
 sub lis(@deck is copy) {
     my @S = [@deck.shift() => Nil].item;
     for @deck -> $card {

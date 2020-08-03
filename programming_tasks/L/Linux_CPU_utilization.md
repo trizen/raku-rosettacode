@@ -2,7 +2,7 @@
 
 # [Linux CPU utilization][1]
 
-```perl
+```raku
 my $last-total = 0;
 my $last-idle  = 0;
  

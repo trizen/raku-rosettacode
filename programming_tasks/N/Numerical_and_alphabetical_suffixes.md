@@ -12,7 +12,7 @@ Unfortunately, this suffix routine is of limited use for practical everyday purp
 
 Note: I am blatantly and deliberately ignoring the task guidelines for formatting the output. It has no bearing on the core of the task. If you really, *really*,* **REALLY** *want to see badly formatted output, uncomment the last line.
 
-```perl
+```raku
 use Rat::Precise;
  
 my $googol = 10**100;

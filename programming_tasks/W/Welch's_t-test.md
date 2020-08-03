@@ -4,7 +4,7 @@
 
 Perhaps "inspired by C example" may be more accurate. Gamma subroutine from [Gamma function task](https://rosettacode.org/wiki/Gamma_function#Perl_6).
 
-```perl
+```raku
 sub Γ(\z) {
     constant g = 9;
     z < .5 ?? π / sin(π * z) / Γ(1 - z) !!

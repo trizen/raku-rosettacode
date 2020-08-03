@@ -2,7 +2,7 @@
 
 # [Continued fraction][1]
 
-```perl
+```raku
 sub continued-fraction(:@a, :@b, Int :$n = 100)
 {
     my $x = @a[$n - 1];
@@ -45,7 +45,7 @@ where ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&
 
 Perl6 has a builtin composition operator. We can use it with the triangular reduction metaoperator, and evaluate each resulting function at infinity (any value would do actually, but infinite makes it consistent with this particular task).
 
-```perl
+```raku
 sub continued-fraction(@a, @b) {
     map { .(Inf) }, [\o] map { @a[$_] + @b[$_] / * }, ^Inf
 }

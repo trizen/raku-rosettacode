@@ -6,7 +6,7 @@ We can use the `X` operator ("cartesian product") to cross the list with itself.
 
 For ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=c303081f7a16f603112b0375bdc84883&mode=mathml):
 
-```perl
+```raku
 my @k = <a b c>;
  
 .say for @k X @k;
@@ -15,7 +15,7 @@ my @k = <a b c>;
 
 For arbitrary ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7b8b965ad4bca0e41ab51de7b31363a1&mode=mathml):
 
-```perl
+```raku
 my @k = <a b c>;
 my $n = 2;
  
@@ -38,7 +38,7 @@ c c
 
 Here is an other approach, counting all ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=aafabbf195eb3424ca815b9afe5caff1&mode=mathml) possibilities in base ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=8ce4b16b22b58894aa86c421e8759df3&mode=mathml):
 
-```perl
+```raku
 my @k = <a b c>;
 my $n = 2;
  

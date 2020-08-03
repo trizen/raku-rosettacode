@@ -2,7 +2,7 @@
 
 # [Count occurrences of a substring][1]
 
-```perl
+```raku
 sub count-substring($big,$little) { +$big.comb: ~$little }
  
 say count-substring("the three truths","th"); # 3

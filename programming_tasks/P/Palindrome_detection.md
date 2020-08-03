@@ -2,7 +2,7 @@
 
 # [Palindrome detection][1]
 
-```perl
+```raku
 subset Palindrom of Str where {
     .flip eq $_ given .comb(/\w+/).join.lc
 }

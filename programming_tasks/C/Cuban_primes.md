@@ -8,7 +8,7 @@
 
 Not the most efficient, but concise, and good enough for this task.
 
-```perl
+```raku
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 my @cubans = lazy (1..Inf).hyper(:8degree).map({ ($_+1)³ - .³ }).grep: *.is-prime;
@@ -61,7 +61,7 @@ The cubans where k == 1 (the focus of this task) is one of many possible groups.
 
 Here are the first 20 for each valid k up to 10:
 
-```perl
+```raku
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 for 2..10 -> \k {
@@ -108,7 +108,7 @@ First 20 cuban primes where k = 10:
 
 Note that Perl 6 has native support for arbitrarily large integers and does not need to generate primes to test for primality. Using k of 2^128; finishes in *well* under a second.
 
-```perl
+```raku
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 my \k = 2**128;

@@ -2,7 +2,7 @@
 
 # [Galton box animation][1]
 
-```perl
+```raku
 my $row-count = 6;
  
 constant $peg = "*";

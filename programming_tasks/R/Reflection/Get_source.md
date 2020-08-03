@@ -4,7 +4,7 @@
 
 A full path is provided for built-in routines/methods. However for routines exported by pre-compiled modules a precompilation hash is returned, not a proper file path.
 
-```perl
+```raku
 say &sum.file;
 say Date.^find_method("day-of-week").file;
 ```

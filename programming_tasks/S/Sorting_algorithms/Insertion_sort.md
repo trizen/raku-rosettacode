@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Insertion sort][1]
 
-```perl
+```raku
 sub insertion_sort ( @a is copy ) {
     for 1 .. @a.end -> $i {
         my $value = @a[$i];

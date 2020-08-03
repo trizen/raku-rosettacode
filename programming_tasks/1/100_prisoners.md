@@ -8,7 +8,7 @@ Accepts command line parameters to modify the number of prisoners and the number
 
 Also test with 10 prisoners to verify that the logic is correct for random selection. Random selection should succeed with 10 prisoners at a probability of (1/2)\*\*10, so in 100\_000 simulations, should get pardons about .0977 percent of the time.
 
-```perl
+```raku
 unit sub MAIN (:$prisoners = 100, :$simulations = 10000);
 my @prisoners = ^$prisoners;
 my $half = floor +@prisoners / 2;

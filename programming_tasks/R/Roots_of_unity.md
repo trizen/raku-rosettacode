@@ -4,7 +4,7 @@
 
 Perl 6 has a built-in function `cis` which returns a unitary complex number given its phase. Perl 6 also defines the `tau = 2*pi` constant. Thus the k-th n-root of unity can simply be written `cis(k*τ/n)`.
 
-```perl
+```raku
 constant n = 10;
 for ^n -> \k {
     say cis(k*τ/n);

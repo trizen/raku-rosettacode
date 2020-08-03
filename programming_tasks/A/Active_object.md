@@ -4,7 +4,7 @@
 
 There is some jitter in the timer, but it is typically accurate to within a few thousandths of a second.
 
-```perl
+```raku
 class Integrator {
     has $.f is rw = sub ($t) { 0 };
     has $.now is rw;

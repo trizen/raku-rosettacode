@@ -2,7 +2,7 @@
 
 # [Largest int from concatenated ints][1]
 
-```perl
+```raku
 sub maxnum(*@x) {
     [~] @x.sort: -> $a, $b { $b ~ $a leg $a ~ $b }
 }

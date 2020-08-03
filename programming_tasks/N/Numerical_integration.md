@@ -2,7 +2,7 @@
 
 # [Numerical integration][1]
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
  
 sub leftrect(&f, $a, $b, $n) {

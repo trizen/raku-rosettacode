@@ -2,7 +2,7 @@
 
 # [Execute CopyPasta Language][1]
 
-```perl
+```raku
 sub CopyPasta ($code) {
     my @code = $code.split("\n")>>.trim.grep: *.so;
     return "Program never ends!" unless grep { $_ eq 'Pasta!' }, @code;

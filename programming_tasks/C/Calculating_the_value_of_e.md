@@ -2,7 +2,7 @@
 
 # [Calculating the value of e][1]
 
-```perl
+```raku
 # If you need high precision: Sum of a Taylor series method.
 # Adjust the terms parameter to suit. Theoretically the
 # terms could be ∞. Practically, calculating an infinite

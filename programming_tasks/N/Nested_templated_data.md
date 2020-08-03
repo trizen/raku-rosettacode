@@ -4,7 +4,7 @@
 
 Explicitly not using strings, using one data structure to fill in another. Since it *isn't* a string, the output format removes the newlines from the template; line feed (white space in general) isn't particularly significant in Perl 6 data structures. It does preserve the nesting though. In the second example, payload "buckets" that don't exist result in an undefined value being inserted; by default: Any.
 
-```perl
+```raku
 say join "\n  ", '##PAYLOADS:', |my @payloads = 'Payload#' X~ ^7;
  
 for [

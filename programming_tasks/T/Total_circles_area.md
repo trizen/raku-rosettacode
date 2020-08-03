@@ -4,7 +4,7 @@
 
 This subdivides the outer rectangle repeatedly into subrectangles, and classifies them into wet, dry, or unknown. The knowns are summed to provide an inner bound and an outer bound, while the unknowns are further subdivided. The estimate is the average of the outer bound and the inner bound. Not the simplest algorithm, but converges fairly rapidly because it can treat large areas sparsely, saving the fine subdivisions for the circle boundaries. The number of unknown rectangles roughly doubles each pass, but the area of those unknowns is about half.
 
-```perl
+```raku
 class Point {
     has Real $.x;
     has Real $.y;

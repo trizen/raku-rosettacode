@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Merge sort][1]
 
-```perl
+```raku
 sub merge_sort ( @a ) {
     return @a if @a <= 1;
  

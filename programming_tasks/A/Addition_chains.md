@@ -2,7 +2,7 @@
 
 # [Addition chains][1]
 
-```perl
+```raku
 my @Example = ();
  
 sub check-Sequence($pos, @seq, $n, $minLen --> List)  {

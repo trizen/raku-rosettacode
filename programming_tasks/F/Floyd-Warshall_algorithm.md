@@ -2,7 +2,7 @@
 
 # [Floyd-Warshall algorithm][1]
 
-```perl
+```raku
 sub Floyd-Warshall (Int $n, @edge) {
     my @dist = [0, |(Inf xx $n-1)], *.Array.rotate(-1) … !*[*-1];
     my @next = [0 xx $n] xx $n;

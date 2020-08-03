@@ -4,7 +4,7 @@
 
 This code only uses textual output, but any noise-generating commands may be substituted; as long as they are executed synchronously, and do not run longer than the specified duration, the timing loop will compensate, since the sequence operator is determining a list of absolute times for each `sleep` to target.
 
-```perl
+```raku
 sub MAIN ($beats-per-minute = 72, $beats-per-bar = 4) {
     my $duration = 60 / $beats-per-minute;
     my $base-time = now + $duration;

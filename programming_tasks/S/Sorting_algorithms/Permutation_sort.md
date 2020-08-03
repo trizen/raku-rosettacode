@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Permutation sort][1]
 
-```perl
+```raku
 # Lexicographic permuter from "Permutations" task.
 sub next_perm ( @a ) {
     my $j = @a.end - 1;

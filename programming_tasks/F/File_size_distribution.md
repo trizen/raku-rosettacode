@@ -4,7 +4,7 @@
 
 By default, process the current and all readable sub-directories, or, pass in a directory path at the command line.
 
-```perl
+```raku
 sub MAIN($dir = '.') {
     sub log10 (Int $s) { $s ?? $s.log(10).Int !! 0 }
     my %fsize;

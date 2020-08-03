@@ -8,7 +8,7 @@ This is more complicated than strictly necessary for this task. It is set up to 
 
 (Note: there are several bogus comments added solely to help with syntax highlighting.)
 
-```perl
+```raku
 grammar tiny_C {
     rule TOP { ^ <.whitespace>? <tokens> + % <.whitespace> <.whitespace> <eoi> }
  

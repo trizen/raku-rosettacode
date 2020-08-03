@@ -12,7 +12,7 @@ Rather than waste time on that noise, I'll demonstrate POD6 to HTML conversion. 
 
 It is **not** markup free, but it is actually usable in production.
 
-```perl
+```raku
 use Pod::To::HTML;
 use HTML::Escape;
  

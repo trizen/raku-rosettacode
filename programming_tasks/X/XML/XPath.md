@@ -2,7 +2,7 @@
 
 # [XML/XPath][1]
 
-```perl
+```raku
 use XML::XPath;
  
 my $XML = XML::XPath.new(xml => q:to/END/);

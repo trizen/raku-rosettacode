@@ -4,7 +4,7 @@
 
 Like all Perls, Perl 6 has statement modifiers:
 
-```perl
+```raku
 if $guess == 6 { say "Wow! Lucky Guess!" }          # Traditional
 say 'Wow! Lucky Guess!' if $guess == 6;             # Inverted
 unless $guess == 6 { say "Huh! You Guessed Rong!" } # Traditional
@@ -14,7 +14,7 @@ say 'Huh! You Guessed Rong!' unless $guess == 6;    # Inverted
 
 Perl also inverts the syntax of loops:
 
-```perl
+```raku
 while $i { --$i }
 --$i while $i;
  
@@ -29,14 +29,14 @@ for 1..10 { .say if $_ %% 2 }
 Perl 6 has a system of metaoperators that modify the characteristics of normal operators. Among these is the `R` metaoperator, which is able to reverse the arguments of most infix operators (including user-defined ones).
 So a reversed assignment is easy to write:
 
-```perl
+```raku
 42 R= $_; say $_;   # prints 42
 ```
 
 
 Since, much like list operators, assignment loosens the precedence of the following expression to allow comma lists, reverse assignment of a list requires parens where the normal assignment would not:
 
-```perl
+```raku
 my @a = 1,2,3;
 (1,2,3) R= my @a;
 ```
@@ -44,7 +44,7 @@ my @a = 1,2,3;
 
 However, generally in that case you'd use a feed operator anyway, which is like an object pipe, but unlike Unix pipes works in either direction:
 
-```perl
+```raku
 my @a <== 1,2,3;
 1,2,3 ==> my @a;
 ```
@@ -56,7 +56,7 @@ We think this is much more readable than a reversed assignment.
 
 One other interesting inversion is the ability to put the conditional of a repeat loop at either end, with identical test-after semantics:
 
-```perl
+```raku
 repeat {
     $_ = prompt "Gimme a number: ";
 } until /^\d+$/;
@@ -69,7 +69,7 @@ repeat until /^\d+$/ {
 
 This might seem relatively useless, but it allows a variable to be declared in the conditional that isn't actually set until the loop body:
 
-```perl
+```raku
 repeat until my $answer ~~ 42 {
     $answer = prompt "Gimme an answer: ";
 }
@@ -79,7 +79,7 @@ repeat until my $answer ~~ 42 {
 This would require a prior declaration (and two extra semicolons, horrors)
 if written in the non-inverted form with the conditional at the bottom:
 
-```perl
+```raku
 my $answer;
 repeat {
     $answer = prompt "Gimme an answer: ";

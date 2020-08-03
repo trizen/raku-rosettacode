@@ -4,7 +4,7 @@
 
 Perl 6 doesn't really have good support for unsigned fixed bit integers yet so emulating them with regular Ints and bitmasks.
 
-```perl
+```raku
 sub own-password (Int $password, Int $nonce) {
     my int $n1 = 0;
     my int $n2 = $password;

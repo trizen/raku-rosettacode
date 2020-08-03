@@ -8,7 +8,7 @@ Perl 6 has a built in sort routine which uses a variation of quicksort. The buil
 
 The list (77444, -12, 0) is a poor choice to demonstrate numeric sort since it will sort the same numerically or lexically. Instead we'll use (7.7444e4, -12, 18/2). ( A Num, an Int, and a Rat. )
 
-```perl
+```raku
 # Sorting strings. Added a vertical bar between strings to make them discernable
 my ($a, $b, $c) = 'lions, tigers, and', 'bears,  oh my!', '(from "The Wizard of Oz")';
 say "sorting: {($a, $b, $c).join('|')}";

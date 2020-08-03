@@ -2,7 +2,7 @@
 
 # [Binary digits][1]
 
-```perl
+```raku
 say .fmt("%b") for 5, 50, 9000;
 ```
 

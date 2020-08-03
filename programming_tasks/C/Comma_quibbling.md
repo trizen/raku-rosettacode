@@ -2,7 +2,7 @@
 
 # [Comma quibbling][1]
 
-```perl
+```raku
 sub comma-quibbling(@A) {
     <{ }>.join: @A < 2 ?? @A !! "@A[0..*-2].join(', ') and @A[*-1]";
 }

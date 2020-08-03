@@ -4,7 +4,7 @@
 
 Translation of the Wikipedia pseudocode, heavily influenced by Sidef and Python.
 
-```perl
+```raku
 #  Legendre operator (𝑛│𝑝)
 sub infix:<│> (Int \𝑛, Int \𝑝 where 𝑝.is-prime && (𝑝 != 2)) {
     given 𝑛.expmod( (𝑝-1) div 2, 𝑝 ) {

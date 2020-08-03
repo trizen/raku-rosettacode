@@ -12,7 +12,7 @@ with additional iterators added as required. No need to speculatively generate
 an overabundance. No need to rely on magic numbers. No need to sort them. It
 produces exactly what is needed, in order, on demand.
 
-```perl
+```raku
 use ntheory:from<Perl5> <is_prime>;
  
 sub pierpont ($kind is copy = 1) {
@@ -81,7 +81,7 @@ Alternately, a version that will generate [generalized Pierpont numbers](https:/
 
 (Cut down output as it is exactly the same as the first version for {2,3} +1 and {2,3} -1; leaves room to demo some other options.)
 
-```perl
+```raku
 sub smooth-numbers (*@list) {
     cache my \Smooth := gather {
         my %i = (flat @list) Z=> (Smooth.iterator for ^@list);

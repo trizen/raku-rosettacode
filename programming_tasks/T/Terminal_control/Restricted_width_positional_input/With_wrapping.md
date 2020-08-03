@@ -8,7 +8,7 @@ Should work with any termios compatible terminal.
 
 All printable character keys (except Tab) work, as does backspace and enter. Ctrl-c to exit. All other keys / key-combos are ignored.
 
-```perl
+```raku
 use Term::termios;
  
 constant $saved   = Term::termios.new(fd => 1).getattr;

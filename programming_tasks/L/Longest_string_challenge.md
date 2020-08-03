@@ -2,7 +2,7 @@
 
 # [Longest string challenge][1]
 
-```perl
+```raku
 my $l = '';  # Sample longest string seen.
 my $a = '';  # Accumulator to save longest strings.
  

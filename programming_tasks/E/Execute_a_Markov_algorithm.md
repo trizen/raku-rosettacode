@@ -12,7 +12,7 @@ Run it with two filenames or one filename and some text to run a rulefile on the
 
 Add --verbose to see the replacements step-by-step.
 
-```perl
+```raku
 grammar Markov {
     token TOP {
         ^ [^^ [<rule> | <comment>] $$ [\n|$]]* $

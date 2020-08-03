@@ -2,7 +2,7 @@
 
 # [Minesweeper game][1]
 
-```perl
+```raku
 enum Tile-Type <Empty Mine>;
  
 class Tile {

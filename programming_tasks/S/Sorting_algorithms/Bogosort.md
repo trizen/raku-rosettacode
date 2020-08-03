@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Bogosort][1]
 
-```perl
+```raku
 sub bogosort (@list is copy) {
     @list .= pick(*) until [<=] @list;
     return @list;

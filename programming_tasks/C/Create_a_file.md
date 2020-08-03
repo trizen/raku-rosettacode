@@ -2,7 +2,7 @@
 
 # [Create a file][1]
 
-```perl
+```raku
  
 for '.', '' -> $prefix {
     mkdir "$prefix/docs";

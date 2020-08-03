@@ -12,7 +12,7 @@ We need to be slightly careful of terminology. In Perl 6, 123, 00123.0, &amp; 1.
 
 It is not really clear what is meant by "Write a driver and a function...". Well, the function part is clear enough; driver not so much. Perhaps this will suffice.
 
-```perl
+```raku
 use Lingua::EN::Numbers::Cardinal;
  
 printf( "\%16s : %s\n", $_, ordinal($_) ) for

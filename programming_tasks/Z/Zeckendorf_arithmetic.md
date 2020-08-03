@@ -30,7 +30,7 @@ Comparison operators:
  greater than <b>gtz</b>
  less than <b>ltz</b>
 ```
-```perl
+```raku
  
 my $z1 = '1'; # glyph to use for a '1'
 my $z0 = '0'; # glyph to use for a '0'

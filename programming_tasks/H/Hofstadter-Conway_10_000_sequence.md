@@ -4,7 +4,7 @@
 
 Here is a list-oriented version. Note that `@a` is a lazy array, and the Z variants are "zipwith" operators.
 
-```perl
+```raku
 my $n = 3;
 my @a = (0,1,1, -> $p { @a[$p] + @a[$n++ - $p] } ... *);
  
@@ -45,7 +45,7 @@ Mallows' number would appear to be 1489
 
 The lists are convenient, but here is a version written in relatively low-level primitives for performance:
 
-```perl
+```raku
 my int $POW = 20;
 my int $top = 2**$POW;
  

@@ -2,7 +2,7 @@
 
 # [Bulls and cows][1]
 
-```perl
+```raku
 my $size = 4;
 my @secret = pick $size, '1' .. '9';
  

@@ -2,7 +2,7 @@
 
 # [Percolation/Mean run density][1]
 
-```perl
+```raku
 sub R($n, $p) { [+] ((rand < $p) xx $n).squish }
  
 say 't= ', constant t = 100;

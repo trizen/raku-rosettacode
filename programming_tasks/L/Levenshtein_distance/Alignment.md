@@ -2,7 +2,7 @@
 
 # [Levenshtein distance/Alignment][1]
 
-```perl
+```raku
 sub align ( Str $σ, Str $t ) {
     my @s = flat *, $σ.comb;
     my @t = flat *, $t.comb;

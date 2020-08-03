@@ -4,7 +4,7 @@
 
 Coordinates of random pixel displayed in window title. To make the single pixel show up better I filled in the drawing area background with black to get better contrast.
 
-```perl
+```raku
 use GTK::Simple;
 use GTK::Simple::DrawingArea;
 use Cairo;

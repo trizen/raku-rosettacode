@@ -4,7 +4,7 @@
 
 ### if/else
 
-```perl
+```raku
 if won() -> $prize {
     say "You won $prize.";
 }
@@ -17,7 +17,7 @@ if won() -> $prize {
 
 Switch structures are done by topicalization and by smartmatching in Perl 6. They are somewhat orthogonal, you can use a `given` block without `when`, and vice versa. But the typical use is:
 
-```perl
+```raku
 given lc prompt("Done? ") {
     when 'yes' { return }
     when 'no'  { next }
@@ -42,7 +42,7 @@ There are also statement modifier forms of all of the above.
 
 The [ternary operator](http://en.wikipedia.org/wiki/ternary_operator) looks like this:
 
-```perl
+```raku
 $expression ?? do_something !! do_fallback
 ```
 

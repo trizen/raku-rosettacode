@@ -12,7 +12,7 @@ I actually spent a little time looking into what exactly a Mayan cartouche was s
 
 These don't particularly resemble the Mayan cartouche, more like mahjong tiles actually. It would have been *so* much easier and more compact though if I could have put all the styling into a CSS file instead of inlining it, but oh well, it was entertaining to do.
 
-```perl
+```raku
 my $t-style = '"border-collapse: separate; text-align: center; border-spacing: 3px 0px;"';
 my $c-style = '"border: solid black 2px;background-color: #fffff0;border-bottom: double 6px;'~
   'border-radius: 1em;-moz-border-radius: 1em;-webkit-border-radius: 1em;'~

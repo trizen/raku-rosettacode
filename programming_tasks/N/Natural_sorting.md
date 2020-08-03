@@ -16,7 +16,7 @@ to get the particular result desired. When more than one is strung
 together, they apply left to right. Some combinations may yield
 different results depending on the order they are applied.
 
-```perl
+```raku
 # Sort groups of digits in number order. Sort by order of magnitude then lexically.
 sub naturally ($a) { $a.lc.subst(/(\d+)/, ->$/ {0~$0.chars.chr~$0},:g) ~"\x0"~$a }
  

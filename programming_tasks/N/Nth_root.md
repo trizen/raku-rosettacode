@@ -2,7 +2,7 @@
 
 # [Nth root][1]
 
-```perl
+```raku
 sub nth-root ($n, $A, $p=1e-9)
 {
     my $x0 = $A / $n;

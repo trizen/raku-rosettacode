@@ -4,7 +4,7 @@
 
 Perl 6 allows underscore as a grouping / separator character in numeric inputs, though there are a few restrictions.
 
-```perl
+```raku
 # Any numeric input value may use an underscore as a grouping/separator character.
 # May occur in nearly any position, in any* number. * See restrictions below.
  

@@ -4,14 +4,14 @@
 
 Short version:
 
-```perl
+```raku
 say get for ^get;
 ```
 
 
 Verbose version:
 
-```perl
+```raku
 sub do-stuff ($line) {
     say $line;
 }

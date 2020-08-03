@@ -2,7 +2,7 @@
 
 # [Ramsey's theorem][1]
 
-```perl
+```raku
 my @a = [ 0 xx 17 ] xx 17;
 @a[$_;$_] = '-' for ^17;
  

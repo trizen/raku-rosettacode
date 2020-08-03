@@ -2,7 +2,7 @@
 
 # [Mind boggling card trick][1]
 
-```perl
+```raku
 # Generate a shuffled deck
 my @deck = shuffle;
 put 'Shuffled deck:          ', @deck;

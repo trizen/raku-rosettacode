@@ -4,7 +4,7 @@
 
 With either of the below implementations of `binary_search`, one could write a function to search any object that does `Positional` this way:
 
-```perl
+```raku
 sub search (@a, $x --> Int) {
     binary_search { $x cmp @a[$^i] }, 0, @a.end
 }
@@ -13,7 +13,7 @@ sub search (@a, $x --> Int) {
 
 **Iterative**
 
-```perl
+```raku
 sub binary_search (&p, Int $lo is copy, Int $hi is copy --> Int) {
     until $lo > $hi {
         my Int $mid = ($lo + $hi) div 2;
@@ -30,7 +30,7 @@ sub binary_search (&p, Int $lo is copy, Int $hi is copy --> Int) {
 
 **Recursive**
 
-```perl
+```raku
 sub binary_search (&p, Int $lo, Int $hi --> Int) {
     $lo <= $hi or fail;
     my Int $mid = ($lo + $hi) div 2;

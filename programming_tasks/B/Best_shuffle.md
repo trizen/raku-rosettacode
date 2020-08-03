@@ -2,7 +2,7 @@
 
 # [Best shuffle][1]
 
-```perl
+```raku
 sub best-shuffle(Str $orig) {
  
     my @s = $orig.comb;

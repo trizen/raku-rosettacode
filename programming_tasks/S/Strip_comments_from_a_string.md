@@ -2,6 +2,6 @@
 
 # [Strip comments from a string][1]
 
-```perl
+```raku
 $*IN.slurp.subst(/ \h* <[ # ; ]> \N* /, '', :g).print
 ```

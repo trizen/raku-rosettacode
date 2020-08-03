@@ -2,7 +2,7 @@
 
 # [Almost prime][1]
 
-```perl
+```raku
 sub is-k-almost-prime($n is copy, $k) returns Bool {
     loop (my ($p, $f) = 2, 0; $f < $k && $p*$p <= $n; $p++) {
         $n /= $p, $f++ while $n %% $p;
@@ -28,7 +28,7 @@ for 1 .. 5 -> $k {
 
 Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](https://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
 
-```perl
+```raku
 constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;
  
 multi sub factors(1) { 1 }

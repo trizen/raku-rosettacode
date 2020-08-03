@@ -2,7 +2,7 @@
 
 # [Probabilistic choice][1]
 
-```perl
+```raku
 constant TRIALS = 1e6;
  
 constant @event = <aleph beth gimel daleth he waw zayin heth>;

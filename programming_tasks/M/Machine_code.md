@@ -5,7 +5,7 @@
 ```c
 c = ((int (*) (int, int))buf)(a, b);
 ```
-```perl
+```raku
 use NativeCall;
  
 constant PROT_READ   = 0x1;   #
@@ -75,7 +75,7 @@ int test (int a, int b)
 
 mcode.raku
 
-```perl
+```raku
 #!/usr/bin/env raku
  
 # 20200501 Raku programming solution

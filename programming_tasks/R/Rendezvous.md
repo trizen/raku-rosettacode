@@ -4,7 +4,7 @@
 
 Perl 6 has no built-in support for rendezvous. I tried to simulate it using message passing and a lock - not sure if that counts.
 
-```perl
+```raku
 class X::OutOfInk is Exception {
     method message() { "Printer out of ink" }
 }

@@ -2,7 +2,7 @@
 
 # [Fork][1]
 
-```perl
+```raku
 use NativeCall;
 sub fork() returns int32 is native { ... }
  

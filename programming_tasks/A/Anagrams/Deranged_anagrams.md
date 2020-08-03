@@ -2,7 +2,7 @@
 
 # [Anagrams/Deranged anagrams][1]
 
-```perl
+```raku
 my @anagrams = 'unixdict.txt'.IO.words
     .map(*.comb.cache)             # explode words into lists of characters
     .classify(*.sort.join).values  # group words with the same characters

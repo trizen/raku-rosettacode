@@ -2,7 +2,7 @@
 
 # [Truth table][1]
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
 
 sub MAIN ($x) {

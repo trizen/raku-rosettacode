@@ -8,7 +8,7 @@ Hmm.
 
 The *best* way is probably to not use an explicit loop. Just calculate the sequence directly.
 
-```perl
+```raku
 # the actual sequence logic
 my @seq = grep *.is-prime, (42, { .is-prime ?? $_+<1 !! $_+1 } … *);
  

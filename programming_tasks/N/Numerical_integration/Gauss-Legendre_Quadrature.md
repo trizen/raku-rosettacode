@@ -13,7 +13,7 @@ The `quadrature` function allows passing in a precalculated list of nodes for re
 
 Note: The calculations of Pn(x) and P'n(x) could be combined to further reduce duplicated effort. We also could cache P'n(x) from the last Newton-Raphson step for the weight calculation.
 
-```perl
+```raku
 multi legendre-pair(    1 , $x) { $x, 1 }
 multi legendre-pair(Int $n, $x) {
     my ($m1, $m2) = legendre-pair($n - 1, $x);

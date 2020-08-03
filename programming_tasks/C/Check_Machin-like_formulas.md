@@ -4,7 +4,7 @@
 
 The coercion to FatRat provides for exact computation for all input.
 
-```perl
+```raku
 sub taneval ($coef, $f) {
   return 0 if $coef == 0;
   return $f if $coef == 1;

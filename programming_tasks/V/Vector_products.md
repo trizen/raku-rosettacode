@@ -2,7 +2,7 @@
 
 # [Vector products][1]
 
-```perl
+```raku
 sub infix:<⋅> { [+] @^a »*« @^b }
  
 sub infix:<⨯>([$a1, $a2, $a3], [$b1, $b2, $b3]) {

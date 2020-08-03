@@ -4,7 +4,7 @@
 
 At its most basic, an array in Perl 6 is quite similar to an array in Perl 5.
 
-```perl
+```raku
 my @arr;
  
 push @arr, 1;

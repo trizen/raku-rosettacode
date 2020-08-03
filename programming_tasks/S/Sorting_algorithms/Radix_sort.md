@@ -4,7 +4,7 @@
 
 A base-10 radix sort, done on the string representation of the integers. Signs are handled by in-place reversal of the '-' bucket on the last iteration. (The sort in there is not cheating; it only makes sure we process the buckets in the right order, since `classify` might return the buckets in random order. It might be more efficient to create our own ordered buckets, but this is succinct.)
 
-```perl
+```raku
 sub radsort (@ints) {
     my $maxlen = [max] @ints».chars;
     my @list = @ints».fmt("\%0{$maxlen}d");

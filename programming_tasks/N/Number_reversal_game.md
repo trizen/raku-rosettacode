@@ -4,7 +4,7 @@
 
 Do-at-least-once loops are fairly rare, but this program wants to have two of them. We use the built-in `.pick(*)` method to shuffle the numbers. We use `.=` to dispatch a mutating method in two spots; the first is just a different way to write `++`, while the second of these reverses an array slice in place. The `[<]` is a reduction operator on less than, so it returns true if the elements of the list are strictly ordered. We also see in the first repeat loop that, although the while condition is not tested till after the loop, the while condition can in fact declare the variable that will be initialized the first time through the loop, which is a neat trick, and not half unreadable once you get used to it.
 
-```perl
+```raku
 repeat while [<] my @jumbled-list {
     @jumbled-list = (1..9).pick(*)
 }

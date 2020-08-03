@@ -2,7 +2,7 @@
 
 # [Terminal control/Preserve screen][1]
 
-```perl
+```raku
 print "\e[?1049h\e[H";
 say "Alternate buffer!";
  

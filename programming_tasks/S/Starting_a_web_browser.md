@@ -4,7 +4,7 @@
 
 Uses the code from the [Separate the house number from the street name](https://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name) task almost verbatim. Included here to make a complete, runnable example.
 
-```perl
+```raku
 use File::Temp;
  
 my $addresses = qq :to /END/;

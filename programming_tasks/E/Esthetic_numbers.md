@@ -2,7 +2,7 @@
 
 # [Esthetic numbers][1]
 
-```perl
+```raku
 use Lingua::EN::Numbers;
  
 sub esthetic($base = 10) {

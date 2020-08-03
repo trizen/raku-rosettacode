@@ -8,7 +8,7 @@ Counting only, same algorithm as the C solution with some refactorings.
 
 Note how lexical scoping &#8212; rather than global variables or repeated arguments &#8212; is used to pass down information to subroutines.
 
-```perl
+```raku
 sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
     my @rooted   = flat 1,1,0 xx $max-weight - 1;
     my @unrooted = flat 1,1,0 xx $max-weight - 1;

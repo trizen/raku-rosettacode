@@ -2,7 +2,7 @@
 
 # [Detect division by zero][1]
 
-```perl
+```raku
 sub div($a, $b){
     my $r;
     try {
@@ -23,7 +23,7 @@ say div(1, sin(0)); # undef, and prints "tried to divide by zero"
 
 ### Using Multi Method Dispatch
 
-```perl
+```raku
 multi div($a, $b){ return $a / $b }
 multi div($a, $b where { $b == 0 }){ 
     say 'lolicheatsyou'; 

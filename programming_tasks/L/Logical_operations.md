@@ -4,7 +4,7 @@
 
 Perl 6 has an abundance of logical operators for various purposes.
 
-```perl
+```raku
 sub logic($a,$b) {
     say "$a && $b is ", $a && $b;     # short-circuiting
     say "$a || $b is ", $a || $b;     # short-circuiting

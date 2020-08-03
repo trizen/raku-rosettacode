@@ -2,21 +2,21 @@
 
 # [Loops/Foreach][1]
 
-```perl
+```raku
 say $_ for @collection;
 ```
 
 
 Perl 6 leaves off the `each` from `foreach`, leaving us with `for` instead. The variable `$_` refers to the current element, unless you assign a name to it using `->`.
 
-```perl
+```raku
 for @collection -> $currentElement { say $currentElement; }
 ```
 
 
 Perl 6 will do it's best to put the topic at the right spot.
 
-```perl
+```raku
 .say for @collection;
 for @collection { .say };
 ```

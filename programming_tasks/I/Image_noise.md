@@ -4,7 +4,7 @@
 
 Variant of a script packaged with the SDL2::Raw module.
 
-```perl
+```raku
 use NativeCall;
 use SDL2::Raw;
 use nqp;

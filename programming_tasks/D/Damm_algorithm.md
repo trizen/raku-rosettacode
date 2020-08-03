@@ -2,7 +2,7 @@
 
 # [Damm algorithm][1]
 
-```perl
+```raku
 sub damm ( *@digits ) {
     my @tbl = [0, 3, 1, 7, 5, 9, 8, 6, 4, 2],
               [7, 0, 9, 2, 1, 5, 4, 8, 6, 3],

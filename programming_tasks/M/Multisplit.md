@@ -2,7 +2,7 @@
 
 # [Multisplit][1]
 
-```perl
+```raku
 sub multisplit($str, @seps) { $str.split(/ ||@seps /, :v) }
  
 my @chunks = multisplit( 'a!===b=!=c==d', < == != = > );

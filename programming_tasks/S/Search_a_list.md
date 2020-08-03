@@ -2,7 +2,7 @@
 
 # [Search a list][1]
 
-```perl
+```raku
 my @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
  
 for <Washington Bush> -> $needle {
@@ -21,7 +21,7 @@ Bush -- 4
 
 Or, including the "extra credit" task:
 
-```perl
+```raku
 my Str @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
  
 for <Washingston Bush> -> $needle {
@@ -57,7 +57,7 @@ The `:end` adverb tells it to start searching from the end of the list.
 
 If you plan to do many searches on the same large list, you might want to build a search hash first for efficient look-up:
 
-```perl
+```raku
 my @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
  
 my %index;

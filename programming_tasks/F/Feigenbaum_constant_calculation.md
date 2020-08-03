@@ -2,7 +2,7 @@
 
 # [Feigenbaum constant calculation][1]
 
-```perl
+```raku
 my $a1 = 1;
 my $a2 = 0;
 my $d = 3.2;

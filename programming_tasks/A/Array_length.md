@@ -4,7 +4,7 @@
 
 To get the number of elements of an array in Perl 6 you put the array in a coercing Numeric context, or call `elems` on it.
 
-```perl
+```raku
  
 my @array = <apple orange>;
  
@@ -18,7 +18,7 @@ say @array + 0;    # 2
 
 Watch out for infinite/lazy arrays though. You can't get the length of those.
 
-```perl
+```raku
 my @infinite = 1 .. Inf;  # 1, 2, 3, 4, ...
  
 say @infinite[5000];  # 5001

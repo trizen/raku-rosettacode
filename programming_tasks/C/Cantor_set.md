@@ -2,7 +2,7 @@
 
 # [Cantor set][1]
 
-```perl
+```raku
 sub cantor ( Int $height ) {
     my $width = 3 ** ($height - 1);
  

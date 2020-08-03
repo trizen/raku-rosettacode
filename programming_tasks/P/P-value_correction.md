@@ -2,7 +2,7 @@
 
 # [P-value correction][1]
 
-```perl
+```raku
 ########################### Helper subs ###########################
  
 sub adjusted (@p, $type) { "\n$type\n" ~ format adjust( check(@p), $type ) }

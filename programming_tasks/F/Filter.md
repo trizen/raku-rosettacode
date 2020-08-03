@@ -2,7 +2,7 @@
 
 # [Filter][1]
 
-```perl
+```raku
 my @a = 1..6;
 my @even = grep * %% 2, @a;
 ```
@@ -10,7 +10,7 @@ my @even = grep * %% 2, @a;
 
 Alternatively:
 
-```perl
+```raku
 my @a = 1..6;
 my @even = @a.grep(* %% 2);
 ```
@@ -18,7 +18,7 @@ my @even = @a.grep(* %% 2);
 
 Destructive:
 
-```perl
+```raku
 my @a = 1..6;
 @a .= grep(* %% 2);
 ```

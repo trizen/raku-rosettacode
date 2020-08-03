@@ -7,14 +7,14 @@
 
 Naive, brute force. Simplest thing that could possibly work. Will find any B10 eventually (until you run out of memory or patience) but sloooow, especially for larger multiples of 9.
 
-```perl
+```raku
 say $_ , ': ', (1..*).map( *.base(2) ).first: * %% $_ for flat 1..10, 95..105; # etc.
 ```
 
 
 Based on [Ed Pegg jr.s C code](http://www.mathpuzzle.com/Binary.html) from Mathpuzzlers.com. Similar to Phix and Go entries.
 
-```perl
+```raku
 sub Ed-Pegg-jr (\n) {
     return 1 if n == 1;
     my ($count, $power-mod-n) = 0, 1;

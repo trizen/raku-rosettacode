@@ -2,7 +2,7 @@
 
 # [Find the intersection of two lines][1]
 
-```perl
+```raku
 sub intersection (Real $ax, Real $ay, Real $bx, Real $by,
                   Real $cx, Real $cy, Real $dx, Real $dy ) {
  

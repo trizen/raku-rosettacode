@@ -2,7 +2,7 @@
 
 # [Delete a file][1]
 
-```perl
+```raku
 unlink 'input.txt';
 unlink '/input.txt';
 rmdir 'docs';

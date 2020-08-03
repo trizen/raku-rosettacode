@@ -2,7 +2,7 @@
 
 # [Keyboard input/Keypress check][1]
 
-```perl
+```raku
 use Term::ReadKey;
  
 react {

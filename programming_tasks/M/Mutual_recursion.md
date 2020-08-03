@@ -4,7 +4,7 @@
 
 A direct translation of the definitions of ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=800618943025315f869e4e1f09471012&mode=mathml) and ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=69691c7bdcc3ce6d5d8a1361f22d04ac&mode=mathml):
 
-```perl
+```raku
 multi F(0) { 1 }; multi M(0) { 0 }
 multi F(\𝑛) { 𝑛 - M(F(𝑛 - 1)) }
 multi M(\𝑛) { 𝑛 - F(M(𝑛 - 1)) }

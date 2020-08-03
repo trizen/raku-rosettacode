@@ -2,7 +2,7 @@
 
 # [Apply a callback to an array][1]
 
-```perl
+```raku
 sub function { 2 * $^x + 3 };
 my @array = 1 .. 5;
  

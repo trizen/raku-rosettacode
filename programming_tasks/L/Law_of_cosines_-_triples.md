@@ -2,7 +2,7 @@
 
 # [Law of cosines - triples][1]
 
-```perl
+```raku
 multi triples (60, $n) {
     my %sq = (1..$n).map: { .² => $_ };
     my %triples;

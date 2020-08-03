@@ -2,7 +2,7 @@
 
 # [Latin Squares in reduced form][1]
 
-```perl
+```raku
 # utilities: factorial, sub-factorial, derangements
 sub  postfix:<!>($n) { (constant f = 1, |[\×] 1..*)[$n] }
 sub   prefix:<!>($n) { (1, 0, 1, -> $a, $b { ($++ + 2) × ($b + $a) } ... *)[$n] }

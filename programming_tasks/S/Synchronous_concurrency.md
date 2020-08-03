@@ -2,7 +2,7 @@
 
 # [Synchronous concurrency][1]
 
-```perl
+```raku
 sub MAIN ($infile) {
     $infile.IO.lines ==> printer() ==> my $count;
     say "printed $count lines";

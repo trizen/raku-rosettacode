@@ -12,7 +12,7 @@ The less than '&lt;' operator is very low level in Perl 6 and would be troubleso
 
 This assumes that the data is in a tab separated file "List\_of\_computer\_scientists.lst" in the current directory.
 
-```perl
+```raku
 sub cat ($fname) { lazy $fname.IO.lines };
 sub head ($count, @positional) { @positional.head($count) }
 sub redirect ($fname) { cat($fname) }

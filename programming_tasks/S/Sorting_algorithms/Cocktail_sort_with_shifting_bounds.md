@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Cocktail sort with shifting bounds][1]
 
-```perl
+```raku
 sub cocktail_sort ( @a ) {
     my ($min, $max) = 0, +@a - 2;
     loop {

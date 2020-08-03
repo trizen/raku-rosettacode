@@ -4,7 +4,7 @@
 
 Without a signature:
 
-```perl
+```raku
 sub multiply { return @_[0] * @_[1]; }
 ```
 
@@ -12,35 +12,35 @@ sub multiply { return @_[0] * @_[1]; }
 The return is optional on the final statement, since the last expression would return its value anyway. The final semicolon in a block is also optional.
 (Beware that a subroutine without an explicit signature, like this one, magically becomes variadic (rather than nullary) only if `@_` or `%_` appear in the body.) In fact, we can define the variadic version explicitly, which still works for two arguments:
 
-```perl
+```raku
 sub multiply { [*] @_ }
 ```
 
 
 With formal parameters and a return type:
 
-```perl
+```raku
 sub multiply (Rat $a, Rat $b --> Rat) { $a * $b }
 ```
 
 
 Same thing:
 
-```perl
+```raku
 my Rat sub multiply (Rat $a, Rat $b) { $a * $b }
 ```
 
 
 It is possible to define a function in "lambda" notation and then bind that into a scope, in which case it works like any function:
 
-```perl
+```raku
 my &multiply := -> $a, $b { $a * $b };
 ```
 
 
 Another way to write a lambda is with internal placeholder parameters:
 
-```perl
+```raku
 my &multiply := { $^a * $^b };
 ```
 
@@ -51,7 +51,7 @@ my &multiply := { $^a * $^b };
 
 You may also curry both built-in and user-defined operators by supplying a `*` (known as "whatever") in place of the argument that is *not* to be curried:
 
-```perl
+```raku
 my &multiply := * * *;
 ```
 
@@ -60,13 +60,13 @@ This is not terribly readable in this case due to the visual confusion between t
 It tends to work out much better with other operators. In particular, you may
 curry a cascade of methods with only the original invocant missing:
 
-```perl
+```raku
 @list.grep( *.substr(0,1).lc.match(/<[0..9 a..f]>/) )
 ```
 
 
 This is equivalent to:
 
-```perl
+```raku
 @list.grep( -> $obj { $obj.substr(0,1).lc.match(/<[0..9 a..f]>/) } )
 ```

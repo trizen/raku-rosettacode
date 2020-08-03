@@ -2,7 +2,7 @@
 
 # [Nim Game][1]
 
-```perl
+```raku
 say my $tokens = 12, " tokens remaining.\n";
  
 loop {

@@ -2,7 +2,7 @@
 
 # [Subtractive generator][1]
 
-```perl
+```raku
 sub bentley-clever($seed) {
     constant $mod = 1_000_000_000;
     my @seeds = ($seed % $mod, 1, (* - *) % $mod ... *)[^55];

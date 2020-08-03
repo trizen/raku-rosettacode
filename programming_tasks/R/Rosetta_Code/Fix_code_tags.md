@@ -2,7 +2,7 @@
 
 # [Rosetta Code/Fix code tags][1]
 
-```perl
+```raku
 my @langs = <
     abap actionscript actionscript3 ada apache applescript apt_sources
     asm asp autoit avisynth bash basic4gl bf blitzbasic bnf boo c caddcl

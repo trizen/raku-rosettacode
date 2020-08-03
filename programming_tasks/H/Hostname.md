@@ -2,6 +2,6 @@
 
 # [Hostname][1]
 
-```perl
+```raku
 my $host = qx[hostname];
 ```

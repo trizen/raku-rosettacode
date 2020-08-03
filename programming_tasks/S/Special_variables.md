@@ -8,7 +8,7 @@ It is probably useful to briefly explain normal variables in Perl 6 before tackl
 
 Variables in Perl 6 have a prefix sigil to distinguish them from named subroutines, functions, classes, and so on. There is a system of sigils to mark the fundamental structural type of the variable:
 
-```perl
+```raku
  $foo   scalar (object)
  @foo   ordered array
  %foo   unordered hash (associative array)
@@ -19,7 +19,7 @@ Variables in Perl 6 have a prefix sigil to distinguish them from named subroutin
 
 Sigils indicate overall interface, not the exact type of the bound object. Different sigils imply different minimal abilities. Ordinary sigils indicate normally scoped variables, either lexical or package scoped. Oddly scoped variables include a secondary sigil (a twigil) that indicates what kind of strange scoping the variable is subject to:
 
-```perl
+```raku
  $foo               # ordinary scoping
  $.foo              # object attribute public accessor
  $^foo              # self-declared formal positional parameter
@@ -39,7 +39,7 @@ Special Variables:
 
 Perl 6 has deprecated most of the "line-noise" variables from Perl 5 in favor of named variables.
 
-```perl
+```raku
  $_                # The implicit variable lexically scoped to the current block
  @_                # Implicit array of parameters to the current block. Still available but rarely used or needed with the improved sub signatures
  $!                # Current Exception object
@@ -101,7 +101,7 @@ Perl 6 has deprecated most of the "line-noise" variables from Perl 5 in favor of
 
 Also, not really a variable but...
 
-```perl
+```raku
  *  # A standalone term that has no fixed value, instead it captures the notion of "Whatever",
     # the meaning of which is decided lazily by whatever it is an argument to.
     # See the "*" section of http://perlcabal.org/syn/S02.html#Built-In_Data_Types

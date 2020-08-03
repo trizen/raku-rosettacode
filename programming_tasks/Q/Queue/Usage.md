@@ -16,7 +16,7 @@ and `@list.unshift` which add a item on the start of the list.
 
 Example:
 
-```perl
+```raku
 my @queue = < a >;
  
 @queue.push('b', 'c'); # [ a, b, c ]

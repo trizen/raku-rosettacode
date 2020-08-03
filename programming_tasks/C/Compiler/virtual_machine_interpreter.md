@@ -13,7 +13,7 @@ They come from another program from another company from another planet from ano
 
 WIP: discovered 'P5pack' module, this may allow for completing the task properly, using correct offsets
 
-```perl
+```raku
 my @CODE = q:to/END/.lines;
 Datasize: 3 Strings: 2
 "count is: "

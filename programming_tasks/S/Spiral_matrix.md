@@ -8,7 +8,7 @@
 
 Suppose we set up a Turtle class like this:
 
-```perl
+```raku
 class Turtle {
     my @dv =  [0,-1], [1,-1], [1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1];
     my $points = 8; # 'compass' points of neighbors on grid: north=0, northeast=1, east=2, etc.
@@ -73,7 +73,7 @@ $t.showmap;
 
 Or we can build the spiral from inside-out like this:
 
-```perl
+```raku
 sub MAIN(Int $size = 5) {
 my $t = Turtle.new(dir => ($size %% 2 ?? 4 !! 0));
 my $counter = $size * $size;
@@ -94,7 +94,7 @@ Note that with these "turtle graphics" we don't actually have to care about the 
 
 ### Procedural Solution
 
-```perl
+```raku
 sub spiral_matrix ( $n ) {
     my @sm;
     my $len = $n;

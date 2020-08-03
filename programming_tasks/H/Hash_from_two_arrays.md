@@ -4,7 +4,7 @@
 
 Using the "zipwith" meta-operator on the `=>` pair composer:
 
-```perl
+```raku
 my @keys = <a b c d e>;
 my @values = ^5;
  

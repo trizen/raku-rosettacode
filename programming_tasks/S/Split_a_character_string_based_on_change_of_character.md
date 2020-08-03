@@ -2,7 +2,7 @@
 
 # [Split a character string based on change of character][1]
 
-```perl
+```raku
 sub group-chars ($str) { $str.comb: / (.) $0* / }
  
 # Testing:

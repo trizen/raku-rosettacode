@@ -2,7 +2,7 @@
 
 # [Particle Swarm Optimization][1]
 
-```perl
+```raku
 sub pso-init (%y) {
     my $d = @(%y{'min'});
     my $n = %y{'n'};

@@ -8,7 +8,7 @@ Implementing an "invisible times" operator (Unicode character (U+2062)) to more 
 
 e, i and π are all available as built-in constants in Perl 6.
 
-```perl
+```raku
 sub infix:<⁢> is tighter(&infix:<**>) { $^a * $^b };
  
 say 'e**i⁢π + 1 ≅ 0 : ', e**i⁢π + 1 ≅ 0;

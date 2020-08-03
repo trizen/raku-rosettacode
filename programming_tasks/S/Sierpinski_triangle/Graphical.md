@@ -4,7 +4,7 @@
 
 This is a recursive solution. It is not really practical for more than 8 levels of recursion, but anything more than 7 is barely visible anyway.
 
-```perl
+```raku
 my $side = 512;
 my $height = get_height($side);
 my $levels = 8;

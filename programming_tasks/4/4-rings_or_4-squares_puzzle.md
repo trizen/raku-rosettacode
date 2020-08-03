@@ -2,7 +2,7 @@
 
 # [4-rings or 4-squares puzzle][1]
 
-```perl
+```raku
 sub four-squares ( @list, :$unique=1, :$show=1 ) {
  
     my @solutions;

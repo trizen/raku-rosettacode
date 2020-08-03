@@ -4,7 +4,7 @@
 
 Feed it an action (encode, decode) and a file name at the command line and it will spit out the (en|de)coded file to STDOUT. Redirect into a file to save it. If no parameters are passed in, does the demo encode/decode.
 
-```perl
+```raku
 my $chr = (' ' .. '}').join('');
 my $key = $chr.comb.pick(*).join('');
 

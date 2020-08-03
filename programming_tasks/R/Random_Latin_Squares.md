@@ -2,7 +2,7 @@
 
 # [Random Latin Squares][1]
 
-```perl
+```raku
 sub latin-square { [[0],] };
  
 sub random ( @ls, :$size = 5 ) {

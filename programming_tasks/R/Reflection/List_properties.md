@@ -6,7 +6,7 @@ You can get a list of an object's attributes (instance variables) using `.^attri
 
 Each is represented as an `Attribute` object that contains a bunch of info:
 
-```perl
+```raku
 class Foo {
     has $!a = now;
     has Str $.b;

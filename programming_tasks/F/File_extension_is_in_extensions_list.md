@@ -4,7 +4,7 @@
 
 Does the extra credit requirement.
 
-```perl
+```raku
 sub check-extension ($filename, *@extensions) {
     so $filename ~~ /:i '.' @extensions $/
 }

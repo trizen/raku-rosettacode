@@ -4,7 +4,7 @@
 
 Using [JSON::Tiny](http://github.com/moritz/json/)
 
-```perl
+```raku
 use JSON::Tiny;
  
 my $data = from-json('{ "foo": 1, "bar": [10, "apples"] }');

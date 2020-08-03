@@ -8,7 +8,7 @@ The expansions are generated similarly to how most FP languages generate sequenc
 
 The `polyprime` function pretty much reads like the original description. Is it "so" that the p'th expansion's coefficients are all divisible by p? The `.[1 ..^ */2]` slice is done simply to weed out divisions by 1 or by factors we've already tested (since the coefficients are symmetrical in terms of divisibility). If we wanted to write `polyprime` even more idiomatically, we could have made it another infinite constant list that is just a mapping of the first list, but we decided that would just be showing off. `:-)`
 
-```perl
+```raku
 constant expansions = [1], [1,-1], -> @prior { [|@prior,0 Z- 0,|@prior] } ... *;
  
 sub polyprime($p where 2..*) { so expansions[$p].[1 ..^ */2].all %% $p }

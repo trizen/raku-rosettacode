@@ -4,7 +4,7 @@
 
 By default, plays classic Mastermind using letters in place of colors. ( 4 chosen from 6, no repeats, 10 guess limit. ) Pass in parameters to modify the game. Enter a string of --length (default 4) letters with or without spaces. Guesses accept lower or upper case.
 
-```perl
+```raku
 sub MAIN (
     Int :$colors  where 1 < * < 21 = 6,  Int :$length  where 3 < * < 11 = 4,
     Int :$guesses where 7 < * < 21 = 10, Bool :$repeat = False

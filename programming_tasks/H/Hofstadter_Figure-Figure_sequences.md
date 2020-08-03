@@ -2,7 +2,7 @@
 
 # [Hofstadter Figure-Figure sequences][1]
 
-```perl
+```raku
 my %r = 1 => 1;
 my %s = 1 => 2;
  

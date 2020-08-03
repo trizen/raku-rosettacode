@@ -12,7 +12,7 @@ It is trivial to add a new operator. Most Perl 6 operators are written as normal
 
 There is no a built in factorial operator Perl 6. It was purposely left out to use as a demonstration of how easy it is to add it. `:-)`
 
-```perl
+```raku
 sub postfix:<!> { [*] 1..$^n }
 say 5!;  # prints 120
 ```
@@ -24,7 +24,7 @@ You may augment a base class with a new method, as long as you declare that you 
 
 Here we add a new method to do natural sorting to the base class `Any`. (`List` and `Array` are both subclasses of Any)
 
-```perl
+```raku
 use MONKEY-TYPING; # Needed to do runtime augmentation of a base class.
  
 augment class List {
@@ -48,7 +48,7 @@ a144th a17th a2 a201st a32nd a3rd a95
 
 Grammar mixins work in Perl 6 because grammar rules are just methods in grammar classes, and Perl 6 automatically writes a JIT lexer for you whenever you derive a new language. This functionality already works internally in the standard parser—what is not yet implemented is the `augment slang` hook to allow user code to do this mixin. Perl 6 itself is already parsed using such grammar mixins to provide extensible quoting and regex syntax. For example, every time you pick your own quote characters, you're actually deriving a new Perl 6 dialect that supports those start and stop characters. Likewise any switches to impose single or double-quote semantics, or heredoc semantics, is merely a grammar mixin on the basic `Q` language.
 
-```perl
+```raku
 say "Foo = $foo\n";  # normal double quotes
 say Q:qq 【Foo = $foo\n】; # a more explicit derivation, new quotes
 ```

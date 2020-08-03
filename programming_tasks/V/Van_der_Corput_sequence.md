@@ -4,7 +4,7 @@
 
 First a cheap implementation in base 2, using string operations.
 
-```perl
+```raku
 constant VdC = map { :2("0." ~ .base(2).flip) }, ^Inf;
 .say for VdC[^16];
 ```
@@ -12,7 +12,7 @@ constant VdC = map { :2("0." ~ .base(2).flip) }, ^Inf;
 
 Here is a more elaborate version using the polymod built-in integer method:
 
-```perl
+```raku
 sub VdC($base = 2) {
     map {
         [+] $_ && .polymod($base xx *) Z/ [\*] $base xx *
@@ -39,7 +39,7 @@ sub VdC($base = 2) {
 
 Here is a fairly standard imperative version in which we mutate three variables in parallel:
 
-```perl
+```raku
 sub vdc($num, $base = 2) {
     my $n = $num;
     my $vdc = 0;
@@ -76,7 +76,7 @@ Base 5
 
 Here is a functional version that produces the same output:
 
-```perl
+```raku
 sub vdc($value, $base = 2) {
     my @values = $value, { $_ div $base } ... 0;
     my @denoms = $base,  { $_  *  $base } ... *;

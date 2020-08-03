@@ -2,7 +2,7 @@
 
 # [Inheritance/Multiple][1]
 
-```perl
+```raku
 class Camera {}
 class MobilePhone {}
 class CameraPhone is Camera is MobilePhone {}

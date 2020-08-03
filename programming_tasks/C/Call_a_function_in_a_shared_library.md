@@ -2,7 +2,7 @@
 
 # [Call a function in a shared library][1]
 
-```perl
+```raku
 use NativeCall;
  
 constant libX11 = '/usr/lib/x86_64-linux-gnu/libX11.so.6';

@@ -9,7 +9,7 @@ We will take the liberty of wrapping the array of cells
 as it does not affect the result much
 and it makes the implementation a lot easier.
 
-```perl
+```raku
 class Automaton {
     has $.rule;
     has @.cells;

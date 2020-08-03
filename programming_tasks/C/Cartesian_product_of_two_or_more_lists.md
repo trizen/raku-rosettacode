@@ -4,7 +4,7 @@
 
 The cross meta operator X will return the cartesian product of two lists. To apply the cross meta-operator to a variable number of lists, use the reduce cross meta operator [X].
 
-```perl
+```raku
 # cartesian product of two lists using the X cross meta-operator
 say (1, 2) X (3, 4);
 say (3, 4) X (1, 2);

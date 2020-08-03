@@ -4,21 +4,21 @@
 
 Short version with very little "line noise":
 
-```perl
+```raku
 get.words.sum.say;
 ```
 
 
 Reduction operator `[+]`, and `say` as a function:
 
-```perl
+```raku
 say [+] get.words;
 ```
 
 
 Long version:
 
-```perl
+```raku
 my ($a, $b) = $*IN.get.split(" ");
 say $a + $b;
 ```

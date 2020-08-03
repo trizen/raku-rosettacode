@@ -8,7 +8,7 @@ This is a rather simple implementation. It requires the priority to be a positiv
 
 The tasks are stored internally as an array of FIFO buffers, so multiple tasks of the same priority level will be returned in the order they were stored.
 
-```perl
+```raku
 class PriorityQueue {
     has @!tasks;
  

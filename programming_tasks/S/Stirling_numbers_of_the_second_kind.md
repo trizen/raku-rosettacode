@@ -2,7 +2,7 @@
 
 # [Stirling numbers of the second kind][1]
 
-```perl
+```raku
 sub Stirling2 (Int \n, Int \k) {
     ((1,), { (0, |@^last) »+« (|(@^last »*« @^last.keys), 0) } … *)[n;k]
 }

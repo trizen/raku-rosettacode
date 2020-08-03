@@ -2,7 +2,7 @@
 
 # [Perfect numbers][1]
 
-```perl
+```raku
 sub is-perf($n) { $n == [+] grep $n %% *, 1 .. $n div 2 }
  
 # used as

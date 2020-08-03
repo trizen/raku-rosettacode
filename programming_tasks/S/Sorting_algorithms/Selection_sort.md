@@ -4,7 +4,7 @@
 
 Solution 1:
 
-```perl
+```raku
 sub selection_sort ( @a is copy ) {
     for 0 ..^ @a.end -> $i {
         my $min = [ $i+1 .. @a.end ].min: { @a[$_] };
@@ -28,7 +28,7 @@ output = -5 2 4 7 8 22
 
 Solution 2:
 
-```perl
+```raku
 sub selectionSort(@tmp) {
     for ^@tmp -> $i {
         my $min = $i; @tmp[$i, $_] = @tmp[$_, $i] if @tmp[$min] > @tmp[$_] for $i^..^@tmp;

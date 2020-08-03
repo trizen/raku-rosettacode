@@ -2,14 +2,14 @@
 
 # [Floyd's triangle][1]
 
-```perl
+```raku
 constant @floyd = (1..*).rotor(1..*);
 ```
 
 
 Alternatively, using `gather`/`take`:
 
-```perl
+```raku
 constant @floyd = gather for 1..* -> $s { take [++$ xx $s] }
  
 # Printing:

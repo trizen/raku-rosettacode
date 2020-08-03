@@ -4,7 +4,7 @@
 
 Floating point limits are to a large extent implementation dependent, but currently both Perl 6 backends (MoarVM, JVM) running on a 64 bit OS have an infinity threshold of just under 1.8e308.
 
-```perl
+```raku
 print qq:to 'END'
 positive infinity: {1.8e308}
 negative infinity: {-1.8e308}

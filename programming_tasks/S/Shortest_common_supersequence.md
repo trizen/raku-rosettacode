@@ -4,7 +4,7 @@
 
 Using 'lcs' routine from [Longest common subsequence task](https://rosettacode.org/wiki/Longest_common_subsequence#Perl_6)
 
-```perl
+```raku
 sub lcs(Str $xstr, Str $ystr) { # longest common subsequence
     return "" unless $xstr && $ystr;
     my ($x, $xs, $y, $ys) = $xstr.substr(0, 1), $xstr.substr(1), $ystr.substr(0, 1), $ystr.substr(1);

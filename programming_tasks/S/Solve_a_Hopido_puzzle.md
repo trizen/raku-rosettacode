@@ -4,7 +4,7 @@
 
 This uses a Warnsdorff solver, which cuts down the number of tries by more than a factor of six over the brute force approach. This same solver is used in:
 
-```perl
+```raku
 my @adjacent = [3, 0],
       [2, -2],         [2, 2],
    [0, -3],                [0, 3],

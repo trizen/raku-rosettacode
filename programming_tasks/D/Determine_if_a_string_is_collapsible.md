@@ -4,7 +4,7 @@
 
 Technically, the task is asking for a boolean. "Determine if a string is collapsible" is answerable with True/False, so return a boolean as well.
 
-```perl
+```raku
 map {
     my $squish = .comb.squish.join;
     printf "\nLength: %2d <<<%s>>>\nCollapsible: %s\nLength: %2d <<<%s>>>\n",

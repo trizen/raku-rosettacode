@@ -2,7 +2,7 @@
 
 # [Sequence: smallest number with exactly n divisors][1]
 
-```perl
+```raku
 sub div-count (\x) {
     return 2 if x.is-prime;
     +flat (1 .. x.sqrt.floor).map: -> \d {

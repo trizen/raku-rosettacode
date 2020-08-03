@@ -4,7 +4,7 @@
 
 Perl 6 has fairly comprehensive facilities for accessing allocating and accessing memory and also declaring C-style structs, via the NativeCall interface, as this example demonstrates.
 
-```perl
+```raku
 use v6;
 use NativeCall;
 use NativeCall::Types;

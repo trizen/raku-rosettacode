@@ -8,7 +8,7 @@ Kind of bogus. There are an infinite number of curves that pass through those th
 
 Saved as a png for wide viewing support. Note that png coordinate systems have 0,0 in the upper left corner.
 
-```perl
+```raku
 use Image::PNG::Portable;
  
 # Solve for a quadratic line that passes through those points

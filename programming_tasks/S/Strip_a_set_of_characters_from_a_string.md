@@ -2,7 +2,7 @@
 
 # [Strip a set of characters from a string][1]
 
-```perl
+```raku
 sub strip_chars ( $s, $chars ) {
     return $s.trans( $chars.comb X=> '' );
 }

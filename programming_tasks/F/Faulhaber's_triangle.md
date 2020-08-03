@@ -2,7 +2,7 @@
 
 # [Faulhaber's triangle][1]
 
-```perl
+```raku
 # Helper subs
  
 sub infix:<reduce> (\prev, \this) { this.key => this.key * (this.value - prev.value) }

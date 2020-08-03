@@ -4,7 +4,7 @@
 
 Gaussian elimination results in a matrix in row echelon form. Gaussian elimination with back-substitution (also known as Gauss-Jordan elimination) results in a matrix in reduced row echelon form. That being the case, we can reuse much of the code from the [Reduced row echelon form](https://rosettacode.org/wiki/Reduced_row_echelon_form) task. Perl&#160;6 stores and does calculations on decimal numbers within its limit of precision using Rational numbers by default, meaning the calculations are exact.
 
-```perl
+```raku
 sub gauss-jordan-solve (@a, @b) {
     @b.kv.map: { @a[$^k].append: $^v };
     @a.&rref[*]»[*-1];

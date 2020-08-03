@@ -2,7 +2,7 @@
 
 # [Color quantization][1]
 
-```perl
+```raku
 use MagickWand;
 use MagickWand::Enums;
  

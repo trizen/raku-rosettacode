@@ -4,7 +4,7 @@
 
 ### via Aitken's array
 
-```perl
+```raku
  my @Aitkens-array = lazy [1], -> @b {
      my @c = @b.tail;
      @c.push: @b[$_] + @c[$_] for ^@b;
@@ -56,7 +56,7 @@ First ten rows of Aitken's array:
 
 ### via Recurrence relation
 
-```perl
+```raku
 sub binomial { [*] ($^n … 0) Z/ 1 .. $^p }
  
 my @bell = 1, -> *@s { [+] @s »*« @s.keys.map: { binomial(@s-1, $_) }  } … *;
@@ -73,7 +73,7 @@ my @bell = 1, -> *@s { [+] @s »*« @s.keys.map: { binomial(@s-1, $_) }  } …
 
 ### via Stirling sums
 
-```perl
+```raku
 my @Stirling_numbers_of_the_second_kind =
     (1,),
     { (0, |@^last) »+« (|(@^last »*« @^last.keys), 0) } … *

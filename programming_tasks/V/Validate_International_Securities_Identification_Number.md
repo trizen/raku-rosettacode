@@ -4,7 +4,7 @@
 
 Using the `luhn-test` function from the *[Luhn test of credit card numbers](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#Perl_6)* task.
 
-```perl
+```raku
 my $ISIN = /
     ^ <[A..Z]>**2 <[A..Z0..9]>**9 <[0..9]> $
     <?{ luhn-test $/.comb.map({ :36($_) }).join }>

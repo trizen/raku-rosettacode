@@ -2,7 +2,7 @@
 
 # [Average loop length][1]
 
-```perl
+```raku
 constant MAX_N  = 20;
 constant TRIALS = 100;
  

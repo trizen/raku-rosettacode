@@ -2,7 +2,7 @@
 
 # [LZW compression][1]
 
-```perl
+```raku
 sub compress(Str $uncompressed --> Seq)  { 
     my $dict-size = 256;
     my %dictionary = (.chr => .chr for ^$dict-size);

@@ -4,7 +4,7 @@
 
 Unlike in Perl 5, where `=>` is just a synonym for comma, in Perl 6 it creates a true Pair object. So here we use Pair objects for our "cons" cells, just as if we were doing this in Lisp. We use the `gather/take` construct to harvest the leaves lazily as the elements are visited with a standard recursive algorithm, using multiple dispatch to differentiate nodes from leaves. The `eqv` value equivalence is applied to the two lists in parallel.
 
-```perl
+```raku
 sub fringe ($tree) {
     multi sub fringey (Pair $node) { fringey $_ for $node.kv; }
     multi sub fringey ( Any $leaf) { take $leaf; }

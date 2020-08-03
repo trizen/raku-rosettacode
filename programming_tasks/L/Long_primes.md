@@ -4,7 +4,7 @@
 
 Not very fast as the numbers get larger. 64000 takes a little over 15 minutes on my computer. 😕
 
-```perl
+```raku
 my @long-primes = lazy (1..*).grep(*.is-prime).hyper(:8degree, :8batch).grep({1+(1/$_).base-repeating[1].chars == $_});
  
 put "Long primes ≤ 500:\n", @long-primes[^(@long-primes.first: * > 500, :k)];

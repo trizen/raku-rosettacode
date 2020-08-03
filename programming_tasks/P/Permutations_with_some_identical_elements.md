@@ -2,7 +2,7 @@
 
 # [Permutations with some identical elements][1]
 
-```perl
+```raku
 sub permutations-with-some-identical-elements ( @elements, @reps = () ) {
     with @elements { (@reps ?? flat $_ Zxx @reps !! flat .keys.map(*+1) Zxx .values).permutations».join.unique }
  }

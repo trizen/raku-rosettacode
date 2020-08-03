@@ -2,7 +2,7 @@
 
 # [Modular inverse][1]
 
-```perl
+```raku
 sub inverse($n, :$modulo) {
     my ($c, $d, $uc, $vc, $ud, $vd) = ($n % $modulo, $modulo, 1, 0, 0, 1);
     my $q;

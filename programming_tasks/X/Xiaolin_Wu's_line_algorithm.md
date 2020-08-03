@@ -2,7 +2,7 @@
 
 # [Xiaolin Wu's line algorithm][1]
 
-```perl
+```raku
 sub plot(\x, \y, \c) { say "plot {x} {y} {c}" }
  
 sub fpart(\x) { x - floor(x) }

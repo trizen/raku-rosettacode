@@ -2,7 +2,7 @@
 
 # [Bitmap/Write a PPM file][1]
 
-```perl
+```raku
 class Pixel { has uint8 ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

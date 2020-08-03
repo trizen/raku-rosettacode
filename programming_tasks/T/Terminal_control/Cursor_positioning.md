@@ -4,7 +4,7 @@
 
 Assuming an ANSI terminal:
 
-```perl
+```raku
 print "\e[6;3H";
 print 'Hello';
 ```

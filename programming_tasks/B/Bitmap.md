@@ -2,7 +2,7 @@
 
 # [Bitmap][1]
 
-```perl
+```raku
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

@@ -8,7 +8,7 @@ There is not yet (that I am aware of) a native interface to the Windows logging 
 
 (Same caveats as the others, needs to be run as administrator or with elevated privileges under Windows.)
 
-```perl
+```raku
 given $*DISTRO {
     when .is-win {
         my $cmd = "eventcreate /T INFORMATION /ID 123 /D \"Bla de bla bla bla\"";

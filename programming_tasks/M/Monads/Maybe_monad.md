@@ -19,7 +19,7 @@ The task description asks for two functions that take an Int and return a Maybe
 Int or Maybe Str, but those distinctions are nearly meaningless in Perl 6. See
 below.
 
-```perl
+```raku
 my $monad = <42>;
 say 'Is $monad an Int?: ', $monad ~~ Int;
 say 'Is $monad a  Str?: ', $monad ~~ Str;
@@ -47,7 +47,7 @@ type. Any routine that needs to be able to handle a Nothing type will need to be
 informed of it, but for the most part, that just means adding a multi-dispatch
 candidate.
 
-```perl
+```raku
 # Build a Nothing type. When treated as a string it returns the string 'Nothing'.
 # When treated as a Numeric, returns the value 'Nil'.
 class NOTHING {

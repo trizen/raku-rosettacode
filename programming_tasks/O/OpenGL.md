@@ -8,7 +8,7 @@ At this time there is not a publicly available OpenGL &lt;-&gt; Perl 6 library, 
 
 It's a little verbose since it is doing all of the setup and loading manually.
 
-```perl
+```raku
 use NativeCall;
  
 class Window is repr('CPointer') {}

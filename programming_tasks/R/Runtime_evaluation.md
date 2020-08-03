@@ -4,7 +4,7 @@
 
 Any syntactically valid sequence of statements may be run, and the snippet to be run can see its outer lexical scope at the point of the `eval`:
 
-```perl
+```raku
 use MONKEY-SEE-NO-EVAL;
  
 my ($a, $b) = (-5, 7);

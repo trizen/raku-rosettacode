@@ -2,7 +2,7 @@
 
 # [Resistance Network Calculator][1]
 
-```perl
+```raku
 sub gauss ( @m is copy ) {
     for @m.keys -> \i {
         my \k = max |(i .. @m.end), :by({ @m[$_][i].abs });

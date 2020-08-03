@@ -2,7 +2,7 @@
 
 # [Pell's equation][1]
 
-```perl
+```raku
 sub pell (Int $n) {
  
     my $y = my $x = Int(sqrt $n);

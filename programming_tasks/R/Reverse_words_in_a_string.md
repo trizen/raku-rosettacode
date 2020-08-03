@@ -4,7 +4,7 @@
 
 We'll read input from stdin
 
-```perl
+```raku
 say ~.words.reverse for lines
 ```
 

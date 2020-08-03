@@ -4,7 +4,7 @@
 
 The limit scaling is not <em>required</em>, but it cuts down on a bunch of unnecessary calculation.
 
-```perl
+```raku
 my $limit = 32;
  
 sub powers_of ($radix) { 1, |[\*] $radix xx * }

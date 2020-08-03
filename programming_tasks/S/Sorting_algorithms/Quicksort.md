@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Quicksort][1]
 
-```perl
+```raku
 # Empty list sorts to the empty list
  multi quicksort([]) { () }
  

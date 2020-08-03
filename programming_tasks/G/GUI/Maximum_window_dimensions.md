@@ -4,7 +4,7 @@
 
 This is kind-of a silly task. The maximum window size is going to depend on your OS, hardware, display server and graphics toolkit, not your programming language. Taken at face value, using a Linux system running an X11 display server, the maximum displayable window size is the resolution of your monitor. Basically, the size of your desktop viewport. The Perl 6 module X11::libxdo returns the desktop viewport size for get-desktop-dimensions which is the effective maximum window size.
 
-```perl
+```raku
 use X11::libxdo;
  
 my $xdo = Xdo.new;

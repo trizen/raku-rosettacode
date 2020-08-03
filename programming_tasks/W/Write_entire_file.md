@@ -2,13 +2,13 @@
 
 # [Write entire file][1]
 
-```perl
+```raku
 spurt 'path/to/file', $file-data;
 ```
 
 
 or
 
-```perl
+```raku
 'path/to/file'.IO.spurt: $file-data;
 ```

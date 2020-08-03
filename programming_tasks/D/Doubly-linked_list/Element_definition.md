@@ -2,7 +2,7 @@
 
 # [Doubly-linked list/Element definition][1]
 
-```perl
+```raku
 role DLElem[::T] {
     has DLElem[T] $.prev is rw;
     has DLElem[T] $.next is rw;

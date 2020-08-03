@@ -4,7 +4,7 @@
 
 Maximum recursion depth is memory dependent. Values in excess of 1 million are easily achieved.
 
-```perl
+```raku
 my $x = 0;
 recurse;
  

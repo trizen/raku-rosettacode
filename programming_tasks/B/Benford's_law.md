@@ -2,7 +2,7 @@
 
 # [Benford's law][1]
 
-```perl
+```raku
 sub benford(@a) { bag +« @a».substr(0,1) }
  
 sub show(%distribution) {

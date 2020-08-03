@@ -2,7 +2,7 @@
 
 # [Archimedean spiral][1]
 
-```perl
+```raku
 use Image::PNG::Portable;
  
 my ($w, $h) = (400, 400);

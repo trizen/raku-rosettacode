@@ -2,7 +2,7 @@
 
 # [Zeckendorf number representation][1]
 
-```perl
+```raku
 printf "%2d: %8s\n", $_, zeckendorf($_) for 0 .. 20;
  
 multi zeckendorf(0) { '0' }

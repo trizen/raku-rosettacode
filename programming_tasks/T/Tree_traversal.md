@@ -2,7 +2,7 @@
 
 # [Tree traversal][1]
 
-```perl
+```raku
 class TreeNode {
     has TreeNode $.parent;
     has TreeNode $.left;

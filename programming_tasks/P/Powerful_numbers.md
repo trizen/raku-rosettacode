@@ -7,7 +7,7 @@
 
 Perl 6 has no handy pre-made nth integer root routine so has the same problem as Go with needing a slight "fudge factor" in the nth root calculation.
 
-```perl
+```raku
 sub super (\x) { x.trans([<0123456789>.comb] => [<⁰¹²³⁴⁵⁶⁷⁸⁹>.comb]) }
  
 sub is-square-free (Int \n) {

@@ -2,7 +2,7 @@
 
 # [Balanced ternary][1]
 
-```perl
+```raku
 class BT {
     has @.coeff;
  

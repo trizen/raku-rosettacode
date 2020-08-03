@@ -12,7 +12,7 @@ To generate a high-precision value for Ramanujan's constant, code is borrowed fr
 [Euler's number](http://rosettacode.org/wiki/Calculating_the_value_of_e), and
 [integer roots](http://rosettacode.org/wiki/Arithmetic-geometric_mean/Integer_roots). Additional custom routines for exponentiation are used to ensure all computations are done with rationals, specifically `FatRat`s (rational numbers stored with arbitrary size numerator and denominator). The module `Rat::Precise` makes it simple to display these to a configurable precision.
 
-```perl
+```raku
 use Rat::Precise;
  
 # set the degree of precision for calculations
@@ -136,7 +136,7 @@ Heegner numbers yielding 'almost' integers
 
 Ramanujan's constant can also be generated to an arbitrary precision using standard [continued fraction formulas](https://en.wikipedia.org/wiki/Generalized_continued_fraction) for each component of the 𝑒\*\*(π\*√163) expression. Substantially slower than the first method.
 
-```perl
+```raku
 use Rat::Precise;
  
 sub continued-fraction($n, :@a, :@b) {

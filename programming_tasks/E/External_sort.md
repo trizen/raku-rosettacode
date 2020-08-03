@@ -4,7 +4,7 @@
 
 Borrowing from [Stream_Merge](https://rosettacode.org/wiki/Stream_Merge) here. Temporary files are automatically deleted when program is done, so no explicit clean-up required.
 
-```perl
+```raku
 use File::Temp;
  
 sub merge_streams ( @streams ) {

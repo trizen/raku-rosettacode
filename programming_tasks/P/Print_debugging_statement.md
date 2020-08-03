@@ -12,7 +12,7 @@ This example will report any payload contents passed to the exception. If you wa
 
 Comments with the files line numbers are added here to make it easier to match up the debug output with the file. Typically you would be editing the file in an editor that provides line numbering so that wouldn't be necessary/helpful.
 
-```perl
+```raku
 my &pdb = &die;
  
 CATCH {

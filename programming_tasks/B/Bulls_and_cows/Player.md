@@ -2,7 +2,7 @@
 
 # [Bulls and cows/Player][1]
 
-```perl
+```raku
 # we use the [] reduction meta operator along with the Cartesian Product
 # operator X to create the Cartesian Product of four times [1..9] and then get
 # all the elements where the number of unique digits is four.

@@ -4,7 +4,7 @@
 
 This could certainly be written more concisely. Extra verbiage is included to make the process more clear.
 
-```perl
+```raku
 # For all positives integers from 1 to Infinity
 for 1 .. Inf -> $integer {
  
@@ -24,7 +24,7 @@ for 1 .. Inf -> $integer {
 
 Alternatively, the following just may be declarative enough to allow Babbage to understand what's going on:
 
-```perl
+```raku
 say $_ if ($_²  % 1000000 == 269696) for 1..99736;
 ```
 

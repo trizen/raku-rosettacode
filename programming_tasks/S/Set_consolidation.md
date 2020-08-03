@@ -2,7 +2,7 @@
 
 # [Set consolidation][1]
 
-```perl
+```raku
 multi consolidate() { () }
 multi consolidate(Set \this is copy, *@those) {
     gather {

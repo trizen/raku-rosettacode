@@ -4,7 +4,7 @@
 
 There actually is a builtin:
 
-```perl
+```raku
 .say for combinations(5,3);
 ```
 
@@ -25,7 +25,7 @@ There actually is a builtin:
 
 Here is an iterative routine with the same output:
 
-```perl
+```raku
 sub combinations(Int $n, Int $k) {
     return ([],) unless $k;
     return if $k > $n || $n <= 0;

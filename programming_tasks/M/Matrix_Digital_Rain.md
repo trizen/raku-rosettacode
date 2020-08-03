@@ -8,7 +8,7 @@ Kind-of cheap and cheesy, but what the heck... Probably will only work in a POSI
 
 The "lightning" effect is actually a bug, but I liked it so I kept it.
 
-```perl
+```raku
 # clean up on exit, reset ANSI codes, scroll, re-show the cursor & clear screen
 signal(SIGINT).tap: { print "\e[0m", "\n" xx 50, "\e[H\e[J\e[?25h"; exit(0) }
  

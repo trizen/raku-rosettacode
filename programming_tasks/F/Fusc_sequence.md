@@ -2,7 +2,7 @@
 
 # [Fusc sequence][1]
 
-```perl
+```raku
 my @Stern-Brocot;
 @Stern-Brocot = 0, 1, 1, { |(@Stern-Brocot[$_ - 1] + @Stern-Brocot[$_], @Stern-Brocot[$_]) given ++$+1 } ... *;
  

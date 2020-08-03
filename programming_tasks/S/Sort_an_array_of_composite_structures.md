@@ -2,7 +2,7 @@
 
 # [Sort an array of composite structures][1]
 
-```perl
+```raku
 my class Employee {
    has Str $.name;
    has Rat $.wage;

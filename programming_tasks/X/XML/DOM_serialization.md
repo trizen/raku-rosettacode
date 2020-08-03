@@ -2,7 +2,7 @@
 
 # [XML/DOM serialization][1]
 
-```perl
+```raku
 use XML;
 use XML::Writer;
  

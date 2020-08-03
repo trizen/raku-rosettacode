@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Strand sort][1]
 
-```perl
+```raku
 sub infix:<M> (@x-in, @y-in) {
     my @x = | @x-in;
     my @y = | @y-in;

@@ -33,7 +33,7 @@ UNIT      # Symbols in the outermost lexical scope of compilation unit
 SETTING   # Lexical symbols in the unit's DSL (usually CORE)
 PARENT    # Symbols in this package's parent package (or lexical scope)
 ```
-```perl
+```raku
 # call a routine before it has been defined
 say log();              # prints: outer
  

@@ -6,7 +6,7 @@ Simple solution, doing a linear search.
 
 Note that in Perl&#160;6 we don't have to worry about floating-point misrepresentations of decimals, because decimal fractions are stored as rationals.
 
-```perl
+```raku
 sub price-fraction ($n where 0..1) {
     when $n < 0.06 { 0.10 }
     when $n < 0.11 { 0.18 }
@@ -39,7 +39,7 @@ while prompt("value: ") -> $value {
 If we expect to rescale many prices, a better approach would be to build a look-up array of 101 entries.
 Memory is cheap, and array indexing is blazing fast.
 
-```perl
+```raku
 my @price = map *.value, flat
     ( 0 ..^ 6  X=> 0.10),
     ( 6 ..^ 11 X=> 0.18),
@@ -71,7 +71,7 @@ while prompt("value: ") -> $value {
 
 We can also build this same look-up array by parsing the table as formatted in the task description:
 
-```perl
+```raku
 my $table = q:to/END/;
 >=  0.00  <  0.06  :=  0.10
 >=  0.06  <  0.11  :=  0.18

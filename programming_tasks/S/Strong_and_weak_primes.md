@@ -2,7 +2,7 @@
 
 # [Strong and weak primes][1]
 
-```perl
+```raku
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 use Math::Primesieve;

@@ -2,7 +2,7 @@
 
 # [Terminal control/Coloured text][1]
 
-```perl
+```raku
 use Terminal::ANSIColor;
  
 say colored('RED ON WHITE', 'bold red on_white');

@@ -4,7 +4,7 @@
 
 Using [Vogel's approximation method](https://rosettacode.org/wiki/Vogel%27s_approximation_method#Perl6):
 
-```perl
+```raku
 my  %costs = :S1{:3C1, :5C2, :7C3}, :S2{:3C1, :2C2, :5C3};
 my %demand = :20C1, :30C2, :10C3;
 my %supply = :25S1, :35S2;

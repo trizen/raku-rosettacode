@@ -2,7 +2,7 @@
 
 # [Functional coverage tree][1]
 
-```perl
+```raku
 sub walktree ($data) {
     my (@parts, $cnt);
  

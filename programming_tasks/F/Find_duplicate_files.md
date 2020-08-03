@@ -4,7 +4,7 @@
 
 This implementation takes a starting directory (defaults to the current directory) and has a few flags to set behaviour: --minsize, minimum file size to look at, defaults to 5 bytes; and --recurse, recurse into the directory structure, default True. It finds files of the same size, calculates hashes to compare, then reports files that hash the same. Uses the very fast but cryptographically poor xxHash library to hash the files.
 
-```perl
+```raku
 use Digest::xxHash;
  
 sub MAIN( $dir = '.', :$minsize = 5, :$recurse = True ) {

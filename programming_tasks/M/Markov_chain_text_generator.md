@@ -2,7 +2,7 @@
 
 # [Markov chain text generator][1]
 
-```perl
+```raku
 unit sub MAIN ( :$text=$*IN, :$n=2, :$words=100, );
  
 sub add-to-dict ( $text, :$n=2, ) {

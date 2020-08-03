@@ -4,7 +4,7 @@
 
 I gave up on factoring F₉ after about 20 minutes.
 
-```perl
+```raku
 use ntheory:from<Perl5> <factor>;
  
 my @Fermats = (^Inf).map: 2 ** 2 ** * + 1;

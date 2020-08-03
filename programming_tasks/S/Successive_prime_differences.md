@@ -8,7 +8,7 @@
 
 Essentially the code from the [Sexy primes](https://rosettacode.org/wiki/Sexy_primes#Perl_6) task with minor tweaks.
 
-```perl
+```raku
 use Math::Primesieve;
 my $sieve = Math::Primesieve.new;
  
@@ -78,7 +78,7 @@ First group: 31, 37, 41, 43
 
 ### Precomputed Differences
 
-```perl
+```raku
 use Math::Primesieve;
  
 constant $max    = 1_000_000;

@@ -6,7 +6,7 @@ Variant of a Mandelbrot script from the [Perl 6 ecosystem](http://modules.perl6.
 Redirect into a file to save it.
 Converted to a .png file for display here.
 
-```perl
+```raku
 constant @color_map = map ~*.comb(/../).map({:16($_)}), < 
 000000 0000fc 4000fc 7c00fc bc00fc fc00fc fc00bc fc007c fc0040 fc0000 fc4000
 fc7c00 fcbc00 fcfc00 bcfc00 7cfc00 40fc00 00fc00 00fc40 00fc7c 00fcbc 00fcfc

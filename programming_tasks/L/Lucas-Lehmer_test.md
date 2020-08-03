@@ -2,7 +2,7 @@
 
 # [Lucas-Lehmer test][1]
 
-```perl
+```raku
 multi is_mersenne_prime(2) { True }
 multi is_mersenne_prime(Int $p) {
     my $m_p = 2 ** $p - 1;

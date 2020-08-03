@@ -2,7 +2,7 @@
 
 # [Echo server][1]
 
-```perl
+```raku
 my $socket = IO::Socket::INET.new:
     :localhost<localhost>,
     :localport<12321>,
@@ -23,7 +23,7 @@ while $socket.accept -> $conn {
 
 Async version:
 
-```perl
+```raku
 react {
     whenever IO::Socket::Async.listen('0.0.0.0', 12321) -> $conn {
         whenever $conn.Supply.lines -> $line {

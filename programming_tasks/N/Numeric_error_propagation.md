@@ -2,7 +2,7 @@
 
 # [Numeric error propagation][1]
 
-```perl
+```raku
 # cache of independent sources so we can make them all the same length.
 # (Because Perl 6 does not yet have a longest-zip metaoperator.)
 my @INDEP;

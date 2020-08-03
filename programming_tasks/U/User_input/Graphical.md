@@ -2,7 +2,7 @@
 
 # [User input/Graphical][1]
 
-```perl
+```raku
 use GTK::Simple;
 use GTK::Simple::App;
  

@@ -28,7 +28,7 @@ It's not too hard to see that such a sequence converges towards ![image](https:/
 
 Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=825b3fd5bafbc46b9a560ea9f16b21dd&mode=mathml), but rather ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2864884e3a76f4b27e189d49f4e6d0d1&mode=mathml). Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
 
-```perl
+```raku
 constant number-of-decimals = 100;
  
 multi sqrt(Int $n) {

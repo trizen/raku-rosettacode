@@ -4,7 +4,7 @@
 
 Perl 6's support for optional parameters is much like Python's. Consider this declaration:
 
-```perl
+```raku
 sub funkshun ($a, $b?, $c = 15, :$d, *@e, *%f) {
    ...
 }
@@ -17,7 +17,7 @@ In the above signature:
 
 So, if we defined the function like this:
 
-```perl
+```raku
 sub funkshun ($a, $b?, :$c = 15, :$d, *@e, *%f) {
    say "$a $b $c $d";
    say join ' ', @e;

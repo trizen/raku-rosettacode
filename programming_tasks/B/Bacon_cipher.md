@@ -4,7 +4,7 @@
 
 Not truly a Bacon Cipher as it doesn't encode using font variations. But fits with the spirit if not the exact definition.
 
-```perl
+```raku
 my $secret = q:to/END/;
     This task is to implement a program for encryption and decryption
     of plaintext using the simple alphabet of the Baconian cipher or

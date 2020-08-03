@@ -2,7 +2,7 @@
 
 # [Count in octal][1]
 
-```perl
+```raku
 say .base(8) for ^Inf;
 ```
 

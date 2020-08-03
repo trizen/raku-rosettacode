@@ -2,7 +2,7 @@
 
 # [Atomic updates][1]
 
-```perl
+```raku
 #| A collection of non-negative integers, with atomic operations.
 class BucketStore {
  

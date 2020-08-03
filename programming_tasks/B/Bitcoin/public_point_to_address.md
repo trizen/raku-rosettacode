@@ -2,7 +2,7 @@
 
 # [Bitcoin/public point to address][1]
 
-```perl
+```raku
 use Digest::SHA;
 use Digest::RIPEMD;
  

@@ -4,7 +4,7 @@
 
 Using the `Automaton` class defined at [One-dimensional_cellular_automata#Perl_6](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Perl_6):
 
-```perl
+```raku
 class Automaton {
     has $.rule;
     has @.cells;

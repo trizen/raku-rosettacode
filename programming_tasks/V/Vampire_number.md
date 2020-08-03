@@ -2,7 +2,7 @@
 
 # [Vampire number][1]
 
-```perl
+```raku
 sub is_vampire (Int $num) {
     my $digits = $num.comb.sort;
     my @fangs;

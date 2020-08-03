@@ -4,7 +4,7 @@
 
 A pure Perl 6 implementation that closely follows the description of SHA-1 in FIPS 180-1. Slow.
 
-```perl
+```raku
 sub postfix:<mod2³²> { $^x % 2**32 }
 sub infix:<⊕>        { ($^x + $^y)mod2³² }
 sub S                { ($^x +< $^n)mod2³² +| ($x +> (32-$n)) }

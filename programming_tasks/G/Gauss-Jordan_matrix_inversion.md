@@ -4,7 +4,7 @@
 
 Uses bits and pieces from other tasks, [Reduced row echelon form](https://rosettacode.org/wiki/Reduced_row_echelon_form#Perl_6) primarily.
 
-```perl
+```raku
 sub gauss-jordan-invert (@m where *.&is-square) {
     ^@m .map: { @m[$_].append: identity(+@m)[$_] };
     @m.&rref[*]»[+@m .. *];

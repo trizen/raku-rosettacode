@@ -4,7 +4,7 @@
 
 Fairly direct translation of the Python code.
 
-```perl
+```raku
 sub adaptive-Simpson-quadrature(&f, $left, $right, \ε = 1e-9) {
     my $lf = f($left);
     my $rf = f($right);

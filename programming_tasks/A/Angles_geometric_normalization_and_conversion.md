@@ -2,7 +2,7 @@
 
 # [Angles (geometric), normalization and conversion][1]
 
-```perl
+```raku
  
 my @units =
     { code => 'd', name => 'degrees' , number =>  360 },
@@ -107,7 +107,7 @@ Alternately, implemented as a series of postfix operators:
 
 *(Much of the complexity is due to the requirement that negative angles must normalize to a negative number.)*
 
-```perl
+```raku
 sub postfix:<t>( $t ) { my $a = $t % 1 * τ;           $t >=0 ?? $a !! $a - τ }
 sub postfix:<d>( $d ) { my $a = $d % 360 * τ / 360;   $d >=0 ?? $a !! $a - τ }
 sub postfix:<g>( $g ) { my $a = $g % 400 * τ / 400;   $g >=0 ?? $a !! $a - τ }

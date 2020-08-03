@@ -2,7 +2,7 @@
 
 # [Generate random chess position][1]
 
-```perl
+```raku
 sub pick-FEN {
     # First we chose how many pieces to place
     my $n = (2..32).pick;

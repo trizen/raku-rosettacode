@@ -3,7 +3,7 @@
 # [Graph colouring][1]
 
 
-```perl
+```raku
 #!/usr/bin/env perl6
  
 sub GraphNodeColor(@RAW) {

@@ -6,7 +6,7 @@ This is mainly a translation from the Phix entry, with an additional example on 
 Update 20190323: After a bug fixed an example does behave correctly and is now in line with the results from the C, D, Kotlin and Phix entries. By the way it seems *.comb* handle "\r\n" inconsistently, why? [[1]](https://pastebin.com/d7dBpYkL)
 Update 20190325: Thanks to SqrtNegInf for pointing out that the answer is already in the documentation.[[2]](https://docs.perl6.org/type/Str#routine_chomp), [[3]](https://docs.perl6.org/language/newline)
 
-```perl
+```raku
 #!/usr/bin/env perl6
  
 use v6.d;

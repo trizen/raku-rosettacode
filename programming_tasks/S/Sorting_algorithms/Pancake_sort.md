@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Pancake sort][1]
 
-```perl
+```raku
 sub pancake_sort ( @a is copy ) {
     my $endpoint = @a.end;
     while $endpoint > 0 and not [<] @a {

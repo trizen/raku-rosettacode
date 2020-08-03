@@ -4,7 +4,7 @@
 
 Each function officially returns one value, but by returning a List or Seq you can transparently return a list of arbitrary (even infinite) size. The calling scope can destructure the list using assignment, if it so chooses:
 
-```perl
+```raku
 sub addmul($a, $b) {
     $a + $b, $a * $b
 }

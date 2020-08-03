@@ -2,7 +2,7 @@
 
 # [Show the epoch][1]
 
-```perl
+```raku
 say DateTime.new(0)
 ```
 

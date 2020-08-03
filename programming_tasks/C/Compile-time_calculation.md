@@ -2,7 +2,7 @@
 
 # [Compile-time calculation][1]
 
-```perl
+```raku
 constant $tenfact = [*] 2..10; 
 say $tenfact;
 ```
@@ -11,6 +11,6 @@ say $tenfact;
 Like Perl 5, we also have a BEGIN block, but it also works to introduce a blockless statement,
 the value of which will be stored up to be used in the surrounding expression at run time:
 
-```perl
+```raku
  say(BEGIN [*] 2..10);
 ```

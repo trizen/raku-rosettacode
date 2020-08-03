@@ -4,7 +4,7 @@
 
 Alternately, and perhaps more usefully, output as a wiki-table rather than ASCII art. Hover mouse over the glyph to get the name.
 
-```perl
+```raku
 sub glyph ($_) {
     when * < 33 { (0x2400 + $_).chr } # display symbol names for invisible glyphs
     when 127    { '␡' }

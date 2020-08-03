@@ -12,7 +12,7 @@ Hmmm.
 
 It doesn't specify to *calculate* them, only to *list* them; why throw away all of the computer **millenia** of processing power that the GIMPS has invested?
 
-```perl
+```raku
 use HTTP::UserAgent;
 use Gumbo;
  

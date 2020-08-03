@@ -4,7 +4,7 @@
 
 Neither pretty nor efficient, a simple backtracking solution
 
-```perl
+```raku
 sub MAIN(\N = 8) {
     sub collision(@field, $row) {
         for ^$row -> $i {

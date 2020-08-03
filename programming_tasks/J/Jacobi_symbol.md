@@ -2,7 +2,7 @@
 
 # [Jacobi symbol][1]
 
-```perl
+```raku
 # Jacobi function
 sub infix:<J> (Int $k is copy, Int $n is copy where * % 2) {
     $k %= $n;

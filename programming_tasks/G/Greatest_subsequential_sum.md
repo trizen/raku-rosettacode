@@ -2,7 +2,7 @@
 
 # [Greatest subsequential sum][1]
 
-```perl
+```raku
 sub max-subseq (*@a) {
     my ($start, $end, $sum, $maxsum) = -1, -1, 0, 0;
     for @a.kv -> $i, $x {
@@ -35,7 +35,7 @@ Consuming the array (.shift) allows us to skip tracking the starting point; it i
 
 The empty sequence is used to initialize $max-subset, which fulfils the "all negative" requirement of the problem.
 
-```perl
+```raku
 sub max-subseq ( *@a ) {
  
     my $max-subset = ();

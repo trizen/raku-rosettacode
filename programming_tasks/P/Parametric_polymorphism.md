@@ -2,7 +2,7 @@
 
 # [Parametric polymorphism][1]
 
-```perl
+```raku
 role BinaryTree[::T] {
     has T $.value;
     has BinaryTree[T] $.left;

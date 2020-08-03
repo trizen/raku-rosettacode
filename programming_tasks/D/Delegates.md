@@ -2,7 +2,7 @@
 
 # [Delegates][1]
 
-```perl
+```raku
 class Non-Delegate  { }
  
 class Delegate {

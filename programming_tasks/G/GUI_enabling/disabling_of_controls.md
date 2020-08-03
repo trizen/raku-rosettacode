@@ -4,7 +4,7 @@
 
 Extremely basic implementation using the GTK library.
 
-```perl
+```raku
 use GTK::Simple;
 use GTK::Simple::App;
  

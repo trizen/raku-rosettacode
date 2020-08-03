@@ -2,7 +2,7 @@
 
 # [Death Star][1]
 
-```perl
+```raku
 class sphere {
    has $.cx; # center x coordinate
    has $.cy; # center y coordinate

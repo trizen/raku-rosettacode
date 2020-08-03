@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Cocktail sort][1]
 
-```perl
+```raku
 sub cocktail_sort ( @a ) {
     my $range = 0 ..^ @a.end;
     loop {

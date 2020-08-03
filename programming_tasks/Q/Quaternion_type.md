@@ -2,7 +2,7 @@
 
 # [Quaternion type][1]
 
-```perl
+```raku
 class Quaternion {
     has Real ( $.r, $.i, $.j, $.k );
  

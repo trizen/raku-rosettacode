@@ -2,7 +2,7 @@
 
 # [Unprimeable numbers][1]
 
-```perl
+```raku
 use ntheory:from<Perl5> <is_prime>;
 use Lingua::EN::Numbers;
  

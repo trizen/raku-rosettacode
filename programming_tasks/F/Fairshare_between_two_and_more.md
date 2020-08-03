@@ -8,7 +8,7 @@ Add an extension showing the relative fairness correlation of this selection alg
 
 A lower correlation factor corresponds to an advantage, higher to a disadvantage, the closer to 1 it is, the fairer the algorithm. Absolute best possible advantage correlation is 0. Absolute worst is 2.
 
-```perl
+```raku
 sub fairshare (\b) { ^∞ .hyper.map: { .polymod( b xx * ).sum % b } }
  
 .say for <2 3 5 11>.map: { .fmt('%2d:') ~ .&fairshare[^25]».fmt('%2d').join: ', ' }

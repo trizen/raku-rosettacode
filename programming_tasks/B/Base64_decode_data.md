@@ -2,7 +2,7 @@
 
 # [Base64 decode data][1]
 
-```perl
+```raku
 my $e64 = '
 VG8gZXJyIGlzIGh1bWFuLCBidXQgdG8gcmVhbGx5IGZvdWwgdGhpbmdzIHVwIHlvdSBuZWVkIGEgY2
 9tcHV0ZXIuCiAgICAtLSBQYXVsIFIuIEVocmxpY2g=

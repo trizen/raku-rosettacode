@@ -2,7 +2,7 @@
 
 # [Circles of given radius through two points][1]
 
-```perl
+```raku
 multi sub circles (@A, @B where ([and] @A Z== @B), 0.0) { 'Degenerate point' }
 multi sub circles (@A, @B where ([and] @A Z== @B), $)   { 'Infinitely many share a point' }
 multi sub circles (@A, @B, $radius) {
@@ -41,7 +41,7 @@ for @input {
 Another possibility is to use the Complex plane,
 for it often makes calculations easier with plane geometry:
 
-```perl
+```raku
 multi sub circles ($a, $b where $a == $b, 0.0) { 'Degenerate point' }
 multi sub circles ($a, $b where $a == $b, $)   { 'Infinitely many share a point' }
 multi sub circles ($a, $b, $r) {

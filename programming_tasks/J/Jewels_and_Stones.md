@@ -2,7 +2,7 @@
 
 # [Jewels and Stones][1]
 
-```perl
+```raku
 sub count-jewels ( Str $j, Str $s --> Int ) {
     my %counts_of_all = $s.comb.Bag;
     my @jewel_list    = $j.comb.unique;

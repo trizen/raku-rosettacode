@@ -2,7 +2,7 @@
 
 # [Ordered Partitions][1]
 
-```perl
+```raku
 sub partition(@mask is copy) {
     my @op;
     my $last = [+] @mask or return [] xx 1;

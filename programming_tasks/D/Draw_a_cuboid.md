@@ -2,7 +2,7 @@
 
 # [Draw a cuboid][1]
 
-```perl
+```raku
 sub braille-graphics (%a) {
     my ($ylo, $yhi, $xlo, $xhi);
     for %a.keys -> $y {

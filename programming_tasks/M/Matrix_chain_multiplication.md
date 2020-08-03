@@ -2,7 +2,7 @@
 
 # [Matrix chain multiplication][1]
 
-```perl
+```raku
 # Reference:
 # "Find the optimal way to multiply a chain of matrices. " was the first tasks at
 # "masak's Perl 6 Coding Contest 2010". Here is the task definition

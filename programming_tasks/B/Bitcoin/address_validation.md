@@ -2,7 +2,7 @@
 
 # [Bitcoin/address validation][1]
 
-```perl
+```raku
 my $bitcoin-address = rx/
     <+alnum-[0IOl]> ** 26..*  # an address is at least 26 characters long
     <?{

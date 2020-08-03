@@ -4,7 +4,7 @@
 
 One could simply generate all [permutations](https://rosettacode.org/wiki/Permutations_with_repetitions#Perl_6), and then remove "duplicates":
 
-```perl
+```raku
 my @S = <iced jam plain>;
 my $k = 2;
  
@@ -24,7 +24,7 @@ plain plain
 
 Alternatively, a recursive solution:
 
-```perl
+```raku
 proto combs_with_rep (UInt, @) {*}
  
 multi combs_with_rep (0,  @)  { () }

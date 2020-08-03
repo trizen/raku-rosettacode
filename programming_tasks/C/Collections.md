@@ -8,7 +8,7 @@ Perl 6 has both mutable and immutable containers of various sorts. Here are some
 
 ### Mutable
 
-```perl
+```raku
 # Array
 my @array = 1,2,3;
 @array.push: 4,5,6;
@@ -30,7 +30,7 @@ $b ⊎= <a b c>;
 
 ### Immutable
 
-```perl
+```raku
 # List
 my @list := 1,2,3;
 my @newlist := |@list, 4,5,6; # |@list will slip @list into the surrounding list instead of creating a list of lists
@@ -47,7 +47,7 @@ my $newbag = $bag ⊎ <b e e f>;
 
 ### Pair list (cons list)
 
-```perl
+```raku
 my $tail = d => e => f => Nil;
 my $new = a => b => c => $tail;
 ```
@@ -55,7 +55,7 @@ my $new = a => b => c => $tail;
 
 ### P6opaque object (immutable in structure)
 
-```perl
+```raku
 class Something { has $.foo; has $.bar };
 my $obj = Something.new: foo => 1, bar => 2;
 my $newobj = $obj but role { has $.baz = 3 } # anonymous mixin

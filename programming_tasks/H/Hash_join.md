@@ -4,7 +4,7 @@
 
 The `.classify` method returns a multimap represented as a `Hash` whose values are `Array`s.
 
-```perl
+```raku
 sub hash-join(@a, &a, @b, &b) {
     my %hash := @b.classify(&b);
  

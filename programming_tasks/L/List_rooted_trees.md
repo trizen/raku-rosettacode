@@ -4,7 +4,7 @@
 
 Bags are represented by Perl 6 type [`Bag`](http://doc.perl6.org/type/Bag).
 
-```perl
+```raku
 use v6;
  
 multi expand-tree ( Bag $tree ) {

@@ -4,7 +4,7 @@
 
 On the face of it this task is pretty simple. Especially given the sample CSV file and the total lack of specification of *what* changes to make to the file. Something like this would suffice.
 
-```perl
+```raku
 my $csvfile = './whatever.csv';
 my $fh = open($csvfile, :r);
 my @header = $fh.get.split(',');
@@ -20,7 +20,7 @@ close $out;
 
 But if your CSV file is at all complex you are better off using a CSV parsing module. (Complex meaning fields that contain commas, quotes, newlines, etc.)
 
-```perl
+```raku
 use Text::CSV;
 my $csvfile = './whatever.csv';
 my @csv = Text::CSV.parse-file($csvfile);

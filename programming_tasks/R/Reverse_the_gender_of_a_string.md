@@ -8,7 +8,7 @@ Mechanically, this task is trivial. Perl 6 provides several flexible and powerfu
 
 For extremely limited circumstances such as this example, this should suffice. Notice case matching and replication. Handles contractions, but ignores embedded matching text.
 
-```perl
+```raku
 say S:g:ii/«'she'»/he/ given "She was a soul stripper. She took my heart! They say she's going to put me on a shelf.";
 ```
 

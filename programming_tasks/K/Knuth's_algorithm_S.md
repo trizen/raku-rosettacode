@@ -2,7 +2,7 @@
 
 # [Knuth's algorithm S][1]
 
-```perl
+```raku
 sub s_of_n_creator($n) {
     my @sample;
     my $i = 0;

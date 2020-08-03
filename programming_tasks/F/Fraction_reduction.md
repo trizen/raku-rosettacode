@@ -2,7 +2,7 @@
 
 # [Fraction reduction][1]
 
-```perl
+```raku
 my %reduced;
 my $digits = 2..4;
  

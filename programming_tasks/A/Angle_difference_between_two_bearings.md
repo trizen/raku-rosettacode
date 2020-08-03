@@ -2,7 +2,7 @@
 
 # [Angle difference between two bearings][1]
 
-```perl
+```raku
 sub infix:<∠> (Real $b1, Real $b2) {
    (my $b = ($b2 - $b1 + 720) % 360) > 180 ?? $b - 360 !! $b;
 }

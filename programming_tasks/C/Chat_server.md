@@ -2,7 +2,7 @@
 
 # [Chat server][1]
 
-```perl
+```raku
 #!/usr/bin/env perl6
  
 react {

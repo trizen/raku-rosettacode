@@ -4,7 +4,7 @@
 
 A succinct Perl 6 example using a few additional language features. Wheels are implemented as infinite repeating sequences, allowing a single iterator to keep track of the current position. This means the code contains no position tracking whatsoever.
 
-```perl
+```raku
  
 #| advance rotates a named wheel $n by consuming an item from an infinite sequence. It is called
 #| from within a gather block and so can use take in order to construct an infinite, lazy sequence

@@ -16,7 +16,7 @@ If no type is specified, M (metric) is assumed.
 
 If you desire the number to be rounded, pass in a number representing the placed past the decimal to round to. If you pass in a negative number for rounding, it will round to a negative number of places past the decimal.
 
-```perl
+```raku
 sub sufficate ($val is copy, $type is copy = 'M', $round is copy = Any) {
    if +$type ~~ Int { $round = $type; $type = 'M' }
    my $s = '';

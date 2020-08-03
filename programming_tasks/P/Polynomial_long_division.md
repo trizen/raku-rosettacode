@@ -2,7 +2,7 @@
 
 # [Polynomial long division][1]
 
-```perl
+```raku
 sub poly_long_div ( @n is copy, @d ) {
     return [0], |@n if +@n < +@d;
  

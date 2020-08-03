@@ -4,7 +4,7 @@
 
 What a horribly underspecified task. Ah well, gives me lots of wiggle room to cheat in various ways.
 
-```perl
+```raku
 my ($rows,$cols) = qx/stty size/.words;
 my $v = floor $rows / 2;
 print "\e[H\e[J", 'Generating sine wave of zero amplitude and zero frequency for 5 seconds...',

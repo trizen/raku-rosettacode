@@ -2,7 +2,7 @@
 
 # [Mayan calendar][1]
 
-```perl
+```raku
 my @sacred = <Imix’ Ik’ Ak’bal K’an Chikchan Kimi Manik’ Lamat Muluk Ok
               Chuwen Eb Ben Hix Men K’ib’ Kaban Etz’nab’ Kawak Ajaw>;
  

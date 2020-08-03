@@ -4,7 +4,7 @@
 
 ### A Simple Way
 
-```perl
+```raku
 my $b = 99;
  
 repeat while --$b {
@@ -27,7 +27,7 @@ sub b($b) {
 
 Similar to "A Simple Way", but with proper variable and subroutine naming, declarator documentation, strongly-typed function definition, better code reuse, and external ternary logic.
 
-```perl
+```raku
 for 99...1 -> $bottles {
     sing $bottles, :wall;
     sing $bottles;
@@ -51,7 +51,7 @@ sub sing(
 
 ### A More Extravagant Way
 
-```perl
+```raku
 my @quantities = flat (99 ... 1), 'No more', 99;
 my @bottles = flat 'bottles' xx 98, 'bottle', 'bottles' xx 2;
 my @actions = flat 'Take one down, pass it around' xx 99,

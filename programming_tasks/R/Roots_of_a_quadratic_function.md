@@ -4,7 +4,7 @@
 
 Perl 6 has complex number handling built in.
 
-```perl
+```raku
 for
 [1, 2, 1],
 [1, 2, 3],

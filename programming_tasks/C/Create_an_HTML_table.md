@@ -4,7 +4,7 @@
 
 This is certainly not the only or best way to generate HTML tables using Perl 6; just an example of one possible method.
 
-```perl
+```raku
 my @header =  <&nbsp; X Y Z>;
 my $rows = 5;
  

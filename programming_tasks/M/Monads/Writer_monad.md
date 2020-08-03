@@ -4,7 +4,7 @@
 
 Basic semantic borrowed from the Monads/List monad entry
 
-```perl
+```raku
 # 20200508 Raku programming solution
  
 class Writer { has Numeric $.value ; has Str $.log }

@@ -4,7 +4,7 @@
 
 Perl 6 works with unicode natively and handles combining characters and multi-byte emoji correctly. In the last string, notice the the length is correctly shown as 11 characters and that the delta with a combining circumflex in position 6 is not the same as the deltas without in positions 5 &amp; 9.
 
-```perl
+```raku
   -> $str {
     my $i = 0;
     print "\n{$str.perl} (length: {$str.chars}), has ";

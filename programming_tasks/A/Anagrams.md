@@ -2,7 +2,7 @@
 
 # [Anagrams][1]
 
-```perl
+```raku
 my @anagrams = 'unixdict.txt'.IO.words.classify(*.comb.sort.join).values;
  
 my $max = @anagrams».elems.max;
@@ -23,7 +23,7 @@ abel able bale bela elba
 
 Just for the fun of it, here's a one-liner that uses no temporaries. Since it would be rather long, we've oriented it vertically:
 
-```perl
+```raku
 .put for                         # print each element of the array made this way:
     'unixdict.txt'.IO.words      # load words from file
     .classify(*.comb.sort.join)  # group by common anagram

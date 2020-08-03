@@ -4,7 +4,7 @@
 
 A non-validating version:
 
-```perl
+```raku
 sub rom-to-num($r) {
     [+] gather $r.uc ~~ /
         ^
@@ -40,7 +40,7 @@ MMVIII => 2008
 
 A validating version. Also handles older forms such as 'IIXX' and "IIII".
 
-```perl
+```raku
 sub rom-to-num($r) {
     [+] gather $r.uc ~~ /
         ^

@@ -2,7 +2,7 @@
 
 # [Strip control codes and extended characters from a string][1]
 
-```perl
+```raku
 my $str = (0..400).roll(80)».chr.join;
  
 say $str;

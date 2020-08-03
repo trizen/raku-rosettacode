@@ -2,7 +2,7 @@
 
 # [Draw a clock][1]
 
-```perl
+```raku
 my ($rows,$cols) = qx/stty size/.words;
 my $v = floor $rows / 2;
 my $h = floor $cols / 2 - 16;

@@ -4,7 +4,7 @@
 
 Pass in a parameter to set the square size for the puzzle. (Defaults to 4.) Arbitrarily limited to between 1 and 26. Yes, you can choose to solve a 1 element square puzzle, but it won't be very challenging. Accepts upper or lower case letters for columns. Disregards any out-of-range indices. Enter a blank or 0 (zero) to exit.
 
-```perl
+```raku
 sub MAIN ($square = 4) {
     say "{$square}? Seriously?" and exit if $square < 1 or $square > 26;
     my %bits = map { $_ => %( map { $_ => 0 }, ('A' .. *)[^ $square] ) },

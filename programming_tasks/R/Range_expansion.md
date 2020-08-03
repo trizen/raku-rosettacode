@@ -2,7 +2,7 @@
 
 # [Range expansion][1]
 
-```perl
+```raku
 sub range-expand (Str $range-description) {
     my token number { '-'? \d+ }
     my token range  { (<&number>) '-' (<&number>) }
@@ -26,7 +26,7 @@ say range-expand('-6,-3--1,3-5,7-11,14,15,17-20').join(', ');
 
 Alternatively, using a grammar:
 
-```perl
+```raku
 grammar RangeList {
     token TOP    { <term>* % ','    { make $<term>.map(*.made)       } }
     token term   { [<range>|<num>]  { make ($<num> // $<range>).made } }

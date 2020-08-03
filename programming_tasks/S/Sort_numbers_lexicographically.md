@@ -2,7 +2,7 @@
 
 # [Sort numbers lexicographically][1]
 
-```perl
+```raku
 sub lex (Int $n) { (1…$n).sort: ~* }
  
 # TESTING

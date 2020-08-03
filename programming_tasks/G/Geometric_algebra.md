@@ -4,7 +4,7 @@
 
 Here we write a simplified version of the [Clifford](https://github.com/grondilu/clifford) module. It is very general as it is of infinite dimension and also contains an anti-euclidean basis @ē in addition to the euclidean basis @e.
 
-```perl
+```raku
 unit class MultiVector;
 subset UIntHash of MixHash where .keys.all ~~ UInt;
 has UIntHash $.blades;
@@ -80,7 +80,7 @@ multi infix:<==>(MultiVector $A, Real $x) returns Bool is export {
 
 And here is the code for verifying the solution:
 
-```perl
+```raku
 use MultiVector;
 use Test;
  

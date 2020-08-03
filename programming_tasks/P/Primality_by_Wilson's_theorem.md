@@ -8,7 +8,7 @@
 
 Not a particularly recommended way to test for primality, especially for larger numbers. It *works*, but is slow and memory intensive.
 
-```perl
+```raku
 sub postfix:<!> (Int $n) { (constant f = 1, |[\*] 1..*)[$n] }
  
 sub is-wilson-prime (Int $p where * > 1) { (($p - 1)! + 1) %% $p }

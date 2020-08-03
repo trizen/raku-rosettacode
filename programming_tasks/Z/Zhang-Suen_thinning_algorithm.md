@@ -4,7 +4,7 @@
 
 Takes the original image from a file that may be based on any characters whose low bits are 0 or 1 (which conveniently includes . and #).
 
-```perl
+```raku
 constant DEBUG = 1;
  
 my @lines = ([.ords X+& 1] for lines);  # The low bits Just Work.

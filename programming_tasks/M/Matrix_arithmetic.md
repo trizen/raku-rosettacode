@@ -4,7 +4,7 @@
 
 Uses the permutations generator from the [Permutations by swapping](https://rosettacode.org/wiki/Permutations_by_swapping#Perl_6) task. This implementation is naive and brute-force (slow) but exact.
 
-```perl
+```raku
 sub insert ($x, @xs) { ([flat @xs[0 ..^ $_], $x, @xs[$_ .. *]] for 0 .. @xs) }
 sub order ($sg, @xs) { $sg > 0 ?? @xs !! @xs.reverse }
  

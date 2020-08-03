@@ -4,7 +4,7 @@
 
 Using the generic definitions from [Doubly-linked_list/Definition#Perl_6](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Perl_6):
 
-```perl
+```raku
 role DLElem[::T] {
     has DLElem[T] $.prev is rw;
     has DLElem[T] $.next is rw;

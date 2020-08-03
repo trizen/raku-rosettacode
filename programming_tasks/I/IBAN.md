@@ -2,7 +2,7 @@
 
 # [IBAN][1]
 
-```perl
+```raku
 subset IBAN of Str where sub ($_ is copy) {
     s:g/\s//;
     return False if m/<-[ 0..9 A..Z a..z ]>/ or .chars != <

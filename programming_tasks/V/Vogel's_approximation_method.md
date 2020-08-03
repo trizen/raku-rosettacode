@@ -2,7 +2,7 @@
 
 # [Vogel's approximation method][1]
 
-```perl
+```raku
 my  %costs =
     :W{:16A, :16B, :13C, :22D, :17E},
     :X{:14A, :14B, :13C, :19D, :15E},

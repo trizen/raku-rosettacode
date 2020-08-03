@@ -2,7 +2,7 @@
 
 # [XML/Output][1]
 
-```perl
+```raku
 use XML::Writer;
  
 my @students =

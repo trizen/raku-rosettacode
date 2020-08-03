@@ -2,7 +2,7 @@
 
 # [Egyptian fractions][1]
 
-```perl
+```raku
 role Egyptian {
     method gist {
 	join ' + ',
@@ -47,7 +47,7 @@ say .key.nude.join("/"),
 
 Because the harmonic series diverges (albeit very slowly), it is possible to write even improper fractions as a sum of distinct unit fractions. Here is a code to do that:
 
-```perl
+```raku
 role Egyptian {
     method gist { join ' + ', map {"1/$_"}, self.list }
     method list {

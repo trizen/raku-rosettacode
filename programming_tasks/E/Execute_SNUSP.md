@@ -4,7 +4,7 @@
 
 Implementation of modular SNUSP.
 
-```perl
+```raku
 class SNUSP {
  
     has @!inst-pointer;

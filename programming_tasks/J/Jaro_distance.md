@@ -2,7 +2,7 @@
 
 # [Jaro distance][1]
 
-```perl
+```raku
 sub jaro ($s, $t) {
  
     return 1 if $s eq $t;

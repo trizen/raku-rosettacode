@@ -2,7 +2,7 @@
 
 # [Element-wise operations][1]
 
-```perl
+```raku
 my @a =
     [1,2,3],
     [4,5,6],

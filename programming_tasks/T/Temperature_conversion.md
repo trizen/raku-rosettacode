@@ -2,7 +2,7 @@
 
 # [Temperature conversion][1]
 
-```perl
+```raku
 my %scale =
     Celcius    => { factor => 1  , offset => -273.15 },
     Rankine    => { factor => 1.8, offset =>    0    },
@@ -28,7 +28,7 @@ Enter a temperature in Kelvin: 21
 
 Alternative version that accepts the input in any of the four scales:
 
-```perl
+```raku
 while my $answer = prompt 'Temperature: ' {
     my $k = do given $answer {
         when s/:i C $// { $_ + 273.15 }

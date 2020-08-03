@@ -12,7 +12,7 @@ I am using the `Z` infix zip operator with the `eqv` equivalence infix operator,
 
 Although not necessary for this task, I have used `eqv` instead of `==` so that the `derangements()` function also works with any set of arbitrary objects (eg. strings, lists, etc.)
 
-```perl
+```raku
 sub derangements(@l) {
     @l.permutations.grep(-> @p { none(@p Zeqv @l) })
 }

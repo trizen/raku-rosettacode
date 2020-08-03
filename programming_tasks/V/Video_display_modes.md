@@ -8,7 +8,7 @@ Perl 6 runs on several different operating systems over many different architect
 
 Here is an example which will work for most Debian based Linuxs (and probably others) running some variant of X11 with a single active monitor.
 
-```perl
+```raku
 my @info = QX('xrandr -q').lines;
  
 @info[0] ~~ /<?after 'current '>(\d+) ' x ' (\d+)/;

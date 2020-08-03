@@ -2,7 +2,7 @@
 
 # [Discordian date][1]
 
-```perl
+```raku
 my @seasons = << Chaos Discord Confusion Bureaucracy 'The Aftermath' >>;
 my @days = << Sweetmorn Boomtime Pungenday Prickle-Prickle 'Setting Orange' >>;
 sub ordinal ( Int $n ) { $n ~ ( $n % 100 == 11|12|13

@@ -12,7 +12,7 @@ Could fire up a GUI but WTH, let's try it at a command line with ANSI.
 
 Draws a series of concentric rectangles then rotates through the color palette. Every three seconds, chooses new random palette colors and reverses rotation direction.
 
-```perl
+```raku
 # box drawing characters
 my %r = :tl<┌>, :h<─>, :tr<┐>, :v<│>, :bl<└>, :br<┘>;
  

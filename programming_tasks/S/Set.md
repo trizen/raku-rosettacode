@@ -2,7 +2,7 @@
 
 # [Set][1]
 
-```perl
+```raku
 use Test;
  
 my $a = set <a b c>;

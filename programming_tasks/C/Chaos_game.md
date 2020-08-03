@@ -2,7 +2,7 @@
 
 # [Chaos game][1]
 
-```perl
+```raku
 use Image::PNG::Portable;
  
 my ($w, $h) = (640, 640);

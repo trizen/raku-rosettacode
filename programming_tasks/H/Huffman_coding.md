@@ -8,7 +8,7 @@
 
 This version uses nested `Array`s to build a tree [like shown in this diagram](https://commons.wikimedia.org/wiki/File:HuffmanCodeAlg.png), and then recursively traverses the finished tree to accumulate the prefixes.
 
-```perl
+```raku
 sub huffman (%frequencies) {
     my @queue = %frequencies.map({ [.value, .key] }).sort;
     while @queue > 1 {
@@ -31,7 +31,7 @@ multi walk ([$node1, $node2], $prefix) { walk $node1, $prefix ~ '0';
 
 This version uses an `Array` of `Pair`s to implement a simple priority queue. Each value of the queue is a `Hash` mapping from letters to prefixes, and when the queue is reduced the hashes are merged on-the-fly, so that the last one remaining is the wanted Huffman table.
 
-```perl
+```raku
 sub huffman (%frequencies) {
     my @queue = %frequencies.map: { .value => (hash .key => '') };
     while @queue > 1 {

@@ -2,7 +2,7 @@
 
 # [Arithmetic/Complex][1]
 
-```perl
+```raku
 my $a = 1 + i;
 my $b = pi + 1.25i;
  

@@ -4,7 +4,7 @@
 
 A newline is not added automatically to print or printf
 
-```perl
+```raku
 print "Goodbye, World!";
 printf "%s", "Goodbye, World!";
 ```

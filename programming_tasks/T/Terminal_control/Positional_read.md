@@ -2,7 +2,7 @@
 
 # [Terminal control/Positional read][1]
 
-```perl
+```raku
 #!/usr/bin/env perl6
 
 use v6;

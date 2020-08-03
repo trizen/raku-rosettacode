@@ -6,7 +6,7 @@ You can get a list of an object's methods using `.^methods`, which is part of th
 
 Each is represented as a `Method` object that contains a bunch of info:
 
-```perl
+```raku
 class Foo {
     method foo ($x)      { }
     method bar ($x, $y)  { }

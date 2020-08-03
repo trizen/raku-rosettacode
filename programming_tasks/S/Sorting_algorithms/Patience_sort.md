@@ -2,7 +2,7 @@
 
 # [Sorting algorithms/Patience sort][1]
 
-```perl
+```raku
 multi patience(*@deck) {
     my @stacks;
     for @deck -> $card {

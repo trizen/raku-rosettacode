@@ -2,7 +2,7 @@
 
 # [Peano curve][1]
 
-```perl
+```raku
 use SVG;
  
 role Lindenmayer {

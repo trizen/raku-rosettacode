@@ -4,7 +4,7 @@
 
 A rule driven approach:
 
-```perl
+```raku
 my Hash @houses = (1 .. 5).map: { %(:num($_)) }; # 1 there are five houses
  
 my @facts = (

@@ -2,7 +2,7 @@
 
 # [Peaceful chess queen armies][1]
 
-```perl
+```raku
 # recursively place the next queen
 sub place ($board, $n, $m, $empty-square) {
     my $cnt;

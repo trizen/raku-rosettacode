@@ -2,7 +2,7 @@
 
 # [Textonyms][1]
 
-```perl
+```raku
 my $src = 'unixdict.txt';
 
 my @words = slurp($src).lines.grep(/ ^ <alpha>+ $ /);

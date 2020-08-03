@@ -4,7 +4,7 @@
 
 Most of the repunit testing is relatively speedy using the ntheory library. The really slow ones are R(25031), at ~42 seconds and R(49081) at 922(!!) seconds.
 
-```perl
+```raku
 #!/usr/bin/env raku
  
 # 20200406 Raku programming solution

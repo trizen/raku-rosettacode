@@ -8,7 +8,7 @@ Much like in the [Totient function](https://rosettacode.org/wiki/Totient_functio
 
 (For a more reasonable test, reduce the orders-of-magnitude range in the "Primes count" line from 2..7 to 2..5)
 
-```perl
+```raku
 sub comma { $^i.flip.comb(3).join(',').flip }
  
 sub schnitzel (\Radda, \radDA = 0) {

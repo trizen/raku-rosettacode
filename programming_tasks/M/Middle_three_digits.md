@@ -2,7 +2,7 @@
 
 # [Middle three digits][1]
 
-```perl
+```raku
 sub middle-three($n) {
     given $n.abs {
         when .chars < 3  { "$n is too short" }
@@ -41,7 +41,7 @@ The three middle digits of -12345 are:  234
 
 It is also possible to write a regular expression with a code assertion:
 
-```perl
+```raku
 for [\~] ^10 { say "$_ => $()" if m/^^(\d+) <(\d**3)> (\d+) $$ <?{ $0.chars == $1.chars}> / }
 ```
 

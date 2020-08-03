@@ -2,7 +2,7 @@
 
 # [Averages/Mode][1]
 
-```perl
+```raku
 sub mode (*@a) {
     my %counts := @a.Bag;
     my $max = %counts.values.max;
@@ -23,7 +23,7 @@ say mode [1, 1, 2, 4, 4];
 
 Alternatively, a version that uses a single method chain with no temporary variables: (Same output with same input)
 
-```perl
+```raku
 sub mode (*@a) {
     return |(@a
         .Bag                # count elements

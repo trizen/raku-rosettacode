@@ -2,7 +2,7 @@
 
 # [GUI component interaction][1]
 
-```perl
+```raku
 use GTK::Simple;
 use GTK::Simple::App;
  

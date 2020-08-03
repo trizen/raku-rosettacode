@@ -2,7 +2,7 @@
 
 # [Knight's tour][1]
 
-```perl
+```raku
 my @board;
  
 my $I = 8;

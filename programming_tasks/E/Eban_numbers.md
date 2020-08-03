@@ -12,7 +12,7 @@ Will handle multi-character 'bans'. Demonstrate for e-ban, t-ban and subur-ban.
 
 Directly find&#160;:
 
-```perl
+```raku
 use Lingua::EN::Numbers::Cardinal;
 
 sub nban ($seq, $n = 'e') { ($seq).map: { next if .&cardinal.contains(any($n.comb)); $_ } }

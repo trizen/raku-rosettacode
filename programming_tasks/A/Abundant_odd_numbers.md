@@ -2,7 +2,7 @@
 
 # [Abundant odd numbers][1]
 
-```perl
+```raku
 sub odd-abundant (\x) {
     my @l = x.is-prime ?? 1 !! flat
     1, (3 .. x.sqrt.floor).map: -> \d {

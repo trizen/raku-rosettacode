@@ -2,7 +2,7 @@
 
 # [Tarjan][1]
 
-```perl
+```raku
 sub tarjan (%k) {
     my %onstack;
     my %index;

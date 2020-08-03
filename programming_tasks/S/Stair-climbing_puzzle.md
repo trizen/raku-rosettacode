@@ -2,6 +2,6 @@
 
 # [Stair-climbing puzzle][1]
 
-```perl
+```raku
 sub step_up { step_up until step; }
 ```

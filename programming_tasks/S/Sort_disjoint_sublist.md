@@ -8,7 +8,7 @@
 
 Using L-value slice of the array, and \`sort\` as a mutating method:
 
-```perl
+```raku
 my @values  = 7, 6, 5, 4, 3, 2, 1, 0;
 my @indices = 6, 1, 7;
  
@@ -25,7 +25,7 @@ my @indices = 6, 1, 7;
 
 ### Iterative
 
-```perl
+```raku
 sub disjointSort( @values, @indices --> List ) {
    my @sortedValues = @values[ @indices ].sort ;
    for @indices.sort -> $insert {

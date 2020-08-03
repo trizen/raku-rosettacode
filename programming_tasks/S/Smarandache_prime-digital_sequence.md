@@ -2,7 +2,7 @@
 
 # [Smarandache prime-digital sequence][1]
 
-```perl
+```raku
 use Lingua::EN::Numbers; # Version 2.4.0 or higher
  
 # Implemented as a lazy, extendable list

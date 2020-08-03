@@ -4,7 +4,7 @@
 
 Generate an SVG file to STDOUT. Redirect to a file to capture and display it.
 
-```perl
+```raku
 constant $dim = 200;
 constant $sides = 5;
  

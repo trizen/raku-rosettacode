@@ -4,7 +4,7 @@
 
 Most of this is interface code. Reused substantial portions from the [2048](https://rosettacode.org/wiki/2048#Perl_6) task. Use the arrow keys to slide tiles, press 'q' to quit or 'n' for a new puzzle. Requires a POSIX termios aware terminal. Ensures that the puzzle is solvable by shuffling the board with an even number of swaps, then checking for even taxicab parity for the empty space.
 
-```perl
+```raku
 use Term::termios;
  
 constant $saved   = Term::termios.new(fd => 1).getattr;

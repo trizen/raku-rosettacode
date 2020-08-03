@@ -2,7 +2,7 @@
 
 # [Animation][1]
 
-```perl
+```raku
 use v6;
  
 use GTK::Simple;

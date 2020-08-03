@@ -2,7 +2,7 @@
 
 # [Primorial numbers][1]
 
-```perl
+```raku
 constant @primes = (1..*).grep(*.is-prime);
  
 sub primorial($n) { [*] @primes[^$n] }

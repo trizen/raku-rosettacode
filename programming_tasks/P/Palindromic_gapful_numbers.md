@@ -2,7 +2,7 @@
 
 # [Palindromic gapful numbers][1]
 
-```perl
+```raku
 # Infinite lazy iterator to generate palindromic "gap" numbers
 my @npal = flat [ ^10 ], [ ^10 .map: * x 2 ],
   {

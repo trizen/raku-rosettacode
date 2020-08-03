@@ -2,7 +2,7 @@
 
 # [Terminal control/Inverse video][1]
 
-```perl
+```raku
 say "normal";
 run "tput", "rev";
 say "reversed";

@@ -8,7 +8,7 @@
 
 December 28 is always in the last week of the year. (By ISO8601)
 
-```perl
+```raku
 sub is-long ($year) { Date.new("$year-12-28").week[1] == 53 }
  
 # Testing

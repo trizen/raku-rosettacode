@@ -8,7 +8,7 @@ Perl 6 help is generally in a specialized text format known as POD (Plain Old Do
 
 Individual Perl 6 scripts are to some extent self-documenting. If the script has a MAIN sub, and it is called with improper parameters, it will display an automatically generated help message showing the various possible parameters, which are required, which are optional, and what type each takes:
 
-```perl
+```raku
 sub MAIN(
     Str $run,             #= Task or file name
     Str :$lang = 'perl6', #= Language, default perl6

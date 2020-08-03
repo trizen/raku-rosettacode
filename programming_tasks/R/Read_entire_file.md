@@ -2,20 +2,20 @@
 
 # [Read entire file][1]
 
-```perl
+```raku
 my $string = slurp 'sample.txt';
 ```
 
 
 The default encoding is UTF-8. The `:enc` adverb can be used to specify a different one:
 
-```perl
+```raku
 my $string = slurp 'sample.txt', :enc<UTF-16>;
 ```
 
 
 `IO::Path` objects also provide `slurp` as a method:
 
-```perl
+```raku
 my $string = 'sample.txt'.IO.slurp;
 ```

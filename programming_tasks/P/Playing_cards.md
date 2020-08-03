@@ -2,7 +2,7 @@
 
 # [Playing cards][1]
 
-```perl
+```raku
 enum Pip <A 2 3 4 5 6 7 8 9 10 J Q K>;
 enum Suit <♦ ♣ ♥ ♠>;
  

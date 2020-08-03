@@ -2,7 +2,7 @@
 
 # [Percolation/Site percolation][1]
 
-```perl
+```raku
 my $block = '▒';
 my $water = '+';
 my $pore  = ' ';

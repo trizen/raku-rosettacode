@@ -4,7 +4,7 @@
 
 This solution can be changed from parallel to serial by removing the `.race` method.
 
-```perl
+```raku
 use Digest::SHA;
 constant @alpha2 = [X~] <a   m p y z> xx 2;
 constant @alpha3 = [X~] <e l m p x z> xx 3;
@@ -35,7 +35,7 @@ zyzzx => 1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad
 
 Testers can adjust the run speed by replacing the @alpha constants with any of the below:
 
-```perl
+```raku
  
 # True to actual RC task, but slowest
 constant @alpha2 = 'aa'  ..  'zz';

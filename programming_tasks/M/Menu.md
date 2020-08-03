@@ -2,7 +2,7 @@
 
 # [Menu][1]
 
-```perl
+```raku
 sub menu ( $prompt, @items ) {
     return '' unless @items.elems;
     repeat until my $selection ~~ /^ \d+ $/ && @items[--$selection] {

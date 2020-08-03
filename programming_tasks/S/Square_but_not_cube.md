@@ -2,7 +2,7 @@
 
 # [Square but not cube][1]
 
-```perl
+```raku
 my @square-and-cube = map { .⁶ }, 1..Inf;
  
 my @square-but-not-cube = (1..Inf).map({ .² }).grep({ $_ ∉ @square-and-cube[^@square-and-cube.first: * > $_, :k]});

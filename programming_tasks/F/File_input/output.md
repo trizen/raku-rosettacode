@@ -4,14 +4,14 @@
 
 If it is okay to have a temporary copy of the entire file in memory:
 
-```perl
+```raku
 spurt "output.txt", slurp "input.txt";
 ```
 
 
 Otherwise, copying line-by line:
 
-```perl
+```raku
 my $in = open "input.txt";
 my $out = open "output.txt", :w;
 for $in.lines -> $line {

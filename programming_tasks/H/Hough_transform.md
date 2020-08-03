@@ -4,7 +4,7 @@
 
 The `GD` module the output palette to 255 colors, so only transform darker pixels in the image.
 
-```perl
+```raku
 use GD;
  
 my $filename = 'pentagon.ppm';

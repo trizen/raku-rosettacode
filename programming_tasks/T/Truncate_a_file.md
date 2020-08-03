@@ -2,7 +2,7 @@
 
 # [Truncate a file][1]
 
-```perl
+```raku
 use NativeCall;
  
 sub truncate(Str, int32 --> int32) is native {*}

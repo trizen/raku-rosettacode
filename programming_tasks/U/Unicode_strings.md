@@ -4,7 +4,7 @@
 
 Perl 6 programs and strings are all in Unicode and operate at a grapheme abstraction level, which is agnostic to underlying encodings or normalizations. (These are generally handled at program boundaries.) Opened files default to UTF-8 encoding. All Unicode character properties are in play, so any appropriate characters may be used as parts of identifiers, whitespace, or user-defined operators. For instance:
 
-```perl
+```raku
 sub prefix:<∛> (\𝐕) { 𝐕 ** (1/3) }
 say ∛27;  # prints 3
 ```

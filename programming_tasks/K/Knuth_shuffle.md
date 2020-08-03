@@ -2,7 +2,7 @@
 
 # [Knuth shuffle][1]
 
-```perl
+```raku
 sub shuffle (@a is copy) {
     for 1 ..^ @a -> $n {
         my $k = (0 .. $n).pick;
@@ -15,6 +15,6 @@ sub shuffle (@a is copy) {
 
 The shuffle is also built into the pick method on lists when you pass it a "whatever" for the number to pick:
 
-```perl
+```raku
 my @deck = @cards.pick(*);
 ```

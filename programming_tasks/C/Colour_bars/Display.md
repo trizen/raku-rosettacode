@@ -2,7 +2,7 @@
 
 # [Colour bars/Display][1]
 
-```perl
+```raku
 my $HOR = 1280;
 my $VERT = 720;
  

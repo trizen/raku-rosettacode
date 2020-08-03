@@ -2,7 +2,7 @@
 
 # [Knapsack problem/Bounded][1]
 
-```perl
+```raku
 my class KnapsackItem { has $.name; has $.weight; has $.unit; }
 
 multi sub pokem ([],           $,  $v = 0) { $v }

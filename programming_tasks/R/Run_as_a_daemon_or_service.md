@@ -2,7 +2,7 @@
 
 # [Run as a daemon or service][1]
 
-```perl
+```raku
 #!/usr/bin/env perl6
  
 # Reference:

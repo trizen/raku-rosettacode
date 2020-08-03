@@ -2,7 +2,7 @@
 
 # [Multidimensional Newton-Raphson method][1]
 
-```perl
+```raku
 #!/usr/bin/env perl6
 
 # Reference:

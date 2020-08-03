@@ -2,7 +2,7 @@
 
 # [Superpermutation minimisation][1]
 
-```perl
+```raku
 for 1..8 -> $len {
   my $pre = my $post = my $t = '';
   for  ('a'..'z')[^$len].permutations -> @p {

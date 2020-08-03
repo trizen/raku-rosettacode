@@ -2,7 +2,7 @@
 
 # [Averages/Root mean square][1]
 
-```perl
+```raku
 sub rms(*@nums) { sqrt [+](@nums X** 2) / @nums }
  
 say rms 1..10;
@@ -11,6 +11,6 @@ say rms 1..10;
 
 Here's a slightly more concise version, albeit arguably less readable:
 
-```perl
+```raku
 sub rms { sqrt @_ R/ [+] @_ X** 2 }
 ```
