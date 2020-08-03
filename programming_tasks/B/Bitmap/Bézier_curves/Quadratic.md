@@ -4,7 +4,7 @@
 
 Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6), and [ Bresenham's line algorithm](https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#Perl_6) tasks. They are included here to make a complete, runnable program.
 
-```perl
+```raku
 class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);

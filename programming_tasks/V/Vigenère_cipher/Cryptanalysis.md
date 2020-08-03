@@ -2,7 +2,7 @@
 
 # [Vigenère cipher/Cryptanalysis][1]
 
-```perl
+```raku
 # from Wikipedia
 constant %English-letter-freq = (
      E => 12.70,  L => 4.03,  Y => 1.97,  P => 1.93,  T => 9.06,  A => 8.17,  O => 7.51,  I => 6.97,  N => 6.75,

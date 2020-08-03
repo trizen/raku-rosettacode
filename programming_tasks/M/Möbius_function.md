@@ -4,7 +4,7 @@
 
 Möbius number is not defined for n == 0. Perl 6 arrays are indexed from 0 so store a blank value at position zero to keep n and μ(n) aligned.
 
-```perl
+```raku
 use Prime::Factor;
  
 sub μ (Int \n) {
