@@ -6,7 +6,7 @@
 
 
 
-Essentially the code from the [Sexy primes](https://rosettacode.org/wiki/Sexy_primes#Perl_6) task with minor tweaks.
+Essentially the code from the [Sexy primes](https://rosettacode.org/wiki/Sexy_primes#Raku) task with minor tweaks.
 
 ```raku
 use Math::Primesieve;

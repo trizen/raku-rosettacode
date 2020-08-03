@@ -2,7 +2,7 @@
 
 # [Bitmap/Read an image through a pipe][1]
 
-Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) and [ Read a PPM file](https://rosettacode.org/wiki/Bitmap/Read_a_PPM_file#Perl_6) tasks. Included here to make a complete, runnable program.
+Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) and [ Read a PPM file](https://rosettacode.org/wiki/Bitmap/Read_a_PPM_file#Raku) tasks. Included here to make a complete, runnable program.
 
 
 

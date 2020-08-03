@@ -26,7 +26,7 @@ for 1 .. 5 -> $k {
 ```
 
 
-Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Perl_6](https://rosettacode.org/wiki/Count_in_factors#Perl_6) (to be included manually until we decide where in the distribution to put it).
+Here is a solution with identical output based on the `factors` routine from [Count_in_factors#Raku](https://rosettacode.org/wiki/Count_in_factors#Raku) (to be included manually until we decide where in the distribution to put it).
 
 ```raku
 constant @primes = 2, |(3, 5, 7 ... *).grep: *.is-prime;

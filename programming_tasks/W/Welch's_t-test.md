@@ -2,7 +2,7 @@
 
 # [Welch's t-test][1]
 
-Perhaps "inspired by C example" may be more accurate. Gamma subroutine from [Gamma function task](https://rosettacode.org/wiki/Gamma_function#Perl_6).
+Perhaps "inspired by C example" may be more accurate. Gamma subroutine from [Gamma function task](https://rosettacode.org/wiki/Gamma_function#Raku).
 
 ```raku
 sub Γ(\z) {

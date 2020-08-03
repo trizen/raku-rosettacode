@@ -2,7 +2,7 @@
 
 # [Elementary cellular automaton][1]
 
-Using the `Automaton` class defined at [One-dimensional_cellular_automata#Perl_6](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Perl_6):
+Using the `Automaton` class defined at [One-dimensional_cellular_automata#Raku](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Raku):
 
 ```raku
 class Automaton {

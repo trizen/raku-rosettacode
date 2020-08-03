@@ -6,7 +6,7 @@ This version, while it is *capable* of working with infinite length cellular aut
 
 
 
-Based heavily on the code from the [One-dimensional cellular automata](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Perl_6) task. Example uses rule 90 (Sierpinski triangle).
+Based heavily on the code from the [One-dimensional cellular automata](https://rosettacode.org/wiki/One-dimensional_cellular_automata#Raku) task. Example uses rule 90 (Sierpinski triangle).
 
 ```raku
 class Automaton {

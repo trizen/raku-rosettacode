@@ -2,7 +2,7 @@
 
 # [Singly-linked list/Element removal][1]
 
-Extending `class Cell` from [Singly-linked_list/Element_definition#Perl_6](https://rosettacode.org/wiki/Singly-linked_list/Element_definition#Perl_6):
+Extending `class Cell` from [Singly-linked_list/Element_definition#Raku](https://rosettacode.org/wiki/Singly-linked_list/Element_definition#Raku):
 
 ```raku
     method delete ($value --> Cell) {

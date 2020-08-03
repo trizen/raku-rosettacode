@@ -2,7 +2,7 @@
 
 # [Validate International Securities Identification Number][1]
 
-Using the `luhn-test` function from the *[Luhn test of credit card numbers](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#Perl_6)* task.
+Using the `luhn-test` function from the *[Luhn test of credit card numbers](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#Raku)* task.
 
 ```raku
 my $ISIN = /

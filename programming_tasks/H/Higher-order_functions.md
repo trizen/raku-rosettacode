@@ -2,7 +2,7 @@
 
 # [Higher-order functions][1]
 
-The best type to use for the parameter of a higher-order function is `Callable` (implied by the `&` sigil), a role common to all function-like objects. For an example of defining and calling a second-order function, see [Functional Composition](https://rosettacode.org/wiki/Functional_Composition#Perl_6).
+The best type to use for the parameter of a higher-order function is `Callable` (implied by the `&` sigil), a role common to all function-like objects. For an example of defining and calling a second-order function, see [Functional Composition](https://rosettacode.org/wiki/Functional_Composition#Raku).
 
 
 

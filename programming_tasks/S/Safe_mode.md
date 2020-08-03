@@ -2,7 +2,7 @@
 
 # [Safe mode][1]
 
-*Mostly a cut-n-paste from the [Untrusted environment](https://rosettacode.org/wiki/Untrusted_environment#Perl_6) task.*
+*Mostly a cut-n-paste from the [Untrusted environment](https://rosettacode.org/wiki/Untrusted_environment#Raku) task.*
 
 
 

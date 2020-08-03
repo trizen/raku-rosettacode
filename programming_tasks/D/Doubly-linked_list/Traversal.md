@@ -2,7 +2,7 @@
 
 # [Doubly-linked list/Traversal][1]
 
-Since the list routines are supplied by the generic roles defined in [Doubly-linked_list/Definition#Perl_6](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Perl_6), it suffices to say:
+Since the list routines are supplied by the generic roles defined in [Doubly-linked_list/Definition#Raku](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Raku), it suffices to say:
 
 ```raku
 say $dll.list;

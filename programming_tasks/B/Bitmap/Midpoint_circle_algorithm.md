@@ -2,7 +2,7 @@
 
 # [Bitmap/Midpoint circle algorithm][1]
 
-We'll augment the Pixel and Bitmap classes from the [Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) task.
+We'll augment the Pixel and Bitmap classes from the [Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) task.
 
 ```raku
 use MONKEY-TYPING;

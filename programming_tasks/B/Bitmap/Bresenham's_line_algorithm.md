@@ -2,7 +2,7 @@
 
 # [Bitmap/Bresenham's line algorithm][1]
 
-Bitmap class from [Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6) task.
+Bitmap class from [Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) task.
 
 ```raku
 class Pixel { has UInt ($.R, $.G, $.B) }

@@ -2,7 +2,7 @@
 
 # [Shortest common supersequence][1]
 
-Using 'lcs' routine from [Longest common subsequence task](https://rosettacode.org/wiki/Longest_common_subsequence#Perl_6)
+Using 'lcs' routine from [Longest common subsequence task](https://rosettacode.org/wiki/Longest_common_subsequence#Raku)
 
 ```raku
 sub lcs(Str $xstr, Str $ystr) { # longest common subsequence

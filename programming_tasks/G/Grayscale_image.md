@@ -27,7 +27,7 @@ sub MAIN ($filename = 'default.ppm') {
 ```
 
 
-Using the .ppm file from the [Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6) task:
+Using the .ppm file from the [Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Raku) task:
 
 
 

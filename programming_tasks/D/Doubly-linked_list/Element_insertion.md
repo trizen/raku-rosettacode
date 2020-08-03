@@ -2,7 +2,7 @@
 
 # [Doubly-linked list/Element insertion][1]
 
-Using the generic definitions from [Doubly-linked_list/Definition#Perl_6](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Perl_6):
+Using the generic definitions from [Doubly-linked_list/Definition#Raku](https://rosettacode.org/wiki/Doubly-linked_list/Definition#Raku):
 
 ```raku
 role DLElem[::T] {

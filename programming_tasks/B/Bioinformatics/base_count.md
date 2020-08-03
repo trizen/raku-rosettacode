@@ -2,7 +2,7 @@
 
 # [Bioinformatics/base count][1]
 
-It's the [Letter frequency](https://rosettacode.org/wiki/Letter_frequency#Perl_6) task all over again, just simpler and dressed up in different clothes.
+It's the [Letter frequency](https://rosettacode.org/wiki/Letter_frequency#Raku) task all over again, just simpler and dressed up in different clothes.
 
 
 

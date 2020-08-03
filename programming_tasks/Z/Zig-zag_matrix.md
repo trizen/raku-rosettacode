@@ -2,7 +2,7 @@
 
 # [Zig-zag matrix][1]
 
-Using the same Turtle class as in the [Spiral matrix](https://rosettacode.org/wiki/Spiral_matrix#Perl_6) task:
+Using the same Turtle class as in the [Spiral matrix](https://rosettacode.org/wiki/Spiral_matrix#Raku) task:
 
 ```raku
 class Turtle {

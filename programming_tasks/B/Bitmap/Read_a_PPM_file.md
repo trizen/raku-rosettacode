@@ -2,7 +2,7 @@
 
 # [Bitmap/Read a PPM file][1]
 
-Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Perl_6), [ Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6) and [ Grayscale image](https://rosettacode.org/wiki/Grayscale_image#Perl_6) tasks. Included here to make a complete, runnable program.
+Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Raku), [ Write a PPM file](https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Raku) and [ Grayscale image](https://rosettacode.org/wiki/Grayscale_image#Raku) tasks. Included here to make a complete, runnable program.
 
 ```raku
 class Pixel { has UInt ($.R, $.G, $.B) }

@@ -28,4 +28,4 @@ $!c, False, Int, 42
 ```
 
 
-Public attributes (in this case, `$.b` and `$.c`) are really just attributes for which the compiler also auto-generates a method of the same name. See [Reflection/List_methods#Perl_6](https://rosettacode.org/wiki/Reflection/List_methods#Perl_6).
+Public attributes (in this case, `$.b` and `$.c`) are really just attributes for which the compiler also auto-generates a method of the same name. See [Reflection/List_methods#Raku](https://rosettacode.org/wiki/Reflection/List_methods#Raku).

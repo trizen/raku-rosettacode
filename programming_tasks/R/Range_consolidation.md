@@ -2,7 +2,7 @@
 
 # [Range consolidation][1]
 
-In Perl 6, a Range is a first class object with its own specialized notation. Perl 6 Ranges allow for exclusion of the boundary numbers. This example doesn't since it isn't a requirement in this task. Much of the logic is lifted from the [Set_of_real_numbers](https://rosettacode.org/wiki/Set_of_real_numbers#Perl_6) task with simplified logic for the much simpler requirements.
+In Perl 6, a Range is a first class object with its own specialized notation. Perl 6 Ranges allow for exclusion of the boundary numbers. This example doesn't since it isn't a requirement in this task. Much of the logic is lifted from the [Set_of_real_numbers](https://rosettacode.org/wiki/Set_of_real_numbers#Raku) task with simplified logic for the much simpler requirements.
 
 
 

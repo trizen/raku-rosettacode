@@ -18,7 +18,7 @@ As a relative comparison, perform the same factoring task on the same set of 100
 
 
 
-Using the `prime-factors` routine as defined in the [prime decomposition](https://rosettacode.org/wiki/Prime_decomposition#Perl_6) task.
+Using the `prime-factors` routine as defined in the [prime decomposition](https://rosettacode.org/wiki/Prime_decomposition#Raku) task.
 
 ```raku
 my @nums = 64921987050997300559,  70251412046988563035,  71774104902986066597,

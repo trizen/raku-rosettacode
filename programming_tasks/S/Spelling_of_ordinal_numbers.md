@@ -2,7 +2,7 @@
 
 # [Spelling of ordinal numbers][1]
 
-This would be pretty simple to implement from scratch; it would be straightforward to do a minor modification of the [ Number names](https://rosettacode.org/wiki/Number_names#Perl_6) task code. Much simpler to just use the Lingua::EN::Numbers::Cardinal module from the Perl 6 ecosystem though. It easily handles ordinal numbers even though that is not its primary focus.
+This would be pretty simple to implement from scratch; it would be straightforward to do a minor modification of the [ Number names](https://rosettacode.org/wiki/Number_names#Raku) task code. Much simpler to just use the Lingua::EN::Numbers::Cardinal module from the Perl 6 ecosystem though. It easily handles ordinal numbers even though that is not its primary focus.
 
 
 

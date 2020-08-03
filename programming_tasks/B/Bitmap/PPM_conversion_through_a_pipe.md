@@ -6,7 +6,7 @@
 #!/usr/bin/env perl6
  
 # Reference:
-# https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Perl_6
+# https://rosettacode.org/wiki/Bitmap/Write_a_PPM_file#Raku
  
 use v6;
  

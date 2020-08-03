@@ -313,7 +313,7 @@ multi load-resources ($unknown) { () };
 ```
 Retrieving tasks
 1 Determine if a string is numeric
-Getting code from: http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#Perl_6
+Getting code from: http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#Raku
 
 Testing Determine_if_a_string_is_numeric
 
@@ -355,7 +355,7 @@ Or, if the full&#160;%resource hash is loaded it will automatically feed input p
 ```
 Retrieving tasks
 1 Lucky_and_even_lucky_numbers
-Getting code from: http://rosettacode.org/wiki/Lucky_and_even_lucky_numbers#Perl_6
+Getting code from: http://rosettacode.org/wiki/Lucky_and_even_lucky_numbers#Raku
 
 Testing Lucky_and_even_lucky_numbers
 

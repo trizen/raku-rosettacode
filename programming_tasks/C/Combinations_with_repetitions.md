@@ -2,7 +2,7 @@
 
 # [Combinations with repetitions][1]
 
-One could simply generate all [permutations](https://rosettacode.org/wiki/Permutations_with_repetitions#Perl_6), and then remove "duplicates":
+One could simply generate all [permutations](https://rosettacode.org/wiki/Permutations_with_repetitions#Raku), and then remove "duplicates":
 
 ```raku
 my @S = <iced jam plain>;
