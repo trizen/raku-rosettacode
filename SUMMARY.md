@@ -112,6 +112,7 @@
        * Bioinformatics
            * [Base count](programming_tasks%2FB%2FBioinformatics%2Fbase_count.md)
            * [Sequence mutation](programming_tasks%2FB%2FBioinformatics%2FSequence_mutation.md)
+       * [Biorhythms](programming_tasks%2FB%2FBiorhythms.md)
        * [Birthday problem](programming_tasks%2FB%2FBirthday_problem.md)
        * Bitcoin
            * [Address validation](programming_tasks%2FB%2FBitcoin%2Faddress_validation.md)
@@ -133,6 +134,7 @@
        * [Boolean values](programming_tasks%2FB%2FBoolean_values.md)
        * [Box the compass](programming_tasks%2FB%2FBox_the_compass.md)
        * [Brace expansion](programming_tasks%2FB%2FBrace_expansion.md)
+       * [Brace expansion using ranges](programming_tasks%2FB%2FBrace_expansion_using_ranges.md)
        * [Brazilian numbers](programming_tasks%2FB%2FBrazilian_numbers.md)
        * [Break OO privacy](programming_tasks%2FB%2FBreak_OO_privacy.md)
        * [Brownian tree](programming_tasks%2FB%2FBrownian_tree.md)
@@ -446,6 +448,7 @@
        * [Geohash](programming_tasks%2FG%2FGeohash.md)
        * [Geometric algebra](programming_tasks%2FG%2FGeometric_algebra.md)
        * [Get system command output](programming_tasks%2FG%2FGet_system_command_output.md)
+       * [Getting the number of decimals](programming_tasks%2FG%2FGetting_the_number_of_decimals.md)
        * [Globally replace text in several files](programming_tasks%2FG%2FGlobally_replace_text_in_several_files.md)
        * [Go Fish](programming_tasks%2FG%2FGo_Fish.md)
        * [Gradient descent](programming_tasks%2FG%2FGradient_descent.md)
@@ -455,6 +458,7 @@
        * [Greatest common divisor](programming_tasks%2FG%2FGreatest_common_divisor.md)
        * [Greatest element of a list](programming_tasks%2FG%2FGreatest_element_of_a_list.md)
        * [Greatest subsequential sum](programming_tasks%2FG%2FGreatest_subsequential_sum.md)
+       * [Greed](programming_tasks%2FG%2FGreed.md)
        * Greyscale bars
            * [Display](programming_tasks%2FG%2FGreyscale_bars%2FDisplay.md)
        * [Guess the number](programming_tasks/G/Guess_the_number.md)
@@ -865,7 +869,14 @@
        * [Process SMIL directives in XML data](programming_tasks%2FP%2FProcess_SMIL_directives_in_XML_data.md)
        * [Program name](programming_tasks%2FP%2FProgram_name.md)
        * [Program termination](programming_tasks%2FP%2FProgram_termination.md)
+       * [Proof](programming_tasks%2FP%2FProof.md)
        * [Proper divisors](programming_tasks%2FP%2FProper_divisors.md)
+       * Pseudo-random numbers
+           * [Combined recursive generator MRG32k3a](programming_tasks%2FP%2FPseudo-random_numbers%2FCombined_recursive_generator_MRG32k3a.md)
+           * [PCG32](programming_tasks%2FP%2FPseudo-random_numbers%2FPCG32.md)
+           * [Splitmix64](programming_tasks%2FP%2FPseudo-random_numbers%2FSplitmix64.md)
+           * [Xorshift star](programming_tasks%2FP%2FPseudo-random_numbers%2FXorshift_star.md)
+       * [Pseudorandom Number Generator Image](programming_tasks%2FP%2FPseudorandom_Number_Generator_Image.md)
        * [Pythagoras tree](programming_tasks%2FP%2FPythagoras_tree.md)
        * [Pythagorean quadruples](programming_tasks%2FP%2FPythagorean_quadruples.md)
        * [Pythagorean triples](programming_tasks%2FP%2FPythagorean_triples.md)
@@ -1228,6 +1239,7 @@
        * User input
            * [Graphical](programming_tasks%2FU%2FUser_input%2FGraphical.md)
            * [Text](programming_tasks%2FU%2FUser_input%2FText.md)
+       * [Using a Speech engine to highlight words](programming_tasks%2FU%2FUsing_a_Speech_engine_to_highlight_words.md)
        * [UTF-8 encode and decode](programming_tasks%2FU%2FUTF-8_encode_and_decode.md)
    * V
        * [Validate International Securities Identification Number](programming_tasks%2FV%2FValidate_International_Securities_Identification_Number.md)
