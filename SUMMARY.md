@@ -122,7 +122,6 @@
        * Bioinformatics
            * [Base count](programming_tasks%2FB%2FBioinformatics%2Fbase_count.md)
            * [Global alignment](programming_tasks%2FB%2FBioinformatics%2FGlobal_alignment.md)
-           * [Global alignment](programming_tasks%2FB%2FBioinformatics%2Fglobal_alignment.md)
            * [Sequence mutation](programming_tasks%2FB%2FBioinformatics%2FSequence_mutation.md)
            * [Subsequence](programming_tasks%2FB%2FBioinformatics%2FSubsequence.md)
        * [Biorhythms](programming_tasks%2FB%2FBiorhythms.md)
@@ -237,14 +236,11 @@
        * [Conditional structures](programming_tasks%2FC%2FConditional_structures.md)
        * [Conjugate transpose](programming_tasks%2FC%2FConjugate_transpose.md)
        * [Consecutive primes with ascending or descending dfferences](programming_tasks%2FC%2FConsecutive_primes_with_ascending_or_descending_dfferences.md)
-       * [Consecutive Primes With Ascending Or Descending Differences](programming_tasks%2FC%2FConsecutive_Primes_With_Ascending_Or_Descending_Differences.md)
        * [Constrained genericity](programming_tasks%2FC%2FConstrained_genericity.md)
        * [Constrained random points on a circle](programming_tasks%2FC%2FConstrained_random_points_on_a_circle.md)
        * [Continued fraction](programming_tasks/C/Continued_fraction.md)
            * Arithmetic
                * [Construct from rational number](programming_tasks%2FC%2FContinued_fraction%2FArithmetic%2FConstruct_from_rational_number.md)
-               * [Gmatrix NG Contined Fraction N](programming_tasks%2FC%2FContinued_fraction%2FArithmetic%2FGmatrix_NG_Contined_Fraction_N.md)
-               * [Gmatrix NG Contined Fraction N1 Contined Fraction N2](programming_tasks%2FC%2FContinued_fraction%2FArithmetic%2FGmatrix_NG_Contined_Fraction_N1_Contined_Fraction_N2.md)
                * [Gmatrix ng continued fraction n](programming_tasks%2FC%2FContinued_fraction%2FArithmetic%2FGmatrix_ng_continued_fraction_n.md)
                * [Gmatrix ng continued fraction n1 continued fraction n2](programming_tasks%2FC%2FContinued_fraction%2FArithmetic%2FGmatrix_ng_continued_fraction_n1_continued_fraction_n2.md)
        * [Convert decimal number to rational](programming_tasks%2FC%2FConvert_decimal_number_to_rational.md)
