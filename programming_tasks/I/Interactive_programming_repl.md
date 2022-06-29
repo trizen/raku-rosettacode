@@ -1,6 +1,7 @@
-[1]: https://rosettacode.org/wiki/Interactive_programming
+[1]: https://rosettacode.org/wiki/Interactive_programming_(repl)
 
-# [Interactive programming][1]
+# [Interactive programming (repl)][1]
+
 
 Using [Rakudo](https://rosettacode.org/wiki/Rakudo).
 
