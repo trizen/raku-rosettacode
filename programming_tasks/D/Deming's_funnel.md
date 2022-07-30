@@ -1,6 +1,8 @@
-[1]: https://rosettacode.org/wiki/Deming's_Funnel
+[1]: https://rosettacode.org/wiki/Deming%27s_funnel
 
-# [Deming's Funnel][1]
+# [Deming's funnel][1]
+
+
 
 ```perl
 sub mean { @_ R/ [+] @_ }
@@ -47,29 +49,29 @@ constant @rule =
 ;
  
 for @rule {
-    say "Rule {++state$ }:";
+    say "Rule $(++$):";
     my $target = 0i;
     my @z = gather for @dz -> $dz {
 	take $target + $dz;
 	$target = .($target, $dz)
     }
-    printf "Mean    x, y   : %.4f %.4f\n", mean(@z».re), mean(@z».im);
-    printf "Std dev x, y   : %.4f %.4f\n", stddev(@z».re), stddev(@z».im);
+    printf "Mean    x, y   : %7.4f %7.4f\n",   mean(@z».re),   mean(@z».im);
+    printf "Std dev x, y   : %7.4f %7.4f\n", stddev(@z».re), stddev(@z».im);
 }
 ```
 
 #### Output:
 ```
 Rule 1:
-Mean    x, y   : 0.0004 0.0702
-Std dev x, y   : 0.7153 0.6462
+Mean    x, y   :  0.0004  0.0702
+Std dev x, y   :  0.7153  0.6462
 Rule 2:
-Mean    x, y   : 0.0009 -0.0103
-Std dev x, y   : 1.0371 0.8999
+Mean    x, y   :  0.0009 -0.0103
+Std dev x, y   :  1.0371  0.8999
 Rule 3:
-Mean    x, y   : 0.0439 -0.0063
-Std dev x, y   : 7.9871 4.7784
+Mean    x, y   :  0.0439 -0.0063
+Std dev x, y   :  7.9871  4.7784
 Rule 4:
-Mean    x, y   : 3.1341 5.4210
-Std dev x, y   : 1.5874 3.9304
+Mean    x, y   :  3.1341  5.4210
+Std dev x, y   :  1.5874  3.9304
 ```

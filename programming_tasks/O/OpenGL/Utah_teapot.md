@@ -1,6 +1,6 @@
-[1]: https://rosettacode.org/wiki/OpenGL/Utah_Teapot
+[1]: https://rosettacode.org/wiki/OpenGL/Utah_teapot
 
-# [OpenGL/Utah Teapot][1]
+# [OpenGL/Utah teapot][1]
 
 ```perl
 # 20210524 Raku programming solution

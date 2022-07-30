@@ -1,12 +1,10 @@
-[1]: https://rosettacode.org/wiki/The_ISAAC_Cipher
+[1]: https://rosettacode.org/wiki/The_ISAAC_cipher
 
-# [The ISAAC Cipher][1]
+# [The ISAAC cipher][1]
+
+
 
 ```perl
-#!/usr/bin/env perl6
- 
-use v6.d; 
- 
 my uint32 (@mm, @randrsl, $randcnt, $aa, $bb, $cc);
 my \ϕ := 2654435769; constant MOD = 95; constant START = 32;
  

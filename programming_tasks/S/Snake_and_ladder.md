@@ -1,6 +1,6 @@
-[1]: https://rosettacode.org/wiki/Snake_and_Ladder
+[1]: https://rosettacode.org/wiki/Snake_and_ladder
 
-# [Snake and Ladder][1]
+# [Snake and ladder][1]
 
 
 
