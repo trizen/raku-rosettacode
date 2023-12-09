@@ -3,7 +3,7 @@ Raku tasks from RosettaCode
 
 A collection of tasks from Rosettacode implemented in Raku.
 
-* Github: https://github.com/trizen/perl6-rosettacode
+* Github: https://github.com/trizen/raku-rosettacode
 * Gitbook: https://trizen.gitbook.io/perl6-rosettacode ([legacy](https://trizen.gitbooks.io/perl6-rosettacode))
 * RosettaCode: https://rosettacode.org/wiki/Raku
 
