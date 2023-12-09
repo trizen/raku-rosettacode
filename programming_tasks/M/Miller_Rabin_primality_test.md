@@ -3,7 +3,7 @@
 # [Miller–Rabin primality test][1]
 
 ```perl
-# the expmod-function from: http://rosettacode.org/wiki/Modular_exponentiation
+# the expmod-function from: https://rosettacode.org/wiki/Modular_exponentiation
 sub expmod(Int $a is copy, Int $b is copy, $n) {
 	my $c = 1;
 	repeat while $b div= 2 {

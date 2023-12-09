@@ -31,4 +31,4 @@ sub pgon (@q) { qq|<polygon points="{@q}"/>| }
 ```
 
 
-See [5th order pentaflake](http://rosettacode.org/mw/images/5/57/Perl6_pentaflake.svg)
+See [5th order pentaflake](https://rosettacode.org/mw/images/5/57/Perl6_pentaflake.svg)

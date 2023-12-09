@@ -21,7 +21,7 @@ my %cat = (
  
 my $client = HTTP::UserAgent.new;
  
-my $url = 'http://rosettacode.org/mw';
+my $url = 'https://rosettacode.org/mw';
  
 my $hashfile  = './RC_Task_count.json';
 my $tablefile = './RC_Task_count.txt';

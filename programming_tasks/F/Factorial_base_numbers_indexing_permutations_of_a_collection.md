@@ -2,7 +2,7 @@
 
 # [Factorial base numbers indexing permutations of a collection][1]
 
-Using my interpretation of the task instructions as shown on the [discussion page](http://rosettacode.org/wiki/Talk:Factorial_base_numbers_indexing_permutations_of_a_collection#Mojibake_and_misspellings).
+Using my interpretation of the task instructions as shown on the [discussion page](https://rosettacode.org/wiki/Talk:Factorial_base_numbers_indexing_permutations_of_a_collection#Mojibake_and_misspellings).
 
 ```perl
 sub postfix:<!> (Int $n) { (flat 1, [\*] 1..*)[$n] }

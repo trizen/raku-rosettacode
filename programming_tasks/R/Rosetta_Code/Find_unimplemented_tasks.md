@@ -11,7 +11,7 @@ use Sort::Naturally;
 unit sub MAIN( Str :$lang = 'Perl_6' );
  
 my $client = HTTP::UserAgent.new;
-my $url = 'http://rosettacode.org/mw';
+my $url = 'https://rosettacode.org/mw';
  
 my @total;
 my @impl;

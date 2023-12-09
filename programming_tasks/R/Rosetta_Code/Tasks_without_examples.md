@@ -11,7 +11,7 @@ my $taskfile = './RC_tasks.html';
  
 # Get list of Tasks
 say "Updating Programming_Tasks list...";
-my $page   = "http://rosettacode.org/wiki/Category:Programming_Tasks";
+my $page   = "https://rosettacode.org/wiki/Category:Programming_Tasks";
 my $html   = $ua.get($page).content;
 my $xmldoc = parse-html($html, :TAG<div>, :id<mw-pages>);
 my @tasks  = parse-html($xmldoc[0].Str, :TAG<li>).Str.comb( /'/wiki/' <-["]>+ / )».substr(6); #"
@@ -33,7 +33,7 @@ for 'Programming_Tasks' -> $category
         note $title;
  
         # Get the raw page
-        my $html = $ua.get: "http://rosettacode.org/wiki/{$title}";
+        my $html = $ua.get: "https://rosettacode.org/wiki/{$title}";
  
         # Filter out the actual task description
         $html.content ~~ m|'<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div'

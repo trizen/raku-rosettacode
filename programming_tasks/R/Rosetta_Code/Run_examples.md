@@ -54,7 +54,7 @@ die 'You can select local or remote, but not both...' if $local && $remote;
 ## INITIALIZATION
 
 my $client   = HTTP::UserAgent.new;
-my $url      = 'http://rosettacode.org/mw';
+my $url      = 'https://rosettacode.org/mw';
 
 my %c = ( # text colors
     code  => "\e[0;92m", # green
@@ -124,7 +124,7 @@ for @tasks -> $title {
         my $page = $client.get("{ $url }/index.php?title={ uri-escape $title }&action=raw").content;
 
         uh-oh("Whoops, can't find page: $url/$title :check spelling.") and next if $page.elems == 0;
-        say "Getting code from: http://rosettacode.org/wiki/{ $title.subst(' ', '_', :g) }#%l<language>";
+        say "Getting code from: https://rosettacode.org/wiki/{ $title.subst(' ', '_', :g) }#%l<language>";
 
         $entry = $page.comb(/'=={{header|' $(%l<header>) '}}==' .+? [<?before \n'=='<-[={]>*'{{header'> || $] /).Str //
           uh-oh("No code found\nMay be bad markup");
@@ -313,7 +313,7 @@ multi load-resources ($unknown) { () };
 ```
 Retrieving tasks
 1 Determine if a string is numeric
-Getting code from: http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#Raku
+Getting code from: https://rosettacode.org/wiki/Determine_if_a_string_is_numeric#Raku
 
 Testing Determine_if_a_string_is_numeric
 
@@ -355,7 +355,7 @@ Or, if the full&#160;%resource hash is loaded it will automatically feed input p
 ```
 Retrieving tasks
 1 Lucky_and_even_lucky_numbers
-Getting code from: http://rosettacode.org/wiki/Lucky_and_even_lucky_numbers#Raku
+Getting code from: https://rosettacode.org/wiki/Lucky_and_even_lucky_numbers#Raku
 
 Testing Lucky_and_even_lucky_numbers
 

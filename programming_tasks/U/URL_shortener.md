@@ -27,7 +27,7 @@ use JSON::Fast;
 my $urlfile = './urls.json'.IO;
 my %urls = ($urlfile.e and $urlfile.f and $urlfile.s) ??
   ( $urlfile.slurp.&from-json ) !!
-  ( index => 1, url => { 0 => 'http://rosettacode.org/wiki/URL_shortener#Raku' } );
+  ( index => 1, url => { 0 => 'https://rosettacode.org/wiki/URL_shortener#Raku' } );
  
 $urlfile.spurt(%urls.&to-json);
  

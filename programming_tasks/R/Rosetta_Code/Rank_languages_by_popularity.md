@@ -16,7 +16,7 @@ use Sort::Naturally;
  
 my $client = HTTP::UserAgent.new;
  
-my $url = 'http://rosettacode.org/mw';
+my $url = 'https://rosettacode.org/mw';
  
 my $tablefile = './RC_Popularity.txt';
  
@@ -91,7 +91,7 @@ sub uri-query-string (*%fields) {
 Scraping the languages and categories pages. Perl 6 automatically handles Unicode names correctly.
 
 ```perl
-my $languages =  qx{wget -O - 'http://rosettacode.org/wiki/Category:Programming_Languages'};
+my $languages =  qx{wget -O - 'https://rosettacode.org/wiki/Category:Programming_Languages'};
 my $categories = qx{wget -O - 'http://www.rosettacode.org/mw/index.php?title=Special:Categories&limit=5000'};
  
 my @lines = $languages.lines;

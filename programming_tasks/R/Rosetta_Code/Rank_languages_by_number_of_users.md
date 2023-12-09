@@ -15,7 +15,7 @@ use JSON::Fast;
  
 my $client = HTTP::UserAgent.new;
  
-my $url = 'http://rosettacode.org/mw';
+my $url = 'https://rosettacode.org/mw';
  
 my $start-time = now;
  

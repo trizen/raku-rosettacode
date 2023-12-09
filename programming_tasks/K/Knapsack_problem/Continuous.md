@@ -51,10 +51,6 @@ say    "Item    Portion Value";
     }
 ```
 
-
-**Output:**
-
-
 #### Output:
 ```
 %perl6 knapsack_continous.p6
