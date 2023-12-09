@@ -13,9 +13,9 @@ my @orders = ((1 - scaling-factor) * $dim) «*» scaling-factor «**» (^order);
  
 INIT say qq:to/STOP/;
     <?xml version="1.0" standalone="no"?>
-    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
     <svg height="{$dim*2}" width="{$dim*2}" style="fill:blue" transform="translate($dim,$dim) rotate(-18)"
-      version="1.1" xmlns="http://www.w3.org/2000/svg">
+      version="1.1" xmlns="https://www.w3.org/2000/svg">
     STOP
 END say '</svg>';
  

@@ -8,8 +8,8 @@ use IETF::RFC_Grammar::URI;
  
 say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute-URI> /, :g).list.join("\n");
     this URI contains an illegal character, parentheses and a misplaced full stop:
-    http://en.wikipedia.org/wiki/Erich_Kästner_(camera_designer). (which is handled by http://mediawiki.org/).
-    and another one just to confuse the parser: http://en.wikipedia.org/wiki/-)
+    https://en.wikipedia.org/wiki/Erich_Kästner_(camera_designer). (which is handled by http://mediawiki.org/).
+    and another one just to confuse the parser: https://en.wikipedia.org/wiki/-)
     ")" is handled the wrong way by the mediawiki parser.
     ftp://domain.name/path(balanced_brackets)/foo.html
     ftp://domain.name/path(balanced_brackets)/ending.in.dot.
@@ -30,10 +30,10 @@ Like most of the solutions here it does not comply to IRI but only to URI:
 #### Output:
 ```
 stop:
-http://en.wikipedia.org/wiki/Erich_K
+https://en.wikipedia.org/wiki/Erich_K
 http://mediawiki.org/).
 parser:
-http://en.wikipedia.org/wiki/-)
+https://en.wikipedia.org/wiki/-)
 ftp://domain.name/path(balanced_brackets)/foo.html
 ftp://domain.name/path(balanced_brackets)/ending.in.dot.
 ftp://domain.name/path(unbalanced_brackets/ending.in.dot.

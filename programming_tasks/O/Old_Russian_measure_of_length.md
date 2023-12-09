@@ -2,7 +2,7 @@
 
 # [Old Russian measure of length][1]
 
-Fairly straightfoward. Define a hash of conversion factors then apply them. Makes no attempt to do correct pluralization because I have no idea what the correct plurals are and little interest in researching them. Conversion factors from Wikipedia: [Obsolete Russian units of measurement](http://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement#Length).
+Fairly straightfoward. Define a hash of conversion factors then apply them. Makes no attempt to do correct pluralization because I have no idea what the correct plurals are and little interest in researching them. Conversion factors from Wikipedia: [Obsolete Russian units of measurement](https://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement#Length).
 
 ```perl
 convert(1, 'meter');

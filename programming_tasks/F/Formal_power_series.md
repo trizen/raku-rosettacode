@@ -42,7 +42,7 @@ class ProFPS does FPS {
 class InvFPS does FPS {
     has FPS $.x;
     method coeffs {
-        # see http://en.wikipedia.org/wiki/Formal_power_series#Inverting_series
+        # see https://en.wikipedia.org/wiki/Formal_power_series#Inverting_series
         gather {
             my @a := $.x.coeffs;
             @a[0] != 0 or fail "Cannot invert power series with zero constant term.";

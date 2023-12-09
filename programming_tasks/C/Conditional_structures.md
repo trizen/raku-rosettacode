@@ -40,7 +40,7 @@ There are also statement modifier forms of all of the above.
 
 
 
-The [ternary operator](http://en.wikipedia.org/wiki/ternary_operator) looks like this:
+The [ternary operator](https://en.wikipedia.org/wiki/ternary_operator) looks like this:
 
 ```perl
 $expression ?? do_something !! do_fallback

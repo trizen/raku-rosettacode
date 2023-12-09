@@ -2,7 +2,7 @@
 
 # [Nautical bell][1]
 
-Perl 6 uses [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) (GMT) time internally and by default. This will display the current UTC time and on the half hour, display a graphical representation of the bell. If run in a terminal with the system bell enabled, will also chime the system alarm bell.
+Perl 6 uses [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (GMT) time internally and by default. This will display the current UTC time and on the half hour, display a graphical representation of the bell. If run in a terminal with the system bell enabled, will also chime the system alarm bell.
 
 ```perl
 my @watch = <Middle Morning Forenoon Afternoon Dog First>;

@@ -2,7 +2,7 @@
 
 # [Sailors, coconuts and a monkey problem][1]
 
-There is nowhere in the spec where it explicitly states that the sailors cannot equally share zero coconuts in the morning. Actually, The On-Line Encyclopedia of Integer Sequences [A002021](http://oeis.org/A002021) considers the cases for 1 and 2 sailors equally sharing zero coconuts in the morning to be the correct answer.
+There is nowhere in the spec where it explicitly states that the sailors cannot equally share zero coconuts in the morning. Actually, The On-Line Encyclopedia of Integer Sequences [A002021](https://oeis.org/A002021) considers the cases for 1 and 2 sailors equally sharing zero coconuts in the morning to be the correct answer.
 
 
 

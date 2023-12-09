@@ -2,7 +2,7 @@
 
 # [Spinning rod animation/Text][1]
 
-Traditionally these are know as [throbbers](http://en.wikipedia.org/wiki/throbber) or progress indicators.
+Traditionally these are know as [throbbers](https://en.wikipedia.org/wiki/throbber) or progress indicators.
 
 
 

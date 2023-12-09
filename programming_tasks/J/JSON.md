@@ -2,7 +2,7 @@
 
 # [JSON][1]
 
-Using [JSON::Tiny](http://github.com/moritz/json/)
+Using [JSON::Tiny](https://github.com/moritz/json/)
 
 ```perl
 use JSON::Tiny;

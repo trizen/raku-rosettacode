@@ -19,7 +19,7 @@
  
 #!/usr/bin/env perl6
 use v6;
-# after http://en.wikipedia.org/wiki/Matrix_chain_multiplication#A_Dynamic_Programming_Algorithm
+# after https://en.wikipedia.org/wiki/Matrix_chain_multiplication#A_Dynamic_Programming_Algorithm
 sub matrix-mult-chaining(@dimensions) {
     # @cp has a dual function: the upper triangle of the diagonal matrix
     # stores the cost (c) for mulplying matrices $i and $j in @cp[$j][$i],

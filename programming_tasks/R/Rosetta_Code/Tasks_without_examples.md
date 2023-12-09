@@ -112,7 +112,7 @@ Opening only those doors is an &#160; &lt;a href="/wiki/Rosetta\_Code:Optimizati
 ```
 
 
-Implement the &lt;a href="[http://en.wikipedia.org/wiki/15_puzzle](http://en.wikipedia.org/wiki/15_puzzle)" class="extiw" title="wp:15 puzzle"&gt;Fifteen Puzzle Game&lt;/a&gt;.
+Implement the &lt;a href="[https://en.wikipedia.org/wiki/15_puzzle](https://en.wikipedia.org/wiki/15_puzzle)" class="extiw" title="wp:15 puzzle"&gt;Fifteen Puzzle Game&lt;/a&gt;.
 
 
 
@@ -130,7 +130,7 @@ Implement the &lt;a href="[http://en.wikipedia.org/wiki/15_puzzle](http://en.wik
 ```
 
 
-Your task is to write a program that finds a solution in the fewest single moves (no multimoves) possible to a random &lt;a href="[http://en.wikipedia.org/wiki/15_puzzle](http://en.wikipedia.org/wiki/15_puzzle)" class="extiw" title="wp:15 puzzle"&gt;Fifteen Puzzle Game&lt;/a&gt;.
+Your task is to write a program that finds a solution in the fewest single moves (no multimoves) possible to a random &lt;a href="[https://en.wikipedia.org/wiki/15_puzzle](https://en.wikipedia.org/wiki/15_puzzle)" class="extiw" title="wp:15 puzzle"&gt;Fifteen Puzzle Game&lt;/a&gt;.
 
 For this task you will be using the following puzzle:
 

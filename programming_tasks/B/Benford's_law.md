@@ -38,7 +38,7 @@ multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 ```
 
 
-**Extra credit:** Square Kilometers of land under cultivation, by country / territory. First column from Wikipedia: [Land use statistics by country](http://en.wikipedia.org/wiki/Land_use_statistics_by_country).
+**Extra credit:** Square Kilometers of land under cultivation, by country / territory. First column from Wikipedia: [Land use statistics by country](https://en.wikipedia.org/wiki/Land_use_statistics_by_country).
 
 
 #### Output:

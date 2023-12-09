@@ -3,8 +3,8 @@
 # [One-dimensional cellular automata][1]
 
 We'll make a general algorithm capable of computing any cellular automata
-as defined by [Stephen Wolfram](http://en.wikipedia.org/wiki/Stephen_Wolfram)'s
-famous book *[A new kind of Science](http://en.wikipedia.org/wiki/A_new_kind_of_Science)*.
+as defined by [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram)'s
+famous book *[A new kind of Science](https://en.wikipedia.org/wiki/A_new_kind_of_Science)*.
 We will take the liberty of wrapping the array of cells
 as it does not affect the result much
 and it makes the implementation a lot easier.

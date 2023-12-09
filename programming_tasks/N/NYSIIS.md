@@ -2,7 +2,7 @@
 
 # [NYSIIS][1]
 
-This implementation removes common name suffixes similar to the reference implementation, even though it is not specified in the task description or on the linked [NYSIIS](http://en.wikipedia.org/wiki/New_York_State_Identification_and_Intelligence_System) page. This algorithm isn't too friendly to certain French kings.&#160;:)
+This implementation removes common name suffixes similar to the reference implementation, even though it is not specified in the task description or on the linked [NYSIIS](https://en.wikipedia.org/wiki/New_York_State_Identification_and_Intelligence_System) page. This algorithm isn't too friendly to certain French kings.&#160;:)
 
 ```perl
 sub no_suffix ($name) {

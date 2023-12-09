@@ -18,8 +18,8 @@ my @q = flat map -> \x { x, y(x) }, (0, 2 ... 200);
 # Generate an SVG image
 INIT say qq:to/STOP/;
     <?xml version="1.0" standalone="no"?>
-    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-    <svg height="{b*2}" width="{a*2}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg height="{b*2}" width="{a*2}" version="1.1" xmlns="https://www.w3.org/2000/svg">
     STOP
 END say '</svg>';
  

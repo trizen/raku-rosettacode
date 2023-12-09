@@ -76,7 +76,7 @@ Tie. - (W:0 L:3 T:2)
 ```
 
 
-Here is example output from the same code only with a different&#160;%vs data structure implementing [Rock-Paper-Scissors-Lizard-Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
+Here is example output from the same code only with a different&#160;%vs data structure implementing [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
 
 ```perl
 my %vs = (

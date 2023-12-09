@@ -18,7 +18,7 @@ my @components = map {@line-segments[$_]}, |((0, 5, 10, 15).map: -> $m {
 my $out = 'Cistercian-raku.svg'.IO.open(:w);
  
 $out.say: # insert header
-q|<svg  width="875" height="470" style="stroke:black;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+q|<svg  width="875" height="470" style="stroke:black;" version="1.1" xmlns="https://www.w3.org/2000/svg">
  <rect width="100%" height="100%" style="fill:white;"/>|;
  
 my $hs = 50; # horizontal spacing
