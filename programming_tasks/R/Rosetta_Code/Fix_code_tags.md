@@ -2,6 +2,8 @@
 
 # [Rosetta Code/Fix code tags][1]
 
+
+
 ```perl
 my @langs = <
     abap actionscript actionscript3 ada apache applescript apt_sources
@@ -18,15 +20,30 @@ my @langs = <
     text thinbasic tsql typoscript vb vbnet verilog vhdl vim visualfoxpro
     visualprolog whitespace winbatch xml xorg_conf xpp z80
 >;
- 
+
 $_ = slurp;
- 
+
 for @langs -> $l {
     s:g:i [ '<' 'lang '?  $l '>' ] = "<lang $l>";
     s:g [ '</' $l '>' ] = '</' ~ 'lang>';
 }
- 
+
 s:g [ '<code '(.+?) '>' (.*?) '</code>' ] = "<lang $0>{$1}</"~"lang>";
- 
+
 .say;
+```
+```perl
+use v6;
+
+constant @langs = < abap actionscript actionscript3 ada  … >;
+
+slurp().subst(
+    rx:r{
+        | '<' <( $<need-add-space>=<?> )> @langs '>'
+        | '</' <( @langs )> '>'
+        | '<' '/'? <( code )> [<.ws> @langs]? '>'
+    },
+    'lang' ~ " " x *<need-add-space>.so,
+    :g,
+).print
 ```

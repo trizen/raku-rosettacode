@@ -1,27 +1,31 @@
-[1]: https://rosettacode.org/wiki/Pascal's_triangle
+[1]: https://rosettacode.org/wiki/Pascal%27s_triangle
 
-# [Pascal's triangle][1]
+# [Pascal&#039;s triangle][1]
+
+
+
+
 
 ### using a lazy sequence generator
 
 
 
-The following routine returns a lazy list of lines using the sequence operator (`...`). With a lazy result you need not tell the routine how many you want; you can just use a slice subscript to get the first N lines:
+The following routine returns a lazy list of lines using the sequence operator (`...`).  With a lazy result you need not tell the routine how many you want; you can just use a slice subscript to get the first N lines:
 
 ```perl
 sub pascal {
     [1], { [0, |$_ Z+ |$_, 0] } ... *
 }
- 
+ 
 .say for pascal[^10];
 ```
 
 
-One problem with the routine above is that it might recalculate the sequence each time you call it. Slightly more idiomatic would be to define the sequence as a lazy constant. Here we use the `@` sigil to indicate that the sequence should cache its values for reuse, and use an explicit parameter `$prev` for variety:
+One problem with the routine above is that it might recalculate the sequence each time you call it.  Slightly more idiomatic would be to define the sequence as a lazy constant.  Here we use the `@` sigil to indicate that the sequence should cache its values for reuse, and use an explicit parameter `$prev` for variety:
 
 ```perl
 constant @pascal = [1], -> $prev { [0, |$prev Z+ |$prev, 0] } ... *;
- 
+ 
 .say for @pascal[^10];
 ```
 
@@ -38,7 +42,7 @@ multi sub pascal (Int $n where 2..*) {
     my @rows = pascal $n - 1;
     |@rows, [0, |@rows[*-1] Z+ |@rows[*-1], 0 ];
 }
- 
+ 
 .say for pascal 10;
 ```
 
@@ -57,7 +61,7 @@ sub pascal ($n where $n >= 1) {
        say @last;
    }
 }
- 
+ 
 pascal 10;
 ```
 
@@ -65,7 +69,6 @@ pascal 10;
 Non-positive inputs throw a type check error.
 
 
-#### Output:
 ```
 [1]
 [1 1]

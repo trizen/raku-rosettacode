@@ -2,18 +2,18 @@
 
 # [Wordle comparison][1]
 
-Updated to add a proof of concept matching for similarity where commonly found on spoofing domain names. Of course this is just the tip of the iceberg (only comparing results after decomposition) and there are way too many [Unicode homoglyphs](https://util.unicode.org/UnicodeJsps/confusables.jsp) that can only be matched using a [lookup table/database](https://www.unicode.org/Public/security/8.0.0/confusables.txt).
+Updated to add a proof of concept matching for similarity where commonly found on spoofing domain names.  Of course this is just the tip of the iceberg (only comparing results after decomposition) and there are way too many  [Unicode homoglyphs](https://util.unicode.org/UnicodeJsps/confusables.jsp) that can only be matched using a [lookup table/database](http://www.unicode.org/Public/security/8.0.0/confusables.txt).
 
 ```perl
 # 20220216 Raku programming solution
- 
+
 sub wordle (\answer,\guess where [==] (answer,guess)».chars ) {
- 
+
    my ($aSet, $gSet, @return) = (answer,guess)».&{ (set .comb.pairs).SetHash }
- 
+
    (my \intersection = $aSet ∩ $gSet).keys».&{ @return[.key] = 'green' }
    ($aSet,$gSet)».&{ $_ ∖= intersection } # purge common subset
- 
+
    for $gSet.keys.sort -> \trial { # pair 
       @return[trial.key] = 'grey';
       for $aSet.keys -> \actual { # pair
@@ -32,7 +32,7 @@ sub wordle (\answer,\guess where [==] (answer,guess)».chars ) {
    }
    @return
 }
- 
+
 say .[0]~' vs '~.[1]~"\t"~ wordle .[0],.[1] for (
 <ALLOW LOLLY>, <ROBIN ALERT>, <ROBIN SONIC>, <ROBIN ROBIN>, <BULLY LOLLY>,
 <ADAPT SÅLÅD>, <Ukraine Ukraíne>, <BBAABBB BBBBBAA>, <BBAABBB AABBBAA> );

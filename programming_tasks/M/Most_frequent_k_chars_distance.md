@@ -2,6 +2,10 @@
 
 # [Most frequent k chars distance][1]
 
+
+
+
+
 My initial impressions of this task are registered on the discussion page under "Prank Page?".
 
 
@@ -15,16 +19,16 @@ Maybe I am too hasty though. Lets give it a try. Implement a MFKC routine and ru
 ```perl
 # Fairly straightforward implementation, actually returns a list of pairs
 # which can be joined to make a string or manipulated further.
- 
+
 sub mfkh ($string, \K = 2) {
     my %h;
     $string.comb.kv.map: { %h{$^v}[1] //= $^k; %h{$^v}[0]++ };
     %h.sort( { -$_.value[0], $_.value[1] } ).head(K).map( { $_.key => $_.value[0] } );
 }
- 
+
 # lets try running 150 or so words from unixdic.txt through it to see
 # how many unique hash values it comes up with.
- 
+
 my @test-words = <
     aminobenzoic arginine asinine biennial biennium brigantine brinkmanship
     britannic chinquapin clinging corinthian declination dickinson dimension
@@ -50,7 +54,7 @@ my @test-words = <
     pincushion pinion quinine quintessential resignation ruination seminarian
     triennial wilkinson wilmington wilsonian wineskin winnie winnipeg  
 >;
- 
+
 say @test-words.map( { join '', mfkh($_)».kv } ).Bag;
 ```
 

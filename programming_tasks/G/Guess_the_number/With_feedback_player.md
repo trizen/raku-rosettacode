@@ -2,6 +2,8 @@
 
 # [Guess the number/With feedback (player)][1]
 
+
+
 ```perl
 multi sub MAIN() { MAIN(0, 100) }
 multi sub MAIN($min is copy where ($min >= 0), $max is copy where ($max > $min)) {
@@ -20,4 +22,4 @@ multi sub MAIN($min is copy where ($min >= 0), $max is copy where ($max > $min))
 ```
 
 
-You may execute this program with '`perl6 program`' or with '`perl6 program min max`'. Perl 6 creates a usage for us if we don't give the right parameters. It also parses the parameters for us and provides them via `$min` and `$max`. We use multi-subs to provide two MAIN subroutines so the user is able to choose between min and max parameters and no parameters at all, in which case min is set to 0 and max to 100.
+You may execute this program with '`raku program`' or with '`raku program min max`'. Raku creates a usage for us if we don't give the right parameters. It also parses the parameters for us and provides them via `$min` and `$max`. We use multi-subs to provide two MAIN subroutines so the user is able to choose between min and max parameters and no parameters at all, in which case min is set to 0 and max to 100.

@@ -3,11 +3,7 @@
 # [Pandigital prime][1]
 
 ```perl
-for 1, 0 -> $i {
-    say max ($i..7).map: -> $size {
-        |($i..$size).permutations».join.grep(&is-prime);
-    }
-}
+say ($_..7).reverse.permutations».join.first: &is-prime for 1,0;
 ```
 
 #### Output:

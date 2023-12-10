@@ -6,7 +6,7 @@ Not an efficient algorithm. First 18 in less than 1/4 second. 19th in around 45 
 
 ```perl
 my $disarium = (^∞).hyper.map: { $_ if $_ == sum .polymod(10 xx *).reverse Z** 1..* };
- 
+
 put $disarium[^18];
 put $disarium[18];
 ```

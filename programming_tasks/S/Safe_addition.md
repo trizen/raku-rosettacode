@@ -2,15 +2,19 @@
 
 # [Safe addition][1]
 
-Perl 6 uses 64 bit IEEE floating points numbers which provide 53 binary digits
+
+
+
+
+Raku uses 64 bit IEEE floating points numbers which  provide 53 binary digits
 of accuracy. If you insist on using floats your answer will be accurate in the range
-± 1.1102230246251565e-16. Perl 6 actually makes it somewhat difficult to output
+± 1.1102230246251565e-16. Raku actually makes it somewhat difficult to output
 an exact stringified float with more than 15 digits of accuracy. It automatically
 rounds since it doesn't try to pretend that it is more accurate than that.
 
 
 
-If you really DO need very high precision and accuracy, Perl 6 has native
+If you really DO need very high precision and accuracy, Raku has native
 built-in Rational number support. Rationals are the ratio of two integers, and
 are always exact. Standard Rats are limited to 64 bits of precision in the
 denominator. On overflow, they will downgrade to a float (Num).
@@ -43,30 +47,30 @@ stringification, not calculation. Calculations are always done at full (exact) p
 ```perl
 say "Floating points: (Nums)";
 say "Error: " ~ (2**-53).Num;
- 
+
 sub infix:<±+> (Num $a, Num $b) {
     my \ε = (2**-53).Num;
     $a - ε + $b, $a + ε + $b,
 }
- 
-printf "%4.16f .. %4.16f\n", (1.14e0 ±+ 2e3);
- 
+
+printf "%4.16f .. %4.16f\n", (1.14e0 ±+ 2e3);
+
 say "\nRationals:";
- 
+
 say ".1 + .2 is exactly equal to .3: ", .1 + .2 === .3;
- 
+
 say "\nLarge denominators require explicit coercion to FatRats:";
 say "Sum of inverses of the first 500 natural numbers:";
 my $sum = sum (1..500).map: { FatRat.new(1,$_) };
 say $sum;
 say $sum.nude;
- 
+
 {
     say "\nRat stringification may not show full precision for terminating fractions by default.";
     say "Use a module to get full precision.";
     use Rat::Precise; # module loading is scoped to the enclosing block
     my $rat = 1.5**63;
-    say "\nPerl 6 default stringification for 1.5**63:\n" ~ $rat; # standard stringification
+    say "\nRaku default stringification for 1.5**63:\n" ~ $rat; # standard stringification
     say "\nRat::Precise stringification for 1.5**63:\n" ~$rat.precise; # full precision
 }
 ```
@@ -88,7 +92,7 @@ Sum of inverses of the first 500 natural numbers:
 Rat stringification may not show full precision for terminating fractions by default.
 Use a module to get full precision.
 
-Perl 6 default stringification for 1.5**63:
+Raku default stringification for 1.5**63:
 124093581919.64894769782737365038
 
 Rat::Precise stringification for 1.5**63:

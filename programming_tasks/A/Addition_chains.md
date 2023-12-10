@@ -2,9 +2,11 @@
 
 # [Addition chains][1]
 
+
+
 ```perl
 my @Example = ();
- 
+
 sub check-Sequence($pos, @seq, $n, $minLen --> List)  {
    if ($pos > $minLen or @seq[0] > $n) {
       return $minLen, 0;
@@ -17,7 +19,7 @@ sub check-Sequence($pos, @seq, $n, $minLen --> List)  {
       return $minLen, 0;
    }
 }
- 
+
 multi sub try-Permutation($i, $pos, @seq, $n, $minLen --> List) {
    return $minLen, 0 if $i > $pos;
    my @res1 = check-Sequence $pos+1, (@seq[0]+@seq[$i],@seq).flat, $n, $minLen;
@@ -31,11 +33,11 @@ multi sub try-Permutation($i, $pos, @seq, $n, $minLen --> List) {
       return 0, 0;
    }
 }
- 
+
 multi sub try-Permutation($x, $minLen --> List) {
    return try-Permutation 0, 0, [1], $x, $minLen;
 }
- 
+
 sub find-Brauer($num, $minLen, $nbLimit) {
    my ($actualMin, $brauer) = try-Permutation $num, $minLen;
    say "\nN = ", $num;
@@ -52,10 +54,10 @@ sub find-Brauer($num, $minLen, $nbLimit) {
       say "Non-Brauer analysis suppressed";
    }
 }
- 
+
 sub is-Addition-Chain(@a --> Bool) {
    for 2 .. @a.end -> $i {
-      return False if @a[$i] > @a[$i-1]*2 ;
+      return False if @a[$i] > @a[$i-1]*2 ;
       my $ok = False;
       for $i-1 … 0 -> $j {
          for $j … 0 -> $k {
@@ -64,11 +66,11 @@ sub is-Addition-Chain(@a --> Bool) {
       }
       return False unless $ok;
    }
- 
+
    @Example = @a unless @Example or is-Brauer @a;
    return True;
 }
- 
+
 sub is-Brauer(@a --> Bool) {
    for 2 .. @a.end -> $i {
       my $ok = False;
@@ -79,11 +81,11 @@ sub is-Brauer(@a --> Bool) {
    }
    return True;
 }
- 
+
 sub find-Non-Brauer($num, $len, $brauer --> Int) {
    my @seq   = flat 1 .. $len-1, $num;
-   my $count = is-Addition-Chain(@seq) ?? 1 !! 0;
- 
+   my $count = is-Addition-Chain(@seq) ?? 1 !! 0;
+
    sub next-Chains($index) {
       loop {
          next-Chains $index+1 if $index < $len-1;
@@ -93,11 +95,11 @@ sub find-Non-Brauer($num, $len, $brauer --> Int) {
          $count++ if is-Addition-Chain @seq;
       }
    }
- 
+
    next-Chains 2;
    return $count - $brauer;
 }
- 
+
 say "Searching for Brauer chains up to a minimum length of 12:";
 find-Brauer $_, 12, 79 for 7, 14, 21, 29, 32, 42, 64 #, 47, 79, 191, 382, 379, 379, 12509 # un-comment for extra-credit
 ```

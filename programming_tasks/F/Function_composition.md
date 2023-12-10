@@ -2,6 +2,10 @@
 
 # [Function composition][1]
 
+
+
+
+
 The function composition operator is `∘`, U+2218 RING OPERATOR (with a "Texas" version `o` for the Unicode challenged). Here we compose a routine, an operator, and a lambda:
 
 ```perl

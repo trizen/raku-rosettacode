@@ -4,8 +4,8 @@
 
 ```perl
 sub ft_inner ( @x, $k, $pos_neg_i where * == i|-i ) {
-    my @exp := ( $pos_neg_i * tau / +@x * $k ) «*« @x.keys;
-    return sum @x »*« 𝑒 «**« @exp;
+    my @exp := ( $pos_neg_i * tau / +@x * $k ) «*« @x.keys;
+    return sum @x »*« 𝑒 «**« @exp;
 }
 sub dft   ( @x ) { return @x.keys.map: { ft_inner( @x, $_, -i )       } }
 sub idft  ( @x ) { return @x.keys.map: { ft_inner( @x, $_,  i ) / +@x } }
@@ -18,7 +18,7 @@ for @tests -> @x {
     my @x_dft  =  dft(@x);
     my @x_idft = idft(@x_dft);
 
-    say .key.fmt('%6s:'), .value.&clean.fmt('%5s', ', ') for :@x, :@x_dft, :@x_idft;
+    say .key.fmt('%6s:'), .value.&clean.fmt('%5s', ', ') for :@x, :@x_dft, :@x_idft;
     say '';
     warn "Round-trip failed" unless ( clean(@x) Z== clean(@x_idft) ).all;
 }

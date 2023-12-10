@@ -7,12 +7,12 @@
 ```perl
 sub gauss ( @m is copy ) {
     for @m.keys -> \i {
-        my \k = max |(i .. @m.end), :by({ @m[$_][i].abs });
- 
-        @m[i, k] .= reverse if \k != i;
- 
+        my \k = max |(i .. @m.end), :by({ @m[$_][i].abs });
+
+        @m[i, k] .= reverse if \k != i;
+
         .[i ^.. *] »/=» .[i] given @m[i];
- 
+
         for i ^.. @m.end -> \j {
             @m[j][i ^.. *] »-=« ( @m[j][i] «*« @m[i][i ^.. *] );
         }
@@ -24,11 +24,11 @@ sub gauss ( @m is copy ) {
 }
 sub network ( Int \n, Int \k0, Int \k1, Str \grid ) {
     my @m = [0 xx n+1] xx n;
- 
+
     for grid.split('|') -> \resistor {
-        my ( \a, \b, \r_inv ) = resistor.split(/\s+/, :skip-empty);
+        my ( \a, \b, \r_inv ) = resistor.split(/\s+/, :skip-empty);
         my \r = 1 / r_inv;
- 
+
         @m[a][a] += r;
         @m[b][b] += r;
         @m[a][b] -= r if a > 0;
@@ -36,7 +36,7 @@ sub network ( Int \n, Int \k0, Int \k1, Str \grid ) {
     }
     @m[k0][k0]  = 1;
     @m[k1][*-1] = 1;
- 
+
     return gauss(@m)[k1];
 }
 use Test;

@@ -2,6 +2,8 @@
 
 # [Set consolidation][1]
 
+
+
 ```perl
 multi consolidate() { () }
 multi consolidate(Set \this is copy, *@those) {
@@ -13,7 +15,7 @@ multi consolidate(Set \this is copy, *@those) {
         take this;
     }
 }
- 
+
 enum Elems <A B C D E F G H I J K>;
 say $_, "\n    ==> ", consolidate |$_
     for [set(A,B), set(C,D)],

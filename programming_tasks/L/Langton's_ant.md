@@ -1,6 +1,10 @@
-[1]: https://rosettacode.org/wiki/Langton's_ant
+[1]: https://rosettacode.org/wiki/Langton%27s_ant
 
-# [Langton's ant][1]
+# [Langton&#039;s ant][1]
+
+
+
+
 
 In this version we use 4-bits-per-char graphics to shrink the output to a quarter the area of ASCII graphics.
 
@@ -15,11 +19,11 @@ my $dir = @vecs.keys.pick;
 my $moves = 0;
 loop {
     given @plane[$x][$y] {
-        when :!defined { last }
+        when :!defined { last }
         when White { $dir--; $_ = Black; }
         when Black { $dir++; $_ = White; }
     }
-    ($x,$y,$moves) »+=« @vecs[$dir %= @vecs];
+    ($x,$y,$moves) »+=« @vecs[$dir %= @vecs];
 }
 say "Out of bounds after $moves moves at ($x, $y)";
 for 0,2,4 ... $size - 2 -> $y {

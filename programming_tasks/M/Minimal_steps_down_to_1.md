@@ -2,6 +2,8 @@
 
 # [Minimal steps down to 1][1]
 
+
+
 ```perl
 use Lingua::EN::Numbers;
 
@@ -10,10 +12,10 @@ for [2,3], 1, 2000,
     [2,3], 2, 2000,
     [2,3], 2, 50000
   -> @div, $sub, $limit {
-    my %min = 1 => {:op(''), :v(1), :s(0)};
+    my %min = 1 => {:op(''), :v(1), :s(0)};
     (2..$limit).map( -> $n {
        my @ops;
-       @ops.push: ($n / $_, "/$_") if $n %% $_ for @div;
+       @ops.push: ($n / $_, "/$_") if $n %% $_ for @div;
        @ops.push: ($n - $sub, "-$sub") if $n > $sub;
        my $op = @ops.min( {%min{.[0]}<s>} );
        %min{$n} = {:op($op[1]), :v($op[0]), :s(1 + %min{$op[0]}<s>)};
@@ -26,8 +28,8 @@ for [2,3], 1, 2000,
         say "\nDivisors: {@div.perl}, subtract: $sub";
         steps(1..10);
     }
-    say "\nUp to {comma $limit} found {+@max} number{+@max == 1 ?? '' !! 's'} " ~
-        "that require{+@max == 1 ?? 's' !! ''} at least $max steps.";
+    say "\nUp to {comma $limit} found {+@max} number{+@max == 1 ?? '' !! 's'} " ~
+        "that require{+@max == 1 ?? 's' !! ''} at least $max steps.";
     steps(@max);
 
     sub steps (*@list) {
@@ -47,7 +49,7 @@ for [2,3], 1, 2000,
 #### Output:
 ```
 Divisors: [2, 3], subtract: 1
-(1) 0 steps:
+(1) 0 steps: 
 (2) 1 steps: /2=>1
 (3) 1 steps: /3=>1
 (4) 2 steps: /2=>2, /2=>1
@@ -82,7 +84,7 @@ Up to 50,000 found 3 numbers that require at least 22 steps.
 (38879) 22 steps: -1=>38878, /2=>19439, -1=>19438, /2=>9719, -1=>9718, /2=>4859, -1=>4858, /2=>2429, -1=>2428, /2=>1214, /2=>607, -1=>606, /2=>303, /3=>101, -1=>100, /2=>50, /2=>25, -1=>24, /2=>12, /2=>6, /2=>3, /3=>1
 
 Divisors: [2, 3], subtract: 2
-(1) 0 steps:
+(1) 0 steps: 
 (2) 1 steps: /2=>1
 (3) 1 steps: /3=>1
 (4) 2 steps: /2=>2, /2=>1

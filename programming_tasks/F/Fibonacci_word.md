@@ -2,9 +2,11 @@
 
 # [Fibonacci word][1]
 
+
+
 ```perl
 constant @fib-word = 1, 0, { $^b ~ $^a } ... *;
- 
+ 
 sub entropy {
     -log(2) R/
         [+] map -> \p { p * log p },
@@ -12,18 +14,18 @@ sub entropy {
 }
 for @fib-word[^37] {
     printf "%5d\t%10d\t%.8e\t%s\n",
-    (state $n)++, .chars, .&entropy, $n > 10 ?? '' !! $_;
+    (state $n)++, .chars, .&entropy, $n > 10 ?? '' !! $_;
 }
 ```
 
 
-That works, but is terribly slow due to all the string processing and bag creation, just to count 0's and 1's. By contrast, the following prints the table up to 100 almost instantly by tracking the values to calculate entropy in parallel with the actual strings. This works in Perl 6 because lazy lists are calculated on demand, so if we don't actually ask for the larger string forms, we don't calculate them. Which would be relatively difficult for a string containing 573147844013817084101 characters, unless you happen to have a computer with a zettabyte or so of memory sitting in your garage.
+That works, but is terribly slow due to all the string processing and bag creation, just to count 0's and 1's.  By contrast, the following prints the table up to 100 almost instantly by tracking the values to calculate entropy in parallel with the actual strings. This works in Raku because lazy lists are calculated on demand, so if we don't actually ask for the larger string forms, we don't calculate them.  Which would be relatively difficult for a string containing 573147844013817084101 characters, unless you happen to have a computer with a zettabyte or so of memory sitting in your garage.
 
 ```perl
 constant @fib-word = '1', '0', { $^b ~ $^a } ... *;
 constant @fib-ones = 1, 0, * + * ... *;
 constant @fib-chrs = 1, 1, * + * ... *;
- 
+ 
 multi entropy(0) { 0 }
 multi entropy(1) { 0 }
 multi entropy($n) {
@@ -34,10 +36,10 @@ multi entropy($n) {
         [+] map -> \p { p * log p },
             $ones / $chars, $zeros / $chars
 }
- 
+
 for 0..100 -> $n {
     printf "%5d\t%21d\t%.15e\t%s\n",
-	    $n, @fib-chrs[$n], entropy($n), $n > 9 ?? '' !! @fib-word[$n];
+	    $n, @fib-chrs[$n], entropy($n), $n > 9 ?? '' !! @fib-word[$n];
 }
 ```
 

@@ -2,7 +2,11 @@
 
 # [Inverted syntax][1]
 
-Like all Perls, Perl 6 has statement modifiers:
+
+
+
+
+Raku has statement modifiers:
 
 ```perl
 if $guess == 6 { say "Wow! Lucky Guess!" }          # Traditional
@@ -12,21 +16,21 @@ say 'Huh! You Guessed Rong!' unless $guess == 6;    # Inverted
 ```
 
 
-Perl also inverts the syntax of loops:
+Raku can also invert the syntax of loops:
 
 ```perl
 while $i { --$i }
 --$i while $i;
- 
+
 until $x > 10 { $x++ }
 $x++ until $x > 10;
- 
-for 1..10 { .say if $_ %% 2 }
-.say if $_ %% 2 for 1..10;  # list comprehension
+
+for 1..10 { .say if $_ %% 2 }
+.say if $_ %% 2 for 1..10;  # list comprehension
 ```
 
 
-Perl 6 has a system of metaoperators that modify the characteristics of normal operators. Among these is the `R` metaoperator, which is able to reverse the arguments of most infix operators (including user-defined ones).
+Raku has a system of metaoperators that modify the characteristics of normal operators.  Among these is the `R` metaoperator, which is able to reverse the arguments of most infix operators (including user-defined ones).  
 So a reversed assignment is easy to write:
 
 ```perl
@@ -60,7 +64,7 @@ One other interesting inversion is the ability to put the conditional of a repea
 repeat {
     $_ = prompt "Gimme a number: ";
 } until /^\d+$/;
- 
+
 repeat until /^\d+$/ {
     $_ = prompt "Gimme a number: ";
 }
@@ -76,7 +80,7 @@ repeat until my $answer ~~ 42 {
 ```
 
 
-This would require a prior declaration (and two extra semicolons, horrors)
+This would require a prior declaration (and two extra semicolons, horrors) 
 if written in the non-inverted form with the conditional at the bottom:
 
 ```perl

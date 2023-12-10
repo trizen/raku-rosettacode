@@ -6,12 +6,12 @@ Due to the time it's taking only a subset of the task are attempted.
 
 ```perl
 # 20220705 Raku programming solution
- 
+
 my (@board, @diag1, @diag2, @diag1Lookup, @diag2Lookup, $n, $minCount, $layout);
- 
+
 my %limits   = ( my @pieces = <Q B K> ) Z=> 7,7,6; # >>=>>> 10;
 my %names    = @pieces Z=> <Queens Bishops Knights>;
- 
+
 sub isAttacked(\piece, \row, \col) {
    given piece {
       when 'Q' { 
@@ -39,7 +39,7 @@ sub isAttacked(\piece, \row, \col) {
    }
    return False
 }
- 
+
 sub attacks(\piece, \row, \col, \trow, \tcol) {
    given piece {
       when 'Q' { row==trow || col==tcol || abs(row - trow)==abs(col - tcol) } 
@@ -48,13 +48,13 @@ sub attacks(\piece, \row, \col, \trow, \tcol) {
                  (rd == 1 && cd == 2) || (rd == 2 && cd == 1)               }
    }
 }
- 
+
 sub storeLayout(\piece) {
    $layout = [~] @board.map: -> @row { 
-      [~] ( @row.map: { $_ ??  piece~' ' !! '. ' } ) , "\n"
+      [~] ( @row.map: { $_ ??  piece~' ' !! '. ' } ) , "\n"
    }   
 }
- 
+
 sub placePiece(\piece, \countSoFar, \maxCount) {
    return if countSoFar >= $minCount; 
    my ($allAttacked,$ti,$tj) = True,0,0;
@@ -93,14 +93,14 @@ sub placePiece(\piece, \countSoFar, \maxCount) {
       }
    }
 }
- 
+
 for @pieces -> \piece {
    say %names{piece}~"\n=======\n";
-   loop ($n = 1 ; ; $n++) {
+   loop ($n = 1 ; ; $n++) {
       @board = [ [ False xx $n ] xx $n ]; 
       unless piece eq 'K' {
-         @diag1 = ^$n .map: { $_ ... $n+$_-1 } ;
-         @diag2 = ^$n .map: { $n+$_-1 ... $_ } ;
+         @diag1 = ^$n .map: { $_ ... $n+$_-1 } ;
+         @diag2 = ^$n .map: { $n+$_-1 ... $_ } ;
 	 @diag2Lookup = @diag1Lookup = [ False xx 2*$n-1 ]
       }
       $minCount = 2³¹ - 1; # golang: math.MaxInt32
@@ -109,9 +109,9 @@ for @pieces -> \piece {
          placePiece(piece, 0, maxCount);
          last if $minCount <= nSQ 
       }
-      printf("%2d x %-2d : %d\n", $n, $n, $minCount);
+      printf("%2d x %-2d : %d\n", $n, $n, $minCount);
       if $n == %limits{piece} {
-         printf "\n%s on a %d x %d board:\n", %names{piece}, $n, $n;
+         printf "\n%s on a %d x %d board:\n", %names{piece}, $n, $n;
          say $layout andthen last
       }
    }

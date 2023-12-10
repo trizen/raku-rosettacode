@@ -13,8 +13,8 @@ Note that there is no requirement that the substrings be unique, only that each 
 Not going to bother handling arrays since an array is not a string, and the task description **specifically** says 'Given a string'.
 
 ```perl
-sub abbreviate ($_) { .chars > 80 ?? "(abbreviated)\n" ~ .substr(0,35) ~ ' ... ' ~ .substr(*-35) !! $_ }
- 
+sub abbreviate ($_) { .chars > 80 ?? "(abbreviated)\n" ~ .substr(0,35) ~ ' ... ' ~ .substr(*-35) !! $_ }
+
 sub longest ($string) {
    return 0 => [] unless $string.chars;
    my ($start, $end, @substr) = 0, 0;
@@ -28,16 +28,16 @@ sub longest ($string) {
    @substr[$end - $start].push: $string.substr($start);
    @substr.pairs.tail
 }
- 
+
 # Testing
 say "\nOriginal string: {abbreviate $_}\nLongest substring(s) chars: ", .&longest
- 
+
 # Standard tests
 for flat qww< xyzyabcybdfd xyzyab zzzzz a '' >,
- 
+
 # multibyte Unicode
 < 👒🎩🎓👩‍👩‍👦‍👦🧢🎓👨‍👧‍👧👒👩‍👩‍👦‍👦🎩🎓👒🧢 α⊆϶α϶ >,
- 
+
 # check a file
 slurp 'unixdict.txt';
 ```

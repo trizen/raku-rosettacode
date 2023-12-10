@@ -2,6 +2,7 @@
 
 # [Time a function][1]
 
+
 Follows modern trend toward measuring wall-clock time, since CPU time is becoming rather ill-defined in the age of multicore, and doesn't reflect IO overhead in any case.
 
 ```perl

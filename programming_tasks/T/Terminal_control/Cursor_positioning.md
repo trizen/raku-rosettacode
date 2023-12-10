@@ -2,6 +2,7 @@
 
 # [Terminal control/Cursor positioning][1]
 
+
 Assuming an ANSI terminal:
 
 ```perl

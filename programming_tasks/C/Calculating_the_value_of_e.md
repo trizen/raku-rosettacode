@@ -2,19 +2,20 @@
 
 # [Calculating the value of e][1]
 
+
+
 ```perl
 # If you need high precision: Sum of a Taylor series method.
 # Adjust the terms parameter to suit. Theoretically the
 # terms could be ∞. Practically, calculating an infinite
 # series takes an awfully long time so limit to 500.
- 
-sub postfix:<!> (Int $n) { (constant f = 1, |[\*] 1..*)[$n] }
-sub 𝑒 (Int $terms) { sum map { FatRat.new(1,.!) }, ^$terms }
- 
-say 𝑒(500).comb(80).join: "\n";
- 
+
+constant 𝑒 = [\+] flat 1, [\/] 1.FatRat..*;
+
+.say for 𝑒[500].comb(80);
+
 say '';
- 
+
 # Or, if you don't need high precision, it's a built-in.
 say e;
 ```
@@ -35,7 +36,7 @@ say e;
 31520961836908887070167683964243781405927145635490613031072085103837505101157477
 04171898610687396965521267154688957035035402123407849819334321068170121005627880
 23519303322474501585390473041995777709350366041699732972508868769664035557071622
-684471625608
+68447162560798827
 
-2.71828182845905
+2.718281828459045
 ```

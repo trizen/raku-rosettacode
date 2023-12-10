@@ -2,6 +2,7 @@
 
 # [Soundex][1]
 
+
 US census algorithm, so "Ashcraft" and "Burroughs" adjusted to match.
 We fake up a first consonant in some cases to make up for the fact that we always trim the first numeric code (so that the 'l' of 'Lloyd' is properly deleted).
 
@@ -29,7 +30,7 @@ sub soundex ($name --> Str) {
         /;
     }.flat.[0,2,3,4].join;
 }
- 
+
 for < Soundex     S532
       Example     E251
       Sownteks    S532

@@ -6,12 +6,12 @@
 constant %dict = 'unixdict.txt'.IO.lines
                                .classify(*.chars)
                                .map({ .key => .value.Set });
- 
+
 sub word_ladder ( Str $from, Str $to ) {
-    die if $from.chars != $to.chars;
- 
+    die if $from.chars != $to.chars;
+
     my $sized_dict = %dict{$from.chars};
- 
+    
     my @workqueue = (($from,),);
     my $used = ($from => True).SetHash;
     while @workqueue {
@@ -22,12 +22,12 @@ sub word_ladder ( Str $from, Str $to ) {
                 for ^$last_word.chars -> $i {
                     my $new_word = $last_word;
                     $new_word.substr-rw($i, 1) = $replacement_letter;
- 
+
                     next unless $new_word ∈ $sized_dict
                         and not $new_word ∈ $used;
                     take $new_word;
                     $used{$new_word} = True;
- 
+                    
                     return |@words, $new_word if $new_word eq $to;
                 }
             }

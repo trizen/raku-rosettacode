@@ -2,30 +2,32 @@
 
 # [First class environments][1]
 
-Fairly straightforward. Set up an array of hashes containing the current values and iteration counts then pass each hash in turn with a code reference to a routine to calculate the next iteration.
+
+
+
+
+Set up an array of hashes containing the current values and iteration counts then pass each hash in turn with a code reference to a routine to calculate the next iteration.
 
 ```perl
 my $calculator = sub ($n is rw) {
-    return ($n == 1) ?? 1 !! $n %% 2 ?? $n div 2 !! $n * 3 + 1
-};
- 
+    $n == 1 ?? 1 !! $n %% 2 ?? $n div 2 !! $n * 3 + 1
+}
+
 sub next (%this, &get_next) {
     return %this if %this.<value> == 1;
-    %this.<value>.=&get_next;
+    %this.<value> .= &get_next;
     %this.<count>++;
-    return %this;
-};
- 
-my @hailstones = map { %(value => $_, count => 0) }, 1 .. 12;
- 
-while not all( map { $_.<value> }, @hailstones ) == 1 {
-    say [~] map { $_.<value>.fmt("%4s") }, @hailstones;
-    @hailstones[$_].=&next($calculator) for ^@hailstones;
+    %this;
 }
- 
-say 'Counts';
- 
-say [~] map { $_.<count>.fmt("%4s") }, @hailstones;
+
+my @hailstones = map { %(value => $_, count => 0) }, 1 .. 12;
+
+while not all( map { $_.<value> }, @hailstones ) == 1 {
+    say [~] map { $_.<value>.fmt: '%4s' }, @hailstones;
+    @hailstones[$_] .= &next($calculator) for ^@hailstones;
+}
+
+say "\nCounts\n" ~ [~] map { $_.<count>.fmt: '%4s' }, @hailstones;
 ```
 
 #### Output:

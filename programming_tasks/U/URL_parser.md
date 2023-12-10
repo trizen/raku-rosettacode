@@ -2,10 +2,15 @@
 
 # [URL parser][1]
 
-Uses the URI library which implements a Perl 6 grammar based on the [RFC 3986](https://rosettacode.org//tools.ietf.org/html/rfc3986) BNF grammar.
+
+
+
+
+Uses the URI library which implements a Raku grammar based on the RFC 3986 BNF grammar.
 
 ```perl
 use URI;
+use URI::Escape;
 
 my @test-uris = <
     foo://example.com:8042/over/there?name=ferret#nose
@@ -19,6 +24,9 @@ my @test-uris = <
     tel:+1-816-555-1212
     telnet://192.0.2.16:80/
     urn:oasis:names:specification:docbook:dtd:xml:4.1.2
+    ssh://alice@example.com
+    https://bob:pass@example.com/place
+    http://example.com/?a=1&b=2+2&c=3&c=4&d=%65%6e%63%6F%64%65%64
 >;
 
 my $u = URI.new;
@@ -28,7 +36,7 @@ for @test-uris -> $uri {
         $u.parse($uri);
         for <scheme host port path query frag> -> $t {
            my $token = try {$u."$t"()} || '';
-           say "$t:\t", $token if $token;
+           say "$t:\t", uri-unescape $token.Str if $token;
         }
     say '';
 }
@@ -84,7 +92,7 @@ path:   comp.infosystems.www.servers.unix
 
 URI:    tel:+1-816-555-1212
 scheme: tel
-path:   +1-816-555-1212
+path:    1-816-555-1212
 
 URI:    telnet://192.0.2.16:80/
 scheme: telnet
@@ -95,4 +103,23 @@ path:   /
 URI:    urn:oasis:names:specification:docbook:dtd:xml:4.1.2
 scheme: urn
 path:   oasis:names:specification:docbook:dtd:xml:4.1.2
+
+URI:    ssh://alice@example.com
+scheme: ssh
+host:   example.com
+port:   22
+path:   
+
+URI:    https://bob:pass@example.com/place
+scheme: https
+host:   example.com
+port:   443
+path:   /place
+
+URI:    http://example.com/?a=1&b=2+2&c=3&c=4&d=%65%6e%63%6F%64%65%64
+scheme: http
+host:   example.com
+port:   80
+path:   /
+query:  a=1&b=2 2&c=3&c=4&d=encoded
 ```

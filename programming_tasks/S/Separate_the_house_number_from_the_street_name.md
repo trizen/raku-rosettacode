@@ -2,18 +2,19 @@
 
 # [Separate the house number from the street name][1]
 
-An unquestioning translation of the Scala example's regex to show how we lay out such regexes for readability in Perl 6, except that we take the liberty of leaving the space out of the house number.
-(Hard constants like 1940 and 1945 are a code smell,
-and the task should probably not require such constants unless there is a standard to point to that mandates them.)
-So expect this solution to change if the task is actually defined reasonably, such as by specifying that four-digit house numbers are excluded in Europe.
-(In contrast, four- and five-digit house numbers are not uncommon
-in places such as the U.S. where each block gets a hundred house numbers
+
+An unquestioning translation of the Scala example's regex to show how we lay out such regexes for readability in Raku, except that we take the liberty of leaving the space out of the house number.  
+(Hard constants like 1940 and 1945 are a code smell, 
+and the task should probably not require such constants unless there is a standard to point to that mandates them.) 
+So expect this solution to change if the task is actually defined reasonably, such as by specifying that four-digit house numbers are excluded in Europe.  
+(In contrast, four- and five-digit house numbers are not uncommon 
+in places such as the U.S. where each block gets a hundred house numbers 
 to play with, and there are cities with hundreds of blocks along a street.)
 
 ```perl
 say m[
     ( .*? )
- 
+
     [
         \s+
         (
@@ -21,7 +22,7 @@ say m[
         | <!before 1940 | 1945> \d+ <[ a..z I . / \x20 ]>* \d*
         )
     ]?
- 
+
     $
 ] for lines;
 ```

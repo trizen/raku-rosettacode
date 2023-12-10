@@ -2,6 +2,7 @@
 
 # [Continued fraction/Arithmetic/Construct from rational number][1]
 
+
 Straightforward implementation:
 
 ```perl
@@ -12,7 +13,7 @@ sub r2cf(Rat $x is copy) {
 	$x = 1 / $x;
     }
 }
- 
+
 say r2cf(.Rat) for <1/2 3 23/8 13/11 22/7 1.41 1.4142136>;
 ```
 

@@ -34,7 +34,7 @@ my %ATOMIC_MASS =
 ;
 grammar Chemical_formula {
     my @ATOMIC_SYMBOLS = %ATOMIC_MASS.keys.sort;
- 
+
     rule  TOP      { ^ (<lparen>|<rparen>|<element>)+ $ }
     token quantity { \d+ }
     token lparen   { '(' }
@@ -50,7 +50,7 @@ class Chemical_formula_actions {
     method element ($/) { @stack[*-1] += ($<quantity> // 1) * %ATOMIC_MASS{~$<e>} }
 }
 sub molar_mass ( Str $formula --> Real ) {
-    Chemical_formula.parse( $formula, :actions(Chemical_formula_actions.new) )
+    Chemical_formula.parse( $formula, :actions(Chemical_formula_actions.new) )
         orelse die "Chemical formula not recognized: '$formula'";
     return $/.made.[0];
 }

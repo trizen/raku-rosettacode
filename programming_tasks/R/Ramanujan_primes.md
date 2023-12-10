@@ -11,18 +11,18 @@ All timings are purely informational. Will vary by system specs and load.
 ```perl
 use Math::Primesieve;
 use Lingua::EN::Numbers;
- 
+
 my $primes = Math::Primesieve.new;
- 
+
 my @mem;
- 
+
 sub ramanujan-prime (\n) {
-   1 + (1..(4×n × (4×n).log / 2.log).floor).first: :end, -> \x {
+   1 + (1..(4×n × (4×n).log / 2.log).floor).first: :end, -> \x {
        my \y = x div 2;
        ((@mem[x] //= $primes.count(x)) - (@mem[y] //= $primes.count(y))) < n
    }
 }
- 
+
 say 'First 100:';
 say (1..100).map( &ramanujan-prime ).batch(10)».&comma».fmt("%6s").join: "\n";
 say "\n 1,000th: { comma 1000.&ramanujan-prime }";
@@ -55,14 +55,14 @@ First 100:
 ```perl
 use ntheory:from<Perl5> <ramanujan_primes nth_ramanujan_prime>;
 use Lingua::EN::Numbers;
- 
+
 say 'First 100:';
 say ramanujan_primes( nth_ramanujan_prime(100) ).batch(10)».&comma».fmt("%6s").join: "\n";
- 
+
 for (2..12).map: {exp $_, 10} -> $limit {
     say "\n{tc ordinal $limit}: { comma nth_ramanujan_prime($limit) }";
 }
- 
+
 say (now - INIT now).fmt('%.3f') ~ ' seconds';
 ```
 

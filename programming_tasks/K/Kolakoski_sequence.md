@@ -2,15 +2,17 @@
 
 # [Kolakoski sequence][1]
 
+
+
 ```perl
 sub kolakoski (*@seed) {
-    my $k = @seed[0] == 1 ?? 1 !! 0;
-    my @k = flat @seed[0] == 1 ?? (1, @seed[1] xx @seed[1]) !! @seed[0] xx @seed[0],
-      { $k++; @seed[$k % @seed] xx @k[$k] } … *
+    my $k = @seed[0] == 1 ?? 1 !! 0;
+    my @k = flat @seed[0] == 1 ?? (1, @seed[1] xx @seed[1]) !! @seed[0] xx @seed[0],
+      { $k++; @seed[$k % @seed] xx @k[$k] } … *
 }
- 
-sub rle (*@series) { @series.join.subst(/((.)$0*)/, -> { $0.chars }, :g).comb».Int }
- 
+
+sub rle (*@series) { @series.join.subst(/((.)$0*)/, -> { $0.chars }, :g).comb».Int }
+
 # Testing
 for [1, 2], 20,
     [2, 1], 20,

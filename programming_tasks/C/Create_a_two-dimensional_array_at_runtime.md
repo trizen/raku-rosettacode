@@ -2,6 +2,10 @@
 
 # [Create a two-dimensional array at runtime][1]
 
+
+
+
+
 Line 1: The input parse doesn't care how you separate the dimensions as long as there are two distinct numbers.
 
 
@@ -33,7 +37,6 @@ Dimensions? 5x35
 [@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @]
 [@ @ @ @ @ @ @ @ @ @   @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @]
 [@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @]
- 
 ```
 
 

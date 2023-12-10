@@ -2,43 +2,39 @@
 
 # [Data Encryption Standard][1]
 
-This is mainly a translation from the Phix entry, with an additional example on UTF-8. Regarding the many conversions among different number/string formats, small (and hopefully reusable ) helper routines are created to serve the purpose.
-Update 20190323: After a bug fixed an example does behave correctly and is now in line with the results from the C, D, Kotlin and Phix entries. By the way it seems *.comb* handle "\r\n" inconsistently, why? [[1]](https://pastebin.com/d7dBpYkL)
-Update 20190325: Thanks to SqrtNegInf for pointing out that the answer is already in the documentation.[[2]](https://docs.perl6.org/type/Str#routine_chomp), [[3]](https://docs.perl6.org/language/newline)
+
+Thanks to SqrtNegInf for pointing out that \r\n is a single grapheme. ([link 1](https://docs.raku.org/type/Str#routine_chomp), [link 2](https://docs.raku.org/language/newline))
 
 ```perl
-#!/usr/bin/env perl6
- 
-use v6.d;
-use experimental :pack;
- 
+# 20220222 Updated Raku programming solution
+
 my \PC1 = <
-   57 49 41 33 25 17  9        1 58 50 42 34 26 18
-   10  2 59 51 43 35 27       19 11  3 60 52 44 36
-   63 55 47 39 31 23 15        7 62 54 46 38 30 22
-   14  6 61 53 45 37 29       21 13  5 28 20 12  4
->; # Permuted choice 1 (PC-1) - Parity Drop Table
- 
+   56 48 40 32 24 16  8         0 57 49 41 33 25 17  
+    9  1 58 50 42 34 26        18 10  2 59 51 43 35 
+   62 54 46 38 30 22 14         6 61 53 45 37 29 21 
+   13  5 60 52 44 36 28        20 12  4 27 19 11  3
+>; # Permuted choice 1 (PC-1) - Parity Drop Table, https://w.wiki/4yKS 
+ 
 my \PC2 = <
-   14 17 11 24  1  5  3 28    15  6 21 10 23 19 12  4
-   26  8 16  7 27 20 13  2    41 52 31 37 47 55 30 40
-   51 45 33 48 44 49 39 56    34 53 46 42 50 36 29 32
->; # Permuted choice 2 (PC-2) - Key Compression Table
- 
+   13 16 10 23  0  4  2 27     14  5 20  9 22 18 11  3 
+   25  7 15  6 26 19 12  1     40 51 30 36 46 54 29 39 
+   50 44 32 47 43 48 38 55     33 52 45 41 49 35 28 31
+>; # Permuted choice 2 (PC-2) - Key Compression Table, https://w.wiki/4yKR
+ 
 my \IP = <
-   58 50 42 34 26 18 10  2    60 52 44 36 28 20 12  4
-   62 54 46 38 30 22 14  6    64 56 48 40 32 24 16  8
-   57 49 41 33 25 17  9  1    59 51 43 35 27 19 11  3
-   61 53 45 37 29 21 13  5    63 55 47 39 31 23 15  7
->; # Initial permutation (IP)
- 
+   57 49 41 33 25 17  9  1     59 51 43 35 27 19 11  3 
+   61 53 45 37 29 21 13  5     63 55 47 39 31 23 15  7 
+   56 48 40 32 24 16  8  0     58 50 42 34 26 18 10  2 
+   60 52 44 36 28 20 12  4     62 54 46 38 30 22 14  6
+>; # Initial permutation (IP), https://w.wiki/4yKN
+ 
 my \IP2 = <
-   40 8 48 16 56 24 64 32     39 7 47 15 55 23 63 31
-   38 6 46 14 54 22 62 30     37 5 45 13 53 21 61 29
-   36 4 44 12 52 20 60 28     35 3 43 11 51 19 59 27
-   34 2 42 10 50 18 58 26     33 1 41  9 49 17 57 25
->; # Final permutation (IP⁻¹)
- 
+   39  7 47 15 55 23 63 31     38  6 46 14 54 22 62 30 
+   37  5 45 13 53 21 61 29     36  4 44 12 52 20 60 28 
+   35  3 43 11 51 19 59 27     34  2 42 10 50 18 58 26 
+   33  1 41  9 49 17 57 25     32  0 40  8 48 16 56 24
+>; # Final permutation (IP⁻¹), https://w.wiki/4yKP
+ 
 my \S = ( <
    14 4 13 1 2 15 11 8 3 10 6 12 5 9 0 7   0 15 7 4 14 2 13 1 10 6 12 11 9 5 3 8
    4 1 14 8 13 6 2 11 15 12 9 7 3 10 5 0   15 12 8 2 4 9 1 7 5 11 3 14 10 0 6 13
@@ -63,108 +59,103 @@ my \S = ( <
 > , <
    13 2 8 4 6 15 11 1 10 9 3 14 5 0 12 7   1 15 13 8 10 3 7 4 12 5 6 11 0 14 9 2
    7 11 4 1 9 12 14 2 0 6 10 13 15 3 5 8   2 1 14 7 4 10 8 13 15 12 9 0 3 5 6 11
-> ); # 8 Substitution boxes, each replaces a 6-bit input with a 4-bit output
- 
+> ); # S-Boxes, each replaces a 6-bit input with a 4-bit output, w.wiki/4yG8 
+ 
 my \P = <
-   16 7 20 21   29 12 28 17     1 15 23 26     5 18 31 10
-    2 8 24 14   32 27  3  9    19 13 30  6    22 11  4 25
->; # Permutation (P), shuffles the bits of a 32-bit half-block
- 
-# Expansion function (E), expand 32-bit half-block to 48 bits
-my \E = flat 32,1..5,4..9,8..13,12..17,16..21,20..25,24..29,28..32,1;
- 
-my \SHIFTS = < 1 1 2 2 2 2 2 2 1 2 2 2 2 2 2 1 >; # schedule of left shifts
- 
+   15 6 19 20   28 11 27 16     0 14 22 25     4 17 30  9 
+    1 7 23 13   31 26  2  8    18 12 29  5    21 10  3 24
+>; # Permutation (P), shuffles the bits of a 32-bit half-block, w.wiki/4yKT
+ 
+# Expansion function (E), expand 32-bit half-block to 48 bits, w.wiki/4yGC
+my \E = flat 31,0..4,3..8,7..12,11..16,15..20,19..24,23..28,27..31,0;
+ 
+my \SHIFTS = flat 1, 1, 2 xx 6, 1, 2 xx 6, 1 ; # left shifts, w.wiki/4yKV
+ 
 ## Helper subs
- 
-# convert iso-8859-1 to hexadecimals
-sub b2h (\b) { [~] map { .encode('iso-8859-1').unpack('H*') }, b.comb };
- 
+ 
+# convert iso-8859-1 to hexadecimals(%02X)
+sub b2h (\b) { b.ords.fmt('%02X','') }
+ 
 # convert UTF8s to bytes
-sub u2b (\u) { [~] map { .chr }, @( [~] map { .encode('utf8') }, u.comb) };
- 
-# convert hexadecimals to UTF-8
-sub h2u (\h) { pack("H" x h.chars/2, h ~~ m:g/../).decode('utf8') };
- 
+sub u2b (\u) { u.encode.list.chrs } 
+ 
+# convert hexadecimals(%02X) to UTF-8
+sub h2u (\h) { Blob.new( h.comb(2)».&{ :16($_) } ).decode }
+ 
 # convert quadbits to hex
-sub q2h (\q) { [~] map { :2($_.Str).fmt('%X') }, q ~~ m:g/..../ };
- 
+sub q2h (\q) { [~] q.comb(4)».&{ :2($_).fmt('%X') } }
+ 
 # convert every two quadbits to bytes
-sub q2b (\q) { map { :2($_.Str) }, q ~~ m:g/. ** 8/ };
- 
-# trun a 16 digit hexadecimal str to a 64 bits list
-sub h2bits (\h) { ([~] map { :16($_).base(2).fmt('%04s') }, h.comb).split("")[1..64] };
- 
-sub infix:<⥀>(\a is copy, \b) { a.append: a.shift for ^b ; a } # XOR addition
- 
+sub q2b (\q) { q.comb(8)».&{ :2($_) } }
+ 
+# turn a 16 digit hexadecimal str to a 64 bits list
+sub h2b (\h) { flat h.comb».&{ :16($_).base(2).fmt('%04s').comb } }
+ 
 # convert hexadecimals to bytes
-sub h2bytes (\h) { [~] map { :16($_.Str).chr }, h ~~ m:g/../ };
- 
+sub h2B (\h) { [~] h.comb(2)».&{ chr "0x$_" } }
+ 
 # s is 16 digit hexadecimal str, M is a permuation matrix/vector
-sub map64(\s, \M) { my \b = h2bits s; map { b[$_-1] }, M; }
- 
+sub map64(\s,\M) { (h2b s)[M] } 
+ 
 ## Core subs
- 
+ 
 sub get_subkeys(Str \key --> Seq) { # return a Seq with 16 bit vectors
-   my \Kₚ = map64 key, PC1; # drop parity bits
-   my @C = Kₚ[0..27] ; my @D = Kₚ[28..55]; # perform bits rotation next
-   my \CD = map { [ flat @C ⥀= SHIFTS[$_], @D ⥀= SHIFTS[$_] ]}, ^16;
-   return map { map { CD[$_][PC2[$^a]-1] }, ^48 }, ^16; # key compression rounds
+   my (@C,@D) := { .rotor(.elems div 2)».Array }(map64 key, PC1); #w.wiki/4yKV
+   my \CD = (^16)».&{ [ |@C.=rotate(SHIFTS[$_]), |@D.=rotate(SHIFTS[$_]) ] }
+   # key compression rounds, https://w.wiki/4yKb
+   return (^16).map: -> \row { (^48).map: -> \col { CD[row][ PC2[col] ] } }
 }
- 
-sub ƒ (List \R is copy, Seq \Kₙ is copy --> Seq) {
-   my @er = map { Kₙ[$_] +^ R[E[$_]-1] }, ^48;
-   my @sr = flat map { # Sₙ(Bₙ) loop, process @er six bits at a time
-      ((S.[$_][([~] @er[$_*6,$_*6+5]).parse-base(2)*16+([~]
-         @er[$_*6+1 .. $_*6+4]).parse-base(2)]).fmt('%04b').split(""))[1..4]
-   }, ^8;
-   return map { @sr[$_-1] }, P;
+ 
+sub ƒ (List \R, Seq \Kₙ --> List) {
+   my @er = map { Kₙ[$_] +^ R[E[$_]] }, ^48;
+ 
+   return ( flat (^8)».&{ # Sₙ(Bₙ) loop, process @er six bits at a time 
+      S[$_][ ([~] @er[$_*6   ,  $_*6+5]).parse-base(2)*16 +   # 2 bits
+             ([~] @er[$_*6+1 .. $_*6+4]).parse-base(2)      ] # 4 bits
+      .fmt('%04b').comb } # ((S[][] to binary).split)*8.flat  
+   )[P] 
 }
- 
-sub process_block(Str \message, \K is copy --> Str) { # return 8 quadbits
-   my \mp = map64 (b2h message) , IP; # turn message to hex then map to bits
-   my @L = mp[0..31]; my @R = mp[32..63];
-   my (@Lₙ , @Rₙ); # then apply 16 iterations with function ƒ
-   { @Lₙ = @R; @Rₙ = @L Z+^ ƒ @R, K[$_]; @L = @Lₙ; @R = @Rₙ } for ^16;
-   my \res = flat @R, @L; # reverse and join the final L₁₆ and R₁₆
-   return [~] map { res[$_-1] }, IP2 ; # inverse of the initial permutation
+ 
+sub process_block(Str \message, Seq \K --> Str) { # return 8 quadbits
+   my (@L,@R) := { .rotor(.elems div 2)».Array }(map64 (b2h message), IP);  
+   { my @Lₙ = @R; my @Rₙ = @L Z+^ ƒ @R, K[$_]; @L = @Lₙ; @R = @Rₙ } for ^16;
+ 
+   return [~] (|@R, |@L)[IP2] # inverse of the initial permutation
 }
- 
+ 
 sub des(Str \key, Str $msg is copy, Bool \DECODE --> Str) { # return hexdecimal
-   my @K; my \length = $msg.encode('iso-8859-1').bytes;
-   if ( DECODE and length % 8 ) { # early exit, avoid the subkeys computation
-      die "Message must be in multiples of 8 bytes"
-   } else { 
-      @K = DECODE ?? reverse get_subkeys key !! get_subkeys key  
-   }
-   {  my \P = 8 - length % 8; # number of pad bytes
-      $msg ~= P.chr x P ; # CMS style padding as per RFC 1423 & RFC 5652
-   } unless DECODE;
- 
-   my $quad ~= process_block substr($msg,$_,8), @K for 
-      0, 8 … $msg.encode('iso-8859-1').bytes-8;
- 
-   {  my @decrypt = q2b $quad; # quadbits to a byte code point list
-      @decrypt.pop xx @decrypt.tail; # remove padding
-      return b2h ( [~] map { .chr } , @decrypt )
-   } if DECODE ;
- 
-   return q2h $quad
+ 
+   my \length = $msg.encode('iso-8859-1').bytes;
+ 
+   die "Message must be in multiples of 8 bytes" if ( DECODE and length % 8 );
+ 
+   my \K = { DECODE ?? reverse $_ !! $_ }(get_subkeys key);
+ 
+   # CMS style padding as per RFC 1423 & RFC 5652
+   { $msg ~= (my \Pad = 8 - length % 8).chr x Pad } unless DECODE; 
+ 
+   my $quad = [~] ( 0, 8 … $msg.encode('iso-8859-1').bytes-8 ).map: 
+                 { process_block substr($msg,$_,8), K }
+ 
+   DECODE ?? do { my @decrypt = q2b $quad; # quadbits to a byte code point list
+                  @decrypt.pop xx @decrypt.tail; # remove padding
+                  return b2h [~] @decrypt.chrs }      
+          !! do { return q2h $quad }
 }
- 
+ 
 say "Encryption examples: ";
-say des "133457799BBCDFF1", h2bytes("0123456789ABCDEF"), False;
-say des "0E329232EA6D0D73", h2bytes("8787878787878787"), False;
+say des "133457799BBCDFF1", h2B("0123456789ABCDEF"), False;
+say des "0E329232EA6D0D73", h2B("8787878787878787"), False;
 say des "0E329232EA6D0D73", "Your lips are smoother than vaseline", False;
 say des "0E329232EA6D0D73", "Your lips are smoother than vaseline\r\n", False;
 say des "0E329232EA6D0D73", u2b("BMP: こんにちは ; Astral plane: 𝒳𝒴𝒵"), False;
- 
-say "Decryption examples: ";
-say des "133457799BBCDFF1", h2bytes("85E813540F0AB405FDF2E174492922F8"), True;
-say des "0E329232EA6D0D73", h2bytes("0000000000000000A913F4CB0BD30F97"), True;
-say h2bytes des "0E329232EA6D0D73", h2bytes("C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F535849980A2E7453703513E"), True;
-say h2bytes des "0E329232EA6D0D73", h2bytes("C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F53584997F922CCB5B068D99"), True;
-say h2u des "0E329232EA6D0D73", h2bytes("C040FB6A6E72D7C36D60CA9B9A35EB38D3194468AD808103C28E33AEF0B268D0E0366C160B028DDACF340003DCA8969343EBBD289DB94774"), True;
+ 
+say "\nDecryption examples: ";
+say des "133457799BBCDFF1", h2B("85E813540F0AB405FDF2E174492922F8"), True;
+say des "0E329232EA6D0D73", h2B("0000000000000000A913F4CB0BD30F97"), True;
+say h2B des "0E329232EA6D0D73", h2B("C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F535849980A2E7453703513E"), True;
+say h2B des "0E329232EA6D0D73", h2B("C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F53584997F922CCB5B068D99"), True;
+say h2u des "0E329232EA6D0D73", h2B("C040FB6A6E72D7C36D60CA9B9A35EB38D3194468AD808103C28E33AEF0B268D0E0366C160B028DDACF340003DCA8969343EBBD289DB94774"), True;
 ```
 
 #### Output:
@@ -175,6 +166,7 @@ Encryption examples:
 C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F535849980A2E7453703513E
 C0999FDDE378D7ED727DA00BCA5A84EE47F269A4D6438190D9D52F78F53584997F922CCB5B068D99
 C040FB6A6E72D7C36D60CA9B9A35EB38D3194468AD808103C28E33AEF0B268D0E0366C160B028DDACF340003DCA8969343EBBD289DB94774
+
 Decryption examples:
 0123456789abcdef
 8787878787878787

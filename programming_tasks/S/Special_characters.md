@@ -2,18 +2,21 @@
 
 # [Special characters][1]
 
-Technically speaking, all characters are special in Perl 6, since
+
+
+
+
+Technically speaking, all characters are special in Raku, since
 they're all just the result of particular mixes of parse rules.
 Nevertheless, some characters may appear to be more special than
-others. (However, we will not document any operators here, which
-contain plenty of odd characters in Perl 6.)
+others.  (However, we will not document any operators here, which
+contain plenty of odd characters in Raku.)
 
 
 
 Sigils:
 
 
-#### Output:
 ```
     $   Item
     @   Positional
@@ -25,7 +28,6 @@ Sigils:
 Twigils may occur only after a sigil, and indicate special scoping:
 
 
-#### Output:
 ```
     *   Dynamically scoped
     ?   Compile-time constant
@@ -42,7 +44,6 @@ Twigils may occur only after a sigil, and indicate special scoping:
 Quote characters:
 
 
-#### Output:
 ```
     ''  Single quotes
     ""  Double quotes
@@ -56,7 +57,6 @@ Quote characters:
 Escapes within single quotes:
 
 
-#### Output:
 ```
     \\  Backslash
     \'  Quote char
@@ -66,7 +66,6 @@ Escapes within single quotes:
 Escapes within double quotes:
 
 
-#### Output:
 ```
     {}  Interpolate results of block
     $   Interpolate item
@@ -92,7 +91,6 @@ Escapes within double quotes:
 Escapes within character classes and translations include most of the double-quote backslashes, plus:
 
 
-#### Output:
 ```
     ..  range
 ```
@@ -101,7 +99,6 @@ Escapes within character classes and translations include most of the double-quo
 Escapes within regexes include most of the double-quote escapes, plus:
 
 
-#### Output:
 ```
     :   Some kind of declaration
     <>  Some kind of assertion
@@ -125,7 +122,7 @@ Escapes within regexes include most of the double-quote escapes, plus:
 ```
 
 
-Note that all non-alphanumeric characters are reserved for escapes and operators in Perl 6 regexes.
+Note that all non-alphanumeric characters are reserved for escapes and operators in Raku regexes.
 
 
 

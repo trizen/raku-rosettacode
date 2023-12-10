@@ -2,14 +2,17 @@
 
 # [Determine if a string has all unique characters][1]
 
-Perl 6 works with unicode natively and handles combining characters and multi-byte emoji correctly. In the last string, notice the the length is correctly shown as 11 characters and that the delta with a combining circumflex in position 6 is not the same as the deltas without in positions 5 &amp; 9.
+
+
+
+
+Raku works with unicode natively and handles combining characters and multi-byte emoji correctly. In the last string, notice the the length is correctly shown as 11 characters and that the delta with a combining circumflex in position 6 is not the same as the deltas without in positions 5 &amp; 9.
 
 ```perl
   -> $str {
     my $i = 0;
-    print "\n{$str.perl} (length: {$str.chars}), has ";
-    my %m;
-    %m{$_}.push: ++$i for $str.comb;
+    print "\n{$str.raku} (length: {$str.chars}), has ";
+    my %m = $str.comb.Bag;
     if any(%m.values) > 1 {
         say "duplicated characters:";
         say "'{.key}' ({.key.uninames}; hex ordinal: {(.key.ords).fmt: "0x%X"})" ~

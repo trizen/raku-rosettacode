@@ -2,12 +2,16 @@
 
 # [Higher-order functions][1]
 
+
+
+
+
 The best type to use for the parameter of a higher-order function is `Callable` (implied by the `&` sigil), a role common to all function-like objects. For an example of defining and calling a second-order function, see [Functional Composition](https://rosettacode.org/wiki/Functional_Composition#Raku).
 
 
 
 Convenient syntax is provided for anonymous functions,
-either a bare block, or a parameterized block introduced with `->`, which serves as a "lambda":
+either a bare block, or a parametrized block introduced with `->`, which serves as a "lambda":
 
 ```perl
 sub twice(&todo) {
@@ -17,7 +21,7 @@ twice { say "Boing!" }
 # output:
 # Boing!
 # Boing!
- 
+
 sub twice-with-param(&todo) {
     todo(0); todo(1);
 }

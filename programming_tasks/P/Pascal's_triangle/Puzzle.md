@@ -1,6 +1,8 @@
-[1]: https://rosettacode.org/wiki/Pascal's_triangle/Puzzle
+[1]: https://rosettacode.org/wiki/Pascal%27s_triangle/Puzzle
 
-# [Pascal's triangle/Puzzle][1]
+# [Pascal&#039;s triangle/Puzzle][1]
+
+
 
 ```perl
 # set up triangle
@@ -14,32 +16,32 @@ my @tri = (1..$rows).map: { [ { x => 0, z => 0, v => 0, rhs => Nil } xx $_ ] }
 @tri[4][2]<z> = 1;
 @tri[4][3]<v> = 4;
 @tri[4][4]<z> = 1;
- 
+ 
 # aggregate from bottom to top
 for @tri - 2 ... 0 -> $row {
     for 0 ..^ @tri[$row] -> $col {
         @tri[$row][$col]{$_} = @tri[$row+1][$col]{$_} + @tri[$row+1][$col+1]{$_} for 'x','z','v';
     }
 }
- 
+
 # find equations
 my @eqn = gather for @tri -> $row {
     for @$row -> $cell {
         take [ $cell<x>, $cell<z>, $cell<rhs> - $cell<v> ] if defined $cell<rhs>;
     }
 }
- 
+
 # print equations
 say "Equations:";
 say "  x +   z = y";
 for @eqn -> [$x,$z,$y] { say "$x x + $z z = $y" }
- 
+
 # solve
 my $f = @eqn[0][1] / @eqn[1][1];
 @eqn[0][$_] -=  $f * @eqn[1][$_] for 0..2;
 $f = @eqn[1][0] / @eqn[0][0];
 @eqn[1][$_] -=  $f * @eqn[0][$_] for 0..2;
- 
+
 # print solution
 say "Solution:";
 my $x = @eqn[0][2] / @eqn[0][0];

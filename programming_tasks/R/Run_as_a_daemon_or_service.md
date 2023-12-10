@@ -2,32 +2,32 @@
 
 # [Run as a daemon or service][1]
 
+
+
 ```perl
-#!/usr/bin/env perl6
- 
 # Reference:
 # https://github.com/hipek8/p6-UNIX-Daemonize/
- 
+
 use v6;
 use UNIX::Daemonize;
 use File::Temp;
- 
+
 my ($output, $filehandle) = tempfile(:tempdir("/tmp"),:!unlink) or die;
- 
+
 say "Output now goes to ",$output;
- 
+
 daemonize();
- 
+
 loop {
    sleep(1);
-   spurt $output, DateTime.now.Str~"\n", :append;
+   spurt $output, DateTime.now.Str~"\n", :append;
 }
 ```
 
 #### Output:
 ```
 root@ubuntu:~# su - david
-david@ubuntu:~$ ./dumper.p6
+<p>david@ubuntu:~$ ./dumper.p6
 Output now goes to /tmp/x2ovx9JG8b
 david@ubuntu:~$ tail -f /tmp/x2ovx9JG8b
 2018-12-11T20:20:01.510484+08:00
@@ -74,4 +74,5 @@ david@ubuntu:~$ tail -f /tmp/x2ovx9JG8b
 ^C
 david@ubuntu:~$ pkill -c moar
 1
+</p>
 ```

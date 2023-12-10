@@ -2,12 +2,16 @@
 
 # [Flipping bits game][1]
 
+
+
+
+
 Pass in a parameter to set the square size for the puzzle. (Defaults to 4.) Arbitrarily limited to between 1 and 26. Yes, you can choose to solve a 1 element square puzzle, but it won't be very challenging. Accepts upper or lower case letters for columns. Disregards any out-of-range indices. Enter a blank or 0 (zero) to exit.
 
 ```perl
 sub MAIN ($square = 4) {
     say "{$square}? Seriously?" and exit if $square < 1 or $square > 26;
-    my %bits = map { $_ => %( map { $_ => 0 }, ('A' .. *)[^ $square] ) },
+    my %bits = map { $_ => %( map { $_ => 0 }, ('A' .. *)[^ $square] ) },
         (1 .. *)[^ $square];
     scramble %bits;
     my $target = build %bits;
@@ -22,7 +26,7 @@ sub MAIN ($square = 4) {
         }
     }
 }
- 
+
 sub display($goal, %hash) {
     shell('clear');
     say "Goal\n$goal\nYou";
@@ -30,7 +34,7 @@ sub display($goal, %hash) {
     say $this;
     return ($goal eq $this);
 }
- 
+
 sub flip ($a, %hash) {
     given $a {
         when any(keys %hash) {
@@ -41,7 +45,7 @@ sub flip ($a, %hash) {
         };
     }
 }
- 
+
 sub build (%hash) {
     my $string = '   ';
     $string ~= sprintf "%2s ", $_ for sort keys %hash{'1'};
@@ -53,7 +57,7 @@ sub build (%hash) {
     };
     $string
 }
- 
+
 sub scramble(%hash) {
     my @keys = keys %hash;
     @keys.push: | keys %hash{'1'};
@@ -65,7 +69,6 @@ sub scramble(%hash) {
 A sample 3 x 3 game might look like this:
 
 
-#### Output:
 ```
 Goal
     A  B  C 

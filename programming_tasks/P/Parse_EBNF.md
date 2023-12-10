@@ -2,59 +2,63 @@
 
 # [Parse EBNF][1]
 
-This parses the EBNF rule set using a perl 6 grammar, then if it parses as valid EBNF, constructs a grammar and parses the test strings with that. EBNF rule sets that are naively syntactically correct but missing rules will parse as valid but will give a runtime failure warning about missing methods.
+
+
+
+
+This parses the EBNF rule set using a Raku grammar, then if it parses as valid EBNF, constructs a grammar and parses the test strings with that. EBNF rule sets that are naively syntactically correct but missing rules will parse as valid but will give a runtime failure warning about missing methods.
 It is implemented and exercised using the flavor of EBNF and test cases specified on the [test page](https://rosettacode.org/wiki/Parse_EBNF/Tests).
 
 ```perl
-# A perl 6 grammar to parse EBNF
+# A Raku grammar to parse EBNF
 grammar EBNF {
-  rule         TOP { ^ <title>? '{' [ <production> ]+ '}' <comment>? $ }
-  rule  production { <name> '=' <expression> <[.;]> }
-  rule  expression { <term> +% "|" }
-  rule        term { <factor>+ }
-  rule      factor { <group> | <repeat> | <optional> | <identifier> | <literal> }
-  rule       group { '(' <expression> ')' }
-  rule      repeat { '{' <expression> '}' }
-  rule    optional { '[' <expression> ']' }
-  token identifier { <-[\|\(\)\{\}\[\]\.\;\"\'\s]>+ } #"
-  token    literal { ["'" <-[']>+ "'" | '"' <-["]>+ '"'] } #"
-  token      title { <literal> }
-  token    comment { <literal> }
-  token       name { <identifier>  <?before \h* '='> }
+    rule         TOP { ^ <title>? '{' [ <production> ]+ '}' <comment>? $ }
+    rule  production { <name> '=' <expression> <[.;]> }
+    rule  expression { <term> +% "|" }
+    rule        term { <factor>+ }
+    rule      factor { <group> | <repeat> | <optional> | <identifier> | <literal> }
+    rule       group { '(' <expression> ')' }
+    rule      repeat { '{' <expression> '}' }
+    rule    optional { '[' <expression> ']' }
+    token identifier { <-[\|\(\)\{\}\[\]\.\;\"\'\s]>+ } #"
+    token    literal { ["'" <-[']>+ "'" | '"' <-["]>+ '"'] } #"
+    token      title { <literal> }
+    token    comment { <literal> }
+    token       name { <identifier>  <?before \h* '='> }
 }
- 
+
 class EBNF::Actions {
     method        TOP($/) { 
                             say "Syntax Tree:\n", $/; # Dump the syntax tree to STDOUT
                             make 'grammar ' ~
-                              ($<title> ?? $<title>.subst(/\W/, '', :g) !! 'unnamed') ~
+                              ($<title> ?? $<title>.subst(/\W/, '', :g) !! 'unnamed') ~
                               " \{\n rule TOP \{^[<" ~ $/<production>[0]<name> ~
                               ">]+\$\}\n " ~ $<production>>>.ast ~ "\}"
                           }
-    method production($/) { 
+   method production($/) { 
                             make 'token ' ~ $<name> ~ ' {' ~
                               $<expression>.ast ~ "}\n"
                           }
-    method expression($/) { make join '|', $<term>>>.ast }
-    method       term($/) { make join '\h*', $<factor>>>.ast }
-    method     factor($/) { 
-                            make $<literal>  ?? $<literal> !!
-                              $<group>    ?? '[' ~ $<group>.ast    ~ ']'  !!
-                              $<repeat>   ?? '[' ~ $<repeat>.ast   ~ '\\s*]*' !!
-                              $<optional> ?? '[' ~ $<optional>.ast ~ ']?' !!
+   method expression($/) { make join '|', $<term>>>.ast }
+   method       term($/) { make join '\h*', $<factor>>>.ast }
+   method     factor($/) { 
+                            make $<literal>  ?? $<literal> !!
+                              $<group>    ?? '[' ~ $<group>.ast    ~ ']'  !!
+                              $<repeat>   ?? '[' ~ $<repeat>.ast   ~ '\\s*]*' !!
+                              $<optional> ?? '[' ~ $<optional>.ast ~ ']?' !!
                               '<' ~ $<identifier> ~ '>'
                           }
-    method     repeat($/) { make $<expression>.ast }
-    method   optional($/) { make $<expression>.ast }
-    method      group($/) { make $<expression>.ast }
+   method     repeat($/) { make $<expression>.ast }
+   method   optional($/) { make $<expression>.ast }
+   method      group($/) { make $<expression>.ast }
 }
- 
+
 # An array of test cases
 my @tests = (
     {
         ebnf => 
             q<"a" {
-                a = "a1" ( "a2" | "a3" ) { "a4" } [ "a5" ] "a6" ;
+                a = "a1" ( "a2" | "a3" ) { "a4" } [ "a5" ] "a6" ;
             } "z">
         ,
         teststrings => [
@@ -74,10 +78,10 @@ my @tests = (
                 expr = term { plus term } .
                 term = factor { times factor } .
                 factor = number | '(' expr ')' .
- 
+ 
                 plus = "+" | "-" .
                 times = "*" | "/" .
- 
+ 
                 number = digit { digit } .
                 digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
             }>
@@ -96,7 +100,7 @@ my @tests = (
         teststrings => ['foobar']
     },
     {
-        ebnf => q<{ a = "1" ;>,
+        ebnf => q<{ a = "1" ;>,
         teststrings => ['foobar']
     },
     {
@@ -108,7 +112,7 @@ my @tests = (
         teststrings => ['foobar']
     }
 );
- 
+
 # Test the parser.
 my $i = 1;
 for @tests -> $test {
@@ -119,27 +123,27 @@ for @tests -> $test {
          say '*' x 79;
          next;
     }
-    my $p = EBNF.parse($test<ebnf>, :actions(EBNF::Actions));
+    my $p = EBNF.parse($test<ebnf>, :actions(EBNF::Actions));
     my $grammar = $p.ast;
     $grammar ~~ m/^'grammar '(\w+)/;
     my $title = $0;
     my $fn = 'EBNFtest'~$i++;
-    my $fh = open($fn, :w) or die "$!\n";
+    my $fh = open($fn, :w) orelse .die;
     $fh.say( "\{\n", $grammar );
     $fh.say( qq|say "Parsing EBNF grammar '$title':\\n";| );
     $fh.say( qq|say q<{$test<ebnf>.subst(/^^\h*/,'',:g)}>;| );
     $fh.say(  q|say "\nValid syntax.\n\nTesting:\n";| );
     $fh.say(  q|CATCH { default { say " - $_" } };| );
-    my $len = [max] $test<teststrings>.flat>>.chars;
+    my $len = max $test<teststrings>.flat>>.chars;
     for $test<teststrings>.flat -> $s {
         $fh.say( qq|printf "%{$len}s", '{$s}';| ~
-                 qq|printf " - %s\\n", {$title}.parse('{$s}')| ~
-                 qq| ?? 'valid.' !! 'NOT valid.';|
+                 qq|printf " - %s\\n", {$title}.parse('{$s}')| ~
+                 qq| ?? 'valid.' !! 'NOT valid.';|
                );
     }
     $fh.say( qq| "\\n"} |);
     $fh.close;
-    say qqx/perl6 $fn/;
+    say qqx/raku $fn/;
     say '*' x 79, "\n";
     unlink $fn;
 }
@@ -149,7 +153,6 @@ for @tests -> $test {
 Output:
 
 
-#### Output:
 ```
 Syntax Tree:
 ｢"a" {

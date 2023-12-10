@@ -2,6 +2,8 @@
 
 # [Ranking methods][1]
 
+
+
 ```perl
 my @scores =
     Solomon => 44,
@@ -11,9 +13,9 @@ my @scores =
     Bernard => 41,
     Barry   => 41,
     Stephen => 39;
- 
-sub tiers (@s) { @s.classify(*.value).pairs.sort.reverse.map: { [.value».key] } }
- 
+
+sub tiers (@s) { @s.classify(*.value).pairs.sort.reverse.map: { .value».key } }
+
 sub standard (@s) {
     my $rank = 1;
     gather for tiers @s -> @players {
@@ -21,7 +23,7 @@ sub standard (@s) {
 	$rank += @players;
     }
 }
- 
+
 sub modified (@s) {
     my $rank = 0;
     gather for tiers @s -> @players {
@@ -29,11 +31,11 @@ sub modified (@s) {
 	take $rank => @players;
     }
 }
- 
+
 sub dense (@s) { tiers(@s).map: { ++$_ => @^players } }
- 
+
 sub ordinal (@s) { @s.map: ++$_ => *.key }
- 
+
 sub fractional (@s) {
     my $rank = 1;
     gather for tiers @s -> @players {
@@ -42,12 +44,12 @@ sub fractional (@s) {
 	take [+]($beg ..^ $end) / @players => @players;
     }
 }
- 
-say   "Standard:";   .say for   standard @scores;
-say "\nModified:";   .say for   modified @scores;
-say "\nDense:";      .say for      dense @scores;
-say "\nOrdinal:";    .say for    ordinal @scores;
-say "\nFractional:"; .say for fractional @scores;
+
+say   "Standard:";   .perl.say for   standard @scores;
+say "\nModified:";   .perl.say for   modified @scores;
+say "\nDense:";      .perl.say for      dense @scores;
+say "\nOrdinal:";    .perl.say for    ordinal @scores;
+say "\nFractional:"; .perl.say for fractional @scores;
 ```
 
 #### Output:

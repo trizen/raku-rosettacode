@@ -6,7 +6,7 @@ A minor modification of the [Longest palindromic substrings](https://rosettacode
 
 ```perl
 use Sort::Naturally;
- 
+
 sub getpal ($str) {
     my @chars = $str.comb;
     my @pal = flat @chars,
@@ -27,11 +27,11 @@ sub getpal ($str) {
     }
     @pal.unique.sort({.chars, .&naturally});
 }
- 
+
 say 'All palindromic substrings including (bizarrely enough) single characters:';
 put "$_ => ", getpal $_ for 100..125;
 put "\nDo these strings contain a minimum two character palindrome?";
-printf "%25s => %s\n", $_, getpal($_).tail.chars > 1 for flat
+printf "%25s => %s\n", $_, getpal($_).tail.chars > 1 for flat
     9, 169, 12769, 1238769, 123498769, 12346098769, 1234572098769,
     123456832098769, 12345679432098769, 1234567905432098769,
     123456790165432098769, 83071934127905179083, 1320267947849490361205695,

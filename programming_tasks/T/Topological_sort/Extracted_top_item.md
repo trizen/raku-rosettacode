@@ -2,6 +2,8 @@
 
 # [Topological sort/Extracted top item][1]
 
+
+
 ```perl
 sub top_topos ( %deps, *@top ) {
     my %ba;
@@ -11,7 +13,7 @@ sub top_topos ( %deps, *@top ) {
             %ba{$before} //= {};
         }
     }
- 
+
     if @top {
 	my @want = @top;
 	my %care;
@@ -31,12 +33,12 @@ sub top_topos ( %deps, *@top ) {
 	    @want = @newwant;
 	    %care{@want} = 1 xx *;
 	}
- 
+
 	for %ba.keys -> $before {
 	    %ba{$before}:delete unless %care{$before};
 	}
     }
- 
+ 
     my @levels;
     while %ba.grep( not *.value )».key -> @befores {
 	push @levels, ~@befores.sort;
@@ -50,11 +52,11 @@ sub top_topos ( %deps, *@top ) {
     else {
 	say "Top levels are: @levels[*-1]";
     }
- 
+ 
     say "Cycle found! {%ba.keys.sort}" if %ba;
     say ''; 
 }
- 
+
 my %deps =
     top1  =>  <des1 ip1 ip2>,
     top2  =>  <des1 ip2 ip3>,
@@ -63,7 +65,7 @@ my %deps =
     des1  =>  <des1a des1b des1c>,
     des1a =>  <des1a1 des1a2>,
     des1c =>  <des1c1 extra1>;
- 
+     
 top_topos(%deps);
 top_topos(%deps, 'top1');
 top_topos(%deps, 'top2');

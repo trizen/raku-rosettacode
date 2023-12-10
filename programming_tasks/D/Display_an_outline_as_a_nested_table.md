@@ -2,6 +2,10 @@
 
 # [Display an outline as a nested table][1]
 
+
+
+
+
 Use a slightly more complicated outline than the task example to test some edge conditions. Limited to 10 direct subnodes on any one node as is. Easily adapted for larger if necessary.
 
 
@@ -25,12 +29,12 @@ my $outline = q:to/END/;
             or as HTML.
         Optionally add color to the nodes.
     END
- 
+
 # Import outline paragraph into native data structure
 sub import (Str $trees, $level = '  ') {
     my $forest;
     my $last = -Inf;
- 
+
     for $trees.lines -> $branch {
         $branch ~~ / ($($level))* /;
         my $this = +$0;
@@ -43,49 +47,49 @@ sub import (Str $trees, $level = '  ') {
         }
         $last = $this;
     }
- 
-    sub esc { $^s.subst( /(<['\\]>)/, -> $/ { "\\$0" }, :g) }
- 
+
+    sub esc { $^s.subst( /(<['\\]>)/, -> $/ { "\\$0" }, :g) }
+
     $forest ~= ']' x 1 + $last;
     use MONKEY-SEE-NO-EVAL;
     $forest.EVAL;
 }
- 
+
 my @AoA = import $outline, '    ';
 my @layout;
- 
+
 # Collect information about node depth, position and children
 {
     my @width = 0;
     my $depth = -1;
     @AoA.&insert;
- 
+
     multi insert ($item) {
         @width[*-1]++;
-        @layout.push: { :depth($depth.clone), :id(@width[*-1].clone), :text($item) };
+        @layout.push: { :depth($depth.clone), :id(@width[*-1].clone), :text($item) };
     }
- 
+
     multi insert (@array) {
         @width.push: @width[*-1] * 10;
         ++$depth;
-        @array.map: *.&insert;
+        @array.map: &insert;
         --$depth;
         @width.pop;
     }
 }
- 
+
 my $max-depth = @layout.max( *.<depth> )<depth>;
- 
+
 # Pad ragged nodes
 for (^$max-depth) -> $d {
     my @nodes = @layout.grep( *.<depth> == $d );
     for @nodes.sort( +*.<id> ) -> $n {
         unless @layout.first( *.<id> == $n<id> ~ 1 ) {
-            @layout.push: { :depth($n<depth> + 1), :id($n<id> *10 + 1), :text('') };
+            @layout.push: { :depth($n<depth> + 1), :id($n<id> *10 + 1), :text('') };
         }
     }
 }
- 
+
 # Calculate spans (child nodes)
 for (0..$max-depth).reverse -> $d {
     my @nodes = @layout.grep( *.<depth> == $d );
@@ -94,19 +98,19 @@ for (0..$max-depth).reverse -> $d {
         $n<span> = ( sum @span.map( { .<span> // 0} )) || +@span || 1;
     }
 }
- 
+
 # Programatically assign colors
 for (0..$max-depth) -> $d {
     my @nodes = @layout.grep( *.<depth> == $d );
     my $incr = 1 / (1 + @nodes);
     for @nodes.sort( +*.<id> ) -> $n {
-        my $color = $d > 1 ??
-        @layout.first( *.<id> eq $n<id>.chop )<color> !!
+        my $color = $d > 1 ??
+        @layout.first( *.<id> eq $n<id>.chop )<color> !!
         "style=\"background: #" ~ hsv2rgb( ++$ * $incr, .1, 1) ~ '" ';
-        $n<color> = $n<text> ?? $color !! '';
+        $n<color> = $n<text> ?? $color !! '';
     }
 }
- 
+
 # Generate wikitable
 say '{| class="wikitable" style="text-align: center;"' ~ "\n" ~
 (join "\n|-\n", (0..$max-depth).map: -> $d {
@@ -114,35 +118,35 @@ say '{| class="wikitable" style="text-align: center;"' ~ "\n" ~
     (join "\n", @nodes.sort( +*.<id> ).map( -> $node {
         '| ' ~
         ($node<color> // '' ) ~
-        ($node<span> > 1 ?? "colspan=$node<span>" !! '' ) ~
+        ($node<span> > 1 ?? "colspan=$node<span>" !! '' ) ~
         ' | ' ~ $node<text> }
     ))
 }) ~ "\n|}";
- 
+
 say "\n\nSometimes it makes more sense to display an outline as...
 well... as an outline, rather than as a table." ~ Q|¯\_(ツ)_/¯| ~ "\n";
- 
+
 { ## Outline - Ordered List #######
     my @type = <upper-roman upper-latin decimal lower-latin lower-roman>;
     my $depth = 0;
- 
+
     multi ol ($item) { "\<li>$item\n" }
- 
+
     multi ol (@array) {
-        my $li = $depth ?? "</li>" !! '';
+        my $li = $depth ?? "</li>" !! '';
         $depth++;
         my $list = "<ol style=\"list-style: {@type[$depth - 1]};\">\n" ~
-        ( @array.map( *.&ol ).join ) ~ "</ol>$li\n";
+        ( @array.map( &ol ).join ) ~ "</ol>$li\n";
         $depth--;
         $list
     }
- 
+
     say "<div style=\"background: #fee;\">\n" ~ @AoA.&ol ~ "</div>";
 }
- 
+
 sub hsv2rgb ( $h, $s, $v ){
     my $c = $v * $s;
-    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
+    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
     my $m = $v - $c;
     my ($r, $g, $b) = do given $h {
         when   0..^(1/6) { $c, $x, 0 }

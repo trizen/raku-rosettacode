@@ -17,10 +17,14 @@ Code Golf
 Assuming we can't use the string literal in the source, the shortest I've come up with is:
 
 ```perl
-print chrs (-32,12,1,2,-67,-28,12,9,3) »+»99 # 45 Chars, 47 bytes
+print chrs 37,9,2,3,70,33,9,10,0 X+^102 # 39 chars, 39 bytes
 ```
+
+
+[Try it online!](https://tio.run/##K0gtyjH7/7@gKDOvRCE5o6hYwdhcx1LHSMdYx9xAx9gYyDY00DFQiNCOMzQw@v8fAA)
+
 ```perl
-print chrs (-3,㊶,㉚,㉛,-㊳,1,㊶,㊳,㉜) »+»㉎ # 37 Chars, 56 bytes
+print chrs -3,㊶,㉚,㉛,-㊳,1,㊶,㊳,㉜X+㉎ # 33 Chars, 49 bytes
 ```
 ```perl
 print <Dpef!Hpmg>.ords».pred.chrs # 33 Chars, 34 bytes. Somewhat cheaty as it _does_ contain a string literal, but not the same literal as the output

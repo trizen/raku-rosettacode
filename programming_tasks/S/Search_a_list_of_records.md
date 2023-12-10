@@ -2,9 +2,13 @@
 
 # [Search a list of records][1]
 
+
+
+
+
 The built-in method `.first` fulfills the requirements of this task.
 
-It takes any [smart-matcher](https://docs.perl6.org/language/operators#infix_~~) as a predicate. The `:k` adverb makes it return the key (i.e. numerical index) instead of the value of the element.
+It takes any [smart-matcher](https://docs.raku.org/language/operators#infix_~~) as a predicate. The `:k` adverb makes it return the key (i.e. numerical index) instead of the value of the element.
 
 ```perl
 my @cities =
@@ -19,8 +23,8 @@ my @cities =
   { name => 'Abidjan',              population =>  4.4  },
   { name => 'Casablanca',           population =>  3.98 },
 ;
- 
-say @cities.first(*<name> eq 'Dar Es Salaam', :k);
+
+say @cities.first(*<name> eq 'Dar Es Salaam', :k);
 say @cities.first(*<population> < 5).<name>;
 say @cities.first(*<name>.match: /^A/).<population>;
 ```

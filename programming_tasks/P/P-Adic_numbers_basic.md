@@ -4,32 +4,32 @@
 
 ```perl
 # 20210225 Raku programming solution
- 
+
 #!/usr/bin/env raku
- 
-class Padic { has ($.p is default(2), %.v is default({})) is rw ;
- 
+
+class Padic { has ($.p is default(2), %.v is default({})) is rw ;
+
    method r2pa (Rat $x is copy, \p, \d) { # Reference: math.stackexchange.com/a/1187037
-      self.p = p ; 
-      $x += p**d if $x < 0 ;  # complement
- 
+      self.p = p ; 
+      $x += p**d if $x < 0 ;  # complement
+
       my $lowerest = 0;
       my ($num,$den) = $x.nude;
-      while ($den % p) == 0 { $den /= p and $lowerest-- }
+      while ($den % p) == 0 { $den /= p and $lowerest-- }
       $x = $num / $den;
- 
+
       while +self.v < d {
-         my %d = ^p Z=> (( $x «-« ^p ) »/» p )».&{ .denominator % p }; # .kv
-         for %d.keys { self.v.{$lowerest++} = $_ and last if %d{$_} != 0 }
-         $x = ($x - self.v.{$lowerest-1}) / p ;
+         my %d = ^p Z=> (( $x «-« ^p ) »/» p )».&{ .denominator % p }; # .kv
+         for %d.keys { self.v.{$lowerest++} = $_ and last if %d{$_} != 0 }
+         $x = ($x - self.v.{$lowerest-1}) / p ;
       }
       self
    }
- 
+
    method add (Padic \x, \d) {
       my $div = 0;
       my $lowerest = (self.v.keys.sort({.Int}).first,
-                         x.v.keys.sort({.Int}).first  ).min ;
+                         x.v.keys.sort({.Int}).first  ).min ;
       return Padic.new:  
          p => self.p,
          v => gather for ^d {
@@ -38,19 +38,19 @@ class Padic { has ($.p is default(2), %.v is default({})) is rw ;
                { take ($power, .[0]).Slip and $div = .[1] }
          }
    }
- 
+
    method gist { 
       # en.wikipedia.org/wiki/P-adic_number#Notation
-      # my %H = (0..9) Z=> ('₀'..'₉'); # (0x2080 .. 0x2089);
-      # '⋯ ' ~ self.v ~ ' ' ~ [~] self.p.comb».&{ %H{$_} } 
- 
+      # my %H = (0..9) Z=> ('₀'..'₉'); # (0x2080 .. 0x2089);
+      # '⋯ ' ~ self.v ~ ' ' ~ [~] self.p.comb».&{ %H{$_} } 
+     
       # express as a series 
       my %H = ( 0…9 ,'-') Z=> ( '⁰','¹','²','³','⁴'…'⁹','⁻');  
       [~] self.v.keys.sort({.Int}).map: {
          ' + ' ~ self.v.{$_} ~ '*' ~ self.p ~ [~] $_.comb».&{ %H{$_}} }
       }
 }
- 
+
 my @T;
 for my \D = ( 
 #`[[ these are not working
@@ -68,7 +68,7 @@ for my \D = (
    < -7/5 99/70 7 4> ,
    < -101/109 583376/6649 61 7>,
    < 122/407 -517/1477 7 11>,
- 
+
    < 2/1 1/1 2 4>,
    < 4/1 3/1 2 4>,
    < 4/1 3/1 2 5>,
@@ -79,12 +79,12 @@ for my \D = (
    < -9/5 27/7 3 8>,
    < -22/7 46071/379 2 37 >,
    < -22/7 46071/379 3 23 >,
- 
+
    < -101/109 583376/6649 2 40>,
    < -101/109 583376/6649 32749 3>,
    < -25/26 5571/137 7 13>,
 #]]]]]
- 
+
    < 5/8 353/30809 7 11 >,
 ) -> \D { 
    given @T[0] = Padic.new { say D[0]~' = ', .r2pa: D[0],D[2],D[3] }
@@ -96,8 +96,7 @@ for my \D = (
          say 'but ' ~ (D[0]+D[1]).nude.join('/') ~ ' = ' ~ @T[2].gist
       }
    }
-} 
- 
+}
 ```
 
 #### Output:

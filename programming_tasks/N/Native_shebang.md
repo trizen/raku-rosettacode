@@ -2,14 +2,18 @@
 
 # [Native shebang][1]
 
-Perl 6 is not installed by default on most systems and does not have a default install directory, so the path will vary by system.
+
+
+
+
+Raku is not installed by default on most systems and does not have a default install directory, so the path will vary by system.
 
 
 
 **File: echo.p6**
 
 ```perl
-#!/path/to/perl6
+#!/path/to/raku
 put @*ARGS;
 ```
 
@@ -17,12 +21,10 @@ put @*ARGS;
 **Usage:**
 
 
-#### Output:
 ```
 ./echo.p6 Hello, world!
 ```
 
-#### Output:
 ```
 Hello, world!
 ```

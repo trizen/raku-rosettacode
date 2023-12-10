@@ -12,15 +12,15 @@ cannyedge.c
 #include <stdio.h>
 #include <string.h>
 #include <magick/MagickCore.h>
- 
+
 int CannyEdgeDetector(
    const char *infile, const char *outfile,
    double radius, double sigma, double lower, double upper ) {
- 
+
    ExceptionInfo   *exception;
    Image           *image, *processed_image, *output;
    ImageInfo       *input_info;
- 
+
    exception   = AcquireExceptionInfo();
    input_info  = CloneImageInfo((ImageInfo *) NULL);
    (void) strcpy(input_info->filename, infile);
@@ -36,7 +36,7 @@ int CannyEdgeDetector(
    input_info=DestroyImageInfo(input_info);
    exception=DestroyExceptionInfo(exception);
    MagickCoreTerminus();
- 
+
    return 0;
 }
 ```
@@ -46,12 +46,12 @@ cannyedge.raku
 
 ```perl
 # 20220103 Raku programming solution
- 
+ 
 use NativeCall;
- 
+ 
 sub CannyEdgeDetector(CArray[uint8], CArray[uint8], num64, num64, num64, num64 
 ) returns int32 is native( '/home/hkdtam/LibCannyEdgeDetector.so' ) {*};
- 
+
 CannyEdgeDetector( # imagemagick.org/script/command-line-options.php#canny 
    CArray[uint8].new(  'input.jpg'.encode.list, 0), # pbs.org/wgbh/nova/next/wp-content/uploads/2013/09/fingerprint-1024x575.jpg
    CArray[uint8].new( 'output.jpg'.encode.list, 0),

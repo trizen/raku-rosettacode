@@ -1,35 +1,26 @@
-[1]: https://rosettacode.org/wiki/Knuth's_algorithm_S
+[1]: https://rosettacode.org/wiki/Knuth%27s_algorithm_S
 
-# [Knuth's algorithm S][1]
+# [Knuth&#039;s algorithm S][1]
+
+
 
 ```perl
 sub s_of_n_creator($n) {
-    my @sample;
-    my $i = 0;
+    my (@sample, $i);
     -> $item {
-        if ++$i <= $n {
-            push @sample, $item;
-        }
-        elsif $i.rand < $n {
-            @sample[$n.rand] = $item;
-        }
-        @sample;
+        if    ++$i    <= $n { @sample.push:      $item }
+        elsif $i.rand <  $n { @sample[$n.rand] = $item }
+        @sample
     }
 }
- 
-my @items = 0..9;
+
 my @bin;
- 
 for ^100000 {
-    my &s_of_n = s_of_n_creator(3);
-    my @sample;
-    for @items -> $item {
-        @sample = s_of_n($item);
-    }
-    for @sample -> $s {
-        @bin[$s]++;
-    }
+    my &s_of_n = s_of_n_creator 3;
+    sink .&s_of_n for ^9;
+    @bin[$_]++ for s_of_n 9;
 }
+
 say @bin;
 ```
 
@@ -37,7 +28,6 @@ say @bin;
 Output:
 
 
-#### Output:
 ```
 29975 30028 30246 30056 30004 29983 29836 29967 29924 29981
 ```

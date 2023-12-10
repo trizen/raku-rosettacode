@@ -2,15 +2,42 @@
 
 # [Long primes][1]
 
-Not very fast as the numbers get larger. 64000 takes a little over 15 minutes on my computer. 😕
+
+
+
+
+Not very fast as the numbers get larger.
 
 ```perl
-my @long-primes = lazy (1..*).grep(*.is-prime).hyper(:8degree, :8batch).grep({1+(1/$_).base-repeating[1].chars == $_});
- 
-put "Long primes ≤ 500:\n", @long-primes[^(@long-primes.first: * > 500, :k)];
- 
-say "\nNumber of long primes ≤ $_: ", +@long-primes[^(@long-primes.first: * > $_, :k)]
-  for 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000;
+use Math::Primesieve;
+my $sieve = Math::Primesieve.new;
+
+sub is-long (Int $p) {
+    my $r = 1;
+    my $rr = $r = (10 * $r) % $p for ^$p;
+    my $period;
+    loop {
+        $r = (10 * $r) % $p;
+        ++$period;
+        last if $period >= $p or $r == $rr;
+    }
+    $period == $p - 1 and $p > 2;
+}
+
+my @primes = $sieve.primes(500);
+my @long-primes = @primes.grep: {.&is-long};
+
+put "Long primes ≤ 500:\n", @long-primes;
+
+@long-primes = ();
+
+for 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000 -> $upto {
+    state $from = 0;
+    my @extend = $sieve.primes($from, $upto);
+    @long-primes.append: @extend.hyper(:8degree).grep: {.&is-long};
+    say "\nNumber of long primes ≤ $upto: ", +@long-primes;
+    $from = $upto;
+}
 ```
 
 #### Output:

@@ -2,15 +2,19 @@
 
 # [Determine if a string has all the same characters][1]
 
-The last string demonstrates how Perl 6 can recognize that glyphs made up of different combinations of combining characters can compare the same. It is built up from explicit codepoints to show that each of the glyphs is made up of different combinations.
+
+
+
+
+The last string demonstrates how Raku can recognize that glyphs made up of different combinations of combining characters can compare the same. It is built up from explicit codepoints to show that each of the glyphs is made up of different combinations.
 
 ```perl
   -> $str {
     my $i = 0;
-    print "\n{$str.perl} (length: {$str.chars}), has ";
+    print "\n{$str.raku} (length: {$str.chars}), has ";
     my %m;
     %m{$_}.push: ++$i for $str.comb;
- 
+
     if %m > 1 {
         say "different characters:";
         say "'{.key}' ({.key.uninames}; hex ordinal: {(.key.ords).fmt: "0x%X"})" ~

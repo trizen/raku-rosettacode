@@ -2,6 +2,7 @@
 
 # [Roman numerals/Decode][1]
 
+
 A non-validating version:
 
 ```perl
@@ -26,7 +27,7 @@ sub rom-to-num($r) {
         $
     /;
 }
- 
+
 say "$_ => &rom-to-num($_)" for <MCMXC MDCLXVI MMVIII>;
 ```
 
@@ -38,7 +39,7 @@ MMVIII => 2008
 ```
 
 
-A validating version. Also handles older forms such as 'IIXX' and "IIII".
+A validating version.  Also handles older forms such as 'IIXX' and "IIII".
 
 ```perl
 sub rom-to-num($r) {
@@ -54,7 +55,7 @@ sub rom-to-num($r) {
         [ $ || { return NaN } ]
     /;
 }
- 
+
 say "$_ => ", rom-to-num($_) for <MCMXC mdclxvi MMViii IIXX ILL>;
 ```
 

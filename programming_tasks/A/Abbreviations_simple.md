@@ -2,6 +2,10 @@
 
 # [Abbreviations, simple][1]
 
+
+
+
+
 Demonstrate that inputting an empty string returns an empty string in addition to the required test input.
 
 ```perl
@@ -15,19 +19,19 @@ msg  next 1 overlay 1 parse preserve 4 purge 3 put putD query 1 quit  read recov
 refresh renum 3 repeat 3 replace 1 Creplace 2 reset 3 restore 4 rgtLEFT right 2 left
 2  save  set  shift 2  si  sort  sos  stack 3 status 4 top  transfer 3  type 1  up 1
 > ~~ m:g/ (<.alpha>+) \s* (\d*) /;
- 
+
 my %abr = '' => '', |$/.map: {
-    my $abbrv = $_[0].Str.fc;
+    my $abbrv = .[0].Str.fc;
     |map { $abbrv.substr( 0, $_ ) => $abbrv.uc },
-    +($_[1].Str || $_[0].Str.chars) .. $_[0].Str.chars;
+    +(.[1].Str || .[0].Str.chars) .. .[0].Str.chars;
 };
- 
-sub abbr-simple ( $str ) { %abr{$str.fc} // '*error*' }
- 
+
+sub abbr-simple ( $str ) { %abr{$str.trim.fc} // '*error*' }
+
 # Testing
 for 'riG   rePEAT copies  put mo   rest    types   fup.    6       poweRin', '' -> $str {
     put ' Input: ', $str;
-    put 'Output: ', join ' ', $str.words.map: *.&abbr-simple;
+    put 'Output: ', join ' ', $str.words.map: &abbr-simple;
 }
 ```
 

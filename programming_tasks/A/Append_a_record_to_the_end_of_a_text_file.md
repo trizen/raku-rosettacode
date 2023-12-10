@@ -2,6 +2,10 @@
 
 # [Append a record to the end of a text file][1]
 
+
+
+
+
 This is kind of silly as it takes a string, converts it to a record, and then instantly converts it back to a string to write out to a file. Most of the "record handling" code is just demonstrating a possible way to store records in memory. It really has nothing to do with appending a string to a file.
 
 ```perl
@@ -80,5 +84,11 @@ jdoe:x:1002:1000:Jane Doe,Room 1004,(234)555-8914,(234)555-0044,jdoe@rosettacode
 Last line of foo.fil after append:
 xyz:x:1003:1000:X Yz,Room 1003,(234)555-8913,(234)555-0033,xyz@rosettacode.org:/home/xyz:/bin/bash
 ```
+
+
+
+
+
+
 
 Note that advisory locks do not prevent some other program (if it doesn't use flock) from unexpectedly writing to the file.

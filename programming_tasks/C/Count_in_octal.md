@@ -2,6 +2,8 @@
 
 # [Count in octal][1]
 
+
+
 ```perl
 say .base(8) for ^Inf;
 ```

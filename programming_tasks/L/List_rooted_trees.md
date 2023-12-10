@@ -2,11 +2,12 @@
 
 # [List rooted trees][1]
 
-Bags are represented by Perl 6 type [`Bag`](http://doc.perl6.org/type/Bag).
+
+Bags are represented by Raku type [`Bag`](http://doc.raku.org/type/Bag).
 
 ```perl
 use v6;
- 
+
 multi expand-tree ( Bag $tree ) {
     bag(bag(bag()) (+) $tree) (+)
     [(+)] (
@@ -15,17 +16,16 @@ multi expand-tree ( Bag $tree ) {
         }
     );
 }
- 
+
 multi expand-trees ( Bag $trees ) {
-    [(+)] $trees.keys.map:  { $_.&expand-tree } ;
+    [(+)] $trees.keys.map:  { $_.&expand-tree } ;
 }      
- 
+
 my $n = 5;
 for ( bag(), bag(bag()), *.&expand-trees ... * )[$n] {
     print ++$,".\t";
     .say
 };
- 
 ```
 
 #### Output:
@@ -42,4 +42,4 @@ for ( bag(), bag(bag()), *.&expand-trees ... * )[$n] {
 ```
 
 
-The bag `bag(bag(bag()), bag()(2))` coresponds with `((())()())`. There are two independent ways how we can get it by nesting 4 bags.
+The bag `bag(bag(bag()), bag()(2))`  coresponds with `((())()())`. There are two independent ways how we can get it by nesting 4 bags.

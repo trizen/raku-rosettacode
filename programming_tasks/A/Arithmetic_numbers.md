@@ -6,7 +6,7 @@
 use Prime::Factor;
 use Lingua::EN::Numbers;
 
-my @arithmetic = lazy (1..∞).hyper.grep: { my @div = .&divisors; (@div.sum / +@div).narrow ~~ Int }
+my @arithmetic = lazy (1..∞).hyper.grep: { my @div = .&divisors; @div.sum %% @div }
 
 say "The first { .Int.&cardinal } arithmetic numbers:\n", @arithmetic[^$_].batch(10)».fmt("%{.chars}d").join: "\n" given 1e2;
 

@@ -2,7 +2,8 @@
 
 # [Van Eck sequence][1]
 
-There is not **a** Van Eck sequence, rather a series of related sequences that differ in their starting value. This task is nominally for the sequence starting with the value 0. This Perl 6 implementation will handle any integer starting value.
+
+There is not **a** Van Eck sequence, rather a series of related sequences that differ in their starting value. This task is nominally for the sequence starting with the value 0. This Raku implementation will handle any integer starting value.
 
 
 
@@ -22,12 +23,12 @@ sub n-van-ecks ($init) {
         state %v;
         state $k;
         $k++;
-        my $t  = %v{$i}.defined ?? $k - %v{$i} !! 0;
+        my $t  = %v{$i}.defined ?? $k - %v{$i} !! 0;
         %v{$i} = $k;
         $t
     } ... *
 }
- 
+
 for <
     A181391 0
     A171911 1
@@ -39,12 +40,12 @@ for <
     A171917 7
     A171918 8
 > -> $seq, $start {
- 
+
     my @seq = n-van-ecks($start);
- 
+
     # The task
     put qq:to/END/
- 
+
     Van Eck sequence OEIS:$seq; with the first term: $start
             First 10 terms: {@seq[^10]}
     Terms 991 through 1000: {@seq[990..999]}

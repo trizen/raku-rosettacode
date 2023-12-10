@@ -2,15 +2,19 @@
 
 # [File extension is in extensions list][1]
 
+
+
+
+
 Does the extra credit requirement.
 
 ```perl
 sub check-extension ($filename, *@extensions) {
     so $filename ~~ /:i '.' @extensions $/
 }
- 
+
 # Testing:
- 
+
 my @extensions = <zip rar 7z gz archive A## tar.bz2>;
 my @files= <
     MyData.a##  MyData.tar.Gz  MyData.gzip  MyData.7z.backup  MyData...  MyData

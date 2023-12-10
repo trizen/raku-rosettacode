@@ -6,9 +6,9 @@ Generalized
 
 ```perl
 for 1 .. 4 -> $n {
- 
+
     say "\nExactly $n {$n}s, and they are consecutive:";
- 
+
     say .gist, ' ', lc (.Bag{$n} == $n) && ( so .rotor($n=>-($n - 1)).grep: *.all == $n ) for
     [9,3,3,3,2,1,7,8,5],
     [5,2,9,3,3,7,8,4,1],

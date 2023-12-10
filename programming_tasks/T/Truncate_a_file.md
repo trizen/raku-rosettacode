@@ -2,11 +2,13 @@
 
 # [Truncate a file][1]
 
+
+
 ```perl
 use NativeCall;
- 
+
 sub truncate(Str, int32 --> int32) is native {*}
- 
+
 sub MAIN (Str $file, Int $to) {
     given $file.IO { 
         .e        or die "$file doesn't exist";
@@ -15,4 +17,11 @@ sub MAIN (Str $file, Int $to) {
     }
     truncate($file, $to) == 0 or die "Truncation was unsuccessful";
 }
+```
+
+
+The external `truncate` routine could be replaced with the following line (in which case no need for `NativeCall`):
+
+```perl
+spurt $file, slurp($file).substr($to);
 ```

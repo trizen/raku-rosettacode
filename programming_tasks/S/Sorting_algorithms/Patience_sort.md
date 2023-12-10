@@ -2,6 +2,8 @@
 
 # [Sorting algorithms/Patience sort][1]
 
+
+
 ```perl
 multi patience(*@deck) {
     my @stacks;
@@ -14,11 +16,11 @@ multi patience(*@deck) {
         }
     }
     gather while @stacks {
-        take .pop given min :by(*[*-1]), @stacks;
+        take .pop given min :by(*[*-1]), @stacks;
         @stacks .= grep: +*;
     }
 }
- 
+
 say ~patience ^10 . pick(*);
 ```
 

@@ -2,6 +2,10 @@
 
 # [Bioinformatics/base count][1]
 
+
+
+
+
 It's the [Letter frequency](https://rosettacode.org/wiki/Letter_frequency#Raku) task all over again, just simpler and dressed up in different clothes.
 
 
@@ -21,14 +25,14 @@ my $dna = join '', lines q:to/END/;
     TCCTAAATTTGAATGGCAAACACAAATAAGATTTAGCAATTCGTGTAGAC
     GACCGGGGACTTGCATGATGGGAGCAGCTTTGTTAAACTACGAACGTAAT
     END
- 
- 
+
+
 put pretty($dna, 80);
 put "\nTotal bases: ", +my $bases = $dna.comb.Bag;
 put $bases.sort(~*.key).join: "\n";
- 
+
 sub pretty ($string, $wrap = 50) {
-    $string.comb($wrap).map( { sprintf "%8d: %s", $++ * $wrap, $_ } ).join: "\n"
+    $string.comb($wrap).map( { sprintf "%8d: %s", $++ * $wrap, $_ } ).join: "\n"
 }
 ```
 

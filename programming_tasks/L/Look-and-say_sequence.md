@@ -2,7 +2,11 @@
 
 # [Look-and-say sequence][1]
 
-In Perl 6 it is natural to avoid explicit loops; rather we use the sequence operator to define a lazy infinite sequence. We'll print the first 15 values here.
+
+
+
+
+In Raku it is natural to avoid explicit loops; rather we use the sequence operator to define a lazy infinite sequence.  We'll print the first 15 values here.
 
 ```perl
 .say for ('1', *.subst(/(.)$0*/, { .chars ~ .[0] }, :g) ... *)[^15];

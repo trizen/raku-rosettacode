@@ -14,9 +14,9 @@ If all we need is the count, then we can compute that directly:
 
 ```perl
 unit sub MAIN(*@columns);
- 
+
 sub postfix:<!>($n) { [*] 1..$n }
- 
+
 say [+](@columns)! / [*](@columns»!);
 ```
 
@@ -34,7 +34,7 @@ $ raku lanterns.raku 1 2 3
 If we want to list all of the sequences, we have to do some more work. This version outputs the sequences as lists of column numbers (assigned from 1 to N left to right); at each step the bottommost lantern from the numbered column is removed.
 
 ```perl
-unit sub MAIN(*@columns, :v(:$verbose)=False);
+unit sub MAIN(*@columns, :v(:$verbose)=False);
 
 my @sequences = @columns
               . pairs
@@ -79,7 +79,7 @@ There are 60 possible takedown sequences:
 If we want individually-numbered lanterns in the sequence instead of column numbers, as in the example given in the task description, that requires yet more work:
 
 ```perl
-unit sub MAIN(*@columns, :v(:$verbose)=False);
+unit sub MAIN(*@columns, :v(:$verbose)=False);
 
 my @sequences = @columns
               . pairs
@@ -94,7 +94,7 @@ if ($verbose) {
   my @matrix;
   for ^@columns.max -> $i {
     for ^@columns -> $j {
-      my $value = $i < @columns[$j] ?? ($i+@offsets[$j]+1) !! Nil;
+      my $value = $i < @columns[$j] ?? ($i+@offsets[$j]+1) !! Nil;
       @matrix[$j][$i] = $value if $value;;
       print "\t" ~ ($value // " ");
     }
@@ -117,7 +117,7 @@ if ($verbose) {
 
 #### Output:
 ```
-$ raku lanterns.raku -v 1 2 3
+$ raku lanterns.raku -v 1 2 3                                                   
         1       2       4
                 3       5
                         6

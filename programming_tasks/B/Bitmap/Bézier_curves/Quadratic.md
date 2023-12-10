@@ -2,6 +2,10 @@
 
 # [Bitmap/Bézier curves/Quadratic][1]
 
+
+
+
+
 Uses pieces from [ Bitmap](https://rosettacode.org/wiki/Bitmap#Raku), and [ Bresenham's line algorithm](https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#Raku) tasks. They are included here to make a complete, runnable program.
 
 ```perl
@@ -9,7 +13,7 @@ class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);
     has Pixel @!data;
- 
+
     method fill(Pixel $p) {
         @!data = $p.clone xx ($!width*$!height)
     }
@@ -18,7 +22,7 @@ class Bitmap {
 	  $j where ^$!height
 	  --> Pixel
     ) is rw { @!data[$i + $j * $!width] }
- 
+
     method set-pixel ($i, $j, Pixel $p) {
         return if $j >= $!height;
         self.pixel($i, $j) = $p.clone;
@@ -26,7 +30,7 @@ class Bitmap {
     method get-pixel ($i, $j) returns Pixel {
 	    self.pixel($i, $j);
     }
- 
+
     method line(($x0 is copy, $y0 is copy), ($x1 is copy, $y1 is copy), $pix) {
         my $steep = abs($y1 - $y0) > abs($x1 - $x0);
         if $steep {
@@ -41,7 +45,7 @@ class Bitmap {
         my $Δy = abs($y1 - $y0);
         my $error = 0;
         my $Δerror = $Δy / $Δx;
-        my $y-step = $y0 < $y1 ?? 1 !! -1;
+        my $y-step = $y0 < $y1 ?? 1 !! -1;
         my $y = $y0;
         for $x0 .. $x1 -> $x {
             if $steep {
@@ -56,7 +60,7 @@ class Bitmap {
             }
         }
     }
- 
+
     method dot (($px, $py), $pix, $radius = 2) {
         for $px - $radius .. $px + $radius -> $x {
             for $py - $radius .. $py + $radius -> $y {
@@ -64,7 +68,7 @@ class Bitmap {
             }
         }
     }
- 
+
     method quadratic ( ($x1, $y1), ($x2, $y2), ($x3, $y3), $pix, $segments = 30 ) {
         my @line-segments = map -> $t {
             my \a = (1-$t)²;
@@ -74,25 +78,25 @@ class Bitmap {
         }, (0, 1/$segments, 2/$segments ... 1);
         for @line-segments.rotor(2=>-1) -> ($p1, $p2) { self.line( $p1, $p2, $pix) };
     }
- 
+
     method data { @!data }
 }
- 
+
 role PPM {
     method P6 returns Blob {
 	"P6\n{self.width} {self.height}\n255\n".encode('ascii')
 	~ Blob.new: flat map { .R, .G, .B }, self.data
     }
 }
- 
+
 sub color( $r, $g, $b) { Pixel.new(R => $r, G => $g, B => $b) }
- 
+
 my Bitmap $b = Bitmap.new( width => 600, height => 400) but PPM;
- 
+
 $b.fill( color(2,2,2) );
- 
+
 my @points = (65,25), (85,380), (570,15);
- 
+
 my %seen;
 my $c = 0;
 for @points.permutations -> @this {
@@ -100,9 +104,9 @@ for @points.permutations -> @this {
     next if %seen{@this.join.Str};
     $b.quadratic( |@this, color(255-$c,127,$c+=80) );
 }
- 
+
 @points.map: { $b.dot( $_, color(255,0,0), 3 )}
- 
+
 $*OUT.write: $b.P6;
 ```
 

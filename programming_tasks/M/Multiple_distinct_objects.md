@@ -2,6 +2,10 @@
 
 # [Multiple distinct objects][1]
 
+
+
+
+
 Unlike in Perl 5, the list repetition operator evaluates the left argument thunk each time, so
 
 ```perl

@@ -2,12 +2,14 @@
 
 # [Echo server][1]
 
+
+
 ```perl
 my $socket = IO::Socket::INET.new:
-    :localhost<localhost>,
-    :localport<12321>,
-    :listen;
- 
+    :localhost<localhost>,
+    :localport<12321>,
+    :listen;
+
 while $socket.accept -> $conn {
     say "Accepted connection";
     start {
@@ -27,9 +29,8 @@ Async version:
 react {
     whenever IO::Socket::Async.listen('0.0.0.0', 12321) -> $conn {
         whenever $conn.Supply.lines -> $line {
-            $conn.print( "$line\n" ) ;
+            $conn.print( "$line\n" ) ;
         }
     }
 }
- 
 ```

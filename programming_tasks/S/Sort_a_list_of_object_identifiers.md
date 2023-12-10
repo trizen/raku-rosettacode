@@ -2,6 +2,10 @@
 
 # [Sort a list of object identifiers][1]
 
+
+
+
+
 The `sort` routine accepts a sort key callback as the first argument. Here we generate a list of integers as the sort key for each OID, which gets sorted lexicographically with numeric comparison by default.
 
 ```perl
@@ -37,6 +41,6 @@ Or if using a third-party module is acceptable:
 
 ```perl
 use Sort::Naturally;
- 
+
 .say for sort &naturally, <...>;
 ```

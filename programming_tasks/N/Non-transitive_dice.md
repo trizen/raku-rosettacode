@@ -6,9 +6,9 @@ Thanks to Thundergnat for the nice "less-is-more" tweaks now the 4 dice portion 
 
 ```perl
 # 20201225 Raku programming solution
- 
-my @dicepool = ^4 xx 4 ;
- 
+
+my @dicepool = ^4 xx 4 ;
+
 sub FaceCombs(\N, @dp) { # for brevity, changed to use 0-based dice on input
    my @res = my @found = [];
    for [X] @dp {
@@ -19,9 +19,9 @@ sub FaceCombs(\N, @dp) { # for brevity, changed to use 0-based dice on input
    }
    @res
 }
- 
+
 sub infix:<⚖️>(@x, @y) { +($_{Less} <=> $_{More}) given (@x X<=> @y).Bag }
- 
+
 sub findIntransitive(\N, \cs) {
    my @res = [];
    race for [X] ^+cs xx N -> @lot {
@@ -34,7 +34,7 @@ sub findIntransitive(\N, \cs) {
    }
    @res
 }
- 
+
 say "Number of eligible 4-faced dice : ", +(my \combs = FaceCombs(4,@dicepool));
 for 3, 4 {
    my @output = findIntransitive($_, combs);

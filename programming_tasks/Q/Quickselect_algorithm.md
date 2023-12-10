@@ -2,10 +2,12 @@
 
 # [Quickselect algorithm][1]
 
+
+
 ```perl
 my @v = <9 8 7 6 5 0 1 2 3 4>;
 say map { select(@v, $_) }, 1 .. 10;
- 
+ 
 sub partition(@vector, $left, $right, $pivot-index) {
     my $pivot-value = @vector[$pivot-index];
     @vector[$pivot-index, $right] = @vector[$right, $pivot-index];
@@ -19,14 +21,14 @@ sub partition(@vector, $left, $right, $pivot-index) {
     @vector[$right, $store-index] = @vector[$store-index, $right];
     return $store-index;
 }
- 
+ 
 sub select( @vector,
             \k where 1 .. @vector,
             \l where 0 .. @vector = 0,
             \r where l .. @vector = @vector.end ) {
- 
+ 
     my ($k, $left, $right) = k, l, r;
- 
+ 
     loop {
         my $pivot-index = ($left..$right).pick;
         my $pivot-new-index = partition(@vector, $left, $right, $pivot-index);

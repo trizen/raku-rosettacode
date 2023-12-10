@@ -2,19 +2,19 @@
 
 # [Left factorials][1]
 
-Perl 6 doesn't have a built in factorial function, so the first two lines implement postfix&#160;! factorial.
-The newly implemented factorial function is used to implement left factorial using a prefix&#160;! in the next two lines.
-Note that this redefines the core prefix&#160;! (not) function.
-The last two lines are display code for the various sub task requirements.
+
+
+
+
+Implement left factorial as a prefix&#160;!. Note that this redefines the core prefix&#160;! (not) function.
 
 ```perl
-multi sub postfix:<!> (0) { 1 };
-multi sub postfix:<!> ($n) { [*] 1 .. $n };
-multi sub prefix:<!> (0) { 0 };
-multi sub prefix:<!> ($k) { [+] (^$k).map: { $_! } }
- 
-printf "!%d  = %s\n", $_, !$_ for |^11, 20, 30 ... 110;
-printf "!%d has %d digits.\n", $_, (!$_).chars for 1000, 2000 ... 10000;
+sub prefix:<!> ($k) { (constant l = 0, |[\+] 1, (|[\*] 1..*))[$k] }
+
+$ = !10000; # Pre-initialize
+
+.say for ( 0 … 10, 20 … 110 ).hyper(:4batch).map: { sprintf "!%d  = %s", $_, !$_ };
+.say for (1000, 2000 … 10000).hyper(:4batch).map: { sprintf "!%d has %d digits.", $_, chars !$_ };
 ```
 
 #### Output:
@@ -53,17 +53,16 @@ printf "!%d has %d digits.\n", $_, (!$_).chars for 1000, 2000 ... 10000;
 ```
 
 
-While the code above seems like a pretty decent "mathematical" way to write this,
-it's far from efficient, since it's recalculating every factorial many times for each individual left factorial, not to mention for each subsequent left factorial, so it's something like an O(N^3) algorithm, not even counting the sizes of the numbers as one of the dimensions.
-In Perl 6, a more idiomatic way is to write these functions as constant "triangular reduction" sequences; this works in O(N)-ish time because the sequences never have to recalculate a prior result:
+If you would rather not override prefix&#160;! operator and you can live with just defining lazy lists and indexing into them, this should suffice; (and is in fact very slightly faster than the first example since it avoids routine dispatch overhead):
 
 ```perl
-constant fact = 1, |[\*] 1..*;
-constant leftfact = 0, |[\+] fact;
- 
-printf "!%d  = %s\n", $_, leftfact[$_] for 0 ... 10, 20 ... 110;
-printf "!%d has %d digits.\n", $_, leftfact[$_].chars for 1000, 2000 ... 10000;
+constant leftfact = 0, |[\+] 1, (|[\*] 1..*);
+
+$ = leftfact[10000]; # Pre-initialize
+
+.say for ( 0 … 10, 20 … 110 ).hyper(:4batch).map: { sprintf "!%d  = %s", $_, leftfact[$_] };
+.say for (1000, 2000 … 10000).hyper(:4batch).map: { sprintf "!%d has %d digits.", $_, chars leftfact[$_] };
 ```
 
 
-Note that we just use subscripting on the list rather than an explicit function call to retrieve the desired values. If you time these two solutions, the second will run about 280 times faster than the first.
+Same output.

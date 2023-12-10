@@ -2,33 +2,43 @@
 
 # [Taxicab numbers][1]
 
+
+
+
+
 This uses a pretty simple search algorithm that doesn't necessarily return the Taxicab numbers in order. Assuming we want all the Taxicab numbers within some range S to N, we'll search until we find N values. When we find the Nth value, we continue to search up to the cube root of the largest Taxicab number found up to that point. That ensures we will find all of them inside the desired range without needing to search arbitrarily or use magic numbers. Defaults to returning the Taxicab numbers from 1 to 25. Pass in a different start and end value if you want some other range.
 
 ```perl
+constant @cu = (^Inf).map: { .³ }
+
 sub MAIN ($start = 1, $end = 25) {
     my %taxi;
-    my $taxis = 0;
+    my int $taxis = 0;
     my $terminate = 0;
- 
+    my int $max = 0;
+
     for 1 .. * -> $c1 {
-        display( %taxi, $start, $end ) and exit if 0 < $terminate < $c1;
-        my $c = $c1 ** 3;
+        last if ?$terminate && ($terminate < $c1);
         for 1 .. $c1 -> $c2 {
-            my $this = $c2 ** 3 + $c;
+            my $this = @cu[$c1] + @cu[$c2];
             %taxi{$this}.push: [$c2, $c1];
-            $taxis++ if %taxi{$this}.elems == 2;
-    	    $terminate = %taxi.grep( { $_.value.elems > 1 } ).sort( +*.key )[*-1].key**(1/3)
-                if $taxis == $end and !$terminate;
-        }
+            if %taxi{$this}.elems == 2 {
+                ++$taxis;
+                $max max= $this;
+            }
+    	    $terminate = ceiling $max ** (1/3) if $taxis == $end and !$terminate;
+        }   
     }
+
+    display( %taxi, $start, $end );
+
 }
- 
+
 sub display (%this_stuff, $start, $end) {
-    my $i = $start; 
-    printf "%4d %10d  =>\t%s\n", $i++, $_.key, 
-        ($_.value.map({ sprintf "%4d³ + %-s", $_[0], "$_[1]\³" })).join: ",\t"
+    my $i = $start;
+    printf "%4d %10d  =>\t%s\n", $i++, $_.key,
+        (.value.map({ sprintf "%4d³ + %-s\³", |$_ })).join: ",\t"
         for %this_stuff.grep( { $_.value.elems > 1 } ).sort( +*.key )[$start-1..$end-1];
-    1;
 }
 ```
 
@@ -65,7 +75,6 @@ sub display (%this_stuff, $start, $end) {
 With passed parameters 2000 2006:
 
 
-#### Output:
 ```
 2000 1671816384  =>      940³ + 944³,    428³ + 1168³
 2001 1672470592  =>      632³ + 1124³,    29³ + 1187³

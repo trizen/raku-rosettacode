@@ -2,12 +2,16 @@
 
 # [Find duplicate files][1]
 
-This implementation takes a starting directory (defaults to the current directory) and has a few flags to set behaviour: --minsize, minimum file size to look at, defaults to 5 bytes; and --recurse, recurse into the directory structure, default True. It finds files of the same size, calculates hashes to compare, then reports files that hash the same. Uses the very fast but cryptographically poor xxHash library to hash the files.
+
+
+
+
+This implementation takes a starting directory (defaults to the current directory) and has a few flags to set behaviour: --minsize, minimum file size to look at, defaults to 5 bytes; and --recurse, recurse into the directory structure, default True. It finds files of the same size, calculates hashes to compare, then reports files that hash the same.
 
 ```perl
-use Digest::xxHash;
- 
-sub MAIN( $dir = '.', :$minsize = 5, :$recurse = True ) {
+use Digest::SHA256::Native;
+
+sub MAIN( $dir = '.', :$minsize = 5, :$recurse = True ) {
     my %files;
     my @dirs = $dir.IO.absolute.IO;
     while @dirs {
@@ -19,16 +23,16 @@ sub MAIN( $dir = '.', :$minsize = 5, :$recurse = True ) {
             }
         }
     }
- 
+
     for %files.sort( +*.key ).grep( *.value.elems > 1)».kv -> ($size, @list) {
         my %dups;
-        @list.map: { %dups{ xxHash( $_.slurp :bin ) }.push: $_.Str };
+        @list.map: { %dups{ sha256-hex( ($_.slurp :bin).decode ) }.push: $_.Str };
         for %dups.grep( *.value.elems > 1)».value -> @dups {
             say sprintf("%9s : ", scale $size ),  @dups.join(', ');
         }
     }
 }
- 
+
 sub scale ($bytes) {
     given $bytes {
         when $_ < 2**10 {  $bytes                    ~ ' B'  }
@@ -43,7 +47,6 @@ sub scale ($bytes) {
 Passing in command line switches: --minsize=0 --recurse=False /home/me/p6
 
 
-#### Output:
 ```
      0 B : /home/me/p6/vor.ppm, /home/me/p6/ns.txt
    190 B : /home/me/p6/scrub(copy).t, /home/me/p6/scrub.t

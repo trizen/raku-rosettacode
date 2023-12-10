@@ -2,6 +2,7 @@
 
 # [Compiler/code generator][1]
 
+
 Using 'while-count' example, input used is here: [ast.txt](https://github.com/SqrtNegInf/Rosettacode-Perl6-Smoke/blob/master/ref/ast.txt)
 
 ```perl
@@ -24,7 +25,7 @@ sub tree {
         when 'String'     { "push  { %strings{$<arg>} //= $string-count++ }\n" }
         when 'Assign'     { join '', reverse (tree().subst( /fetch/, 'store')), tree() }
         when 'While'      { "$A:\n{ tree() }jz    $B\n{ tree() }jmp   $A\n$B:\n" }
-        when 'If'         { tree() ~ "jz    $A\n{ !@AST.shift ~ tree() }jmp   $B\n$A:\n{ tree() }$B:\n" }
+        when 'If'         { tree() ~ "jz    $A\n{ !@AST.shift ~ tree() }jmp   $B\n$A:\n{ tree() }$B:\n" }
         when ';'          { '' }
         default           { tree() ~ tree() ~ (%opnames{$<instr>} // $<instr>.lc) ~ "\n" }
     }
@@ -34,7 +35,7 @@ sub tree {
 my $code = tree() ~ "halt\n";
 
 $code ~~ s:g/^^ jmp \s+ (\S+) \n ('_'\d+:\n) $0:\n/$1/;                                          # remove jmp next
-$code ~~ s:g/^^ (<[a..z]>\w* (\N+)? ) $$/{my $l=$pc.fmt("%4d "); $pc += $0[0] ?? 5 !! 1; $l}$0/; # add locations
+$code ~~ s:g/^^ (<[a..z]>\w* (\N+)? ) $$/{my $l=$pc.fmt("%4d "); $pc += $0[0] ?? 5 !! 1; $l}$0/; # add locations
 my %labels = ($code ~~ m:g/^^ ('_' \d+) ':' \n \s* (\d+)/)».Slip».Str;                           # pc addr of labels
 $code ~~ s:g/^^ \s* (\d+) \s j[z|mp] \s* <(('_'\d+)/ ({%labels{$1} - $0 - 1}) %labels{$1}/;      # fix jumps
 $code ~~ s:g/^^ '_'\d+.*?\n//;                                                                   # remove labels

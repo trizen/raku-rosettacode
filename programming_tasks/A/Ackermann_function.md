@@ -2,6 +2,8 @@
 
 # [Ackermann function][1]
 
+
+
 ```perl
 sub A(Int $m, Int $n) {
     if    $m == 0 { $n + 1 } 
@@ -20,7 +22,7 @@ multi sub A(Int $m, Int $n) { A($m - 1, A($m, $n - 1)) }
 ```
 
 
-Note that in either case, Int is defined to be arbitrary precision in Perl&#160;6.
+Note that in either case, Int is defined to be arbitrary precision in Raku.
 
 
 
@@ -28,15 +30,15 @@ Here's a caching version of that, written in the sigilless style, with liberal u
 
 ```perl
 proto A(Int \𝑚, Int \𝑛) { (state @)[𝑚][𝑛] //= {*} }
- 
+
 multi A(0,      Int \𝑛) { 𝑛 + 1 }
 multi A(1,      Int \𝑛) { 𝑛 + 2 }
 multi A(2,      Int \𝑛) { 3 + 2 * 𝑛 }
 multi A(3,      Int \𝑛) { 5 + 8 * (2 ** 𝑛 - 1) }
- 
+
 multi A(Int \𝑚, 0     ) { A(𝑚 - 1, 1) }
 multi A(Int \𝑚, Int \𝑛) { A(𝑚 - 1, A(𝑚, 𝑛 - 1)) }
- 
+
 # Testing:
 say A(4,1);
 say .chars, " digits starting with ", .substr(0,50), "..." given A(4,2);

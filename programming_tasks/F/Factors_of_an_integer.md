@@ -2,6 +2,8 @@
 
 # [Factors of an integer][1]
 
+
+
 ```perl
-sub factors (Int $n) { squish sort ($_, $n div $_ if $n %% $_ for 1 .. sqrt $n) }
+sub factors (Int $n) { (1..$n).grep($n %% *) }
 ```

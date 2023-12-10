@@ -10,19 +10,19 @@ References: [Algorithm](https://en.wikipedia.org/wiki/Shanks%27s_square_forms_fa
 
 ```perl
 # 20210325 Raku programming solution
- 
+
 my @multiplier = ( 1, 3, 5, 7, 11, 3*5, 3*7, 3*11, 5*7, 5*11, 7*11, 3*5*7, 3*5*11, 3*7*11, 5*7*11, 3*5*7*11 );
- 
+
 sub circumfix:<⌊ ⌋>{ $^n.floor }; sub prefix:<√>{ $^n.sqrt }; # just for fun
- 
+
 sub SQUFOF ( \𝑁 ) {  
- 
+
    return  1 if 𝑁.is-prime;     # if n is prime             return  1
    return √𝑁 if √𝑁 == Int(√𝑁);  # if n is a perfect square  return √𝑁
- 
+
    for @multiplier -> \𝑘 { 
       my \Pₒ = $ = ⌊ √(𝑘*𝑁) ⌋;          # P[0]=floor(√N)
-      my \Qₒ = $ = 1 ;                  # Q[0]=1
+      my \Qₒ = $ = 1 ;                  # Q[0]=1
       my \Q = $ =  𝑘*𝑁 - Pₒ²;           # Q[1]=N-P[0]^2 & Q[i]
       my \Pₚᵣₑᵥ = $ = Pₒ;               # P[i-1] = P[0]
       my \Qₚᵣₑᵥ = $ = Qₒ;               # Q[i-1] = Q[0] 
@@ -36,7 +36,7 @@ sub SQUFOF ( \𝑁 ) {
          Qₙₑₓₜ = Qₚᵣₑᵥ + b*(Pₚᵣₑᵥ - P);    # Q[i+1]=Q[i-1]+b(P[i-1]-P[i]) 
          ( Qₚᵣₑᵥ,  Q, Pₚᵣₑᵥ ) = Q, Qₙₑₓₜ, P;  # i++
       } 
- 
+
       b     = ⌊ ⌊ √(𝑘*𝑁)+P ⌋ / Q ⌋;     # b=floor((floor(√N)+P[i])/Q[0])
       Pₚᵣₑᵥ = b*Qₒ - P;                 # P[i-1]=b*Q[0]-P[i]
       Q     = ( 𝑘*𝑁 - Pₚᵣₑᵥ² )/Qₒ;      # Q[1]=(N-P[0]^2)/Q[0] & Q[i]
@@ -49,11 +49,11 @@ sub SQUFOF ( \𝑁 ) {
          last if (P == Pₚᵣₑᵥ);          # until P[i+1]=P[i]
          ( Qₚᵣₑᵥ,  Q, Pₚᵣₑᵥ ) = Q, Qₙₑₓₜ, P; # i++ 
       }  
-      given 𝑁 gcd P { return $_ if $_ != 1|𝑁 }    
+      given 𝑁 gcd P { return $_ if $_ != 1|𝑁 }    
    }  # gcd(N,P[i]) (if != 1 or N) is a factor of N, otherwise try next k
    return 0 # give up
 }
- 
+
 race for ( 
    11111, # wikipedia.org/wiki/Shanks%27s_square_forms_factorization#Example
    4558849, # example from talk page
@@ -85,7 +85,6 @@ race for (
       default { say data, " = ", $_, " * ", data div $_.Int }
    }
 }
- 
 ```
 
 #### Output:
@@ -134,13 +133,13 @@ squfof.raku
 
 ```perl
 # 20210326 Raku programming solution
- 
+
 use NativeCall;
- 
+
 constant LIBSQUFOF = '/home/user/LibSQUFOF.so';
- 
+
 sub squfof(uint64 $n) returns uint64 is native(LIBSQUFOF) { * };
- 
+
 race for (
    11111, # wikipedia.org/wiki/Shanks%27s_square_forms_factorization#Example
    4558849, # example from talk page
@@ -167,7 +166,7 @@ race for (
 
 #### Output:
 ```
-gcc -Wall -fPIC -shared -o LibSQUFOF.so squfof.c</dt></dl>
+gcc -Wall -fPIC -shared -o LibSQUFOF.so squfof.c
 <p>file LibSQUFOF.so
 LibSQUFOF.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f7f9864e5508ba1de80cbc6e2f4d789f4ec448e9, not stripped
 raku -c squfof.raku && time ./squfof.raku

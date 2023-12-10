@@ -1,8 +1,12 @@
-[1]: https://rosettacode.org/wiki/Thiele's_interpolation_formula
+[1]: https://rosettacode.org/wiki/Thiele%27s_interpolation_formula
 
-# [Thiele's interpolation formula][1]
+# [Thiele&#039;s interpolation formula][1]
 
-Implemented to parallel the (generalized) formula. (i.e. clearer, but naive and very slow.)
+
+
+
+
+Implemented to parallel the generalized formula, making for clearer, but slower, code.  Offsetting that, the use of `Promise` allows concurrent calculations, so running all three types of interpolation should not take any longer than running just one (presuming available cores).
 
 ```perl
 # reciprocal difference:
@@ -14,39 +18,38 @@ multi sub ρ(&f, @x where * > 1) {
     - ρ(&f, @x[1..^@x]) )       # - ρ[n-1](x[1], ..., x[n]) )
     + ρ(&f, @x[1..^(@x - 1)]);  # + ρ[n-2](x[1], ..., x[n-1])
 }
- 
+ 
 # Thiele:
 multi sub thiele($x, %f, $ord where { $ord == +%f }) { 1 } # Identity
 multi sub thiele($x, %f, $ord) {
   my &f = {%f{$^a}};                # f(x) as a table lookup
- 
+ 
   # must sort hash keys to maintain order between invocations
   my $a = ρ(&f, %f.keys.sort[^($ord +1)]);
   my $b = ρ(&f, %f.keys.sort[^($ord -1)]);
- 
+ 
   my $num = $x - %f.keys.sort[$ord];
   my $cont = thiele($x, %f, $ord +1);
- 
+ 
   # Thiele always takes this form:
   return $a - $b + ( $num / $cont );
 }
- 
+ 
 ## Demo
 sub mk-inv(&fn, $d, $lim) {
   my %h;
   for 0..$lim { %h{ &fn($_ * $d) } = $_ * $d }
   return %h;
 }
- 
+ 
 sub MAIN($tblsz = 12) {
-  my %invsin = mk-inv(&sin, 0.05, $tblsz);
-  my %invcos = mk-inv(&cos, 0.05, $tblsz);
-  my %invtan = mk-inv(&tan, 0.05, $tblsz);
- 
-  my $sin_pi = 6 * thiele(0.5, %invsin, 0);
-  my $cos_pi = 3 * thiele(0.5, %invcos, 0);
-  my $tan_pi = 4 * thiele(1.0, %invtan, 0);
- 
+
+  my ($sin_pi, $cos_pi, $tan_pi);
+  my $p1 = Promise.start( { my %invsin = mk-inv(&sin, 0.05, $tblsz); $sin_pi = 6 * thiele(0.5, %invsin, 0) } );
+  my $p2 = Promise.start( { my %invcos = mk-inv(&cos, 0.05, $tblsz); $cos_pi = 3 * thiele(0.5, %invcos, 0) } );
+  my $p3 = Promise.start( { my %invtan = mk-inv(&tan, 0.05, $tblsz); $tan_pi = 4 * thiele(1.0, %invtan, 0) } );
+  await $p1, $p2, $p3;
+ 
   say "pi = {pi}";
   say "estimations using a table of $tblsz elements:";
   say "sin interpolation: $sin_pi";
@@ -59,7 +62,6 @@ sub MAIN($tblsz = 12) {
 Output:
 
 
-#### Output:
 ```
 pi = 3.14159265358979
 estimations using a table of 12 elements:

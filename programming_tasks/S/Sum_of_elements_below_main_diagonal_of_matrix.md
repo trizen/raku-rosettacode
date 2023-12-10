@@ -4,7 +4,7 @@
 
 ```perl
 sub lower-triangle-sum (@matrix) { sum flat (1..@matrix).map( { @matrix[^$_]»[^($_-1)] } )»[*-1] }
- 
+
 say lower-triangle-sum 
 [
     [  1,  3,  7,  8, 10 ],

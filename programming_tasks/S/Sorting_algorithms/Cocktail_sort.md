@@ -2,6 +2,8 @@
 
 # [Sorting algorithms/Cocktail sort][1]
 
+
+
 ```perl
 sub cocktail_sort ( @a ) {
     my $range = 0 ..^ @a.end;
@@ -14,7 +16,7 @@ sub cocktail_sort ( @a ) {
             } 
         }
         last if not $swapped_forward;
- 
+
         my $swapped_backward = 0;
         for $range.reverse -> $i {
             if @a[$i] > @a[$i+1] {
@@ -26,7 +28,7 @@ sub cocktail_sort ( @a ) {
     }
     return @a;
 }
- 
+
 my @weights = (^50).map: { 100 + ( 1000.rand.Int / 10 ) };
-say @weights.sort.Str eq @weights.&cocktail_sort.Str ?? 'ok' !! 'not ok';
+say @weights.sort.Str eq @weights.&cocktail_sort.Str ?? 'ok' !! 'not ok';
 ```

@@ -2,10 +2,10 @@
 
 # [Active Directory/Search for a user][1]
 
-```perl
-#!/usr/bin/env perl6
 
-# 20190718 Perl 6 programming solution
+
+```perl
+# 20190718 Raku programming solution
 # https://github.com/perl6/doc/issues/2898
 # https://www.facebook.com/groups/perl6/permalink/2379873082279037/
 
@@ -24,13 +24,13 @@ my $bind = await $client.bind(
 die $bind.error-message if $bind.result-code;
 
 my $resp = $client.search(
-   :dn<dc=example,dc=com>, base=>"ou=mathematicians", filter=>'(&(uid=gauss))'
+   :dn<dc=example,dc=com>, base=>"ou=mathematicians", filter=>'(&(uid=gauss))'
 );
 
 react {
    whenever $resp -> $entry {
       for $entry.attributes.kv -> $k, $v {
-         my $value-str = $v ~~ Blob ?? $v.decode !! $v.map(*.decode);
+         my $value-str = $v ~~ Blob ?? $v.decode !! $v.map(*.decode);
          note "$k -> $value-str";
       }
    }

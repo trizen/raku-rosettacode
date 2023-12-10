@@ -2,6 +2,10 @@
 
 # [Teacup rim text][1]
 
+
+
+
+
 There doesn't seem to be any restriction that the word needs to consist only of lowercase letters, so words of any case are included. Since the example code specifically shows the example words (TEA, EAT, ATE) in uppercase, I elected to uppercase the found words.
 
 
@@ -13,18 +17,18 @@ As the specs keep changing, this version will accept ANY text file as its dictio
 Defaults to unixdict.txt, minimum 3 characters and mono-character 'words' disallowed. Feed a file name to use a different word list, an integer to --min-chars and/or a truthy value to --mono to allow mono-chars.
 
 ```perl
-my %*SUB-MAIN-OPTS = :named-anywhere;
- 
-unit sub MAIN ( $dict = 'unixdict.txt', :$min-chars = 3, :$mono = False );
- 
+my %*SUB-MAIN-OPTS = :named-anywhere;
+
+unit sub MAIN ( $dict = 'unixdict.txt', :$min-chars = 3, :$mono = False );
+
 my %words;
-$dict.IO.slurp.words.map: { .chars < $min-chars ?? (next) !! %words{.uc.comb.sort.join}.push: .uc };
- 
+$dict.IO.slurp.words.map: { .chars < $min-chars ?? (next) !! %words{.uc.comb.sort.join}.push: .uc };
+
 my @teacups;
 my %seen;
- 
+
 for %words.values -> @these {
-    next if !$mono && @these < 2;
+    next if !$mono && @these < 2;
     MAYBE: for @these {
         my $maybe = $_;
         next if %seen{$_};
@@ -44,15 +48,14 @@ for %words.values -> @these {
         }
     }
 }
- 
+
 say .unique.join(", ") for sort @teacups;
 ```
 
 
-Command line: `perl6 teacup.p6`
+Command line: `raku teacup.p6`
 
 
-#### Output:
 ```
 APT, PTA, TAP
 ARC, RCA, CAR
@@ -60,10 +63,9 @@ ATE, TEA, EAT
 ```
 
 
-Command line: `perl6 teacup.p6 --mono=1`
+Command line: `raku teacup.p6 --mono=1`
 
 
-#### Output:
 ```
 AAA
 APT, PTA, TAP
@@ -77,10 +79,9 @@ words.txt file from [https://github.com/dwyl/english-words](https://github.com/d
 
 
 
-Command line: `perl6 teacup.p6 words.txt --min-chars=4 --mono=Allow`
+Command line: `raku teacup.p6 words.txt --min-chars=4 --mono=Allow`
 
 
-#### Output:
 ```
 AAAA
 AAAAAA

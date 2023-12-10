@@ -2,6 +2,10 @@
 
 # [Queue/Definition][1]
 
+
+
+
+
 We could build a new container class to do FIFO pretty easily, but Arrays already do everything needed by a FIFO queue, so it is easier to just compose a Role on the existing Array class.
 
 ```perl
@@ -12,17 +16,17 @@ role FIFO {
     }
     method dequeue ( ) {         # Remove and return the first value from the queue.
                                  # Return Nil if queue is empty.
-        return self.elems ?? self.shift !! Nil;
+        return self.elems ?? self.shift !! Nil;
     }
     method is-empty ( ) {        # Check to see if queue is empty. Returns Boolean value.
         return self.elems == 0;
     }
 }
- 
+
 # Example usage:
- 
+
 my @queue does FIFO;
- 
+
 say @queue.is-empty;                         # -> Bool::True
 for <A B C> -> $i { say @queue.enqueue: $i } # 1 \n 1 \n 1
 say @queue.enqueue: Any;                     # -> 1

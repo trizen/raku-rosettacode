@@ -34,13 +34,13 @@ for
     -sqrt(2) * sqrt(2), -2.0,
     100000000000000003.0, 100000000000000004.0,
     3.14159265358979323846, 3.14159265358979324
- 
+
   -> $a, $b {
     say "$a ≅ $b: ", $a ≅ $b;
 }
- 
+
 say "\nTolerance may be adjusted.";
- 
+
 say 22/7, " ≅ ", π, ": ", 22/7 ≅ π;
 { # Localize the tolerance to only this block
   my $*TOLERANCE = .001;

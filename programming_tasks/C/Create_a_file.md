@@ -2,11 +2,11 @@
 
 # [Create a file][1]
 
+
+
 ```perl
- 
 for '.', '' -> $prefix {
     mkdir "$prefix/docs";
-    open "$prefix/output.txt", :w;
+    open "$prefix/output.txt", :w;
 }
- 
 ```

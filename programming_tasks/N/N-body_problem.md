@@ -2,15 +2,67 @@
 
 # [N-body problem][1]
 
+
+
+
+
 We'll try to simulate the Sun+Earth+Moon system, with plausible astronomical values.
 
 
 
-We use a 18-dimension vector ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=902fbdd2b1df0c4f70b4a5d23525e932&mode=mathml). The first nine dimensions are the positions of the three bodies. The other nine are the velocities. This allows us to write the dynamics as a first-temporal derivative equation, since
+We use a 18-dimension vector <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle ABC}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>A</mi>
+        <mi>B</mi>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle ABC}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5e55b44cfd965fbdc7a328d5db8a35a619db0971" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:5.273ex; height:2.176ex;" alt="{\displaystyle ABC}"></span>.  The first nine dimensions are the positions of the three bodies.  The other nine are the velocities.  This allows us to write the dynamics as a first-temporal derivative equation, since
 
 
 
-![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=a739273ab8fe4ada672cd16c895bbaca&mode=mathml)
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\frac {d\mathrm {position} }{dt}}=\mathrm {speed} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>d</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi mathvariant="normal">p</mi>
+                <mi mathvariant="normal">o</mi>
+                <mi mathvariant="normal">s</mi>
+                <mi mathvariant="normal">i</mi>
+                <mi mathvariant="normal">t</mi>
+                <mi mathvariant="normal">i</mi>
+                <mi mathvariant="normal">o</mi>
+                <mi mathvariant="normal">n</mi>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mi>d</mi>
+              <mi>t</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">s</mi>
+          <mi mathvariant="normal">p</mi>
+          <mi mathvariant="normal">e</mi>
+          <mi mathvariant="normal">e</mi>
+          <mi mathvariant="normal">d</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {d\mathrm {position} }{dt}}=\mathrm {speed} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c7795515d0ba3dc9f8b14c0998486e927946f1d0" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.005ex; width:18.741ex; height:5.509ex;" alt="{\displaystyle \frac{d\mathrm{position}}{dt} = \mathrm{speed}}"></span>
 
 
 
@@ -18,7 +70,43 @@ and thus
 
 
 
-![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=44998049241a1d4d8eb8a8e6344b7c5b&mode=mathml)
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\frac {dABC\_{1..9}}{dt}}=ABC\_{10..18}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>d</mi>
+              <mi>A</mi>
+              <mi>B</mi>
+              <msub>
+                <mi>C</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>1..9</mn>
+                </mrow>
+              </msub>
+            </mrow>
+            <mrow>
+              <mi>d</mi>
+              <mi>t</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mi>A</mi>
+        <mi>B</mi>
+        <msub>
+          <mi>C</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>10..18</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {dABC\_{1..9}}{dt}}=ABC\_{10..18}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7417e153de14d4837b22ca3fed992ca182e1a3a" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.005ex; width:22.714ex; height:5.509ex;" alt="{\displaystyle \frac{dABC\_{1..9}}{dt} = ABC\_{10..18}}"></span>
 
 
 
@@ -31,7 +119,7 @@ multi infix:<->(@a, @b) { @a Z- @b }
 multi infix:<*>($r, @a) { $r X* @a }
 multi infix:</>(@a, $r) { @a X/ $r }
 sub norm { sqrt [+] @_ X** 2 }
- 
+ 
 # Runge-Kutta stuff
 sub runge-kutta(&yp) {
     return -> \t, \y, \δt {
@@ -42,30 +130,30 @@ sub runge-kutta(&yp) {
         ($a + 2*($b + $c) + $d) / 6;
     }
 }
- 
+ 
 # gravitational constant
 constant G = 6.674e-11;
 # astronomical unit
 constant au = 150e9;
- 
+ 
 # time constants in seconds
 constant year = 365.25*24*60*60;
 constant month = 21*24*60*60;
- 
+ 
 # masses in kg
 constant $ma = 2e30;     # Sun
 constant $mb = 6e24;     # Earth
 constant $mc = 7.34e22;  # Moon
- 
+
 my &dABC = runge-kutta my &f = sub ( $t, @ABC ) {
     my @a = @ABC[0..2];
     my @b = @ABC[3..5];
     my @c = @ABC[6..8];
- 
+ 
     my $ab = norm(@a - @b); 
     my $ac = norm(@a - @c);
     my $bc = norm(@b - @c);
- 
+ 
     return [
         flat
         @ABC[@(9..17)],
@@ -75,7 +163,7 @@ my &dABC = runge-kutta my &f = sub ( $t, @ABC ) {
         $ma/$ac**3 * (@a - @c) + $mb/$bc**3 * (@b - @c);
     ];
 }
- 
+ 
 loop (
     my ($t, @ABC) = 0,
         0, 0, 0,                                 # Sun position
@@ -84,11 +172,11 @@ loop (
         0, 0, 0,                                 # Sun speed
         0, 2*pi*au/year, 0,                      # Earth speed
         0, 2*pi*(au/year + 0.002*au/month), 0    # Moon speed
-    ;
+    ;
     $t < .2;
     ($t, @ABC) »+=« (.01, dABC($t, @ABC, .01))
 ) {
-    printf "t = %.02f : %s\n", $t, @ABC.fmt("%+.3e");
+    printf "t = %.02f : %s\n", $t, @ABC.fmt("%+.3e");
 }
 ```
 

@@ -2,6 +2,10 @@
 
 # [Sum of a series][1]
 
+
+
+
+
 In general, the `$n`th partial sum of a series whose terms are given by a unary function `&f` is
 
 ```perl
@@ -23,14 +27,14 @@ say [+] 1 «/« (1..1000) »**» 2;
 ```
 
 
-Or we can use the `X` "cross" metaoperator, which is convenient even if one side or the other is a scalar. In this case, we demonstrate a scalar on either side:
+Or we can use the `X` "cross" metaoperator, which is convenient even if one side or the other is a scalar.  In this case, we demonstrate a scalar on either side:
 
 ```perl
 say [+] 1 X/ (1..1000 X** 2);
 ```
 
 
-Note that cross ops are parsed as list infix precedence rather than using the precedence of the base op as hypers do. Hence the difference in parenthesization.
+Note that cross ops are parsed as list infix precedence rather than using the precedence of the base op as hypers do.  Hence the difference in parenthesization.
 
 
 
@@ -41,7 +45,7 @@ say [+] (1 / $_**2 for 1..1000);
 ```
 
 
-That's fine for a single result, but if you're going to be evaluating the sequence multiple times, you don't want to be recalculating the sum each time, so it's more efficient to define the sequence as a constant to let the run-time automatically cache those values already calculated. In a lazy language like Perl 6, it's generally considered a stronger abstraction to write the correct infinite sequence, and then take the part of it you're interested in.
+That's fine for a single result, but if you're going to be evaluating the sequence multiple times, you don't want to be recalculating the sum each time, so it's more efficient to define the sequence as a constant to let the run-time automatically cache those values already calculated.  In a lazy language like Raku, it's generally considered a stronger abstraction to write the correct infinite sequence, and then take the part of it you're interested in.
 Here we define an infinite sequence of partial sums (by adding a backslash into the reduction to make it look "triangular"), then take the 1000th term of that:
 
 ```perl
@@ -50,7 +54,7 @@ say @x[1000];  # prints 1.64393456668156
 ```
 
 
-Note that infinite constant sequences can be lazily generated in Perl 6, or this wouldn't work so well...
+Note that infinite constant sequences can be lazily generated in Raku, or this wouldn't work so well...
 
 
 

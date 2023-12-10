@@ -1,12 +1,12 @@
 [1]: https://rosettacode.org/wiki/Two%27s_complement
 
-# [Two's complement][1]
+# [Two&#039;s complement][1]
 
 By default Rakus integers are arbitrary sized, theoretically of infinite length. You can't really take the twos complement of an infinitely long number; so, we need to specifically use fixed size integers.
 
 
 
-There is a module available from the Raku ecosystem that provides fixed size integer support, named (appropriately enough.) [FixedInt](https://raku.land/github:thundergnat/FixedInt).
+There is a module available from the Raku ecosystem that provides fixed size integer support, named (appropriately enough.) [FixedInt](https://raku.land/zef:thundergnat/FixedInt).
 
 
 
@@ -18,17 +18,17 @@ Here we'll demonstrate twos complement on a 57 bit integer.
 
 ```perl
 use FixedInt;
- 
+
 # Instantiate a new 57(!) bit fixed size integer
-my \fixedint = FixedInt.new: :57bits;
- 
+my \fixedint = FixedInt.new: :57bits;
+
 fixedint = (2³⁷ / 72 - 5¹⁷); # Set it to a large value
- 
+
 say fixedint;     # Echo the value to the console in decimal format
 say fixedint.bin; # Echo the value to the console in binary format
- 
+
 fixedint.=C2;     # Take the twos complement
- 
+
 say fixedint;     # Echo the value to the console in decimal format
 say fixedint.bin; # Echo the value to the console in binary format
 ```

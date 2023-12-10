@@ -2,53 +2,59 @@
 
 # [Law of cosines - triples][1]
 
+
+In each routine, `race` is used to allow concurrent operations, requiring the use of the atomic increment operator, `⚛++`, to safely update `@triples`, which must be declared fixed-sized, as an auto-resizing array is not thread-safe. At exit, default values in `@triples` are filtered out with the test `!eqv Any`.
+
 ```perl
 multi triples (60, $n) {
     my %sq = (1..$n).map: { .² => $_ };
-    my %triples;
+    my atomicint $i = 0;
+    my @triples[2*$n];
     (1..^$n).race(:8degree).map: -> $a {
         for $a^..$n -> $b {
             my $cos = $a * $a + $b * $b - $a * $b;
-            %triples{~($a, %sq{$cos}, $b)}++ and last if %sq{$cos}:exists;
+            @triples[$i⚛++] = $a, %sq{$cos}, $b if %sq{$cos}:exists;
         }
     }
-    %triples.keys
+    @triples.grep: so *;
 }
- 
+
 multi triples (90, $n) {
     my %sq = (1..$n).map: { .² => $_ };
-    my %triples;
+    my atomicint $i = 0;
+    my @triples[2*$n];
     (1..^$n).race(:8degree).map: -> $a {
         for $a^..$n -> $b {
             my $cos = $a * $a + $b * $b;
-            %triples{~($a, $b, %sq{$cos})}++ and last if %sq{$cos}:exists;
+            @triples[$i⚛++] = $a, $b, %sq{$cos} and last if %sq{$cos}:exists;
         }
     }
-    %triples.keys
+    @triples.grep: so *;
 }
- 
+
 multi triples (120, $n) {
     my %sq = (1..$n).map: { .² => $_ };
-    my %triples;
+    my atomicint $i = 0;
+    my @triples[2*$n];
     (1..^$n).race(:8degree).map: -> $a {
         for $a^..$n -> $b {
             my $cos = $a * $a + $b * $b + $a * $b;
-           %triples{~($a, $b, %sq{$cos})}++ and last if %sq{$cos}:exists;
+            @triples[$i⚛++] = $a, $b, %sq{$cos} and last if %sq{$cos}:exists;
         }
     }
-    %triples.keys
+    @triples.grep: so *;
 }
- 
+
 use Sort::Naturally;
- 
+
 my $n = 13;
 say "Integer triangular triples for sides 1..$n:";
 for 120, 90, 60 -> $angle {
     my @itt = triples($angle, $n);
     if $angle == 60 { push @itt, "$_ $_ $_" for 1..$n }
-    printf "Angle %3d° has %2d solutions: %s\n", $angle, +@itt, @itt.sort(*.&naturally).join(', ');
+    printf "Angle %3d° has %2d solutions: %s\n", $angle, +@itt, @itt.sort(&naturally).join(', ');
 }
- 
+
 my ($angle, $count) = 60, 10_000;
 say "\nExtra credit:";
 say "$angle° integer triples in the range 1..$count where the sides are not all the same length: ", +triples($angle, $count);

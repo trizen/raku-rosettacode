@@ -2,23 +2,27 @@
 
 # [Koch curve][1]
 
+
+
+
+
 Koch curve, actually a full Koch snowflake.
 
 ```perl
 use SVG;
- 
+
 role Lindenmayer {
     has %.rules;
     method succ {
         self.comb.map( { %!rules{$^c} // $c } ).join but Lindenmayer(%!rules)
     }
 }
- 
+
 my $flake = 'F--F--F' but Lindenmayer( { F => 'F+F--F+F' } );
- 
+
 $flake++ xx 5;
 my @points = (50, 440);
- 
+
 for $flake.comb -> $v {
     state ($x, $y) = @points[0,1];
     state $d = 2 + 0i;
@@ -28,12 +32,12 @@ for $flake.comb -> $v {
         when '-' { $d *= .5 - .8660254i }
     }
 }
- 
+
 say SVG.serialize(
     svg => [
         width => 600, height => 600, style => 'stroke:rgb(0,0,255)',
-        :rect[:width<100%>, :height<100%>, :fill<white>],
-        :polyline[ points => @points.join(','), :fill<white> ],
+        :rect[:width<100%>, :height<100%>, :fill<white>],
+        :polyline[ points => @points.join(','), :fill<white> ],
     ],
 );
 ```
@@ -47,19 +51,19 @@ Variation using 90° angles:
 
 ```perl
 use SVG;
- 
+
 role Lindenmayer {
     has %.rules;
     method succ {
 	    self.comb.map( { %!rules{$^c} // $c } ).join but Lindenmayer(%!rules)
     }
 }
- 
+
 my $koch = 'F' but Lindenmayer( { F => 'F+F-F-F+F', } );
- 
+
 $koch++ xx 4;
 my @points = (450, 250);
- 
+
 for $koch.comb -> $v {
     state ($x, $y) = @points[0,1];
     state $d = -5 - 0i;
@@ -68,12 +72,12 @@ for $koch.comb -> $v {
         when /< + - >/ { $d *= "{$v}1i" }
     }
 }
- 
+
 say SVG.serialize(
     svg => [
         width => 500, height => 300, style => 'stroke:rgb(0,0,255)',
-        :rect[:width<100%>, :height<100%>, :fill<white>],
-        :polyline[ points => @points.join(','), :fill<white> ],
+        :rect[:width<100%>, :height<100%>, :fill<white>],
+        :polyline[ points => @points.join(','), :fill<white> ],
     ],
 );
 ```

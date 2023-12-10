@@ -2,7 +2,8 @@
 
 # [Reverse the gender of a string][1]
 
-Mechanically, this task is trivial. Perl 6 provides several flexible and powerful methods to wrangle text. Linguistically, this task is impossible (and laughable). Mappings are non-regular and in many cases, non-deterministic without semantic analysis of the content and context, which is **WAY** beyond what anyone is going to invest in a Rosettacode task. Whatever.
+
+Mechanically, this task is trivial. Raku provides several flexible and powerful methods to wrangle text. Linguistically, this task is impossible (and laughable). Mappings are non-regular and in many cases, non-deterministic without semantic analysis of the content and context, which is **WAY** beyond what anyone is going to invest in a Rosettacode task. Whatever.
 
 
 

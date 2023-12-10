@@ -3,8 +3,8 @@
 # [Jaccard index][1]
 
 ```perl
-sub J(\A, \B) { A ∪ B ?? (A ∩ B) / (A ∪ B) !! A ∪ B == A ∩ B ?? 1 !! 0 }
- 
+sub J(\A, \B) { A ∪ B ?? (A ∩ B) / (A ∪ B) !! A ∪ B == A ∩ B ?? 1 !! 0 }
+
 my %p =
   A => < >,
   B => <1 2 3 4 5>,
@@ -13,7 +13,7 @@ my %p =
   E => <2 3 5 7>,
   F => <8>,
 ;
- 
+
 .say for %p.sort;
 say '';
 say "J({.join: ','}) = ", J |%p{$_} for [X] <A B C D E F> xx 2;

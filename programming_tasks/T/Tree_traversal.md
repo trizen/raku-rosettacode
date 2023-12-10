@@ -2,13 +2,15 @@
 
 # [Tree traversal][1]
 
+
+
 ```perl
 class TreeNode {
     has TreeNode $.parent;
     has TreeNode $.left;
     has TreeNode $.right;
     has $.value;
- 
+
     method pre-order {
         flat gather {
             take $.value;
@@ -16,7 +18,7 @@ class TreeNode {
             take $.right.pre-order if $.right
         }
     }
- 
+
     method in-order {
         flat gather {
             take $.left.in-order if $.left;
@@ -24,7 +26,7 @@ class TreeNode {
             take $.right.in-order if $.right;
         }
     }
- 
+
     method post-order {
         flat gather {
             take $.left.post-order if $.left;
@@ -32,7 +34,7 @@ class TreeNode {
             take $.value;
         }
     }
- 
+
     method level-order {
         my TreeNode @queue = (self);
         flat gather while @queue.elems {
@@ -43,7 +45,7 @@ class TreeNode {
         }
     }
 }
- 
+
 my TreeNode $root .= new( value => 1,
                     left => TreeNode.new( value => 2,
                             left => TreeNode.new( value => 4, left => TreeNode.new(value => 7)),
@@ -56,7 +58,7 @@ my TreeNode $root .= new( value => 1,
                                      )
                              )
                     );
- 
+
 say "preorder:  ",$root.pre-order.join(" ");
 say "inorder:   ",$root.in-order.join(" ");
 say "postorder: ",$root.post-order.join(" ");

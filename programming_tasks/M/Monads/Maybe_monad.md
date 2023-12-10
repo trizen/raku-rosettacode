@@ -2,8 +2,12 @@
 
 # [Monads/Maybe monad][1]
 
+
+
+
+
 It is exceptionally difficult to come up with a compelling valuable use for
-a Maybe monad in Perl 6. Monads are most useful in languages that don't have
+a Maybe monad in Raku. Monads are most useful in languages that don't have
 exceptions and/or only allow a single point of entry/exit from a subroutine.
 
 
@@ -16,7 +20,7 @@ just as a way to work around those restrictions.
 
 
 The task description asks for two functions that take an Int and return a Maybe
-Int or Maybe Str, but those distinctions are nearly meaningless in Perl 6. See
+Int or Maybe Str, but those distinctions are nearly meaningless in Raku. See
 below.
 
 ```perl
@@ -36,7 +40,7 @@ Wait, what? What exactly is $monad?: IntStr
 
 $monad is both an Int **and** a Str. It exists in a sort-of quantum state
 where what-it-is depends on how-it-is-used. Bolting on some 'Monad' type to do
-this will only *remove* functionality that Perl 6 already has.
+this will only *remove* functionality that Raku already has.
 
 
 
@@ -54,40 +58,40 @@ class NOTHING {
     method Str { 'Nothing' }
     method Numeric { Nil }
 }
- 
+
 # A generic instance of a Nothing type.
 my \Nothing = NOTHING.new;
- 
+
 # A reimplementation of the square-root function. Could just use the CORE one
 # but this more fully shows how multi-dispatch candidates are added.
- 
+
 # Handle positive numbers & 0
 multi root (Numeric $n where * >= 0) { $n.sqrt }
 # Handle Negative numbers (Complex number handling is built in.)
 multi root (Numeric $n where * <  0) { $n.Complex.sqrt }
 # Else return Nothing
 multi root ($n) { Nothing }
- 
+
 # Handle numbers > 0
 multi ln (Real $n where * > 0) { log $n, e }
 # Else return Nothing
 multi ln ($n) { Nothing }
- 
+
 # Handle fraction where the denominator != 0
-multi recip (Numeric $n where * != 0) { 1/$n }
+multi recip (Numeric $n where * != 0) { 1/$n }
 # Else return Nothing
 multi recip ($n) { Nothing }
- 
+
 # Helper formatting routine
 sub center ($s) {
     my $pad = 21 - $s.Str.chars;
     ' ' x ($pad / 2).floor ~ $s ~ ' ' x ($pad / 2).ceiling;
 }
- 
+
 # Display the "number" the reciprocal, the root, natural log and the 3 functions
 # composed together.
 put ('"Number"', 'Reciprocal', 'Square root', 'Natural log', 'Composed')».&center;
- 
+
 # Note how it handles the last two "values". The string 'WAT' is not numeric at
 # all; but Ethiopic number 30, times vulgar fraction 1/7, is.
 put ($_, .&recip, .&root, .&ln, .&(&ln o &root o &recip) )».&center

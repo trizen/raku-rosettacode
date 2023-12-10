@@ -2,13 +2,14 @@
 
 # [Index finite lists of positive integers][1]
 
+
 Here is a cheap solution using a base-11 encoding and string operations:
 
 ```perl
-sub rank(*@n)      { :11(@n.join('A')) }
+sub rank(*@n)      { :11(@n.join('A')) }
 sub unrank(Int $n) { $n.base(11).split('A') }
- 
-say my @n = (^20).roll(12);
+
+say my @n = (1..20).roll(12);
 say my $n = rank(@n);
 say unrank $n;
 ```
@@ -27,33 +28,33 @@ Here is a bijective solution that does not use string operations.
 multi infix:<rad> ()       { 0 }
 multi infix:<rad> ($a)     { $a }
 multi infix:<rad> ($a, $b) { $a * $*RADIX + $b }
-
+ 
 multi expand(Int $n is copy, 1) { $n }
 multi expand(Int $n is copy, Int $*RADIX) {
     my \RAD = $*RADIX;
-
+ 
     my @reversed-digits = gather while $n > 0 {
-    take $n % RAD;
-    $n div= RAD;
+	take $n % RAD;
+	$n div= RAD;
     }
-
+ 
     eager for ^RAD {
-    [rad] reverse @reversed-digits[$_, * + RAD ... *]
+	[rad] reverse @reversed-digits[$_, * + RAD ... *]
     }
 }
-
+ 
 multi compress(@n where @n == 1) { @n[0] }
 multi compress(@n is copy) {
     my \RAD = my $*RADIX = @n.elems;
-
+ 
     [rad] reverse gather while @n.any > 0 {
-        (state $i = 0) %= RAD;
-        take @n[$i] % RAD;
-        @n[$i] div= RAD;
-        $i++;
-    }
+	    (state $i = 0) %= RAD;
+	    take @n[$i] % RAD;
+	    @n[$i] div= RAD;
+	    $i++;
+	}
 }
-
+ 
 sub rank(@n) { compress (compress(@n), @n - 1)}
 sub unrank(Int $n) { my ($a, $b) = expand $n, 2; expand $a, $b + 1 }
 

@@ -1,6 +1,10 @@
-[1]: https://rosettacode.org/wiki/Execute_HQ9+
+[1]: https://rosettacode.org/wiki/Execute_HQ9%2B
 
 # [Execute HQ9+][1]
+
+
+
+
 
 The spec is kind of vague about how to do error handling... and whether white space is significant... and how the accumulator should be accessed... and pretty much everything else too.
 
@@ -9,7 +13,7 @@ class HQ9Interpreter {
     has @!code;
     has $!accumulator;
     has $!pointer;
- 
+ 
     method run ($code) {
         @!code = $code.comb;
         $!accumulator = 0;
@@ -35,9 +39,9 @@ class HQ9Interpreter {
         }
     }
 }
- 
+
 # Feed it a command string:
- 
+
 my $hq9 = HQ9Interpreter.new;
 $hq9.run("hHq+++Qq");
 say '';
@@ -48,7 +52,6 @@ $hq9.run("Jhq.k+hQ");
 Output:
 
 
-#### Output:
 ```
 Hello world!
 Hello world!

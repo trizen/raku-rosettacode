@@ -2,21 +2,25 @@
 
 # [Range consolidation][1]
 
-In Perl 6, a Range is a first class object with its own specialized notation. Perl 6 Ranges allow for exclusion of the boundary numbers. This example doesn't since it isn't a requirement in this task. Much of the logic is lifted from the [Set_of_real_numbers](https://rosettacode.org/wiki/Set_of_real_numbers#Raku) task with simplified logic for the much simpler requirements.
 
 
 
-Note: the output is in standard Perl 6 notation for Ranges.
+
+In Raku, a Range is a first class object with its own specialized notation. Raku Ranges allow for exclusion of the boundary numbers. This example doesn't since it isn't a requirement in this task. Much of the logic is lifted from the [Set_of_real_numbers](https://rosettacode.org/wiki/Set_of_real_numbers#Raku) task with simplified logic for the much simpler requirements.
+
+
+
+Note: the output is in standard [Raku notation for Ranges](https://docs.raku.org/type/Range).
 
 ```perl
 # Union
 sub infix:<∪> (Range $a, Range $b) { Range.new($a.min,max($a.max,$b.max)) }
- 
+
 # Intersection
 sub infix:<∩> (Range $a, Range $b) { so $a.max >= $b.min }
- 
+
 multi consolidate() { () }
- 
+
 multi consolidate($this is copy, **@those) {
     gather {
         for consolidate |@those -> $that {
@@ -26,15 +30,14 @@ multi consolidate($this is copy, **@those) {
         take $this;
     }
 }
- 
+
 for [[1.1, 2.2],],
     [[6.1, 7.2], [7.2, 8.3]],
     [[4, 3], [2, 1]],
     [[4, 3], [2, 1], [-1, -2], [3.9, 10]],
-    [[1, 3], [-6, -1], [-4, -5], [8, 2], [-6, -6]],
-    [[], [2], [4,6], [5,9,8]]
+    [[1, 3], [-6, -1], [-4, -5], [8, 2], [-6, -6]]
 -> @intervals {
-    printf "%46s => ", @intervals.perl;
+    printf "%46s => ", @intervals.raku;
     say reverse consolidate |@intervals.grep(*.elems)».sort.sort({ [.[0], .[*-1]] }).map: { Range.new(.[0], .[*-1]) }
 }
 ```
@@ -46,5 +49,4 @@ for [[1.1, 2.2],],
                               [[4, 3], [2, 1]] => (1..2 3..4)
          [[4, 3], [2, 1], [-1, -2], [3.9, 10]] => (-2..-1 1..2 3..10)
 [[1, 3], [-6, -1], [-4, -5], [8, 2], [-6, -6]] => (-6..-1 1..8)
-                  [[], [2], [4, 6], [5, 9, 8]] => (2..2 4..9)
 ```

@@ -2,7 +2,11 @@
 
 # [Sorting Algorithms/Circle Sort][1]
 
-The given algorithm can be simplified in several ways. There's no need to compute the midpoint, since the hi/lo will end up there. The extra swap conditional can be eliminated by incrementing hi at the correct moment inside the loop. There's no need to
+
+
+
+
+The given algorithm can be simplified in several ways.  There's no need to compute the midpoint, since the hi/lo will end up there.  The extra swap conditional can be eliminated by incrementing hi at the correct moment inside the loop.  There's no need to
 pass accumulated swaps down the call stack.
 
 
@@ -26,10 +30,10 @@ sub circlesort (@x, $beg, $end) {
     }
     $swaps;
 }
- 
+
 say my @x = (-100..100).roll(20);
 say @x while circlesort(@x, 0, @x.end);
- 
+
 say @x = <The quick brown fox jumps over the lazy dog.>;
 say @x while circlesort(@x, 0, @x.end);
 ```

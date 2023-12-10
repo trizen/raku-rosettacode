@@ -1,6 +1,8 @@
-[1]: https://rosettacode.org/wiki/Recaman's_sequence
+[1]: https://rosettacode.org/wiki/Recaman%27s_sequence
 
-# [Recaman's sequence][1]
+# [Recaman&#039;s sequence][1]
+
+
 
 ```perl
 my @recamans = 0, {
@@ -8,15 +10,15 @@ my @recamans = 0, {
    state $term;
    $term++;
    my $this = $^previous - $term;
-   $this = $previous + $term unless ($this > 0) && !%seen{$this};
+   $this = $previous + $term unless ($this > 0) && !%seen{$this};
    %seen{$this} = True;
    $this
 } … *;
- 
+
 put "First fifteen terms of Recaman's sequence: ", @recamans[^15];
- 
+
 say "First duplicate at term: a[{ @recamans.first({@recamans[^$_].Bag.values.max == 2})-1 }]";
- 
+
 my @seen;
 my int $i = 0;
 loop {

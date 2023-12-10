@@ -2,25 +2,28 @@
 
 # [Attractive numbers][1]
 
+
+
+
+
 This algorithm is concise but not really well suited to finding large quantities of consecutive attractive numbers. It works, but isn't especially speedy. More than a hundred thousand or so gets tedious. There are other, much faster (though more verbose) algorithms that *could* be used. This algorithm **is** well suited to finding **arbitrary** attractive numbers though.
 
 ```perl
-use Prime::Factor;
- 
-sub display ($n,$m) { ($n..$m).hyper.grep: *.&prime-factors.elems.is-prime }
- 
-sub count ($n,$m) { +($n..$m).race(:16batch).grep: *.&prime-factors.elems.is-prime }
- 
-sub comma { $^i.flip.comb(3).join(',').flip }
- 
+use Lingua::EN::Numbers;
+use ntheory:from<Perl5> <factor is_prime>;
+
+sub display ($n,$m) { ($n..$m).grep: (~*).&factor.elems.&is_prime }
+
+sub count ($n,$m) { +($n..$m).grep: (~*).&factor.elems.&is_prime }
+
 # The Task
 put "Attractive numbers from 1 to 120:\n" ~
-display(1, 120)».fmt("%3d").rotor(20, :partial).join: "\n";
- 
+display(1, 120)».fmt("%3d").rotor(20, :partial).join: "\n";
+
 # Robusto!
-for 1, 1000,  1, 10000,  2**73 + 1, 2**73 + 100 -> $a, $b {
+for 1, 1000,  1, 10000, 1, 100000, 2**73 + 1, 2**73 + 100 -> $a, $b {
     put "\nCount of attractive numbers from {comma $a} to {comma $b}:\n" ~
-    count $a, $b
+    comma count $a, $b
 }
 ```
 
@@ -36,7 +39,10 @@ Count of attractive numbers from 1 to 1,000:
 636
 
 Count of attractive numbers from 1 to 10,000:
-6396
+6,396
+
+Count of attractive numbers from 1 to 100,000:
+63,255
 
 Count of attractive numbers from 9,444,732,965,739,290,427,393 to 9,444,732,965,739,290,427,492:
 58

@@ -2,14 +2,18 @@
 
 # [Morse code][1]
 
-Here we use the user as the audio device.
-Just read the output, leaving extra pauses where indicated
+
+
+
+
+Here we use the user as the audio device.  
+Just read the output, leaving extra pauses where indicated 
 by either whitespace or underscore.
 
 ```perl
 my %m = ' ', '_ _ ',
 |<
-    !	---.
+    !	---.
     "	.-..-.
     $	...-..-
     '	.----.
@@ -65,13 +69,19 @@ my %m = ' ', '_ _ ',
     Y	-.--
     Z	--..
 >.map: -> $c, $m is copy {
-    $m.=subst(rx/'-'/, 'BGAAACK!!! ', :g);
-    $m.=subst(rx/'.'/, 'buck ', :g);
+    $m.=subst(rx/'-'/, 'BGAAACK!!! ', :g);
+    $m.=subst(rx/'.'/, 'buck ', :g);
     $c => $m ~ '_';
 }
- 
-say prompt("Gimme a string: ").uc.comb.map: { %m{$_} // "<scratch> " }
+
+say prompt("Gimme a string: ").uc.comb.map: { %m{$_} // "<scratch> " }
 ```
 
 
 Sample run:
+
+
+
+Gimme a string: **Howdy, World!**
+
+buck buck buck buck \_ BGAAACK!!! BGAAACK!!! BGAAACK!!! \_ buck BGAAACK!!! BGAAACK!!! \_ BGAAACK!!! buck buck \_ BGAAACK!!! buck BGAAACK!!! BGAAACK!!! \_ BGAAACK!!! BGAAACK!!! buck buck BGAAACK!!! BGAAACK!!! \_ \_ \_ buck BGAAACK!!! BGAAACK!!! \_ BGAAACK!!! BGAAACK!!! BGAAACK!!! \_ buck BGAAACK!!! buck \_ buck BGAAACK!!! buck buck \_ BGAAACK!!! buck buck \_ BGAAACK!!! BGAAACK!!! BGAAACK!!! buck \_

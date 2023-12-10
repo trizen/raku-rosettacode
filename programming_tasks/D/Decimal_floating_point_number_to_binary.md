@@ -2,9 +2,11 @@
 
 # [Decimal floating point number to binary][1]
 
+
+
 ```perl
-given "23.34375"   { say "$_ => ", :10($_).base(2) }
-given "1011.11101" { say "$_ => ", :2($_).base(10) }
+given "23.34375"   { say "$_ => ", :10($_).base(2) }
+given "1011.11101" { say "$_ => ", :2($_).base(10) }
 ```
 
 #### Output:

@@ -1,8 +1,12 @@
-[1]: https://rosettacode.org/wiki/Jensen's_Device
+[1]: https://rosettacode.org/wiki/Jensen%27s_Device
 
-# [Jensen's Device][1]
+# [Jensen&#039;s Device][1]
 
-Rather than playing tricks like Perl&#160;5 does, the declarations of the formal parameters are quite straightforward in Perl&#160;6:
+
+
+
+
+Rather than playing tricks like Perl&#160;5 does, the declarations of the formal parameters are quite straightforward in Raku:
 
 ```perl
 sub sum($i is rw, $lo, $hi, &term) {
@@ -12,10 +16,10 @@ sub sum($i is rw, $lo, $hi, &term) {
     }
     return $temp;
 }
- 
+
 my $i;
 say sum $i, 1, 100, { 1 / $i };
 ```
 
 
-Note that the C-style "for" loop is pronounced "loop" in Perl&#160;6, and is the only loop statement that actually requires parens.
+Note that the C-style "for" loop is pronounced "loop" in Raku, and is the only loop statement that actually requires parens.

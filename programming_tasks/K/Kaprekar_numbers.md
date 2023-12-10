@@ -2,6 +2,10 @@
 
 # [Kaprekar numbers][1]
 
+
+
+
+
 ### String version (slow)
 
 ```perl
@@ -14,7 +18,7 @@ sub kaprekar( Int $n ) {
     }
     False;
 }
- 
+
 print 1;
 print " $_" if .&kaprekar for ^10000;
 print "\n";
@@ -29,42 +33,47 @@ print "\n";
 ### Numeric version (medium)
 
 ```perl
-sub kaprekar( Int $n, Int :$base = 10 ) {
+sub kaprekar( Int $n, Int :$base = 10 ) {
     my $hi = $n ** 2;
     my $lo = 0;
     loop (my $s = 1; $hi; $s *= $base) {
-        $lo += ($hi % $base) * $s;
+        $lo += ($hi % $base) * $s;
         $hi div= $base;
         return $hi,$lo if $lo + $hi == $n and $lo;
     }
     ();
 }
- 
+
 print " $_" if .&kaprekar for ^10_000;
- 
-say "\n\nBase 10 Kaprekar numbers < :10<1_000_000> = ", [+] (1 if kaprekar $_ for ^1000000);
- 
-say "\nBase 17 Kaprekar numbers < :17<1_000_000>";
- 
+
+my atomicint $n;
+(^1_000_000).race.map: { $n++ if kaprekar $_ }
+say "\n\nBase 10 Kaprekar numbers < :10<1_000_000> = $n";
+
+say "\nBase 17 Kaprekar numbers < :17<1_000_000>";
+
 my &k17 = &kaprekar.assuming(:base(17));
- 
-for ^:17<1000000> -> $n {
+
+my @results;
+(^:17<1_000_000>).race.map: -> $n {
     my ($h,$l) = k17 $n;
     next unless $l;
     my $n17 = $n.base(17);
     my $s17 = ($n * $n).base(17);
     my $h17 = $h.base(17);
-    say "$n $n17 $s17 ($h17 + $s17.substr(* - $h17.chars))";
+    @results.push: "$n $n17 $s17 ($h17 + $s17.substr(* - max(1,($s17.chars - $h17.chars))))";
 }
+
+.say for @results.sort: *.chars;
 ```
 
 #### Output:
 ```
- 1 9 45 55 99 297 703 999 2223 2728 4879 4950 5050 5292 7272 7777 9999
+1 9 45 55 99 297 703 999 2223 2728 4879 4950 5050 5292 7272 7777 9999
 
-Base 10 Kaprekar numbers < :10<1_000_000> = 54
+Base 10 Kaprekar numbers < :10<1_000_000> = 54
 
-Base 17 Kaprekar numbers < :17<1_000_000>
+Base 17 Kaprekar numbers < :17<1_000_000>
 1 1 1 (0 + 1)
 16 G F1 (F + 1)
 64 3D E2G (E + 2G)
@@ -132,12 +141,12 @@ Note that this algorithm allows the null string on the left, taken as zero, whic
 ### Casting out nines (fast)
 
 ```perl
-sub kaprekar-generator( :$base = 10 ) {
+sub kaprekar-generator( :$base = 10 ) {
     my $base-m1 = $base - 1;
-    gather loop (my $place = 1; ; ++$place) {
+    gather loop (my $place = 1; ; ++$place) {
         my $nend = $base ** $place;
         loop (my $n = $base ** ($place - 1); $n < $nend; ++$n) {
-            if $n * ($n - 1) %% $base-m1 {
+            if $n * ($n - 1) %% $base-m1 {
                 my $pend = $place * 2;
                 loop (my $p = $place; $p < $pend; ++$p) {
                     my $B = $base ** $p;
@@ -152,18 +161,18 @@ sub kaprekar-generator( :$base = 10 ) {
         }
     }
 }
- 
+
 print " $_[0]" for kaprekar-generator() ...^ *.[0] >= 10_000;
 say "\n";
- 
-say "Base 10 Kaprekar numbers < :10<1_000_000> = ", +(kaprekar-generator() ...^ *.[0] >= 1000000);
+
+say "Base 10 Kaprekar numbers < :10<1_000_000> = ", +(kaprekar-generator() ...^ *.[0] >= 1000000);
 say '';
- 
-say "Base 17 Kaprekar numbers < :17<1_000_000>";
- 
+
+say "Base 17 Kaprekar numbers < :17<1_000_000>";
+
 my &k17-gen = &kaprekar-generator.assuming(:base(17));
- 
-for k17-gen() ...^ *.[0] >= :17<1000000> -> @r {
+
+for k17-gen() ...^ *.[0] >= :17<1000000> -> @r {
     my ($n,$h,$l) = @r;
     my $n17 = $n.base(17);
     my $s = $n * $n;

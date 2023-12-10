@@ -7,21 +7,21 @@ Technically incorrect as the third part doesn't "Convert ... to upper case and i
 ```perl
 sub polybius ($text) {
     my $n = $text.chars.sqrt.narrow;
-    $text.comb.kv.map: { $^v => ($^k % $n, $k div $n).join: ' ' }
+    $text.comb.kv.map: { $^v => ($^k % $n, $k div $n).join: ' ' }
 }
- 
+
 sub encrypt ($message, %poly) {
     %poly.invert.hash{(flat reverse [Z] %poly{$message.comb}».words).batch(2)».reverse».join: ' '}.join
 }
- 
+
 sub decrypt ($message, %poly) {
    %poly.invert.hash{reverse [Z] (reverse flat %poly{$message.comb}».words».reverse).batch($message.chars)}.join
 }
- 
- 
+
+
 for 'ABCDEFGHIKLMNOPQRSTUVWXYZ', 'ATTACKATDAWN',
     'BGWKZQPNDSIOAXEFCLUMTHYVR', 'FLEEATONCE',
-    (flat '_', '.', 'A'..'Z', 'a'..'z', 0..9).pick(*).join, 'The invasion will start on the first of January 2023.'.subst(/' '/, '_', :g)
+    (flat '_', '.', 'A'..'Z', 'a'..'z', 0..9).pick(*).join, 'The invasion will start on the first of January 2023.'.subst(/' '/, '_', :g)
  -> $polybius, $message {
     my %polybius = polybius $polybius;
     say "\nUsing polybius:\n\t" ~ $polybius.comb.batch($polybius.chars.sqrt.narrow).join: "\n\t";

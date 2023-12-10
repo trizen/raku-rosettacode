@@ -2,85 +2,66 @@
 
 # [Closest-pair problem][1]
 
-We avoid taking square roots in the slow method because the squares are just as comparable.
-(This doesn't always work in the fast method because of distance assumptions in the algorithm.)
+
+
+
+
+Using concurrency, the 'simple' routine beats the (supposedly) more efficient one for all but the smallest sets of input.
 
 ```perl
 sub MAIN ($N = 5000) {
-    my @points = (^$N).map: { [rand * 20 - 10, rand * 20 - 10] }
- 
-    my ($af, $bf, $df) = closest_pair(@points);
-    say "fast $df at [$af], [$bf]";
- 
-    my ($as, $bs, $ds) = closest_pair_simple(@points);
-    say "slow $ds at [$as], [$bs]";
+    my @points = (^$N).map: { [rand × 20 - 10, rand × 20 - 10] }
+
+    my @candidates = @points.sort(*.[0]).rotor( 10 => -2, :partial).race.map: { closest-pair-simple(@$_) }
+    say 'simple ' ~ (@candidates.sort: *.[2]).head(1).gist;
+    @candidates    = @points.sort(*.[0]).rotor( 10 => -2, :partial).race.map: { closest-pair(@$_)        }
+    say 'real '   ~ (@candidates.sort: *.[2]).head(1).gist;
 }
- 
-sub dist-squared($a,$b) {
-    ($a[0] - $b[0]) ** 2 +
-    ($a[1] - $b[1]) ** 2;
-}
- 
-sub closest_pair_simple(@arr is copy) {
-    return Inf if @arr < 2;
-    my ($a, $b, $d) = flat @arr[0,1], dist-squared(|@arr[0,1]);
-    while  @arr {
-        my $p = pop @arr;
-        for @arr -> $l {
-            my $t = dist-squared($p, $l);
-            ($a, $b, $d) = $p, $l, $t if $t < $d;         
+
+sub dist-squared(@a, @b) { (@a[0] - @b[0])² + (@a[1] - @b[1])² }
+
+sub closest-pair-simple(@points is copy) {
+    return ∞ if @points < 2;
+    my ($a, $b, $d) = |@points[0,1], dist-squared(|@points[0,1]);
+    while @points {
+        my \p = pop @points;
+        for @points -> \l {
+            ($a, $b, $d) = p, l, $_ if $_ < $d given dist-squared(p, l);
         }
     }
-    return $a, $b, sqrt $d;
+    $a, $b, $d.sqrt
 }
- 
-sub closest_pair(@r) {
-    my @ax = @r.sort: { .[0] }
-    my @ay = @r.sort: { .[1] }
-    return closest_pair_real(@ax, @ay);
+
+sub closest-pair(@r) {
+    closest-pair-real (@r.sort: *.[0]), (@r.sort: *.[1])
 }
- 
-sub closest_pair_real(@rx, @ry) {
-    return closest_pair_simple(@rx) if @rx <= 3;
- 
-    my @xP = @rx;
-    my @yP = @ry;
-    my $N = @xP;
- 
-    my $midx = ceiling($N/2)-1;
- 
-    my @PL = @xP[0 .. $midx];
-    my @PR = @xP[$midx+1 ..^ $N];
- 
-    my $xm = @xP[$midx][0];
- 
-    my @yR;
-    my @yL;
-    push ($_[0] <= $xm ?? @yR !! @yL), $_ for @yP;
- 
-    my ($al, $bl, $dL) = closest_pair_real(@PL, @yR);
-    my ($ar, $br, $dR) = closest_pair_real(@PR, @yL);
- 
-    my ($m1, $m2, $dmin) = $dR < $dL
-                               ?? ($ar, $br, $dR)
-                               !! ($al, $bl, $dL);
- 
-    my @yS = @yP.grep: { abs($xm - .[0]) < $dmin }
- 
-    if @yS {
-        my ($w1, $w2, $closest) = $m1, $m2, $dmin;
-        for 0 ..^ @yS.end -> $i {
-            for $i+1 ..^ @yS -> $k {
-                last unless @yS[$k][1] - @yS[$i][1] < $dmin;
-                my $d = sqrt dist-squared(@yS[$k], @yS[$i]);
-                ($w1, $w2, $closest) = @yS[$k], @yS[$i], $d if $d < $closest;
-            }
- 
+
+sub closest-pair-real(@rx, @ry) {
+    return closest-pair-simple(@rx) if @rx ≤ 3;
+
+    my \N  = @rx;
+    my \midx = ceiling(N/2) - 1;
+    my @PL := @rx[     0 ..  midx];
+    my @PR := @rx[midx+1 ..^ N   ];
+    my \xm  = @rx[midx;0];
+    (.[0] ≤ xm ?? my @yR !! my @yL).push: @$_ for @ry;
+    my (\al, \bl, \dL) = closest-pair-real(@PL, @yR);
+    my (\ar, \br, \dR) = closest-pair-real(@PR, @yL);
+    my ($w1, $w2, $closest) = dR < dL ?? (ar, br, dR) !! (al, bl, dL);
+    my @yS = @ry.grep: { (xm - .[0]).abs < $closest }
+
+    for 0 ..^ @yS -> \i {
+        for i+1 ..^ @yS -> \k {
+            next unless @yS[k;1] - @yS[i;1] < $closest;
+            ($w1, $w2, $closest) = |@yS[k, i], $_ if $_ < $closest given dist-squared(|@yS[k, i]).sqrt;
         }
-        return $w1, $w2, $closest;
- 
-    } else {
-        return $m1, $m2, $dmin;
-    } 
+    }
+    $w1, $w2, $closest
 }
+```
+
+#### Output:
+```
+simple (([-1.1560800527301716 -9.214015073077793] [-1.1570263876019649 -9.213340680530798] 0.0011620477602117762))
+  real (([-1.1570263876019649 -9.213340680530798] [-1.1560800527301716 -9.214015073077793] 0.0011620477602117762))
 ```

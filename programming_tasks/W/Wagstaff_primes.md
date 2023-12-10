@@ -25,7 +25,6 @@ hyper for @wagstaff[20] .. * {
 *Turns out, "however many I have patience for" is 9 (29).*
 
 
-#### Output:
 ```
 1: 3 - 3
 2: 5 - 11

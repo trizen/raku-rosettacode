@@ -2,21 +2,13 @@
 
 # [Perfect shuffle][1]
 
+
+
 ```perl
-sub perfect-shuffle (@deck) {
-    my $mid = @deck / 2;
-    flat @deck[0 ..^ $mid] Z @deck[$mid .. *];
-}
- 
 for 8, 24, 52, 100, 1020, 1024, 10000 -> $size {
-    my @deck = ^$size;
-    my $n;
-    repeat until [<] @deck {
-        $n++;
-        @deck = perfect-shuffle @deck;
-    }
- 
-    printf "%5d cards: %4d\n", $size, $n;
+    my ($n, @deck) = 1, |^$size;
+    $n++ until [<] @deck = flat [Z] @deck.rotor: @deck/2;
+    printf "%5d cards: %4d\n", $size, $n;
 }
 ```
 

@@ -2,6 +2,10 @@
 
 # [CSV to HTML translation][1]
 
+
+
+
+
 A very lispy solution:
 
 ```perl
@@ -11,13 +15,13 @@ Brians mother,<angry>Now you listen here! He's not the messiah; he's a very naug
 The multitude,Who are you?
 Brians mother,I'm his mother; that's who!
 The multitude,Behold his mother! Behold his mother!";
- 
+
 # comment the next line out, if you want to read from standard input instead of the hard-coded $str above
 # my $str = $*IN.slurp;
- 
+
 my &escape = *.trans(« & < > » => « &amp; &lt; &gt; »); # a function with one argument that escapes the entities
 my &tag    = {"<$^tag>"~$^what~"</$^tag>"};
- 
+
 printf
 '<!DOCTYPE html>
 <html>
@@ -34,7 +38,7 @@ printf
       .map({tag 'td', $^cell}))})\    # map those cells as td
 		       .join("\n");   # append a newline for nicer output
 ```
-```text
+```html
 <!DOCTYPE html>
 <html>
 <head><title>Some Text</title></head>

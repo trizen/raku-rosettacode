@@ -2,9 +2,13 @@
 
 # [Price fraction][1]
 
+
+
+
+
 Simple solution, doing a linear search.
 
-Note that in Perl&#160;6 we don't have to worry about floating-point misrepresentations of decimals, because decimal fractions are stored as rationals.
+Note that in Raku we don't have to worry about floating-point misrepresentations of decimals, because decimal fractions are stored as rationals.
 
 ```perl
 sub price-fraction ($n where 0..1) {
@@ -29,7 +33,7 @@ sub price-fraction ($n where 0..1) {
     when $n < 0.96 { 0.98 }
     default        { 1.00 }
 }
- 
+
 while prompt("value: ") -> $value {
     say price-fraction(+$value);
 }
@@ -62,7 +66,7 @@ my @price = map *.value, flat
     (91 ..^ 96 X=> 0.98),
     (96 ..^101 X=> 1.00),
 ;
- 
+
 while prompt("value: ") -> $value {
     say @price[$value * 100] // "Out of range";
 }
@@ -73,35 +77,35 @@ We can also build this same look-up array by parsing the table as formatted in t
 
 ```perl
 my $table = q:to/END/;
->=  0.00  <  0.06  :=  0.10
->=  0.06  <  0.11  :=  0.18
->=  0.11  <  0.16  :=  0.26
->=  0.16  <  0.21  :=  0.32
->=  0.21  <  0.26  :=  0.38
->=  0.26  <  0.31  :=  0.44
->=  0.31  <  0.36  :=  0.50
->=  0.36  <  0.41  :=  0.54
->=  0.41  <  0.46  :=  0.58
->=  0.46  <  0.51  :=  0.62
->=  0.51  <  0.56  :=  0.66
->=  0.56  <  0.61  :=  0.70
->=  0.61  <  0.66  :=  0.74
->=  0.66  <  0.71  :=  0.78
->=  0.71  <  0.76  :=  0.82
->=  0.76  <  0.81  :=  0.86
->=  0.81  <  0.86  :=  0.90
->=  0.86  <  0.91  :=  0.94
->=  0.91  <  0.96  :=  0.98
->=  0.96  <  1.01  :=  1.00
+>=  0.00  <  0.06  :=  0.10
+>=  0.06  <  0.11  :=  0.18
+>=  0.11  <  0.16  :=  0.26
+>=  0.16  <  0.21  :=  0.32
+>=  0.21  <  0.26  :=  0.38
+>=  0.26  <  0.31  :=  0.44
+>=  0.31  <  0.36  :=  0.50
+>=  0.36  <  0.41  :=  0.54
+>=  0.41  <  0.46  :=  0.58
+>=  0.46  <  0.51  :=  0.62
+>=  0.51  <  0.56  :=  0.66
+>=  0.56  <  0.61  :=  0.70
+>=  0.61  <  0.66  :=  0.74
+>=  0.66  <  0.71  :=  0.78
+>=  0.71  <  0.76  :=  0.82
+>=  0.76  <  0.81  :=  0.86
+>=  0.81  <  0.86  :=  0.90
+>=  0.86  <  0.91  :=  0.94
+>=  0.91  <  0.96  :=  0.98
+>=  0.96  <  1.01  :=  1.00
 END
- 
+
 my @price;
- 
+
 for $table.lines {
     /:s '>='  (\S+)  '<'  (\S+)  ':='  (\S+)/;
     @price[$0*100 ..^ $1*100] »=» +$2;
 }
- 
+
 while prompt("value: ") -> $value {
     say @price[$value * 100] // "Out of range";
 }

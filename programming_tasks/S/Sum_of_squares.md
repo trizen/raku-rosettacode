@@ -2,8 +2,10 @@
 
 # [Sum of squares][1]
 
+
+
 ```perl
-say [+] map * ** 2, 3, 1, 4, 1, 5, 9;
+say [+] map * ** 2, (3, 1, 4, 1, 5, 9);
 ```
 
 
@@ -12,5 +14,5 @@ Another convenient way to distribute the exponentiation is via the cross metaope
 as a list infix is looser than comma in precedence but tighter than the reduction list operator:
 
 ```perl
-say [+] 3,1,4,1,5,9 X** 2
+say [+] <3 1 4 1 5 9> X** 2
 ```

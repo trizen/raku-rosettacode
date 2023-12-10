@@ -2,6 +2,7 @@
 
 # [Execute a Markov algorithm][1]
 
+
 Run this without arguments and it will scan the cwd for rules.\* files and their corresponding test.\*.
 
 
@@ -29,12 +30,12 @@ grammar Markov {
         <before ^^>$<pattern>=[\N+?] '->'
         $<terminal>=[\.]?$<replacement>=[\N*]
         { make {:pattern($<pattern>.Str),
-                :replacement($<replacement>.Str),
-                :terminal($<terminal>.Str eq ".")} }
+                :replacement($<replacement>.Str),
+                :terminal($<terminal>.Str eq ".")} }
     }
 }
- 
-sub run(:$ruleset, :$start_value, :$verbose?) {
+ 
+sub run(:$ruleset, :$start_value, :$verbose?) {
     my $value = $start_value;
     my @rules = Markov.parse($ruleset).ast.list;
     loop {
@@ -50,32 +51,32 @@ sub run(:$ruleset, :$start_value, :$verbose?) {
     }
     return $value;
 }
- 
-multi sub MAIN(Bool :$verbose?) {
+ 
+multi sub MAIN(Bool :$verbose?) {
     my @rulefiles = dir.grep(/rules.+/).sort;
     for @rulefiles -> $rulefile {
         my $testfile = $rulefile.subst("rules", "test");
         my $start_value = (try slurp($testfile).trim-trailing)
                           // prompt("please give a start value: ");
- 
+ 
         my $ruleset = slurp($rulefile);
-        say $start_value.perl();
-        say run(:$ruleset, :$start_value, :$verbose).perl;
+        say $start_value;
+        say run(:$ruleset, :$start_value, :$verbose);
         say '';
     }
 }
- 
-multi sub MAIN(Str $rulefile where *.IO.f, Str $input where *.IO.f, Bool :$verbose?) {
+ 
+multi sub MAIN(Str $rulefile where *.IO.f, Str $input where *.IO.f, Bool :$verbose?) {
     my $ruleset = slurp($rulefile);
     my $start_value = slurp($input).trim-trailing;
-    say "starting with $start_value.perl()";
-    say run(:$ruleset, :$start_value, :$verbose).perl;
+    say "starting with: $start_value";
+    say run(:$ruleset, :$start_value, :$verbose);
 }
- 
-multi sub MAIN(Str $rulefile where *.IO.f, *@pieces, Bool :$verbose?) {
+ 
+multi sub MAIN(Str $rulefile where *.IO.f, *@pieces, Bool :$verbose?) {
     my $ruleset = slurp($rulefile);
     my $start_value = @pieces.join(" ");
-    say "starting with $start_value.perl()";
-    say run(:$ruleset, :$start_value, :$verbose).perl;
+    say "starting with: $start_value";
+    say run(:$ruleset, :$start_value, :$verbose);
 }
 ```

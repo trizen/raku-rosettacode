@@ -2,34 +2,35 @@
 
 # [Colour bars/Display][1]
 
+
+
 ```perl
-my $HOR = 1280;
-my $VERT = 720;
- 
-my @colors = map -> $r, $g, $b { Buf.new: |(($r, $g, $b) xx $HOR div 8) },
-                  0,  0,  0,
-                255,  0,  0,
-                  0,255,  0,
-                  0,  0,255,
-                255,  0,255,
-                  0,255,255,
-                255,255,  0,
-                255,255,255;
- 
-my $PPM = open "colorbars.ppm", :w or die "Can't create colorbars.ppm: $!";
- 
-$PPM.print: qq:to/EOH/;
+my ($x,$y) = 1280, 720;
+
+my @colors = map -> $r, $g, $b { Buf.new: |(($r, $g, $b) xx $x div 8) },
+      0,   0,   0,
+    255,   0,   0,
+      0, 255,   0,
+      0,   0, 255,
+    255,   0, 255,
+      0, 255, 255,
+    255, 255,   0,
+    255, 255, 255;
+
+my $img = open "colorbars.ppm", :w orelse die "Can't create colorbars.ppm: $_";
+
+$img.print: qq:to/EOH/;
     P6
     # colorbars.ppm
-    $HOR $VERT
+    $x $y
     255
     EOH
- 
-for ^$VERT -> $v {
+
+for ^$y {
     for ^@colors -> $h {
-        $PPM.write: @colors[$h];
+        $img.write: @colors[$h];
     }
 }
- 
-$PPM.close;
+
+$img.close;
 ```

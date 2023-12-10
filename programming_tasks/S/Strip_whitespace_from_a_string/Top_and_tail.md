@@ -2,12 +2,14 @@
 
 # [Strip whitespace from a string/Top and tail][1]
 
+
+
 ```perl
 my $s = "\r\n \t\x2029 Good Stuff \x202F\n";
 say $s.trim;
-say $s.trim.perl;
-say $s.trim-leading.perl;
-say $s.trim-trailing.perl;
+say $s.trim.raku;
+say $s.trim-leading.raku;
+say $s.trim-trailing.raku;
 ```
 
 #### Output:

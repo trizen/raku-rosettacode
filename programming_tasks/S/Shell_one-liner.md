@@ -2,7 +2,9 @@
 
 # [Shell one-liner][1]
 
+
+
 ```bash
-$ perl6 -e 'say "Hello, world!"'
+$ raku -e 'say "Hello, world!"'
 Hello, world!
 ```

@@ -2,24 +2,24 @@
 
 # [Sum of divisors][1]
 
-Yet more tasks that are tiny variations of each other. [Tau function](https://rosettacode.org/wiki/Tau_function), [Tau number](https://rosettacode.org/wiki/Tau_number), <strong class="selflink">Sum of divisors</strong> and [Product of divisors](https://rosettacode.org/wiki/Product_of_divisors) all use code with minimal changes. What the heck, post 'em all.
+Yet more tasks that are tiny variations of each other. [Tau function](https://rosettacode.org/wiki/Tau_function), [Tau number](https://rosettacode.org/wiki/Tau_number), [Product of divisors](https://rosettacode.org/wiki/Product_of_divisors) all use code with minimal changes. What the heck, post 'em all.
 
 ```perl
 use Prime::Factor:ver<0.3.0+>;
 use Lingua::EN::Numbers;
- 
+
 say "\nTau function - first 100:\n",        # ID
 (1..*).map({ +.&divisors })[^100]\          # the task
 .batch(20)».fmt("%3d").join("\n");          # display formatting
- 
+
 say "\nTau numbers - first 100:\n",         # ID
-(1..*).grep({ $_ %% +.&divisors })[^100]\   # the task
+(1..*).grep({ $_ %% +.&divisors })[^100]\   # the task
 .batch(10)».&comma».fmt("%5s").join("\n");  # display formatting
- 
+
 say "\nDivisor sums - first 100:\n",        # ID
 (1..*).map({ [+] .&divisors })[^100]\       # the task
 .batch(20)».fmt("%4d").join("\n");          # display formatting
- 
+
 say "\nDivisor products - first 100:\n",    # ID
 (1..*).map({ [×] .&divisors })[^100]\       # the task
 .batch(5)».&comma».fmt("%16s").join("\n");  # display formatting

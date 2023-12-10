@@ -2,9 +2,10 @@
 
 # [Quine][1]
 
+
+
 ```perl
-my &f = {say $^s, $^s.perl;}; f "my \&f = \{say \$^s, \$^s.perl;}; f "
- 
+my &f = {say $^s, $^s.raku;}; f "my \&f = \{say \$^s, \$^s.raku;}; f "
 ```
 
 
@@ -21,7 +22,6 @@ A more compact, but still purely functional, approach:
 
 ```perl
 {.fmt($_).say}(<{.fmt($_).say}(<%s>)>)
- 
 ```
 
 

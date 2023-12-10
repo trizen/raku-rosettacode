@@ -2,25 +2,35 @@
 
 # [Just in time processing on a character stream][1]
 
-This is a somewhat fragile toy encoder / decoder and shouldn't be used for anything serious.
+
+
+
+
+This is a something of a toy encoder / decoder and probably shouldn't be used for anything serious.
+
+
+
+Default encode/decode key is 'Raku' Feed it a pass phrase at the command line to use that instead.
+
+
+
+Will handle any visible character in the ASCII range as well as space and new-line.
 
 ```perl
 #`[
-Set srand to set the encode / decode "key", and
-generate a lazy, reproducible stream of "random"
-characters. Need to use the same key and same
-implementation of Perl 6 to encode / decode.
-Gain "security" by exchanging keys by a second
-channel. Default key is 'Perl 6'
+Set srand to set the encode / decode "key".
+Need to use the same "key" and same implementation
+of Raku to encode / decode. Gain "security" by
+exchanging "keys" by a second channel. Default
+"key" is "Raku"
 ]
- 
-unit sub MAIN ($key = 'Perl 6');
- 
-srand $key.comb(/<.alnum>/).join.parse-base(36) % 2**63;
- 
-# random but reproducible infinite stream of characters
-my @stream = (flat ' ' .. '~').roll(*);
- 
+
+unit sub MAIN ($key = 'Raku');
+
+srand $key.comb(/<.alnum>/).join.parse-base(36) % 2**63;
+
+my @stream = (flat "\n", ' ' .. '~').roll(*);
+
 sub jit-encode (Str $str) {
     my $i = 0;
     my $last = 0;
@@ -28,18 +38,20 @@ sub jit-encode (Str $str) {
     for $str.comb -> $c {
         my $h;
         my $l = '';
-        ++$i until $c eq @stream[$i];
+        ++$i until $i > 1 && $c eq @stream[$i];
         my $o = $i - $last;
-        $l    = $o % 26;
-        $h    = $o - $l if $o > 26;
+        $l    = $o % 26;
+        $h    = $o - $l if $o >= 26;
         $l   += 10;
-        $enc ~= ($h ?? $h.base(36).uc !! '') ~ ($l.base(36).lc);
+        $enc ~= ($h ?? $h.base(36).uc !! '') ~ ($l.base(36).lc);
         $last = $i;
     }
-    $enc
+    my $block = 60;
+    $enc.comb($block).join: "\n"
 }
- 
-sub jit-decode (Str $str) {
+
+sub jit-decode (Str $str is copy) {
+    $str.=subst("\n", '', :g);
     $str ~~ m:g/((.*?) (<:Ll>))/;
     my $dec = '';
     my $i = 0;
@@ -51,17 +63,50 @@ sub jit-decode (Str $str) {
     }
     $dec
 }
- 
-my $enc = jit-encode('In my opinion, this task is pretty silly.');
- 
-say "Encoded\n$enc\n\nDecoded\n", jit-decode($enc);
+
+my $secret = q:to/END/;
+In my opinion, this task is pretty silly.
+
+'Twas brillig, and the slithy toves
+    Did gyre and gimble in the wabe.
+
+!@#$%^&*()_+}{[].,><\|/?'";:1234567890
+END
+
+say "== Secret: ==\n$secret";
+
+say "\n== Encoded: ==";
+say my $enc = jit-encode($secret);
+
+say "\n== Decoded: ==";
+say jit-decode($enc);
 ```
 
 #### Output:
 ```
-Encoded
-26j52dhl2Wp1Gw2WceQj1Go3MyQc1Gd52a1Gb1Ga2Wcq26o4Cwf3MiQsQn2Wglk3MhkQyeQjas3MkQn2Wd26aaQcQj
-
-Decoded
+== Secret: ==
 In my opinion, this task is pretty silly.
+
+'Twas brillig, and the slithy toves
+    Did gyre and gimble in the wabe.
+
+!@#$%^&*()_+}{[].,><\|/?'";:1234567890
+
+
+== Encoded: ==
+Qv26e26q1Gi2Ww5SiQr26h3Mk1GbQy52e1Gg6Ib52kQfQk26n26l26cQm26q
+2Wk26vwme52qy6Ia1GuQfa3MbQxtd26aa3MvQu2Wuat26p2Wbe2Wc1Ga26g2
+6h26pQha26h4Cf26jrz7Yz3MaA4h2WxFWf52zyg2WrQn2Wj26pQyQy78x1Gd
+dk4Cu26k26qaaap26j26xqQf7Yr8Op3Me3Me5Sv1Ge1Gt2WxlQz5Si1GeQg4
+CjQc5Sb2WbQo1GycQr1Gm1Gy1GsQei3MrQsai1Gq2WnQdt2Wj1Gff1Gg26le
+2Wd1Go9Ek1Gm9Eh2Wb1Gd52h2WdQae4Chu3MeQd1Gg1Gw4CqbEGh52u2Wr1G
+t52xhvQmx
+
+== Decoded: ==
+In my opinion, this task is pretty silly.
+
+'Twas brillig, and the slithy toves
+    Did gyre and gimble in the wabe.
+
+!@#$%^&*()_+}{[].,><\|/?'";:1234567890
 ```

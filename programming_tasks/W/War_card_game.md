@@ -17,7 +17,7 @@ Pass in which variant you want to play 2 down, (Bicycle), `--war=2`, 4 down (thu
 In glorious ANSI color! (The output loses much when pasted in as text so show output as screenshot images.)
 
 ```perl
-unit sub MAIN (:$war where 2..4 = 4, :$sleep = .1);
+unit sub MAIN (:$war where 2..4 = 4, :$sleep = .1);
 
 my %c = ( # convenience hash of ANSI colors
     red   => "\e[38;2;255;10;0m",
@@ -115,8 +115,8 @@ loop {
     else {
         @round[0].append: @player[0].&take($war);
         @round[1].append: @player[1].&take($war);
-        print-at $row, @index[0] - $_ * 2, ($_ %% $war) ?? @round[0; $_] !! $back for ^@round[0];
-        print-at $row, @index[1] + $_ * 2, ($_ %% $war) ?? @round[1; $_] !! $back for ^@round[1];
+        print-at $row, @index[0] - $_ * 2, ($_ %% $war) ?? @round[0; $_] !! $back for ^@round[0];
+        print-at $row, @index[1] + $_ * 2, ($_ %% $war) ?? @round[1; $_] !! $back for ^@round[1];
         next
     }
     last if $lose;
@@ -128,13 +128,13 @@ loop {
 }
 
 # game over
-print-at $height + 2, $cols div 2 - 40, "{%c<blue>} Player 1: {+@player[0] ?? '52' !! "{%c<red>}0"}{%c<blue>} cards ";
-print-at $height + 2, $cols div 2 + 20, "{%c<blue>} Player 2: {+@player[1] ?? '52' !! "{%c<red>}0"}{%c<blue>} cards ";
+print-at $height + 2, $cols div 2 - 40, "{%c<blue>} Player 1: {+@player[0] ?? '52' !! "{%c<red>}0"}{%c<blue>} cards ";
+print-at $height + 2, $cols div 2 + 20, "{%c<blue>} Player 2: {+@player[1] ?? '52' !! "{%c<red>}0"}{%c<blue>} cards ";
 clean-up;
 ```
 
 
-Pass in `:war=2` on the command line.
+Pass in `:war=2` on the command line. 
 See [Bicycle variation](https://github.com/thundergnat/rc/blob/master/img/war-2.png) (offsite png image)
 
 

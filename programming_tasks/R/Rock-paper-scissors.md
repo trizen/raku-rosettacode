@@ -2,6 +2,7 @@
 
 # [Rock-paper-scissors][1]
 
+
 This is slightly more complicated than it could be; it is a general case framework with input filtering. It weights the computers choices based on your previous choices. Type in at least the first two characters of your choice, or just hit enter to quit. Customize it by supplying your own `%vs` options/outcomes.
 
 
@@ -27,15 +28,15 @@ my %vs = (
         sc => [ 2, ''                       ]
     }
 );
- 
+
 my %choices = %vs<options>.map({; $_.substr(0,2).lc => $_ });
 my $keys    = %choices.keys.join('|');
 my $prompt  = %vs<options>.map({$_.subst(/(\w\w)/, -> $/ {"[$0]"})}).join(' ')~"? ";
 my %weight  = %choices.keys »=>» 1;
- 
+
 my @stats = 0,0,0;
 my $round;
- 
+
 while my $player = (prompt "Round {++$round}: " ~ $prompt).lc {
     $player.=substr(0,2);
     say 'Invalid choice, try again.' and $round-- and next
@@ -44,7 +45,7 @@ while my $player = (prompt "Round {++$round}: " ~ $prompt).lc {
     %weight{$_.key}++ for %vs{$player}.grep( { $_.value[0] == 1 } );
     my $result = %vs{$player}{$computer}[0];
     @stats[$result]++;
-    say "You chose %choices{$player},  Computer chose %choices{$computer}.";
+    say "You chose %choices{$player},  Computer chose %choices{$computer}.";
     print %vs{$player}{$computer}[1];
     print ( 'You win!', 'You Lose!','Tie.' )[$result];
     say " - (W:{@stats[0]} L:{@stats[1]} T:{@stats[2]})\n",
@@ -76,7 +77,7 @@ Tie. - (W:0 L:3 T:2)
 ```
 
 
-Here is example output from the same code only with a different&#160;%vs data structure implementing [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
+Here is example output from the same code only with a different %vs data structure implementing [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
 
 ```perl
 my %vs = (

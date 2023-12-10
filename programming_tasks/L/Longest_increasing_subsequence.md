@@ -2,6 +2,10 @@
 
 # [Longest increasing subsequence][1]
 
+
+
+
+
 ### Dynamic programming
 
 
@@ -20,9 +24,9 @@ sub lis(@d) {
         }
         @l[$i].push: @d[$i];
     }
-    return max :by(*.elems), @l;
+    return max :by(*.elems), @l;
 }
- 
+
 say lis([3,2,6,4,5,1]);
 say lis([0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15]);
 ```
@@ -47,10 +51,10 @@ sub lis(@deck is copy) {
         }
     }
     reverse map *.key, (
-        @S[*-1][*-1], *.value ...^ !*.defined
+        @S[*-1][*-1], *.value ...^ !*.defined
     )
 }
- 
+
 say lis <3 2 6 4 5 1>;
 say lis <0 8 4 12 2 10 6 14 1 9 5 13 3 11 7 15>;
 ```

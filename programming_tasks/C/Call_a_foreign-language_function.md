@@ -2,13 +2,15 @@
 
 # [Call a foreign-language function][1]
 
+
+
 ```perl
 use NativeCall;
- 
-sub strdup(Str $s --> OpaquePointer) is native {*}
-sub puts(OpaquePointer $p --> int32) is native {*}
-sub free(OpaquePointer $p --> int32) is native {*}
- 
+
+sub strdup(Str $s --> Pointer) is native {*}
+sub puts(Pointer $p --> int32) is native {*}
+sub free(Pointer $p --> int32) is native {*}
+
 my $p = strdup("Success!");
 say 'puts returns ', puts($p);
 say 'free returns ', free($p);

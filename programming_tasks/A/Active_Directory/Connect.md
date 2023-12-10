@@ -2,13 +2,16 @@
 
 # [Active Directory/Connect][1]
 
+
+
+
+
 Using module LMDB - bindings to the openLDAP library. Requires an LDAP instance.
 
 ```perl
 use LMDB;
- 
-my %DB := LMDB::DB.open(:path<some-dir>, %connection-parameters);
- 
+
+my %DB := LMDB::DB.open(:path<some-dir>, %connection-parameters);
 ```
 
 

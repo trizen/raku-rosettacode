@@ -1,20 +1,22 @@
-[1]: https://rosettacode.org/wiki/Benford's_law
+[1]: https://rosettacode.org/wiki/Benford%27s_law
 
-# [Benford's law][1]
+# [Benford&#039;s law][1]
+
+
 
 ```perl
 sub benford(@a) { bag +« @a».substr(0,1) }
- 
+
 sub show(%distribution) {
-    printf "%9s %9s  %s\n", <Actual Expected Deviation>;
+    printf "%9s %9s  %s\n", <Actual Expected Deviation>;
     for 1 .. 9 -> $digit {
         my $actual = %distribution{$digit} * 100 / [+] %distribution.values;
         my $expected = (1 + 1 / $digit).log(10) * 100;
-        printf "%d: %5.2f%% | %5.2f%% | %.2f%%\n",
+        printf "%d: %5.2f%% | %5.2f%% | %.2f%%\n",
           $digit, $actual, $expected, abs($expected - $actual);
     }
 }
- 
+
 multi MAIN($file) { show benford $file.IO.lines }
 multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 ```
@@ -23,7 +25,6 @@ multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 **Output:** First 1000 Fibonaccis
 
 
-#### Output:
 ```
    Actual  Expected  Deviation
 1: 30.10% | 30.10% | 0.00%
@@ -41,7 +42,6 @@ multi MAIN() { show benford ( 1, 1, 2, *+* ... * )[^1000] }
 **Extra credit:** Square Kilometers of land under cultivation, by country / territory. First column from Wikipedia: [Land use statistics by country](https://en.wikipedia.org/wiki/Land_use_statistics_by_country).
 
 
-#### Output:
 ```
    Actual  Expected  Deviation
 1: 33.33% | 30.10% | 3.23%

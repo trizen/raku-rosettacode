@@ -2,6 +2,8 @@
 
 # [Damm algorithm][1]
 
+
+
 ```perl
 sub damm ( *@digits ) {
     my @tbl = [0, 3, 1, 7, 5, 9, 8, 6, 4, 2],
@@ -18,7 +20,7 @@ sub damm ( *@digits ) {
     for @digits -> $col { $row = @tbl[$row][$col] }
     not $row
 }
- 
+
 # Testing
 for 5724, 5727, 112946 {
     say "$_:\tChecksum digit { damm( $_.comb ) ?? '' !! 'in' }correct."

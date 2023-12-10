@@ -2,7 +2,11 @@
 
 # [Arena storage pool][1]
 
-Perl 6 is a high level language where, to a first approximation, everything is an object. Perl 6 dynamically allocates memory as objects are created and does automatic garbage collection and freeing of memory as objects go out of scope. There is almost no high level control over how memory is managed, it is considered to be an implementation detail of the virtual machine on which it is running.
+
+
+
+
+Raku is a high level language where, to a first approximation, everything is an object. Raku dynamically allocates memory as objects are created and does automatic garbage collection and freeing of memory as objects go out of scope. There is almost no high level control over how memory is managed, it is considered to be an implementation detail of the virtual machine on which it is running.
 
 
 

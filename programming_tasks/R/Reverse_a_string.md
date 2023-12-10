@@ -2,15 +2,21 @@
 
 # [Reverse a string][1]
 
-Perl 6 handles graphemes correctly by default.
+
+
+
+
+Raku handles graphemes, multi-byte characters and emoji correctly by default.
 
 ```perl
 say "hello world".flip;
-say "as⃝df̅".flip
+say "as⃝df̅".flip;
+say 'ℵΑΩ 駱駝道 🤔 🇸🇧 🇺🇸 🇬🇧‍ 👨‍👩‍👧‍👦🆗🗺'.flip;
 ```
 
 #### Output:
 ```
 dlrow olleh
 f̅ds⃝a
+🗺🆗👨‍👩‍👧‍👦 🇬🇧‍ 🇺🇸 🇸🇧 🤔 道駝駱 ΩΑℵ
 ```

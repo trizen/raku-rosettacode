@@ -5,10 +5,10 @@
 This version regularizes (ignores) case and ignores non alphanumeric characters. It is only concerned with finding the *longest* palindromic substrings so does not exhaustively find *all possible* palindromes. If a palindromic substring is found to be part of a longer palindrome, it is not captured separately. Showing the longest 5 palindromic substring groups. Run it with no parameters to operate on the default; pass in a file name to run it against that instead.
 
 ```perl
-my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
+my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
     Lyrics to "Bob" copyright Weird Al Yankovic
     https://www.youtube.com/watch?v=JUQDzj6R3p4
- 
+
     I, man, am regal - a German am I
     Never odd or even
     If I had a hi-fi
@@ -19,7 +19,7 @@ my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
     Lisa Bonet ate no basil
     Warsaw was raw
     Was it a car or a cat I saw?
- 
+
     Rise to vote, sir
     Do geese see God?
     "Do nine men interpret?" "Nine men," I nod
@@ -29,7 +29,7 @@ my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
     Pa's a sap
     Ma is as selfless as I am
     May a moody baby doom a yam?
- 
+
     Ah, Satan sees Natasha
     No devil lived on
     Lonely Tylenol
@@ -40,7 +40,7 @@ my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
     "Naomi," I moan
     "A Toyota's a Toyota"
     A dog, a panic in a pagoda
- 
+
     Oh no! Don Ho!
     Nurse, I spy gypsies - run!
     Senile felines
@@ -52,7 +52,7 @@ my @chars = ( @*ARGS[0] ?? @*ARGS[0].IO.slurp !! q:to/BOB/ ) .lc.comb: /\w/;
     Go hang a salami, I'm a lasagna hog!
     BOB
 #"
- 
+
 my @cpfoa = flat
 (1 ..^ @chars).race(:1000batch).map: -> \idx {
     my @s;
@@ -69,7 +69,7 @@ my @cpfoa = flat
     next unless +@s;
     @s
 }
- 
+
 "{.key} ({+.value})\t{.value.unique.sort}".put for @cpfoa.classify( *.chars ).sort( -*.key ).head(5);
 ```
 
@@ -77,7 +77,6 @@ my @cpfoa = flat
 Returns the length, (the count) and the list:
 
 
-#### Output:
 ```
 29 (2)  doninemeninterpretninemeninod godarednuggetafateggunderadog
 26 (1)  gohangasalamiimalasagnahog
@@ -90,7 +89,6 @@ Returns the length, (the count) and the list:
 This isn't intensively optimised but isn't too shabby either. When run against the first million digits of pi: [1000000 digits of pi text file](https://github.com/thundergnat/rc/blob/master/resouces/pi.txt) (Pass in the file path/name at the command line) we get:
 
 
-#### Output:
 ```
 13 (1)  9475082805749
 12 (1)  450197791054

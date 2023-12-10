@@ -46,7 +46,6 @@ Validating is making sure the the input matches some predetermined format, usual
 When passing a user command to the operating system, you probably want to use whitelisting. Only a very few commands from a predetermined list are allowed to be used.
 
 
-#### Output:
 ```
    if $command ∈ <ls time cd df> then { execute $command }
 ```

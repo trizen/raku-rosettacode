@@ -8,9 +8,9 @@ No need to overload, define our own operators with whatever precedence level we 
 sub infix:<⊕> (Real $a, Real $b) is equiv(&[+]) { $a max $b }
 sub infix:<⊗> (Real $a, Real $b) is equiv(&[×]) { $a + $b }
 sub infix:<↑> (Real $a,  Int $b where * ≥ 0) is equiv(&[**]) { [⊗] $a xx $b }
- 
+ 
 use Test;
- 
+ 
 is-deeply(      2 ⊗ -2,        0, '2 ⊗ -2 == 0' );
 is-deeply( -0.001 ⊕ -Inf, -0.001, '-0.001 ⊕ -Inf == -0.001' );
 is-deeply(      0 ⊗ -Inf,   -Inf, '0 ⊗ -Inf == -Inf' );

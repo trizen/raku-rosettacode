@@ -2,6 +2,8 @@
 
 # [Write entire file][1]
 
+
+
 ```perl
 spurt 'path/to/file', $file-data;
 ```

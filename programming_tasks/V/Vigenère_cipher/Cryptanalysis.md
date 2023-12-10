@@ -2,6 +2,8 @@
 
 # [Vigenère cipher/Cryptanalysis][1]
 
+
+
 ```perl
 # from Wikipedia
 constant %English-letter-freq = (
@@ -11,10 +13,10 @@ constant %English-letter-freq = (
 );
 constant @alphabet = %English-letter-freq.keys.sort;
 constant max_key_lengths = 5; # number of keylengths to try
- 
+
 sub myguess ($text) {
     my ($seqtext, @spacing, @factors, $pos, %freq, %Keys);
- 
+
     # Kasiski examination
     $seqtext = $text;
     while ($seqtext ~~ /$<sequence>=[...].*$<sequence>/) {
@@ -22,18 +24,18 @@ sub myguess ($text) {
         push @spacing, 1 + index($seqtext, $<sequence>);
     }
     for @spacing -> $j {
-        %freq{$_}++ for grep { $j %% $_ }, 2..$j;
+        %freq{$_}++ for grep { $j %% $_ }, 2..$j;
     }
- 
+
     # discard very short keys, and test only the most likely remaining key lengths
     (%freq.keys.grep(* > 3).sort({%freq{$_}}).tail(max_key_lengths)).race(:1batch).map: -> $keylen {
         my $key-guess = '';
         loop (my $i = 0; $i < $keylen; $i++) {
             my ($mykey, %chi-square, $best-guess);
             loop (my $j = 0; $j < $text.chars; $j += $keylen) {
-                $mykey ~= substr($text, ($j+$i) % $text.chars, 1);
+                $mykey ~= substr($text, ($j+$i) % $text.chars, 1);
             }
- 
+
             for @alphabet -> $subkey {
                 my $decrypted = mycrypt($mykey, $subkey);
                 my $length    = $decrypted.chars;
@@ -56,22 +58,22 @@ sub myguess ($text) {
     }
     %Keys.keys.sort({ %Keys{$_}{'score'} }).map:{ %Keys{$_}{'key'} };
 }
- 
+
 sub mycrypt ($text, $key) {
     constant %values-numbers = @alphabet Z=> ^@alphabet;
     constant %values-letters = %values-numbers.invert;
- 
+
     my ($new-text);
     my $keylen = $key.chars;
     loop (my $i = 0; $i < $text.chars; $i++) {
         my $val =  -1 * %values-numbers{substr( $key, $i%$keylen, 1)} # negative shift for decode
                  +      %values-numbers{substr($text, $i,         1)};
-        $new-text ~= %values-letters{ $val % @alphabet };
+        $new-text ~= %values-letters{ $val % @alphabet };
     }
     return $new-text;
 }
- 
-my $cipher-text = .uc.trans(@alphabet => '', :c) given q:to/EOD/;
+
+my $cipher-text = .uc.trans(@alphabet => '', :c) given q:to/EOD/;
     MOMUD EKAPV TQEFM OEVHP AJMII CDCTI FGYAG JSPXY ALUYM NSMYH
     VUXJE LEPXJ FXGCM JHKDZ RYICU HYPUS PGIGM OIYHF WHTCQ KMLRD
     ITLXZ LJFVQ GHOLW CUHLO MDSOE KTALU VYLNZ RFGBX PHVGA LWQIS
@@ -90,7 +92,7 @@ my $cipher-text = .uc.trans(@alphabet => '', :c) given q:to/EOD/;
     BXVCB XBAWG LQKCM ICRRX MACUO IKHQU AJEGL OIJHH XPVZW JEWBA
     FWAML ZZRXJ EKAHV FASMU LVVUT TGK
 EOD
- 
+
 for myguess($cipher-text) -> $key {
     say "Key        $key\n" ~
         "Key length {$key.chars}\n" ~

@@ -10,7 +10,7 @@
 
 ```perl
 my $b = 99;
- 
+
 repeat while --$b {
     say "{b $b} on the wall";
     say "{b $b}";
@@ -18,7 +18,7 @@ repeat while --$b {
     say "{b $b-1} on the wall";
     say "";
 }
- 
+
 sub b($b) {
     "$b bottle{'s' if $b != 1} of beer";
 }
@@ -39,15 +39,15 @@ for 99...1 -> $bottles {
     sing $bottles - 1, :wall;
     say  "";
 }
- 
+
 #| Prints a verse about a certain number of beers, possibly on a wall.
 sub sing(
     Int $number, #= Number of bottles of beer.
-    Bool :$wall, #= Mention that the beers are on a wall?
+    Bool :$wall, #= Mention that the beers are on a wall?
 ) {
-    my $quantity = $number == 0 ?? "No more"      !! $number;
-    my $plural   = $number == 1 ?? ""             !! "s";
-    my $location = $wall        ?? " on the wall" !! "";
+    my $quantity = $number == 0 ?? "No more"      !! $number;
+    my $plural   = $number == 1 ?? ""             !! "s";
+    my $location = $wall        ?? " on the wall" !! "";
     say "$quantity bottle$plural of beer$location"
 }
 ```
@@ -60,7 +60,7 @@ my @quantities = flat (99 ... 1), 'No more', 99;
 my @bottles = flat 'bottles' xx 98, 'bottle', 'bottles' xx 2;
 my @actions = flat 'Take one down, pass it around' xx 99,
               'Go to the store, buy some more';
- 
+
 for @quantities Z @bottles Z @actions Z
     @quantities[1 .. *] Z @bottles[1 .. *]
     -> ($a, $b, $c, $d, $e) {

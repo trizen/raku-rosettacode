@@ -2,6 +2,10 @@
 
 # [Ordered words][1]
 
+
+
+
+
 Here we assume the dictionary is provided on standard input.
 
 ```perl

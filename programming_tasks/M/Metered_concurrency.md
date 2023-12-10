@@ -2,6 +2,7 @@
 
 # [Metered concurrency][1]
 
+
 Uses a buffered channel to hand out a limited number of tickets.
 
 ```perl
@@ -15,10 +16,10 @@ class Semaphore {
     method acquire { $.tickets.receive }
     method release { $.tickets.send(True) }
 }
- 
+
 sub MAIN ($units = 5, $max = 2) {
     my $sem = Semaphore.new($max);
- 
+
     my @units = do for ^$units -> $u {
         start {
             $sem.acquire; say "unit $u acquired";

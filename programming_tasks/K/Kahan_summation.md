@@ -2,11 +2,15 @@
 
 # [Kahan summation][1]
 
-Perl&#160;6 does not offer a fixed precision decimal. It *does* have IEEE 754 floating point numbers so let's try implementing the floating point option as shown in Python. Need to explicitly specify scientific notation numbers to force floating point Nums.
+
+
+
+
+Raku does not offer a fixed precision decimal. It *does* have IEEE 754 floating point numbers so let's try implementing the floating point option as shown in Python. Need to explicitly specify scientific notation numbers to force floating point Nums.
 
 ```perl
 constant ε = (1e0, */2e0 … *+1e0==1e0)[*-1];
- 
+
 sub kahan (*@nums) {
     my $summ = my $c = 0e0;
     for @nums -> $num {
@@ -17,11 +21,11 @@ sub kahan (*@nums) {
     }
     $summ
 }
- 
+
 say 'Epsilon:    ', ε;
- 
+
 say 'Simple sum: ', ((1e0 + ε) - ε).fmt: "%.16f";
- 
+
 say 'Kahan sum:  ', kahan(1e0, ε, -ε).fmt: "%.16f";
 ```
 

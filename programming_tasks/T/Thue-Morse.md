@@ -2,10 +2,14 @@
 
 # [Thue-Morse][1]
 
+
+
+
+
 First 8 of an infinite sequence
 
 ```perl
-.say for (0, { '0' ~ @_.join.trans( "01" => "10", :g) } ... *)[^8];
+.say for (0, { '0' ~ @_.join.trans( "01" => "10", :g) } ... *)[^8];
 ```
 
 #### Output:

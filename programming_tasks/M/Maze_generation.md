@@ -2,33 +2,37 @@
 
 # [Maze generation][1]
 
+
+
+
+
 Supply a width and height and optionally the x,y grid coords for the starting cell. If no starting cell is supplied, a random one will be selected automatically. 0,0 is the top left corner.
 
 ```perl
-constant mapping = :OPEN(' '),
-		      :N< ╵ >,
-		      :E< ╶ >,
-		     :NE< └ >,
-		      :S< ╷ >,
-		     :NS< │ >,
-		     :ES< ┌ >,
-		    :NES< ├ >,
-		      :W< ╴ >,
-		     :NW< ┘ >,
-		     :EW< ─ >,
-		    :NEW< ┴ >,
-		     :SW< ┐ >,
-		    :NSW< ┤ >,
-		    :ESW< ┬ >,
-		   :NESW< ┼ >,
-		   :TODO< x >,
-	          :TRIED< · >;
- 
+constant mapping = :OPEN(' '),
+		      :N< ╵ >,
+		      :E< ╶ >,
+		     :NE< └ >,
+		      :S< ╷ >,
+		     :NS< │ >,
+		     :ES< ┌ >,
+		    :NES< ├ >,
+		      :W< ╴ >,
+		     :NW< ┘ >,
+		     :EW< ─ >,
+		    :NEW< ┴ >,
+		     :SW< ┐ >,
+		    :NSW< ┤ >,
+		    :ESW< ┬ >,
+		   :NESW< ┼ >,
+		   :TODO< x >,
+	          :TRIED< · >;
+ 
 enum Sym (mapping.map: *.key);
 my @ch = mapping.map: *.value;
- 
+ 
 enum Direction <DeadEnd Up Right Down Left>;
- 
+ 
 sub gen_maze ( $X,
                $Y,
                $start_x = (^$X).pick * 2 + 1,
@@ -43,7 +47,7 @@ sub gen_maze ( $X,
     }
     push @maze, $[ flat NE, (EW, NEW) xx $X - 1, -NS, NW ];
     @maze[$start_y][$start_x] = OPEN;
- 
+ 
     my @stack;
     my $current = [$start_x, $start_y];
     loop {
@@ -57,7 +61,7 @@ sub gen_maze ( $X,
         }
     }
     return @maze;
- 
+ 
     sub pick_direction([$x,$y]) {
 	my @neighbors =
 	    (Up    if @maze[$y - 2][$x]),
@@ -66,7 +70,7 @@ sub gen_maze ( $X,
 	    (Right if @maze[$y][$x + 2]);
 	@neighbors.pick or DeadEnd;
     }
- 
+ 
     sub move ($dir, @cur) {
 	my ($x,$y) = @cur;
 	given $dir {
@@ -79,7 +83,7 @@ sub gen_maze ( $X,
 	[$x,$y];
     }
 }
- 
+ 
 sub display (@maze) {
     for @maze -> @y {
 	for @y.rotor(2) -> ($w, $c) {
@@ -90,7 +94,7 @@ sub display (@maze) {
 	say @ch[@y[*-1]];
     }
 }
- 
+ 
 display gen_maze( 29, 19 );
 ```
 

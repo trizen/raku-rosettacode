@@ -2,7 +2,11 @@
 
 # [Print debugging statement][1]
 
-There isn't anything built-in to do this in Rakudo Perl 6, though it's pretty easy to cobble something together piggybacking off of the exception system. It would probably be better to instantiate a specific "DEBUG" exception to avoid interfering with other user instantiated ad-hoc exceptions, but for a quick-and-dirty demo, this should suffice.
+
+
+
+
+There isn't anything built-in to do this in Rakudo/Raku, though it's pretty easy to cobble something together piggybacking off of the exception system. It would probably be better to instantiate a specific "DEBUG" exception to avoid interfering with other user instantiated ad-hoc exceptions, but for a quick-and-dirty demo, this should suffice.
 
 
 
@@ -14,7 +18,7 @@ Comments with the files line numbers are added here to make it easier to match u
 
 ```perl
 my &pdb = &die;
- 
+
 CATCH {
     when X::AdHoc {
         my @frames = .backtrace[*];
@@ -22,18 +26,18 @@ CATCH {
         for @frames {
             # Filter out exception handing and dispatcher frames
             next if .file.contains: 'SETTING' or .subname.chars < 1;
-            printf "%sfrom file: %s,%s line: %s\n",
+            printf "%sfrom file: %s,%s line: %s\n",
               (' ' x $++), .file,
-              (my $s = .subname) eq '<unit>' ?? '' !! " sub: $s,", .line;
+              (my $s = .subname) eq '<unit>' ?? '' !! " sub: $s,", .line;
         }
         say '';
         .resume;
     }
     default {}
 }
- 
+
 ## Testing / demonstration
- 
+
 # helper subs                #line 22
 sub alpha ($a) {             #line 23
     pdb ('a =>', $a + 3);    #line 24

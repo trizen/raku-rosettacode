@@ -4,9 +4,9 @@
 
 ```perl
 # 20210524 Raku programming solution
- 
+
 use NativeCall;
- 
+
 my $rot = 0e0;
                             # https://www.khronos.org/opengl/wiki/OpenGL_Type
 enum GLenum ( 
@@ -16,8 +16,8 @@ enum GLenum (
 );
 enum GLbitfield ( GL_COLOR_BUFFER_BIT => 0x00004000,   GL_DEPTH_BUFFER_BIT => 0x00000100, );
 enum GLUTdisplay_mode ( GLUT_RGB => 0x0000, GLUT_SINGLE => 0x0000, GLUT_DEPTH  => 0x0010, );
- 
- 
+
+
 constant $lib = 'glut';
 sub glutInit(CArray[uint32], CArray[Str]) is native($lib) {*};
 sub glutInitDisplayMode(uint32 $mode) is native($lib) {*};
@@ -28,8 +28,8 @@ sub glutWireTeapot(num64 $size) is native($lib) {*};
 sub glutIdleFunc(&func ()) is native($lib) {*};
 sub glutPostRedisplay() is native($lib) {*};
 sub glutMainLoop() is native($lib) {*};
- 
- 
+
+
 constant $gllib = 'GL';
 sub glClearColor(num32 $red, num32 $green, num32 $blue, num32 $alpha) is native($gllib) {*};
 sub glShadeModel(int32) is native($gllib) {*};
@@ -41,8 +41,8 @@ sub glPopMatrix() is native($gllib) {*};
 sub glFlush() is native($gllib) {*};
 sub glLightfv   (int32, int32, CArray[num32]) is native($gllib) {*};
 sub glMaterialfv(int32, int32, CArray[num32]) is native($gllib) {*};
- 
- 
+
+
 sub init {
    glClearColor(.5e0,.5e0,.5e0,0e0);
    glShadeModel(GL_SMOOTH);
@@ -53,7 +53,7 @@ sub init {
    glEnable(GL_LIGHT0);
    glEnable(GL_DEPTH_TEST);
 }
- 
+
 sub display {
    glClear(GL_COLOR_BUFFER_BIT+|GL_DEPTH_BUFFER_BIT);
    glPushMatrix();
@@ -64,13 +64,13 @@ sub display {
    glPopMatrix();
    glFlush();
 }
- 
+
 sub onIdle {
    $rot += 0.1e0;       # changed from 0.01 for faster rotation rate
    glutPostRedisplay();
 }
- 
- 
+
+
 glutInit(CArray[uint32].new,CArray[Str].new);
 glutInitDisplayMode(GLUT_SINGLE+|GLUT_RGB+|GLUT_DEPTH);
 glutInitWindowSize(900,700);
@@ -79,7 +79,6 @@ init();
 glutDisplayFunc(&display);
 glutIdleFunc(&onIdle);
 glutMainLoop();
- 
 ```
 
 

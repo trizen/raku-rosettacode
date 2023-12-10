@@ -2,6 +2,10 @@
 
 # [Active object][1]
 
+
+
+
+
 There is some jitter in the timer, but it is typically accurate to within a few thousandths of a second.
 
 ```perl
@@ -10,11 +14,11 @@ class Integrator {
     has $.now is rw;
     has $.value is rw = 0;
     has $.integrator is rw;
- 
+
     method init() {
         self.value = &(self.f)(0);
         self.integrator = Thread.new(
-            :code({
+            :code({
                 loop {
                     my $t1 = now;
                     self.value += (&(self.f)(self.now) + &(self.f)($t1)) * ($t1 - self.now) / 2;
@@ -22,33 +26,33 @@ class Integrator {
                     sleep .001;
                 }
             }),
-            :app_lifetime(True)
+            :app_lifetime(True)
         ).run
     }
- 
+
     method Input (&f-of-t) {
         self.f = &f-of-t;
-        self.init;
         self.now = now;
+        self.init;
     }
- 
+
     method Output { self.value }
 }
- 
+
 my $a = Integrator.new;
- 
+
 $a.Input( sub ($t) { sin(2 * π * .5 * $t) } );
- 
+
 say "Initial value: ", $a.Output;
- 
+
 sleep 2;
- 
+
 say "After 2 seconds: ", $a.Output;
- 
+
 $a.Input( sub ($t) { 0 } );
- 
+
 sleep .5;
- 
+
 say "f(0): ", $a.Output;
 ```
 

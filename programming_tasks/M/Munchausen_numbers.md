@@ -2,6 +2,8 @@
 
 # [Munchausen numbers][1]
 
+
+
 ```perl
 sub is_munchausen ( Int $n ) {
     constant @powers = 0, |map { $_ ** $_ }, 1..9;

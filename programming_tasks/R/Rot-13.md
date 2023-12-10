@@ -2,24 +2,27 @@
 
 # [Rot-13][1]
 
+
+
 ```perl
-print slurp.trans: ['A'..'Z','a'..'z'] => ['N'..'Z','A'..'M','n'..'z','a'..'m']
+my @abc = 'a'..'z';
+my $abc = [@abc».uc, @abc];
+put .trans: $abc => $abc».rotate(13) for lines
 ```
-
-
-Input:
-
 
 #### Output:
 ```
 Rosetta Code
 ```
 
-
-Output:
-
-
 #### Output:
 ```
 Ebfrggn Pbqr
+```
+
+
+As a one-liner:
+
+```console
+$ raku -pe '.=trans: {$_ => $_».rotate(13)}({[$_».uc, @$_]}("a".."z"))'
 ```

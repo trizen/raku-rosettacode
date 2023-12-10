@@ -2,12 +2,14 @@
 
 # [Doubly-linked list/Element definition][1]
 
+
+
 ```perl
 role DLElem[::T] {
     has DLElem[T] $.prev is rw;
     has DLElem[T] $.next is rw;
     has T $.payload = T;
- 
+
     method pre-insert(T $payload) {
         die "Can't insert before beginning" unless $!prev;
         my $elem = ::?CLASS.new(:$payload);
@@ -17,7 +19,7 @@ role DLElem[::T] {
         $!prev = $elem;
         $elem;
     }
- 
+
     method post-insert(T $payload) {
         die "Can't insert after end" unless $!next;
         my $elem = ::?CLASS.new(:$payload);
@@ -27,7 +29,7 @@ role DLElem[::T] {
         $!next = $elem;
         $elem;
     }
- 
+
     method delete {
         die "Can't delete a sentinel" unless $!prev and $!next;
         $!next.prev = $!prev;

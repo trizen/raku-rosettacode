@@ -2,7 +2,8 @@
 
 # [Here document][1]
 
-Heredocs in Perl 6 use the `:to` modifier to a quoting operator,
+
+Heredocs in Raku use the `:to` modifier to a quoting operator, 
 such as `q` or `qq`.
 The indentation of the end marker is removed from every line.
 
@@ -39,7 +40,7 @@ sub freewheelin() {
                 Bob $contrived_example
                 AUTHOR
 }
- 
+
 freewheelin;
 ```
 
@@ -51,7 +52,7 @@ freewheelin;
 ```
 
 
-Both q and qq are specialised forms of [Q](http://design.perl6.org/S02.html#Q_forms) which comes with many adverbs. Here a heredoc that only interpolates @-sigils.
+Both q and qq are specialised forms of [Q](http://design.raku.org/S02.html#Q_forms) which comes with many adverbs. Here a heredoc that only interpolates @-sigils.
 
 ```perl
 my @a = <1 2 3 4>;

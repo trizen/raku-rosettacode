@@ -2,7 +2,11 @@
 
 # [Pick random element][1]
 
-In a nutshell, picking an element from a list
+
+
+
+
+In a nutshell, picking an element from a list 
 is implemented with a method conveniently called "pick":
 
 ```perl
@@ -10,9 +14,9 @@ say (1, 2, 3).pick;
 ```
 
 
-There are various ways of doing something similar, though.
-Perl 6 has actually two methods (with associated functional forms)
-to return random elements depending on whether you are doing selection
+There are various ways of doing something similar, though.  
+Raku has actually two methods (with associated functional forms) 
+to return random elements depending on whether you are doing selection 
 with or without replacement.
 
 
@@ -37,7 +41,7 @@ say @deck.pick(*); # Get a shuffled deck
 ```
 
 
-Or you can always use the normal `rand` built-in
+Or you can always use the normal `rand` built-in 
 to generate a subscript (which automatically truncates any fractional part):
 
 ```perl
@@ -45,8 +49,8 @@ to generate a subscript (which automatically truncates any fractional part):
 ```
 
 
-However, the `pick` and `roll` methods (not to be confused
-with the pick-and-roll method in basketball) are more general
+However, the `pick` and `roll` methods (not to be confused 
+with the pick-and-roll method in basketball) are more general 
 insofar as they may be used on any enumerable type:
 
 ```perl

@@ -2,6 +2,10 @@
 
 # [Paraffins][1]
 
+
+
+
+
 Counting only, same algorithm as the C solution with some refactorings.
 
 
@@ -12,7 +16,7 @@ Note how lexical scoping &#8212; rather than global variables or repeated argume
 sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
     my @rooted   = flat 1,1,0 xx $max-weight - 1;
     my @unrooted = flat 1,1,0 xx $max-weight - 1;
- 
+
     sub count-trees-with-centroid(Int $radius) {
         sub add-branches(
             Int $branches,        # number of branches to add
@@ -33,14 +37,14 @@ sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
         }
         add-branches($max-branches, $radius, 1, 1);
     }
- 
+
     sub count-trees-with-bicentroid(Int $weight) {
-        if $weight %% 2 {
+        if $weight %% 2 {
             my \halfs = @rooted[$weight div 2];
             @unrooted[$weight] += (halfs * (halfs + 1)) div 2;
         }
     }
- 
+
     gather {
         take 1;
         for 1 .. $max-weight {
@@ -50,7 +54,7 @@ sub count-unrooted-trees(Int $max-branches, Int $max-weight) {
         }
     }
 }
- 
+
 my constant N = 100;
 my @paraffins = count-unrooted-trees(4, N);
 say .fmt('%3d'), ': ', @paraffins[$_] for flat 1 .. 30, N;

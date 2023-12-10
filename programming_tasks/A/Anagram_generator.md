@@ -5,30 +5,30 @@
 Using the unixdict.txt word file by default.
 
 ```perl
-unit sub MAIN ($in is copy = '', :$dict = 'unixdict.txt');
- 
+unit sub MAIN ($in is copy = '', :$dict = 'unixdict.txt');
+
 say 'Enter a word or phrase to be anagramed. (Loading dictionary)' unless $in.chars;
- 
+
 # Load the words into a word / Bag hash
 my %words = $dict.IO.slurp.lc.words.race.map: { .comb(/\w/).join => .comb(/\w/).Bag };
- 
+
 # Declare some globals
 my ($phrase, $count, $bag);
- 
+
 loop {
     ($phrase, $count, $bag) = get-phrase;
     find-anagram Hash.new: %words.grep: { .value ⊆ $bag };
 }
- 
+
 sub get-phrase {
-    my $prompt = $in.chars ?? $in !! prompt "\nword or phrase? (press Enter to quit) ";
+    my $prompt = $in.chars ?? $in !! prompt "\nword or phrase? (press Enter to quit) ";
     $in = '';
     exit unless $prompt;
     $prompt,
     +$prompt.comb(/\w/),
     $prompt.lc.comb(/\w/).Bag;
 }
- 
+
 sub find-anagram (%subset, $phrase is copy = '', $last = Inf) {
     my $remain = $bag ∖ $phrase.comb(/\w/).Bag;        # Find the remaining letters
     my %filtered = %subset.grep: { .value ⊆ $remain }; # Find words using the remaining letters
@@ -51,7 +51,6 @@ sub find-anagram (%subset, $phrase is copy = '', $last = Inf) {
 *Punctuation, capitalization and (in some cases) word order manually massaged.*
 
 
-#### Output:
 ```
 Enter a word or phrase to be anagramed. (Loading dictionary)
 

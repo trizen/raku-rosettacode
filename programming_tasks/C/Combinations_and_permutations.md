@@ -2,61 +2,129 @@
 
 # [Combinations and permutations][1]
 
-Perl 6 can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations. We'll also use a Stirling method to approximate ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=ace1467263b72595ad730fc27d799714&mode=mathml):
+
+Raku can't compute arbitrary large floating point values, thus we will use logarithms, as is often needed when dealing with combinations.   We'll also use a Stirling method to approximate <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \ln(n!)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ln</mi>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo>!</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \ln(n!)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d264f09c80b779e9028658543d5e31ae647cacf1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:5.79ex; height:2.843ex;" alt="{\displaystyle \ln(n!)}"></span>:
 
 
 
-![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=967db0496a7d29c0869c95a3f73e8ec1&mode=mathml)
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \ln n!\approx {\frac {1}{2}}\ln(2\pi n)+n\ln \left({\frac {n}{e}}+{\frac {1}{12en}}\right)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ln</mi>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mi>n</mi>
+        <mo>!</mo>
+        <mo>&#x2248;<!-- ≈ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>2</mn>
+          </mfrac>
+        </mrow>
+        <mi>ln</mi>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mn>2</mn>
+        <mi>&#x03C0;<!-- π --></mi>
+        <mi>n</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>n</mi>
+        <mi>ln</mi>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mi>n</mi>
+                <mi>e</mi>
+              </mfrac>
+            </mrow>
+            <mo>+</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mn>12</mn>
+                  <mi>e</mi>
+                  <mi>n</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \ln n!\approx {\frac {1}{2}}\ln(2\pi n)+n\ln \left({\frac {n}{e}}+{\frac {1}{12en}}\right)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c30535e750163de96d5626c9d81642fd66739d34" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.505ex; width:38.183ex; height:6.176ex;" alt="{\displaystyle \ln n! \approx&#10;\frac{1}{2}\ln(2\pi n) + n\ln\left(\frac{n}{e} + \frac{1}{12 e n}\right)}"></span>
 
 
 
-Notice that Perl6 can process arbitrary long integers, though. So it's not clear whether using floating points is useful in this case.
+Notice that Raku can process arbitrary long integers, though.  So it's not clear whether using floating points is useful in this case.
 
 ```perl
 multi P($n, $k) { [*] $n - $k + 1 .. $n }
 multi C($n, $k) { P($n, $k) / [*] 1 .. $k }
- 
+ 
 sub lstirling(\n) {
-    n < 10 ?? lstirling(n+1) - log(n+1) !!
+    n < 10 ?? lstirling(n+1) - log(n+1) !!
     .5*log(2*pi*n)+ n*log(n/e+1/(12*e*n))
 }
- 
+ 
 role Logarithm {
     method gist {
 	my $e = (self/10.log).Int;
 	sprintf "%.8fE%+d", exp(self - $e*10.log), $e;
     }
 }
-multi P($n, $k, :$float!) {
+multi P($n, $k, :$float!) {
     (lstirling($n) - lstirling($n -$k))
     but Logarithm
 }
-multi C($n, $k, :$float!) {
+multi C($n, $k, :$float!) {
     (lstirling($n) - lstirling($n -$k) - lstirling($k))
     but Logarithm
 }
- 
+ 
 say "Exact results:";
 for 1..12 -> $n {
     my $p = $n div 3;
     say "P($n, $p) = ", P($n, $p);
 }
- 
+ 
 for 10, 20 ... 60 -> $n {
     my $p = $n div 3;
     say "C($n, $p) = ", C($n, $p);
 }
- 
+ 
 say '';
 say "Floating point approximations:";
 for 5, 50, 500, 1000, 5000, 15000 -> $n {
     my $p = $n div 3;
-    say "P($n, $p) = ", P($n, $p, :float);
+    say "P($n, $p) = ", P($n, $p, :float);
 }
- 
+ 
 for 100, 200 ... 1000 -> $n {
     my $p = $n div 3;
-    say "C($n, $p) = ", C($n, $p, :float);
+    say "C($n, $p) = ", C($n, $p, :float);
 }
 ```
 

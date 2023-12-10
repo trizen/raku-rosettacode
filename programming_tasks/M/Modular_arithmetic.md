@@ -2,15 +2,22 @@
 
 # [Modular arithmetic][1]
 
-There is an ecosystem module called Modular which works basically as Perl 5's Math::ModInt.
+
+
+
+
+We'll use the [FiniteFields](https://raku.land/github:grondilu/finite-fields-raku) repo.
 
 ```perl
-use Modular;
+use FiniteField;
+$*modulus = 13;
+
 sub f(\x) { x**100 + x + 1};
-say f( 10 Mod 13 )
+
+say f(10);
 ```
 
 #### Output:
 ```
-1 「mod 13」
+1
 ```

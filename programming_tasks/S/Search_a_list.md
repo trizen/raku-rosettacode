@@ -2,11 +2,13 @@
 
 # [Search a list][1]
 
+
+
 ```perl
 my @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
- 
+ 
 for <Washington Bush> -> $needle {
-    say "$needle -- { @haystack.first($needle, :k) // 'not in haystack' }";
+    say "$needle -- { @haystack.first($needle, :k) // 'not in haystack' }";
 }
 ```
 
@@ -23,12 +25,12 @@ Or, including the "extra credit" task:
 
 ```perl
 my Str @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
- 
+
 for <Washingston Bush> -> $needle {
-    my $first = @haystack.first($needle, :k);
- 
+    my $first = @haystack.first($needle, :k);
+
     if defined $first {
-        my $last = @haystack.first($needle, :k, :end);
+        my $last = @haystack.first($needle, :k, :end);
         say "$needle -- first at $first, last at $last";
     }
     else {
@@ -44,7 +46,7 @@ Bush -- first at 4, last at 7
 ```
 
 
-The built-in method `.first` takes a [smart-matcher](https://docs.perl6.org/language/operators#infix_~~), and returns the first matching list element.
+The built-in method `.first` takes a [smart-matcher](https://docs.raku.org/language/operators#infix_~~), and returns the first matching list element.
 
 The `:k` adverb tells it to return the key (a.k.a. list index) instead of the value of the matching element.
 
@@ -59,11 +61,11 @@ If you plan to do many searches on the same large list, you might want to build 
 
 ```perl
 my @haystack = <Zig Zag Wally Ronald Bush Krusty Charlie Bush Bozo>;
- 
+
 my %index;
 %index{.value} //= .key for @haystack.pairs;
- 
+
 for <Washington Bush> -> $needle {
-    say "$needle -- { %index{$needle} // 'not in haystack' }";
+    say "$needle -- { %index{$needle} // 'not in haystack' }";
 }
 ```

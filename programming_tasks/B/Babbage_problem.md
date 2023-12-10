@@ -2,15 +2,19 @@
 
 # [Babbage problem][1]
 
+
+
+
+
 This could certainly be written more concisely. Extra verbiage is included to make the process more clear.
 
 ```perl
-# For all positives integers from 1 to Infinity
+# For all positive integers from 1 to Infinity
 for 1 .. Inf -> $integer {
- 
+    
     # calculate the square of the integer
     my $square = $integer²;
- 
+    
     # print the integer and square and exit if the square modulo 1000000 is equal to 269696
     print "{$integer}² equals $square" and exit if $square mod 1000000 == 269696;
 }
@@ -22,14 +26,16 @@ for 1 .. Inf -> $integer {
 ```
 
 
-Alternatively, the following just may be declarative enough to allow Babbage to understand what's going on:
+More concisely (but clear enough to allow Mr. Babbage to understand what's going on?):
 
 ```perl
-say $_ if ($_²  % 1000000 == 269696) for 1..99736;
+.say and exit if $_²  % 1e6 == 269696 for ^∞;
 ```
 
 #### Output:
 ```
 25264
-99736
 ```
+
+
+Notice that \`exit\` ends the process itself instead of ending just the loop, as \`last\` would.  \`exit\` would arguably be easier to understand for Babbage though, so it may better fill the task requirement.

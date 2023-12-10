@@ -2,6 +2,10 @@
 
 # [Permutations][1]
 
+
+
+
+
 First, you can just use the built-in method on any list type.
 
 ```perl
@@ -19,25 +23,25 @@ c b a
 ```
 
 
-Here is some generic code that works with any ordered type. To force lexicographic ordering, change `after` to `gt`. To force numeric order, replace it with `>`.
+Here is some generic code that works with any ordered type.  To force lexicographic ordering, change `after` to `gt`.  To force numeric order, replace it with `>`.
 
 ```perl
 sub next_perm ( @a is copy ) {
     my $j = @a.end - 1;
     return Nil if --$j < 0 while @a[$j] after @a[$j+1];
- 
+
     my $aj = @a[$j];
     my $k  = @a.end;
     $k-- while $aj after @a[$k];
     @a[ $j, $k ] .= reverse;
- 
+
     my $r = @a.end;
     my $s = $j + 1;
     @a[ $r--, $s++ ] .= reverse while $r > $s;
-    return $(@a);
+    return @a;
 }
- 
-.say for [<a b c>], &next_perm ...^ !*;
+
+.say for [<a b c>], &next_perm ...^ !*;
 ```
 
 #### Output:
@@ -55,7 +59,7 @@ Here is another non-recursive implementation, which returns a lazy list. It also
 
 ```perl
 sub permute(+@items) {
-   my @seq := 1..+@items;
+   my @seq := 1..+@items;
    gather for (^[*] @seq) -> $n is copy {
       my @order;
       for @seq {

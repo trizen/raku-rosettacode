@@ -6,7 +6,7 @@ This, in general would be a bad idea. It isn't smart to add a lot of overhead to
 
 
 
-printf already has so many directives, most of the good mnemonics are already taken. Add a "commas" directive as&#160;%y and an "invert" directive as&#160;%z.
+printf already has so many directives, most of the good mnemonics are already taken. Add a "commas" directive as %y and an "invert" directive as %z.
 
 
 
@@ -19,7 +19,7 @@ This is *really* basic and sketchy. It only modifies printf, not sprintf, so pro
 ```perl
 use Lingua::EN::Numbers;
 use Acme::Text::UpsideDown;
- 
+
 sub printf (Str $format is copy, *@vars is copy) {
     my @directives = $format.comb(/ <?after <-[%]>|^> '%' <[ +0#-]>* <alpha>/);
     for ^@directives {
@@ -33,8 +33,8 @@ sub printf (Str $format is copy, *@vars is copy) {
     }
     &CORE::printf($format, @vars)
 }
- 
-printf "Integer %d with commas: %y\nSpelled out: %s\nInverted: %z\n",
+
+printf "Integer %d with commas: %y\nSpelled out: %s\nInverted: %z\n",
        12345, 12345, 12345.&cardinal, 12345.&cardinal;
 ```
 

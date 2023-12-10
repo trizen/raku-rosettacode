@@ -11,9 +11,9 @@ my @sqp = 2, -> $previous {
     }
     $next
 } … *;
- 
+
 say "{+$_} matching numbers:\n", $_».fmt('%5d').batch(7).join: "\n" given
-    @sqp[^(@sqp.first: * > 16000, :k)];
+    @sqp[^(@sqp.first: * > 16000, :k)];
 ```
 
 #### Output:

@@ -2,6 +2,10 @@
 
 # [Knapsack problem/Unbounded][1]
 
+
+
+
+
 Brute force, looked a lot at the Ruby solution.
 
 ```perl
@@ -10,27 +14,27 @@ class KnapsackItem {
   has $.weight;
   has $.value;
   has $.name;
- 
+
   method new($volume,$weight,$value,$name) {
-    self.bless(:$volume, :$weight, :$value, :$name)
+    self.bless(:$volume, :$weight, :$value, :$name)
   }
 };
- 
+
 my KnapsackItem $panacea .= new: 0.025, 0.3, 3000, "panacea";
 my KnapsackItem $ichor   .= new: 0.015, 0.2, 1800, "ichor";
 my KnapsackItem $gold    .= new: 0.002, 2.0, 2500, "gold";
 my KnapsackItem $maximum .= new: 0.25,  25,  0   , "max";
- 
+
 my $max_val = 0;
 my @solutions;
 my %max_items;
- 
+
 for $panacea, $ichor, $gold -> $item {
-    %max_items{$item.name} = floor [min]
+    %max_items{$item.name} = floor min
                             $maximum.volume / $item.volume,
 			    $maximum.weight / $item.weight;
 }
- 
+
 for 0..%max_items<panacea>
        X 0..%max_items<ichor>
            X 0..%max_items<gold>
@@ -43,17 +47,16 @@ for 0..%max_items<panacea>
     when $max_val    { @solutions.push: $[$p,$i,$g] }
   }
 }
- 
+
 say "maximum value is $max_val\npossible solutions:";
 say "panacea\tichor\tgold";
 .join("\t").say for @solutions;
 ```
 
 
-#### Output:
+**Output:**
 
 
-#### Output:
 ```
 maximum value is 54500
 possible solutions:

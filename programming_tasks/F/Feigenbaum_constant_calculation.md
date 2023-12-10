@@ -2,13 +2,15 @@
 
 # [Feigenbaum constant calculation][1]
 
+
+
 ```perl
 my $a1 = 1;
 my $a2 = 0;
 my $d = 3.2;
- 
+
 say ' i d';
- 
+
 for 2 .. 13 -> $exp {
     my $a = $a1 + ($a1 - $a2) / $d;
     do {

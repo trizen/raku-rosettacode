@@ -2,38 +2,40 @@
 
 # [Fibonacci word/fractal][1]
 
+
+
 ```perl
 constant @fib-word = '1', '0', { $^b ~ $^a } ... *;
- 
+
 sub MAIN($m = 17, $scale = 3) {
     (my %world){0}{0} = 1;
     my $loc = 0+0i;
     my $dir = i;
     my $n = 1;
- 
+
     for @fib-word[$m].comb {
         when '0' {
             step;
-            if $n %% 2 { turn-left }
+            if $n %% 2 { turn-left }
             else { turn-right; }
         }
         $n++;
     }
- 
+
     braille-graphics %world;
- 
+
     sub step {
         for ^$scale {
             $loc += $dir;
             %world{$loc.im}{$loc.re} = 1;
         }
     }
- 
+
     sub turn-left  { $dir *= i; }
     sub turn-right { $dir *= -i; }
- 
+
 }
- 
+
 sub braille-graphics (%a) {
     my ($ylo, $yhi, $xlo, $xhi);
     for %a.keys -> $y {
@@ -42,7 +44,7 @@ sub braille-graphics (%a) {
 	    $xlo min= +$x; $xhi max= +$x;
 	}
     }
- 
+
     for $ylo, $ylo + 4 ...^ * > $yhi -> \y {
 	for $xlo, $xlo + 2 ...^ * > $xhi -> \x {
 	    my $cell = 0x2800;

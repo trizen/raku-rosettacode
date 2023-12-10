@@ -2,7 +2,11 @@
 
 # [Maximum triangle path sum][1]
 
-The `Z+` and `Zmax` are examples of the zipwith metaoperator. Note also we can use the `Zmax` metaoperator form because `max` is define as an infix in Perl 6.
+
+
+
+
+The `Z+` and `Zmax` are examples of the zipwith metaoperator. Note also we can use the `Zmax` metaoperator form because `max` is define as an infix in Perl&#160;6.
 
 ```perl
 my $triangle = q|         55
@@ -23,21 +27,21 @@ my $triangle = q|         55
    85 32 25 85 57 48 84 35 47 62 17 01 01 99 89 52
   06 71 28 75 94 48 37 10 23 51 06 48 53 18 74 98 15
 27 02 92 23 08 71 76 84 15 52 92 63 81 10 44 10 69 93|;
- 
- 
+
+
 my @rows = $triangle.lines.map: { [.words] }
 while @rows > 1 {
-    my @last := @rows.pop;
+    my @last := @rows.pop;
     @rows[*-1] = (@rows[*-1][] Z+ (@last Zmax @last[1..*])).List;
 }
 put @rows;
- 
- 
+
+
 # Here's a more FPish version. We define our own operator and the use it in the reduction metaoperator form, [op], which turns any infix into a list operator. 
 sub infix:<op>(@a,@b) { (@a Zmax @a[1..*]) Z+ @b }
 put [op] $triangle.lines.reverse.map: { [.words] }
- 
- 
+
+
 # Or, instead of using reverse, one could also define the op as right-associative.
 sub infix:<rop>(@a,@b) is assoc('right') { @a Z+ (@b Zmax @b[1..*]) }
 put [rop] $triangle.lines.map: { [.words] }

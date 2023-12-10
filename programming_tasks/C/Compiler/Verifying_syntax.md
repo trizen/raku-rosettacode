@@ -6,11 +6,11 @@ Format of task grammar is changed from EBNF to ABNF to cater for the Grammar::AB
 
 ```perl
 # 20200511 Raku programming solution
- 
+
 use Grammar::ABNF;
- 
+
 grammar G is Grammar::ABNF { token CRLF { "\n" } };
- 
+
 my $g = G.generate(Q:to<RULES>
 stmt         =          expr
 expr         =          expr_level_2
@@ -31,7 +31,7 @@ Letter       =  "a" / "b" / "c" / "d" / "e" / "f" / "g" / "h" / "i" / "j"
                / "Y" / "Z"
 RULES
 );
- 
+
 my \DATA = Q:to<DATA>;
 3 + not 5
 3 + (not 5)
@@ -55,7 +55,7 @@ j & k
 l or _m
 UPPER_cAsE_aNd_letter_and_12345_test
 DATA
- 
+
 say $g.parse($_).Bool, "\t", $_ for DATA.lines
 ```
 

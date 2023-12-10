@@ -2,6 +2,10 @@
 
 # [Number names][1]
 
+
+
+
+
 Apart from the `$m++` this can be viewed as a purely functional program; we use nested `gather`/`take` constructs to avoid accumulators.
 
 ```perl
@@ -14,7 +18,7 @@ constant @M = (<0 thousand>,
     (map { ('', <un duo tre quattuor quin sex septen octo novem>).flat X~ $_ },
     <dec vigint trigint quadragint quinquagint sexagint septuagint octogint nonagint>),
     'cent').flat X~ 'illion')).flat;
- 
+
 sub int-name ($num) {
     if $num.substr(0,1) eq '-' { return "negative {int-name($num.substr(1))}" }
     if $num eq '0' { return @I[0] }
@@ -35,7 +39,7 @@ sub int-name ($num) {
         $m++;
     }
 }
- 
+
 while '' ne (my $n = prompt("Number: ")) {
     say int-name($n);
 }
@@ -45,7 +49,6 @@ while '' ne (my $n = prompt("Number: ")) {
 Output:
 
 
-#### Output:
 ```
 Number: 0
 zero
@@ -62,17 +65,17 @@ one hundred ninety eight trillion, seven hundred twenty three billion, four hund
 ```
 
 
-Alternately, we could use the Lingua::EN::Numbers::Cardinal module from the Perl 6 ecosystem. It will return similar output for similar inputs as above, but also handles fractions with configurable reduction and denominator, exponential notation, and ordinal notation.
+Alternately, we could use the [Lingua::EN::Numbers module from the Raku ecosystem](https://modules.raku.org/search/?q=Lingua%3A%3AEN%3A%3ANumbers). It will return similar output for similar inputs as above, but also handles fractions with configurable reduction and denominator, exponential notation, and ordinal notation.
 
 ```perl
-use Lingua::EN::Numbers::Cardinal;
- 
+use Lingua::EN::Numbers; # Version 2.4.0 or higher
+
 put join "\n", .&cardinal, .&cardinal(:improper) with -7/4;
- 
-printf "%-7s : %19s : %s\n", $_, cardinal($_), cardinal($_, :denominator(16)) for 1/16, 2/16 ... 1;
- 
+
+printf "%-7s : %19s : %s\n", $_, cardinal($_), cardinal($_, :denominator(16)) for 1/16, 2/16 ... 1;
+
 put join "\n", .&cardinal, .&cardinal-year, .&ordinal, .&ordinal-digit with 1999;
- 
+
 .&cardinal.put for 6.022e23, 42000, π;
 ```
 

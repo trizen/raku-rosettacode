@@ -1,11 +1,13 @@
-[1]: https://rosettacode.org/wiki/Dijkstra's_algorithm
+[1]: https://rosettacode.org/wiki/Dijkstra%27s_algorithm
 
-# [Dijkstra's algorithm][1]
+# [Dijkstra&#039;s algorithm][1]
+
+
 
 ```perl
 class Graph {
   has (%.edges, %.nodes);
- 
+
   method new(*@args){
     my (%edges, %nodes);
     for @args {
@@ -15,7 +17,7 @@ class Graph {
     }
     self.bless(edges => %edges, nodes => %nodes);
   }
- 
+
   method neighbours ($source) {
     my (%neighbours, $edges);
     $edges = self.nodes{$source};
@@ -28,23 +30,23 @@ class Graph {
     }
     return %neighbours
   }
- 
+
   method dijkstra ($source, $dest) {
     my (%node_data, $v, $u);
     my @q = self.nodes.keys;
- 
+
     for self.nodes.keys {
       %node_data{$_}{'dist'} = Inf;
       %node_data{$_}{'prev'} = '';
     }
     %node_data{$source}{'dist'} = 0;
- 
+
     while @q {
-      # %node_data.perl.say;
+      # %node_data.perl.say;
       my ($mindist, $idx) =
         @((map {[%node_data{@q[$_]}{'dist'},$_]},^@q).min(*[0]));
       $u = @q[$idx];
- 
+
       if $mindist eq Inf {
         return ()
       }
@@ -60,7 +62,7 @@ class Graph {
       else {
         @q.splice($idx,1);
       }
- 
+
       for self.neighbours($u).kv -> $v, $edge {
         my $alt = %node_data{$u}{'dist'} + $edge[2];
         if $alt < %node_data{$v}{'dist'} {
@@ -71,7 +73,7 @@ class Graph {
     }
   }
 }
- 
+
 my $a = Graph.new([
   ["a", "b",  7],
   ["a", "c",  9],

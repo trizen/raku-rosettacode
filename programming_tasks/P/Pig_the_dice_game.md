@@ -2,10 +2,12 @@
 
 # [Pig the dice game][1]
 
+
+
 ```perl
 constant DIE = 1..6;
- 
-sub MAIN (Int :$players = 2, Int :$goal = 100) {
+ 
+sub MAIN (Int :$players = 2, Int :$goal = 100) {
     my @safe = 0 xx $players;
     for |^$players xx * -> $player {
 	say "\nOK, player #$player is up now.";
@@ -41,7 +43,6 @@ sub MAIN (Int :$players = 2, Int :$goal = 100) {
 The game defaults to the specified task, but we'll play a shorter game with three players for our example:
 
 
-#### Output:
 ```
 > pig help
 Usage:

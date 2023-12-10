@@ -2,65 +2,45 @@
 
 # [Resistor mesh][1]
 
+
+
 ```perl
-my $S = 10;
- 
-my @fixed;
- 
-sub allocmesh ($w, $h) {
-    gather for ^$h {
-	take [0 xx $w];
-    }
+my $*TOLERANCE = 1e-12;
+
+sub set-boundary(@mesh,@p1,@p2) {
+    @mesh[ @p1[0] ; @p1[1] ] =  1;
+    @mesh[ @p2[0] ; @p2[1] ] = -1;
 }
- 
-sub force-fixed(@f) {
-    @f[1][1] =  1;
-    @f[6][7] = -1;
-}
- 
-sub force-v(@v) {
-    @v[1][1] =  1;
-    @v[6][7] = -1;
-}
- 
-sub calc_diff(@v, @d, Int $w, Int $h) {
-    my $total = 0;
-    for (flat ^$h X ^$w) -> $i, $j {
-        my @neighbors = grep *.defined, @v[$i-1][$j], @v[$i][$j-1], @v[$i+1][$j], @v[$i][$j+1];
-        my $v = [+] @neighbors;
-        @d[$i][$j] = $v = @v[$i][$j] - $v / +@neighbors;
-        $total += $v * $v unless @fixed[$i][$j];
-    }
-    return $total;
-}
- 
-sub iter(@v, Int $w, Int $h) {
-    my @d = allocmesh($w, $h);
-    my $diff = 1e10;
-    my @cur = 0, 0, 0;
- 
-    while $diff > 1e-24 {
-        force-v(@v);
-        $diff = calc_diff(@v, @d, $w, $h);
-        for (flat ^$h X ^$w) -> $i, $j {
-            @v[$i][$j] -= @d[$i][$j];
+
+sub solve(@p1, @p2, Int \w, Int \h) {
+    my @d     = [0 xx w] xx h;
+    my @V     = [0 xx w] xx h;
+    my @fixed = [0 xx w] xx h;
+    set-boundary(@fixed,@p1,@p2);
+
+    loop {
+        set-boundary(@V,@p1,@p2);
+        my $diff = 0;
+        for (flat ^h X ^w) -> \i, \j {
+            my @neighbors = (@V[i-1;j], @V[i;j-1], @V[i+1;j], @V[i;j+1]).grep: *.defined;
+            @d[i;j] = my \v = @V[i;j] - @neighbors.sum / @neighbors;
+            $diff += v × v unless @fixed[i;j];
+        }
+        last if $diff =~= 0;
+
+        for (flat ^h X ^w) -> \i, \j {
+            @V[i;j] -= @d[i;j];
         }
     }
- 
-    for (flat ^$h X ^$w) -> $i, $j {
-        @cur[ @fixed[$i][$j] + 1 ]
-            += @d[$i][$j] * (?$i + ?$j + ($i < $h - 1) + ($j < $w - 1));
+
+    my @current;
+    for (flat ^h X ^w) -> \i, \j {
+        @current[ @fixed[i;j]+1 ] += @d[i;j] × (?i + ?j + (i < h-1) + (j < w-1) );
     }
- 
-    return (@cur[2] - @cur[0]) / 2;
+    (@current[2] - @current[0]) / 2
 }
- 
-my @mesh = allocmesh($S, $S);
- 
-@fixed = allocmesh($S, $S);
-force-fixed(@fixed);
- 
-say 2 / iter(@mesh, $S, $S);
+
+say 2 / solve (1,1), (6,7), 10, 10;
 ```
 
 #### Output:

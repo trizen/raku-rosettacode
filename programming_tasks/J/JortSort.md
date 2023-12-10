@@ -2,6 +2,8 @@
 
 # [JortSort][1]
 
+
+
 ```perl
 sub jort-sort { @_ eqv @_.sort }
 ```
@@ -14,10 +16,9 @@ sub jort-sort-more-better-sorta { [!after] @_ }
 ```
 
 
-However, since Perl 6 has a really good inliner, there's really little point anyway in using the `[!after]` reduction operator directly, and `jort-sort-more-better-sorta` is really much more self-documenting, so please don't use the reduction operator if you can. For example:
+However, since Perl&#160;6 has a really good inliner, there's really little point anyway in using the `[!after]` reduction operator directly, and `jort-sort-more-better-sorta` is really much more self-documenting, so please don't use the reduction operator if you can.  For example:
 
 
-#### Output:
 ```
 $ perl6
 > [!after] <a b c>  # DON'T do it this way

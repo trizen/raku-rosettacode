@@ -2,7 +2,8 @@
 
 # [Video display modes][1]
 
-Perl 6 runs on several different operating systems over many different architectures so can not easily assume direct control over hardware. Instead, like most modern programming languages, it relies on the current OS and windowing system to provide APIs.
+
+Raku runs on several different operating systems over many different architectures so can not easily assume direct control over hardware. Instead, like most modern programming languages, it relies on the current OS and windowing system to provide APIs.
 
 
 
@@ -10,13 +11,13 @@ Here is an example which will work for most Debian based Linuxs (and probably ot
 
 ```perl
 my @info = QX('xrandr -q').lines;
- 
+
 @info[0] ~~ /<?after 'current '>(\d+) ' x ' (\d+)/;
 my $current = "$0x$1";
- 
+
 my @resolutions;
 @resolutions.push: $0 if $_ ~~ /^\s+(\d+'x'\d+)/ for @info;
- 
+
 QX("xrandr -s @resolutions[*-1]");
 say "Current resolution {@resolutions[*-1]}.";
 for 9 ... 1 {

@@ -2,7 +2,11 @@
 
 # [Reflection/List properties][1]
 
-You can get a list of an object's attributes (instance variables) using `.^attributes`, which is part of the [Meta Object Protocol](https://docs.perl6.org/type/Metamodel$COLON$COLONClassHOW)..
+
+
+
+
+You can get a list of an object's attributes (instance variables) using `.^attributes`, which is part of the [Meta Object Protocol](https://docs.raku.org/type/Metamodel$COLON$COLONClassHOW)..
 
 Each is represented as an `Attribute` object that contains a bunch of info:
 
@@ -12,9 +16,9 @@ class Foo {
     has Str $.b;
     has Int $.c is rw;
 }
- 
+
 my $object = Foo.new: b => "Hello", c => 42;
- 
+
 for $object.^attributes {
     say join ", ", .name, .readonly, .container.^name, .get_value($object);
 }

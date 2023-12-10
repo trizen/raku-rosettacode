@@ -3,15 +3,18 @@
 # [Yellowstone sequence][1]
 
 
+
+
+
 Not really clear whether a line graph or bar graph was desired, so generate both. Also, 100 points don't really give a good feel for the overall shape so do 500.
 
 ```perl
 my @yellowstone = 1, 2, 3, -> $q, $p {
     state @used = True xx 4;
     state $min  = 3;
-    my \index = ($min .. *).first: { not @used[$_] and $_ gcd $q != 1 and $_ gcd $p == 1 };
+    my \index = ($min .. *).first: { not @used[$_] and $_ gcd $q != 1 and $_ gcd $p == 1 };
     @used[index] = True;
-    $min = @used.first(!*, :k) // +@used - 1;
+    $min = @used.first(!*, :k) // +@used - 1;
     index
 } … *;
 
@@ -39,8 +42,8 @@ my $chart = SVG::Plot.new(
 my $line = './Yellowstone-sequence-line-perl6.svg'.IO;
 my $bars = './Yellowstone-sequence-bars-perl6.svg'.IO;
 
-$line.spurt: SVG.serialize: $chart.plot: :lines;
-$bars.spurt: SVG.serialize: $chart.plot: :bars;
+$line.spurt: SVG.serialize: $chart.plot: :lines;
+$bars.spurt: SVG.serialize: $chart.plot: :bars;
 ```
 
 #### Output:

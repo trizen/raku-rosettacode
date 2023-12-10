@@ -2,6 +2,8 @@
 
 # [Identity matrix][1]
 
+
+
 ```perl
 sub identity-matrix($n) {
     my @id;
@@ -10,7 +12,7 @@ sub identity-matrix($n) {
     }
     @id;
 }
- 
+
 .say for identity-matrix(5);
 ```
 

@@ -2,6 +2,12 @@
 
 # [Reflection/Get source][1]
 
+
+
+
+
+
+
 A full path is provided for built-in routines/methods. However for routines exported by pre-compiled modules a precompilation hash is returned, not a proper file path.
 
 ```perl

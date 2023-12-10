@@ -2,9 +2,11 @@
 
 # [Twelve statements][1]
 
-```perl
-sub infix:<→> ($protasis, $apodosis) { !$protasis or $apodosis }
 
+
+```perl
+sub infix:<→> ($protasis, $apodosis) { !$protasis or $apodosis }
+ 
 my @tests =
     { .end == 12 and all(.[1..12]) === any(True, False) },
     { 3 == [+] .[7..12] },
@@ -25,12 +27,12 @@ my @misses;
 
 for [X] (True, False) xx 12 {
     my @assert = Nil, |$_;
-    my @result = Nil, |@tests.map({ ?.(@assert) });
+    my @result = Nil, |@tests.map({ ?.(@assert) });
     my @true = @assert.grep(?*, :k);
     my @cons = (@assert Z=== @result).grep(!*, :k);
     given @cons {
         when 0 { push @solutions, "<{@true}> is consistent."; }
-        when 1 { push @misses, "<{@true}> implies { "¬" if !@result[~$_] }$_." }
+        when 1 { push @misses, "<{@true}> implies { "¬" if !@result[~$_] }$_." }
     }
 }
 

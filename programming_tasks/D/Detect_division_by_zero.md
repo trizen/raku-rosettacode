@@ -2,34 +2,48 @@
 
 # [Detect division by zero][1]
 
+
+
+
+
+#### Try/Catch
+
 ```perl
-sub div($a, $b){
+sub div($a, $b) {
     my $r;
     try {
         $r = $a / $b;
         CATCH {
-           say "tried to divide by zero !" if $! ~~ "Divide by zero";
+            default { note "Unexpected exception, $_" }
         }
     }
-    return $r // fail;
+    return $r // Nil;
 }
- 
-say div(10,2); # 5
-say div(1,0); # Inf, 1/0 constants are substituted for Infinity
-say div(1, sin(0)); # undef, and prints "tried to divide by zero"
- 
+say div(10,2);
+say div(1, sin(0));
+```
+
+#### Output:
+```
+5
+Unexpected exception, Attempt to divide 1 by zero using /
+Nil
 ```
 
 
-### Using Multi Method Dispatch
+#### Multi Method Dispatch
 
 ```perl
-multi div($a, $b){ return $a / $b }
-multi div($a, $b where { $b == 0 }){ 
-    say 'lolicheatsyou'; 
-    return 1; 
-}
- 
-say div(1, sin(0)); # prints "lolicheatsyou" newline "1"
- 
+multi div($a, $b) { return $a / $b }
+multi div($a, $b where { $b == 0 }) { note 'Attempt to divide by zero.'; return Nil }
+
+say div(10, 2);
+say div(1, sin(0));
+```
+
+#### Output:
+```
+5
+Attempt to divide by zero.
+Nil
 ```

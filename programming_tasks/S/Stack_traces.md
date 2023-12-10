@@ -2,6 +2,8 @@
 
 # [Stack traces][1]
 
+
+
 ```perl
 sub g { say Backtrace.new.concise }
 sub f { g }

@@ -2,11 +2,13 @@
 
 # [Entropy][1]
 
+
+
 ```perl
 sub entropy(@a) {
     [+] map -> \p { p * -log p }, bag(@a).values »/» +@a;
 }
- 
+
 say log(2) R/ entropy '1223334444'.comb;
 ```
 
@@ -16,7 +18,7 @@ say log(2) R/ entropy '1223334444'.comb;
 ```
 
 
-In case we would like to add this function to Perl 6's core, here is one way it could be done:
+In case we would like to add this function to Raku's core, here is one way it could be done:
 
 ```perl
 use MONKEY-TYPING;
@@ -26,6 +28,6 @@ augment class Bag {
 	self.values »/» +self;
     }
 }
- 
+
 say '1223334444'.comb.Bag.entropy / log 2;
 ```

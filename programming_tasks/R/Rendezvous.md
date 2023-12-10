@@ -2,19 +2,23 @@
 
 # [Rendezvous][1]
 
-Perl 6 has no built-in support for rendezvous. I tried to simulate it using message passing and a lock - not sure if that counts.
+
+
+
+
+Raku has no built-in support for rendezvous. Simulated using message passing and a lock. May be slightly bogus.
 
 ```perl
 class X::OutOfInk is Exception {
     method message() { "Printer out of ink" }
 }
- 
+
 class Printer {
     has Str      $.id;
     has Int      $.ink = 5;
     has Lock     $!lock .= new;
     has ::?CLASS $.fallback;
- 
+    
     method print ($line) {
         $!lock.protect: {
             if    $!ink      { say "$!id: $line"; $!ink-- }
@@ -23,11 +27,11 @@ class Printer {
         }
     }
 }
- 
+
 my $printer =
     Printer.new: id => 'main', fallback =>
     Printer.new: id => 'reserve';
- 
+
 sub client ($id, @lines) {
     start {
         for @lines {
@@ -39,7 +43,7 @@ sub client ($id, @lines) {
         note "<$id is done>";
     }
 }
- 
+
 await
     client('Humpty', q:to/END/.lines),
         Humpty Dumpty sat on a wall.

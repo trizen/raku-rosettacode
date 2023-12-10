@@ -2,17 +2,19 @@
 
 # [Display a linear combination][1]
 
+
+
 ```perl
 sub linear-combination(@coeff) {
     (@coeff Z=> map { "e($_)" }, 1 .. *)
     .grep(+*.key)
     .map({ .key ~ '*' ~ .value })
     .join(' + ')
-    .subst('+ -', '- ', :g)
-    .subst(/<|w>1\*/, '', :g)
+    .subst('+ -', '- ', :g)
+    .subst(/<|w>1\*/, '', :g)
         || '0'
 }
- 
+ 
 say linear-combination($_) for 
 [1, 2, 3],
 [0, 1, 2, 3],

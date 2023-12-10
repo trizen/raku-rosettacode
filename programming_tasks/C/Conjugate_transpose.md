@@ -2,6 +2,8 @@
 
 # [Conjugate transpose][1]
 
+
+
 ```perl
 for [ # Test Matrices
        [   1, 1+i, 2i],
@@ -28,23 +30,23 @@ for [ # Test Matrices
         say "Is Normal?\t{is-Normal(@m, @t)}";
         say "Is Unitary?\t{is-Unitary(@m, @t)}";
     }
- 
+
 sub is-Hermitian (@m, @t, --> Bool) {
     so @m».Complex eqv @t».Complex
  }
- 
+
 sub is-Normal (@m, @t, --> Bool) {
     so mat-mult(@m, @t)».Complex eqv mat-mult(@t, @m)».Complex
 }
- 
+
 sub is-Unitary (@m, @t, --> Bool) {
     so mat-mult(@m, @t, 1e-3)».Complex eqv mat-ident(+@m)».Complex;
 }
- 
+
 sub mat-trans (@m) { map { [ @m[*;$_] ] }, ^@m[0] }
- 
+
 sub mat-ident ($n) { [ map { [ flat 0 xx $_, 1, 0 xx $n - 1 - $_ ] }, ^$n ] }
- 
+
 sub mat-mult (@a, @b, \ε = 1e-15) {
     my @p;
     for ^@a X ^@b[0] -> ($r, $c) {
@@ -53,7 +55,7 @@ sub mat-mult (@a, @b, \ε = 1e-15) {
     }
     @p
 }
- 
+
 sub say-it (@array) { $_».fmt("%9s").say for @array }
 ```
 

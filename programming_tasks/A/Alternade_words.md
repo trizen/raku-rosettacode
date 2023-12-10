@@ -3,7 +3,7 @@
 # [Alternade words][1]
 
 ```perl
-unit sub MAIN ($file = 'unixdict.txt', :$min = 6);
+unit sub MAIN ($file = 'unixdict.txt', :$min = 6);
 
 my %words = $file.IO.slurp.words.map: * => 1;
 
@@ -21,8 +21,8 @@ for %words {
 say "{+@alternades} alternades longer than {$min-1} characters found in $file:";
 
 .say for @alternades > 10
-  ?? (flat @alternades.head(5), '...', @alternades.tail(5))
-  !! @alternades;
+  ?? (flat @alternades.head(5), '...', @alternades.tail(5))
+  !! @alternades;
 ```
 
 #### Output:

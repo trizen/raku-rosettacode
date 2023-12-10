@@ -2,10 +2,12 @@
 
 # [Bulls and cows][1]
 
+
+
 ```perl
 my $size = 4;
 my @secret = pick $size, '1' .. '9';
- 
+
 for 1..* -> $guesses {
     my @guess;
     loop {
@@ -22,6 +24,6 @@ for 1..* -> $guesses {
     last if $bulls == $size;
     say "$bulls bulls, $cows cows.";
 }
- 
+
 say 'A winner is you!';
 ```

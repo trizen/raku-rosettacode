@@ -58,7 +58,7 @@ sub own-password (Int $password, Int $nonce) {
     }
     $n1
 }
- 
+
 say own-password( 12345, 603356072 );
 say own-password( 12345, 410501656 );
 say own-password( 12345, 630292165 );

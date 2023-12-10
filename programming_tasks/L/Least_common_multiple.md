@@ -2,6 +2,7 @@
 
 # [Least common multiple][1]
 
+
 This function is provided as an infix so that it can be used productively with various metaoperators.
 
 ```perl

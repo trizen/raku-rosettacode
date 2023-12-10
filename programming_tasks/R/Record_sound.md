@@ -2,18 +2,19 @@
 
 # [Record sound][1]
 
+
 Slightly modified from an example provided with the `Audio::PortAudio` module distribution.
 
 ```perl
 use Audio::PortAudio;
 use Audio::Sndfile;
- 
-sub MAIN(Str $filename, Str :$source, Int :$buffer = 256) {
+
+sub MAIN(Str $filename, Str :$source, Int :$buffer = 256) {
     my $pa = Audio::PortAudio.new;
     my $format = Audio::Sndfile::Info::Format::WAV +| Audio::Sndfile::Info::Subformat::PCM_16;
-    my $out-file = Audio::Sndfile.new(:$filename, channels => 1, samplerate => 44100, :$format, :w);
+    my $out-file = Audio::Sndfile.new(:$filename, channels => 1, samplerate => 44100, :$format, :w);
     my $st;
- 
+    
     if $source.defined {
         my $index = 0;
         for $pa.devices -> $device {
@@ -27,11 +28,11 @@ sub MAIN(Str $filename, Str :$source, Int :$buffer = 256) {
                     $st = $pa.open-stream($si, Audio::PortAudio::StreamParameters, 44100, $buffer );
                     last;
                 }
- 
+
             }
             $index++;
         }
-        die "Couldn't find a device for '$source'" if !$st.defined;
+        die "Couldn't find a device for '$source'" if !$st.defined;
     }
     else {
         $st = $pa.open-default-stream(2,0, Audio::PortAudio::StreamFormat::Float32, 44100, $buffer);
@@ -59,7 +60,7 @@ sub MAIN(Str $filename, Str :$source, Int :$buffer = 256) {
             }
         }
     };
- 
+
     loop {
         if $p.status ~~ Planned {
             my $f = $buffer || $st.read-available;
@@ -72,6 +73,6 @@ sub MAIN(Str $filename, Str :$source, Int :$buffer = 256) {
             last;
         }
     }
- 
+
 }
 ```

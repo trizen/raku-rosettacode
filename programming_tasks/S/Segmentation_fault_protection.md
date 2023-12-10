@@ -7,7 +7,7 @@ Barring bugs in the compiler implementation, it should be impossible to generate
 ```perl
 my @array = [1, 2, 3, 4, 5, 6];
 my $var = @array[500];
- 
+
 say $var;
 ```
 

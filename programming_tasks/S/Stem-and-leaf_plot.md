@@ -2,6 +2,10 @@
 
 # [Stem-and-leaf plot][1]
 
+
+
+
+
 Handles negative stems properly.
 
 ```perl
@@ -18,16 +22,16 @@ my @data = <
     124 115  43 120  43  27  27  18  28  48 125
     107 114  34 133  45 120  30 127  31 116 146
 >».Int.sort;
- 
+ 
 my Int $stem_unit = 10;
 my %h = @data.classify: * div $stem_unit;
- 
+ 
 my $range = [minmax] %h.keys».Int;
 my $stem_format =  "%{$range.min.chars max $range.max.chars}d";
- 
+ 
 for $range.list -> $stem {
     my $leafs = %h{$stem} // [];
-    say $stem.fmt($stem_format), ' | ', ~$leafs.map: * % $stem_unit;
+    say $stem.fmt($stem_format), ' | ', ~$leafs.map: * % $stem_unit;
 }
 ```
 

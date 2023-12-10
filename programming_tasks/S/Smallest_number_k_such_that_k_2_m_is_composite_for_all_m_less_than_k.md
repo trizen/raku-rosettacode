@@ -3,7 +3,7 @@
 # [Smallest number k such that k+2^m is composite for all m less than k][1]
 
 ```perl
-put (1..∞).hyper(:250batch).map(* × 2 + 1).grep( -> $k { !(1 ..^ $k).first: ($k + 1 +< *).is-prime } )[^5]
+put (1..∞).hyper(:250batch).map(* × 2 + 1).grep( -> $k { !(1 ..^ $k).first: ($k + 1 +< *).is-prime } )[^5]
 ```
 
 #### Output:

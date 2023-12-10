@@ -2,6 +2,7 @@
 
 # [Terminal control/Display an extended character][1]
 
+
 To demonstrate we're not limited to Latin-1, we'll print the fullwidth variant.
 
 ```perl

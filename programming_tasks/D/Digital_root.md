@@ -2,28 +2,30 @@
 
 # [Digital root][1]
 
+
+
 ```perl
-sub digroot ($r, :$base = 10) {
+sub digital-root ($r, :$base = 10) {
     my $root = $r.base($base);
     my $persistence = 0;
     while $root.chars > 1 {
-        $root = [+]($root.comb.map({:36($_)})).base($base);
+        $root = $root.comb.map({:36($_)}).sum.base($base);
         $persistence++;
     }
     $root, $persistence;
 }
- 
+
 my @testnums =
     627615,
     39390,
     588225,
     393900588225,
     58142718981673030403681039458302204471300738980834668522257090844071443085937;
- 
+
 for 10, 8, 16, 36 -> $b {
     for @testnums -> $n {
-        printf ":$b\<%s>\ndigital root %s, persistence %s\n\n",
-            $n.base($b), digroot $n, :base($b);
+        printf ":$b\<%s>\ndigital root %s, persistence %s\n\n",
+            $n.base($b), digital-root $n, :base($b);
     }
 }
 ```
@@ -92,13 +94,16 @@ digital root H, persistence 3
 ```
 
 
-Or if you are more inclined to the functional programming persuasion, you can use the `...` sequence operator to calculate the values without side effects:
+Or if you are more inclined to the functional programming persuasion, you can use the `…` sequence operator to calculate the values without side effects:
 
 ```perl
-sub digroot ($r, :$base = 10) {
-    my &sum = { [+](.comb.map({:36($_)})).base($base) }
- 
+sub digital-root ($r, :$base = 10) {
+    my &sum = { .comb.map({:36($_)}).sum.base($base) }
+
     return .[*-1], .elems-1
-        given $r.base($base), &sum ...  { .chars == 1 }
+        given $r.base($base), &sum … { .chars == 1 }
 }
 ```
+
+
+Output same as above.

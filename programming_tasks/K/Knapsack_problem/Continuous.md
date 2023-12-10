@@ -2,6 +2,10 @@
 
 # [Knapsack problem/Continuous][1]
 
+
+
+
+
 This Solutions sorts the item by WEIGHT/VALUE
 
 ```perl
@@ -10,27 +14,27 @@ class KnapsackItem {
   has $.weight is rw;
   has $.price is rw;
   has $.ppw;
- 
+
   method new (Str $n, Rat $w, Int $p) {
-    self.bless(:name($n), :weight($w), :price($p), :ppw($w/$p))
+    self.bless(:name($n), :weight($w), :price($p), :ppw($w/$p))
   }
- 
+
   method cut-maybe ($max-weight) {
     return False if $max-weight > $.weight;
     $.price = $max-weight / $.ppw;
     $.weight = $.ppw * $.price;
     return True;
   }
- 
-  method gist () { sprintf "%8s %1.2f   %3.2f",
+
+  method gist () { sprintf "%8s %1.2f   %3.2f",
                             $.name,
                                 $.weight,
                                         $.price }
 }
- 
+
 my $max-w = 15;
 say    "Item    Portion Value";
- 
+
 .say for gather
     for < beef    3.8 36
           pork    5.4 43
@@ -51,9 +55,11 @@ say    "Item    Portion Value";
     }
 ```
 
-#### Output:
+
+**Output:**
+
+
 ```
-%perl6 knapsack_continous.p6
 Item    Portion Value
   salami 3.00   95.00
      ham 3.60   90.00

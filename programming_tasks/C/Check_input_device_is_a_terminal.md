@@ -2,14 +2,16 @@
 
 # [Check input device is a terminal][1]
 
+
+
 ```perl
-say $*IN.t ?? "Input comes from tty." !! "Input doesn't come from tty.";
+say $*IN.t ?? "Input comes from tty." !! "Input doesn't come from tty.";
 ```
 
 #### Output:
 ```
-$ perl6 istty.p6
+$ raku istty.raku
 Input comes from tty.
-$ true | perl6 istty.p6
+$ true | raku istty.raku
 Input doesn't come from tty.
 ```

@@ -4,13 +4,13 @@
 
 ```perl
 my @words = 'unixdict.txt'.IO.slurp.lc.words.grep(*.chars > 2);
- 
+
 my @small = @words.grep(*.chars < 6);
- 
+
 use Text::Levenshtein;
- 
+
 my ($rounds, $word, $guess, @used, @possibles) = 0;
- 
+
 loop {
     my $lev;
     $word = @small.pick;
@@ -20,11 +20,11 @@ loop {
     }
     last if $lev;
 }
- 
+
 my $name = ',';
- 
+
 #[[### Entirely unnecessary and unuseful "chatty repartee" but is required by the task
- 
+
 run 'clear';
 $name = prompt "Hello player one, what is your name? ";
 say "Cool. I'm going to call you Gomer.";
@@ -33,9 +33,9 @@ sleep 1;
 say "\nPlayer two, what is your name?\nOh wait, this isn't a \"specified number of players\" game...";
 sleep 1;
 say "Nevermind.\n";
- 
+
 ################################################################################]]
- 
+
 loop {
     say "Word in play: $word";
     push @used, $word;
@@ -49,9 +49,9 @@ loop {
     say qww<Ok! Woot! 'Way to go!' Nice! 👍 😀>.pick ~ "\n";
     $word = $guess;
 }
- 
-my $already = ($guess ∈ @used) ?? " $guess was already played but" !! '';
- 
+
+my $already = ($guess ∈ @used) ?? " $guess was already played but" !! '';
+
 if @possibles {
     say "\nOops. Sorry{$name}{$already} one of [{@possibles}] would have continued the game."
 } else {

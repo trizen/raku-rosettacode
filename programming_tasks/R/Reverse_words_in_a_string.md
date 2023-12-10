@@ -2,6 +2,7 @@
 
 # [Reverse words in a string][1]
 
+
 We'll read input from stdin
 
 ```perl

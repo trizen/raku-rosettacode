@@ -11,11 +11,11 @@ sub distance-to-edge (\N) {
    @ul.push: [ reverse @ul[$_] ] for reverse ^$f;
    @ul
 }
- 
+ 
 for 0, 1, 2, 6, 9, 23 {
     my @dte = .&distance-to-edge;
     my $max = chars max flat @dte».Slip;
- 
+ 
     say "\n$_ x $_ distance to nearest edge:";
     .fmt("%{$max}d").say for @dte;
 }

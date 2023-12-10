@@ -2,6 +2,8 @@
 
 # [Move-to-front algorithm][1]
 
+
+
 ```perl
 sub encode ( Str $word ) {
     my @sym = 'a' .. 'z';
@@ -10,7 +12,7 @@ sub encode ( Str $word ) {
         @sym[0 .. take (@sym ... $c).end] .= rotate(-1);
     }
 }
- 
+ 
 sub decode ( @enc ) {
     my @sym = 'a' .. 'z';
     [~] gather for @enc -> $pos {
@@ -18,7 +20,7 @@ sub decode ( @enc ) {
         @sym[0..$pos] .= rotate(-1);
     }
 }
- 
+ 
 use Test;
 plan 3;
 for <broood bananaaa hiphophiphop> -> $word {

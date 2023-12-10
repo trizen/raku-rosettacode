@@ -15,9 +15,9 @@ Individual Raku scripts are to some extent self-documenting. If the script has a
 ```perl
 sub MAIN(
     Str $run,             #= Task or file name
-    Str :$lang = 'raku',  #= Language, default raku
-    Int :$skip = 0,       #= Skip # to jump partially into a list
-    Bool :f(:$force),     #= Override any skip parameter
+    Str :$lang = 'raku',  #= Language, default raku
+    Int :$skip = 0,       #= Skip # to jump partially into a list
+    Bool :f(:$force),     #= Override any skip parameter
 ) {
     # do whatever
 }

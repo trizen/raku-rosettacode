@@ -2,23 +2,24 @@
 
 # [Fractal tree][1]
 
+
 Image is created in [SVG](https://en.wikipedia.org/wiki/SVG) format.
 
 ```perl
 my ($width, $height) = (1000,1000); # image dimension
 my $scale = 6/10; # branch scale relative to trunk
 my $length = 400; # trunk size
- 
+
 say "<?xml version='1.0' encoding='utf-8' standalone='no'?>
 <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 
 'https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
 <svg width='100%' height='100%' version='1.1'
 xmlns='https://www.w3.org/2000/svg'>";
- 
+
 tree($width/2, $height, $length, 3*pi/2);
- 
+
 say "</svg>";
- 
+
 multi tree($, $, $length where { $length < 1}, $) {}
 multi tree($x, $y, $length, $angle)
 {

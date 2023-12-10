@@ -2,7 +2,11 @@
 
 # [Dining philosophers][1]
 
-We use locking mutexes for the forks, and a lollipop to keep the last person who finished eating from getting hungry until the next person finishes eating, which prevents a cycle of dependency from forming. The algorithm should scale to many philosophers, and no philosopher need be singled out to be left-handed, so it's fair in that sense.
+
+
+
+
+We use locking mutexes for the forks, and a lollipop to keep the last person who finished eating from getting hungry until the next person finishes eating, which prevents a cycle of dependency from forming.  The algorithm should scale to many philosophers, and no philosopher need be singled out to be left-handed, so it's fair in that sense.
 
 ```perl
 class Fork {
@@ -16,24 +20,24 @@ class Fork {
 	$!lock.unlock;
     }
 }
- 
+ 
 class Lollipop {
     has $!channel = Channel.new;
     method mine($who) { $!channel.send($who) }
     method yours { $!channel.receive }
 }
- 
+ 
 sub dally($sec) { sleep 0.01 + rand * $sec }
- 
+ 
 sub MAIN(*@names) {
     @names ||= <Aristotle Kant Spinoza Marx Russell>;
- 
+ 
     my @lfork = Fork.new xx @names;
     my @rfork = @lfork.rotate;
- 
+ 
     my $lollipop = Lollipop.new;
     start { $lollipop.yours; }
- 
+ 
     my @philosophers = do for flat @names Z @lfork Z @rfork -> $n, $l, $r {
 	start { 
 	    sleep 1 + rand*4;
@@ -45,11 +49,11 @@ sub MAIN(*@names) {
 		dally 10;
 		$l.drop($n,'left');
 		$r.drop($n,'right');
- 
+ 
 		$lollipop.mine($n);
 		sleep 1;  # lick at least once
 		say "$n lost lollipop to $lollipop.yours(), now digesting";
- 
+ 
 		dally 20;
 	    }
 	}

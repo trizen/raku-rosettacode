@@ -2,7 +2,11 @@
 
 # [Mersenne primes][1]
 
-We already have a multitude of tasks that demonstrate **how** to find Mersenne primes; [Prime decomposition](https://rosettacode.org/wiki/Prime_decomposition), [Primality by trial division](https://rosettacode.org/wiki/Primality_by_trial_division), [Trial factoring of a Mersenne number](https://rosettacode.org/wiki/Trial_factoring_of_a_Mersenne_number), [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer_test), [Miller–Rabin primality_test](https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test), etc. that all have Perl 6 entries. I'm not sure what I could add here that would be useful.
+
+
+
+
+We already have a multitude of tasks that demonstrate **how** to find Mersenne primes; [Prime decomposition](https://rosettacode.org/wiki/Prime_decomposition), [Primality by trial division](https://rosettacode.org/wiki/Primality_by_trial_division), [Trial factoring of a Mersenne number](https://rosettacode.org/wiki/Trial_factoring_of_a_Mersenne_number), [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer_test), [Miller–Rabin primality_test](https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test), etc. that all have Raku entries. I'm not sure what I could add here that would be useful.
 
 
 
@@ -15,20 +19,19 @@ It doesn't specify to *calculate* them, only to *list* them; why throw away all 
 ```perl
 use HTTP::UserAgent;
 use Gumbo;
- 
-my $table = parse-html(HTTP::UserAgent.new.get('https://www.mersenne.org/primes/').content, :TAG<table>);
- 
+
+my $table = parse-html(HTTP::UserAgent.new.get('https://www.mersenne.org/primes/').content, :TAG<table>);
+
 say 'All known Mersenne primes as of ', Date(now);
- 
+
 say 'M', ++$, ": 2$_ - 1"
   for $table[1]».[*][0][*].comb(/'exp_lo='\d+/)».subst(/\D/, '',:g)
   .trans([<0123456789>.comb] => [<⁰¹²³⁴⁵⁶⁷⁸⁹>.comb]).words;
- 
 ```
 
 #### Output:
 ```
-All known Mersenne primes as of 2018-01-27
+All known Mersenne primes as of 2018-12-21
 M1: 2² - 1
 M2: 2³ - 1
 M3: 2⁵ - 1
@@ -79,4 +82,5 @@ M47: 2⁴³¹¹²⁶⁰⁹ - 1
 M48: 2⁵⁷⁸⁸⁵¹⁶¹ - 1
 M49: 2⁷⁴²⁰⁷²⁸¹ - 1
 M50: 2⁷⁷²³²⁹¹⁷ - 1
+M51: 2⁸²⁵⁸⁹⁹³³ - 1
 ```

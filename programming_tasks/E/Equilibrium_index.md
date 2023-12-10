@@ -2,17 +2,19 @@
 
 # [Equilibrium index][1]
 
+
+
 ```perl
 sub equilibrium_index(@list) {
     my ($left,$right) = 0, [+] @list;
- 
+
     gather for @list.kv -> $i, $x {
         $right -= $x;
         take $i if $left == $right;
         $left += $x;
     }
 }
- 
+
 my @list = -7, 1, 5, 2, -4, 3, 0;
 .say for equilibrium_index(@list).grep(/\d/);
 ```
@@ -29,7 +31,7 @@ sub equilibrium_index(@list) {
 ```
 
 
-The `[\+]` is a reduction that returns a list of partial results. The `»==«` is a vectorized equality comparison; it returns a vector of true and false. The `Zxx` is a zip with the list replication operator, so we return only the elements of the left list where the right list is true (which is taken to mean 1 here). And the `^@list` is just shorthand for `0 ..^ @list`. We could just as easily have used `@list.keys` there.
+The `[\+]` is a reduction that returns a list of partial results. The `»==«` is a vectorized equality comparison; it returns a vector of true and false.  The `Zxx` is a zip with the list replication operator, so we return only the elements of the left list where the right list is true (which is taken to mean 1 here).  And the `^@list` is just shorthand for `0 ..^ @list`.  We could just as easily have used `@list.keys` there.
 
 
 
@@ -88,15 +90,15 @@ Note: In the code below, it is more convenient to calculate 2L+C \*after\* L has
 ```perl
 sub eq_index ( *@list ) {
     my $sum = 0;
- 
+
     my %h = @list.keys.classify: {
         $sum += @list[$_];
         $sum * 2 - @list[$_];
     };
- 
+
     return %h{$sum} // [];
 }
- 
+
 say eq_index < -7  1  5  2 -4  3  0 >; # 3 6
 say eq_index <  2  4  6             >; # (no eq point)
 say eq_index <  2  9  2             >; # 1

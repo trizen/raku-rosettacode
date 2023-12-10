@@ -2,6 +2,8 @@
 
 # [Base58Check encoding][1]
 
+
+
 ```perl
 sub encode_Base58 ( Int $x ) {
     constant @codes = <
@@ -9,10 +11,10 @@ sub encode_Base58 ( Int $x ) {
         A B C D E F G H   J K L M N   P Q R S T U V W X Y Z
         a b c d e f g h i j k   m n o p q r s t u v w x y z
     >;
- 
+
     return @codes[ $x.polymod( 58 xx * ) ].join.flip;
 }
- 
+
 my @tests = 
     25420294593250030202636073700053352635053786165627414518 => '6UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM',
     0x61                    => '2g',
@@ -29,5 +31,4 @@ use Test;
 for @tests {
     is encode_Base58(.key), .value, "{.key} encodes to {.value}";
 }
- 
 ```

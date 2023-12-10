@@ -2,9 +2,11 @@
 
 # [Phrase reversals][1]
 
+
+
 ```perl
 my $s = 'rosetta code phrase reversal';
- 
+
 put 'Input               : ', $s;
 put 'String reversed     : ', $s.flip;
 put 'Each word reversed  : ', $s.words».flip;

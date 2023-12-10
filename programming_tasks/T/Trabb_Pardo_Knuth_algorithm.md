@@ -2,6 +2,8 @@
 
 # [Trabb Pardo–Knuth algorithm][1]
 
+
+
 ```perl
 my @nums = prompt("Please type 11 space-separated numbers: ").words
     until @nums == 11;

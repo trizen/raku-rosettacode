@@ -2,6 +2,10 @@
 
 # [Loops/While][1]
 
+
+
+
+
 Here is a straightforward translation of the task description:
 
 ```perl

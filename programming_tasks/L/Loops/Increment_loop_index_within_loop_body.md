@@ -2,6 +2,7 @@
 
 # [Loops/Increment loop index within loop body][1]
 
+
 Hmm.
 
 
@@ -10,8 +11,8 @@ The *best* way is probably to not use an explicit loop. Just calculate the seque
 
 ```perl
 # the actual sequence logic
-my @seq = grep *.is-prime, (42, { .is-prime ?? $_+<1 !! $_+1 } … *);
- 
+my @seq = grep *.is-prime, (42, { .is-prime ?? $_+<1 !! $_+1 } … *);
+
 # display code
 say (1+$_).fmt("%-4s"), @seq[$_].flip.comb(3).join(',').flip.fmt("%20s") for ^42;
 ```

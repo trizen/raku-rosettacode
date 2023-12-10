@@ -2,12 +2,14 @@
 
 # [Determine if a string is squeezable][1]
 
+
+
 ```perl
 map {
     my $squeeze = $^phrase;
     sink $^reg;
     $squeeze ~~ s:g/($reg)$0+/$0/;
-    printf "\nOriginal length: %d <<<%s>>>\nSqueezable on \"%s\": %s\nSqueezed length: %d <<<%s>>>\n",
+    printf "\nOriginal length: %d <<<%s>>>\nSqueezable on \"%s\": %s\nSqueezed length: %d <<<%s>>>\n",
       $phrase.chars, $phrase, $reg.uniname, $phrase ne $squeeze, $squeeze.chars, $squeeze
 },  
   '', ' ', 

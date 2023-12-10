@@ -2,6 +2,10 @@
 
 # [Largest number divisible by its digits][1]
 
+
+
+
+
 ### Base 10
 
 
@@ -22,17 +26,16 @@ All these optimizations get the run time to well under 1 second.
 
 ```perl
 my $magic-number = 9 * 8 * 7;                        # 504
- 
+
 my $div = 9876432 div $magic-number * $magic-number; # largest 7 digit multiple of 504 < 9876432
- 
+
 for $div, { $_ - $magic-number } ... * -> $test {    # only generate multiples of 504
     next if $test ~~ / <[05]> /;                     # skip numbers containing 0 or 5
     next if $test ~~ / (.).*$0 /;                    # skip numbers with non unique digits
-    next unless all $test.comb.map: $test %% *;      # skip numbers that don't divide evenly by all digits
- 
+
     say "Found $test";                               # Found a solution, display it
     for $test.comb {
-        printf "%s / %s = %s\n", $test, $_, $test / $_;
+        printf "%s / %s = %s\n", $test, $_, $test / $_;
     }
     last
 }
@@ -55,28 +58,27 @@ Found 9867312
 
 
 
-There are fewer analytical optimizations available for base 16. Other than 0, no digits can be ruled out so a much larger space must be searched. We'll start at the largest possible permutation (FEDCBA987654321) and work down so as soon as we find **a** solution, we know it is **the** solution.
+There are fewer analytical optimizations available for base 16. Other than 0, no digits can be ruled out so a much larger space must be searched. We'll start at the largest possible permutation (FEDCBA987654321) and work down so as soon as we find **a** solution, we know it is **the** solution.  The combination of `.race` with `.first` lets us utilize concurrency and exit early when the single desired solution is found.
 
 ```perl
 my $hex = 'FEDCBA987654321';        # largest possible hex number
 my $magic-number = [lcm] 1 .. 15;   # find least common multiple
-my $div = :16($hex) div $magic-number * $magic-number;
- 
-for $div, { $_ - $magic-number } ... 0 -> $num {  # Only generate multiples of the lcm 
-    my $test = $num.base(16);
- 
-    next if $test ~~ / 0 /;        # skip numbers containing 0
-    next if $test ~~ / (.).*$0 /;  # skip numbers with non unique digits
- 
-    say "Found $test";             # Found a solution, display it
-    say ' ' x 12, 'In base 16', ' ' x 36, 'In base 10';
-    for $test.comb {
-        printf "%s / %s = %s  |  %d / %2d = %19d\n",
-          $test, $_, ($num / :16($_)).base(16),
-          $num, :16($_), $num / :16($_);
-    }
-    last
-}
+my $div = :16($hex) div $magic-number * $magic-number;
+
+# hunt for target stepping backwards in multiples of the lcm
+my $target = ($div, * - $magic-number ... 0).race.first: -> \test {
+    my \num= test.base(16);
+    (num.contains('0') || num.comb.Bag.values.max > 1) ?? False !! True
+};
+my $hexnum = $target.base(16);
+
+say "Found $hexnum"; # Found a solution, display it
+
+say ' ' x 12, 'In base 16', ' ' x 36, 'In base 10';
+for $hexnum.comb {
+    printf "%s / %s = %s  |  %d / %2d = %19d\n",
+        $hexnum, $_, ($target / :16($_)).base(16),
+        $target, :16($_), $target / :16($_);}
 ```
 
 #### Output:

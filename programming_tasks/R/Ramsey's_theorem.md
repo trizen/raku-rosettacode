@@ -1,18 +1,21 @@
-[1]: https://rosettacode.org/wiki/Ramsey's_theorem
+[1]: https://rosettacode.org/wiki/Ramsey%27s_theorem
 
-# [Ramsey's theorem][1]
+# [Ramsey&#039;s theorem][1]
+
+
 
 ```perl
-my @a = [ 0 xx 17 ] xx 17;
-@a[$_;$_] = '-' for ^17;
- 
-for flat ^17 X 1,2,4,8 -> $i, $k {
-    my $j = ($i + $k) % 17;
+my $n = 17;
+my @a = [ 0 xx $n ] xx $n;
+@a[$_;$_] = '-' for ^$n;
+
+for flat ^$n X 1,2,4,8 -> $i, $k {
+    my $j = ($i + $k) % $n;
     @a[$i;$j] = @a[$j;$i] = 1;
 }
 .say for @a;
- 
-for combinations(17,4).Array -> $quartet {
+
+for combinations($n,4) -> $quartet {
     my $links = [+] $quartet.combinations(2).map: -> $i,$j { @a[$i;$j] }
     die "Bogus!" unless 0 < $links < 6;
 }

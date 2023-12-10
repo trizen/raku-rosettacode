@@ -2,28 +2,30 @@
 
 # [Fraction reduction][1]
 
+
+
 ```perl
 my %reduced;
 my $digits = 2..4;
- 
+
 for $digits.map: * - 1 -> $exp {
     my $start = sum (0..$exp).map( { 10 ** $_ * ($exp - $_ + 1) });
     my $end   = 10**($exp+1) - sum (^$exp).map( { 10 ** $_ * ($exp - $_) } ) - 1;
- 
-    ($start ..^ $end).race(:8degree, :3batch).map: -> $den {
+
+    ($start ..^ $end).race(:8degree, :3batch).map: -> $den {
         next if $den.contains: '0';
         next if $den.comb.unique <= $exp;
- 
+
         for $start ..^ $den -> $num {
             next if $num.contains: '0';
             next if $num.comb.unique <= $exp;
- 
+
             my $set = ($den.comb.head(* - 1).Set ∩ $num.comb.skip(1).Set);
             next if $set.elems < 1;
- 
+
             for $set.keys {
-                my $ne = $num.trans: $_ => '', :delete;
-                my $de = $den.trans: $_ => '', :delete;
+                my $ne = $num.trans: $_ => '', :delete;
+                my $de = $den.trans: $_ => '', :delete;
                 if $ne / $de == $num / $den {
                     print "\b" x 40, "$num/$den:$_ => $ne/$de";
                     %reduced{"$num/$den:$_"} = "$ne/$de";
@@ -31,10 +33,10 @@ for $digits.map: * - 1 -> $exp {
             }
         }
     }
- 
- 
+
+
     print "\b" x 40, ' ' x 40, "\b" x 40;
- 
+
     my $digit = $exp +1;
     my %d = %reduced.pairs.grep: { .key.chars == ($digit * 2 + 3) };
     say "\n({+%d}) $digit digit reduceable fractions:";

@@ -2,7 +2,8 @@
 
 # [Idiomatically determine all the lowercase and uppercase letters][1]
 
-Perl 6 supports all the Unicode categories of characters natively. The constant `0x1fffd` is <em>not</em> a typo for `0x10ffff`: we're restricting the range of characters to the first two Unicode planes, since the 3rd plane is reserved for ideographs (category Lo, "letter other"), and the subsequent planes contain no letters (yet).
+
+Raku supports all the Unicode categories of characters natively.  The constant `0x1fffd` is <em>not</em> a typo for `0x10ffff`: we're restricting the range of characters to the first two Unicode planes, since the 3rd plane is reserved for ideographs (category Lo, "letter other"), and the subsequent planes contain no letters (yet).
 
 ```perl
 given (0..0x1fffd).chrs {

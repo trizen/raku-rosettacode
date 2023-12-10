@@ -4,19 +4,19 @@
 
 ```perl
 unit sub MAIN ($shots = 6);
- 
+
 my @cyl;
- 
+
 sub load () {
     @cyl.=rotate(-1) while @cyl[1];
     @cyl[1] = 1;
     @cyl.=rotate(-1);
 }
- 
+
 sub spin () { @cyl.=rotate: (^@cyl).pick }
- 
+
 sub fire () { @cyl.=rotate; @cyl[0] }
- 
+
 sub LSLSFSF {
     @cyl = 0 xx $shots;
     load, spin, load, spin;
@@ -24,13 +24,13 @@ sub LSLSFSF {
     spin;
     fire
 }
- 
+
 sub LSLSFF {
     @cyl = 0 xx $shots;
     load, spin, load, spin;
     fire() || fire
 }
- 
+
 sub LLSFSF {
     @cyl = 0 xx $shots;
     load, load, spin;
@@ -38,33 +38,33 @@ sub LLSFSF {
     spin;
     fire
 }
- 
+
 sub LLSFF {
     @cyl = 0 xx $shots;
     load, load, spin;
     fire() || fire
 }
- 
+
 my %revolver;
 my $trials = 100000;
- 
+
 for ^$trials {
     %revolver<LSLSFSF> += LSLSFSF;
     %revolver<LSLSFF>  += LSLSFF;
     %revolver<LLSFSF>  += LLSFSF;
     %revolver<LLSFF>   += LLSFF;
 }
- 
+
 say "{.fmt('%7s')}: %{(%revolver{$_} / $trials × 100).fmt('%.2f')}"
   for <LSLSFSF LSLSFF LLSFSF LLSFF>
 ```
 
 #### Output:
 ```
-LSLSFSF: %55.37
- LSLSFF: %58.30
- LLSFSF: %55.42
-  LLSFF: %50.29
+LSLSFSF: %55.37
+ LSLSFF: %58.30
+ LLSFSF: %55.42
+  LLSFF: %50.29
 ```
 
 
@@ -75,12 +75,11 @@ Though if you go and look at the [ Wikipedia article for the 1895 Nagant revolve
 `raku roulette.raku 7`
 
 
-#### Output:
 ```
-LSLSFSF: %49.29
- LSLSFF: %51.14
- LLSFSF: %48.74
-  LLSFF: %43.08
+LSLSFSF: %49.29
+ LSLSFF: %51.14
+ LLSFSF: %48.74
+  LLSFF: %43.08
 ```
 
 
@@ -91,12 +90,11 @@ Or, how about a [Ruger GP100 10 round revolver](https://en.wikipedia.org/wiki/Ru
 `raku roulette.raku 10`
 
 
-#### Output:
 ```
-LSLSFSF: %36.00
- LSLSFF: %37.00
- LLSFSF: %36.13
-  LLSFF: %29.77
+LSLSFSF: %36.00
+ LSLSFF: %37.00
+ LLSFSF: %36.13
+  LLSFF: %29.77
 ```
 
 

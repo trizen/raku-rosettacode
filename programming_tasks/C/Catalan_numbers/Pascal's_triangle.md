@@ -1,16 +1,18 @@
-[1]: https://rosettacode.org/wiki/Catalan_numbers/Pascal's_triangle
+[1]: https://rosettacode.org/wiki/Catalan_numbers/Pascal%27s_triangle
 
-# [Catalan numbers/Pascal's triangle][1]
+# [Catalan numbers/Pascal&#039;s triangle][1]
+
+
 
 ```perl
 constant @pascal = [1], -> @p { [0, |@p Z+ |@p, 0] } ... *;
- 
+
 constant @catalan = gather for 2, 4 ... * -> $ix {
-    my @row := @pascal[$ix];
+    my @row := @pascal[$ix];
     my $mid = +@row div 2;
     take [-] @row[$mid, $mid+1]
 }
- 
+
 .say for @catalan[^20];
 ```
 

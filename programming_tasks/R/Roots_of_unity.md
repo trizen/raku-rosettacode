@@ -2,7 +2,8 @@
 
 # [Roots of unity][1]
 
-Perl 6 has a built-in function `cis` which returns a unitary complex number given its phase. Perl 6 also defines the `tau = 2*pi` constant. Thus the k-th n-root of unity can simply be written `cis(k*τ/n)`.
+
+Raku has a built-in function `cis` which returns a unitary complex number given its phase.  Raku also defines the `tau = 2*pi` constant.  Thus the k-th n-root of unity can simply be written `cis(k*τ/n)`.
 
 ```perl
 constant n = 10;
@@ -23,4 +24,24 @@ for ^n -> \k {
 -0.309016994374948-0.951056516295154i
 0.309016994374947-0.951056516295154i
 0.809016994374947-0.587785252292473i
+```
+
+
+Alternately, you could use the built-in .roots method to find the nth roots of any number.
+
+```perl
+.say for 1.roots(9)
+```
+
+#### Output:
+```
+1+0i
+0.766044443118978+0.6427876096865393i
+0.17364817766693041+0.984807753012208i
+-0.4999999999999998+0.8660254037844387i
+-0.9396926207859083+0.3420201433256689i
+-0.9396926207859084-0.34202014332566866i
+-0.5000000000000004-0.8660254037844384i
+0.17364817766692997-0.9848077530122081i
+0.7660444431189778-0.6427876096865396i
 ```

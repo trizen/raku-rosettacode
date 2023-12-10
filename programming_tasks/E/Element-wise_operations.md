@@ -2,20 +2,20 @@
 
 # [Element-wise operations][1]
 
+
+Raku already implements this and other metaoperators as higher-order functions (cross, zip, reduce, triangle, etc.) that are usually accessed through a meta-operator syntactic sugar that is productive over all appropriate operators, including user-defined ones.  In this case, a dwimmy element-wise operator (generically known as a "hyper") is indicated by surrounding the operator with double angle quotes.  Hypers dwim on the pointy end with cyclic APL semantics as necessary.  You can turn the quote the other way to suppress dwimmery on that end.  In this case we could have used `»op»` instead of `«op»` since the short side is always on the right.
+
 ```perl
 my @a =
     [1,2,3],
     [4,5,6],
     [7,8,9];
- 
+
 sub msay(@x) {
-    for @x -> @row {
-        print ' ', $_%1 ?? $_.nude.join('/') !! $_ for @row;
-        say '';
-    }
+    say .map( { ($_%1) ?? $_.nude.join('/') !! $_ } ).join(' ') for @x;
     say '';
 }
- 
+
 msay @a «+» @a;
 msay @a «-» @a;
 msay @a «*» @a;
@@ -28,15 +28,14 @@ msay @a «+» 2;
 msay @a «-» 2;
 msay @a «*» 2;
 msay @a «/» 2;
- 
+
 # In addition to calling the underlying higher-order functions directly, it's possible to name a function.
- 
+
 sub infix:<M+> (\l,\r) { l <<+>> r }
- 
+
 msay @a M+ @a;
 msay @a M+ [1,2,3];
 msay @a M+ 2;
- 
 ```
 
 #### Output:

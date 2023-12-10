@@ -2,11 +2,15 @@
 
 # [Starting a web browser][1]
 
+
+
+
+
 Uses the code from the [Separate the house number from the street name](https://rosettacode.org/wiki/Separate_the_house_number_from_the_street_name) task almost verbatim. Included here to make a complete, runnable example.
 
 ```perl
 use File::Temp;
- 
+
 my $addresses = qq :to /END/;
     Plataanstraat 5
     Straat 12
@@ -42,9 +46,9 @@ my $addresses = qq :to /END/;
     Schmidener Weg 3
     Karl-Weysser-Str. 6
     END
- 
+
 my @row-color = '#d7fffe', '#9dbcd4';
- 
+
 # build the table
 sub genTable () {
     my $table = '<table border="2"> <tr bgcolor="#02ccfe">' ~
@@ -67,7 +71,7 @@ sub genTable () {
     }
     $table ~ '</table>';
 }
- 
+
 # generate the page content
 sub content {
     qq :to /END/;
@@ -87,21 +91,20 @@ sub content {
     </html>
     END
 }
- 
+
 # Use a temporary file name and file handle
-my ($fn, $fh) = tempfile :suffix('.html');
- 
+my ($fn, $fh) = tempfile :suffix('.html');
+
 # dump the content to the file
 $fh.spurt: content;
- 
+
 # use appropriate command for Windows or X11
 # other OSs/WMs may need different invocation
-my $command = $*DISTRO.is-win ?? "start $fn" !! "xdg-open $fn";
- 
+my $command = $*DISTRO.is-win ?? "start $fn" !! "xdg-open $fn";
+
 # start the browser
 shell $command;
- 
+
 # wait for a bit to give browser time to load before destroying temp file
 sleep 5;
- 
 ```

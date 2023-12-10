@@ -2,6 +2,10 @@
 
 # [Bernoulli numbers][1]
 
+
+
+
+
 ### Simple
 
 
@@ -19,12 +23,12 @@ sub bernoulli($n) {
     }
     return @a[0];
 }
- 
+
 constant @bpairs = grep *.value.so, ($_ => bernoulli($_) for 0..60);
- 
-my $width = [max] @bpairs.map: *.value.numerator.chars;
+
+my $width = max @bpairs.map: *.value.numerator.chars;
 my $form = "B(%2d) = \%{$width}d/%d\n";
- 
+
 printf $form, .key, .value.nude for @bpairs;
 ```
 
@@ -69,7 +73,7 @@ B(60) = -1215233140483755572040304994079820246041491/56786730
 
 
 
-Here is a much faster way, following the Perl solution that avoids recalculating previous values each time through the function. We do this in Perl 6 by not defining it as a function at all, but by defining it as an infinite sequence that we can read however many values we like from (52, in this case, to get up to B(100)). In this solution we've also avoided subscripting operations; rather we use a sequence operator (`...`) iterated over the list of the previous solution to find the next solution. We reverse the array in this case to make reference to the previous value in the list more natural, which means we take the last value of the list rather than the first value, and do so conditionally to avoid 0 values.
+Here is a much faster way, following the Perl solution that avoids recalculating previous values each time through the function.  We do this in Raku by not defining it as a function at all, but by defining it as an infinite sequence that we can read however many values we like from (52, in this case, to get up to B(100)).  In this solution we've also avoided subscripting operations; rather we use a sequence operator (`...`) iterated over the list of the previous solution to find the next solution.  We reverse the array in this case to make reference to the previous value in the list more natural, which means we take the last value of the list rather than the first value, and do so conditionally to avoid 0 values.
 
 ```perl
 constant bernoulli = gather {
@@ -83,12 +87,12 @@ constant bernoulli = gather {
         take $m => @a[*-1] if @a[*-1];
     }
 }
- 
+
 constant @bpairs = bernoulli[^52];
- 
-my $width = [max] @bpairs.map: *.value.numerator.chars;
+
+my $width = max @bpairs.map: *.value.numerator.chars;
 my $form = "B(%d)\t= \%{$width}d/%d\n";
- 
+
 printf $form, .key, .value.nude for @bpairs;
 ```
 
@@ -153,31 +157,31 @@ B(100)  = -945980378191221252952274330694937218727028415330669361333856962043113
 
 
 
-And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects. We use zip with the pair constructor `=>` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number.
+And if you're a pure enough FP programmer to dislike destroying and reconstructing the array each time, here's the same algorithm without side effects.  We use zip with the pair constructor `=>` to keep values associated with their indices. This provides sufficient local information that we can define our own binary operator "bop" to reduce between each two terms, using the "triangle" form (called "scan" in Haskell) to return the intermediate results that will be important to compute the next Bernoulli number.
 
 ```perl
 sub infix:<bop>(\prev, \this) {
     this.key => this.key * (this.value - prev.value)
 }
- 
-sub next-bernoulli ( (:key($pm), :value(@pa)) ) {
+
+sub next-bernoulli ( (:key($pm), :value(@pa)) ) {
     $pm + 1 => [
         map *.value,
         [\bop] ($pm + 2 ... 1) Z=> FatRat.new(1, $pm + 2), |@pa
     ]
 }
- 
+
 constant bernoulli =
     grep *.value,
     map { .key => .value[*-1] },
     (0 => [FatRat.new(1,1)], &next-bernoulli ... *)
 ;
- 
+
 constant @bpairs = bernoulli[^52];
- 
-my $width = [max] @bpairs.map: *.value.numerator.chars;
+ 
+my $width = max @bpairs.map: *.value.numerator.chars;
 my $form = "B(%d)\t= \%{$width}d/%d\n";
- 
+ 
 printf $form, .key, .value.nude for @bpairs;
 ```
 

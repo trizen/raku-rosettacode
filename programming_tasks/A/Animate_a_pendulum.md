@@ -2,26 +2,30 @@
 
 # [Animate a pendulum][1]
 
+
+
+
+
 Handles window resizing, modifies pendulum length and period as window height changes. May need to tweek $ppi scaling to get good looking animation.
 
 ```perl
 use SDL2::Raw;
 use Cairo;
- 
+
 my $width = 1000;
 my $height = 400;
- 
+
 SDL_Init(VIDEO);
- 
+
 my $window = SDL_CreateWindow(
-    'Pendulum - Perl 6',
+    'Pendulum - Raku',
     SDL_WINDOWPOS_CENTERED_MASK,
     SDL_WINDOWPOS_CENTERED_MASK,
     $width, $height, RESIZABLE
 );
- 
+
 my $render = SDL_CreateRenderer($window, -1, ACCELERATED +| PRESENTVSYNC);
- 
+
 my $bob = Cairo::Image.create( Cairo::FORMAT_ARGB32, 32, 32 );
 given Cairo::Context.new($bob) {
      my Cairo::Pattern::Gradient::Radial $sphere .=
@@ -33,24 +37,24 @@ given Cairo::Context.new($bob) {
      .fill;
      $sphere.destroy;
 }
- 
+
 my $bob_texture = SDL_CreateTexture(
     $render, %PIXELFORMAT<ARGB8888>,
     STATIC, 32, 32
 );
- 
+
 SDL_UpdateTexture(
     $bob_texture,
-    SDL_Rect.new(:x(0), :y(0), :w(32), :h(32)),
+    SDL_Rect.new(:x(0), :y(0), :w(32), :h(32)),
     $bob.data, $bob.stride // 32
 );
- 
+
 SDL_SetTextureBlendMode($bob_texture, 1);
- 
+
 SDL_SetRenderDrawBlendMode($render, 1);
- 
+
 my $event = SDL_Event.new;
- 
+
 my $now = now;   # time
 my $Θ   = -π/3;  # start angle
 my $ppi = 500;   # scale
@@ -60,7 +64,7 @@ my $ay  = 25;       # anchor y
 my $len = $height - 75; # 'rope' length
 my $vel; # velocity
 my $dt;  # delta time
- 
+
 main: loop {
     while SDL_PollEvent($event) {
         my $casted_event = SDL_CastEvent($event);
@@ -76,14 +80,14 @@ main: loop {
             }
         }
     }
- 
+
     $dt = now - $now;
     $now = now;
     $vel += $g / $len * sin($Θ) * $ppi * $dt;
     $Θ   += $vel * $dt;
     my $bx = $ax + sin($Θ) * $len;
     my $by = $ay + cos($Θ) * $len;
- 
+
     SDL_SetRenderDrawColor($render, 255, 255, 255, 255);
     SDL_RenderDrawLine($render, |($ax, $ay, $bx, $by)».round);
     SDL_RenderCopy( $render, $bob_texture, Nil,
@@ -93,6 +97,6 @@ main: loop {
     SDL_SetRenderDrawColor($render, 0, 0, 0, 0);
     SDL_RenderClear($render);
 }
- 
+
 SDL_Quit();
 ```

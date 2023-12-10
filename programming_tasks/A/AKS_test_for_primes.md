@@ -2,27 +2,31 @@
 
 # [AKS test for primes][1]
 
-The expansions are generated similarly to how most FP languages generate sequences that resemble Pascal's triangle, using a zipwith meta-operator (Z) with subtraction, applied between two lists that add a 0 on either end to the prior list. Here we define a constant infinite sequence using the `...` sequence operator with a "whatever" endpoint. In fact, the second term `[1,-1]` could have been generated from the first term, but we put it in there for documentation so the reader can see what direction things are going.
 
 
 
-The `polyprime` function pretty much reads like the original description. Is it "so" that the p'th expansion's coefficients are all divisible by p? The `.[1 ..^ */2]` slice is done simply to weed out divisions by 1 or by factors we've already tested (since the coefficients are symmetrical in terms of divisibility). If we wanted to write `polyprime` even more idiomatically, we could have made it another infinite constant list that is just a mapping of the first list, but we decided that would just be showing off. `:-)`
+
+The expansions are generated similarly to how most FP languages generate sequences that resemble Pascal's triangle, using a zipwith meta-operator (Z) with subtraction, applied between two lists that add a 0 on either end to the prior list.  Here we define a constant infinite sequence using the `...` sequence operator with a "whatever" endpoint.  In fact, the second term `[1,-1]` could have been generated from the first term, but we put it in there for documentation so the reader can see what direction things are going.
+
+
+
+The `polyprime` function pretty much reads like the original description.  Is it "so" that the p'th expansion's coefficients are all divisible by p?  The `.[1 ..^ */2]` slice is done simply to weed out divisions by 1 or by factors we've already tested (since the coefficients are symmetrical in terms of divisibility).  If we wanted to write `polyprime` even more idiomatically, we could have made it another infinite constant list that is just a mapping of the first list, but we decided that would just be showing off.  `:-)`
 
 ```perl
 constant expansions = [1], [1,-1], -> @prior { [|@prior,0 Z- 0,|@prior] } ... *;
- 
-sub polyprime($p where 2..*) { so expansions[$p].[1 ..^ */2].all %% $p }
- 
+
+sub polyprime($p where 2..*) { so expansions[$p].[1 ..^ */2].all %% $p }
+
 # Showing the expansions:
- 
+
 say ' p: (x-1)ᵖ';
 say '-----------';
- 
+
 sub super ($n) {
     $n.trans: '0123456789'
            => '⁰¹²³⁴⁵⁶⁷⁸⁹';
 }
- 
+
 for ^13 -> $d {
     say $d.fmt('%2i: '), (
         expansions[$d].kv.map: -> $i, $n {
@@ -36,9 +40,9 @@ for ^13 -> $d {
         }
     )
 }
- 
+
 #  And testing the function:
- 
+
 print "\nPrimes up to 100:\n  { grep &polyprime, 2..100 }\n";
 ```
 

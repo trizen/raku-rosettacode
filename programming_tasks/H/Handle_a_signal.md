@@ -2,6 +2,7 @@
 
 # [Handle a signal][1]
 
+
 We note with glee that the task does not require us to print <em>consecutive</em> integers, so we'll print Fibonacci numbers instead. `:-)`
 
 ```perl
@@ -9,7 +10,7 @@ signal(SIGINT).tap: {
     note "Took { now - INIT now } seconds.";
     exit;
 }
- 
+
 for 0, 1, *+* ... * {
     sleep 0.5;
     .say;

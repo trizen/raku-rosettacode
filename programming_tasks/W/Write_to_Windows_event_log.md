@@ -2,7 +2,11 @@
 
 # [Write to Windows event log][1]
 
-There is not yet (that I am aware of) a native interface to the Windows logging functions, but Perl 6 can shell out and run a console command just as easily as most of these other languages. It *does* have a native interface to the syslog functions under POSIX environments though.
+
+
+
+
+There is not yet (that I am aware of) a native interface to the Windows logging functions, but Raku can shell out and run a console command just as easily as most of these other languages. It *does* have a native interface to the syslog functions under POSIX environments though.
 
 
 

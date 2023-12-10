@@ -1,24 +1,24 @@
 [1]: https://rosettacode.org/wiki/Goldbach%27s_comet
 
-# [Goldbach's comet][1]
+# [Goldbach&#039;s comet][1]
 
 For the stretch, actually generates a plot, doesn't just calculate values to be plotted by a third party application. Deviates slightly from the stretch goal, plots the first two thousand defined values rather than the values up to two thousand that happen to be defined. (More closely matches the [wikipedia example image](https://en.wikipedia.org/wiki/Goldbach%27s_comet).)
 
 ```perl
 sub G (Int $n) { +(2..$n/2).grep: { .is-prime && ($n - $_).is-prime } }
- 
+
 # Task
 put "The first 100 G values:\n", (^100).map({ G 2 × $_ + 4 }).batch(10)».fmt("%2d").join: "\n";
- 
+
 put "\nG 1_000_000 = ", G 1_000_000;
- 
+
 # Stretch
 use SVG;
 use SVG::Plot;
- 
+
 my @x = map 2 × * + 4, ^2000;
 my @y = @x.map: &G;
- 
+
 'Goldbachs-Comet-Raku.svg'.IO.spurt: SVG.serialize: SVG::Plot.new(
     width       => 1000,
     height      => 500,
@@ -26,8 +26,7 @@ my @y = @x.map: &G;
     title       => "Goldbach's Comet",
     x           => @x,
     values      => [@y,],
-).plot: :points;
- 
+).plot: :points;
 ```
 
 #### Output:

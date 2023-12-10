@@ -2,12 +2,14 @@
 
 # [Tokenize a string with escaping][1]
 
+
+
 ```perl
-sub tokenize ($string, :$sep!, :$esc!) {
+sub tokenize ($string, :$sep!, :$esc!) {
     return $string.match(/([ <!before $sep | $esc> . | $esc . ]*)+ % $sep/)\
-                  .[0].map(*.subst: /$esc )> ./, '', :g);
+                  .[0].map(*.subst: /$esc )> ./, '', :g);
 }
- 
+
 say "'$_'" for tokenize 'one^|uno||three^^^^|four^^^|^cuatro|', sep => '|', esc => '^';
 ```
 
@@ -21,4 +23,4 @@ say "'$_'" for tokenize 'one^|uno||three^^^^|four^^^|^cuatro|', sep => '|', esc 
 ```
 
 
-Notable Perl 6 innovations that make this different from the equivalent [#Perl](#Perl) solution:
+Notable Raku innovations that make this different from the equivalent [#Perl](#Perl) solution:

@@ -2,6 +2,10 @@
 
 # [Polyspiral][1]
 
+
+
+
+
 ### SVG "pseudo-animation"
 
 
@@ -12,36 +16,36 @@ Sort of an ersatz animation. Write updates to a svg file, most modern viewers wi
 use SVG;
 my $w = 600;
 my $h = 600;
- 
+
 for 3..33  -> $a {
     my $angle = $a/τ;
     my $x1 = $w/2;
     my $y1 = $h/2;
     my @lines;
- 
+
     for 1..144 {
         my $length = 3 * $_;
-        my ($x2, $y2) = ($x1, $y1) «+« |cis($angle * $_).reals».round(.01) »*» $length ;
-        @lines.push: 'line' => [:x1($x1.clone), :y1($y1.clone), :x2($x2.clone), :y2($y2.clone),
-                                :style("stroke:rgb({hsv2rgb(($_*5 % 360)/360,1,1).join: ','})")];
+        my ($x2, $y2) = ($x1, $y1) «+« |cis($angle * $_).reals».round(.01) »*» $length ;
+        @lines.push: 'line' => [:x1($x1.clone), :y1($y1.clone), :x2($x2.clone), :y2($y2.clone),
+                                :style("stroke:rgb({hsv2rgb(($_*5 % 360)/360,1,1).join: ','})")];
         ($x1, $y1) = $x2, $y2;
     }
- 
+
     my $fname = "./polyspiral-perl6.svg".IO.open(:w);
     $fname.say( SVG.serialize(
         svg => [
             width => $w, height => $h, style => 'stroke:rgb(0,0,0)',
-            :rect[:width<100%>, :height<100%>, :fill<black>],
+            :rect[:width<100%>, :height<100%>, :fill<black>],
             |@lines,
         ],)
     );
     $fname.close;
     sleep .15;
 }
- 
+
 sub hsv2rgb ( $h, $s, $v ){ # inputs normalized 0-1
     my $c = $v * $s;
-    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
+    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
     my $m = $v - $c;
     my ($r, $g, $b) = do given $h {
         when   0..^(1/6) { $c, $x, 0 }
@@ -56,7 +60,7 @@ sub hsv2rgb ( $h, $s, $v ){ # inputs normalized 0-1
 ```
 
 
-See [polyspiral-perl6.gif](https://github.com/thundergnat/rc/blob/master/img/polyspiral-perl6.gif) (offsite animated gif image)
+See [polyspiral-perl6.gif](https://github.com/thundergnat/rc/blob/master/img/polyspiral-perl6.gif)  (offsite animated gif image)
 
 
 
@@ -68,12 +72,12 @@ Uses the same basic algorithm but fully animated. Use the up / down arrow keys t
 
 ```perl
 use SDL2::Raw;
- 
+
 my $width  = 900;
 my $height = 900;
- 
+
 SDL_Init(VIDEO);
- 
+
 my $window = SDL_CreateWindow(
     'Polyspiral',
     SDL_WINDOWPOS_CENTERED_MASK,
@@ -81,11 +85,11 @@ my $window = SDL_CreateWindow(
     $width, $height,
     RESIZABLE
 );
- 
+
 my $render = SDL_CreateRenderer($window, -1, ACCELERATED +| PRESENTVSYNC);
- 
+
 my $event = SDL_Event.new;
- 
+
 enum KEY_CODES (
     K_UP     => 82,
     K_DOWN   => 81,
@@ -100,7 +104,7 @@ enum KEY_CODES (
     K_SPLUS  => 46,
     K_SMINUS => 45,
 );
- 
+
 my $angle = 0;
 my $lines = 240;
 my @rgb = palette($lines);
@@ -109,7 +113,7 @@ my $dir = 1;
 my $rot = 0;
 my $incr = .0001/π;
 my $step = $incr*70;
- 
+
 main: loop {
     while SDL_PollEvent($event) {
         my $casted_event = SDL_CastEvent($event);
@@ -118,14 +122,14 @@ main: loop {
             when *.type == KEYDOWN {
                 if KEY_CODES(.scancode) -> $comm {
                     given $comm {
-                        when 'K_LEFT'   { $dir = $rot ??  1 !! -1 }
-                        when 'K_RIGHT'  { $dir = $rot ?? -1 !!  1 }
+                        when 'K_LEFT'   { $dir = $rot ??  1 !! -1 }
+                        when 'K_RIGHT'  { $dir = $rot ?? -1 !!  1 }
                         when 'K_UP'     { $step += $incr }
                         when 'K_DOWN'   { $step -= $incr if $step > $incr }
                         when 'K_PGUP'   { $step += $incr*50 }
-                        when 'K_PGDN'   { $step -= $incr*50; $step = $step < $incr ?? $incr !! $step }
-                        when 'K_SPACE'  { $step = $step ?? 0 !! $incr }
-                        when 'K_LCTRL'  { $rot  = $rot  ?? 0 !! -1; $dir *= -1 }
+                        when 'K_PGDN'   { $step -= $incr*50; $step = $step < $incr ?? $incr !! $step }
+                        when 'K_SPACE'  { $step = $step ?? 0 !! $incr }
+                        when 'K_LCTRL'  { $rot  = $rot  ?? 0 !! -1; $dir *= -1 }
                         when 'K_PLUS'   { $lines = ($lines + 5) min 360; @rgb = palette($lines) }
                         when 'K_SPLUS'  { $lines = ($lines + 5) min 360; @rgb = palette($lines) }
                         when 'K_MINUS'  { $lines = ($lines - 5) max 60;  @rgb = palette($lines) }
@@ -142,12 +146,12 @@ main: loop {
             }
         }
     }
- 
-    $angle = ($angle + $dir * $step) % τ;
+
+    $angle = ($angle + $dir * $step) % τ;
     ($x1, $y1) = $width div 2, $height div 2;
     my $dim = $width min $height;
     my $scale = (2 + .33 * abs(π - $angle)) * $dim / $lines;
-    $scale *= ($angle > π) ?? (1 - $angle/τ) !! $angle/τ;
+    $scale *= ($angle > π) ?? (1 - $angle/τ) !! $angle/τ;
     $scale max= $dim/$lines/$lines;
     for ^$lines {
         my $length = $scale + $scale * $_;
@@ -161,14 +165,14 @@ main: loop {
     SDL_SetRenderDrawColor($render, 0, 0, 0, 0);
     SDL_RenderClear($render);
 }
- 
+
 SDL_Quit();
- 
-sub palette ($l) { (^$l).map: { hsv2rgb(($_ * 360/$l % 360)/360, 1, 1).list } };
- 
+
+sub palette ($l) { (^$l).map: { hsv2rgb(($_ * 360/$l % 360)/360, 1, 1).list } };
+
 sub hsv2rgb ( $h, $s, $v ){ # inputs normalized 0-1
     my $c = $v * $s;
-    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
+    my $x = $c * (1 - abs( (($h*6) % 2) - 1 ) );
     my $m = $v - $c;
     my ($r, $g, $b) = do given $h {
         when   0..^(1/6) { $c, $x, 0 }

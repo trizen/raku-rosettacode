@@ -6,7 +6,7 @@ One has to wonder where the digits 0 through 9 come in the alphabet... 🤔 For 
 
 ```perl
 my @list = <133252abcdeeffd a6789798st yxcdfgxcyz>;
- 
+
 for @list, (@list, 'AАΑSäaoö٥🤔👨‍👩‍👧‍👧') {
     say "$_\nSemi-bogus \"Unicode natural sort\" order: ",
     .map( *.comb ).Bag.grep( *.value == 1 )».key.sort( { .unival, .NFKD[0], .fc } ).join,

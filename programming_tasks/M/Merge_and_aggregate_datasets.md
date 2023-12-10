@@ -20,15 +20,15 @@ my @visits = map { ( <PATIENT_ID VISIT_DATE SCORE> Z=> .list ).hash },
     ( 4004, '2020-11-05', 7.0 ),
     ( 1001, '2020-11-19', 5.3 ),
 ;
- 
+
 my %v = @visits.classify: *.<PATIENT_ID>;
- 
+
 my @result = gather for @names -> %n {
     my @p = %v{ %n.<PATIENT_ID> }<>;
- 
+
     my @dates  = @p».<VISIT_DATE>.grep: *.defined;
     my @scores = @p».<     SCORE>.grep: *.defined;
- 
+
     take {
         %n,
         LAST_VISIT => ( @dates.max          if @dates  ),
@@ -36,7 +36,7 @@ my @result = gather for @names -> %n {
         SCORE_SUM  => ( @scores.sum         if @scores ),
     };
 }
- 
+
 my @out_field_names = <PATIENT_ID LASTNAME LAST_VISIT SCORE_SUM SCORE_AVG>;
 my @rows = @result.sort(*.<PATIENT_ID>).map(*.{@out_field_names});
 say .map({$_ // ''}).fmt('%-10s', ' | ') for @out_field_names, |@rows;

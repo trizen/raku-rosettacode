@@ -3,7 +3,6 @@
 # [Bin given limits][1]
 
 ```perl
- 
 sub bin_it ( @limits, @data ) {
     my @ranges = ( -Inf, |@limits, Inf ).rotor( 2 => -1 ).map: { .[0] ..^ .[1] };
     my @binned = @data.classify(-> $d { @ranges.grep(-> $r { $d ~~ $r }) });
@@ -13,7 +12,7 @@ sub bin_it ( @limits, @data ) {
 sub bin_format ( @bins ) {
     return @bins.map: { .key.gist.fmt('%9s => ') ~ .value.fmt('%2d') };
 }
- 
+
 my @tests =
     {
         limits => (23, 37, 43, 53, 67, 83),
@@ -30,12 +29,11 @@ my @tests =
         ),
     },
 ;
-for @tests -> ( :@limits, :@data ) {
+for @tests -> ( :@limits, :@data ) {
     my @bins = bin_it( @limits, @data );
     .say for bin_format(@bins);
     say '';
 }
- 
 ```
 
 #### Output:

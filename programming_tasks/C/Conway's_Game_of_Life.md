@@ -1,6 +1,8 @@
-[1]: https://rosettacode.org/wiki/Conway's_Game_of_Life
+[1]: https://rosettacode.org/wiki/Conway%27s_Game_of_Life
 
-# [Conway's Game of Life][1]
+# [Conway&#039;s Game of Life][1]
+
+
 
 ```perl
 class Automaton {
@@ -9,28 +11,28 @@ class Automaton {
     }
     has Int ($.width, $.height);
     has @.a;
- 
+
     multi method new (World $s) {
         self.new:
             :width(.pick.chars), :height(.elems),
             :a( .map: { [ .comb ] } )
                 given $s.lines.cache;
     }
- 
+
     method gist { join "\n", map { .join }, @!a }
- 
+
     method C (Int $r, Int $c --> Bool) {
-        @!a[$r % $!height][$c % $!width] eq '#';
+        @!a[$r % $!height][$c % $!width] eq '#';
     }
     method N (Int $r, Int $c --> Int) {
-        +grep ?*, map { self.C: |@$_ },
+        +grep ?*, map { self.C: |@$_ },
             [ $r - 1, $c - 1], [ $r - 1, $c ], [ $r - 1, $c + 1],
             [ $r    , $c - 1],                 [ $r    , $c + 1],
             [ $r + 1, $c - 1], [ $r + 1, $c ], [ $r + 1, $c + 1];
     }
- 
+
     method succ {
-        self.new: :$!width, :$!height,
+        self.new: :$!width, :$!height,
             :a(
                 gather for ^$.height -> $r {
                     take [
@@ -38,14 +40,14 @@ class Automaton {
                             take
                             (self.C($r, $c) == 1 && self.N($r, $c) == 2|3)
                                 || (self.C($r, $c) == 0 && self.N($r, $c) == 3)
-                            ?? '#' !! '.'
+                            ?? '#' !! '.'
                         }
                     ]
                 }
             )
     }
 }
- 
+
 my Automaton $glider .= new: q:to/EOF/;
     ............
     ............
@@ -55,8 +57,8 @@ my Automaton $glider .= new: q:to/EOF/;
     ........#...
     ............
     EOF
- 
- 
+
+
 for ^10 {
     say $glider++;
     say '--';

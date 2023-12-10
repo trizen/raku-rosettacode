@@ -20,7 +20,6 @@ dd <Rosetta Code is a programming chrestomathy site>.map({$_=>.chars}).sort({$^o
 ( `dd` is the built in "data-dumper" function; a verbose and explicit representation of an objects contents.)
 
 
-#### Output:
 ```
 ("a", "is", "Code", "site", "Rosetta", "programming", "chrestomathy").Seq
 ("a", "is", "Code", "site", "Rosetta", "programming", "chrestomathy").Seq

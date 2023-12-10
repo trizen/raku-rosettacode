@@ -2,17 +2,21 @@
 
 # [Determine if a string is collapsible][1]
 
+
+
+
+
 Technically, the task is asking for a boolean. "Determine if a string is collapsible" is answerable with True/False, so return a boolean as well.
 
 ```perl
 map {
     my $squish = .comb.squish.join;
-    printf "\nLength: %2d <<<%s>>>\nCollapsible: %s\nLength: %2d <<<%s>>>\n",
-      .chars, $_, .chars != $squish.chars, $squish.chars, $squish
+    printf "\nLength: %2d <<<%s>>>\nCollapsible: %s\nLength: %2d <<<%s>>>\n",
+      .chars, $_, .chars != $squish.chars, $squish.chars, $squish
 }, lines
- 
+ 
 q:to/STRINGS/;
- 
+    
     "If I were two-faced, would I be wearing this one?" --- Abraham Lincoln 
     ..1111111111111111111111111111111111111111111111111111111111111117777888
     I never give 'em hell, I just tell the truth, and they think it's hell. 
@@ -22,7 +26,6 @@ q:to/STRINGS/;
     AАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑAАΑ
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     STRINGS
- 
 ```
 
 #### Output:

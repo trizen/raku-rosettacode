@@ -2,6 +2,7 @@
 
 # [Read a file line by line][1]
 
+
 The lines method is lazy so the following code does indeed read the file line by line, and not all at once.
 
 ```perl

@@ -2,6 +2,10 @@
 
 # [Shortest common supersequence][1]
 
+
+
+
+
 Using 'lcs' routine from [Longest common subsequence task](https://rosettacode.org/wiki/Longest_common_subsequence#Raku)
 
 ```perl
@@ -9,10 +13,10 @@ sub lcs(Str $xstr, Str $ystr) { # longest common subsequence
     return "" unless $xstr && $ystr;
     my ($x, $xs, $y, $ys) = $xstr.substr(0, 1), $xstr.substr(1), $ystr.substr(0, 1), $ystr.substr(1);
     return $x eq $y
-        ?? $x ~ lcs($xs, $ys)
-        !! max(:by{ $^a.chars }, lcs($xstr, $ys), lcs($xs, $ystr) );
+        ?? $x ~ lcs($xs, $ys)
+        !! max(:by{ $^a.chars }, lcs($xstr, $ys), lcs($xs, $ystr) );
 }
- 
+
 sub scs ($u, $v) { # shortest common supersequence
     my @lcs = (lcs $u, $v).comb;
     my $pat = '(.*)' ~ join('(.*)',@lcs) ~ '(.*)';
@@ -23,12 +27,12 @@ sub scs ($u, $v) { # shortest common supersequence
     $scs ~= $_ ~ shift(@u) ~ shift(@v) for @lcs;
     return $scs;
 }
- 
+
 my $u = 'abcbdab';
 my $v = 'bdcaba';
-printf "Strings: %s %s\n", $u, $v;
-printf "Longest common subsequence:   %s\n", lcs $u, $v;
-printf "Shortest common supersquence: %s\n", scs $u, $v;
+printf "Strings: %s %s\n", $u, $v;
+printf "Longest common subsequence:   %s\n", lcs $u, $v;
+printf "Shortest common supersquence: %s\n", scs $u, $v;
 ```
 
 #### Output:

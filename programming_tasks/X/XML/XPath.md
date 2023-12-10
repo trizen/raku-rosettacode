@@ -2,9 +2,11 @@
 
 # [XML/XPath][1]
 
+
+
 ```perl
 use XML::XPath;
- 
+
 my $XML = XML::XPath.new(xml => q:to/END/);
 <inventory title="OmniCorp Store #45x10^3">
   <section name="health">
@@ -33,12 +35,12 @@ my $XML = XML::XPath.new(xml => q:to/END/);
   </section>
 </inventory>
 END
- 
+
 put "First item:\n", $XML.find('//item[1]')[0];
- 
+
 put "\nPrice elements:";
 .contents.put for $XML.find('//price').List;
- 
+
 put "\nName elements:\n", $XML.find('//name')».contents.join: ', ';
 ```
 

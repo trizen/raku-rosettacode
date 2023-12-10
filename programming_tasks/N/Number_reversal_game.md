@@ -2,13 +2,17 @@
 
 # [Number reversal game][1]
 
-Do-at-least-once loops are fairly rare, but this program wants to have two of them. We use the built-in `.pick(*)` method to shuffle the numbers. We use `.=` to dispatch a mutating method in two spots; the first is just a different way to write `++`, while the second of these reverses an array slice in place. The `[<]` is a reduction operator on less than, so it returns true if the elements of the list are strictly ordered. We also see in the first repeat loop that, although the while condition is not tested till after the loop, the while condition can in fact declare the variable that will be initialized the first time through the loop, which is a neat trick, and not half unreadable once you get used to it.
+
+
+
+
+Do-at-least-once loops are fairly rare, but this program wants to have two of them.  We use the built-in `.pick(*)` method to shuffle the numbers.  We use `.=` to dispatch a mutating method in two spots; the first is just a different way to write `++`, while the second of these reverses an array slice in place.  The `[<]` is a reduction operator on less than, so it returns true if the elements of the list are strictly ordered.  We also see in the first repeat loop that, although the while condition is not tested till after the loop, the while condition can in fact declare the variable that will be initialized the first time through the loop, which is a neat trick, and not half unreadable once you get used to it.
 
 ```perl
 repeat while [<] my @jumbled-list {
     @jumbled-list = (1..9).pick(*)
 }
- 
+
 my $turn = 0;
 repeat until [<] @jumbled-list {
     my $d = prompt $turn.=succ.fmt('%2d: ') ~
@@ -17,7 +21,7 @@ repeat until [<] @jumbled-list {
         or exit;
     @jumbled-list[^$d] .= reverse;
 }
- 
+
 say "    @jumbled-list[]";
 say "You won in $turn turns.";
 ```
@@ -26,7 +30,6 @@ say "You won in $turn turns.";
 Output:
 
 
-#### Output:
 ```
  1: 3 5 8 2 7 9 6 1 4 - Flip how many digits ? 6
  2: 9 7 2 8 5 3 6 1 4 - Flip how many digits ? 9

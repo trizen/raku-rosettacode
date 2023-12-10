@@ -2,9 +2,13 @@
 
 # [Globally replace text in several files][1]
 
-Current Perl 6 implementations do not yet support the -i flag for editing files in place, so we roll our own (rather unsafe) version:
+
+
+
+
+Current Raku implementations do not yet support the -i flag for editing files in place, so we roll our own (rather unsafe) version:
 
 ```perl
-slurp($_).subst('Goodbye London!', 'Hello New York!', :g) ==> spurt($_)
+slurp($_).subst('Goodbye London!', 'Hello New York!', :g) ==> spurt($_)
     for <a.txt b.txt c.txt>;
 ```

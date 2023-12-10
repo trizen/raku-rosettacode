@@ -2,6 +2,10 @@
 
 # [Bell numbers][1]
 
+
+
+
+
 ### via Aitken's array
 
 ```perl
@@ -10,12 +14,12 @@
      @c.push: @b[$_] + @c[$_] for ^@b;
      @c
  } ... *;
- 
+
  my @Bell-numbers = @Aitkens-array.map: { .head };
- 
+
 say "First fifteen and fiftieth Bell numbers:";
-printf "%2d: %s\n", 1+$_, @Bell-numbers[$_] for flat ^15, 49;
- 
+printf "%2d: %s\n", 1+$_, @Bell-numbers[$_] for flat ^15, 49;
+
 say "\nFirst ten rows of Aitken's array:";
 .say for @Aitkens-array[^10];
 ```
@@ -58,9 +62,9 @@ First ten rows of Aitken's array:
 
 ```perl
 sub binomial { [*] ($^n … 0) Z/ 1 .. $^p }
- 
+
 my @bell = 1, -> *@s { [+] @s »*« @s.keys.map: { binomial(@s-1, $_) }  } … *;
- 
+
 .say for @bell[^15], @bell[50 - 1];
 ```
 
@@ -79,7 +83,7 @@ my @Stirling_numbers_of_the_second_kind =
     { (0, |@^last) »+« (|(@^last »*« @^last.keys), 0) } … *
 ;
 my @bell = @Stirling_numbers_of_the_second_kind.map: *.sum;
- 
+
 .say for @bell.head(15), @bell[50 - 1];
 ```
 

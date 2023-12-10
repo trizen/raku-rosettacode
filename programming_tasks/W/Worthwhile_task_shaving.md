@@ -4,7 +4,7 @@
 
 ```perl
 # 20220207 Raku programming solution 
- 
+
 my \shaved  = [1, 5, 30, 60, 300, 1800, 3600, 21600, 86400]; # time shaved off in seconds
 my \columns = [ "1 SECOND", "5 SECONDS", "30 SECONDS", "1 MINUTE", "5 MINUTES",
                 "30 MINUTES", "1 HOUR", "6 HOURS", "1 DAY" ];
@@ -17,14 +17,14 @@ my \month   = day * diy / 12;
 my \year    = day * diy;
 my \freq    = [50 * diy, 5 * diy, diy, diy/7, 12, 1]; # frequency per year
 my \mult    = 5; # multiplier for table
- 
-sub fmtTime (\t, \interval) { printf "%-12s ", t.floor~" "~interval~(t == 1 ?? "" !! "S") }
- 
+
+sub fmtTime (\t, \interval) { printf "%-12s ", t.floor~" "~interval~(t == 1 ?? "" !! "S") }
+
 say ' ' x 34~"HOW OFTEN YOU DO THE TASK";
 printf("%-12s | %-12s %-12s %-12s %-12s %-12s %-12s\n", 
    ["SHAVED OFF", "50/DAY", "5/DAY", "DAILY", "WEEKLY", "MONTHLY", "YEARLY"]);
 say '-' x 93;
- 
+
 for ^9 -> \y {
    printf "%-12s | ", columns[y];
    for ^6 -> \x {

@@ -2,6 +2,10 @@
 
 # [Make directory path][1]
 
+
+
+
+
 There is a built-in function for this:
 
 ```perl

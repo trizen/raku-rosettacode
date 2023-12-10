@@ -18,7 +18,7 @@ sub partition(@mask is copy) {
     }
     return @op;
 }
- 
+
 .say for reverse partition [2,0,2];
 ```
 

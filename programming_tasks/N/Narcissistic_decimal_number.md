@@ -2,55 +2,44 @@
 
 # [Narcissistic decimal number][1]
 
-Here is a straightforward, naive implementation. It works but takes ages.
+
+
+
+
+### Simple, with concurrency
+
+
+
+Simple implementation is not exactly speedy, but concurrency helps move things along.
 
 ```perl
 sub is-narcissistic(Int $n) { $n == [+] $n.comb »**» $n.chars }
- 
-for 0 .. * {
-    if .&is-narcissistic {
-	.say;
-	last if ++state$ >= 25;
-    }
-}
+my @N = lazy (0..∞).hyper.grep: *.&is-narcissistic;
+@N[^25].join(' ').say;
 ```
 
 #### Output:
 ```
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-153
-370
-371
-407
-Ctrl-C
+0 1 2 3 4 5 6 7 8 9 153 370 371 407 1634 8208 9474 54748 92727 93084 548834 1741725 4210818 9800817 9926315
 ```
 
 
-Here the program was interrupted but if you're patient enough you'll see all the 25 numbers.
+### Single-threaded, with precalculations
 
 
 
-Here's a faster version that precalculates the values for base 1000 digits:
+This version that precalculates the values for base 1000 digits, but despite the extra work ends up taking more wall-clock time than the simpler version.
 
 ```perl
 sub kigits($n) {
     my int $i = $n;
     my int $b = 1000;
     gather while $i {
-        take $i % $b;
+        take $i % $b;
         $i = $i div $b;
     }
 }
- 
+
 for (1..*) -> $d {
     my @t = 0..9 X** $d;
     my @table = @t X+ @t X+ @t;

@@ -8,10 +8,10 @@ Limit the upper threshold a bit to avoid multiple hours of pointless calculation
 my @count = 0, 0, 1;
 my $lock = Lock.new;
 put (1,2);
- 
+
 for 3..17 -> $n {
-    my @even = (2..^$n).grep: * %% 2;
-    my @odd  = (3..^$n).grep: so * % 2;
+    my @even = (2..^$n).grep: * %% 2;
+    my @odd  = (3..^$n).grep: so * % 2;
     @even.permutations.race.map: -> @e {
         quietly next if @e[0] == 8|14;
         my $nope = 0;

@@ -2,13 +2,17 @@
 
 # [Ludic numbers][1]
 
-This implementation has no arbitrary upper limit, since it can keep adding new rotors on the fly. It just gets slower and slower instead... `:-)`
+
+
+
+
+This implementation has no arbitrary upper limit, since it can keep adding new rotors on the fly.  It just gets slower and slower instead... `:-)`
 
 ```perl
 constant @ludic = gather {
         my @taken = take 1;
         my @rotor;
- 
+ 
         for 2..* -> $i {
             loop (my $j = 0; $j < @rotor; $j++) {
                 --@rotor[$j] or last;
@@ -22,11 +26,11 @@ constant @ludic = gather {
             }
         }
     }
- 
+ 
 say @ludic[^25];
 say "Number of Ludic numbers <= 1000: ", +(@ludic ...^ * > 1000);
 say "Ludic numbers 2000..2005: ", @ludic[1999..2004];
- 
+ 
 my \l250 = set @ludic ...^ * > 250;
 say "Ludic triples < 250: ", gather
     for l250.keys.sort -> $a {

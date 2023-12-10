@@ -14,24 +14,27 @@ Also add a different grouping: `(1 + -x){exponential operator}p`
 
 ```perl
 sub infix:<↑> is looser(&prefix:<->) { $^a ** $^b }
-sub infix:<^> is looser(&infix:<->)  { $^a ** $^b }
- 
-use MONKEY;
- 
-for 'Default precedence: infix exponentiation is tighter (higher) precedence than unary negation.',
-    ('1 + -$x**$p', '1 + (-$x)**$p', '1 + (-($x)**$p)', '(1 + -$x)**$p', '1 + -($x**$p)'),
- 
-    "\nEasily modified: custom loose infix exponentiation is looser (lower) precedence than unary negation.",
-    ('1 + -$x↑$p ', '1 + (-$x)↑$p ', '1 + (-($x)↑$p) ', '(1 + -$x)↑$p ', '1 + -($x↑$p) '),
- 
-    "\nEven moreso: custom looser infix exponentiation is looser (lower) precedence than infix subtraction.",
-    ('1 + -$x^$p ', '1 + (-$x)^$p ', '1 + (-($x)^$p) ', '(1 + -$x)^$p ', '1 + -($x^$p) ')
-    -> $message, $ops {
-    say $message;
+sub infix:<∧> is looser(&infix:<->)  { $^a ** $^b }
+
+for
+   ('Default precedence: infix exponentiation is tighter (higher) precedence than unary negation.',
+     '1 + -$x**$p',   {1 + -$^a**$^b},   '1 + (-$x)**$p', {1 + (-$^a)**$^b},  '1 + (-($x)**$p)', {1 + (-($^a)**$^b)},
+     '(1 + -$x)**$p', {(1 + -$^a)**$^b}, '1 + -($x**$p)', {1 + -($^a**$^b)}),
+
+   ("\nEasily modified: custom loose infix exponentiation is looser (lower) precedence than unary negation.",
+     '1 + -$x↑$p ',   {1 + -$^a↑$^b},    '1 + (-$x)↑$p ', {1 + (-$^a)↑$^b},   '1 + (-($x)↑$p) ', {1 + (-($^a)↑$^b)},
+     '(1 + -$x)↑$p ', {(1 + -$^a)↑$^b},  '1 + -($x↑$p) ', {1 + -($^a↑$^b)}),
+
+   ("\nEven more so: custom looser infix exponentiation is looser (lower) precedence than infix subtraction.",
+     '1 + -$x∧$p ',   {1 + -$^a∧$^b},    '1 + (-$x)∧$p ', {1 + (-$^a)∧$^b},   '1 + (-($x)∧$p) ', {1 + (-($^a)∧$^b)},
+     '(1 + -$x)∧$p ', {(1 + -$^a)∧$^b},  '1 + -($x∧$p) ', {1 + -($^a∧$^b)})
+-> $case {
+    my ($title, @operations) = $case<>;
+    say $title;
     for -5, 5 X 2, 3 -> ($x, $p) {
-        printf "x = %2d  p = %d", $x, $p;
-        -> $op { printf " │ %s = %4d", $op, EVAL $op } for |$ops;
-        print "\n";
+        printf "x = %2d  p = %d", $x, $p;
+        for @operations -> $label, &code { print " │ $label = " ~ $x.&code($p).fmt('%4d') }
+        say ''
     }
 }
 ```
@@ -50,9 +53,9 @@ x = -5  p = 3 │ 1 + -$x↑$p  =  126 │ 1 + (-$x)↑$p  =  126 │ 1 + (-($x)
 x =  5  p = 2 │ 1 + -$x↑$p  =   26 │ 1 + (-$x)↑$p  =   26 │ 1 + (-($x)↑$p)  =   26 │ (1 + -$x)↑$p  =   16 │ 1 + -($x↑$p)  =  -24
 x =  5  p = 3 │ 1 + -$x↑$p  = -124 │ 1 + (-$x)↑$p  = -124 │ 1 + (-($x)↑$p)  = -124 │ (1 + -$x)↑$p  =  -64 │ 1 + -($x↑$p)  = -124
 
-Even moreso: custom looser infix exponentiation is looser (lower) precedence than infix subtraction.
-x = -5  p = 2 │ 1 + -$x^$p  =   36 │ 1 + (-$x)^$p  =   36 │ 1 + (-($x)^$p)  =   26 │ (1 + -$x)^$p  =   36 │ 1 + -($x^$p)  =  -24
-x = -5  p = 3 │ 1 + -$x^$p  =  216 │ 1 + (-$x)^$p  =  216 │ 1 + (-($x)^$p)  =  126 │ (1 + -$x)^$p  =  216 │ 1 + -($x^$p)  =  126
-x =  5  p = 2 │ 1 + -$x^$p  =   16 │ 1 + (-$x)^$p  =   16 │ 1 + (-($x)^$p)  =   26 │ (1 + -$x)^$p  =   16 │ 1 + -($x^$p)  =  -24
-x =  5  p = 3 │ 1 + -$x^$p  =  -64 │ 1 + (-$x)^$p  =  -64 │ 1 + (-($x)^$p)  = -124 │ (1 + -$x)^$p  =  -64 │ 1 + -($x^$p)  = -124
+Even more so: custom looser infix exponentiation is looser (lower) precedence than infix subtraction.
+x = -5  p = 2 │ 1 + -$x∧$p  =   36 │ 1 + (-$x)∧$p  =   36 │ 1 + (-($x)∧$p)  =   26 │ (1 + -$x)∧$p  =   36 │ 1 + -($x∧$p)  =  -24
+x = -5  p = 3 │ 1 + -$x∧$p  =  216 │ 1 + (-$x)∧$p  =  216 │ 1 + (-($x)∧$p)  =  126 │ (1 + -$x)∧$p  =  216 │ 1 + -($x∧$p)  =  126
+x =  5  p = 2 │ 1 + -$x∧$p  =   16 │ 1 + (-$x)∧$p  =   16 │ 1 + (-($x)∧$p)  =   26 │ (1 + -$x)∧$p  =   16 │ 1 + -($x∧$p)  =  -24
+x =  5  p = 3 │ 1 + -$x∧$p  =  -64 │ 1 + (-$x)∧$p  =  -64 │ 1 + (-($x)∧$p)  = -124 │ (1 + -$x)∧$p  =  -64 │ 1 + -($x∧$p)  = -124
 ```

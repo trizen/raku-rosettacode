@@ -2,6 +2,10 @@
 
 # [Huffman coding][1]
 
+
+
+
+
 ### By building a tree
 
 
@@ -18,7 +22,7 @@ sub huffman (%frequencies) {
     }
     hash gather walk @queue[0][1], '';
 }
- 
+
 multi walk ($node,            $prefix) { take $node => $prefix; }
 multi walk ([$node1, $node2], $prefix) { walk $node1, $prefix ~ '0';
                                          walk $node2, $prefix ~ '1'; }
@@ -43,25 +47,25 @@ sub huffman (%frequencies) {
     }
     @queue[0].value;
 }
- 
+
 # Testing
- 
+
 for huffman 'this is an example for huffman encoding'.comb.Bag {
     say "'{.key}' : {.value}";
 }
- 
+
 # To demonstrate that the table can do a round trip:
- 
+
 say '';
 my $original = 'this is an example for huffman encoding';
- 
+
 my %encode-key = huffman $original.comb.Bag;
 my %decode-key = %encode-key.invert;
 my @codes      = %decode-key.keys;
- 
-my $encoded = $original.subst: /./,      { %encode-key{$_} }, :g;
-my $decoded = $encoded .subst: /@codes/, { %decode-key{$_} }, :g;
- 
+
+my $encoded = $original.subst: /./,      { %encode-key{$_} }, :g;
+my $decoded = $encoded .subst: /@codes/, { %decode-key{$_} }, :g;
+
 .say for $original, $encoded, $decoded;
 ```
 

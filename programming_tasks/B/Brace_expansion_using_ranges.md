@@ -23,7 +23,7 @@ sub expand (Str $string) {
             $sl = $start.chars if $start.starts-with('0');
             $el = $end.chars   if   $end.starts-with('0');
 
-            my @this = $start < $end ?? (+$start, * + $incr …^ * > +$end) !! (+$start, * + $incr …^ * < +$end);
+            my @this = $start < $end ?? (+$start, * + $incr …^ * > +$end) !! (+$start, * + $incr …^ * < +$end);
             @return  = @this.map: { $string.subst($range, sprintf("%{'0' ~ max $sl, $el}d", $_) ) }
         }
         elsif try +$start ~~ Numeric or +$end ~~ Numeric {
@@ -33,11 +33,11 @@ sub expand (Str $string) {
             my @this;
             if $start.chars + $end.chars > 2 {
                 return $string if $start.succ eq $start or $end.succ eq $end; # fail
-                @this = $start lt $end ?? ($start, (*.succ xx $incr).tail …^ * gt $end) !! ($start, (*.pred xx $incr).tail …^ * lt $end);
+                @this = $start lt $end ?? ($start, (*.succ xx $incr).tail …^ * gt $end) !! ($start, (*.pred xx $incr).tail …^ * lt $end);
             }
             else {
                 $incr = -$incr if $start gt $end;
-                @this = $start lt $end ?? ($start, (*.ord + $incr).chr …^ * gt $end) !! ($start, (*.ord + $incr).chr …^ * lt $end);
+                @this = $start lt $end ?? ($start, (*.ord + $incr).chr …^ * gt $end) !! ($start, (*.ord + $incr).chr …^ * lt $end);
             }
             @return = @this.map: { $string.subst($range, sprintf("%s", $_) ) }
         }
@@ -53,7 +53,7 @@ sub expand (Str $string) {
         }
     }
     my $cnt = 1;
-    while $cnt != +@return {
+    while $cnt != +@return {
         $cnt = +@return;
         @return.=map: { |.&expand }
     }
@@ -91,7 +91,7 @@ for qww<
      say "$test ->";
      say ('    ' xx * Z~ expand $test).join: "\n";
      say '';
-} 
+}
 ```
 
 #### Output:

@@ -2,11 +2,12 @@
 
 # [Monads/List monad][1]
 
-Perl&#160;6 does not have Monad types built in but they can be emulated/implemented without a great deal of difficulty. List Monads especially are of questionable utility in Perl&#160;6. Most item types and Listy types have a Cool role in Perl&#160;6. (Cool being a play on the slang term "cool" as in: "That's cool with me." (That's ok with me). So Ints are pretty much treated like one item lists for operators that work with lists. ("I work on a list." "Here's an Int." "Ok, that's cool.") Explicitly wrapping an Int into a List is worse than useless. It won't do anything Perl&#160;6 can't do natively, and will likely **remove** some functionality that it would normally have. That being said, just because it is a bad idea (in Perl&#160;6) doesn't mean it can't be done.
+
+Raku does not have Monad types built in but they can be emulated/implemented without a great deal of difficulty. List Monads especially are of questionable utility in Raku. Most item types and Listy types have a Cool role in Raku. (Cool being a play on the slang term "cool" as in: "That's cool with me." (That's ok with me). So Ints are pretty much treated like one item lists for operators that work with lists. ("I work on a list." "Here's an Int." "Ok, that's cool.") Explicitly wrapping an Int into a List is worse than useless. It won't do anything Raku can't do natively, and will likely **remove** some functionality that it would normally have. That being said, just because it is a bad idea (in Raku) doesn't mean it can't be done.
 
 
 
-In Perl&#160;6, bind is essentially map. I'll shadow map here but again, it **removes** capability, not adds it. Perl&#160;6 also provided "hyper" operators which will descend into data structures and apply an operator / function to each member of that data structure.
+In Raku, bind is essentially map. I'll shadow map here but again, it **removes** capability, not adds it. Raku also provided "hyper" operators which will descend into data structures and apply an operator / function to each member of that data structure.
 
 
 
@@ -18,12 +19,12 @@ The \* in the bind blocks are typically referred to as "whatever"; whatever + 3 
 
 ```perl
 multi bind (@list, &code) { @list.map: &code };
- 
+
 multi bind ($item, &code) { $item.&code };
- 
-sub divisors (Int $int) { gather for 1 .. $int { .take if $int %% $_ } }
- 
-put join "\n", (flat ^10).&bind(* + 3).&bind(*.&divisors)».&bind(*.base: 2);
+
+sub divisors (Int $int) { gather for 1 .. $int { .take if $int %% $_ } }
+
+put (^10).&bind(* + 3).&bind(&divisors)».&bind(*.base: 2).join: "\n";
 ```
 
 #### Output:

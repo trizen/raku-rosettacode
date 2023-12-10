@@ -2,12 +2,14 @@
 
 # [Ray-casting algorithm][1]
 
+
+
 ```perl
 constant ε = 0.0001;
- 
+ 
 sub ray-hits-seg([\Px,\Py], [[\Ax,\Ay], [\Bx,\By]] --> Bool) {
     Py += ε if Py == Ay | By;
- 
+ 
     if Py < Ay or Py > By or Px > (Ax max Bx) {
 	False;
     }
@@ -15,18 +17,18 @@ sub ray-hits-seg([\Px,\Py], [[\Ax,\Ay], [\Bx,\By]] --> Bool) {
 	True;
     }
     else {
-	my \red  = Ax == Bx ?? Inf !! (By - Ay) / (Bx - Ax);
-	my \blue = Ax == Px ?? Inf !! (Py - Ay) / (Px - Ax);
+	my \red  = Ax == Bx ?? Inf !! (By - Ay) / (Bx - Ax);
+	my \blue = Ax == Px ?? Inf !! (Py - Ay) / (Px - Ax);
 	blue >= red;
     }
 }
- 
+
 sub point-in-poly(@point, @polygon --> Bool) {
     so 2 R% [+] gather for @polygon -> @side {
 	take ray-hits-seg @point, @side.sort(*.[1]);
     }
 }
- 
+ 
 my %poly =
     squared => 
 	 [[[ 0.0,  0.0], [10.0,  0.0]],
@@ -58,7 +60,7 @@ my %poly =
 	  [[ 7.0, 10.0], [ 3.0, 10.0]],
 	  [[ 3.0, 10.0], [ 0.0,  5.0]],
 	  [[ 0.0,  5.0], [ 3.0,  0.0]]];
- 
+ 
 my @test-points =
 	  [  5.0,  5.0],
 	  [  5.0,  8.0],
@@ -67,7 +69,7 @@ my @test-points =
 	  [ 10.0,  5.0],
 	  [  8.0,  5.0],
 	  [ 10.0, 10.0];
- 
+ 
 for <squared squaredhole strange exagon> -> $polywanna {
     say "$polywanna";
     my @poly = %poly{$polywanna}[];

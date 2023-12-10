@@ -26,7 +26,7 @@ Some examples: Say you have a variable $x that holds an integer, and you want to
 
 ```perl
 my $x = 1;
- 
+
 $x = $x + 1;  # classic
 $x += 1;      # classic abbreviated
 ++$x;         # pre-increment
@@ -42,19 +42,17 @@ $x.=succ;     # method, find successor
 There may be different operations that essentially perform the same function that have been retained for historical compatibility and / or ease for crossover programmers. the `for next` construct really only exists in Raku for programmer convenience. Internally it is converted to a map operation. Programmers can use map directly, but if they come from a language that doesn't provide map, and aren't used to it, `for next` is a easy stepping stone.
 
 ```perl
-for 1..10 { next if $_ %% 2; say '_' x $_ };  # for next
-map { next if $_ %% 2; say '_' x $_ }, 1..10; # equivalent map
+for 1..10 { next if $_ %% 2; say '_' x $_ };  # for next
+map { next if $_ %% 2; say '_' x $_ }, 1..10; # equivalent map
 ```
 
 
 Syntactic sugar (typically) replaces some longer expression with a shorter, more easily typed one. Raku abounds with them.
 
 ```perl
- 
 my @a1 = Q:w[one two three]; # list of strings using the Q sublanguage
 my @a2 = <one two three>;    # syntactic sugar for the same operation
- 
+
 say (1,2,3,4,5,6,7).reduce(&infix:<*>); # multiply all of the items in a list together 
 say [*] (1,2,3,4,5,6,7);                # same operation, sweeter syntax
- 
 ```

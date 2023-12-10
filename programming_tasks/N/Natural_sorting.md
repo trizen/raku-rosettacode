@@ -2,7 +2,11 @@
 
 # [Natural sorting][1]
 
-In Perl6 it is very easy to modify the default sorting order by passing in a
+
+
+
+
+In Raku it is very easy to modify the default sorting order by passing in a
 transform routine to the sort function. If the transform routines are arity one,
 the sort function will apply a Schwartzian Transform so it only needs to calculate
 the transform once. Note that the transforms are non-destructive; The sort function
@@ -10,7 +14,7 @@ returns the original strings.
 
 
 
-The following are a series of subroutines to perform the various natural
+The following are a series of subroutines to perform the various natural 
 sorting transforms. They may be applied individually or mixed and matched
 to get the particular result desired. When more than one is strung
 together, they apply left to right. Some combinations may yield
@@ -19,16 +23,16 @@ different results depending on the order they are applied.
 ```perl
 # Sort groups of digits in number order. Sort by order of magnitude then lexically.
 sub naturally ($a) { $a.lc.subst(/(\d+)/, ->$/ {0~$0.chars.chr~$0},:g) ~"\x0"~$a }
- 
+
 # Collapse multiple ws characters to a single.
-sub collapse ($a) { $a.subst( / ( \s ) $0+ /, -> $/ { $0 }, :g ) }
- 
+sub collapse ($a) { $a.subst( / ( \s ) $0+ /, -> $/ { $0 }, :g ) }
+
 # Convert all ws characters to a space.
-sub normalize ($a) { $a.subst( / ( \s ) /, ' ', :g ) }
- 
+sub normalize ($a) { $a.subst( / ( \s ) /, ' ', :g ) }
+
 # Ignore common leading articles for title sorts
-sub title ($a) { $a.subst( / :i ^ ( a | an | the ) >> \s* /, '' ) }
- 
+sub title ($a) { $a.subst( / :i ^ ( a | an | the ) >> \s* /, '' ) }
+
 # Decompose ISO-Latin1 glyphs to their base character.
 sub latin1_decompose ($a) {
     $a.trans: < 
@@ -38,9 +42,9 @@ sub latin1_decompose ($a) {
         ø o Ñ N ñ n Ù U Ú U Û U Ü U ù u ú u û u ü u Ý Y ÿ y ý y
     >.hash;
 }
- 
+
 # Used as:
- 
+
 my @tests = (
     [
         "Task 1a\nSort while ignoring leading spaces.",
@@ -105,19 +109,19 @@ my @tests = (
         {.&latin1_decompose.&naturally}
     ]
 );
- 
- 
+
+
 for @tests -> $case {
     my $code_ref = $case.pop;
     my @array = $case.pop.list;
     say $case.pop, "\n";
- 
+
     say "Standard Sort:\n";
     .say for @array.sort;
- 
+
     say "\nNatural Sort:\n";
     .say for @array.sort: {.$code_ref};
- 
+
     say "\n" ~ '*' x 40 ~ "\n";
 }
 ```
@@ -126,7 +130,6 @@ for @tests -> $case {
 Sample output:
 
 
-#### Output:
 ```
 Task 1a
 Sort while ignoring leading spaces.

@@ -1,8 +1,12 @@
-[1]: https://rosettacode.org/wiki/K-means++_clustering
+[1]: https://rosettacode.org/wiki/K-means%2B%2B_clustering
 
 # [K-means++ clustering][1]
 
-We use Complex numbers to represent points in the plane. We feed the algorithm with three artificially made clouds of points so we can easily see if the output makes sense.
+
+
+
+
+We use Complex numbers to represent points in the plane.  We feed the algorithm with three artificially made clouds of points so we can easily see if the output makes sense.
 
 ```perl
 sub postfix:«-means++»(Int $K) {
@@ -22,7 +26,7 @@ sub postfix:«-means++»(Int $K) {
             my %cluster;
             $*TOLERANCE < [+] (@means Z- keys (%cluster = cluster))».abs X** 2;
             @means = %cluster.values.map( { .elems R/ [+] @$_ } )
-        ) { ; }
+        ) { ; }
         return @means;
     }
 }

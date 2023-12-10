@@ -11,7 +11,7 @@
 ```perl
 sub two_sum ( @numbers, $sum ) {
     die '@numbers is not sorted' unless [<=] @numbers;
- 
+
     my ( $i, $j ) = 0, @numbers.end;
     while $i < $j {
         given $sum <=> @numbers[$i,$j].sum {
@@ -22,7 +22,7 @@ sub two_sum ( @numbers, $sum ) {
     }
     return;
 }
- 
+
 say two_sum ( 0, 2, 11, 19, 90 ), 21;
 say two_sum ( 0, 2, 11, 19, 90 ), 25;
 ```
@@ -51,18 +51,18 @@ sub two-sum-lr (@a, $sum) {
      .map:{ .split(' ').sort.join(' ')}
     ).unique
 }
- 
+
 sub two-sum-rl (@a, $sum) {
   # unique map {.split(' ').sort.join(' ')}, keys %(grep {.value == $sum}, ((^@a X ^@a) Z=> (@a X+ @a)))
     unique
     map {.split(' ').sort.join(' ')},
-    keys %(
+    keys %(
      grep {.value == $sum}, (
       (^@a X ^@a) Z=> (@a X+ @a)
      )
     )
 }
- 
+
 my @a = <0 2 11 19 90>;
 for 21, 25 {
     say two-sum-rl(@a, $_);

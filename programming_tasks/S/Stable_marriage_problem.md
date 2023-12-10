@@ -2,6 +2,8 @@
 
 # [Stable marriage problem][1]
 
+
+
 ```perl
 my %he-likes =
     abe  => < abi eve cath ivy jan dee fay bea hope gay >,
@@ -15,7 +17,7 @@ my %he-likes =
     ian  => < hope cath dee gay bea abi fay ivy jan eve >,
     jon  => < abi fay jan gay eve bea dee cath ivy hope >,
 ;
- 
+ 
 my %she-likes =
     abi  => < bob fred jon gav ian abe dan ed col hal >,
     bea  => < bob abe col fred gav dan ian ed jon hal >,
@@ -28,20 +30,20 @@ my %she-likes =
     ivy  => < ian col hal gav fred bob abe ed jon dan >,
     jan  => < ed hal gav abe bob jon col ian fred dan >,
 ;
- 
+
 my %fiancé;
 my %fiancée;
 my %proposed;
- 
+ 
 sub she-prefers ($her, $hottie) { .index($hottie) < .index(%fiancé{$her}) given ~%she-likes{$her} }
 sub he-prefers  ($him, $hottie) { .index($hottie) < .index(%fiancée{$him}) given ~%he-likes{$him} }
- 
+ 
 match'em;
 check-stability;
- 
+
 perturb'em;
 check-stability;
- 
+ 
 sub match'em {                                          #'
     say 'Matchmaking:';
     while unmatched-guy() -> $guy {
@@ -59,14 +61,14 @@ sub match'em {                                          #'
 	}
     }
 }
- 
+ 
 sub check-stability {
     my @instabilities = gather for flat %he-likes.keys X %she-likes.keys -> $m, $w {
 	if he-prefers($m, $w) and she-prefers($w, $m) {
-	    take "\t$w prefers $m to %fiancé{$w} and $m prefers $w to %fiancée{$m}";
+	    take "\t$w prefers $m to %fiancé{$w} and $m prefers $w to %fiancée{$m}";
 	}
     }
- 
+
     say 'Stablility:';
     if @instabilities {
 	.say for @instabilities;
@@ -75,16 +77,16 @@ sub check-stability {
         say "\t(all marriages stable)";
     }
 }
- 
+ 
 sub unmatched-guy { %he-likes.keys.first: { not %fiancée{$_} } }
- 
+ 
 sub preferred-choice($guy) { %he-likes{$guy}.first: { not %proposed{"$guy $_" } } }
- 
+ 
 sub engage($guy, $gal) {
     %fiancé{$gal} = $guy;
     %fiancée{$guy} = $gal;
 }
- 
+ 
 sub perturb'em {                                            #'
     say 'Perturb:';
     say "\tengage abi with fred and bea with jon";

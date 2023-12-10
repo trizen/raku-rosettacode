@@ -1,6 +1,7 @@
-[1]: https://rosettacode.org/wiki/Banker's_algorithm
+[1]: https://rosettacode.org/wiki/Banker%27s_algorithm
 
-# [Banker's algorithm][1]
+# [Banker&#039;s algorithm][1]
+
 
 Based on the Python3 solution by Shubham Singh found
 [here](https://www.geeksforgeeks.org/program-bankers-algorithm-set-1-safety-algorithm/)
@@ -9,7 +10,7 @@ Based on the Python3 solution by Shubham Singh found
 my @avail = <3 1 1 2>;                        # Available instances of resource
 my @maxm  = <3 3 2 2>, <1 2 3 4>, <1 3 5 0>;  # Maximum resources that can be allocated to processes
 my @allot = <1 2 2 1>, <1 0 3 3>, <1 2 1 0>;  # Resources allocated to processes
- 
+
 # Function to find the system is in safe state or not
 sub isSafe(\work is copy, \maxm, \allot) {
     my \P          = allot.elems;     # Number of processes
@@ -17,7 +18,7 @@ sub isSafe(\work is copy, \maxm, \allot) {
     my \R          = work.elems;      # Number of resources 
     my \need       = maxm »-« allot;  # the need matrix
     my @safe-sequence;
- 
+
     # While all processes are not finished or system is not in safe state
     my $count = 0;
     while $count < P {
@@ -38,7 +39,7 @@ sub isSafe(\work is copy, \maxm, \allot) {
     # If system is in safe state then safe sequence will be as below
     return True, "Safe sequence is: " ~ @safe-sequence
 }
- 
+
 # Check if system is in a safe state
 my ($safe-state,$status-message) = isSafe @avail, @maxm, @allot;
 say "Safe state? $safe-state";

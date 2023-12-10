@@ -1,6 +1,10 @@
-[1]: https://rosettacode.org/wiki/A+B
+[1]: https://rosettacode.org/wiki/A%2BB
 
 # [A+B][1]
+
+
+
+
 
 Short version with very little "line noise":
 

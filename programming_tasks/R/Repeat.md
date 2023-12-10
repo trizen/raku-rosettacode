@@ -2,11 +2,13 @@
 
 # [Repeat][1]
 
+
+
 ```perl
 sub repeat (&f, $n) { f() xx $n };
- 
+
 sub example { say rand }
- 
+
 repeat(&example, 3);
 ```
 
@@ -17,8 +19,18 @@ repeat(&example, 3);
 0.279289335968417
 ```
 
+#### Output:
+```
+example() xx 3;
+```
 
-Notes on the [`xx`](http://doc.perl6.org/language/operators#infix_xx) operator:
+#### Output:
+```
+(say rand) xx 3;
+```
+
+
+Notes on the [`xx`](http://doc.raku.org/language/operators#infix_xx) operator:
 
 
 

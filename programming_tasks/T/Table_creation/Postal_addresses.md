@@ -2,13 +2,17 @@
 
 # [Table creation/Postal addresses][1]
 
-Like Perl DBI, Perl 6 DBIish supports many different databases. An example using SQLite is shown here.
+
+
+
+
+Like Perl DBI, Raku DBIish supports many different databases. An example using SQLite is shown here.
 
 ```perl
 use DBIish;
- 
-my $dbh = DBIish.connect('SQLite', :database<addresses.sqlite3>);
- 
+
+my $dbh = DBIish.connect('SQLite', :database<addresses.sqlite3>);
+
 my $sth = $dbh.do(q:to/STATEMENT/);
     DROP TABLE IF EXISTS Address;
     CREATE TABLE Address (

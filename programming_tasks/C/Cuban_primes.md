@@ -2,21 +2,26 @@
 
 # [Cuban primes][1]
 
+
+
+
+
 ### The task (k == 1)
 
 
 
-Not the most efficient, but concise, and good enough for this task.
+Not the most efficient, but concise, and good enough for this task. Use the ntheory library for prime testing; gets it down to around 20 seconds.
 
 ```perl
-sub comma { $^i.flip.comb(3).join(',').flip }
- 
-my @cubans = lazy (1..Inf).hyper(:8degree).map({ ($_+1)³ - .³ }).grep: *.is-prime;
- 
+use Lingua::EN::Numbers;
+use ntheory:from<Perl5> <:all>;
+
+my @cubans = lazy (1..Inf).map({ ($_+1)³ - .³ }).grep: *.&is_prime;
+
 put @cubans[^200]».&comma».fmt("%9s").rotor(10).join: "\n";
- 
+
 put '';
- 
+
 put @cubans[99_999].&comma; # zero indexed
 ```
 
@@ -63,15 +68,14 @@ Here are the first 20 for each valid k up to 10:
 
 ```perl
 sub comma { $^i.flip.comb(3).join(',').flip }
- 
+
 for 2..10 -> \k {
-    next if k %% 3;
+    next if k %% 3;
     my @cubans = lazy (1..Inf).map({ (($_+k)³ - .³)/k }).grep: *.is-prime;
     put "First 20 cuban primes where k = {k}:";
     put @cubans[^20]».&comma».fmt("%7s").rotor(10).join: "\n";
     put '';
 }
- 
 ```
 
 #### Output:
@@ -106,11 +110,11 @@ First 20 cuban primes where k = 10:
 
 
 
-Note that Perl 6 has native support for arbitrarily large integers and does not need to generate primes to test for primality. Using k of 2^128; finishes in *well* under a second.
+Note that Raku has native support for arbitrarily large integers and does not need to generate primes to test for primality. Using k of 2^128; finishes in *well* under a second.
 
 ```perl
 sub comma { $^i.flip.comb(3).join(',').flip }
- 
+
 my \k = 2**128;
 put "First 10 cuban primes where k = {k}:";
 .&comma.put for (lazy (0..Inf).map({ (($_+k)³ - .³)/k }).grep: *.is-prime)[^10];

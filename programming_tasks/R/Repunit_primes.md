@@ -4,11 +4,11 @@
 
 ```perl
 my $limit = 2700;
- 
+
 say "Repunit prime digits (up to $limit) in:";
- 
+
 .put for (2..16).hyper(:1batch).map: -> $base {
-    $base.fmt("Base %2d: ") ~ (1..$limit).grep(&is-prime).grep( (1 x *).parse-base($base).is-prime )
+    $base.fmt("Base %2d: ") ~ (1..$limit).grep(&is-prime).grep( (1 x *).parse-base($base).is-prime )
 }
 ```
 
@@ -36,7 +36,6 @@ Base 16: 2
 *And for my own amusement, also tested up to 2700.*
 
 
-#### Output:
 ```
 Base 17: 3 5 7 11 47 71 419
 Base 18: 2

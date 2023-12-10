@@ -12,5 +12,4 @@ f
 > f("Rosetta","Code",":");
 Rosetta::Code
 >
- 
 ```

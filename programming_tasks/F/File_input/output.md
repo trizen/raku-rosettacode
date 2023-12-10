@@ -2,6 +2,10 @@
 
 # [File input/output][1]
 
+
+
+
+
 If it is okay to have a temporary copy of the entire file in memory:
 
 ```perl

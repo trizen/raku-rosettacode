@@ -2,6 +2,7 @@
 
 # [Pythagoras tree][1]
 
+
 We'll generate a SVG image.
 
 ```perl
@@ -24,16 +25,16 @@ class Square {
 	edge => sqrt(2)/2*cis(-pi/4)*$!edge;
     }
 }
- 
+
 BEGIN say '<svg width="500" height="500">';
 END   say '</svg>';
- 
+
 sub tree(Square $s, $level = 0) {
     return if $level > 8;
     say $s.svg-polygon;
     tree($s.left-child, $level+1);
     tree($s.right-child, $level+1);
 }
- 
-tree Square.new: :position(250+0i), :edge(60+0i);
+
+tree Square.new: :position(250+0i), :edge(60+0i);
 ```

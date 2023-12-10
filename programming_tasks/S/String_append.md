@@ -2,6 +2,8 @@
 
 # [String append][1]
 
+
+
 ```perl
 my $str = "foo";
 $str ~= "bar";

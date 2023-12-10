@@ -2,6 +2,8 @@
 
 # [Last Friday of each month][1]
 
+
+
 ```perl
 sub MAIN (Int $year = Date.today.year) {
     my @fri;
@@ -16,7 +18,6 @@ sub MAIN (Int $year = Date.today.year) {
 Example:
 
 
-#### Output:
 ```
 $ ./lastfri 2038
 2038-01-29

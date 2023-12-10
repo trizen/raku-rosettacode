@@ -2,6 +2,16 @@
 
 # [Loop over multiple arrays simultaneously][1]
 
+
+
+
+
+Note that all of the following work with *any* iterable object, (array, list, range, sequence; anything that does the Iterable role), not just arrays.
+
+
+
+### Basic functionality
+
 ```perl
 for <a b c> Z <A B C> Z 1, 2, 3 -> ($x, $y, $z) {
    say $x, $y, $z;
@@ -31,8 +41,19 @@ Note that we can also factor out the concatenation by making the `Z` metaoperato
 We could also use the zip-to-string with the reduction metaoperator:
 
 ```perl
-.say for [Z~] [<a b c>], [<A B C>], [1,2,3]
+.say for [Z~] <a b c>, <A B C>, (1,2,3);
 ```
+
+
+We could also write that out "long-hand":
+
+```perl
+.say for zip :with(&infix:<~>), <a b c>, <A B C>, (1,2,3);
+```
+
+
+returns the exact same result so if you aren't comfortable with the concise operators, you have a choice.
+
 
 
 ### A list and its indices
@@ -50,4 +71,26 @@ or by using the `.kv` (key and value) method on the list (and dropping the paren
 
 ```perl
 for <a b c d>.kv -> $i, $letter { ... }
+```
+
+
+### Iterate until all exhausted
+
+
+
+If you have different sized lists that you want to pull a value from each per iteration, but want to continue until **all** of the lists are exhausted, we have `roundrobin`.
+
+```perl
+.put for roundrobin <a b c>, 'A'..'G', ^5;
+```
+
+#### Output:
+```
+a A 0
+b B 1
+c C 2
+D 3
+E 4
+F
+G
 ```

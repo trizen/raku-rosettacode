@@ -2,12 +2,16 @@
 
 # [Pascal matrix generation][1]
 
-Here is a rather more general solution than required. The `grow-matrix` function will grow any N by N matrix into an N+1 x N+1 matrix, using any function of the three leftward/upward neighbors, here labelled "West", "North", and "Northwest". We then define three iterator functions that can grow Pascal matrices, and use those iterators to define three constants, each of which is an infinite sequence of ever-larger Pascal matrices. Normal subscripting then pulls out the ones of the specified size.
+
+
+
+
+Here is a rather more general solution than required.  The `grow-matrix` function will grow any N by N matrix into an N+1 x N+1 matrix, using any function of the three leftward/upward neighbors, here labelled "West", "North", and "Northwest".  We then define three iterator functions that can grow Pascal matrices, and use those iterators to define three constants, each of which is an infinite sequence of ever-larger Pascal matrices.  Normal subscripting then pulls out the ones of the specified size.
 
 ```perl
 # Extend a matrix in 2 dimensions based on 3 neighbors.
 sub grow-matrix(@matrix, &func) {
-    my $n = @matrix.shape eq '*' ?? 1 !! @matrix.shape[0];
+    my $n = @matrix.shape eq '*' ?? 1 !! @matrix.shape[0];
     my @m[$n+1;$n+1];
     for ^$n X ^$n -> ($i, $j) {
        @m[$i;$j] = @matrix[$i;$j];
@@ -19,21 +23,21 @@ sub grow-matrix(@matrix, &func) {
     @m[$n;$_] = func( @m[$n;$_-1], @m[$n-1;$_], @m[$n-1;$_-1]) for 1 ..  $n;
     @m;
 }
- 
+
 # I am but mad north-northwest...
 sub madd-n-nw(@m) { grow-matrix @m, -> $w, $n, $nw {  $n + $nw } }
 sub madd-w-nw(@m) { grow-matrix @m, -> $w, $n, $nw {  $w + $nw } }
 sub madd-w-n (@m) { grow-matrix @m, -> $w, $n, $nw {  $w + $n  } }
- 
+
 # Define 3 infinite sequences of Pascal matrices.
 constant upper-tri = [1], &madd-w-nw ... *;
 constant lower-tri = [1], &madd-n-nw ... *;
 constant symmetric = [1], &madd-w-n  ... *;
- 
+
 show_m upper-tri[4];
 show_m lower-tri[4];
 show_m symmetric[4];
- 
+
 sub show_m (@m) {
 my \n = @m.shape[0];
 for ^n X ^n -> (\i, \j) {

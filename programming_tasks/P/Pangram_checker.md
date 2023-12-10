@@ -2,15 +2,17 @@
 
 # [Pangram checker][1]
 
+
+
 ```perl
 constant Eng = set 'a' .. 'z';
-constant Cyr = set <а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я ё>;
+constant Cyr = (set 'а' .. 'ё') (-) (set 'ъ', 'ѐ');
 constant Hex = set 'a' .. 'f';
- 
+
 sub pangram($str, Set $alpha = Eng) {
-  $alpha ⊆ $str.lc.comb;
+  $alpha ⊆ $str.lc.comb
 }
- 
+
 say pangram("The quick brown fox jumps over the lazy dog.");
 say pangram("My dog has fleas.");
 say pangram("My dog has fleas.", Hex);

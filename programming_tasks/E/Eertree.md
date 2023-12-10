@@ -2,15 +2,13 @@
 
 # [Eertree][1]
 
+
+
 ```perl
-#!/usr/bin/env perl6
- 
-use v6;
- 
 my $str = "eertree";
 my @pal = ();
 my ($strrev,$strpal);
- 
+
 for (1 .. $str.chars) -> $n {
    for (1 .. $str.chars) -> $m {
       $strrev = "";
@@ -23,9 +21,8 @@ for (1 .. $str.chars) -> $n {
       }
    }
 }
- 
+
 say @pal.unique;
- 
 ```
 
 #### Output:

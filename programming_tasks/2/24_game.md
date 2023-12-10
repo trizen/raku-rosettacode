@@ -2,19 +2,21 @@
 
 # [24 game][1]
 
+
+
 ```perl
 use MONKEY-SEE-NO-EVAL;
- 
+
 say "Here are your digits: ", 
 constant @digits = (1..9).roll(4)».Str;
- 
+ 
 grammar Exp24 {
     token TOP { ^ <exp> $ { fail unless EVAL($/) == 24 } }
-    rule exp { <term>+ % <op> }
+    rule exp { <term>+ % <op> }
     rule term { '(' <exp> ')' | <@digits> }
     token op { < + - * / > }
 }
- 
+ 
 while my $exp = prompt "\n24? " {
     if try Exp24.parse: $exp {
         say "You win :)";
@@ -29,7 +31,6 @@ while my $exp = prompt "\n24? " {
         ).flat.pick
     }
 }
- 
 ```
 
 

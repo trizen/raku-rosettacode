@@ -2,18 +2,16 @@
 
 # [Concurrent computing][1]
 
-Hyper-operators are unordered:
+
 
 ```perl
 my @words = <Enjoy Rosetta Code>;
-@words».say
+@words.race(:batch(1)).map: { sleep rand; say $_ };
 ```
 
-
-Output:
-
-```text
-Rosetta
+#### Output:
+```
 Code
+Rosetta
 Enjoy
 ```

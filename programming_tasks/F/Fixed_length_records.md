@@ -2,6 +2,7 @@
 
 # [Fixed length records][1]
 
+
 Link to a copy of the input file used: [flr-infile.dat](https://github.com/thundergnat/rc/blob/master/resouces/flr-infile.dat)
 
 
@@ -9,7 +10,7 @@ Link to a copy of the input file used: [flr-infile.dat](https://github.com/thund
 Essentially the same as task [Selective_File_Copy](https://rosettacode.org/wiki/Selective_File_Copy) except more boring.
 
 ```perl
-$*OUT = './flr-outfile.dat'.IO.open(:w, :bin) orelse .die; # open a file in binary mode for writing
+$*OUT = './flr-outfile.dat'.IO.open(:w, :bin) orelse .die; # open a file in binary mode for writing
 while my $record = $*IN.read(80) {                       # read in fixed sized binary chunks
      $*OUT.write: $record.=reverse;                      # write reversed records out to $outfile
      $*ERR.say: $record.decode('ASCII');                 # display decoded records on STDERR

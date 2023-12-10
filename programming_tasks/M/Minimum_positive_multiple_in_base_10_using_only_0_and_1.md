@@ -5,10 +5,11 @@
 
 
 
+
 Naive, brute force. Simplest thing that could possibly work. Will find any B10 eventually (until you run out of memory or patience) but sloooow, especially for larger multiples of 9.
 
 ```perl
-say $_ , ': ', (1..*).map( *.base(2) ).first: * %% $_ for flat 1..10, 95..105; # etc.
+say $_ , ': ', (1..*).map( *.base(2) ).first: * %% $_ for flat 1..10, 95..105; # etc.
 ```
 
 
@@ -23,28 +24,28 @@ sub Ed-Pegg-jr (\n) {
     for 1..n -> \i {
         @oom-mod-n[i] = $power-mod-n;
         for 1..n -> \j {
-            my \k = (j + $power-mod-n - 1) % n + 1;
-            @dig-mod[k] = i if @dig-mod[j] and @dig-mod[j] != i and !@dig-mod[k];
+            my \k = (j + $power-mod-n - 1) % n + 1;
+            @dig-mod[k] = i if @dig-mod[j] and @dig-mod[j] != i and !@dig-mod[k];
         }
         @dig-mod[$power-mod-n + 1] ||= i;
-        ($power-mod-n *= 10) %= n;
+        ($power-mod-n *= 10) %= n;
         last if @dig-mod[1];
     }
     my ($b10, $remainder) = '', n;
     while $remainder {
-        my $place = @dig-mod[$remainder % n + 1];
+        my $place = @dig-mod[$remainder % n + 1];
         $b10 ~= '0' x ($count - $place) if $count > $place;
         $count = $place - 1;
         $b10 ~= '1';
-        $remainder = (n + $remainder - @oom-mod-n[$place]) % n;
+        $remainder = (n + $remainder - @oom-mod-n[$place]) % n;
     }
     $b10 ~ '0' x $count
 }
- 
-printf "%5s: %28s  %s\n", 'Number', 'B10', 'Multiplier';
- 
+
+printf "%5s: %28s  %s\n", 'Number', 'B10', 'Multiplier';
+
 for flat 1..10, 95..105, 297, 576, 594, 891, 909, 999, 1998, 2079, 2251, 2277, 2439, 2997, 4878 {
-    printf "%6d: %28s  %s\n", $_, my $a = Ed-Pegg-jr($_), $a / $_;
+    printf "%6d: %28s  %s\n", $_, my $a = Ed-Pegg-jr($_), $a / $_;
 }
 ```
 

@@ -2,10 +2,12 @@
 
 # [Find URI in text][1]
 
+
+
 ```perl
 use v6;
 use IETF::RFC_Grammar::URI;
- 
+
 say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute-URI> /, :g).list.join("\n");
     this URI contains an illegal character, parentheses and a misplaced full stop:
     https://en.wikipedia.org/wiki/Erich_Kästner_(camera_designer). (which is handled by http://mediawiki.org/).
@@ -17,17 +19,15 @@ say q:to/EOF/.match(/ <IETF::RFC_Grammar::URI::absolute-URI> /, :g).list.join("\
     leading junk ftp://domain.name/path/embedded?punct/uation.
     leading junk ftp://domain.name/dangling_close_paren)
     EOF
- 
+
 say $/[*-1];
 say "We matched $/[*-1], which is a $/[*-1].^name() at position $/[*-1].from() to $/[*-1].to()"
- 
 ```
 
 
 Like most of the solutions here it does not comply to IRI but only to URI:
 
 
-#### Output:
 ```
 stop:
 https://en.wikipedia.org/wiki/Erich_K

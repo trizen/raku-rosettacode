@@ -2,6 +2,8 @@
 
 # [Menu][1]
 
+
+
 ```perl
 sub menu ( $prompt, @items ) {
     return '' unless @items.elems;
@@ -12,13 +14,13 @@ sub menu ( $prompt, @items ) {
     }
     return @items[$selection];
 }
- 
+
 my @choices = 'fee fie', 'huff and puff', 'mirror mirror', 'tick tock';
 my $prompt = 'Enter the number corresponding to your selection: ';
- 
+
 my $answer = menu( $prompt, [] );
 say "You chose: $answer" if $answer.chars;
- 
+
 $answer = menu( $prompt, @choices );
 say "You chose: $answer" if $answer.chars;
 ```

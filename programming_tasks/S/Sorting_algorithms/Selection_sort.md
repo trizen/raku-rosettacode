@@ -2,6 +2,7 @@
 
 # [Sorting algorithms/Selection sort][1]
 
+
 Solution 1:
 
 ```perl
@@ -12,11 +13,10 @@ sub selection_sort ( @a is copy ) {
     }
     return @a;
 }
- 
+
 my @data = 22, 7, 2, -5, 8, 4;
 say 'input  = ' ~ @data;
 say 'output = ' ~ @data.&selection_sort;
- 
 ```
 
 #### Output:
@@ -35,7 +35,6 @@ sub selectionSort(@tmp) {
     }
     return @tmp;
 }
- 
 ```
 
 #### Output:

@@ -7,7 +7,7 @@ Original task numbers of cases per day as of April 05 plus updated, as of today,
 ```perl
 my $K  = 7_800_000_000; #  population
 my $n0 = 27;            #  cases @ day 0
- 
+
 my @Apr05 = <
          27      27      27      44      44      59      59      59      59      59
          59      59      59      60      60      61      61      66      83     219
@@ -20,7 +20,7 @@ my @Apr05 = <
      242364  271106  305117  338133  377918  416845  468049  527767  591704  656866
      715353  777796  851308  928436 1000249 1082054 1174652
 >;
- 
+
 my @May11 = <
          27      27      27      44      44      59      59      59      59      59
          59      59      59      60      60      61      61      66      83     219
@@ -37,7 +37,7 @@ my @May11 = <
     3054404 3131487 3216467 3308341 3389459 3468047 3545486 3624789 3714816 3809262
     3899379 3986931 4063525
 >;
- 
+
 sub logistic-func ($rate, @y) {
     my $sq = 0;
     for ^@y -> $time {
@@ -47,7 +47,7 @@ sub logistic-func ($rate, @y) {
     }
     $sq
 }
- 
+
 sub solve (&f, $guess, \ε, @y) {
     my $fₙ-minus;
     my $fₙ-plus;
@@ -56,23 +56,23 @@ sub solve (&f, $guess, \ε, @y) {
     my $Δ      = $rate;
     my $factor = 2;
     while $Δ > ε {
-        ($fₙ-minus = f $rate - $Δ, @y) < $fₙ ??
+        ($fₙ-minus = f $rate - $Δ, @y) < $fₙ ??
         do {
             $fₙ    = $fₙ-minus;
             $rate -= $Δ;
             $Δ    *= $factor;
-        } !!
-        ($fₙ-plus = f $rate + $Δ, @y) < $fₙ ??
+        } !!
+        ($fₙ-plus = f $rate + $Δ, @y) < $fₙ ??
         do {
             $fₙ    = $fₙ-plus;
             $rate += $Δ;
             $Δ    *= $factor;
-        } !!
+        } !!
         $Δ /= $factor
     }
     $rate
 }
- 
+
 for @Apr05, 'Dec 31 - Apr 5',
     @May11, 'Dec 31 - May 11' -> @y, $period {
     my $rate = solve(&logistic-func, 0.5, 0, @y);
@@ -81,7 +81,6 @@ for @Apr05, 'Dec 31 - Apr 5',
     say "Instantaneous rate of growth: r = " , $rate.fmt('%08f');
     say "Reproductive rate: R0 = ", $R0.fmt('%08f');
 }
- 
 ```
 
 #### Output:

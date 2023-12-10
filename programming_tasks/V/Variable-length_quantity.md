@@ -2,39 +2,32 @@
 
 # [Variable-length quantity][1]
 
-vlq\_encode() returns a string of characters whose ordinals are the encoded octets. vlq\_decode() takes a string and returns a decimal number.
+
+vlq\_encode() returns a string of encoded octets. vlq\_decode() takes a string and returns a decimal number.
 
 ```perl
 sub vlq_encode ($number is copy) {
-    my $string = '';
-    my $t = 0x7F +& $number;
+    my @vlq = (127 +& $number).fmt("%02X");
     $number +>= 7;
-    $string = $t.chr ~ $string;
     while ($number) {
-       $t = 0x7F +& $number;
-       $string = (0x80 +| $t).chr ~ $string;
+       @vlq.push: (128 +| (127 +& $number)).fmt("%02X");
        $number +>= 7; 
     }
-    return $string;
+    @vlq.reverse.join: ':';
 }
- 
-sub vlq_decode ($string is copy) {
-    my $number = '0b';
-    for $string.ords -> $oct {
-        $number ~= ($oct +& 0x7F).fmt("%07b");
-    }
-    return :2($number);
+
+sub vlq_decode ($string) {
+    sum $string.split(':').reverse.map: {(:16($_) +& 127) +< (7 × $++)}
 }
- 
+
 #test encoding and decoding
 for (
     0,   0xa,   123,   254,   255,   256,
     257, 65534, 65535, 65536, 65537, 0x1fffff,
     0x200000
  ) -> $testcase {
-    my $encoded = vlq_encode($testcase);
-    printf "%8s %12s %8s\n", $testcase,
-      ( join ':', $encoded.ords>>.fmt("%02X") ),
+    printf "%8s %12s %8s\n", $testcase,
+      my $encoded = vlq_encode($testcase),
       vlq_decode($encoded);
 }
 ```
@@ -43,7 +36,6 @@ for (
 Output:
 
 
-#### Output:
 ```
        0           00        0
       10           0A       10

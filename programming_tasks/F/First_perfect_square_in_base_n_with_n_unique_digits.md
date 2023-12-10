@@ -14,9 +14,8 @@ Bases 2 through 19 finish quickly, (about 10 seconds on my system), 20 takes a w
 
 
 
-Use analytical start value filtering based on observations by [Hout](https://rosettacode.org/mw/index.php?title=User:Hout&amp;action=edit&amp;redlink=1)++
-and [Nigel Galloway](https://rosettacode.org/mw/index.php?title=User:Nigel_Galloway&amp;action=edit&amp;redlink=1)++ on the
-[discussion page](https://rosettacode.org/wiki/Talk:First_perfect_square_in_base_N_with_N_unique_digits#Space_compression_and_proof_.3F).
+Use analytical start value filtering based on observations by [Hout](https://rosettacode.org/wiki/User:Hout)++
+and [discussion page](https://rosettacode.org/wiki/Talk:First_perfect_square_in_base_N_with_N_unique_digits#Space_compression_and_proof_.3F).
 
 
 
@@ -24,28 +23,28 @@ and [Nigel Galloway](https://rosettacode.org/mw/index.php?title=User:Nigel_Gallo
 
 ```perl
 #`[
- 
+
 Only search square numbers that have at least N digits;
 smaller could not possibly match.
- 
+
 Only bother to use analytics for large N. Finesse takes longer than brute force for small N.
- 
+
 ]
- 
+
 unit sub MAIN ($timer = False);
- 
+
 sub first-square (Int $n) {
     my @start = flat '1', '0', (2 ..^ $n)».base: $n;
- 
+
     if $n > 10 { # analytics
-        my $root  = digital-root( @start.join, :base($n) );
-        my @roots = (2..$n).map(*²).map: { digital-root($_.base($n), :base($n) ) };
+        my $root  = digital-root( @start.join, :base($n) );
+        my @roots = (2..$n).map(*²).map: { digital-root($_.base($n), :base($n) ) };
         if $root ∉ @roots {
             my $offset = min(@roots.grep: * > $root ) - $root;
             @start[1+$offset] = $offset ~ @start[1+$offset];
         }
     }
- 
+
     my $start = @start.join.parse-base($n).sqrt.ceiling;
     my @digits = reverse (^$n)».base: $n;
     my $sq;
@@ -57,7 +56,7 @@ sub first-square (Int $n) {
         my $s = $sq.base($n);
         my $f;
         $f = 1 and last unless $s.contains: $_ for @digits;
-        if $timer && $n > 19 && $_ %% 1_000_000 {
+        if $timer && $n > 19 && $_ %% 1_000_000 {
             $time += now - $now;
             say "N $n:  {$_}² = $sq <$s> : {(now - $now).round(.001)}s" ~
                 " : {$time.round(.001)} elapsed";
@@ -67,15 +66,15 @@ sub first-square (Int $n) {
         $sr = $_;
         last
     }
-    sprintf( "Base %2d: %13s² == %-30s", $n, $sr.base($n), $sq.base($n) ) ~
-        ($timer ?? ($time + now - $now).round(.001) !! '');
+    sprintf( "Base %2d: %13s² == %-30s", $n, $sr.base($n), $sq.base($n) ) ~
+        ($timer ?? ($time + now - $now).round(.001) !! '');
 }
- 
-sub digital-root ($root is copy, :$base = 10) {
+
+sub digital-root ($root is copy, :$base = 10) {
     $root = $root.comb.map({:36($_)}).sum.base($base) while $root.chars > 1;
     $root.parse-base($base);
 }
- 
+
 say  "First perfect square with N unique digits in base N: ";
 say .&first-square for flat
    2 .. 12, # required

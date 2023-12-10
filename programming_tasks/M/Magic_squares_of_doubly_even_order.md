@@ -2,14 +2,17 @@
 
 # [Magic squares of doubly even order][1]
 
-See [Magic squares/Perl 6](https://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
+
+
+
+
+See [Magic squares/Raku](https://rosettacode.org/wiki/Magic_squares/Raku) for a general magic square generator.
 
 
 
 With a parameter of 8:
 
 
-#### Output:
 ```
  1  2 62 61 60 59  7  8
  9 10 54 53 52 51 15 16
@@ -27,7 +30,6 @@ The magic number is 260
 With a parameter of 12:
 
 
-#### Output:
 ```
   1   2   3 141 140 139 138 137 136  10  11  12
  13  14  15 129 128 127 126 125 124  22  23  24

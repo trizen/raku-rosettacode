@@ -5,7 +5,7 @@
 Hardly even worth saving as a script file; an easily entered one-liner.
 
 ```perl
-.say for "unixdict.txt".IO.lines.grep: { !/<[aiou]>/ and /e.*e.*e.*e/ };
+.say for "unixdict.txt".IO.lines.grep: { !/<[aiou]>/ and /e.*e.*e.*e/ };
 ```
 
 #### Output:
@@ -35,7 +35,7 @@ In an attempt to be a little less useless, here's an alternate script that allow
 unit sub MAIN ($vowel = 'e', $min = 4, $file = 'unixdict.txt');
 .say for squish sort
   ( $file.IO.slurp.words.grep: { ((my $b = .lc.samemark(' ').comb.Bag){$vowel} >= $min) && $b<a e i o u>.sum == $b{$vowel} } )\
-  ».subst(/<[":;,.?!_\[\]]>/, '', :g);
+  ».subst(/<[":;,.?!_\[\]]>/, '', :g);
 ```
 
 
@@ -46,7 +46,6 @@ How about: find words with at least 4 'a's in the [Les Misérables file](https:/
 Command line `> raku monovowel a 4 lemiz.txt`
 
 
-#### Output:
 ```
 Caracalla
 Caracara

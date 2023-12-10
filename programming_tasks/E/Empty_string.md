@@ -2,6 +2,8 @@
 
 # [Empty string][1]
 
+
+
 ```perl
 my $s = '';
 say 'String is empty' unless $s;

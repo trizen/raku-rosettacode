@@ -2,36 +2,35 @@
 
 # [Hello world/Newbie][1]
 
-Perl 6 is a language spec and test suite, not an implementation. Any implemention which implements the spec and passes the test suite can call itself perl 6. Philosophically, there is no official "Perl 6 distribution". Practically, at this point (late 2015), Rakudo perl 6 is the only realistic option. There are others, but they are either not currently being developed or far behind Rakudo in functionality.
 
 
 
-There are several ways to get and install Rakudo perl 6 depending on your operating system and the balance between your technical familiarity and tolerance of outdated code. Rakudo perl 6 is still in heavy development and the code base still has features being added, refined and optimized on a daily basis; a few weeks can make a big difference.
+
+Raku is a language spec and test suite, not an implementation. Any implementation which implements the spec and passes the test suite can call itself Raku. Philosophically, there is no official "Raku distribution". Practically, at this point (early 2020), Rakudo Raku is the only realistic option. There are others, but they are either not currently being developed or far behind Rakudo in functionality.
 
 
 
-For ease of installation, there are MSI files for Windows, Homebrew packages for OSX and pre-built Linux packages for apt and yum based packaging systems. They will get you a working compiler most easily, but may be weeks or months out of date.
+There are several ways to get and install Rakudo Raku depending on your operating system and the balance between your technical familiarity and tolerance of outdated code. Rakudo Raku is still in heavy development and the code base still has features being added, refined and optimized on a daily basis; a few weeks can make a big difference.
 
 
 
-At least until Rakudo makes it out of beta, it is probably best to build from source.
+For ease of installation, there are MSI files for Windows, Homebrew packages for OSX and pre-built Linux packages for apt and yum based packaging systems. They will get you a working compiler most easily, but may be weeks or months behind a blead source build.
 
 
 
-All of these options are detailed on the Rakuko.org website: [http://rakudo.org/how-to-get-rakudo/ ](http://rakudo.org/how-to-get-rakudo/%7C).
+All of these options are detailed in the [Downloads section of the Rakuko.org website](https://rakudo.org/downloads).
 
 
 
-If you do run into problems installing Rakudo, (or any perl 6 compiler, or have any Perl6 questions,) the #perl6 IRC channel on freenode.net nearly always has people willing to help out.
+If you do run into problems installing Rakudo, (or any Raku compiler, or have any Raku questions,) the #raku IRC channel on freenode.net nearly always has people willing to help out.
 
 
 
 Once you have your compiler installed, open a terminal window and type:
 
 
-#### Output:
 ```
- perl6 -e'say "Hello World!"'
+ raku -e'say "Hello World!"'
  
 ```
 
@@ -39,9 +38,8 @@ Once you have your compiler installed, open a terminal window and type:
 or, under Windows cmd.exe,
 
 
-#### Output:
 ```
- perl6 -e"say 'Hello World!'"
+ raku -e"say 'Hello World!'"
 ```
 
 
@@ -52,18 +50,16 @@ and press enter.
 Alternately, type
 
 
-#### Output:
 ```
- echo say 'Hello World!' > hw.p6
+ echo say 'Hello World!' > hw.raku
 ```
 
 
 then type
 
 
-#### Output:
 ```
- perl6 hw.p6
+ raku hw.raku
 ```
 
 

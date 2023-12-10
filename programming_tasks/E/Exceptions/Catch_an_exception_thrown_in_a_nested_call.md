@@ -2,6 +2,8 @@
 
 # [Exceptions/Catch an exception thrown in a nested call][1]
 
+
+
 ```perl
 sub foo() {
     for 0..1 -> $i {
@@ -11,11 +13,11 @@ sub foo() {
         }
     }
 }
- 
+
 sub bar($i) { baz $i }
- 
+
 sub baz($i) { die "U$i" }
- 
+
 foo;
 ```
 

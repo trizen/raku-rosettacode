@@ -2,7 +2,8 @@
 
 # [Table creation][1]
 
-In Perl 6, there is no 'database' type built in, so it is somewhat ambiguous when specifying 'create a database table'. Perl 6 offers bindings to most common databases through its DBIish module but mostly abstracts away the differences between the underlying databases, which hides many of the finer distinctions of what may be stored where. The actual data types and options available are properties of the database used.
+
+In Raku, there is no 'database' type built in, so it is somewhat ambiguous when specifying 'create a database table'. Raku offers bindings to most common databases through its DBIish module but mostly abstracts away the differences between the underlying databases, which hides many of the finer distinctions of what may be stored where. The actual data types and options available are properties of the database used.
 
 
 
@@ -14,14 +15,13 @@ In general, a container type can hold objects of any data type, even instances o
 
 
 
-Perl 6 offers two broad categories of collective container types; those that do the Positional role and those that do Associative. Positional objects are collective objects that access the individual storage slots using an integer index. Associative objects use some sort of other pointer (typically string) to access their storage slots.
+Raku offers two broad categories of collective container types; those that do the Positional role and those that do Associative. Positional objects are collective objects that access the individual storage slots using an integer index. Associative objects use some sort of other pointer (typically string) to access their storage slots.
 
 
 
 The various Associative types mostly differ in their value handling. Hash, Map and QuantHash may have any type of object as their value. All the others have some specific, usually numeric, type as their value.
 
 
-#### Output:
 ```
 Positional - Object that supports looking up values by integer index
     Array     Sequence of itemized objects
@@ -40,4 +40,4 @@ Associative - Object that supports looking up values by key (typically string)
 ```
 
 
-If you want a persistent instance of any of these types, you need to declare the name with some scope constraint, but the are no prerequisites to creating instances. Simply assigning values to them will call them into existence.
+If you want a persistent instance of any of these types, you need to declare the name with some scope constraint, but there are no prerequisites to creating instances. Simply assigning values to them will call them into existence.

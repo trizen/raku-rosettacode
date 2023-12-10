@@ -2,7 +2,11 @@
 
 # [Sort stability][1]
 
-The [sort](http://perlcabal.org/syn/S32/Containers.html#sort) built-in (available as sub and method) is stable.
+
+
+
+
+The [sort](https://docs.raku.org/language/101-basics#index-entry-stable_sort) built-in (available as sub and method) is stable.
 
 
 
@@ -15,7 +19,7 @@ my @cities =
     ['US', 'New York'],
     ['US', 'Birmingham'],
     ['UK', 'Birmingham'],
-    ;
- 
+    ;
+
 .say for @cities.sort: { .[1] };
 ```

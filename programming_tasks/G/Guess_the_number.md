@@ -2,6 +2,8 @@
 
 # [Guess the number][1]
 
+
+
 ```perl
 my $number = (1..10).pick;
 repeat {} until prompt("Guess a number: ") == $number;

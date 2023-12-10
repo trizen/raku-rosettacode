@@ -2,6 +2,8 @@
 
 # [Tokenize a string][1]
 
+
+
 ```perl
 'Hello,How,Are,You,Today'.split(',').join('.').say;
 ```

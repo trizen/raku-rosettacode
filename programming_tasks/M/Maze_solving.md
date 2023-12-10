@@ -2,33 +2,37 @@
 
 # [Maze solving][1]
 
+
+
+
+
 (Includes maze generation code.)
 
 ```perl
-constant mapping = :OPEN(' '),
-		      :N< ╵ >,
-		      :E< ╶ >,
-		     :NE< └ >,
-		      :S< ╷ >,
-		     :NS< │ >,
-		     :ES< ┌ >,
-		    :NES< ├ >,
-		      :W< ╴ >,
-		     :NW< ┘ >,
-		     :EW< ─ >,
-		    :NEW< ┴ >,
-		     :SW< ┐ >,
-		    :NSW< ┤ >,
-		    :ESW< ┬ >,
-		   :NESW< ┼ >,
-		   :TODO< x >,
-	          :TRIED< · >;
- 
+constant mapping = :OPEN(' '),
+		      :N< ╵ >,
+		      :E< ╶ >,
+		     :NE< └ >,
+		      :S< ╷ >,
+		     :NS< │ >,
+		     :ES< ┌ >,
+		    :NES< ├ >,
+		      :W< ╴ >,
+		     :NW< ┘ >,
+		     :EW< ─ >,
+		    :NEW< ┴ >,
+		     :SW< ┐ >,
+		    :NSW< ┤ >,
+		    :ESW< ┬ >,
+		   :NESW< ┼ >,
+		   :TODO< x >,
+	          :TRIED< · >;
+ 
 enum Sym (mapping.map: *.key);
 my @ch = mapping.map: *.value;
- 
+ 
 enum Direction <DeadEnd Up Right Down Left>;
- 
+ 
 sub gen_maze ( $X,
                $Y,
                $start_x = (^$X).pick * 2 + 1,
@@ -43,7 +47,7 @@ sub gen_maze ( $X,
     }
     push @maze, $[ flat NE, (EW, NEW) xx $X - 1, -NS, NW ];
     @maze[$start_y][$start_x] = OPEN;
- 
+ 
     my @stack;
     my $current = [$start_x, $start_y];
     loop {
@@ -57,7 +61,7 @@ sub gen_maze ( $X,
         }
     }
     return @maze;
- 
+ 
     sub pick_direction([$x,$y]) {
 	my @neighbors =
 	    (Up    if @maze[$y - 2][$x]),
@@ -66,7 +70,7 @@ sub gen_maze ( $X,
 	    (Right if @maze[$y][$x + 2]);
 	@neighbors.pick or DeadEnd;
     }
- 
+ 
     sub move ($dir, @cur) {
 	my ($x,$y) = @cur;
 	given $dir {
@@ -79,7 +83,7 @@ sub gen_maze ( $X,
 	[$x,$y];
     }
 }
- 
+ 
 sub display (@maze) {
     for @maze -> @y {
 	for @y.rotor(2) -> ($w, $c) {
@@ -90,15 +94,15 @@ sub display (@maze) {
 	say @ch[@y[*-1]];
     }
 }
- 
+ 
 sub solve (@maze is copy, @from = [1, 1], @to = [@maze[0] - 2, @maze - 2]) {
     my ($x, $y) = @from;
     my ($xto, $yto) = @to;
     my @stack;
- 
+
     sub drop-crumb($x,$y,$c) { @maze[$y][$x] = -$c }
     drop-crumb($x,$y,N);
- 
+
     loop {
 	my $dir = pick_direction([$x,$y]);
 	if $dir {
@@ -112,7 +116,7 @@ sub solve (@maze is copy, @from = [1, 1], @to = [@maze[0] - 2, @maze - 2]) {
 	    ($x,$y) = @stack.pop;
 	}
     }
- 
+
     sub pick_direction([$x,$y]) {
 	my @neighbors =
 	    (Up    unless @maze[$y - 1][$x]),
@@ -121,7 +125,7 @@ sub solve (@maze is copy, @from = [1, 1], @to = [@maze[0] - 2, @maze - 2]) {
 	    (Right unless @maze[$y][$x + 1]);
 	@neighbors.pick or DeadEnd;
     }
- 
+
     sub move ($dir, @cur) {
 	my ($x,$y) = @cur;
 	given $dir {
@@ -133,7 +137,7 @@ sub solve (@maze is copy, @from = [1, 1], @to = [@maze[0] - 2, @maze - 2]) {
 	$x,$y;
     }
 }
- 
+
 display solve gen_maze( 29, 19 );
 ```
 

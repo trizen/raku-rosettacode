@@ -2,7 +2,11 @@
 
 # [Extreme floating point values][1]
 
-Floating point limits are to a large extent implementation dependent, but currently both Perl 6 backends (MoarVM, JVM) running on a 64 bit OS have an infinity threshold of just under 1.8e308.
+
+
+
+
+Floating point limits are to a large extent implementation dependent, but currently both Raku backends (MoarVM, JVM) running on a 64 bit OS have an infinity threshold of just under 1.8e308.
 
 ```perl
 print qq:to 'END'
@@ -24,13 +28,12 @@ END
 ```
 
 
-`0e0` is used to have floating point number.
-Simply using `0.0` makes rational number that doesn't recognize `-0`.
-`qq:to` is heredoc syntax, where `qq` means
+`0e0` is used to have floating point number. 
+Simply using `0.0` makes rational number that doesn't recognize `-0`. 
+`qq:to` is heredoc syntax, where `qq` means 
 that variables and closures (between braces) are interpolated.
 
 
-#### Output:
 ```
 positive infinity: Inf
 negative infinity: -Inf

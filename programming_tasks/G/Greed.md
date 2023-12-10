@@ -4,44 +4,44 @@
 
 ```perl
 # 20200913 added Raku programming solution
- 
+
 srand 123456;
- 
-my @board = [ (1..9).roll xx my \w = 79 ] xx my \h = 22 ;
-my \X = $ = w.rand.Int ; my \Y = $ = h.rand.Int;
+
+my @board = [ (1..9).roll xx my \w = 79 ] xx my \h = 22 ;
+my \X = $ = w.rand.Int ; my \Y = $ = h.rand.Int;
 @board[Y;X] = '@';
 my \score = $ = 0;
- 
+
 sub execute (\y,\x) {
    my \i = $ = @board[Y+y;X+x];
    if countSteps(i, x, y) {
       score += i;
-      @board[ Y +  y*$_ ; X +  x*$_ ] = ' ' for ^i;
-      @board[ Y += y*i  ; X += x*i  ] = '@';
+      @board[ Y +  y*$_ ; X +  x*$_ ] = ' ' for ^i;
+      @board[ Y += y*i  ; X += x*i  ] = '@';
    }
 }
- 
+
 sub countSteps(\i, \x, \y) {
-   my \tX = $ = X ; my \tY = $ = Y;
+   my \tX = $ = X ; my \tY = $ = Y;
    for ^i {
       tX += x; tY += y;
       return False if tX < 0 or tY < 0 or tX ≥ w or tY ≥ h or @board[tY;tX] eq ' ' 
    }
    return True;
 }
- 
+
 sub existsMoves {
    for (-1 .. 1) X (-1 .. 1) -> (\x,\y) {
       next if x == 0 and y == 0;
-      next if X+x < 0 or X+x > w or Y+y < 0 or Y+y > h ;
+      next if X+x < 0 or X+x > w or Y+y < 0 or Y+y > h ;
       my \i = @board[Y+y;X+x];
       return True if ( i ne ' ' and countSteps(i, x, y) )
    }
    return False;
 }
- 
+
 loop {
-   for @board { .join.print ; print "\r\n" } ;
+   for @board { .join.print ; print "\r\n" } ;
    { say "Game over." and last } unless existsMoves();
    print "Current score : ", score, "\r\n";
    given my $c = $*IN.getc {

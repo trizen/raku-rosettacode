@@ -2,7 +2,11 @@
 
 # [Sort three variables][1]
 
-Perl 6 has a built in sort routine which uses a variation of quicksort. The built in sort routine will automatically select a numeric sort if given a list of Real numeric items and a lexical Unicode sort if given a list that contains strings. The default numeric sort won't sort complex numbers unless you give it a custom comparitor. It is trivial to modify the sort comparitor function to get whatever ordering you want though.
+
+
+
+
+Raku has a built in sort routine which uses a variation of quicksort. The built in sort routine will automatically select a numeric sort if given a list of Real numeric items and a lexical Unicode sort if given a list that contains strings. The default numeric sort won't sort complex numbers unless you give it a custom comparator. It is trivial to modify the sort comparator function to get whatever ordering you want though.
 
 
 
@@ -13,12 +17,12 @@ The list (77444, -12, 0) is a poor choice to demonstrate numeric sort since it w
 my ($a, $b, $c) = 'lions, tigers, and', 'bears,  oh my!', '(from "The Wizard of Oz")';
 say "sorting: {($a, $b, $c).join('|')}";
 say ($a, $b, $c).sort.join('|'), ' - standard lexical string sort';
- 
+
 # Sorting numeric things
 my ($x, $y, $z) = 7.7444e4, -12, 18/2;
 say "\nsorting: $x $y $z";
 say ($x, $y, $z).sort, ' - standard numeric sort, low to high';
- 
+
 # Or, with a modified comparitor:
 for  -*,       ' - numeric sort high to low',
      ~*,       ' - lexical "string" sort',
@@ -29,7 +33,7 @@ for  -*,       ' - numeric sort high to low',
     say ($x, $y, $z).sort( &$comparitor ), $type;
 }
 say '';
- 
+
 # sort ALL THE THINGS
 # sorts by lexical order with numeric values by magnitude.
 .say for ($a, $b, $c, $x, $y, $z).sort;

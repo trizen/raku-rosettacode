@@ -2,9 +2,11 @@
 
 # [Strip block comments][1]
 
+
+
 ```perl
 sample().split(/ '/*' .+? '*/' /).print;
- 
+
 sub sample {
 '   /**
     * Some comments
@@ -16,7 +18,7 @@ sub sample {
      a = /* inline comment */ b + c ;
     }
     /*/ <-- tricky comments */
- 
+
     /**
      * Another comment.
      */
@@ -29,7 +31,6 @@ sub sample {
 Output:
 
 
-#### Output:
 ```
    
     function subroutine() {

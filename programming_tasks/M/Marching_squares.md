@@ -4,22 +4,22 @@
 
 ```perl
 # 20220708 Raku programming solution
- 
+
 enum <E N W S>;
-my (@dx,@dy) := (1,0,-1,0), (0,-1,0,1);
+my (@dx,@dy) := (1,0,-1,0), (0,-1,0,1);
 my \example   = ((0, 0, 0, 0, 0),
                  (0, 0, 0, 0, 0),
                  (0, 0, 1, 1, 0),
                  (0, 0, 1, 1, 0),
                  (0, 0, 0, 1, 0),
                  (0, 0, 0, 0, 0));
- 
-printf("X: %d, Y: %d, Path: %s\n", identifyPerimeter(example));
- 
+
+printf("X: %d, Y: %d, Path: %s\n", identifyPerimeter(example));
+
 sub identifyPerimeter(\data) {
- 
+
    my (\height,\width) = { .elems, .first.elems }(data);
- 
+
    for ^width X ^height -> (\x,\y) {
       if data[y;x] {
          my ($cx,$cy,$directions,$previous) = x, y;
@@ -34,13 +34,13 @@ sub identifyPerimeter(\data) {
                when * ∈ ( 2,  3,  7 ) { E }
                when * ∈ ( 4, 12, 14 ) { W }
                when * ∈ ( 8, 10, 11 ) { S }
-               when * ∈ (     6     ) { $previous == N ?? W !! E }
-               when * ∈ (     9     ) { $previous == E ?? N !! S }
+               when * ∈ (     6     ) { $previous == N ?? W !! E }
+               when * ∈ (     9     ) { $previous == E ?? N !! S }
             } { 
-	       $directions ~= $previous = $_ ; 
+	       $directions ~= $previous = $_ ; 
 	       ($cx,$cy) <<+=<< (@dx[.value], @dy[.value]) 
 	    } 
-         } until $cx==x and $cy==y ; 
+         } until $cx==x and $cy==y ; 
          return x, -y, $directions
       }      
    }

@@ -30,9 +30,9 @@ A more efficient and versatile approach is to generate an infinite list of tripl
 
 ```perl
 constant @triples = (5, *+6 … *).map: -> \n { $_ if .all.is-prime given (n, n+2, n+6) }
- 
-my $count = @triples.first: :k, *.[0] >= 5500;
- 
+
+my $count = @triples.first: :k, *.[0] >= 5500;
+
 say .fmt('%4d') for @triples.head($count);
 ```
 

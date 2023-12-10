@@ -2,6 +2,8 @@
 
 # [Apply a digital filter (direct form II transposed)][1]
 
+
+
 ```perl
 sub TDF-II-filter ( @signal, @a, @b ) {
     my @out = 0 xx @signal;
@@ -13,7 +15,7 @@ sub TDF-II-filter ( @signal, @a, @b ) {
     }
     @out
 }
- 
+
 my @signal = [
     -0.917843918645,  0.141984778794, 1.20536903482,   0.190286794412,
     -0.662370894973, -1.00700480494, -0.404707073677,  0.800482325044,
@@ -23,7 +25,7 @@ my @signal = [
 ];
 my @a = [ 1.00000000, -2.77555756e-16, 3.33333333e-01, -1.85037171e-17 ];
 my @b = [ 0.16666667,  0.5,            0.5,             0.16666667     ];
- 
+
 say TDF-II-filter(@signal, @a, @b)».fmt("% 0.8f")
     Z~ flat (', ' xx 4, ",\n") xx *;
 ```

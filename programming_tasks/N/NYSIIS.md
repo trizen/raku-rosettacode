@@ -2,13 +2,17 @@
 
 # [NYSIIS][1]
 
+
+
+
+
 This implementation removes common name suffixes similar to the reference implementation, even though it is not specified in the task description or on the linked [NYSIIS](https://en.wikipedia.org/wiki/New_York_State_Identification_and_Intelligence_System) page. This algorithm isn't too friendly to certain French kings.&#160;:)
 
 ```perl
 sub no_suffix ($name) {
     $name.uc.subst: /\h (<[JS]>R) | (<[IVX]>+) $/, '';
 }
- 
+
 sub nysiis ($name is copy) {
     given $name .= uc {
         s:g/<-[A..Z]>//;
@@ -39,8 +43,8 @@ sub nysiis ($name is copy) {
      }
      return $name;
 }
- 
- 
+
+
 for «
     knight      mitchell        "o'daniel"      "brown  sr"     "browne III"
     "browne IV" "O'Banion"      Mclaughlin      McCormack       Chapman
@@ -54,7 +58,7 @@ for «
     if $nysiis.chars > 6 {
         $nysiis .= subst: rx/ <after .**6> .+ /, -> $/ { "[$/]" };
     }
-    printf "%10s,  %s\n", $_, $nysiis;
+    printf "%10s,  %s\n", $_, $nysiis;
 }
 ```
 
@@ -62,7 +66,6 @@ for «
 Output:
 
 
-#### Output:
 ```
     knight,  NAGT
   mitchell,  MATCAL

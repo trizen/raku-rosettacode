@@ -2,6 +2,10 @@
 
 # [Non-decimal radices/Output][1]
 
+
+
+
+
 Calling the `.base` method on a number returns a string. It can handle all bases between 2 and 36:
 
 ```perl
@@ -17,6 +21,6 @@ Alternatively, `printf` can be used for some common number bases:
 
 ```perl
 for 0..33 -> $n {
-  printf " %6b %3o %2d %2X\n", $n xx 4;
+  printf " %6b %3o %2d %2X\n", $n xx 4;
 }
 ```

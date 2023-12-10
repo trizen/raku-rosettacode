@@ -2,6 +2,8 @@
 
 # [Repeat a string][1]
 
+
+
 ```perl
 print "ha" x 5
 ```

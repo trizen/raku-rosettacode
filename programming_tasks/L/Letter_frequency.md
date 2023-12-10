@@ -2,17 +2,29 @@
 
 # [Letter frequency][1]
 
-In perl6, whenever you want to count things in a collection, the rule of thumb is to use the Bag structure.
+
+
+
+
+In Raku, whenever you want to count things in a collection, the rule of thumb is to use the Bag structure.
+
+
+
+*In response to some of the breathless exposition in the [Frink](#Frink) entry.*
+
+
+
+"How many other languages in this page do all or any of this correctly?" Quite a few I suspect. Some even moreso than Frink.
 
 ```perl
 .&ws.say for slurp.comb.Bag.sort: -*.value;
- 
+
 sub ws ($pair) { 
     $pair.key ~~ /\n/
-    ?? ('NEW LINE' => $pair.value)
-    !! $pair.key ~~ /\s/
-    ?? ($pair.key.uniname => $pair.value)
-    !! $pair
+    ?? ('NEW LINE' => $pair.value)
+    !! $pair.key ~~ /\s/
+    ?? ($pair.key.uniname => $pair.value)
+    !! $pair
 }
 ```
 

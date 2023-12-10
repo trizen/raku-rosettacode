@@ -2,9 +2,9 @@
 
 # [Multidimensional Newton-Raphson method][1]
 
-```perl
-#!/usr/bin/env perl6
 
+
+```perl
 # Reference:
 # https://github.com/pierre-vigier/Perl6-Math-Matrix
 # Mastering Algorithms with Perl
@@ -25,7 +25,7 @@ sub solve_funcs ($funcs, @guesses, $iterations, $epsilon) {
       @jacobian = jacobian $funcs, @guesses, ε;
       @delta = solve_matrix @jacobian, @delta;
       loop (my $j = 0, $error_value = 0; $j < +$funcs; $j++) {
-         $error_value += @delta[$j].abs ;
+         $error_value += @delta[$j].abs ;
          @guesses[$j] += @delta[$j];
       }
       return @guesses if $error_value ≤ ε;

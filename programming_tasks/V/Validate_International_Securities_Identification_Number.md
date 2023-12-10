@@ -2,24 +2,28 @@
 
 # [Validate International Securities Identification Number][1]
 
+
+
+
+
 Using the `luhn-test` function from the *[Luhn test of credit card numbers](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#Raku)* task.
 
 ```perl
 my $ISIN = /
     ^ <[A..Z]>**2 <[A..Z0..9]>**9 <[0..9]> $
-    <?{ luhn-test $/.comb.map({ :36($_) }).join }>
+    <?{ luhn-test $/.comb.map({ :36($_) }).join }>
 /;
- 
+
 sub luhn-test ($number --> Bool) {
     my @digits = $number.comb.reverse;
     my $sum = @digits[0,2...*].sum
             + @digits[1,3...*].map({ |($_ * 2).comb }).sum;
-    return $sum %% 10;
+    return $sum %% 10;
 }
- 
+
 # Testing:
- 
-say "$_ is {$ISIN ?? "valid" !! "not valid"}" for <
+
+say "$_ is { m/$ISIN/ ?? "valid" !! "not valid"}" for <
 US0378331005
 US0373831005
 U50378331005

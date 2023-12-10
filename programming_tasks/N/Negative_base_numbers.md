@@ -2,7 +2,15 @@
 
 # [Negative base numbers][1]
 
-Perl 6 provides built-in methods / routines base and parse-base to convert to and from bases 2 through 36. We'll just shadow the core routines with versions that accept negative bases.
+
+
+
+
+### Explicit
+
+
+
+Raku provides built-in methods / routines base and parse-base to convert to and from bases 2 through 36. We'll just shadow the core routines with versions that accept negative bases.
 
 
 
@@ -30,27 +38,27 @@ multi sub base ( Int $value is copy, Int $radix where -37 < * < -1) {
     }
     flip $result || ~0;
 }
- 
-multi sub base ( Real $num, Int $radix where -37 < * < -1, :$precision = -15 ) {
+
+multi sub base ( Real $num, Int $radix where -37 < * < -1, :$precision = -15 ) {
     return '0' unless $num;
     my $value  = $num;
     my $result = '';
     my $place  = 0;
     my $upper-bound = 1 / (-$radix + 1);
     my $lower-bound = $radix * $upper-bound;
- 
+
     $value = $num / $radix ** ++$place until $lower-bound <= $value < $upper-bound;
- 
+
     while ($value or $place > 0) and $place > $precision {
         my $digit = ($radix * $value - $lower-bound).Int;
         $value    =  $radix * $value - $digit;
         $result ~= '.' unless $place or $result.contains: '.';
-        $result ~= $digit == -$radix ?? ($digit-1).base(-$radix)~'0' !! $digit.base(-$radix);
+        $result ~= $digit == -$radix ?? ($digit-1).base(-$radix)~'0' !! $digit.base(-$radix);
         $place--
     }
     $result
 }
- 
+
 multi sub parse-base (Str $str, Int $radix where -37 < * < -1) {
     return -1 * $str.substr(1).&parse-base($radix) if $str.substr(0,1) eq '-';
     my ($whole, $frac) = $str.split: '.';
@@ -58,15 +66,15 @@ multi sub parse-base (Str $str, Int $radix where -37 < * < -1) {
     $fraction = [+] $frac.comb.kv.map: { $^v.parse-base(-$radix) * $radix ** -($^k+1) } if $frac;
     $fraction + [+] $whole.flip.comb.kv.map: { $^v.parse-base(-$radix) * $radix ** $^k }
 }
- 
+
 # TESTING
 for <4 -4 0 -7  10 -2  146 -3  15 -10  -19 -10  107 -16
     227.65625 -16  2.375 -4 -1.3e2 -8 41371457.268272761 -36> -> $v, $r {
-    my $nbase = $v.&base($r, :precision(-5));
-    printf "%20s.&base\(%3d\) = %-11s : %13s.&parse-base\(%3d\) = %s\n",
+    my $nbase = $v.&base($r, :precision(-5));
+    printf "%20s.&base\(%3d\) = %-11s : %13s.&parse-base\(%3d\) = %s\n",
       $v, $r, $nbase, "'$nbase'", $r, $nbase.&parse-base($r);
 }
- 
+
 # 'Illegal' negative-base value
 say q|  '-21'.&parse-base(-10) = |, '-21'.&parse-base(-10);
 ```
@@ -85,4 +93,47 @@ say q|  '-21'.&parse-base(-10) = |, '-21'.&parse-base(-10);
               -1.3e2.&base( -8) = 1616        :        '1616'.&parse-base( -8) = -130
   41371457.268272761.&base(-36) = PERL6.ROCKS : 'PERL6.ROCKS'.&parse-base(-36) = 41371457.268272761
   '-21'.&parse-base(-10) = 19
+```
+
+
+### Module
+
+
+
+Using the module [Base::Any](https://modules.raku.org/search/?q=Base%3A%3AAny) from the Raku ecosystem.
+
+
+
+Does everything the explicit version does but also handles a **much** larger range of negative bases.
+
+
+
+Doing pretty much the same tests as the explicit version.
+
+```perl
+use Base::Any;
+
+for < 4 -4 0 -7  10 -2  146 -3  15 -10  -19 -10  107 -16
+    227.65625 -16  2.375 -4 -1.3e2 -8 41371457.268272761 -36
+    -145115966751439403/3241792 -1184 > -> $v, $r {
+    my $nbase = $v.&to-base($r, :precision(-5));
+    printf "%21s.&to-base\(%5d\) = %-11s : %13s.&from-base\(%5d\) = %s\n",
+      +$v, $r, $nbase, "'$nbase'", $r, $nbase.&from-base($r);
+}
+```
+
+#### Output:
+```
+                    4.&to-base(   -4) = 130         :         '130'.&from-base(   -4) = 4
+                    0.&to-base(   -7) = 0           :           '0'.&from-base(   -7) = 0
+                   10.&to-base(   -2) = 11110       :       '11110'.&from-base(   -2) = 10
+                  146.&to-base(   -3) = 21102       :       '21102'.&from-base(   -3) = 146
+                   15.&to-base(  -10) = 195         :         '195'.&from-base(  -10) = 15
+                  -19.&to-base(  -10) = 21          :          '21'.&from-base(  -10) = -19
+                  107.&to-base(  -16) = 1AB         :         '1AB'.&from-base(  -16) = 107
+            227.65625.&to-base(  -16) = 124.68      :      '124.68'.&from-base(  -16) = 227.65625
+                2.375.&to-base(   -4) = 3.32        :        '3.32'.&from-base(   -4) = 2.375
+                 -130.&to-base(   -8) = 1616        :        '1616'.&from-base(   -8) = -130
+   41371457.268272761.&to-base(  -36) = PERL6.ROCKS : 'PERL6.ROCKS'.&from-base(  -36) = 41371457.268272761
+-44764120200.01264825.&to-base(-1184) = Raku.FTW    :    'Raku.FTW'.&from-base(-1184) = -44764120200.01264825
 ```

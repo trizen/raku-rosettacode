@@ -2,46 +2,47 @@
 
 # [Total circles area][1]
 
-This subdivides the outer rectangle repeatedly into subrectangles, and classifies them into wet, dry, or unknown. The knowns are summed to provide an inner bound and an outer bound, while the unknowns are further subdivided. The estimate is the average of the outer bound and the inner bound. Not the simplest algorithm, but converges fairly rapidly because it can treat large areas sparsely, saving the fine subdivisions for the circle boundaries. The number of unknown rectangles roughly doubles each pass, but the area of those unknowns is about half.
+
+This subdivides the outer rectangle repeatedly into subrectangles, and classifies them into wet, dry, or unknown.  The knowns are summed to provide an inner bound and an outer bound, while the unknowns are further subdivided.  The estimate is the average of the outer bound and the inner bound.  Not the simplest algorithm, but converges fairly rapidly because it can treat large areas sparsely, saving the fine subdivisions for the circle boundaries.  The number of unknown rectangles roughly doubles each pass, but the area of those unknowns is about half.
 
 ```perl
 class Point {
     has Real $.x;
     has Real $.y;
     has Int $!cbits;	# bitmap of circle membership
- 
+
     method cbits { $!cbits //= set_cbits(self) }
     method gist { $!x ~ "\t" ~ $!y }
 }
- 
+
 multi infix:<to>(Point $p1, Point $p2) {
     sqrt ($p1.x - $p2.x) ** 2 + ($p1.y - $p2.y) ** 2;
 }
- 
+
 multi infix:<mid>(Point $p1, Point $p2) {
     Point.new(x => ($p1.x + $p2.x) / 2, y => ($p1.y + $p2.y) / 2);
 }
- 
+
 class Circle {
     has Point $.center;
     has Real $.radius;
- 
+
     has Point $.north = Point.new(x => $!center.x, y => $!center.y + $!radius);
     has Point $.west  = Point.new(x => $!center.x - $!radius, y => $!center.y);
     has Point $.south = Point.new(x => $!center.x, y => $!center.y - $!radius);
     has Point $.east  = Point.new(x => $!center.x + $!radius, y => $!center.y);
- 
+
     multi method contains(Circle $c) { $!center to $c.center <= $!radius - $c.radius }
     multi method contains(Point $p) { $!center to $p <= $!radius }
     method gist { $!center.gist ~ "\t" ~ $.radius }
 }
- 
+
 class Rect {
     has Point $.nw;
     has Point $.ne;
     has Point $.sw;
     has Point $.se;
- 
+
     method diag { $!ne to $!se }
     method area { ($!ne.x - $!nw.x) * ($!nw.y - $!sw.y) }
     method contains(Point $p) {
@@ -49,9 +50,9 @@ class Rect {
 	$!sw.y < $p.y < $!nw.y;
     }
 }
- 
+
 my @rawcircles = sort -*.radius,
-    map -> $x, $y, $radius { Circle.new(:center(Point.new(:$x, :$y)), :$radius) },
+    map -> $x, $y, $radius { Circle.new(:center(Point.new(:$x, :$y)), :$radius) },
     <
 	 1.6417233788  1.6121789534 0.0848270516
 	-1.4944608174  1.2077959613 1.1039549836
@@ -79,7 +80,7 @@ my @rawcircles = sort -*.radius,
 	-0.6855727502  1.6465021616 1.0593087096
 	 0.0152957411  0.0638919221 0.9771215985
     >».Num;
- 
+
 # remove redundant circles
 my @circles;
 while @rawcircles {
@@ -87,7 +88,7 @@ while @rawcircles {
     next if @circles.any.contains($c);
     push @circles, $c;
 }
- 
+
 sub set_cbits(Point $p) {
     my $cbits = 0;
     for @circles Z (1,2,4...*) -> ($c, $b) {
@@ -95,35 +96,35 @@ sub set_cbits(Point $p) {
     }
     $cbits;
 }
- 
-my $xmin = [min] @circles.map: { .center.x - .radius }
-my $xmax = [max] @circles.map: { .center.x + .radius }
-my $ymin = [min] @circles.map: { .center.y - .radius }
-my $ymax = [max] @circles.map: { .center.y + .radius }
- 
+
+my $xmin = min @circles.map: { .center.x - .radius }
+my $xmax = max @circles.map: { .center.x + .radius }
+my $ymin = min @circles.map: { .center.y - .radius }
+my $ymax = max @circles.map: { .center.y + .radius }
+
 my $min-radius = @circles[*-1].radius;
- 
+
 my $outer-rect = Rect.new:
     nw => Point.new(x => $xmin, y => $ymax),
     ne => Point.new(x => $xmax, y => $ymax),
     sw => Point.new(x => $xmin, y => $ymin),
     se => Point.new(x => $xmax, y => $ymin);
- 
+
 my $outer-area = $outer-rect.area;
- 
+
 my @unknowns = $outer-rect;
 my $known-dry = 0e0;
 my $known-wet = 0e0;
 my $div = 1;
- 
+
 # divide current rects each into four rects, analyze each
 sub divide(@old) {
- 
+
     $div *= 2;
- 
+
     # rects too small to hold circle?
     my $smallish = @old[0].diag < $min-radius;
- 
+
     my @unk;
     for @old {
 	my $center = .nw mid .se;
@@ -131,23 +132,23 @@ sub divide(@old) {
 	my $south = .sw mid .se;
 	my $west = .nw mid .sw;
 	my $east = .ne mid .se;
- 
+
 	for Rect.new(nw => .nw, ne => $north, sw => $west, se => $center),
 	    Rect.new(nw => $north, ne => .ne, sw => $center, se => $east),
 	    Rect.new(nw => $west, ne => $center, sw => .sw, se => $south),
 	    Rect.new(nw => $center, ne => $east, sw => $south, se => .se)
 	{
 	    my @bits = .nw.cbits, .ne.cbits, .sw.cbits, .se.cbits;
- 
+
 	    # if all 4 points wet by same circle, guaranteed wet
 	    if [+&] @bits {
 		$known-wet += .area;
 		next;
 	    }
- 
+
 	    # if all 4 corners are dry, must check further
 	    if not [+|] @bits and $smallish {
- 
+
 		# check that no circle bulges into this rect
 		my $ok = True;
 		for @circles -> $c {
@@ -168,11 +169,11 @@ sub divide(@old) {
     }
     @unk;
 }
- 
+
 my $delta = 0.001;
 repeat until my $diff < $delta {
     @unknowns = divide(@unknowns);
- 
+
     $diff = $outer-area - $known-dry - $known-wet;
     say 'div: ', $div.fmt('%-5d'),
 	' unk: ', (+@unknowns).fmt('%-6d'),

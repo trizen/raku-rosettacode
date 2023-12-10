@@ -16,7 +16,7 @@ sub sleeping-beauty ($trials) {
     say "Wakenings over $trials experiments: ", $wakenings;
     $gotheadsonwaking / $wakenings
 }
- 
+
 say "Results of experiment:  Sleeping Beauty should estimate a credence of: ", sleeping-beauty(1_000_000);
 ```
 

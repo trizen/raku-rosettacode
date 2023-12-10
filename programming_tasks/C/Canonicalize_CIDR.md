@@ -2,30 +2,45 @@
 
 # [Canonicalize CIDR][1]
 
+### Using library
+
+```perl
+use IP::Addr;
+for «87.70.141.1/22 36.18.154.103/12 62.62.197.11/29 67.137.119.181/4 161.214.74.21/24 184.232.176.184/18» -> $cidr {
+   say "$cidr -> $(IP::Addr.new($cidr).network)";
+}
+```
+
+
 ### String manipulation
 
 ```perl
 #!/usr/bin/env raku
- 
-# canonicalize a CIDR block: make sure none of the host bits are set
-if (!@*ARGS) {
-   @*ARGS = $*IN.lines;
+unit sub MAIN(*@cidrs);
+
+if !@cidrs {
+  # test data
+  @cidrs = «87.70.141.1/22 36.18.154.103/12 62.62.197.11/29 67.137.119.181/4 161.214.74.21/24 184.232.176.184/18»;
 }
- 
-for @*ARGS -> $cidr {
- 
+
+for @cidrs -> $cidr {
+  say "$cidr -> $(canonicalize $cidr)";
+}
+
+# canonicalize a CIDR block: make sure none of the host bits are set
+sub canonicalize($cidr) {
   # dotted-decimal / bits in network part
-  my ($dotted, $size) = $cidr.split('/');
- 
-  # get IP as binary string
-  my $binary = $dotted.split('.').map(*.fmt("%08b")).join;
- 
-  # Replace the host part with all zeroes
-  $binary.substr-rw($size) = 0 x (32 - $size);
- 
+  my ($dotted, $size) = $cidr.split: '/';
+
+  # get network part of the IP as binary string
+  my $binary = $dotted.split('.')».fmt('%08b').join.substr(0, $size);
+
+  # Add host part with all zeroes
+  $binary ~= 0 x (32 - $size);
+
   # Convert back to dotted-decimal
-  my $canon = $binary.comb(8).map(*.join.parse-base(2)).join('.');
- 
+  my $canon = $binary.comb(8)».parse-base(2).join: '.';
+
   # And output
   say "$canon/$size";
 }
@@ -33,8 +48,12 @@ for @*ARGS -> $cidr {
 
 #### Output:
 ```
-$ canonicalize_cidr.raku 87.70.141.1/22
-87.70.140.0/22
+87.70.141.1/22 -> 87.70.140.0/22
+36.18.154.103/12 -> 36.16.0.0/12
+62.62.197.11/29 -> 62.62.197.8/29
+67.137.119.181/4 -> 64.0.0.0/4
+161.214.74.21/24 -> 161.214.74.0/24
+184.232.176.184/18 -> 184.232.128.0/18
 ```
 
 
@@ -44,20 +63,20 @@ $ canonicalize_cidr.raku 87.70.141.1/22
 # canonicalize a IP4 CIDR block
 sub CIDR-IP4-canonicalize ($address) {
   constant @mask = 24, 16, 8, 0;
- 
+ 
   # dotted-decimal / subnet size
   my ($dotted, $size) = |$address.split('/'), 32;
- 
+ 
   # get IP as binary address
   my $binary = sum $dotted.comb(/\d+/) Z+< @mask;
- 
+ 
   # mask off subnet
   $binary +&= (2 ** $size - 1) +< (32 - $size);
- 
+ 
   # Return dotted-decimal notation
   (@mask.map($binary +> * +& 0xFF).join('.'), $size)
 }
- 
+ 
 my @tests = <
   87.70.141.1/22
   36.18.154.103/12
@@ -73,8 +92,8 @@ my @tests = <
   10.11.12.13/8
   10.../8
 >;
- 
-printf "CIDR: %18s  Routing prefix: %s/%s\n", $_, |.&CIDR-IP4-canonicalize
+ 
+printf "CIDR: %18s  Routing prefix: %s/%s\n", $_, |.&CIDR-IP4-canonicalize
   for @*ARGS || @tests;
 ```
 

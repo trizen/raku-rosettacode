@@ -7,7 +7,7 @@
 ```perl
 sub sort_within_string ( $_ is copy ) {
     constant @lexographic_order = sort *.fc, map &chr, 1..255;
- 
+
     return join '', gather for @lexographic_order -> $l {
         my $count = s:g/$l//;
         take $l x $count;
@@ -18,7 +18,6 @@ say trim .&sort_within_string for q:to/END/.lines;
 The quick brown fox jumps over the lazy dog, apparently
 Now is the time for all good men to come to the aid of their country.
 END
- 
 ```
 
 #### Output:
@@ -52,19 +51,19 @@ sub moronic-sort ($string is copy) {
     }
     $string
 }
- 
+
 sub wrap ($whatever) { '»»' ~ $whatever ~ '««' }
- 
- 
+
+
 # Test sort the exact string as specified in the task title.
 say "moronic-sort 'string'\n" ~ wrap moronic-sort 'string';
- 
- 
+
+
 # Other tests demonstrating the extent of the stupidity of this task.
 say "\nLonger test sentence\n" ~ 
 wrap moronic-sort q[This is a moronic sort. It's only concerned with sorting letters, so everything else is pretty much ignored / pushed to the end. It also doesn't much care about letter case, so there is no upper / lower case differentiation.];
- 
- 
+
+
 say "\nExtended test string:\n" ~ my $test = (32..126)».chr.pick(*).join;
 say wrap moronic-sort $test;
 ```

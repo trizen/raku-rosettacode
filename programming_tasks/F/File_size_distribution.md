@@ -2,11 +2,15 @@
 
 # [File size distribution][1]
 
+
+
+
+
 By default, process the current and all readable sub-directories, or, pass in a directory path at the command line.
 
 ```perl
 sub MAIN($dir = '.') {
-    sub log10 (Int $s) { $s ?? $s.log(10).Int !! 0 }
+    sub log10 (Int $s) { $s ?? $s.log(10).Int !! 0 }
     my %fsize;
     my @dirs = $dir.IO;
     while @dirs {
@@ -18,15 +22,13 @@ sub MAIN($dir = '.') {
     my $max = %fsize.values.max;
     my $bar-size = 80;
     say "File size distribution in bytes for directory: $dir\n";
-    say sprintf( "# Files @     0b %8s: ", %fsize{0} // 0 ),
-        histogram( $max, %fsize{0} // 0, $bar-size );
-    for 1 .. %fsize.keys.max {
-          say sprintf( "# Files @ %5sb %8s: ", "10e{$_-1}", %fsize{$_} // 0 ),
+    for 0 .. %fsize.keys.max {
+          say sprintf( "# Files @ %5sb %8s: ", $_ ?? "10e{$_-1}" !! 0, %fsize{$_} // 0 ),
               histogram( $max, %fsize{$_} // 0, $bar-size )
     }
     say %fsize.values.sum, ' total files.';
 }
- 
+
 sub histogram ($max, $value, $width = 60) {
     my @blocks = <| ▏ ▎ ▍ ▌ ▋ ▊ ▉ █>;
     my $scaled = ($value * $width / $max).Int;

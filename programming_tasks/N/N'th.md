@@ -1,14 +1,15 @@
-[1]: https://rosettacode.org/wiki/N'th
+[1]: https://rosettacode.org/wiki/N%27th
 
-# [N'th][1]
+# [N&#039;th][1]
+
 
 (Spurious apostrophes intentionally omitted.)
 
 ```perl
 my %irregulars = <1 st 2 nd 3 rd>, (11..13 X=> 'th');
- 
-sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'th' ) }
- 
+
+sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'th' ) }
+
 say .list».&nth for [^26], [250..265], [1000..1025];
 ```
 
@@ -24,9 +25,9 @@ If you want to get Unicodally fancy, use this version instead:
 
 ```perl
 my %irregulars = <1 ˢᵗ 2 ⁿᵈ 3 ʳᵈ>, (11..13 X=> 'ᵗʰ');
- 
-sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'ᵗʰ' ) }
- 
+
+sub nth ($n) { $n ~ ( %irregulars{$n % 100} // %irregulars{$n % 10} // 'ᵗʰ' ) }
+
 say .list».&nth for [^26], [250..265], [1000..1025];
 ```
 

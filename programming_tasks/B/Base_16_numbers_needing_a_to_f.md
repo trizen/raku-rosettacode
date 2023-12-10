@@ -16,7 +16,7 @@ Base 16 is not hexadecimal. Hexadecimal is *an implementation* of base 16.
 use Base::Any;
 set-digits <⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ㉑ ㉒ ㉓ ㉔ ㉕>;
 say (7**35).&to-base(16);
- 
+
 # ⑭㉒⑱⑩⑰⑰⑳⑮⑱⑳⑩⑳⑱㉒㉑⑰㉒⑫⑭⑲⑯⑩㉔⑮⑰
 ```
 
@@ -34,9 +34,9 @@ But wait a minute; is 2 a hexadecimal digit? Why yes, yes it is. So *none* of th
 Bah. Show which when written in base 16, contain a digit glyph with a value greater than 9:
 
 ```perl
-put display :20cols, :fmt('%3d'), (^501).grep( { so any |.map: { .polymod(16 xx *) »>» 9 } } );
- 
-sub display ($list, :$cols = 10, :$fmt = '%6d', :$title = "{+$list} matching:\n" )   {
+put display :20cols, :fmt('%3d'), (^501).grep( { so any |.map: { .polymod(16 xx *) »>» 9 } } );
+
+sub display ($list, :$cols = 10, :$fmt = '%6d', :$title = "{+$list} matching:\n" )   {
     cache $list;
     $title ~ $list.batch($cols)».fmt($fmt).join: "\n"
 }
@@ -68,10 +68,10 @@ But wait a minute. Let's take another look at the the task title. **Base-16 repr
 
 ```perl
 use Base::Any;
- 
-put display :20cols, :fmt('%3d'), (^501).grep( { .&to-base(-16).contains: /<[A..F]>/ } );
- 
-sub display ($list, :$cols = 10, :$fmt = '%6d', :$title = "{+$list} matching:\n" )   {
+
+put display :20cols, :fmt('%3d'), (^501).grep( { .&to-base(-16).contains: /<[A..F]>/ } );
+
+sub display ($list, :$cols = 10, :$fmt = '%6d', :$title = "{+$list} matching:\n" )   {
     cache $list;
     $title ~ $list.batch($cols)».fmt($fmt).join: "\n"
 }
@@ -103,7 +103,7 @@ Of course, if you are looking for the **count** of the hexadecimal numbers up to
 
 ```perl
 use Lingua::EN::Numbers;
- 
+
 for 500
    ,10**8
    ,10**25
@@ -112,13 +112,13 @@ for 500
     my $limit = $threshold.base(16);
     my $i  = $limit.index: ['A'..'F'];
     quietly $limit = $limit.substr(0, $i) ~ ('9' x ($limit.chars - $i)) if $i.Str;
- 
+
     for '  CAN  ', $limit,
         'CAN NOT', $threshold - $limit {
-        printf( "Quantity of numbers up to %s that %s be expressed in hexadecimal without using any alphabetics: %*s\n",
+        printf( "Quantity of numbers up to %s that %s be expressed in hexadecimal without using any alphabetics: %*s\n",
          comma($threshold), $^a, comma($threshold).chars, comma($^c) )
     }
- 
+
     say '';
 }
 ```

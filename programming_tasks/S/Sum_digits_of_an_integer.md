@@ -2,13 +2,14 @@
 
 # [Sum digits of an integer][1]
 
-This will handle input numbers in any base from 2 to 36.
+
+This will handle input numbers in any base from 2 to 36. 
 The results are in base 10.
 
 ```perl
 say Σ $_ for <1 1234 1020304 fe f0e DEADBEEF>;
- 
-sub Σ { [+] $^n.comb.map: { :36($_) } }
+
+sub Σ { [+] $^n.comb.map: { :36($_) } }
 ```
 
 #### Output:

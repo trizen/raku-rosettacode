@@ -2,56 +2,171 @@
 
 # [Arithmetic-geometric mean/Calculate Pi][1]
 
-There is not yet a FixDecimal type module in Perl 6, and using FatRat all along would be too slow and would be coerced to Num when computing the square root anyway, so we'll use a custom definition of the square root for Int and FatRat, with a limitation to the number of decimals. We'll show all the intermediate results.
 
 
 
-The trick to compute the square root of a rational ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f840899ae807a7c043751f8529403bae&mode=mathml) up to a certain amount of decimals N is to write:
+
+There is not yet a FixDecimal type module in Raku, and using FatRat all along would be too slow and would be coerced to Num when computing the square root anyway, so we'll use a custom definition of the square root for Int and FatRat, with a limitation to the number of decimals.  We'll show all the intermediate results.
 
 
 
-![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=7e8ff6a27540ed22f0e6bd1b2f7285f1&mode=mathml)
+The trick to compute the square root of a rational <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n \over d}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mstyle displaystyle="true" scriptlevel="0">
+          <mi>n</mi>
+        </mstyle>
+        <mi>d</mi>
+      </mfrac>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n \over d}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f3c696049051dc8aca901f540eecc885951a5e1a" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.005ex; width:2.231ex; height:4.843ex;" alt="{\displaystyle n\over d}"></span> up to a certain amount of decimals N is to write:
 
 
 
-so that what we need is one square root of a big number that we'll truncate to its integer part. We'll compute the square root of this big integer by using the convergence of the recursive sequence:
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\sqrt {\frac {n}{d}}}={\sqrt {\frac {n10^{2N}/d}{d10^{2N}/d}}}={\frac {\sqrt {n10^{2N}/d}}{10^{N}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mfrac>
+              <mi>n</mi>
+              <mi>d</mi>
+            </mfrac>
+          </msqrt>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mfrac>
+              <mrow>
+                <mi>n</mi>
+                <msup>
+                  <mn>10</mn>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>2</mn>
+                    <mi>N</mi>
+                  </mrow>
+                </msup>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mo>/</mo>
+                </mrow>
+                <mi>d</mi>
+              </mrow>
+              <mrow>
+                <mi>d</mi>
+                <msup>
+                  <mn>10</mn>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>2</mn>
+                    <mi>N</mi>
+                  </mrow>
+                </msup>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mo>/</mo>
+                </mrow>
+                <mi>d</mi>
+              </mrow>
+            </mfrac>
+          </msqrt>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <msqrt>
+              <mi>n</mi>
+              <msup>
+                <mn>10</mn>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>2</mn>
+                  <mi>N</mi>
+                </mrow>
+              </msup>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>/</mo>
+              </mrow>
+              <mi>d</mi>
+            </msqrt>
+            <msup>
+              <mn>10</mn>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>N</mi>
+              </mrow>
+            </msup>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\sqrt {\frac {n}{d}}}={\sqrt {\frac {n10^{2N}/d}{d10^{2N}/d}}}={\frac {\sqrt {n10^{2N}/d}}{10^{N}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7357ea34ff0bc90ad64ab9c0e2e86be310805674" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.838ex; width:34.424ex; height:8.676ex;" alt="{\displaystyle \sqrt{\frac{n}{d}} = \sqrt{&#10;\frac{n 10^{2N} / d}{d 10^{2N} / d}&#10;} = \frac{\sqrt{n 10^{2N} / d}}{10^N}}"></span>
 
 
 
-![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2a9aefca4f9c8ffa48a812145167786e&mode=mathml)
+so that what we need is one square root of a big number that we'll truncate to its integer part.  We'll use the method described in [Integer roots](https://rosettacode.org/wiki/Integer_roots) to compute the square root of this big integer.
 
 
 
-It's not too hard to see that such a sequence converges towards ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=f108a3d88b22ff91ddbd459b0f359bc9&mode=mathml).
-
-
-
-Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong. This is because we don't need ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=825b3fd5bafbc46b9a560ea9f16b21dd&mode=mathml), but rather ![image](https://rosettacode.org/mw/index.php?title=Special:MathShowImage&hash=2864884e3a76f4b27e189d49f4e6d0d1&mode=mathml). Elevating to the square makes us lose a bit of precision. It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
+Notice that we don't get the exact number of decimals required&#160;: the last two decimals or so can be wrong.  This is because we don't need <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle a\_{n}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>a</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a\_{n}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/790f9209748c2dca7ed7b81932c37c02af1dbc31" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:2.448ex; height:2.009ex;" alt="{\displaystyle a\_n}"></span>, but rather <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="https://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle a\_{n}^{2}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msubsup>
+          <mi>a</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msubsup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a\_{n}^{2}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b0155b9092f8c6f65539700013525837262e1d37" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:2.448ex; height:2.843ex;" alt="{\displaystyle a\_n^2}"></span>.  Elevating to the square makes us lose a bit of precision.  It could be compensated by choosing a slightly higher value of N (in a way that could be precisely calculated), but that would probably be overkill.
 
 ```perl
 constant number-of-decimals = 100;
- 
+
 multi sqrt(Int $n) {
-    .[*-1] given
-    1, { ($_ + $n div $_) div 2 } ... * == *
+  (10**($n.chars div 2), { ($_ + $n div $_) div 2 } ... * == *).tail
 }
+
 multi sqrt(FatRat $r --> FatRat) {
-    return FatRat.new:
-    sqrt($r.nude[0] * 10**(number-of-decimals*2) div $r.nude[1]),
+  return FatRat.new:
+    sqrt($r.numerator * 10**(number-of-decimals*2) div $r.denominator),
     10**number-of-decimals;
 }
- 
+
 my FatRat ($a, $n) = 1.FatRat xx 2;
 my FatRat $g = sqrt(1/2.FatRat);
 my $z = .25;
- 
+
 for ^10 {
-    given [ ($a + $g)/2, sqrt($a * $g) ] {
-	$z -= (.[0] - $a)**2 * $n;
-	$n += $n;
-	($a, $g) = @$_;
-	say ($a ** 2 / $z).substr: 0, 2 + number-of-decimals;
-    }
+  given [ ($a + $g)/2, sqrt($a * $g) ] {
+    $z -= (.[0] - $a)**2 * $n;
+    $n += $n;
+    ($a, $g) = @$_;
+    say ($a ** 2 / $z).substr: 0, 2 + number-of-decimals;
+  }
 }
 ```
 

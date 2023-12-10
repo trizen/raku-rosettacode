@@ -2,19 +2,22 @@
 
 # [Gaussian elimination][1]
 
-Gaussian elimination results in a matrix in row echelon form. Gaussian elimination with back-substitution (also known as Gauss-Jordan elimination) results in a matrix in reduced row echelon form. That being the case, we can reuse much of the code from the [Reduced row echelon form](https://rosettacode.org/wiki/Reduced_row_echelon_form) task. Perl&#160;6 stores and does calculations on decimal numbers within its limit of precision using Rational numbers by default, meaning the calculations are exact.
+
+
+
+
+Gaussian elimination results in a matrix in row echelon form. Gaussian elimination with back-substitution (also known as Gauss-Jordan elimination) results in a matrix in reduced row echelon form. That being the case, we can reuse much of the code from the [Reduced row echelon form](https://rosettacode.org/wiki/Reduced_row_echelon_form) task. Raku stores and does calculations on decimal numbers within its limit of precision using Rational numbers by default, meaning the calculations are exact.
 
 ```perl
 sub gauss-jordan-solve (@a, @b) {
     @b.kv.map: { @a[$^k].append: $^v };
     @a.&rref[*]»[*-1];
 }
- 
-# reduced row echelon form (Gauss-Jordan elimination)
+
+# reduced row echelon form
 sub rref (@m) {
-    return unless @m;
-    my ($lead, $rows, $cols) = 0, +@m, +@m[0];
- 
+    my ($lead, $rows, $cols) = 0, @m, @m[0];
+
     for ^$rows -> $r {
         $lead < $cols or return @m;
         my $i = $r;
@@ -23,29 +26,28 @@ sub rref (@m) {
             $i = $r;
             ++$lead == $cols and return @m;
         }
-        @m[$i, $r] = @m[$r, $i] if $r != $i;
-        my $lv = @m[$r;$lead];
-        @m[$r] »/=» $lv;
+        @m[$i, $r] = @m[$r, $i] if $r != $i;
+        @m[$r] »/=» $ = @m[$r;$lead];
         for ^$rows -> $n {
             next if $n == $r;
-            @m[$n] »-=» @m[$r] »*» (@m[$n;$lead] // 0);
+            @m[$n] »-=» @m[$r] »×» (@m[$n;$lead] // 0);
         }
         ++$lead;
     }
     @m
 }
- 
+
 sub rat-or-int ($num) {
     return $num unless $num ~~ Rat;
-    return $num.narrow if $num.narrow.WHAT ~~ Int;
+    return $num.narrow if $num.narrow ~~ Int;
     $num.nude.join: '/';
 }
- 
-sub say-it ($message, @array, $fmt = " %8s") {
+
+sub say-it ($message, @array, $fmt = " %8s") {
     say "\n$message";
     $_».&rat-or-int.fmt($fmt).put for @array;
 }
- 
+
 my @a = (
     [ 1.00, 0.00, 0.00,  0.00,  0.00,   0.00 ],
     [ 1.00, 0.63, 0.39,  0.25,  0.16,   0.10 ],
@@ -55,14 +57,13 @@ my @a = (
     [ 1.00, 3.14, 9.87, 31.01, 97.41, 306.02 ],
 );
 my @b = ( -0.01, 0.61, 0.91, 0.99, 0.60, 0.02 );
- 
+
 say-it 'A matrix:', @a, "%6.2f";
 say-it 'or, A in exact rationals:', @a;
 say-it 'B matrix:', @b, "%6.2f";
 say-it 'or, B in exact rationals:', @b;
 say-it 'x matrix:', (my @gj = gauss-jordan-solve @a, @b), "%16.12f";
 say-it 'or, x in exact rationals:', @gj, "%28s";
- 
 ```
 
 #### Output:

@@ -2,10 +2,12 @@
 
 # [Color quantization][1]
 
+
+
 ```perl
 use MagickWand;
 use MagickWand::Enums;
- 
+
 my $frog = MagickWand.new;
 $frog.read("./Quantum_frog.png");
 $frog.quantize(16, RGBColorspace, 0, True, False);

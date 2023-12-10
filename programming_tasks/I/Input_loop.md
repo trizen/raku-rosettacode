@@ -2,7 +2,11 @@
 
 # [Input loop][1]
 
-In Perl 6, filehandles etc. provide the `.lines` and `.words` methods which return lazy lists, and can thus they be iterated using a `for` loop...
+
+
+
+
+In Raku, filehandles etc. provide the `.lines` and `.words` methods which return lazy lists, and can thus they be iterated using a `for` loop...
 
 
 
@@ -19,12 +23,12 @@ for $*IN.lines -> $line {
 }
 ```
 ```perl
-for run(«find -iname *.txt», :out).out.lines -> $filename {
+for run(«find -iname *.txt», :out).out.lines -> $filename {
     ...
 }
 ```
 ```perl
-for run(«find -iname *.txt -print0», :nl«\0», :out).out.lines -> $filename {
+for run(«find -iname *.txt -print0», :nl«\0», :out).out.lines -> $filename {
     ...
 }
 ```

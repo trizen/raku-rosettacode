@@ -2,7 +2,11 @@
 
 # [Stack][1]
 
-Perl 6 still has the stack functions from Perl 5, but now they also can be accessed by object notation:
+
+
+
+
+Raku still has the stack functions from Perl 5, but now they also can be accessed by object notation:
 
 ```perl
 my @stack;          # just a array

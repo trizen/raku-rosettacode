@@ -2,6 +2,8 @@
 
 # [Sierpinski carpet][1]
 
+
+
 ```perl
 sub carpet
 {
@@ -13,9 +15,9 @@ sub carpet
        ]
     } ... *).map: { .join("\n") };
 }
- 
+
 say carpet[3];
- 
+
 # Same as above, structured as an array bound to a sequence, with a separate sub for clarity.
 sub weave ( @c ) {
    [
@@ -24,10 +26,10 @@ sub weave ( @c ) {
     |@c.map({ $_ x 3 })
    ]
 }
- 
+
 my @carpet = ( ['#'], &weave ... * ).map: { .join: "\n" };
- 
+
 say @carpet[3];
- 
+
 # Output of both versions matches task example.
 ```

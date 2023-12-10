@@ -11,8 +11,8 @@ what the user intended.
 
 For example, a numeric string may be treated as either a numeric value or a
 string literal, without needing to explicitly coerce it to one or the other.
-This makes for easy translation of ideas into code, and is generally a good
-thing. HOWEVER, it doesn't always work out. Sometimes it leads to unexpected
+This makes for  easy translation of ideas into code, and is generally a good
+thing. HOWEVER, it doesn't always work out.  Sometimes it leads to unexpected
 behavior, commonly referred to as [WAT](https://www.destroyallsoftware.com/talks/wat).
 
 
@@ -50,7 +50,7 @@ someplace else.
 
 
 
-Expanding on the numeric string example cited above; numeric values and numeric
+Expanding on the numeric string example cited above; numeric values and numeric 
 strings may be used almost interchangeably in most cases.
 
 ```perl
@@ -111,9 +111,9 @@ Bag $bag = (1=>1,"1"=>2,IntStr.new(1, "1")=>3).Bag
 ```
 
 
-The different '1's are distinctive to the type system even if they visually look
-identical when printing them to the console. They all have a value of 1 but are
-respectively and Int, a String, and an IntStr allomorph. Many of the "collective"
+The different '1's are distinctive to the type system even if they visually look 
+identical when printing them to the console. They all have a value of 1 but are 
+respectively and Int, a String, and an IntStr allomorph. Many of the "collective" 
 objects have this property (Bags, Sets, Maps, etc.) This behavior is correct
 but can be very jarring when you are used to being able to use numeric strings
 and numeric values nearly interchangeably.
@@ -196,7 +196,7 @@ Conversely, if we want the flattening behavior when passing multiple objects, we
 
 
 Single argument mostly arose in Raku to make it act more like Perl 5, for which
-it was originally conceived of as a replacement. Perl 5 flattens collective
+it  was originally conceived of as a replacement. Perl 5 flattens collective
 object parameters by default, and the original non-flattening behavior was
 *extremely* confusing to early Perl / Raku crossover programmers. Larry Wall
 came up with single argument to reduce confusion and increase DWIMiness, and it

@@ -2,6 +2,8 @@
 
 # [Range extraction][1]
 
+
+
 ```perl
 sub range-extraction (*@ints) {
     my $prev = NaN;
@@ -16,7 +18,7 @@ sub range-extraction (*@ints) {
         }
         $prev = $int;
     }
-    join ',', @ranges.map: -> @r { @r > 2 ?? "@r[0]-@r[*-1]" !! @r }
+    join ',', @ranges.map: -> @r { @r > 2 ?? "@r[0]-@r[*-1]" !! @r }
 }
 
 say range-extraction

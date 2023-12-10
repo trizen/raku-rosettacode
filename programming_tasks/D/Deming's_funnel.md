@@ -1,6 +1,6 @@
 [1]: https://rosettacode.org/wiki/Deming%27s_funnel
 
-# [Deming's funnel][1]
+# [Deming&#039;s funnel][1]
 
 
 
@@ -10,7 +10,7 @@ sub stddev {
     # <(x - <x>)²> = <x²> - <x>²
     sqrt( mean(@_ »**» 2) - mean(@_)**2 )
 }
- 
+
 constant @dz = <
     -0.533  0.270  0.859 -0.043 -0.205 -0.127 -0.071  0.275
      1.251 -0.231 -0.401  0.269  0.491  0.951  1.150  0.001
@@ -40,14 +40,14 @@ constant @dz = <
      1.537 -0.901  0.939 -0.411  0.341 -0.411  0.106  0.224
     -0.947 -1.424 -0.542 -1.032
 >);
- 
+
 constant @rule = 
 -> \z, \dz { 0 },
 -> \z, \dz { -dz },
 -> \z, \dz { -z - dz },
 -> \z, \dz {  z + dz },
 ;
- 
+
 for @rule {
     say "Rule $(++$):";
     my $target = 0i;
@@ -55,8 +55,8 @@ for @rule {
 	take $target + $dz;
 	$target = .($target, $dz)
     }
-    printf "Mean    x, y   : %7.4f %7.4f\n",   mean(@z».re),   mean(@z».im);
-    printf "Std dev x, y   : %7.4f %7.4f\n", stddev(@z».re), stddev(@z».im);
+    printf "Mean    x, y   : %7.4f %7.4f\n",   mean(@z».re),   mean(@z».im);
+    printf "Std dev x, y   : %7.4f %7.4f\n", stddev(@z».re), stddev(@z».im);
 }
 ```
 

@@ -2,14 +2,16 @@
 
 # [Base64 encode data][1]
 
+
+
 ```perl
 sub MAIN {
-    my $buf = slurp("./favicon.ico", :bin);
+    my $buf = slurp("./favicon.ico", :bin);
     say buf-to-Base64($buf);
 }
- 
+
 my @base64map = flat 'A' .. 'Z', 'a' .. 'z', ^10, '+', '/';
- 
+
 sub buf-to-Base64($buf) {
     join '', gather for $buf.list -> $a, $b = [], $c = [] {
         my $triplet = ($a +< 16) +| ($b +< 8) +| $c;

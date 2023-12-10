@@ -18,7 +18,6 @@ Semantically: Change the mathematical concept of 8 to 9, either in your whole co
 Fails with this run-time error:
 
 
-#### Output:
 ```
 Cannot resolve caller prefix:<++>(Int:D); the following candidates
 match the type but require mutable arguments:
@@ -56,7 +55,6 @@ Same character count, exits the program as soon as possible (though trappable if
 Here is a silly alternative&#160;: A standalone Unicode counterpart for the [yada yada yada](https://docs.raku.org/language/operators#listop_...) operator takes up 3 code units but visually just a single codepoint,
 
 
-#### Output:
 ```
 cat test.raku ; wc test.raku
 …
@@ -78,14 +76,14 @@ However when I tried to combine all to test against the Test module, the last on
 
 ```perl
 use Test;
- 
+
 dies-ok { ++8 };
 dies-ok { die };
 dies-ok {  …  };
- 
+
 eval-dies-ok '++8';
 eval-dies-ok 'die';
-eval-dies-ok  '…' ;
+eval-dies-ok  '…' ;
 ```
 
 #### Output:

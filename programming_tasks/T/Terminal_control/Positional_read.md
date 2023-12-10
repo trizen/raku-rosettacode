@@ -2,10 +2,9 @@
 
 # [Terminal control/Positional read][1]
 
-```perl
-#!/usr/bin/env perl6
 
-use v6;
+
+```perl
 use NCurses;
 
 # Reference:

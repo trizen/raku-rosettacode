@@ -2,39 +2,43 @@
 
 # [Joystick position][1]
 
+
+
+
+
 Linux only terminal based joystick testing utility. Reads events from the joystick asynchronously, allows a main processing loop if desired. This uses the main loop to check for and compensate for a resized terminal but not really anything else. Hit control-c to exit; needs one extra event from the the joystick to exit completely. Only shows the first 3 axes, no matter how many are available. Tested with an Logitech extreme joystick and an Xbox controller.
 
 ```perl
-use experimental :pack;
- 
+use experimental :pack;
+
 # Joysticks generally show up in the /dev/input/ directory as js(n) where n is
 # the number assigned by the OS. E.G. /dev/input/js1 . In my particular case:
- 
+
 my $device = '/dev/input/js0';
- 
+
 my $exit = 0;
- 
+
 my $event-stream = $device.IO.open(:bin);
 my $js = $event-stream.Supply(:8size);
- 
+
 my %config; # joystick configuration: number of axes and buttons
 my %event;  # global "joystick event"
- 
+
 %config<button>.push: 0;
- 
+
 my $callback = sub { update };
- 
+
 sub get-js-event ( $ev, &callback ) {
     exit if $exit;
     # 32 bit timestamp milliseconds. Allows easy checking for "double-click" button presses
     %event<timestamp> = $ev.subbuf(0, 4).reverse.unpack('N');
- 
+
     # 16 bit (signed int16) value of current control
-    %event<value> = (my $v = $ev.subbuf(4, 2).unpack('S')) > 32767 ?? -65536 + $v !! $v;
- 
+    %event<value> = (my $v = $ev.subbuf(4, 2).unpack('S')) > 32767 ?? -65536 + $v !! $v;
+
     # Two 8 bit integers, current event: control type, and control ID
     (%event<type>, %event<number>) = $ev.subbuf(6).unpack('CC');
- 
+
     # Process the event
     if %event<type> +& 128 {       # initialing
         given %event<type> +& 3  { # enumeration of control inputs
@@ -46,30 +50,30 @@ sub get-js-event ( $ev, &callback ) {
         callback
     }
 }
- 
+
 # read events from the joystick driver asynchronously
 start react whenever $js { $js.act: { get-js-event($_, $callback) } }
- 
+
 # allow a short delay while driver initializes
 sleep .5;
- 
+
 # clean up on exit
 signal(SIGINT).tap: { 
     print "\e[0m", "\n" xx 50, "\e[H\e[J\e[?25hWaiting for one more joystick event...\n";
     $exit = 1;
     exit(0);
 }
- 
+
 use Terminal::ANSIColor;
- 
+
 my ($rows, $cols) = qx/stty size/.words; # get the terminal size
- 
+
 my $xhair = '╺╋╸';
 my $axis  = '█';
 my @btext = %config<button>.map: { sprintf( "%2d", $_) };
 my @button = @btext.map: {color('bold white on_blue ') ~ $_ ~ color('reset')};
 my ($x, $y, $z) = ($rows/2).floor, ($cols/2).floor, 0;
- 
+
 sub update {
     given %event<type> {
         when 1 { # button event
@@ -80,8 +84,8 @@ sub update {
         }
         when 2 { # axis events
             given %event<number> {
-                when 0 { $y = ($cols / 2 + %event<value> / 32767 * $cols / 2).Int max 1 }
-                when 1 { $x = ($rows / 2 + %event<value> / 32767 * $rows / 2).Int max 2 }
+                when 0 { $y = ($cols / 2 + %event<value> / 32767 * $cols / 2).Int max 1 }
+                when 1 { $x = ($rows / 2 + %event<value> / 32767 * $rows / 2).Int max 2 }
                 when 2 { $z = (%event<value> / 32767 * 100).Int }
                 default { } # only using the first 3 axes, ignore ant others
             }
@@ -99,15 +103,14 @@ sub update {
     }
     print "\e[{$x};{$y}H", color('bold yellow') ~ $xhair ~ color('reset');
 }
- 
+
 print "\e[?25l"; # hide the cursor
 update; # initial update
- 
+
 # Main loop, operates independently of the joystick event loop
 loop {
     once say " Joystick has {%config<axis>.elems} axes and {%config<button>.elems} buttons";
     sleep 1;
     ($rows, $cols) = qx/stty size/.words;
 }
- 
 ```

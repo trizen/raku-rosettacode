@@ -2,10 +2,12 @@
 
 # [Integer comparison][1]
 
+
+
 ```perl
 my $a = prompt("1st int: ").floor;
 my $b = prompt("2nd int: ").floor;
- 
+
 if $a < $b {
     say 'Less';
 }
@@ -25,7 +27,7 @@ say <Less Equal Greater>[($a <=> $b) + 1];
 ```
 
 
-A three-way comparison such as `<=>` actually returns an `Order` enum which stringifies into 'Decrease', 'Increase' or 'Same'. So if it's ok to use this particular vocabulary, you could say that this task is actually a built in:
+A three-way comparison such as `<=>` actually returns an `Order` enum which stringifies into 'Decrease', 'Increase' or 'Same'.  So if it's ok to use this particular vocabulary, you could say that this task is actually a built in:
 
 ```perl
 say prompt("1st int: ") <=> prompt("2nd int: ");

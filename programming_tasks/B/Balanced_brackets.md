@@ -2,6 +2,7 @@
 
 # [Balanced brackets][1]
 
+
 There's More Than One Way To Do It.
 
 
@@ -22,7 +23,7 @@ sub balanced($s) {
     }
     return $l == 0;
 }
- 
+
 my $n = prompt "Number of brackets";
 my $s = (<[ ]> xx $n).flat.pick(*).join;
 say "$s {balanced($s) ?? "is" !! "is not"} well-balanced"
@@ -40,7 +41,7 @@ sub balanced($s) {
     .none < 0 and .[*-1] == 0
         given ([\+] '\\' «leg« $s.comb).cache;
 }
- 
+
 my $n = prompt "Number of bracket pairs: ";
 my $s = <[ ]>.roll($n*2).join;
 say "$s { balanced($s) ?? "is" !! "is not" } well-balanced"
@@ -58,7 +59,7 @@ sub balanced($_ is copy) {
     Nil while s:g/'[]'//;
     $_ eq '';
 }
- 
+
 my $n = prompt "Number of bracket pairs: ";
 my $s = <[ ]>.roll($n*2).join;
 say "$s is", ' not' x not balanced($s), " well-balanced";
@@ -69,7 +70,7 @@ say "$s is", ' not' x not balanced($s), " well-balanced";
 
 ```perl
 grammar BalBrack { token TOP { '[' <TOP>* ']' } }
- 
+
 my $n = prompt "Number of bracket pairs: ";
 my $s = ('[' xx $n, ']' xx $n).flat.pick(*).join;
 say "$s { BalBrack.parse($s) ?? "is" !! "is not" } well-balanced";

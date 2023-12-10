@@ -2,14 +2,17 @@
 
 # [Magic squares of singly even order][1]
 
-See [Magic squares/Perl 6](https://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
+
+
+
+
+See [Magic squares/Raku](https://rosettacode.org/wiki/Magic_squares/Raku) for a general magic square generator.
 
 
 
 With a parameter of 6:
 
 
-#### Output:
 ```
 35  1  6 26 19 24
  3 32  7 21 23 25
@@ -25,7 +28,6 @@ The magic number is 111
 With a parameter of 10:
 
 
-#### Output:
 ```
  92  99   1   8  15  67  74  51  58  40
  98  80   7  14  16  73  55  57  64  41

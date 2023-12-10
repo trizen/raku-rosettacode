@@ -2,7 +2,11 @@
 
 # [Deepcopy][1]
 
-Perl 6 doesn't currently provide a proper mechanism for deep copies, but depending on your requirements you could use one of these work-arounds:
+
+
+
+
+Raku doesn't currently provide a proper mechanism for deep copies, but depending on your requirements you could use one of these work-arounds:
 
 
 
@@ -17,7 +21,7 @@ Perl 6 doesn't currently provide a proper mechanism for deep copies, but dependi
 ```perl
 my %x = foo => 0, bar => [0, 1];
 my %y = %x.deepmap(*.clone);
- 
+
 %x<bar>[1]++;
 say %x;
 say %y;
@@ -32,18 +36,16 @@ say %y;
 
 
 
-**2) Use `.perl.EVAL`:**
+**2) Use `.raku.EVAL`:**
 
 
 
-`.perl` serializes the data structure to Perl 6 code, and `.EVAL` deserializes it. Limitations:
+`.raku` serializes the data structure to Raku code, and `.EVAL` deserializes it. Limitations:
 
 ```perl
-use MONKEY-SEE-NO-EVAL;
- 
 my %x = foo => 0, bar => [0, 1];
-my %y = %x.perl.EVAL;
- 
+my %y = %x.raku.EVAL;
+
 %x<bar>[1]++;
 say %x;
 say %y;

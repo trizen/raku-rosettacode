@@ -2,6 +2,8 @@
 
 # [Singleton][1]
 
+
+
 ```perl
 class Singleton {
     # We create a lexical variable in the class block that holds our single instance.

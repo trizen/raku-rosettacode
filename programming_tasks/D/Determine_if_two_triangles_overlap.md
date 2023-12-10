@@ -2,84 +2,77 @@
 
 # [Determine if two triangles overlap][1]
 
-First, check if any vertex is inside each other triangle (that should cover most overlapping cases including enclosures). Then see if an edge of triangle A intersects any of two edges of B (for shapes like Star of David [[1]](https://en.wikipedia.org/wiki/Star_of_David))
+
+First, check if any vertex is inside each other triangle (that should cover most overlapping cases including enclosures).  Then see if an edge of triangle A intersects any of two edges of B (for shapes like Star of David [[1]](https://en.wikipedia.org/wiki/Star_of_David))
 
 ```perl
-#!/usr/bin/env perl6
- 
 # Reference:
 # https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle
 # https://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/
- 
-use v6;
- 
+
 sub if-overlap ($triangle-pair) {
    my (\A,\B) = $triangle-pair;
    my Bool $result = False;
- 
+
    sub sign (\T) {
-      return (T.[0][0] - T[2][0]) * (T[1][1] - T[2][1]) -
-         (T[1][0] - T[2][0]) * (T[0][1] - T[2][1]);
+      return (T[0;0] - T[2;0]) × (T[1;1] - T[2;1]) -
+             (T[1;0] - T[2;0]) × (T[0;1] - T[2;1]);
    }
- 
+
    sub point-in-triangle (\pt, \Y --> Bool) {
-      my ($d1, $d2, $d3);
-      my Bool ($has_neg, $has_pos);
- 
-      $d1 = sign (pt, Y.[0], Y.[1]);
-      $d2 = sign (pt, Y.[1], Y.[2]);
-      $d3 = sign (pt, Y.[2], Y.[0]);
- 
-      $has_neg = ($d1 < 0) || ($d2 < 0) || ($d3 < 0);
-      $has_pos = ($d1 > 0) || ($d2 > 0) || ($d3 > 0);
- 
-      return !($has_neg && $has_pos);
+      my $d1 = sign (pt, Y[0], Y[1]);
+      my $d2 = sign (pt, Y[1], Y[2]);
+      my $d3 = sign (pt, Y[2], Y[0]);
+
+      my $has_neg = [or] $d1 < 0, $d2 < 0, $d3 < 0;
+      my $has_pos = [or] $d1 > 0, $d2 > 0, $d3 > 0;
+
+      return not ($has_neg and $has_pos);
    }
- 
+
    sub orientation(\P, \Q, \R --> Int) {
-      my \val = (Q.[1] - P.[1]) * (R.[0] - Q.[0]) -
-         (Q.[0] - P.[0]) * (R.[1] - Q.[1]);
- 
-      return 0 if val == 0;  # colinear
- 
-      return (val > 0) ?? 1 !! 2; # clock or counterclock wise
+      my \val = (Q[1] - P[1]) × (R[0] - Q[0]) -
+                (Q[0] - P[0]) × (R[1] - Q[1]);
+
+      return 0 if val == 0;     # colinear
+      return val > 0 ?? 1 !! 2; # clock or counterclock wise
    }
- 
+
    sub onSegment(\P, \Q, \R --> Bool) {
-      Q.[0] <= max(P.[0], R.[0]) && Q.[0] >= min(P.[0], R.[0]) &&
-         Q.[1] <= max(P.[1], R.[1]) && Q.[1] >= min(P.[0], R.[1])
-         ?? True !! False;
+      Q[0] ≤ max(P[0], R[0]) and Q[0] ≥ min(P[0], R[0]) and
+      Q[1] ≤ max(P[1], R[1]) and Q[1] ≥ min(P[0], R[1])
+         ?? True !! False
    }
- 
+
    sub intersect(\A,\B,\C,\D --> Bool) {
-      my \o1 = orientation A,C,D;
-      my \o2 = orientation B,C,D;
-      my \o3 = orientation A,B,C;
-      my \o4 = orientation A,B,D;
- 
-      return True if o1 != o2 && o3 != o4;
- 
-      return True if (o1 == 0 && onSegment(A, C, D)) ;
-      return True if (o2 == 0 && onSegment(B, C, D)) ;
-      return True if (o3 == 0 && onSegment(A, B, C)) ;
-      return True if (o4 == 0 && onSegment(A, B, D)) ;
- 
-      return False;
+      my \o1 = orientation A, C, D;
+      my \o2 = orientation B, C, D;
+      my \o3 = orientation A, B, C;
+      my \o4 = orientation A, B, D;
+
+         o1 != o2 and o3 != o4
+      or o1 ==  0 and onSegment A, C, D
+      or o2 ==  0 and onSegment B, C, D
+      or o3 ==  0 and onSegment A, B, C
+      or o4 ==  0 and onSegment A, B, D
+         ?? True !! False
    }
- 
+
    for ^3 {
-      {$result = True; last } if point-in-triangle A.[$^i] , B or
-          point-in-triangle B.[$^i] , A ;
+      { $result = True; last } if
+          point-in-triangle A.[$^i], B or
+          point-in-triangle B.[$^i], A ;
    }
- 
+
    unless $result {
-      $result = True if intersect A.[0], A.[1], B.[0], B.[1] or
+      $result = True if
+          intersect A.[0], A.[1], B.[0], B.[1] or
           intersect A.[0], A.[1], B.[0], B.[2]
    }
- 
-   say A, " and ", B, " do",  $result ?? "" !! " NOT" , " overlap.";
+
+   say "{A.gist} and {B.gist} do{' NOT' unless $result} overlap.";
 }
- 
+
 my \DATA = [
    [ [(0,0),(5,0),(0,5)]   ,  [(0,0),(5,0),(0,6)]     ],
    [ [(0,0),(0,5),(5,0)]   ,  [(0,0),(0,5),(5,0)]     ],
@@ -89,18 +82,17 @@ my \DATA = [
    [ [(0,0),(1,1),(0,2)]   ,  [(2,1),(3,-2),(3,4)]    ],
    [ [(0,0),(1,0),(0,1)]   ,  [(1,0),(2,0),(1,1)]     ]
 ];
- 
-if-overlap $_ for DATA ;
+
+if-overlap $_ for DATA ;
 ```
 
 #### Output:
 ```
-[(0 0) (5 0) (0 5)] and [(0 0) (5 0) (0 6)] do overlap.</dt></dl>
-<p>[(0 0) (0 5) (5 0)] and [(0 0) (0 5) (5 0)] do overlap.
+[(0 0) (5 0) (0 5)] and [(0 0) (5 0) (0 6)] do overlap.
+[(0 0) (0 5) (5 0)] and [(0 0) (0 5) (5 0)] do overlap.
 [(0 0) (5 0) (0 5)] and [(-10 0) (-5 0) (-1 6)] do NOT overlap.
 [(0 0) (5 0) (2.5 5)] and [(0 4) (2.5 -1) (5 4)] do overlap.
 [(0 0) (1 1) (0 2)] and [(2 1) (3 0) (3 2)] do NOT overlap.
 [(0 0) (1 1) (0 2)] and [(2 1) (3 -2) (3 4)] do NOT overlap.
 [(0 0) (1 0) (0 1)] and [(1 0) (2 0) (1 1)] do overlap.
-</p>
 ```

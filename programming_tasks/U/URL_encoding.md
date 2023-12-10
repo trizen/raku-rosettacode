@@ -2,10 +2,12 @@
 
 # [URL encoding][1]
 
+
+
 ```perl
 my $url = 'http://foo bar/';
- 
-say $url.subst(/<-alnum>/, *.ord.fmt("%%%02X"), :g);
+
+say $url.subst(/<-alnum>/, *.ord.fmt("%%%02X"), :g);
 ```
 
 #### Output:

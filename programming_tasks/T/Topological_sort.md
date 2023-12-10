@@ -2,6 +2,8 @@
 
 # [Topological sort][1]
 
+
+
 ```perl
 sub print_topo_sort ( %deps ) {
     my %ba;
@@ -11,16 +13,16 @@ sub print_topo_sort ( %deps ) {
             %ba{$after} //= {};
         }
     }
- 
+
     while %ba.grep( not *.value )».key -> @afters {
         say ~@afters.sort;
         %ba{@afters}:delete;
         for %ba.values { .{@afters}:delete }
     }
- 
-    say %ba ?? "Cycle found! {%ba.keys.sort}" !! '---';
+
+    say %ba ?? "Cycle found! {%ba.keys.sort}" !! '---';
 }
- 
+
 my %deps =
     des_system_lib => < std synopsys std_cell_lib des_system_lib dw02
                                                      dw01 ramlib ieee >,
@@ -36,7 +38,7 @@ my %deps =
     ramlib         => < std ieee                                      >,
     std_cell_lib   => < ieee std_cell_lib                             >,
     synopsys       => <                                               >;
- 
+
 print_topo_sort(%deps);
 %deps<dw01> = <ieee dw01 dware gtech dw04>; # Add unresolvable dependency
 print_topo_sort(%deps);
@@ -57,5 +59,5 @@ Cycle found! des_system_lib dw01 dw03 dw04
 
 
 Some differences from the Perl 5 version include use of
-formal parameters; use of `»` as a "hyper" operator, that is, a parallelizable implicit loop; and use of normal lambda-like notation to bind loop parameters, so we can have multiple loop parameters bound on each iteration. Also,
+formal parameters; use of `»` as a "hyper" operator, that is, a parallelizable implicit loop; and use of normal lambda-like notation to bind loop parameters, so we can have multiple loop parameters bound on each iteration.  Also,
 since `=>` is now a real pair composer rather than a synonym for comma, the data can be represented with real pair notation that points to quoted word lists delimited by angle brackets rather than `[qw(...)]`.

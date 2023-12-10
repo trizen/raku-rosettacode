@@ -18,7 +18,7 @@ sub cocktail_sort ( @a ) {
         }
         last if not $swapped_forward;
         $max -= 1;
- 
+
         my $swapped_backward = 0;
         for ($min .. $max).reverse -> $i {
             given @a[$i] cmp @a[$i+1] {
@@ -34,7 +34,7 @@ sub cocktail_sort ( @a ) {
     }
     @a
 }
- 
+
 my @weights = (flat 0..9, 'A'..'F').roll(2 + ^4 .roll).join xx 100;
-say @weights.sort.Str eq @weights.&cocktail_sort.Str ?? 'ok' !! 'not ok';
+say @weights.sort.Str eq @weights.&cocktail_sort.Str ?? 'ok' !! 'not ok';
 ```

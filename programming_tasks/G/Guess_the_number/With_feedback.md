@@ -2,16 +2,18 @@
 
 # [Guess the number/With feedback][1]
 
+
+
 ```perl
 my $maxnum = prompt("Hello, please give me an upper boundary: ");
 until 0 < $maxnum < Inf {
     say "Oops! The upper boundary should be > 0 and not Inf";
     $maxnum = prompt("Please give me a valid upper boundary: ");
 }
- 
+
 my $count = 0;
 my $number = (1..$maxnum).pick;
- 
+
 say "I'm thinking of a number from 1 to $maxnum, try to guess it!";
 repeat until my $guessed-right {
     given prompt("Your guess: ") {

@@ -9,7 +9,6 @@ Show minimum too because... why not?
 Use some Tamil Unicode numbers for brevity, and for amusement purposes.
 
 
-#### Output:
 ```
    ௰ - Tamil number ten
    ௲ - Tamil number one thousand

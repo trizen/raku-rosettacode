@@ -2,6 +2,7 @@
 
 # [Sort an integer array][1]
 
+
 If `@a` contains only numbers:
 
 ```perl

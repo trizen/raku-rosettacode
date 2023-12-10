@@ -36,24 +36,23 @@ No assumptions were made concerning line/record termination, full stop.
 Run the following to generate nul.txt. (digits 1 through 6 repeated 8 times with double null as record separators):
 
 
-#### Output:
 ```
    raku -e'print join "\x00\x00", (1..6).map: * x 8' > nul.txt
 ```
 ```perl
 my $input-record-separator = "\x00\x00";
- 
-my $fh = open("nul.txt".IO, :r, :bin);
+
+my $fh = open("nul.txt".IO, :r, :bin);
 $fh.seek(0, SeekFromEnd); # start at the end of the file
- 
+
 my $bytes = 5 min $fh.tell - 1; # read in file 5 bytes at a time (or whatever)
- 
+
 $fh.seek(-$bytes, SeekFromCurrent);
- 
+
 my $buffer = $fh.read($bytes).decode('Latin1'); # assume Latin1 for reduced complexity
- 
+
 loop {
-    my $seek = ($fh.tell < $bytes * 2) ?? -$fh.tell !! -$bytes * 2;
+    my $seek = ($fh.tell < $bytes * 2) ?? -$fh.tell !! -$bytes * 2;
     $fh.seek($seek, SeekFromCurrent);
     $buffer = $buffer R~ $fh.read((-$seek - $bytes) max 0).decode('Latin1');
     if $buffer.contains: $input-record-separator {
@@ -63,7 +62,7 @@ loop {
     }
     last if $fh.tell < $bytes;
 }
- 
+
 say $buffer; # emit any remaining record
 ```
 

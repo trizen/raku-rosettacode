@@ -2,19 +2,23 @@
 
 # [Carmichael 3 strong pseudoprimes][1]
 
-An almost direct translation of the pseudocode. We take the liberty of going up to 67 to show we aren't limited to 32-bit integers. (Perl 6 uses arbitrary precision in any case.)
+
+
+
+
+An almost direct translation of the pseudocode.  We take the liberty of going up to 67 to show we aren't limited to 32-bit integers.  (Raku uses arbitrary precision in any case.)
 
 ```perl
 for (2..67).grep: *.is-prime -> \Prime1 {
     for 1 ^..^ Prime1 -> \h3 {
         my \g = h3 + Prime1;
         for 0 ^..^ h3 + Prime1 -> \d {
-            if (h3 + Prime1) * (Prime1 - 1) %% d and -Prime1**2 % h3 == d % h3  {
+            if (h3 + Prime1) * (Prime1 - 1) %% d and -Prime1**2 % h3 == d % h3  {
                 my \Prime2 = floor 1 + (Prime1 - 1) * g / d;
                 next unless Prime2.is-prime;
                 my \Prime3 = floor 1 + Prime1 * Prime2 / h3;
                 next unless Prime3.is-prime;
-                next unless (Prime2 * Prime3) % (Prime1 - 1) == 1;
+                next unless (Prime2 * Prime3) % (Prime1 - 1) == 1;
                 say "{Prime1} × {Prime2} × {Prime3} == {Prime1 * Prime2 * Prime3}";
             }
         }

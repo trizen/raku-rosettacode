@@ -2,9 +2,11 @@
 
 # [Loops/Nested][1]
 
+
+
 ```perl
 my @a = [ (1..20).roll(10) ] xx *;
- 
+
 LINE: for @a -> @line {
     for @line -> $elem {
         print " $elem";

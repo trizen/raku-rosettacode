@@ -2,21 +2,23 @@
 
 # [Aliquot sequence classifications][1]
 
+
+
 ```perl
 sub propdivsum (\x) {
-    my @l = x > 1, gather for 2 .. x.sqrt.floor -> \d {
-        my \y = x div d;
-        if y * d == x { take d; take y unless y == d }
+    my @l = x > 1;
+    (2 .. x.sqrt.floor).map: -> \d {
+        unless x % d { my \y = x div d; y == d ?? @l.push: d !! @l.append: d,y }
     }
-    [+] gather @l.deepmap(*.take);
+    sum @l;
 }
- 
+
 multi quality (0,1)  { 'perfect ' }
 multi quality (0,2)  { 'amicable' }
 multi quality (0,$n) { "sociable-$n" }
 multi quality ($,1)  { 'aspiring' }
 multi quality ($,$n) { "cyclic-$n" }
- 
+
 sub aliquotidian ($x) {
     my %seen;
     my @seq = $x, &propdivsum ... *;
@@ -29,10 +31,9 @@ sub aliquotidian ($x) {
         }
         %seen{$this} = $to;
     }
-    "$x non-terminating";
- 
+    "$x non-terminating\t[{@seq}]";
 }
- 
+
 aliquotidian($_).say for flat
     1..10,
     11, 12, 28, 496, 220, 1184, 12496, 1264460,
@@ -64,6 +65,6 @@ aliquotidian($_).say for flat
 909     aspiring        [909 417 143 25 6]
 562     cyclic-2        [562 284 220]
 1064    cyclic-2        [1064 1336 1184 1210]
-1488    non-terminating
-15355717786080  non-terminating
+1488 non-terminating    [1488 2480 3472 4464 8432 9424 10416 21328 22320 55056 95728 96720 236592 459792 881392 882384 1474608 ...]
+15355717786080 non-terminating  [15355717786080 44534663601120 144940087464480 ...]
 ```

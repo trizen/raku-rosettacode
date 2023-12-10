@@ -2,6 +2,7 @@
 
 # [Send an unknown method call][1]
 
+
 Just for the fun of it, we'll mix in an anonymous role into an integer instead of defining a class.
 
 ```perl

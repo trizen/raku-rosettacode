@@ -2,6 +2,10 @@
 
 # [Anti-primes][1]
 
+
+
+
+
 At its heart, this task is almost exactly the same as [Proper_Divisors](https://rosettacode.org/wiki/Proper_Divisors), it is just asking for slightly different results. Much of this code is lifted straight from there.
 
 
@@ -12,14 +16,14 @@ Implemented as an auto-extending lazy list. Displaying the count of anti-primes 
 sub propdiv (\x) {
     my @l = 1 if x > 1;
     (2 .. x.sqrt.floor).map: -> \d {
-        unless x % d { @l.push: d; my \y = x div d; @l.push: y if y != d }
+        unless x % d { @l.push: d; my \y = x div d; @l.push: y if y != d }
     }
     @l
 }
 
-my atomicint $last = 0;
+my $last = 0;
 
-my @anti-primes = lazy 1, |(|(2..59), 60, *+60 … *).hyper.grep: -> $c {
+my @anti-primes = lazy 1, |(|(2..59), 60, *+60 … *).grep: -> $c {
     my \mx = +propdiv($c);
     next if mx <= $last;
     $last = mx;

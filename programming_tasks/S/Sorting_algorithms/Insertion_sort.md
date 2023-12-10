@@ -2,6 +2,8 @@
 
 # [Sorting algorithms/Insertion sort][1]
 
+
+
 ```perl
 sub insertion_sort ( @a is copy ) {
     for 1 .. @a.end -> $i {
@@ -14,11 +16,10 @@ sub insertion_sort ( @a is copy ) {
     }
     return @a;
 }
- 
+
 my @data = 22, 7, 2, -5, 8, 4;
 say 'input  = ' ~ @data;
 say 'output = ' ~ @data.&insertion_sort;
- 
 ```
 
 #### Output:

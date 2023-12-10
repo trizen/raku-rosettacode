@@ -2,20 +2,19 @@
 
 # [Line circle intersection][1]
 
+
 Extend solution space to 3D. Reference: this [SO question and answers](https://stackoverflow.com/questions/1073336/)
 
 ```perl
-#!/usr/bin/env perl6
- 
 sub LineCircularOBJintersection(@P1, @P2, @Centre, \Radius) {
-   my @d = @P2 »-« @P1 ;           # d
-   my @f = @P1 »-« @Centre ;       # c
- 
+   my @d = @P2 »-« @P1 ;           # d
+   my @f = @P1 »-« @Centre ;       # c
+
    my \a = [+] @d»²;               # d dot d
    my \b = 2 * ([+] @f »*« @d);    # 2 * f dot d
    my \c = ([+] @f»²) - Radius²;   # f dot f - r²
    my \Δ =  b²-(4*a*c);            # discriminant
- 
+
    if (Δ < 0) {
       return [];
    } else {
@@ -27,7 +26,7 @@ sub LineCircularOBJintersection(@P1, @P2, @Centre, \Radius) {
       }
    }
 }
- 
+
 my \DATA = [
    [ <-10 11>, < 10 -9>, <3 -5>, 3 ],
    [ <-10 11>, <-11 12>, <3 -5>, 3 ],
@@ -38,11 +37,11 @@ my \DATA = [
    [ <  7  4>, < 11 18>, <4  2>, 5 ],
    [ <5  2 −2.26 >, <0.77 2 4>, <1 4 0>, 4 ]
 ];
- 
+
 for DATA {
    my @solution = LineCircularOBJintersection $_[0] , $_[1] , $_[2], $_[3];
    say "For data set: ", $_;
-   say "Solution(s) is/are: ", @solution.Bool ?? @solution !! "None";
+   say "Solution(s) is/are: ", @solution.Bool ?? @solution !! "None";
 }
 ```
 

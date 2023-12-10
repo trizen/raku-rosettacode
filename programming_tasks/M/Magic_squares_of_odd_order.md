@@ -2,14 +2,17 @@
 
 # [Magic squares of odd order][1]
 
-See [Magic squares/Perl 6](https://rosettacode.org/wiki/Magic_squares/Perl_6) for a general magic square generator.
+
+
+
+
+See [Magic squares/Raku](https://rosettacode.org/wiki/Magic_squares/Raku) for a general magic square generator.
 
 
 
 With a parameter of 5:
 
 
-#### Output:
 ```
 17 24  1  8 15
 23  5  7 14 16
@@ -24,7 +27,6 @@ The magic number is 65
 With a parameter of 19:
 
 
-#### Output:
 ```
 192 213 234 255 276 297 318 339 360   1  22  43  64  85 106 127 148 169 190
 212 233 254 275 296 317 338 359  19  21  42  63  84 105 126 147 168 189 191

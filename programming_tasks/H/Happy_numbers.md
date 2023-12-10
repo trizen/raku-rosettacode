@@ -2,6 +2,8 @@
 
 # [Happy numbers][1]
 
+
+
 ```perl
 sub happy (Int $n is copy --> Bool) {
   loop {
@@ -11,7 +13,7 @@ sub happy (Int $n is copy --> Bool) {
       return False if %seen{$n}++;
   }
 }
- 
+
 say join ' ', grep(&happy, 1 .. *)[^8];
 ```
 
@@ -32,7 +34,7 @@ my @happy = lazy gather for 1..* -> $number {
     }
     take $number if $n == 1;
 }
- 
+
 say ~@happy[^8];
 ```
 
@@ -45,16 +47,16 @@ Here is a version using a subset and an anonymous recursion (we cheat a little b
 
 ```perl
 subset Happy of Int where sub ($n) {
-    $n == 1 ?? True  !!
-    $n < 7  ?? False !!
+    $n == 1 ?? True  !!
+    $n < 7  ?? False !!
     &?ROUTINE([+] $n.comb »**» 2);
 }
- 
+ 
 say (grep Happy, 1 .. *)[^8];
 ```
 
 
-Again, output is the same as above. It is not clear whether this version returns in finite time for any integer, though.
+Again, output is the same as above.  It is not clear whether this version returns in finite time for any integer, though.
 
 
 

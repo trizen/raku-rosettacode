@@ -27,7 +27,7 @@ A Raku script to do source filtering / preprocessing: save it and call it 'inclu
 ```perl
 unit sub MAIN ($file-name);
 my $file = slurp $file-name;
-put $file.=subst(/[^^|['{{' \s*]] '#include' \s+ (\S+) \s* '}}'?/, {run(«$*EXECUTABLE-NAME $*PROGRAM-NAME $0», :out).out.slurp(:close).trim}, :g);
+put $file.=subst(/[^^|['{{' \s*]] '#include' \s+ (\S+) \s* '}}'?/, {run(«$*EXECUTABLE-NAME $*PROGRAM-NAME $0», :out).out.slurp(:close).trim}, :g);
 ```
 
 
@@ -48,20 +48,18 @@ Top level named... whatever, let's call it 'preprocess.raku'
 ```perl
 # Top level test script file for #include Rosettacode
 # 'Compiler/Simple file inclusion pre processor' task
- 
+
 # some code
- 
+
 say .³ for ^10;
- 
+
 #include ./include1.file
- 
 ```
 
 
 include1.file
 
 
-#### Output:
 ```
 # included #include1 file >1>
 # test to ensure it only tries to execute #include of the right format
@@ -78,7 +76,6 @@ say .³³ for ^10;
 include2.file
 
 
-#### Output:
 ```
 # nested #include2.file >2>
 say "Test for an nested include inside a line: {{ #include ./include3.file }}";
@@ -89,20 +86,18 @@ say "Test for an nested include inside a line: {{ #include ./include3.file }}";
 include3.file
 
 
-#### Output:
 ```
 >3> Yep, it works! <3<
 ```
 
 
-Invoke at a command line:
+Invoke at a  command line:
 
 
 
 `raku include preprocess.raku`
 
 
-#### Output:
 ```
 # Top level test script file for #include Rosettacode
 # 'Compiler/Simple file inclusion pre processor' task
@@ -132,7 +127,6 @@ You can either redirect that into a file, or just pass it back into the compiler
 `raku include preprocess.raku | raku`
 
 
-#### Output:
 ```
 0
 1

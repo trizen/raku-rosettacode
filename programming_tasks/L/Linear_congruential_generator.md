@@ -2,22 +2,26 @@
 
 # [Linear congruential generator][1]
 
-We'll define subroutines implementing the LCG algorithm for each version. We'll make them return a lazy list.
+
+
+
+
+We'll define subroutines implementing the LCG algorithm for each version.  We'll make them return a lazy list.
 
 ```perl
 constant modulus = 2**31;
 sub bsd  {
-    $^seed, ( 1103515245 * * + 12345 ) % modulus ... *
+    $^seed, ( 1103515245 * * + 12345 ) % modulus ... *
 }
 sub ms   {
     map * +> 16, (
-	$^seed, ( 214013 * * + 2531011 ) % modulus ... *
+	$^seed, ( 214013 * * + 2531011 ) % modulus ... *
     )
 }
- 
+ 
 say 'BSD LCG first 10 values (first one is the seed):';
 .say for bsd(0)[^10];
- 
+ 
 say "\nMS LCG first 10 values (first one is the seed):";
 .say for ms(0)[^10];
 ```

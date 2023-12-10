@@ -12,7 +12,7 @@ Not really sure I understand the point of this task. Seems to be load some list 
 my %periodic;
 %periodic<revision-date> = Date.new(2020,3,23);
 %periodic<table> = |<
- 
+
          Hydrogen  1.0079     H             Helium  4.0026    He
           Lithium  6.941     Li          Beryllium  9.0122    Be
             Boron  10.811     B             Carbon  12.0107    C
@@ -68,13 +68,13 @@ my %periodic;
           Dubnium  262       Db            Bohrium  264       Bh
        Seaborgium  266       Sg         Meitnerium  268       Mt
       Roentgenium  272       Rg            Hassium  277       Hs
-     Darmstadtium  ???       Ds        Copernicium  ???       Cn
-         Nihonium  ???       Nh          Flerovium  ???       Fl
-        Moscovium  ???       Mc        Livermorium  ???       Lv
-       Tennessine  ???       Ts          Oganesson  ???       Og
- 
->.words.map: { (:name($^a), :weight($^b), :symbol($^c)).hash };
- 
+     Darmstadtium  ???       Ds        Copernicium  ???       Cn
+         Nihonium  ???       Nh          Flerovium  ???       Fl
+        Moscovium  ???       Mc        Livermorium  ???       Lv
+       Tennessine  ???       Ts          Oganesson  ???       Og
+
+>.words.map: { (:name($^a), :weight($^b), :symbol($^c)).hash };
+
 put 'Revision date: ',                                   %periodic<revision-date>;
 put 'Last element by position (nominally by weight): ',  %periodic<table>.tail.<name>;
 put 'Total number of elements: ',                        %periodic<table>.elems;

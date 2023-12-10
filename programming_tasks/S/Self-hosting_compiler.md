@@ -2,6 +2,8 @@
 
 # [Self-hosting compiler][1]
 
+
+
 ```perl
 use MONKEY-SEE-NO-EVAL;
 EVAL slurp

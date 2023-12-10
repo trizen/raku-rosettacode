@@ -2,6 +2,10 @@
 
 # [Terminal control/Restricted width positional input/With wrapping][1]
 
+
+
+
+
 Should work with any termios compatible terminal.
 
 
@@ -10,7 +14,7 @@ All printable character keys (except Tab) work, as does backspace and enter. Ctr
 
 ```perl
 use Term::termios;
- 
+
 constant $saved   = Term::termios.new(fd => 1).getattr;
 constant $termios = Term::termios.new(fd => 1).getattr;
 # raw mode interferes with carriage returns, so
@@ -18,24 +22,24 @@ constant $termios = Term::termios.new(fd => 1).getattr;
 $termios.unset_iflags(<BRKINT ICRNL ISTRIP IXON>);
 $termios.unset_lflags(<ECHO ICANON IEXTEN ISIG>);
 $termios.setattr(:DRAIN);
- 
+
 END {
     $saved.setattr(:NOW); # reset terminal to original settings
     print "\e[?25h \e[H\e[J"; # clear and reset screen
 }
- 
+
 my $row     = 3;
 my $column  = 5;
 my $field   = '';
 my $spacer  = ' ' x 8;
 my $pointer = 0;
- 
+
 my ($rows,$cols) = qx/stty size/.words; # get screen size
- 
+
 my @screen = "\e[41m{' ' x $cols}\e[0m" xx $rows;
- 
+
 update($spacer);
- 
+
 loop {
     my $key = $*IN.read(4).decode;
     given $key {
@@ -56,7 +60,7 @@ loop {
                 $field.=substr(0,*-1);
                 $spacer = ' ' x (8 - $field.chars max 0);
                 $pointer -= 1 if $field.chars < 8;
-                my $display = $field.chars < 8 ?? $field !! $field.substr(*-8);
+                my $display = $field.chars < 8 ?? $field !! $field.substr(*-8);
                 update($display~$spacer)
             }
         }
@@ -70,7 +74,7 @@ loop {
         default { }
     }
 }
- 
+
 sub update ($str) {
     ($rows,$cols) = qx/stty size/.words;
     @screen = "\e[41m{' ' x $cols}\e[0m" xx $rows;

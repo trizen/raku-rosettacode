@@ -2,6 +2,8 @@
 
 # [Read entire file][1]
 
+
+
 ```perl
 my $string = slurp 'sample.txt';
 ```

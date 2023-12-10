@@ -2,6 +2,10 @@
 
 # [N-queens problem][1]
 
+
+
+
+
 Neither pretty nor efficient, a simple backtracking solution
 
 ```perl

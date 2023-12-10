@@ -2,6 +2,10 @@
 
 # [100 prisoners][1]
 
+
+
+
+
 Accepts command line parameters to modify the number of prisoners and the number of simulations to run.
 
 
@@ -9,10 +13,10 @@ Accepts command line parameters to modify the number of prisoners and the number
 Also test with 10 prisoners to verify that the logic is correct for random selection. Random selection should succeed with 10 prisoners at a probability of (1/2)\*\*10, so in 100\_000 simulations, should get pardons about .0977 percent of the time.
 
 ```perl
-unit sub MAIN (:$prisoners = 100, :$simulations = 10000);
+unit sub MAIN (:$prisoners = 100, :$simulations = 10000);
 my @prisoners = ^$prisoners;
 my $half = floor +@prisoners / 2;
- 
+
 sub random ($n) {
     ^$n .race.map( {
         my @drawers = @prisoners.pick: *;
@@ -28,7 +32,7 @@ sub random ($n) {
     }
     ).grep( *.so ).elems / $n * 100
 }
- 
+
 sub optimal ($n) {
     ^$n .race.map( {
         my @drawers = @prisoners.pick: *;
@@ -50,7 +54,7 @@ sub optimal ($n) {
     }
     ).grep( *.so ).elems / $n * 100
 }
- 
+
 say "Testing $simulations simulations with $prisoners prisoners.";
 printf " Random play wins: %.3f%% of simulations\n", random $simulations;
 printf "Optimal play wins: %.3f%% of simulations\n", optimal $simulations;
@@ -60,7 +64,6 @@ printf "Optimal play wins: %.3f%% of simulations\n", optimal $simulations;
 **With defaults**
 
 
-#### Output:
 ```
 Testing 10000 simulations with 100 prisoners.
  Random play wins: 0.000% of simulations
@@ -71,7 +74,6 @@ Optimal play wins: 30.510% of simulations
 **With passed parameters: --prisoners=10, --simulations=100000**
 
 
-#### Output:
 ```
 Testing 100000 simulations with 10 prisoners.
  Random play wins: 0.099% of simulations

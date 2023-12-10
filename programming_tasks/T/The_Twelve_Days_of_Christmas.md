@@ -2,9 +2,11 @@
 
 # [The Twelve Days of Christmas][1]
 
+
+
 ```perl
 my @days = <first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth>;
- 
+
 my @gifts = lines q:to/END/;
   And a partridge in a pear tree.
   Two turtle doves,
@@ -19,12 +21,12 @@ my @gifts = lines q:to/END/;
   Eleven pipers piping,
   Twelve drummers drumming,
 END
- 
+
 sub nth($n) { say "On the @days[$n] day of Christmas, my true love gave to me:" }
- 
+
 nth(0);
 say @gifts[0].subst('And a','A');
- 
+
 for 1 ... 11 -> $d {
     say '';
     nth($d);

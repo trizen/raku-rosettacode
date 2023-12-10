@@ -6,14 +6,14 @@
 
 ```perl
 use v6;
- 
+
 sub endsWithOne($n --> Bool) {
    my $digit;
    my $sum = 0;
    my $nn = $n;
    loop {
       while ($nn > 0) {
-         $digit = $nn % 10;
+         $digit = $nn % 10;
          $sum += $digit²;
          $nn = $nn div 10;
       }
@@ -23,9 +23,9 @@ sub endsWithOne($n --> Bool) {
       $sum = 0;
    }
 }
- 
+
 my @ks = (7, 8, 11, 14, 17);
- 
+
 for @ks -> $k {
    my @sums is default(0) = 1,0;
    my $s;

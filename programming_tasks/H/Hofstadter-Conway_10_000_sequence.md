@@ -2,15 +2,20 @@
 
 # [Hofstadter-Conway $10,000 sequence][1]
 
-Here is a list-oriented version. Note that `@a` is a lazy array, and the Z variants are "zipwith" operators.
+
+
+
+
+Note that `@a` is a lazy array, and the Z variants are "zipwith" operators.
 
 ```perl
 my $n = 3;
 my @a = (0,1,1, -> $p { @a[$p] + @a[$n++ - $p] } ... *);
- 
+@a[2**20]; # pre-calculate sequence
+
 my $last55;
 for 1..19 -> $power {
-    my @range := 2**$power .. 2**($power+1)-1;
+    my @range := 2**$power .. 2**($power+1)-1;
     my @ratios = (@a[@range] Z/ @range) Z=> @range;
     my $max = @ratios.max;
     ($last55 = .value if .key >= .55 for @ratios) if $max.key >= .55;
@@ -19,7 +24,9 @@ for 1..19 -> $power {
 }
 say "Mallows' number would appear to be ", $last55;
 ```
-```text
+
+#### Output:
+```
  1         2..3         0.666666666666667 at 3
  2         4..7         0.666666666666667 at 6
  3         8..15        0.636363636363636 at 11
@@ -40,40 +47,4 @@ say "Mallows' number would appear to be ", $last55;
 18    262144..524287    0.534645431078112 at 353683
 19    524288..1048575   0.533779229963368 at 722589
 Mallows' number would appear to be 1489
-```
-
-
-The lists are convenient, but here is a version written in relatively low-level primitives for performance:
-
-```perl
-my int $POW = 20;
-my int $top = 2**$POW;
- 
-my int @a = (0,1,1);
-@a[$top] = 0;   # pre-extend array
- 
-my int $n = 3;
-my int $p = 1;
- 
-loop ($n = 3; $n <= $top; ++$n) {
-    @a[$n] = $p = @a[$p] + @a[$n - $p];
-}
- 
-my int $last55;
-for 1 ..^ $POW -> int $power {
- 
-    my int $beg = 2 ** $power;
-    my int $end = $beg * 2 - 1;
-    my $max;
-    my $ratio;
- 
-    loop (my $n = $beg; $n <= $end; ++$n) {
-        my $ratio = @a[$n] / $n;
-        $last55 = $n if $ratio * 100 >= 55;
-        $max max= $ratio => $n;
-    }
- 
-    say $power.fmt('%2d'), $beg.fmt("%10d"), '..', $end.fmt("%-10d"), $max.key, " at ", $max.value;
-}
-say "Mallows' number would appear to be ", $last55;
 ```

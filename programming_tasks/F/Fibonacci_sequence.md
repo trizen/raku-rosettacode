@@ -2,6 +2,10 @@
 
 # [Fibonacci sequence][1]
 
+
+
+
+
 ### List Generator
 
 
@@ -24,7 +28,7 @@ To support negative indices:
 
 ```perl
 constant @neg-fib = 0, 1, *-* ... *;
-sub fib ($n) { $n >= 0 ?? @fib[$n] !! @neg-fib[-$n] }
+sub fib ($n) { $n >= 0 ?? @fib[$n] !! @neg-fib[-$n] }
 ```
 
 
@@ -47,16 +51,4 @@ proto fib (Int $n --> Int) {*}
 multi fib (0)  { 0 }
 multi fib (1)  { 1 }
 multi fib ($n) { fib($n - 1) + fib($n - 2) }
-```
-
-
-### Analytic
-
-```perl
-sub fib (Int $n --> Int) {
-    constant φ1 = 1 / constant φ = (1 + sqrt 5)/2;
-    constant invsqrt5 = 1 / sqrt 5;
- 
-    floor invsqrt5 * (φ**$n + φ1**$n);
-}
 ```

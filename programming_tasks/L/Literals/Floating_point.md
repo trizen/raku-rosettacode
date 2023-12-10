@@ -2,6 +2,7 @@
 
 # [Literals/Floating point][1]
 
+
 Floating point numbers (the Num type) are written in the standard 'e' scientific notation:
 
 ```perl
@@ -13,4 +14,4 @@ Floating point numbers (the Num type) are written in the standard 'e' scientific
 ```
 
 
-A number like `3.1416` is specifically not floating point, but rational (the Rat type), equivalent to `3927/1250`. On the other hand, `Num(3.1416)` would be considered a floating literal though by virtue of mandatory constant folding.
+A number like `3.1416` is specifically not floating point, but rational (the Rat type), equivalent to `3927/1250`.  On the other hand, `Num(3.1416)` would be considered a floating literal though by virtue of mandatory constant folding.

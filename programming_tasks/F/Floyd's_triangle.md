@@ -1,29 +1,26 @@
-[1]: https://rosettacode.org/wiki/Floyd's_triangle
+[1]: https://rosettacode.org/wiki/Floyd%27s_triangle
 
-# [Floyd's triangle][1]
-
-```perl
-constant @floyd = (1..*).rotor(1..*);
-```
+# [Floyd&#039;s triangle][1]
 
 
-Alternatively, using `gather`/`take`:
+Here's two ways of doing it.
 
 ```perl
-constant @floyd = gather for 1..* -> $s { take [++$ xx $s] }
- 
-# Printing:
- 
-sub say-floyd($n) {
-    my @formats = @floyd[$n-1].map: {"%{.chars}s"}
- 
-    for @floyd[^$n] -> @i {
-        say ~(@i Z @formats).map: -> ($i, $f) { $i.fmt($f) }
+constant @floyd1 = (1..*).rotor(1..*);
+constant @floyd2 = gather for 1..* -> $s { take [++$ xx $s] }
+
+sub format-rows(@f) {
+    my @table;
+    my @formats = @f[@f-1].map: {"%{.chars}s"}
+    for @f -> @row {
+        @table.push: (@row Z @formats).map: -> ($i, $f) { $i.fmt($f) }
     }
+    join "\n", @table;
 }
- 
-say-floyd 5;
-say-floyd 14;
+
+say format-rows(@floyd1[^5]);
+say '';
+say format-rows(@floyd2[^14]);
 ```
 
 #### Output:
@@ -32,7 +29,8 @@ say-floyd 14;
  2  3 
  4  5  6 
  7  8  9 10 
-11 12 13 14 15 
+11 12 13 14 15
+ 
  1 
  2  3 
  4  5  6 

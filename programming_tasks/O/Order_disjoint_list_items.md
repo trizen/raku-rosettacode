@@ -2,14 +2,16 @@
 
 # [Order disjoint list items][1]
 
+
+
 ```perl
 sub order-disjoint-list-items(\M, \N) {
     my \bag = N.BagHash;
-    M.map: { bag{$_}-- ?? N.shift !! $_ }
+    M.map: { bag{$_}-- ?? N.shift !! $_ }
 }
- 
+
 # Testing:
- 
+
 for q:to/---/.comb(/ [\S+]+ % ' ' /).map({[.words]})
     the cat sat on the mat      mat cat
     the cat sat on the mat      cat mat

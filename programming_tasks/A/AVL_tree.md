@@ -2,9 +2,10 @@
 
 # [AVL tree][1]
 
+
 This code has been translated from the Java version on
 &lt;[https://rosettacode.org](https://rosettacode.org)&gt;. Consequently, it should have the same
-license: GNU Free Document License 1.2. In addition to the translated
+license: GNU Free Document License 1.2.  In addition to the translated
 code, other public methods have been added as shown by the asterisks
 in the following list of all public methods:
 
@@ -18,10 +19,9 @@ like the apostrophe (') and hyphen (-) in identifiers.
 
 
 ```perl
- 
 class AVL-Tree {
     has $.root is rw = 0;
- 
+
     class Node {
         has $.key    is rw = '';
         has $.parent is rw = 0;
@@ -31,49 +31,49 @@ class AVL-Tree {
         has Int $.balance is rw = 0;
         has Int $.height  is rw = 0;
     }
- 
+
     #=====================================================
     # public methods
     #=====================================================
- 
+
     #| returns a node object or 0 if not found
     method find($key) {
-        return 0 if !$.root;
+        return 0 if !$.root;
         self!find: $key, $.root;
     }
- 
+
     #| returns a list of tree keys
     method keys() {
-        return () if !$.root;
+        return () if !$.root;
         my @list;
         self!keys: $.root, @list;
         @list;
     }
- 
+
     #| returns a list of tree nodes
     method nodes() {
-        return () if !$.root;
+        return () if !$.root;
         my @list;
         self!nodes: $.root, @list;
         @list;
     }
- 
+
     #| insert a node key, optionally add data (the `parent` arg is for
     #| internal use only)
-    method insert($key, :$data = 0, :$parent = 0,) {
-        return $.root = Node.new: :$key, :$parent, :$data if !$.root;
+    method insert($key, :$data = 0, :$parent = 0,) {
+        return $.root = Node.new: :$key, :$parent, :$data if !$.root;
         my $n = $.root;
         while True {
             return False if $n.key eq $key;
             my $parent = $n;
             my $goLeft = $n.key > $key;
-            $n = $goLeft ?? $n.left !! $n.right;
-            if !$n {
+            $n = $goLeft ?? $n.left !! $n.right;
+            if !$n {
                 if $goLeft {
-                    $parent.left = Node.new: :$key, :$parent, :$data;
+                    $parent.left = Node.new: :$key, :$parent, :$data;
                 }
                 else {
-                    $parent.right = Node.new: :$key, :$parent, :$data;
+                    $parent.right = Node.new: :$key, :$parent, :$data;
                 }
                 self!rebalance: $parent;
                 last
@@ -81,15 +81,15 @@ class AVL-Tree {
         }
         True
     }
- 
+
     #| delete one or more nodes by key
     method delete(*@del-key) {
-        return if !$.root;
+        return if !$.root;
         for @del-key -> $del-key {
             my $child = $.root;
             while $child {
                 my $node = $child;
-                $child = $del-key >= $node.key ?? $node.right !! $node.left;
+                $child = $del-key >= $node.key ?? $node.right !! $node.left;
                 if $del-key eq $node.key {
                     self!delete: $node;
                     next;
@@ -97,26 +97,26 @@ class AVL-Tree {
             }
         }
     }
- 
+
     #| show a list of all nodes by key
     method show-keys {
         self!show-keys: $.root;
         say()
     }
- 
+
     #| show a list of all nodes' balances (not normally needed)
     method show-balances {
         self!show-balances: $.root;
         say()
     }
- 
+
     #=====================================================
     # private methods
     #=====================================================
- 
-    method !delete($node) {
-        if !$node.left && !$node.right {
-            if !$node.parent {
+
+    method !delete($node) {
+        if !$node.left && !$node.right {
+            if !$node.parent {
                 $.root = 0;
             }
             else {
@@ -131,7 +131,7 @@ class AVL-Tree {
             }
             return
         }
- 
+
         if $node.left {
             my $child = $node.left;
             while $child.right {
@@ -149,10 +149,10 @@ class AVL-Tree {
             self!delete: $child;
         }
     }
- 
-    method !rebalance($n is copy) {
+
+    method !rebalance($n is copy) {
         self!set-balance: $n;
- 
+
         if $n.balance == -2 {
             if self!height($n.left.left) >= self!height($n.left.right) {
                 $n = self!rotate-right: $n;
@@ -169,7 +169,7 @@ class AVL-Tree {
                 $n = self!rotate-right'left: $n;
             }
         }
- 
+
         if $n.parent {
             self!rebalance: $n.parent;
         }
@@ -177,21 +177,21 @@ class AVL-Tree {
             $.root = $n;
         }
     }
- 
-    method !rotate-left($a) {
- 
+
+    method !rotate-left($a) {
+
         my $b     = $a.right;
         $b.parent = $a.parent;
- 
+
         $a.right = $b.left;
- 
+
         if $a.right {
             $a.right.parent = $a;
         }
- 
+
         $b.left   = $a;
         $a.parent = $b;
- 
+
         if $b.parent {
             if $b.parent.right === $a {
                 $b.parent.right = $b;
@@ -200,25 +200,25 @@ class AVL-Tree {
                 $b.parent.left = $b;
             }
         }
- 
+
         self!set-balance: $a, $b;
         $b;
     }
- 
-    method !rotate-right($a) {
- 
+
+    method !rotate-right($a) {
+
         my $b = $a.left;
         $b.parent = $a.parent;
- 
+
         $a.left = $b.right;
- 
+
         if $a.left {
             $a.left.parent = $a;
         }
- 
+
         $b.right  = $a;
         $a.parent = $b;
- 
+
         if $b.parent {
             if $b.parent.right === $a {
                 $b.parent.right = $b;
@@ -227,72 +227,72 @@ class AVL-Tree {
                 $b.parent.left = $b;
             }
         }
- 
+
         self!set-balance: $a, $b;
- 
+
         $b;
     }
- 
-    method !rotate-left'right($n) {
+
+    method !rotate-left'right($n) {
         $n.left = self!rotate-left: $n.left;
         self!rotate-right: $n;
     }
- 
+
     method !rotate-right'left($n) {
         $n.right = self!rotate-right: $n.right;
         self!rotate-left: $n;
     }
- 
-    method !height($n) {
-        $n ?? $n.height !! -1;
+
+    method !height($n) {
+        $n ?? $n.height !! -1;
     }
- 
-    method !set-balance(*@n) {
+
+    method !set-balance(*@n) {
         for @n -> $n {
             self!reheight: $n;
             $n.balance = self!height($n.right) - self!height($n.left);
         }
     }
- 
-    method !show-balances($n) {
+
+    method !show-balances($n) {
         if $n {
             self!show-balances: $n.left;
             printf "%s ", $n.balance;
             self!show-balances: $n.right;
         }
     }
- 
-    method !reheight($node) {
+
+    method !reheight($node) {
         if $node {
             $node.height = 1 + max self!height($node.left), self!height($node.right);
         }
     }
- 
-    method !show-keys($n) {
+
+    method !show-keys($n) {
         if $n {
             self!show-keys: $n.left;
             printf "%s ", $n.key;
             self!show-keys: $n.right;
         }
     }
- 
-    method !nodes($n, @list) {
+
+    method !nodes($n, @list) {
         if $n {
             self!nodes: $n.left, @list;
             @list.push: $n if $n;
             self!nodes: $n.right, @list;
         }
     }
- 
-    method !keys($n, @list) {
+
+    method !keys($n, @list) {
         if $n {
             self!keys: $n.left, @list;
             @list.push: $n.key if $n;
             self!keys: $n.right, @list;
         }
     }
- 
-    method !find($key, $n) {
+
+    method !find($key, $n) {
         if $n {
             self!find: $key, $n.left;
             return $n if $n.key eq $key;
@@ -300,5 +300,4 @@ class AVL-Tree {
         }
     }
 }
- 
 ```

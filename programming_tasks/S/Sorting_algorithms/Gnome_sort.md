@@ -2,6 +2,8 @@
 
 # [Sorting algorithms/Gnome sort][1]
 
+
+
 ```perl
 sub gnome_sort (@a) {
     my ($i, $j) = 1, 2;
@@ -16,8 +18,7 @@ sub gnome_sort (@a) {
         }
     }
 }
-```
-
 
 my @n = (1..10).roll(20);
-say @n.&amp;gnome\_sort ~~ @n.sort&#160;?? 'ok'&#160;!! 'not ok';
+say @n.&gnome_sort ~~ @n.sort ?? 'ok' !! 'not ok';
+```

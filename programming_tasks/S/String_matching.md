@@ -2,6 +2,10 @@
 
 # [String matching][1]
 
+
+
+
+
 Using string methods:
 
 ```perl
@@ -31,5 +35,6 @@ substr($haystack, *-$needle.chars) eq $needle   # True if $haystack ends with $n
 Bonus task:
 
 ```perl
-$haystack.match($needle, :g)».from;  # List of all positions where $needle appears in $haystack
+$haystack.match($needle, :g)».from;  # List of all positions where $needle appears in $haystack
+$haystack.indices($needle :overlap); # Also find any overlapping instances of $needle in $haystack
 ```

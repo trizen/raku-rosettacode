@@ -1,12 +1,12 @@
 [1]: https://rosettacode.org/wiki/Sylvester%27s_sequence
 
-# [Sylvester's sequence][1]
+# [Sylvester&#039;s sequence][1]
 
 ```perl
 my @S = {1 + [*] @S[^($++)]} … *;
- 
+
 put 'First 10 elements of Sylvester\'s sequence: ', @S[^10];
- 
+
 say "\nSum of the reciprocals of first 10 elements: ", sum @S[^10].map: { FatRat.new: 1, $_ };
 ```
 

@@ -2,33 +2,37 @@
 
 # [Brownian tree][1]
 
+
+
+
+
 This solution spawns new Particles at a growing square border and displays the Tree every 50 particles and at the end using unicode UPPER/LOWER HALF BLOCK and FULL BLOCK.
 
 ```perl
 constant size = 100;
 constant particlenum = 1_000;
- 
- 
+
+
 constant mid = size div 2;
- 
+
 my $spawnradius = 5;
 my @map;
- 
+
 sub set($x, $y) {
     @map[$x][$y] = True;
 }
- 
+
 sub get($x, $y) {
     return @map[$x][$y] || False;
 }
- 
+
 set(mid, mid);
 my @blocks = " ","\c[UPPER HALF BLOCK]", "\c[LOWER HALF BLOCK]","\c[FULL BLOCK]";
- 
+
 sub infix:<█>($a, $b) {
     @blocks[$a + 2 * $b]
 }
- 
+
 sub display {
     my $start = 0;
     my $end = size;
@@ -42,7 +46,7 @@ sub display {
         }).join
     }).join("\n")
 }
- 
+
 for ^particlenum -> $progress {
     my Int $x;
     my Int $y;
@@ -53,13 +57,13 @@ for ^particlenum -> $progress {
         } while get($x,$y);
     }
     reset;
- 
+
     while not get($x-1|$x|$x+1, $y-1|$y|$y+1) {
         $x = ($x-1, $x, $x+1).pick;
         $y = ($y-1, $y, $y+1).pick;
         if (False xx 3, True).pick {
-            $x = $x >= mid ?? $x - 1 !! $x + 1;
-            $y = $y >= mid ?? $y - 1 !! $y + 1;
+            $x = $x >= mid ?? $x - 1 !! $x + 1;
+            $y = $y >= mid ?? $y - 1 !! $y + 1;
         }
         if abs(($x | $y) - mid) > $spawnradius {
             reset;
@@ -70,6 +74,6 @@ for ^particlenum -> $progress {
         $spawnradius = $spawnradius + 1;
     }
 }
- 
+
 display;
 ```

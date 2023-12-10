@@ -1,6 +1,10 @@
-[1]: https://rosettacode.org/wiki/Bitmap/Bresenham's_line_algorithm
+[1]: https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm
 
-# [Bitmap/Bresenham's line algorithm][1]
+# [Bitmap/Bresenham&#039;s line algorithm][1]
+
+
+
+
 
 Bitmap class from [Bitmap](https://rosettacode.org/wiki/Bitmap#Raku) task.
 
@@ -9,7 +13,7 @@ class Pixel { has UInt ($.R, $.G, $.B) }
 class Bitmap {
     has UInt ($.width, $.height);
     has Pixel @!data;
- 
+ 
     method fill(Pixel $p) {
         @!data = $p.clone xx ($!width*$!height)
     }
@@ -18,7 +22,7 @@ class Bitmap {
 	$j where ^$!height
 	--> Pixel
     ) is rw { @!data[$i + $j * $!width] }
- 
+ 
     method set-pixel ($i, $j, Pixel $p) {
 	self.pixel($i, $j) = $p.clone;
     }
@@ -26,7 +30,7 @@ class Bitmap {
 	self.pixel($i, $j);
     }
 }
- 
+ 
 sub line(Bitmap $bitmap, $x0 is copy, $x1 is copy, $y0 is copy, $y1 is copy) {
     my $steep = abs($y1 - $y0) > abs($x1 - $x0);
     if $steep {
@@ -41,7 +45,7 @@ sub line(Bitmap $bitmap, $x0 is copy, $x1 is copy, $y0 is copy, $y1 is copy) {
     my $Δy = abs($y1 - $y0);
     my $error = 0;
     my $Δerror = $Δy / $Δx;
-    my $y-step = $y0 < $y1 ?? 1 !! -1;
+    my $y-step = $y0 < $y1 ?? 1 !! -1;
     my $y = $y0;
     for $x0 .. $x1 -> $x {
         my $pix = Pixel.new(R => 100, G => 200, B => 0); 

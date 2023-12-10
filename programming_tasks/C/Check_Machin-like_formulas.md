@@ -2,6 +2,10 @@
 
 # [Check Machin-like formulas][1]
 
+
+
+
+
 The coercion to FatRat provides for exact computation for all input.
 
 ```perl
@@ -9,25 +13,25 @@ sub taneval ($coef, $f) {
   return 0 if $coef == 0;
   return $f if $coef == 1;
   return -taneval(-$coef, $f) if $coef < 0;
- 
+
   my $a = taneval($coef+>1, $f);
   my $b = taneval($coef - $coef+>1, $f);
   ($a+$b)/(1-$a*$b);
 }
- 
+
 sub tans (@xs) {
   return taneval(@xs[0;0], @xs[0;1].FatRat) if @xs == 1;
- 
+
   my $a = tans(@xs[0 .. (-1+@xs+>1)]);
   my $b = tans(@xs[(-1+@xs+>1)+1 .. -1+@xs]);
   ($a+$b)/(1-$a*$b);
 }
- 
+
 sub verify (@eqn) {
-  printf "%5s (%s)\n", (tans(@eqn) == 1) ?? "OK" !! "Error",
+  printf "%5s (%s)\n", (tans(@eqn) == 1) ?? "OK" !! "Error",
     (map { "[{.[0]} {.[1].nude.join('/')}]" }, @eqn).join(' ');
 }
- 
+
 verify($_) for
    ([[1,1/2], [1,1/3]],
     [[2,1/3], [1,1/7]],

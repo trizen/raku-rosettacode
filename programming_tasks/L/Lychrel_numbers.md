@@ -2,6 +2,8 @@
 
 # [Lychrel numbers][1]
 
+
+
 ```perl
 my %lychrels;
 my @seeds;
@@ -9,26 +11,28 @@ my @palindromes;
 my $count;
 my $max = 500;
 my $limit = '10_000';
- 
+my %seen;
+
 for 1 .. $limit -> $int {
     my @test;
     my $index = 0;
     if $int.&is-lychrel {
-        print "\b" x 20, "Found Lychrel: $int";
         %lychrels.push: ($int => @test).invert;
         @palindromes.push: $int if $int == $int.flip;
         $count++;
     }
-    print "\b" x 20;
- 
+
     sub is-lychrel (Int $l) {
-        return True if $index++ > $max;
+        if  %seen{$l} or $index++ > $max {
+            %seen{$_} = True for @test;
+            return True;
+        }
         @test.push: my $m = $l + $l.flip;
         return False if $m == $m.flip;
         $m.&is-lychrel;
     }
 }
- 
+
 for %lychrels{*}»[0].unique.sort -> $ly {
     my $next = False;
     for %lychrels -> $l {
@@ -41,7 +45,7 @@ for %lychrels{*}»[0].unique.sort -> $ly {
     next if $next;
     @seeds.push: $ly;
 }
- 
+
 say "   Number of Lychrel seed numbers < $limit: ", +@seeds;
 say "             Lychrel seed numbers < $limit: ", join ", ", @seeds;
 say "Number of Lychrel related numbers < $limit: ", +$count - @seeds;

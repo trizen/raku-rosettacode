@@ -2,21 +2,23 @@
 
 # [Hilbert curve][1]
 
+
+
 ```perl
 use SVG;
- 
+
 role Lindenmayer {
     has %.rules;
     method succ {
         self.comb.map( { %!rules{$^c} // $c } ).join but Lindenmayer(%!rules)
     }
 }
- 
+
 my $hilbert = 'A' but Lindenmayer( { A => '-BF+AFA+FB-', B => '+AF-BFB-FA+' } );
- 
+
 $hilbert++ xx 7;
 my @points = (647, 13);
- 
+
 for $hilbert.comb {
     state ($x, $y) = @points[0,1];
     state $d = -5 - 0i;
@@ -24,12 +26,12 @@ for $hilbert.comb {
     when /< + - >/ { $d *= "{$_}1i" }
     default { }
 }
- 
+
 say SVG.serialize(
     svg => [
-        :660width, :660height, :style<stroke:blue>,
-        :rect[:width<100%>, :height<100%>, :fill<white>],
-        :polyline[ :points(@points.join: ','), :fill<white> ],
+        :660width, :660height, :style<stroke:blue>,
+        :rect[:width<100%>, :height<100%>, :fill<white>],
+        :polyline[ :points(@points.join: ','), :fill<white> ],
     ],
 );
 ```
@@ -43,19 +45,19 @@ There is a variation of a Hilbert curve known as a [Moore curve](https://en.wiki
 
 ```perl
 use SVG;
- 
+
 role Lindenmayer {
     has %.rules;
     method succ {
         self.comb.map( { %!rules{$^c} // $c } ).join but Lindenmayer(%!rules)
     }
 }
- 
+
 my $moore = 'AFA+F+AFA' but Lindenmayer( { A => '-BF+AFA+FB-', B => '+AF-BFB-FA+' } );
- 
+
 $moore++ xx 6;
 my @points = (327, 647);
- 
+
 for $moore.comb {
     state ($x, $y) = @points[0,1];
     state $d = 0 - 5i;
@@ -63,12 +65,12 @@ for $moore.comb {
     when /< + - >/ { $d *= "{$_}1i" }
     default { }
 }
- 
+
 say SVG.serialize(
     svg => [
-        :660width, :660height, :style<stroke:darkviolet>,
-        :rect[:width<100%>, :height<100%>, :fill<white>],
-        :polyline[ :points(@points.join: ','), :fill<white> ],
+        :660width, :660height, :style<stroke:darkviolet>,
+        :rect[:width<100%>, :height<100%>, :fill<white>],
+        :polyline[ :points(@points.join: ','), :fill<white> ],
     ],
 );
 ```

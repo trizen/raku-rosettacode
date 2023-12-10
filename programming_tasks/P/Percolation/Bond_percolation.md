@@ -2,6 +2,10 @@
 
 # [Percolation/Bond percolation][1]
 
+
+
+
+
 Starts "filling" from the top left. Fluid flow favours directions in Down, Left, Right, Up order. I interpreted p to be porosity, so small p mean low permeability, large p means high permeability.
 
 ```perl
@@ -9,38 +13,38 @@ my @bond;
 my $grid = 10;
 my $geom = $grid - 1;
 my $water = '▒';
- 
+
 enum Direction <DeadEnd Up Right Down Left>;
- 
+
 say 'Sample percolation at .6';
 percolate .6;
 .join.say for @bond;
 say "\n";
- 
+
 my $tests = 100;
 say "Doing $tests trials at each porosity:";
 for .1, .2 ... 1 -> $p {
-    printf "p = %0.1f: %0.2f\n", $p, (sum percolate($p) xx $tests) / $tests
+    printf "p = %0.1f: %0.2f\n", $p, (sum percolate($p) xx $tests) / $tests
 }
- 
+
 sub percolate ( $prob ) {
     generate $prob;
     my @stack;
     my $current = [1;0];
     $current.&fill;
- 
+
     loop {
         if my $dir = direction( $current ) {
             @stack.push: $current;
             $current = move $dir, $current
         }
         else {
-            return 0 unless @stack;
+            return False unless @stack;
             $current = @stack.pop
         }
-        return 1 if $current[1] == +@bond - 1
+        return True if $current[1] == +@bond - 1
     }
- 
+
     sub direction( [$x, $y] ) {
         ( Down  if @bond[$y + 1][$x].contains: ' ' ) ||
         ( Left  if @bond[$y][$x - 1].contains: ' ' ) ||
@@ -48,7 +52,7 @@ sub percolate ( $prob ) {
         ( Up    if @bond[$y - 1][$x].defined && @bond[$y - 1][$x].contains: ' ' ) ||
         DeadEnd
     }
- 
+
     sub move ( $dir, @cur ) {
         my ( $x, $y ) = @cur;
         given $dir {
@@ -59,10 +63,10 @@ sub percolate ( $prob ) {
         }
         [$x, $y]
     }
- 
-    sub fill ( [$x, $y] ) { @bond[$y;$x].=subst(' ', $water, :g) }
+
+    sub fill ( [$x, $y] ) { @bond[$y;$x].=subst(' ', $water, :g) }
 }
- 
+
 sub generate ( $prob = .5 ) {
     @bond = ();
     my $sp = '   ';
@@ -73,9 +77,9 @@ sub generate ( $prob = .5 ) {
     append @bond, [flat '│', ($sp, v()) xx $geom, $sp, '│'],
                   [flat '├', (h(), '┴') xx $geom, h(), '┤'],
                   [flat '│', ($sp, ' ') xx $geom, $sp, '│'];
- 
-    sub h () { rand < $prob ?? $sp !! '───' }
-    sub v () { rand < $prob ?? ' ' !! '│'   }
+
+    sub h () { rand < $prob ?? $sp !! '───' }
+    sub v () { rand < $prob ?? ' ' !! '│'   }
 }
 ```
 
@@ -105,7 +109,6 @@ Sample percolation at .6
 │▒▒▒│▒▒▒    │               │           │
 ├───┴▒▒▒┴   ┴   ┴   ┴───┴   ┴   ┴   ┴───┤
 │    ▒▒▒                                │
-
 
 Doing 100 trials at each porosity:
 p = 0.1: 0.00

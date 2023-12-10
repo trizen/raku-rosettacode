@@ -2,6 +2,8 @@
 
 # [Draw a cuboid][1]
 
+
+
 ```perl
 sub braille-graphics (%a) {
     my ($ylo, $yhi, $xlo, $xhi);
@@ -11,7 +13,7 @@ sub braille-graphics (%a) {
 	    $xlo min= +$x; $xhi max= +$x;
 	}
     }
- 
+
     for $ylo, $ylo + 4 ...^ * > $yhi -> \y {
 	for $xlo, $xlo + 2 ...^ * > $xhi -> \x {
 	    my $cell = 0x2800;
@@ -28,7 +30,7 @@ sub braille-graphics (%a) {
 	print "\n";
     }
 }
- 
+
 sub cuboid ( [$x, $y, $z] ) {
     my \x = $x * 4;
     my \y = $y * 4;
@@ -37,17 +39,17 @@ sub cuboid ( [$x, $y, $z] ) {
     sub horz ($X, $Y) { %t{$Y     }{$X + $_} = True for 0 .. x }
     sub vert ($X, $Y) { %t{$Y + $_}{$X     } = True for 0 .. y }
     sub diag ($X, $Y) { %t{$Y - $_}{$X + $_} = True for 0 .. z }
- 
+ 
     horz(0, z); horz(z, 0); horz(  0, z+y);
     vert(0, z); vert(x, z); vert(z+x,   0);
     diag(0, z); diag(x, z); diag(  x, z+y);
- 
+ 
     say "[$x, $y, $z]";
     braille-graphics %t;
 }
- 
+ 
 cuboid $_ for [2,3,4], [3,4,2], [4,2,3], [1,1,1], [8,1,1], [1,8,1], [1,1,8];
 ```
 
 
-[<img alt="Cuboid Perl 6.png" src="https://rosettacode.org/mw/images/d/d2/Cuboid_Perl_6.png" width="354" height="1548" />](https://rosettacode.org/wiki/File:Cuboid_Perl_6.png)
+<span class="mw-default-size" typeof="mw:File">[<img src="https://static.wikitide.net/rosettacodewiki/d/d2/Cuboid_Perl_6.png" decoding="async" loading="lazy" width="354" height="1548" class="mw-file-element" />](https://rosettacode.org/wiki/File:Cuboid_Perl_6.png)</span>

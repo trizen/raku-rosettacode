@@ -2,18 +2,20 @@
 
 # [Evolutionary algorithm][1]
 
+
+
 ```perl
 constant target = "METHINKS IT IS LIKE A WEASEL";
-constant mutate_chance = .08;
 constant @alphabet = flat 'A'..'Z',' ';
-constant C = 100;
- 
-sub mutate { [~] (rand < mutate_chance ?? @alphabet.pick !! $_ for $^string.comb) }
-sub fitness { [+] $^string.comb Zeq state @ = target.comb }
- 
-loop (
-    my $parent = @alphabet.roll(target.chars).join;
-    $parent ne target;
-    $parent = max :by(&fitness), mutate($parent) xx C
-) { printf "%6d: '%s'\n", $++, $parent }
+constant C = 10;
+
+sub mutate(Str $string, Real $mutate-chance where 0 ≤ * < 1) {
+  $string.subst: /<?{ rand < $mutate-chance }> . /, @alphabet.pick, :global
+}
+sub fitness(Str $string) { [+] $string.comb Zeq target.comb }
+
+printf "\r%6d: '%s'", $++, $_ for
+  @alphabet.roll(target.chars).join,
+  { max :by(&fitness), mutate($_, .001) xx C } ... target;
+print "\n";
 ```

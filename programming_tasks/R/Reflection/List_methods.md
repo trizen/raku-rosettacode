@@ -2,7 +2,11 @@
 
 # [Reflection/List methods][1]
 
-You can get a list of an object's methods using `.^methods`, which is part of the [Meta Object Protocol](https://docs.perl6.org/type/Metamodel$COLON$COLONClassHOW).
+
+
+
+
+You can get a list of an object's methods using `.^methods`, which is part of the [Meta Object Protocol](https://docs.raku.org/type/Metamodel$COLON$COLONClassHOW).
 
 Each is represented as a `Method` object that contains a bunch of info:
 
@@ -12,9 +16,9 @@ class Foo {
     method bar ($x, $y)  { }
     method baz ($x, $y?) { }
 }
- 
+
 my $object = Foo.new;
- 
+
 for $object.^methods {
     say join ", ", .name, .arity, .count, .signature.gist
 }

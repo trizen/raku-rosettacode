@@ -2,10 +2,12 @@
 
 # [Word search][1]
 
+
+
 ```perl
 my $rows = 10;
 my $cols = 10;
- 
+
 my $message = q:to/END/;
     .....R....
     ......O...
@@ -18,7 +20,7 @@ my $message = q:to/END/;
     ....D.....
     .....E....
     END
- 
+
 my %dir =
     '→' => (1,0),
     '↘' => (1,1),
@@ -29,67 +31,67 @@ my %dir =
     '↑' => (0,-1),
     '↗' => (1,-1)
 ;
- 
+
 my @ws = $message.comb(/<print>/);
- 
+
 my $path = './unixdict.txt'; # or wherever
- 
-my @words = $path.IO.slurp.words.grep( { $_ !~~ /<-[a..z]>/ and 2 < .chars < 11 } ).pick(*);
+
+my @words = $path.IO.slurp.words.grep( { $_ !~~ /<-[a..z]>/ and 2 < .chars < 11 } ).pick(*);
 my %index;
 my %used;
- 
+
 while @ws.first( * eq '.') {
- 
+
     # find an unfilled cell
-    my $i = @ws.grep( * eq '.', :k ).pick;
- 
+    my $i = @ws.grep( * eq '.', :k ).pick;
+
     # translate the index to x / y coordinates
-    my ($x, $y) = $i % $cols, floor($i / $rows);
- 
+    my ($x, $y) = $i % $cols, floor($i / $rows);
+
     # find a word that fits
     my $word = find($x, $y);
- 
+
     # Meh, reached an impasse, easier to just throw it all
     # away and start over rather than trying to backtrack.
     restart, next unless $word;
- 
+
     %used{"$word"}++;
- 
+
     # Keeps trying to place an already used word, choices
     # must be limited, start over
     restart, next if %used{$word} > 15;
- 
+
     # Already used this word, try again
     next if %index{$word.key};
- 
+
     # Add word to used word index
     %index ,= $word;
- 
+
     # place the word into the grid
     place($x, $y, $word);
- 
+
 }
- 
+
 display();
- 
+
 sub display {
     put flat "    ", 'ABCDEFGHIJ'.comb;
-    .put for (^10).map: { ($_).fmt("  %2d"), @ws[$_ * $cols .. ($_ + 1) * $cols - 1] }
+    .put for (^10).map: { ($_).fmt("  %2d"), @ws[$_ * $cols .. ($_ + 1) * $cols - 1] }
     put "\n  Words used:";
     my $max = 1 + %index.keys.max( *.chars ).chars;
     for %index.sort {
-        printf "%{$max}s %4s %s  ", .key, .value.key, .value.value;
-        print "\n" if $++ % 2;
+        printf "%{$max}s %4s %s  ", .key, .value.key, .value.value;
+        print "\n" if $++ % 2;
     }
     say "\n"
 }
- 
+
 sub restart {
     @ws = $message.comb(/<print>/);
     %index = ();
     %used = ();
 }
- 
+
 sub place ($x is copy, $y is copy, $w) {
     my @word = $w.key.comb;
     my $dir  = %dir{$w.value.value};
@@ -99,7 +101,7 @@ sub place ($x is copy, $y is copy, $w) {
         @ws[$y * $rows + $x] = @word.shift;
     }
  }
- 
+
 sub find ($x, $y) {
     my @trials = %dir.keys.map: -> $dir {
             my $space = '.';
@@ -116,7 +118,7 @@ sub find ($x, $y) {
             [$space.trans( '.' => ' ' ),
             ("{'ABCDEFGHIJ'.comb[$x]} {$y}" => $dir)]
         };
- 
+
     for @words.pick(*) -> $word {
         for @trials -> $space {
             next if $word.chars > $space[0].chars;
@@ -124,7 +126,7 @@ sub find ($x, $y) {
         }
     }
 }
- 
+
 sub compare (@s, @w) {
     for ^@w {
         next if @s[$_] eq ' ';

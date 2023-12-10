@@ -2,13 +2,19 @@
 
 # [Arbitrary-precision integers (included)][1]
 
+
+
 ```perl
-given ~[**] 5, 4, 3, 2 {
-   say "5**4**3**2 = {.substr: 0,20}...{.substr: *-20} and has {.chars} digits";
+given [**] 5, 4, 3, 2 {
+  use Test;
+  ok /^ 62060698786608744707 <digit>* 92256259918212890625 $/,
+     '5**4**3**2 has expected first and last twenty digits';
+  printf 'This number has %d digits', .chars;
 }
 ```
 
 #### Output:
 ```
-5**4**3**2 = 62060698786608744707...92256259918212890625 and has 183231 digits
+ok 1 - 5**4**3**2 has expected first and last twenty digits
+This number has 183231 digits
 ```

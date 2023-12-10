@@ -2,14 +2,20 @@
 
 # [URL decoding][1]
 
+
+
 ```perl
-my $url = "http%3A%2F%2Ffoo%20bar%2F";
- 
-say $url.subst: :g,
-    /'%'(<:hexdigit>**2)/,
-    ->  ($ord          ) { chr(:16(~$ord)) }
- 
-# Alternately, you can use an in-place substitution:
-$url ~~ s:g[ '%' (<:hexdigit> ** 2) ] = chr :16(~$0);
-say $url;
+my @urls = < http%3A%2F%2Ffoo%20bar%2F
+             google.com/search?q=%60Abdu%27l-Bah%C3%A1 >;
+
+say .subst( :g,
+    / [ '%' ( <xdigit> ** 2 ) ]+ / ,
+    { Blob.new((:16(~$_) for $0)).decode }
+    ) for @urls;
+```
+
+#### Output:
+```
+http://foo bar/
+google.com/search?q=`Abdu'l-Bahá
 ```

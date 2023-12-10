@@ -2,13 +2,14 @@
 
 # [Idiomatically determine all the characters that can be used for symbols][1]
 
-Any Unicode character or combination of characters can be used for symbols in Perl 6. Here's some counting rods and some cuneiform:
+
+Any Unicode character or combination of characters can be used for symbols in Raku.  Here's some counting rods and some cuneiform:
 
 ```perl
 sub postfix:<𒋦>($n) { say "$n trilobites" }
- 
+
 sub term:<𝍧> { unival('𝍧') }
- 
+
 𝍧𒋦
 ```
 
@@ -22,8 +23,8 @@ And here is a Zalgo-text symbol:
 
 ```perl
 sub Z̧̔ͩ͌͑̉̎A̢̲̙̮̹̮͍̎L̔ͧ́͆G̰̬͎͔̱̅ͣͫO͙̔ͣ̈́̈̽̎ͣ ($n) { say "$n COMES" }
- 
- 
+
+
 Z̧̔ͩ͌͑̉̎A̢̲̙̮̹̮͍̎L̔ͧ́͆G̰̬͎͔̱̅ͣͫO͙̔ͣ̈́̈̽̎ͣ 'HE'
 ```
 
@@ -37,7 +38,7 @@ Of course, as in other languages, most of the characters you'll typically see in
 
 
 
-Actually, the above is a slight prevarication. The syntactic category notation does not allow you to use whitespace in the definition of a new symbol. But that leaves many more characters allowed than not allowed. Hence, it is much easier to enumerate the characters that <em>cannot</em> be used in symbols:
+Actually, the above is a slight prevarication.  The syntactic category notation does not allow you to use whitespace in the definition of a new symbol. But that leaves many more characters allowed than not allowed.  Hence, it is much easier to enumerate the characters that <em>cannot</em> be used in symbols:
 
 ```perl
 say .fmt("%4x"),"\t", uniname($_)
@@ -70,4 +71,4 @@ say .fmt("%4x"),"\t", uniname($_)
 
 
 We enforce the whitespace restriction to prevent insanity in the readers of programs.
-That being said, even the whitespace restriction is arbitrary, and can be bypassed by deriving a new grammar and switching to it. We view all other languages as dialects of Perl 6, even the insane ones. `:-)`
+That being said, even the whitespace restriction is arbitrary, and can be bypassed by deriving a new grammar and switching to it.  We view all other languages as dialects of Raku, even the insane ones.  `:-)`

@@ -2,6 +2,7 @@
 
 # [Priority queue][1]
 
+
 This is a rather simple implementation. It requires the priority to be a positive integer value, with lower values being higher priority. There isn't a hard limit on how many priority levels you can have, though more than a few dozen is probably not practical.
 
 
@@ -11,18 +12,18 @@ The tasks are stored internally as an array of FIFO buffers, so multiple tasks o
 ```perl
 class PriorityQueue {
     has @!tasks;
- 
+
     method insert (Int $priority where * >= 0, $task) {
         @!tasks[$priority].push: $task;
     }
- 
+
     method get { @!tasks.first(?*).shift }
- 
-    method is-empty { ?none @!tasks }
+
+    method is-empty { ?none @!tasks }
 }
- 
+
 my $pq = PriorityQueue.new;
- 
+ 
 for (
     3, 'Clear drains',
     4, 'Feed cat',
@@ -35,7 +36,7 @@ for (
 ) -> $priority, $task {
     $pq.insert( $priority, $task );
 }
- 
+ 
 say $pq.get until $pq.is-empty;
 ```
 

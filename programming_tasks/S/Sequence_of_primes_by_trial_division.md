@@ -2,11 +2,12 @@
 
 # [Sequence of primes by trial division][1]
 
+
 Here is a straightforward implementation of the naive algorithm.
 
 ```perl
-constant @primes = 2, 3, { first * %% none(@_), (@_[* - 1], * + 2 ... *) } ... *;
- 
+constant @primes = 2, 3, { first * %% none(@_), (@_[* - 1], * + 2 ... *) } ... *;
+
 say @primes[^100];
 ```
 

@@ -2,7 +2,11 @@
 
 # [Determine if a string is numeric][1]
 
-Perl 6 tries very hard to DWIM (do what I mean). As part of that, numeric strings are by default stored as allomorphic types which can be used as numbers or strings without any conversion. If we truly want to operate on strings, we have to explicitly coerce the allomorphs to strings. A subtlety that may not be immediately apparent, whitespace, empty strings and null strings may be treated as (False) boolean values in Perl 6, however booleans are allomorphic to numeric, so empty strings will coerce to a numeric value (0), and return as numeric unless specifically checked for.
+
+
+
+
+Raku tries very hard to DWIM (do what I mean). As part of that, numeric strings are by default stored as allomorphic types which can be used as numbers or strings without any conversion. If we truly want to operate on strings, we have to explicitly coerce the allomorphs to strings. A subtlety that may not be immediately apparent, whitespace, empty strings and null strings may be treated as (False) boolean values in Raku, however booleans are allomorphic to numeric, so empty strings will coerce to a numeric value (0), and return as numeric unless specifically checked for. Interestingly, the actual strings 'True' and 'False' **don't** evaluate as numeric. (because there are no String | Boolean allomorphs.)
 
 
 
@@ -10,19 +14,19 @@ Note: These routines are usable for most cases but won't detect unicode non-digi
 
 ```perl
 sub is-number-w-ws( Str $term --> Bool ) { # treat Falsey strings as numeric
-    $term.Numeric !~~ Failure;
+    $term.Numeric !~~ Failure;
 }
- 
+
 sub is-number-wo-ws( Str $term --> Bool ) { # treat Falsey strings as non-numeric
-    ?($term ~~ / \S /) && $term.Numeric !~~ Failure;
+    ?($term ~~ / \S /) && $term.Numeric !~~ Failure;
 }
- 
+
 say "               Coerce     Don't coerce";
 say '    String   whitespace    whitespace';
-printf "%10s  %8s  %11s\n",
+printf "%10s  %8s  %11s\n",
 "<$_>", .&is-number-w-ws, .&is-number-wo-ws for
-(|<1 1.2 1.2.3 -6 1/2 12e B17 1.3e+12 1.3e12 -2.6e-3 zero
-0x 0xA10 0b1001 0o16 0o18 2+5i>, '1 1 1', '', ' ').map: *.Str;
+(|<1 1.2 1.2.3 -6 1/2 12e B17 1.3e+12 1.3e12 -2.6e-3 zero 0x 0xA10 0b1001 0o16 
+0o18 2+5i True False Inf NaN 0x10.50 0b102 0o_5_3 ௫௯>, '  12  ', '1 1 1', '', ' ' ).map: *.Str;
 ```
 
 #### Output:
@@ -46,6 +50,15 @@ printf "%10s  %8s  %11s\n",
     <0o16>      True         True
     <0o18>     False        False
     <2+5i>      True         True
+    <True>     False        False
+   <False>     False        False
+     <Inf>      True         True
+     <NaN>      True         True
+ <0x10.50>      True         True
+   <0b102>     False        False
+  <0o_5_3>      True         True
+      <௫௯>      True         True
+ <   12  >      True         True
    <1 1 1>     False        False
         <>      True        False
        < >      True        False

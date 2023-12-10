@@ -4,17 +4,17 @@
 
 ```perl
 # 20201230 Raku programming solution
- 
+
 my @hourglasses = 4, 7;
 my $target = 9;
 my @output = [];
-my %elapsed = 0 => 1 ;
-my $done = False ;
- 
+my %elapsed = 0 => 1 ;
+my $done = False ;
+
 for 1 .. ∞ -> $t {
    my $flip-happened = False;
    for @hourglasses -> $hg {
-      unless $t % $hg {
+      unless $t % $hg {
          %elapsed{$t} = 1 unless %elapsed{$t};
          with @output[$t] { $_ ~= "\t, flip hourglass $hg " } else {
             $_ = "At time t = $t , flip hourglass $hg" }
@@ -28,12 +28,12 @@ for 1 .. ∞ -> $t {
             @output[$t]  ~= "\tend   = $target";
             $done = True
          }
-         %elapsed{$t} = 1 unless %elapsed{$t} ;
+         %elapsed{$t} = 1 unless %elapsed{$t} ;
       }
    }
    last if $done
 }
- 
+
 .say if .defined for @output
 ```
 

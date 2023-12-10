@@ -2,26 +2,30 @@
 
 # [Determine if only one instance is running][1]
 
+
+
+
+
 An old-school Unix solution, none the worse for the wear:
 
 ```perl
 my $name = $*PROGRAM-NAME;
 my $pid = $*PID;
- 
+
 my $lockdir = "/tmp";
 my $lockfile = "$lockdir/$name.pid";
 my $lockpid = "$lockfile$pid";
 my $havelock = False;
- 
+
 END {
     unlink $lockfile if $havelock;
     try unlink $lockpid;
 }
- 
-my $pidfile = open "$lockpid", :w or die "Can't create $lockpid: $!";
+
+my $pidfile = open "$lockpid", :w orelse .die;
 $pidfile.say($pid);
 $pidfile.close;
- 
+
 if try link($lockpid, $lockfile) {
     $havelock = True;
 }

@@ -2,6 +2,10 @@
 
 # [Jump anywhere][1]
 
+
+
+
+
 ### Label-based jumps
 
 ```perl
@@ -24,7 +28,6 @@
 Produces random output, but here's a representative run:
 
 
-#### Output:
 ```
  Entered outer loop block
  Entered inner loop block
@@ -42,7 +45,7 @@ Produces random output, but here's a representative run:
 
 
 
-Continuations in Perl 6 are currently limited to use in generators via the gather/take model:
+Continuations in Raku are currently limited to use in generators via the gather/take model:
 
 ```perl
     my @list = lazy gather for ^100 -> $i {
@@ -51,7 +54,7 @@ Continuations in Perl 6 are currently limited to use in generators via the gathe
             take $i;
         }
     }
- 
+    
     say @list[5];
 ```
 
@@ -59,7 +62,6 @@ Continuations in Perl 6 are currently limited to use in generators via the gathe
 This outputs:
 
 
-#### Output:
 ```
  Taking prime 2
  Taking prime 3
@@ -79,7 +81,7 @@ Notice that no further execution of the loop occurs. If we then asked for the el
 
 
 
-Exceptions are fairly typical in Perl6:
+Exceptions are fairly typical in Raku:
 
 ```perl
     die "This is a generic, untyped exception";
@@ -105,7 +107,6 @@ But if a failure should be recoverable (e.g. execution might reasonably continue
 Produces:
 
 
-#### Output:
 ```
  Called foo
  foo not true
@@ -129,12 +130,11 @@ However, an exception can \`.resume\` in order to jump back to the failure point
       say "Dividing by $i";
       1/$i.Num + 0; # Fighting hard to make this fail
   }
- 
+  
   for ^10 -> $n {
-      my $recip = foo($n);
-      say "1/{$n} = {$recip.perl}";
+      say "1/$n  = " ~ foo($n);
   }
- 
+  
   CATCH {
       when ~$_ ~~ m:s/Are you sure/ { .resume; #`(yes, I'm sure) }
   }
@@ -144,7 +144,6 @@ However, an exception can \`.resume\` in order to jump back to the failure point
 This code raises an exception on a zero input, but then resumes execution, divides be zero and then raises a divide by zero exception which is not caught:
 
 
-#### Output:
 ```
  Dividing by 0
  Attempt to divide 1 by zero using /

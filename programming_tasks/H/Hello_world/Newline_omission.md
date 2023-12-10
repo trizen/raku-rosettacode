@@ -2,6 +2,7 @@
 
 # [Hello world/Newline omission][1]
 
+
 A newline is not added automatically to print or printf
 
 ```perl

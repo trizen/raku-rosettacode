@@ -11,9 +11,9 @@ sub useful ($n) {
         ^$p .first: ($p - *).is-prime
     }
 }
- 
+
 put useful 1..10;
- 
+
 put useful 11..13;
 ```
 

@@ -2,20 +2,22 @@
 
 # [Chebyshev coefficients][1]
 
+
+
 ```perl
-sub chebft ( Code $func, Real $a, Real $b, Int $n ) {
- 
-    my $bma = 0.5 * ( $b - $a );
-    my $bpa = 0.5 * ( $b + $a );
- 
-    my @pi_n = ( (^$n).list »+» 0.5 ) »*» ( pi / $n );
-    my @f    = ( @pi_n».cos »*» $bma »+» $bpa )».$func;
-    my @sums = map { [+] @f »*« ( @pi_n »*» $_ )».cos }, ^$n;
- 
-    return @sums »*» ( 2 / $n );
+sub chebft ( Code $func, Real \a, Real \b, Int \n ) {
+
+    my \bma = ½ × (b - a);
+    my \bpa = ½ × (b + a);
+
+    my @pi-n = ( ^n »+» ½ ) »×» (π/n);
+    my @f    = ( @pi-n».cos »×» bma »+» bpa )».&$func;
+    my @sums = (^n).map: { [+] @f »×« ( @pi-n »×» $_ )».cos };
+
+    @sums »×» (2/n)
 }
- 
-say .fmt('%+13.7e') for chebft &cos, 0, 1, 10;
+
+say chebft(&cos, 0, 1, 10)».fmt: '%+13.7e';
 ```
 
 #### Output:

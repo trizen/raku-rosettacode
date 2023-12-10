@@ -2,6 +2,8 @@
 
 # [Sierpinski triangle][1]
 
+
+
 ```perl
 sub sierpinski ($n) {
     my @down  = '*';
@@ -12,6 +14,6 @@ sub sierpinski ($n) {
     }
     return @down;
 }
- 
+ 
 .say for sierpinski 4;
 ```

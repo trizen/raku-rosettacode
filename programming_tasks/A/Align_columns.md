@@ -2,6 +2,10 @@
 
 # [Align columns][1]
 
+
+
+
+
 Call with parameter left (default), center or right.
 
 ```perl
@@ -13,12 +17,12 @@ column$are$separated$by$at$least$one$space.
 Further,$allow$for$each$word$in$a$column$to$be$either$left$
 justified,$right$justified,$or$center$justified$within$its$column.
 |.lines;
- 
+
 my @widths;
- 
+ 
 for @lines { for .split('$').kv { @widths[$^key] max= $^word.chars; } }
 for @lines { say |.split('$').kv.map: { (align @widths[$^key], $^word) ~ " "; } }
- 
+ 
 sub align($column_width, $word, $aligment = @*ARGS[0]) {
         my $lr = $column_width - $word.chars;
         my $c  = $lr / 2;
@@ -35,7 +39,7 @@ Or a more functional version, called like `./align.p6 left input.txt`, which how
 
 ```perl
 sub MAIN ($alignment where 'left'|'right', $file) {
-    my @lines := $file.IO.lines.map(*.split('$').cache).cache;
+    my @lines := $file.IO.lines.map(*.split('$').cache).cache;
     my @widths = roundrobin(|@lines).map(*».chars.max);
     my $align  = {left=>'-', right=>''}{$alignment};
     my $format = @widths.map( '%' ~ ++$ ~ '$' ~ $align ~ * ~ 's' ).join(' ') ~ "\n";

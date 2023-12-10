@@ -2,18 +2,26 @@
 
 # [Prime conspiracy][1]
 
+
+
+
+
+Using module `Math::Primesieve` to generate primes, as much faster than the built-in (but extra credit still very slow).
+
 ```perl
-my @primes := 2, |(3,5,7 ... *).grep: *.is-prime;
- 
+use Math::Primesieve;
+
 my %conspiracy;
 my $upto = 1_000_000;
- 
+my $sieve = Math::Primesieve.new;
+my @primes = $sieve.n-primes($upto+1);
+
 @primes[^($upto+1)].reduce: -> $a, $b {
-    my $d = $b % 10;
+    my $d = $b % 10;
     %conspiracy{"$a → $d count:"}++;
     $d;
 }
- 
+
 say "$_ \tfrequency: {($_.value/$upto*100).round(.01)} %" for %conspiracy.sort;
 ```
 

@@ -2,30 +2,30 @@
 
 # [Object serialization][1]
 
+
+
 ```perl
-#!/usr/bin/env perl6
- 
 # Reference:
-# https://docs.perl6.org/language/classtut
+# https://docs.raku.org/language/classtut
 # https://github.com/teodozjan/perl-store
- 
+
 use v6;
 use PerlStore::FileStore;
- 
+
 class Point {
     has Int $.x;
     has Int $.y;
 }
- 
+
 class Rectangle does  FileStore {
     has Point $.lower;
     has Point $.upper;
- 
+
     method area() returns Int {
         ($!upper.x - $!lower.x) * ( $!upper.y - $!lower.y);
     }
 }
- 
+
 my $r1 = Rectangle.new(lower => Point.new(x => 0, y => 0),
                       upper => Point.new(x => 10, y => 10));
 say "Create Rectangle1 with area ",$r1.area();

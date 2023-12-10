@@ -2,18 +2,22 @@
 
 # [ISBN13 check digit][1]
 
+
+
+
+
 Also test a value that has a zero check digit.
 
 ```perl
 sub check-digit ($isbn) {
-     (10 - (sum (|$isbn.comb(/<[0..9]>/)) »*» (1,3)) % 10).substr: *-1
+     (10 - (sum (|$isbn.comb(/<[0..9]>/)) »*» (1,3)) % 10).substr: *-1
 }
- 
+
 {
     my $check = .substr(*-1);
     my $check-digit = check-digit .chop;
-    say "$_ : ", $check == $check-digit ??
-        'Good' !!
+    say "$_ : ", $check == $check-digit ??
+        'Good' !!
         "Bad check-digit $check; should be $check-digit"
 } for words <
     978-1734314502

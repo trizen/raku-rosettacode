@@ -2,6 +2,8 @@
 
 # [Send email][1]
 
+
+
 ```perl
 use Email::Simple;
 
@@ -11,8 +13,8 @@ my $subject = 'test';
 my $body    = 'This is a test.';
 
 my $email = Email::Simple.create(
-    :header[['To', $to], ['From', $from], ['Subject', $subject]],
-    :body($body)
+    :header[['To', $to], ['From', $from], ['Subject', $subject]],
+    :body($body)
 );
 
 say ~$email;

@@ -2,6 +2,10 @@
 
 # [Egyptian division][1]
 
+
+
+
+
 ### Normal version
 
 
@@ -15,10 +19,10 @@ sub egyptian-divmod (Real $dividend is copy where * >= 0, Real $divisor where * 
       .reverse.map: { $dividend -= .[1], $accumulator += .[0] if $dividend >= .[1] }
     $accumulator, $dividend;
 }
- 
+ 
 #TESTING
 for 580,34, 578,34, 7532795332300578,235117 -> $n, $d {
-    printf "%s divmod %s = %s remainder %s\n",
+    printf "%s divmod %s = %s remainder %s\n",
         $n, $d, |egyptian-divmod( $n, $d )
 }
 ```
@@ -39,7 +43,7 @@ As a preceding version was determined to be "let's just say ... not Egyptian" we
 
 
 
-Note: if the below is just a mass of "unknown glyph" boxes, try [installing](https://www.google.com/get/noto/help/install/) Googles free [Noto Sans Egyptian Hieroglyphs font](https://www.google.com/get/noto/#sans-egyp).
+Note: if the below is just a mass of "unknown glyph" boxes, try [installing](https://www.google.com/get/noto/help/install/) Googles free [Noto Sans Egyptian Hieroglyphs font](https://fonts.google.com/noto/fonts?noto.lang=egy_Egyp&amp;noto.script=Egyp).
 
 
 
@@ -56,17 +60,17 @@ sub 𓁶 (Int \𓆉) {
       [«'' 𓂭 𓂮 𓂯 𓂰 𓂱 𓂲 𓂳 𓂴 𓂵»], ['𓆐' Xx ^𓎆], ['𓁨' Xx ^𓎆];
     ([~] 𓆉.polymod( 𓎆 xx * ).map( { 𓁢[$++;$_] } ).reverse) || '𓄤'
 }
- 
+
 sub infix:<𓅓> (Int $𓂀 is copy where 𓄤 𓂻 𓄊 𓈝 * 𓈝 𓄰, Int \𓌳 where 𓄤 𓈝 * 𓈝 𓄰) {
     my $𓎦 = 𓄤;
     ([𓄊,𓌳], { [.[𓄤] 𓂽 .[𓄤], .[𓄊] 𓂽 .[𓄊]] } … ^$𓂀 𓈝 *.[𓄊])
       .reverse.map: { $𓂀 𓂻= .[𓄊], $𓎦 𓂽= .[𓄤] if .[𓄊] 𓈝 ($𓂀 𓂽 𓄊) }
     $𓎦, $𓂀;
 }
- 
+
 #TESTING
 for 580,34, 578,34, 2300578,23517 -> \𓃾, \𓆙 {
-    printf "%s divmod %s = %s remainder %s =OR= %s 𓅓 %s = %s remainder %s\n",
+    printf "%s divmod %s = %s remainder %s =OR= %s 𓅓 %s = %s remainder %s\n",
         𓃾, 𓆙, |(𓃾 𓅓 𓆙), (𓃾, 𓆙, |(𓃾 𓅓 𓆙))».&𓁶;
 }
 ```

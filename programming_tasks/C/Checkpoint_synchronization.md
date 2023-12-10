@@ -2,19 +2,17 @@
 
 # [Checkpoint synchronization][1]
 
+
+
 ```perl
-#!/usr/bin/env perl6
- 
-use v6;
- 
 my $TotalWorkers = 3;
 my $BatchToRun = 3;
-my @TimeTaken = (5..35); # in seconds
- 
+my @TimeTaken = (5..15); # in seconds
+
 my $batch_progress = 0;
 my @batch_lock = map { Semaphore.new(1) } , ^$TotalWorkers;
 my $lock = Lock.new;
- 
+
 sub assembly_line ($ID) {
    my $wait;
    for ^$BatchToRun -> $j {
@@ -31,11 +29,11 @@ sub assembly_line ($ID) {
             for @batch_lock { .release }; # and ready for next batch
          };
        };
- 
+
        @batch_lock[$ID].acquire; # for next batch
    }
 }
- 
+
 for ^$TotalWorkers -> $i {
    Thread.start(
       sub {

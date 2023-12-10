@@ -2,6 +2,8 @@
 
 # [Sorting algorithms/Pancake sort][1]
 
+
+
 ```perl
 sub pancake_sort ( @a is copy ) {
     my $endpoint = @a.end;
@@ -14,7 +16,7 @@ sub pancake_sort ( @a is copy ) {
         }
         # @a[$endpoint] is not $max, so it needs flipping;
         # Flip twice if max is not already at the top.
-        @a[0..$max_i]    .= reverse if $max_i != 0;
+        @a[0..$max_i]    .= reverse if $max_i != 0;
         @a[0..$endpoint] .= reverse;
         $endpoint--;
     }
@@ -23,7 +25,6 @@ sub pancake_sort ( @a is copy ) {
 my @data = 6, 7, 2, 1, 8, 9, 5, 3, 4;
 say 'input  = ' ~ @data;
 say 'output = ' ~ @data.&pancake_sort;
- 
 ```
 
 #### Output:

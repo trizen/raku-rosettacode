@@ -2,7 +2,7 @@
 
 # [Quoting constructs][1]
 
-The Perl philosophy, which Raku thoroughly embraces, is that "There Is More Than One Way To Do It" (often abbreviated to TIMTOWDI). Quoting constructs is an area where this is enthusiastically espoused.
+The Perl philosophy, which Raku thoroughly embraces, is that "There Is More Than One Way To Do It" (often abbreviated to TIMTOWTDI). Quoting constructs is an area where this is enthusiastically espoused.
 
 
 
@@ -10,7 +10,7 @@ Raku has a whole quoting specific sub-language built in called Q. Q changes the 
 
 
 
-In general, any and all quoting structures have theoretically unlimited length, in practice, are limited by memory size, practically, it is probably better to limit them to less than a gigabyte or so, though they can be read as a supply, not needing to hold the whole thing in memory at once. They can hold multiple lines of data. How the new-line characters are treated depends entirely on any white-space adverb applied. The Q forms use some bracketing character to delimit the quoted data. Usually some Unicode bracket ( [], {}, &lt;&gt;, ⟪⟫, whatever,) that has an "open" and "close" bracketing character, but they may use any non-indentifier character as both opener and closer. ||, //,&#160;??, the list goes on. The universal escape character for constructs that allow escaping is backslash "\".
+In general, any and all quoting structures have theoretically unlimited length, in practice, are limited by memory size, practically, it is probably better to limit them to less than a gigabyte or so, though they can be read as a supply, not needing to hold the whole thing in memory at once. They can hold multiple lines of data. How the new-line characters are treated depends entirely on any white-space adverb applied. The Q forms use some bracketing character to delimit the quoted data. Usually some Unicode bracket ( [], {}, &lt;&gt;, ⟪⟫, whatever,) that has an "open" and "close" bracketing character, but they may use any non-indentifier character as both opener and closer. ||, //,&#160;??, the list goes on. The universal escape character for constructs that allow escaping is  backslash "\".
 
 
 

@@ -14,28 +14,28 @@ Using [Terminal::Boxer](https://modules.raku.org/search/?q=Terminal%3A%3ABoxer) 
 
 ```perl
 use Terminal::Boxer;
- 
-my %*SUB-MAIN-OPTS = :named-anywhere;
- 
-unit sub MAIN ($wheel = 'ndeokgelw', :$dict = './unixdict.txt', :$min = 3);
- 
+
+my %*SUB-MAIN-OPTS = :named-anywhere;
+
+unit sub MAIN ($wheel = 'ndeokgelw', :$dict = './unixdict.txt', :$min = 3);
+
 my $must-have = $wheel.comb[4].lc;
- 
+
 my $has = $wheel.comb».lc.Bag;
- 
+
 my %words;
 $dict.IO.slurp.words».lc.map: {
     next if not .contains($must-have) or .chars < $min;
     %words{.chars}.push: $_ if .comb.Bag ⊆ $has;
 };
- 
+
 say "Using $dict, minimum $min letters.";
- 
-print rs-box :3col, :3cw, :indent("\t"), $wheel.comb».uc;
- 
-say "{sum %words.values».elems} words found";
- 
-printf "%d letters:  %s\n", .key, .value.sort.join(', ') for %words.sort;
+
+print rs-box :3col, :3cw, :indent("\t"), $wheel.comb».uc;
+
+say "{sum %words.values».elems} words found";
+
+printf "%d letters:  %s\n", .key, .value.sort.join(', ') for %words.sort;
 ```
 ```text
 raku word-wheel.raku
@@ -88,7 +88,6 @@ Using ./words.txt, minimum 3 letters.
 Using unixdict.txt:
 
 
-#### Output:
 ```
 Wheel           words
 eimnaprst:      215
@@ -102,7 +101,6 @@ ahlneorst:      201
 Using words.txt:
 
 
-#### Output:
 ```
 Wheel           words
 meilanrst:      1329

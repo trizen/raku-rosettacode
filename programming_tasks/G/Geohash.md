@@ -10,19 +10,19 @@ Reference: Used [this](https://www.movable-type.co.uk/scripts/geohash.html) for 
 
 ```perl
 #20200615 Raku programming solution
- 
+
 use Geo::Hash;
- 
+
 # task example 1 : Ireland, most of England and Wales, small part of Scotland
 say geo-encode(51.433718e0, -0.214126e0, 2);
- 
+
 # task example 2 : the umpire's chair on Center Court at Wimbledon
 say geo-encode(51.433718e0, -0.214126e0, 9);
- 
+
 # Lake Raku is an artificial lake in Tallinn, Estonia
 # https://goo.gl/maps/MEBXXhiFbN8WMo5z8
 say geo-encode(59.358639e0, 24.744778e0, 4);
- 
+
 # Village Raku is a development committee in north-western Nepal
 # https://goo.gl/maps/33s7k2h3UrHCg8Tb6
 say geo-encode(29.2021188e0, 81.5324561e0, 4);
@@ -41,13 +41,13 @@ tv1y
 
 
 
-Alternately, a roll-your-own version that will work with any Real coordinate, not just floating point values, and thus can return ridiculous precision.
+Alternately, a roll-your-own version that will work with any Real coordinate, not just floating point values, and thus can return ridiculous precision. 
 The geo-decode routine returns the range in which the actual value will be found; converted here to the mid-point with the interval size. Probably better
 to specify an odd precision so the error interval ends up the same for both latitude and longitude.
 
 ```perl
 my @Geo32 = <0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z>;
- 
+
 sub geo-encode ( Rat(Real) $latitude, Rat(Real) $longitude, Int $precision = 9 ) {
     my @coord = $latitude, $longitude;
     my @range = [-90, 90], [-180, 180];
@@ -61,7 +61,7 @@ sub geo-encode ( Rat(Real) $latitude, Rat(Real) $longitude, Int $precision = 9 )
     }
     @Geo32[$value.comb(5)».parse-base(2)].join;
 }
- 
+
 sub geo-decode ( Str $geo ) {
      my @range = [-90, 90], [-180, 180];
      my $which = 1;
@@ -72,9 +72,9 @@ sub geo-decode ( Str $geo ) {
      }
      @range
 }
- 
+
 # TESTING
- 
+
 for 51.433718,   -0.214126,  2, # Ireland, most of England and Wales, small part of Scotland
     51.433718,   -0.214126,  9, # the umpire's chair on Center Court at Wimbledon
     51.433718,   -0.214126, 17, # likely an individual molecule of the chair

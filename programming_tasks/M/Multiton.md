@@ -2,22 +2,22 @@
 
 # [Multiton][1]
 
-Tried to translate [the C# example](https://wikipedia.org/wiki/Multiton_pattern#Implementations) at WP but not sure if my interpretation/implementation is correct
+Tried to translate [the C# example](https://wikipedia.org/wiki/Multiton_pattern#Implementations) at WP but not sure if my  interpretation/implementation is correct
 
 ```perl
 # 20211001 Raku programming solution 
- 
+
 enum MultitonType < Gold Silver Bronze >;
- 
+
 class Multiton { 
- 
-   my %instances = MultitonType.keys Z=> $ ⚛= 1 xx * ;
- 
+
+   my %instances = MultitonType.keys Z=> $ ⚛= 1 xx * ;
+
    has $.type is rw; 
- 
+
    method TWEAK { $.type = 'Nothing' unless cas(%instances{$.type}, 1, 0) }
 }
- 
+
 race for ^10 -> $i {
    Thread.start(
       sub {

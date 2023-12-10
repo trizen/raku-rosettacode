@@ -2,6 +2,8 @@
 
 # [State name puzzle][1]
 
+
+
 ```perl
 my @states = <
     Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware
@@ -12,24 +14,24 @@ my @states = <
     Rhode_Island South_Carolina South_Dakota Tennessee Texas Utah Vermont
     Virginia Washington West_Virginia Wisconsin Wyoming
 >;
- 
+
 say "50 states:";
 .say for anastates @states;
- 
+ 
 say "\n54 states:";
 .say for sort anastates @states, < New_Kory Wen_Kory York_New Kory_New New_Kory >;
- 
+
 sub anastates (*@states) {
     my @s = @states.unique».subst('_', ' ');
- 
+     
     my @pairs = gather for ^@s -> $i {
 	for $i ^..^ @s -> $j {
 	    take [ @s[$i], @s[$j] ];
 	}
     }
- 
+     
     my $equivs = hash @pairs.classify: *.lc.comb.sort.join;
- 
+
     gather for $equivs.values -> @c {
 	for ^@c -> $i {
 	    for $i ^..^ @c -> $j {
@@ -45,7 +47,6 @@ sub anastates (*@states) {
 Output:
 
 
-#### Output:
 ```
 50 states:
 North Carolina, South Dakota = North Dakota, South Carolina

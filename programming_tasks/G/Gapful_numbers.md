@@ -2,15 +2,19 @@
 
 # [Gapful numbers][1]
 
+
+
+
+
 Also test starting on a number that *doesn't* start with 1. Required to have titles, may as well make 'em noble.&#160;:-)
 
 ```perl
 use Lingua::EN::Numbers;
- 
+
 for (1e2, 30, 1e6, 15, 1e9, 10, 7123, 25)».Int -> $start, $count {
     put "\nFirst $count gapful numbers starting at {comma $start}:\n" ~
     <Sir Lord Duke King>.pick ~ ": ", ~
-    ($start..*).grep( { $_ %% .comb[0, *-1].join } )[^$count];
+    ($start..*).grep( { $_ %% .comb[0, *-1].join } )[^$count];
 }
 ```
 
