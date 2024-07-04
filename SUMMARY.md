@@ -1373,7 +1373,6 @@
        * [Solve hanging lantern problem](programming_tasks%2FS%2FSolve_hanging_lantern_problem.md)
        * [Solve the no connection puzzle](programming_tasks%2FS%2FSolve_the_no_connection_puzzle.md)
        * [Solve triangle solitaire puzzle](programming_tasks%2FS%2FSolve_triangle_solitaire_puzzle.md)
-       * [Solve triangle solitare puzzle](programming_tasks%2FS%2FSolve_triangle_solitare_puzzle.md)
        * [Sorensen Dice coefficient](programming_tasks%2FS%2FSorensen_Dice_coefficient.md)
        * [Sort a list of object identifiers](programming_tasks%2FS%2FSort_a_list_of_object_identifiers.md)
        * [Sort an array of composite structures](programming_tasks%2FS%2FSort_an_array_of_composite_structures.md)
